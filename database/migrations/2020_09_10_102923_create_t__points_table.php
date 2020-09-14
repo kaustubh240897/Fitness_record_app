@@ -1,0 +1,34 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateTPointsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('t__points', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('m__users_id');
+            $table->foreign('m__users_id')->references('id')->on('m__users')->onDelete('cascade');
+            $table->integer('point');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('t__points');
+    }
+}
