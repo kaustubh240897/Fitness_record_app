@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 use App\t_Steps;
 use App\m_Users;
-use App\User;
+//use App\User;
 use Validator;
 use Symfony\Component\HttpFoundation\Response;
 class StepsController extends Controller
@@ -21,7 +21,7 @@ class StepsController extends Controller
     {
         //
         
-        return $m_user->t_steps;
+        return t_StepsResource::collection($m_user->t_steps);
     }
 
     // public function stepsuserindex(Request $request, m_Users $id)

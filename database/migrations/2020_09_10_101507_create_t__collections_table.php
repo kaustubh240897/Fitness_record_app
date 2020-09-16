@@ -17,8 +17,9 @@ class CreateTCollectionsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('m__users_id');
             $table->foreign('m__users_id')->references('id')->on('m__users')->onDelete('cascade');
-            $table->unsignedBigInteger('m__collections_id');
-            $table->foreign('m__collections_id')->references('id')->on('m__collections')->onDelete('cascade');
+            $table->foreignId('m__collection_id')
+            ->constrained('m__collections')
+            ->onDelete('cascade');
             $table->boolean('new_display_flag')->default(0);
             $table->timestamps();
         });

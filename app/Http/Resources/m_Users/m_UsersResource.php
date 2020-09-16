@@ -25,7 +25,14 @@ class m_UsersResource extends JsonResource
           'Total-distance(in m)' =>$this->t_steps->sum('steps') > 0 ? $this->t_steps->sum('steps')* $this->stride/ 100 : 'Not started yet!',
           'href' => [
               'steps' => route('steps.index', $this->id)
+          ],
+          'collection' => [
+              'usercollections' => route('usercollections.index', $this->id)
+          ],
+           'user_logs' => [
+              'logs' => route('logs.index', $this->id)
           ]
+          
 
 
 

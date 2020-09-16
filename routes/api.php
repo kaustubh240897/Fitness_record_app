@@ -22,12 +22,30 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // Route::get('m_users/{id}', 'm_UsersController@show');
 Route::apiResource('m_users', 'm_UsersController');
 
+Route::apiResource('m_collections', 'm_CollectionController');
 
 //Route::apiResource('steps', 'StepsController');
 Route::group(['prefix'=>'m_users'],function(){
     Route::apiResource('/{m_user}/steps', 'StepsController');
 
 });
+
+Route::group(['prefix'=>'m_users'],function(){
+    Route::apiResource('/{m_user}/logs', 't_LogController');
+
+});
+
+Route::group(['prefix'=>'m_users'],function(){
+    Route::apiResource('/{m_user}/usercollections', 't_CollectionUserController');
+
+});
+
+
+Route::group(['prefix'=>'m_collections'], function(){
+   Route::apiResource('/{m_collection}/collections', 't_CollectionController');
+});
+
+
 
 // Route::get('steps', 'StepsController@index');
 // Route::get('steps/{id}', 'StepsController@show');
