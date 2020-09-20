@@ -17,7 +17,7 @@ class CreateTPointsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('m__users_id');
             $table->foreign('m__users_id')->references('id')->on('m__users')->onDelete('cascade');
-            $table->integer('point');
+            $table->integer('point')->default(0);
             $table->timestamps();
         });
     }

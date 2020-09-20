@@ -19,6 +19,7 @@ class CreateMToursTable extends Migration
             $table->string('tour_comment', 255);
             $table->unsignedBigInteger('m__collections_id');
             $table->foreign('m__collections_id')->references('id')->on('m__collections')->onDelete('cascade');
+            $table->smallInteger('tour_level')->default(1);
             $table->timestamps();
         });
     }

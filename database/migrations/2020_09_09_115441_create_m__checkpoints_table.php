@@ -18,9 +18,10 @@ class CreateMCheckpointsTable extends Migration
             $table->unsignedBigInteger('m__tours_id');
             $table->foreign('m__tours_id')->references('id')->on('m__tours')->onDelete('cascade');
             $table->string('checkpoint_title', 255);
-            $table->enum('collection_category', ['start', 'intermediate', 'spot', 'endpoint']);
+            $table->enum('checkpoint_category', ['start', 'intermediate', 'spot', 'endpoint']);
             $table->integer('distance');
             $table->string('comments', 255);
+            $table->string('prefectures', 255);
             $table->unsignedBigInteger('m__collections_id');
             $table->foreign('m__collections_id')->references('id')->on('m__collections')->onDelete('cascade');
             $table->timestamps();

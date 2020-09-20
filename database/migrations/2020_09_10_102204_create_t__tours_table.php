@@ -19,9 +19,9 @@ class CreateTToursTable extends Migration
             $table->foreign('m__users_id')->references('id')->on('m__users')->onDelete('cascade');
             $table->unsignedBigInteger('m__tours_id');
             $table->foreign('m__tours_id')->references('id')->on('m__tours')->onDelete('cascade');
-            $table->dateTime('start_datetime', 0);
-            $table->dateTime('end_datetime', 0);
-            $table->dateTime('cancellation_datetime', 0);
+            $table->dateTime('start_datetime', 0)->nullable();
+            $table->dateTime('end_datetime', 0)->nullable();
+            $table->dateTime('cancellation_datetime', 0)->nullable();
             $table->enum('status', ['Inprogress', 'Cancel', 'Done']);
             $table->timestamps();
         });
