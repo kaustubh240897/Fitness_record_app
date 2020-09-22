@@ -52,12 +52,10 @@
       <legend class="col-form-label col-sm-2 pt-0">Select path</legend>
       <div class="col-sm-10">
         <div class="form-check">
-         <?php $value = Cache::get('reverse'); ?>
+         <?php $value = Session::get('reverse','false'); ?> 
+            
           @if($value == 'false')
           <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="3" checked>
-
-          @elseif($value == 'null')
-           <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="3" checked>
         
           @else
               <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="3">

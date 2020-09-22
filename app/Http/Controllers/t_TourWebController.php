@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Session;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -54,7 +54,7 @@ class t_TourWebController extends Controller
 
         $t_tour = new t_Tour;
         $mytime = Carbon::now();
-        $u_id = m_Users::find(auth()->user()->id)->first()->id;
+        $u_id = m_Users::find(Auth::id())->id;
         
 
         $t_tour->m__users_id = $u_id;
@@ -68,17 +68,17 @@ class t_TourWebController extends Controller
         return redirect(route('index'))->with('successMsg','your tour Successfully selected');
     }
 
-    public function createtourcache(Request $request)
+    public function createtoursession(Request $request)
         {
             if($request->gridRadios == '4'){
         
-                Cache::forever('reverse', 'true');
+               $request->session()->put('reverse', 'true');
 
             }
             elseif($request->gridRadios == '3'){
-                Cache::forever('reverse', 'false');
+                $request->session()->put('reverse', 'false');
             }
-            $value = Cache::get('reverse', 'true');
+            $value = $request->session()->get('reverse', 'false');
             
             
             return redirect(route('index'))->with('successMsg','your info Successfully updated');
@@ -94,22 +94,57 @@ class t_TourWebController extends Controller
     {
         $tour = m_Tour::find($id);
         $m__tours_id = $id;
-        $checkpoints = m_Checkpoint::find($m__tours_id)->orderBy('distance')->get();
-        $checkpointsr = m_Checkpoint::find($m__tours_id)->orderBy('distance', 'DESC')->get();
+        $m__users_id = m_Users::find(Auth::id())->id;
+        //dd($m__users_id);
+        
+       
+        $get_t_tour = t_Tour::where('m__tours_id', $m__tours_id)->where('m__users_id', $m__users_id)->first();
+        if($get_t_tour !=null){
+        $tour_datetime = $get_t_tour->created_at->toDateTimeString();
+        }
+        
+        //dd($tour_datetime);
+        
+
+        
+        $q_checkpoints = m_Checkpoint::where('m__tours_id',$m__tours_id);
+        
+        if($q_checkpoints !=null){
+        $checkpoints = $q_checkpoints->orderBy('distance')->get();
+        $checkpointsr = m_Checkpoint::where('m__tours_id',$m__tours_id)->orderBy('distance', 'DESC')->get();
         foreach ($checkpoints as $checkpoint) {
             if($checkpoint->checkpoint_category == 'endpoint'){
                  $total = $checkpoint->distance;
                 }
+            }
         }
-        $value = Cache::get('reverse', 'false');
-        $m_users_id = m_Users::find(auth()->user()->id)->first()->id;
-        $steps = t_Steps::find($m_users_id)->get()->sum('steps');
-        $user_stride = m_Users::find(auth()->user()->id)->first()->stride;
+        else{
+            $total= 0;
+            $checkpoints = null;
+            $checkpointsr = null;
+        }
+        
+       
+        $value = $request->session()->get('reverse','false');
+        
+       
+        if($get_t_tour !=null){
+            $steps = t_Steps::where('m__users_id',$m__users_id)->where('step_actual_datetime', '>=', $tour_datetime)->get()->sum('steps');
+        }
+        else{
+            $steps = 0;
+        }
+        $user_stride = m_Users::find(Auth::id())->stride;
         
 
     
-        
-        return view('tourdetails', compact('tour','checkpoints','value','checkpointsr','total','steps','user_stride'));
+        if($checkpoints == null || $checkpointsr == null){
+            return view('emptycheckpoints', compact('tour','value','total','steps','user_stride'));
+            }
+        else{
+            return view('tourdetails', compact('tour','value','checkpoints','checkpointsr','total','steps','user_stride'));
+
+        }
     }
 
     /**

@@ -3,15 +3,20 @@
 @section('content')
 <div class='container'>
 
- Tour title <h2>{{ $tour->tour_title }} (distance-: @foreach ($checkpoints as $checkpoint) @if($checkpoint->checkpoint_category == 'endpoint')  {{ $checkpoint->distance }}Km @endif @endforeach)   </h2>
+
+ Tour title <h2>{{ $tour->tour_title }}  (distance-: @foreach ($checkpoints as $checkpoint) @if($checkpoint->checkpoint_category == 'endpoint')  {{ $checkpoint->distance }}Km @endif @endforeach)   </h2>
  Tour comment -: {{ $tour->tour_comment }}
 
  <h3>Checkpoints  </h3>
  @if($value == 'false' || $value == 'null')
  Start
+ 
  @foreach ($checkpoints as $checkpoint) 
    
      <h4>{{$loop->iteration}}. {{ $checkpoint->checkpoint_title }} {{ $checkpoint->checkpoint_category }}  {{ $checkpoint->distance }}Km</h4>
+     @if($checkpoint->distance <  $user_stride/100000 * $steps )
+     <h2 style='color:green'>Checked</h2>
+     @endif
  @endforeach
  
  End
@@ -19,13 +24,16 @@
 Start
 @foreach ($checkpointsr as $checkpoint) 
    
-     <h4>{{$loop->iteration}}. {{ $checkpoint->checkpoint_title }} {{ $checkpoint->checkpoint_category }}  {{ $total - $checkpoint->distance }}Km</h4>
+     <h4>{{$loop->iteration}}. {{ $checkpoint->checkpoint_title }} {{ $checkpoint->checkpoint_category }}  {{ $total-$checkpoint->distance }}Km</h4>
+      @if($total - $checkpoint->distance <  $user_stride/100000 * $steps )
+     <h2 style='color:green'>Checked</h2>
+     @endif
  @endforeach
  End
  
 @endif
 
- <h3> {{ $user_stride/100000 * $steps }} (Km) </h3>
+ <h3> You covered {{ $user_stride/100000 * $steps }} (Km) </h3>
 
 
 
@@ -65,6 +73,7 @@ Start
       </div>
     </div>
   </fieldset>
+
 
 </div>
 
