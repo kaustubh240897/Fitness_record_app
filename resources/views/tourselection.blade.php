@@ -9,6 +9,7 @@
 @endif
 
 <h2> Select your tour</h2>
+<h4> your current tour is {{ $current_tour->m_tours->tour_title }} </h4>
 <table class="table">
   <thead class="black white-text">
     <tr>
@@ -24,16 +25,16 @@
   @foreach($tours as $tour)
 
     <tr>
-      <th scope="row">{{ $tour->id }}</th>
+      <th scope="row">{{  $loop->iteration }}</th>
    <td> <a href="{{ route('tourdetails', $tour->id) }}"> {{ $tour->tour_title }} </a></td>
-      <td>*</td>
+      <td>@foreach($all_t_Tours as $all_t_Tour) @if($tour->id == $all_t_Tour->m__tours_id)  @if($all_t_Tour->status == 'Done') * @break @else @continue  @endif @endif @endforeach </td>
      
      
       <td> 
       <form action="{{ route('tourstore', $tour->id) }}" method="POST" >
       {{ csrf_field() }}
       {{ method_field('post') }}
- <button type="submit" class="btn btn-primary">Apply</button>
+ <button type="submit" class="btn btn-primary">Select</button>
 </form>
 </a>
   </td>

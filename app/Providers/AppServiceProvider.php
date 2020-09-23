@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Providers;
-
+use App\t_Tour;
+use App\t_Steps;
+use App\Observers\t_TourObserver;
+use App\Observers\t_StepsObserver;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -24,5 +27,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        date_default_timezone_set('Asia/Calcutta');
+        t_Tour::observe(t_TourObserver::class);
+        t_Steps::observe(t_StepsObserver::class);
+
     }
 }
