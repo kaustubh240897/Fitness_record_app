@@ -13,10 +13,10 @@ use App\m_Checkpoint;
 Use \Carbon\Carbon;
 class t_TourWebController extends Controller
 {
-     public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    public function __construct()
+        {
+            $this->middleware('auth');
+        }
     /**
      * Display a listing of the resource.
      *
@@ -26,10 +26,15 @@ class t_TourWebController extends Controller
     {
         $tours = m_Tour::all();
         $m__users_id = m_Users::find(Auth::id())->id;
-        $current_tour = t_Tour::where('m__users_id', $m__users_id)->get()->first();
-        $all_t_Tours = t_Tour::withTrashed()->where('m__users_id', $m__users_id)->get();
+        $current_tour = t_Tour::where('m__users_id', $m__users_id)->orderBy('start_datetime','DESC')->get()->first();
+        $all_t_Tours = t_Tour::where('m__users_id', $m__users_id)->get();
         //dd($current_tour->m_tours['tour_title']);
+        if($tours != null){
         return view('tourselection', compact('tours','current_tour','all_t_Tours'));
+        }
+        else{
+            return view('emptycheckpoints', compact('tours'));
+        }
     }
 
     /**
@@ -64,8 +69,6 @@ class t_TourWebController extends Controller
         $t_tour->m__users_id = $u_id;
         $t_tour->m__tours_id = $id ;
         $t_tour->start_datetime = $mytime->toDateTimeString();
-        $t_tour->end_datetime = $mytime->toDateTimeString();
-        $t_tour->cancellation_datetime = $mytime->toDateTimeString();
         $t_tour->status = 'InProgress';
        
         $t_tour->save();
@@ -97,8 +100,8 @@ class t_TourWebController extends Controller
     public function show(Request $request,$id)
     {
         
-        $tour = m_Tour::find($id);
-        if($tour){
+        $tours = m_Tour::find($id);
+        if($tours){
             $m__tours_id = $id;
             $m__users_id = m_Users::find(Auth::id())->id;
             //dd($m__users_id);
@@ -113,11 +116,11 @@ class t_TourWebController extends Controller
             
 
             
-            $query_checkpoints = m_Checkpoint::where('m__tours_id',$m__tours_id);
+            $query_checkpoints = m_Checkpoint::where('m__tour_id',$m__tours_id);
             $total = 0;
-            if($query_checkpoints !=null){
+            if($query_checkpoints != null){
             $checkpoints = $query_checkpoints->orderBy('distance')->get();
-            $checkpointsr = m_Checkpoint::where('m__tours_id',$m__tours_id)->orderBy('distance', 'DESC')->get();
+            $checkpointsr = m_Checkpoint::where('m__tour_id',$m__tours_id)->orderBy('distance', 'DESC')->get();
             foreach ($checkpoints as $checkpoint) {
                 if($checkpoint->checkpoint_category == 'endpoint'){
                     $total = $checkpoint->distance;
@@ -141,19 +144,19 @@ class t_TourWebController extends Controller
                 $steps = 0;
             }
             $user_stride = m_Users::find(Auth::id())->stride;
+            $current_tour = t_Tour::where('m__users_id', $m__users_id)->orderBy('start_datetime','DESC')->get()->first();
             
-
         
             if($checkpoints == null || $checkpointsr == null){
-                return view('emptycheckpoints', compact('tour'));
+                return view('emptycheckpoints', compact('tours'));
                 }
             else{
-                return view('tourdetails', compact('tour','value','checkpoints','checkpointsr','total','steps','user_stride'));
+                return view('tourdetails', compact('tours','current_tour','value','checkpoints','checkpointsr','total','steps','user_stride'));
 
             }
         }
         else{
-            return view('emptycheckpoints', compact('tour'));
+            return view('emptycheckpoints', compact('tours'));
         }
     }
 

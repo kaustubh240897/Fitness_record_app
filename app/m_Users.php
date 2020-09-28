@@ -35,17 +35,17 @@ class m_Users extends Model
     }
 
     protected $table = "m__users";
-    protected $primarykey=['id','users_id'];
-    // protected $fillable = [
-    //     'serial_number',
-    //     'stride',
-    //     'step_goal_per_day',
-    //     'step_goals_per_month',
-    //     'tour_level',
-    //     'motion_app',
-    //     'motion_web',
+    protected $primarykey=['id'];
+    protected $fillable = [
+        'serial_number',
+        'stride',
+        'step_goal_per_day',
+        'step_goals_per_month',
+        'tour_level',
+        'motion_app',
+        'motion_web',
 
 
-    // ];
+    ];
 
 }

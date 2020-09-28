@@ -4,13 +4,13 @@ namespace App;
 use App\m_Collection;
 use App\m_Users;
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 class t_Collection extends Model
 {
-    //
+    use SoftDeletes;
     public function m_collections()
     {
-        return $this->belongsTo(m_Collection::class);
+        return $this->belongsTo(m_Collection::class, 'm__collection_id');
     }
     public function m_users()
     {

@@ -9,7 +9,16 @@
 @endif
 
 <h2> Select your tour</h2>
+@if(! empty($current_tour))
 <h4> your current tour is {{ $current_tour->m_tours->tour_title }} </h4>
+
+@else
+<h4> You have not selected any tour please select a tour. </h4>
+@endif
+
+@if(! empty($current_tour) && $current_tour->status == 'Done')
+<h4> Your tour has been completed Please select another tour. </h4>
+@endif
 <table class="table">
   <thead class="black white-text">
     <tr>

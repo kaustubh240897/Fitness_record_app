@@ -15,15 +15,17 @@ class CreateMCheckpointsTable extends Migration
     {
         Schema::create('m__checkpoints', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('m__tours_id');
-            $table->foreign('m__tours_id')->references('id')->on('m__tours')->onDelete('cascade');
+            $table->foreignId('m__tour_id')
+            ->constrained('m__tours')
+            ->onDelete('cascade');
             $table->string('checkpoint_title', 255);
             $table->enum('checkpoint_category', ['start', 'intermediate', 'spot', 'endpoint']);
             $table->integer('distance');
             $table->string('comments', 255);
             $table->string('prefectures', 255);
-            $table->unsignedBigInteger('m__collections_id');
-            $table->foreign('m__collections_id')->references('id')->on('m__collections')->onDelete('cascade');
+            $table->foreignId('m__collection_id')
+            ->constrained('m__collections')
+            ->onDelete('cascade');
             $table->timestamps();
         });
     }

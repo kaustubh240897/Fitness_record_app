@@ -3,15 +3,23 @@
 @section('content')
 <div class='container'>
 
-
- Tour title <h2>{{ $tour->tour_title }}  (distance-: @foreach ($checkpoints as $checkpoint) @if($checkpoint->checkpoint_category == 'endpoint')  {{ $checkpoint->distance }}Km @endif @endforeach)   </h2>
- Tour comment -: {{ $tour->tour_comment }}
+@if(! empty($current_tour) && $current_tour->status == 'Done')
+<h4> Your tour has been completed Please select another tour. </h4>
+@elseif(! empty($current_tour) && $current_tour->status == 'Inprogress')
+<h4> Your selected tour is {{ $current_tour->m_tours->tour_title }} </h4>
+@else
+<h4> You have not selected any tour.</h4>
+@endif
+ 
+ Tour title <h2>{{ $tours->tour_title }}  (distance-: @if($checkpoints->count() > 0) @foreach ($checkpoints as $checkpoint) @if($checkpoint->checkpoint_category == 'endpoint')  {{ $checkpoint->distance }}Km  @endif  @endforeach @else 0 km @endif)   </h2>
+ Tour comment -: {{ $tours->tour_comment }}
 
  <h3>Checkpoints  </h3>
+ @if($checkpoints->count() > 0)
  @if($value == 'false' || $value == 'null')
  Start
- 
- @foreach ($checkpoints as $checkpoint) 
+
+ @foreach ($checkpoints as $checkpoint)
    
      <h4>{{$loop->iteration}}. {{ $checkpoint->checkpoint_title }} {{ $checkpoint->checkpoint_category }}  {{ $checkpoint->distance }}Km</h4>
      @if($checkpoint->distance <  $user_stride/100000 * $steps )
@@ -31,6 +39,9 @@ Start
  @endforeach
  End
  
+@endif
+@else
+<h4> Sorry there are no checkpoints.</h4>
 @endif
 
  <h3> You covered {{ $user_stride/100000 * $steps }} (Km) </h3>
