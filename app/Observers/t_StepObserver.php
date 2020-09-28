@@ -60,7 +60,7 @@ class t_StepObserver
         
         $get_t_tours = t_Tour::where('m__users_id', $m__user_id)->orderBy('start_datetime','DESC')->first();
         $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->orderBy('created_at', 'DESC')->first();
-        //$t_collection = new t_Collection;
+        $t_collection = new t_Collection;
         
            
             if($get_t_tours->status == 'Done'){
@@ -81,17 +81,19 @@ class t_StepObserver
             else{
                 foreach($get_t_tours->m_tours->checkpoints->reverse() as $checkpoint){
                     if($get_t_collections != null){
-                        if($get_t_collections->m__collection_id == $checkpoint->m__collection_id){
-                        break;
-                        }
-                    }
-                    if($distanceCovered >= $checkpoint->distance ){
+                   
+                    
+                    if($distanceCovered >= $checkpoint->distance && $get_t_collections->m__collection_id != $checkpoint->m__collection_id ){
                         $t_collection = new t_Collection;
                         $t_collection->m__users_id = $m__user_id;
                         $t_collection->m__collection_id = $checkpoint->m__collection_id;
                         $t_collection->save();
                         break;
                     
+                    }
+                        if($get_t_collections->m__collection_id == $checkpoint->m__collection_id){
+                        break;
+                        }
                     }
                 
                  
