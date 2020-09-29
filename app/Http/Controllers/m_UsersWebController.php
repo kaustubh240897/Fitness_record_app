@@ -29,8 +29,9 @@ class m_UsersWebController extends Controller
      */
     public function create()
     {
-        //
-        return view('create');
+        $m_user = m_Users::find(Auth::id());
+        
+        return view('create', compact('m_user'));
     }
 
     /**

@@ -122,7 +122,9 @@
     </div>
   </div>
 </form>
-
+@if(! empty($m_user) )
+<div><a href="{{ url('/createtour') }}" >   <button type="button" class="btn btn-warning"> please Join the tour </button> </a> </div>
+@endif
 </div>
 
 @endsection

@@ -15,11 +15,11 @@ class m_Collection extends Model
     }
      public function m__tours()
     {
-        return $this->hasMany(m_Tour::class);
+        return $this->hasOne(m_Tour::class);
     }
      public function m__checkpoints()
     {
-        return $this->hasMany(m_Checkpoint::class);
+        return $this->hasOne(m_Checkpoint::class);
     }
     protected $table = "m__collections";
     protected $fillable = [

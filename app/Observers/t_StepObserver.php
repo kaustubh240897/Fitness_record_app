@@ -58,12 +58,21 @@ class t_StepObserver
                 
             }
         
-        $get_t_tours = t_Tour::where('m__users_id', $m__user_id)->orderBy('start_datetime','DESC')->first();
-        $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->orderBy('created_at', 'DESC')->first();
+        // $get_t_tours = t_Tour::where('m__users_id', $m__user_id)->orderBy('start_datetime','DESC')->first();
+        // $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->orderBy('created_at', 'DESC')->first();
+
+
+        $get_latest_t_tour = t_Tour::where('m__users_id', $m__user_id)->orderBy('start_datetime','DESC')->first();
+        $latest_t_tour_datetime = $get_latest_t_tour->start_datetime;
+        $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->where('created_at', '>=', $latest_t_tour_datetime)->get();
+        $collection_memory = [];
+        foreach($get_t_collections as $get_t_collection){
+            $collection_memory[]= $get_t_collection->m__collection_id;
+        }
         $t_collection = new t_Collection;
         
            
-            if($get_t_tours->status == 'Done'){
+            if($get_latest_t_tour->status == 'Done'){
                 if($distanceCovered >= $total ){
                         $t_collection = new t_Collection;
                         $t_collection->m__users_id = $m__user_id;
@@ -73,17 +82,20 @@ class t_StepObserver
                     }
                 $t_collection = new t_Collection;
                 $t_collection->m__users_id = $m__user_id;
-                $t_collection->m__collection_id = $get_t_tours->m_tours->m__collection_id;
+                $t_collection->m__collection_id = $get_latest_t_tour->m_tours->m__collection_id;
                 $t_collection->save();
                 
                   
             }
             else{
-                foreach($get_t_tours->m_tours->checkpoints->reverse() as $checkpoint){
-                    if($get_t_collections != null){
-                   
+                foreach($get_latest_t_tour->m_tours->checkpoints as $checkpoint){
+                    // if($get_t_collections != null){
+                    //     if(in_array($get_t_collections->m__collection_id, $collection_memory)){
+                    //     break;
+                    //     }
+                    // }
                     
-                    if($distanceCovered >= $checkpoint->distance && $get_t_collections->m__collection_id != $checkpoint->m__collection_id ){
+                    if($distanceCovered >= $checkpoint->distance && !(in_array($checkpoint->m__collection_id, $collection_memory)) ){
                         $t_collection = new t_Collection;
                         $t_collection->m__users_id = $m__user_id;
                         $t_collection->m__collection_id = $checkpoint->m__collection_id;
@@ -91,10 +103,8 @@ class t_StepObserver
                         break;
                     
                     }
-                        if($get_t_collections->m__collection_id == $checkpoint->m__collection_id){
-                        break;
-                        }
-                    }
+                       
+                    
                 
                  
                 } 

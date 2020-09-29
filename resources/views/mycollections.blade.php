@@ -8,28 +8,27 @@
 </div>
 @endif
 
-
-
-
 <br/>
+@if($get_t_collections->count() !=0)
+    @foreach($get_t_collections as $get_t_collection)
+    @if($get_t_collection->m_collections->collection_category == 'tour')
+    {{ $loop->iteration }}.     <b> <a href="{{ route('collectiondetails', $get_t_collection->m_collections->id) }}">{{ $get_t_collection->m_collections->collection_title }} </a> </b>   {{ $get_t_collection->created_at }} 
+      
+      *{{ $get_t_collection->m_collections->collection_category }}   <b> {{ $get_t_collection->m_collections->m__tours->tour_title }} </b>   {{ $counter[$loop->iteration-1] }} times completed.
+    @else
+      {{ $loop->iteration }}.   <b><a href="{{ route('collectiondetails', $get_t_collection->m_collections->id) }}"> {{ $get_t_collection->m_collections->collection_title }} </a> </b> {{ $get_t_collection->created_at }} 
+      
+      {{ $get_t_collection->m_collections->collection_category }} 
+     
+      <b> {{ $get_t_collection->m_collections->m__checkpoints->checkpoint_title }}</b> {{ $counter[$loop->iteration-1] }} times completed.
+     
+    @endif
+      <br/>
+    @endforeach
 
-@foreach($get_t_collections as $get_t_collection)
-@if($get_t_collection->m_collections->collection_category == 'tour')
-{{ $loop->iteration }}.   {{ $get_t_collection->created_at }} 
-  
-  *{{ $get_t_collection->m_collections->collection_category }}  @foreach($get_t_collection->m_collections->m__tours as $m_tour) <b> {{ $m_tour->tour_title }}</b> {{ $counter[$loop->iteration-1] }} @endforeach
 @else
-  {{ $loop->iteration }}.   {{ $get_t_collection->created_at }} 
-  
-  {{ $get_t_collection->m_collections->collection_category }} 
-  @foreach($get_t_collection->m_collections->m__checkpoints as $m_checkpoint)
-  <b> {{ $m_checkpoint->checkpoint_title }}</b> {{ $counter[$loop->parent->iteration-1] }}
-  @endforeach
+<h1> you don't have any collections yet! </h1>
 @endif
-  <br/>
-@endforeach
-
-
 
 
 

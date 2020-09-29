@@ -6,6 +6,7 @@ use App\m_Checkpoint;
 use App\m_Tour;
 use App\m_Users;
 use App\t_Collection;
+use App\m_Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -36,8 +37,6 @@ class t_CollectionWebController extends Controller
         }
         
         
-
-       
         return view('mycollections', compact( 'counter','get_t_collections','count_t_collections'));
 
         
@@ -70,9 +69,11 @@ class t_CollectionWebController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
-        //
+        $m__user_id = m_Users::find(Auth::id())->id;
+        $my_collections = t_Collection::where('m__users_id', $m__user_id)->where('m__collection_id', $id)->first();
+        return view('mycollectionsdetails', compact('my_collections'));
     }
 
     /**

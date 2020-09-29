@@ -100,6 +100,6 @@
     
 </div>
 </form>
-
+<div> <a href="{{ url('/mycollection') }}" >   <button type="button" class="btn btn-success"> My collections </button> </a> </div>
 </div>
 @endsection
