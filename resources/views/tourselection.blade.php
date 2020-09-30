@@ -100,6 +100,7 @@
     
 </div>
 </form>
-<div> <a href="{{ url('/mycollection') }}" >   <button type="button" class="btn btn-success"> My collections </button> </a> </div>
+<div> <a href="{{ url('/mycollection') }}" >   <button type="button" class="btn btn-success"> My collections </button> </a> </div> <br/>
+<div> <a href="{{ url('/userdailyhistory') }}" >   <button type="button" class="btn btn-success"> My History </button> </a> </div>
 </div>
 @endsection

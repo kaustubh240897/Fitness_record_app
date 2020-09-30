@@ -11,7 +11,7 @@
 <h4> You have not selected any tour.</h4>
 @endif
  
- Tour title <h2>{{ $tours->tour_title }}  (distance-: @if($checkpoints->count() > 0) @foreach ($checkpoints as $checkpoint) @if($checkpoint->checkpoint_category == 'endpoint')  {{ $checkpoint->distance }}Km  @endif  @endforeach @else 0 km @endif)   </h2>
+ Tour title <h2>{{ $tours->tour_title }}  distance-: {{ $total }} Km</h2>
  Tour comment -: {{ $tours->tour_comment }}
 
  <h3>Checkpoints  </h3>

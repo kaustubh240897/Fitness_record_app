@@ -109,7 +109,7 @@ class t_TourWebController extends Controller
         
             $get_t_tour = t_Tour::where('m__tours_id', $m__tours_id)->where('m__users_id', $m__users_id)->where('status', 'Inprogress')->orderBy('start_datetime','DESC')->first();
             if($get_t_tour !=null){
-            $tour_datetime = $get_t_tour->created_at->toDateTimeString();
+                $tour_datetime = $get_t_tour->created_at->toDateTimeString();
             }
             
             //dd($tour_datetime);
@@ -119,8 +119,8 @@ class t_TourWebController extends Controller
             $query_checkpoints = m_Checkpoint::where('m__tour_id',$m__tours_id);
             $total = 0;
             if($query_checkpoints != null){
-            $checkpoints = $query_checkpoints->orderBy('distance')->get();
-            $checkpointsr = m_Checkpoint::where('m__tour_id',$m__tours_id)->orderBy('distance', 'DESC')->get();
+                $checkpoints = $query_checkpoints->orderBy('distance')->get();
+                $checkpointsr = m_Checkpoint::where('m__tour_id',$m__tours_id)->orderBy('distance', 'DESC')->get();
             foreach ($checkpoints as $checkpoint) {
                 if($checkpoint->checkpoint_category == 'endpoint'){
                     $total = $checkpoint->distance;
