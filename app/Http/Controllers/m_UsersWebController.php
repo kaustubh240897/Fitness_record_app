@@ -69,6 +69,9 @@ class m_UsersWebController extends Controller
     public function myPage(Request $request){
         $m__users_id = m_Users::find(Auth::id())->id;
         $today_data = t_Steps::where('m__users_id', $m__users_id)->whereDate('step_actual_datetime', Carbon::now()->toDateString())->get()->sum('steps');
+        $current_week_datas = t_Steps::where('m__users_id', $m__users_id)->whereBetween('step_actual_datetime', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->get()->groupBy(function ($val) {
+            return Carbon::parse($val->step_actual_datetime)->format('d');
+        });
         $get_m_user_stride = m_Users::find(Auth::id())->stride;
         $get_m_user_daily_goal = m_Users::find(Auth::id())->step_goal_per_day;
         $get_t_tour = t_Tour::where('m__users_id', $m__users_id)->orderBy('start_datetime', 'DESC')->first();
@@ -110,7 +113,7 @@ class m_UsersWebController extends Controller
         }
         
     
-        return view('myPage', compact('today_data','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','session_value','checkpoints','checkpointsr','total'));
+        return view('myPage', compact('today_data','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','session_value','checkpoints','checkpointsr','total','current_week_datas'));
 
     }
 

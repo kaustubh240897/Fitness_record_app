@@ -45,6 +45,25 @@ Goal -: {{ $get_m_user_daily_goal }} per day
 @endif
 
 
+<div>  <h1> your current Week's data </h1> </div>
+@foreach($current_week_datas as $current_week_data => $steps)
+@php($total = 0)
+        @foreach($steps as $step)
+            
+             @php($total += $step->steps)
+        @endforeach
+      @if($total > 0)
+      {{ date("Y-m-d ", strtotime($step->step_actual_datetime))  }}   {{ $total }}  {{ $total*$get_m_user_stride/100000 }}(km)  @if($total > $get_m_user_daily_goal ) * (goal {{ $get_m_user_daily_goal }} steps)  @endif
+      @else
+       {{ date("Y-m-d ", strtotime($step->step_actual_datetime))  }}   0
+      @endif
+      <br/>
+
+@endforeach
+
+
+
+
 
 </div>
 

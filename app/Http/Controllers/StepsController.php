@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 use App\Http\Requests\t_StepsRequest;
 use App\Http\Resources\t_StepsResource;
-use Illuminate\Http\Request;
 
+use Illuminate\Http\Request;
 use App\t_Steps;
 use App\m_Users;
 //use App\User;
+use App\Http\Resources\t_StepsCollection;
 use Validator;
 use Symfony\Component\HttpFoundation\Response;
 class StepsController extends Controller
@@ -22,7 +23,7 @@ class StepsController extends Controller
     {
         //
         
-        return t_StepsResource::collection($m_user->t_steps);
+        return t_StepsCollection::collection($m_user->t_steps);
     }
 
     // public function stepsuserindex(Request $request, m_Users $id)
@@ -80,14 +81,16 @@ class StepsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($m_user, $step)
     {
-        //
-        // $steps =  t_Steps::find($id);
-        // if(is_null($steps)){
-        // return response()->json(["message" => "Record not found"], 404);
-        // }
-        // return response()->json($steps,201);
+        
+        $steps =  t_Steps::where('m__users_id', $m_user)->where('id', $step)->first();
+        if(is_null($steps)){
+        return response()->json(["message" => "Record not found"], 404);
+        }
+        return new t_StepsResource($steps,201);
+         //return new t_StepsResource($m_user, $step);
+
     }
 
     /**

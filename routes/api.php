@@ -48,7 +48,7 @@ Route::group(['prefix'=>'m_collections'], function(){
 
 
 // Route::get('steps', 'StepsController@index');
-// Route::get('steps/{id}', 'StepsController@show');
+ Route::get('m_users/{m_user}/steps/{step}', 'StepsController@show');
 // //Route::get('usersteps/{serial_number}', 'StepsController@stepsuserindex');
 // Route::post('steps', 'StepsController@store');
 // Route::put('steps/{step_id}', 'StepsController@update');
