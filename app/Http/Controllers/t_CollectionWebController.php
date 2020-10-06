@@ -22,8 +22,9 @@ class t_CollectionWebController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $m__user_id = m_Users::find(Auth::id())->id;
+    {  
+    if(m_Users::where('users_id',Auth::id())->count() >0){
+        $m__user_id = m_Users::where('users_id',Auth::id())->first()->id;
         
         // $t_tours = t_Tour::distinct()->where('m__users_id', $m__user_id)->get(['m__tours_id','status']);
         // $counts = t_Tour::where('m__users_id', $m__user_id)->where('status', 'Done')->get()->groupBy('m__tours_id');
@@ -38,6 +39,43 @@ class t_CollectionWebController extends Controller
         
         
         return view('mycollections', compact( 'counter','get_t_collections','count_t_collections'));
+    }
+    else{
+        $counter = null;
+        $get_t_collections = null;
+        $count_t_collections = null;
+        return view('mycollections', compact( 'counter','get_t_collections','count_t_collections'));
+    }
+
+
+        
+    }
+
+    public function reverseIndex()
+    {
+        if(m_Users::where('users_id',Auth::id())->count() >0){
+            $m__user_id = m_Users::where('users_id',Auth::id())->first()->id;
+            
+            // $t_tours = t_Tour::distinct()->where('m__users_id', $m__user_id)->get(['m__tours_id','status']);
+            // $counts = t_Tour::where('m__users_id', $m__user_id)->where('status', 'Done')->get()->groupBy('m__tours_id');
+            
+
+            $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->orderBy('created_at', 'DESC')->get()->unique('m__collection_id');
+            $count_t_collections = t_Collection::where('m__users_id', $m__user_id)->orderBy('created_at', 'DESC')->get()->groupBy('m__collection_id');
+            $counter = [];
+            foreach($count_t_collections as $count){
+                $counter[] = $count->count();
+            }
+            
+            
+            return view('mycollections', compact( 'counter','get_t_collections','count_t_collections'));
+        }
+        else{
+            $counter = null;
+            $get_t_collections = null;
+            $count_t_collections = null;
+            return view('mycollections', compact( 'counter','get_t_collections','count_t_collections'));
+        }
 
         
     }
@@ -71,9 +109,17 @@ class t_CollectionWebController extends Controller
      */
     public function show(Request $request, $id)
     {
-        $m__user_id = m_Users::find(Auth::id())->id;
-        $my_collections = t_Collection::where('m__users_id', $m__user_id)->where('m__collection_id', $id)->first();
-        return view('mycollectionsdetails', compact('my_collections'));
+        if(m_Users::where('users_id',Auth::id())->count() >0){
+            $m__user_id = m_Users::where('users_id',Auth::id())->first()->id;
+            $my_collections = t_Collection::where('m__users_id', $m__user_id)->where('m__collection_id', $id)->first();
+            $count = t_Collection::where('m__users_id', $m__user_id)->where('m__collection_id', $id)->count();
+            return view('mycollectionsdetails', compact('my_collections','count'));
+        }
+        else{
+            $my_collections = null;
+            $count = 0;
+            return view('mycollectionsdetails', compact('my_collections','count'));
+        }
     }
 
     /**

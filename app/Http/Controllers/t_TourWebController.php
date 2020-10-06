@@ -24,16 +24,76 @@ class t_TourWebController extends Controller
      */
     public function index()
     {
-        $tours = m_Tour::all();
-        $m__users_id = m_Users::find(Auth::id())->id;
-        $current_tour = t_Tour::where('m__users_id', $m__users_id)->orderBy('start_datetime','DESC')->get()->first();
-        $all_t_Tours = t_Tour::where('m__users_id', $m__users_id)->get();
-        //dd($current_tour->m_tours['tour_title']);
-        if($tours != null){
-        return view('tourselection', compact('tours','current_tour','all_t_Tours'));
+        if(m_Users::where('users_id',Auth::id())->count() >0){
+       
+            $tours = m_Tour::all();
+            $m__users_id = m_Users::where('users_id',Auth::id())->first()->id;
+            $current_tour = t_Tour::where('m__users_id', $m__users_id)->orderBy('start_datetime','DESC')->get()->first();
+            $all_t_Tours = t_Tour::where('m__users_id', $m__users_id)->get();
+            
+            $get_m_user_stride = m_Users::where('users_id',Auth::id())->first()->stride;
+            $get_m_user_daily_goal = m_Users::where('users_id',Auth::id())->first()->step_goal_per_day;
+            $get_t_tour = t_Tour::where('m__users_id', $m__users_id)->orderBy('start_datetime', 'DESC')->first();
+            // for identifying tour is forward or reverse
+            if($get_t_tour != null){
+                $get_m_tour_id = $get_t_tour->m__tours_id;
+                //$get_t_tour_status = $get_t_tour->status;
+                $step_start_datetime = $get_t_tour->start_datetime;
+                $query_checkpoints = m_Checkpoint::where('m__tour_id',$get_m_tour_id);
+                $total = 0;
+                if($query_checkpoints != null){
+                    $checkpoints = $query_checkpoints->orderBy('distance')->get();
+                    foreach ($checkpoints as $checkpoint) {
+                        if($checkpoint->checkpoint_category == 'endpoint'){
+                            $total = $checkpoint->distance;
+                            }
+                    }
+                }
+                else{
+                    $checkpoints = null;
+                    
+                    }
+                
+                if($get_t_tour !=null){
+                    $steps = t_Steps::where('m__users_id',$m__users_id)->where('step_actual_datetime', '>=', $step_start_datetime)->get()->sum('steps');
+                }
+                else{
+                    $steps = 0;
+                }
+            }
+            else{
+                $steps = 0;
+                $checkpoints = null;
+                $total = 0;
+
+            }
+
+            //dd($current_tour->m_tours['tour_title']);
+            if($tours != null){
+            return view('tourselection', compact('tours','current_tour','all_t_Tours','get_m_user_daily_goal','get_m_user_stride','get_t_tour','steps','checkpoints','total'));
+            }
+            else{
+                return view('emptycheckpoints', compact('tours'));
+            }
         }
         else{
-            return view('emptycheckpoints', compact('tours'));
+
+            $tours = null;
+            $current_tour = null;
+            $all_t_Tours = null;
+            $get_m_user_daily_goal = null;
+            $get_m_user_stride = null;
+            $get_t_tour  = null;
+            $steps = 0;
+            $checkpoints = null;
+            $total = 0;
+            if($tours != null){
+            return view('tourselection', compact('tours','current_tour','all_t_Tours','get_m_user_daily_goal','get_m_user_stride','get_t_tour','steps','checkpoints','total'));
+            }
+            else{
+                return view('emptycheckpoints', compact('tours'));
+            }
+
         }
     }
 
@@ -63,7 +123,7 @@ class t_TourWebController extends Controller
 
         $t_tour = new t_Tour;
         $mytime = Carbon::now();
-        $u_id = m_Users::find(Auth::id())->id;
+        $u_id = m_Users::where('users_id',Auth::id())->first()->id;
         
 
         $t_tour->m__users_id = $u_id;
@@ -99,64 +159,60 @@ class t_TourWebController extends Controller
      */
     public function show(Request $request,$id)
     {
-        
-        $tours = m_Tour::find($id);
-        if($tours){
-            $m__tours_id = $id;
-            $m__users_id = m_Users::find(Auth::id())->id;
-            //dd($m__users_id);
-            
-        
-            $get_t_tour = t_Tour::where('m__tours_id', $m__tours_id)->where('m__users_id', $m__users_id)->where('status', 'Inprogress')->orderBy('start_datetime','DESC')->first();
-            if($get_t_tour !=null){
-                $tour_datetime = $get_t_tour->created_at->toDateTimeString();
-            }
-            
-            //dd($tour_datetime);
-            
-
-            
-            $query_checkpoints = m_Checkpoint::where('m__tour_id',$m__tours_id);
-            $total = 0;
-            if($query_checkpoints != null){
-                $checkpoints = $query_checkpoints->orderBy('distance')->get();
-                $checkpointsr = m_Checkpoint::where('m__tour_id',$m__tours_id)->orderBy('distance', 'DESC')->get();
-            foreach ($checkpoints as $checkpoint) {
-                if($checkpoint->checkpoint_category == 'endpoint'){
-                    $total = $checkpoint->distance;
+        if(m_Users::where('users_id',Auth::id())->count() >0)
+        {
+            $tours = m_Tour::find($id);
+            if($tours){
+                $m__tours_id = $id;
+                $m__users_id = m_Users::where('users_id',Auth::id())->first()->id;
+                //dd($m__users_id);
+                $get_t_tour = t_Tour::where('m__tours_id', $m__tours_id)->where('m__users_id', $m__users_id)->where('status', 'Inprogress')->orderBy('start_datetime','DESC')->first();
+                if($get_t_tour !=null){
+                    $tour_datetime = $get_t_tour->created_at->toDateTimeString();
+                }
+                
+                //dd($tour_datetime);
+                $query_checkpoints = m_Checkpoint::where('m__tour_id',$m__tours_id);
+                $total = 0;
+                if($query_checkpoints != null){
+                    $checkpoints = $query_checkpoints->orderBy('distance')->get();
+                    $checkpointsr = m_Checkpoint::where('m__tour_id',$m__tours_id)->orderBy('distance', 'DESC')->get();
+                foreach ($checkpoints as $checkpoint) {
+                    if($checkpoint->checkpoint_category == 'endpoint'){
+                        $total = $checkpoint->distance;
+                        }
                     }
                 }
-            }
-            else{
-                
-                $checkpoints = null;
-                $checkpointsr = null;
-            }
-            
-        
-            $value = $request->session()->get('reverse','false');
-            
-        
-            if($get_t_tour !=null){
-                $steps = t_Steps::where('m__users_id',$m__users_id)->where('step_actual_datetime', '>=', $tour_datetime)->get()->sum('steps');
-            }
-            else{
-                $steps = 0;
-            }
-            $user_stride = m_Users::find(Auth::id())->stride;
-            $current_tour = t_Tour::where('m__users_id', $m__users_id)->orderBy('start_datetime','DESC')->get()->first();
-            
-        
-            if($checkpoints == null || $checkpointsr == null){
-                return view('emptycheckpoints', compact('tours'));
+                else{
+                    
+                    $checkpoints = null;
+                    $checkpointsr = null;
                 }
-            else{
-                return view('tourdetails', compact('tours','current_tour','value','checkpoints','checkpointsr','total','steps','user_stride'));
-
+                $value = $request->session()->get('reverse','false');
+                if($get_t_tour !=null){
+                    $steps = t_Steps::where('m__users_id',$m__users_id)->where('step_actual_datetime', '>=', $tour_datetime)->get()->sum('steps');
+                }
+                else{
+                    $steps = 0;
+                }
+                $user_stride = m_Users::where('users_id',Auth::id())->first()->stride;
+                $current_tour = t_Tour::where('m__users_id', $m__users_id)->orderBy('start_datetime','DESC')->get()->first();
+            
+                if($checkpoints == null || $checkpointsr == null){
+                    return view('emptycheckpoints', compact('tours'));
+                    }
+                else{
+                    return view('tourdetails', compact('tours','current_tour','value','checkpoints','checkpointsr','total','steps','user_stride'));
+                }
             }
-        }
+            else{
+                return view('emptycheckpoints', compact('tours'));
+            }
+        }    
         else{
+            $tours = null;
             return view('emptycheckpoints', compact('tours'));
+
         }
     }
 

@@ -17,7 +17,7 @@ class CreateMCollectionsTable extends Migration
             $table->id();
             $table->enum('collection_category', ['tour', 'checkpoint']);
             $table->string('collection_title', 255);
-            $table->string('path');
+            $table->string('path')->unique();
             $table->string('filename',255);
             $table->timestamps();
         });

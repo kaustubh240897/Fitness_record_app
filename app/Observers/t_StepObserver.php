@@ -21,8 +21,8 @@ class t_StepObserver
     {
         
         $currentTime = Carbon::now();
-        $m__user_id = m_Users::find(Auth::id())->id;
-        $user_stride = m_Users::find(Auth::id())->stride;
+        $m__user_id = m_Users::where('users_id', Auth::id())->first()->id;
+        $user_stride = m_Users::where('users_id', Auth::id())->first()->stride;
         
        
         $get_t_tour = t_Tour::where('m__users_id', $m__user_id)->where('status', 'Inprogress')->orderBy('start_datetime','DESC')->first();

@@ -22,114 +22,9 @@
 @endforeach
 @endif
 
-<!-- 
-<h2> Fill your details</h2>
- <div class="form-group row">
-
-    <a href="{{ url('/') }}" >  <button type="button" class="btn btn-primary mr-2">abcd </button> </a>
-
- 
-   
-      <button type="button" class="btn btn-primary mr-2">calender</button>
-   
- 
-   
-      <button type="button" class="btn btn-primary mr-2">Mypage</button>
-   
-  </div>
-<form action="{{ route('store') }}" method="POST" >
-{{ csrf_field() }}
-  <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Serial number</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" name="serialnumber" id="inputEmail3" placeholder="Serial number">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Stride Length</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" name="stridelength" id="inputEmail3" placeholder="Stride length">
-    </div>
-  </div>
-
-   <fieldset class="form-group">
-    <div class="row">
-      <legend class="col-form-label col-sm-2 pt-0">Daily goal</legend>
-      <div class="col-sm-10">
-        <div class="form-check">
-
-          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="1" >
-          <label class="form-check-label" for="gridRadios1">
-            Automatic
-             <div class="col-sm-10">
-            
-                <input type="text" class="form-control" name="dailygoal1" id="inputPassword3" placeholder="daily goal">
-              
-              </div>
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="2">
-          <label class="form-check-label" for="gridRadios2">
-            Manual
-             <div class="col-sm-10">
-          
-              <input type="text" class="form-control" name="dailygoal2" id="inputPassword3" placeholder="daily goal">
-          
-            </div>
-          </label>
-        </div>
-        
-      </div>
-    </div>
-  </fieldset>
-
- 
-   <div class="form-group row">
-    <label for="inputmonthlygoals" class="col-sm-2 col-form-label">Monthly Goal(steps)</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" name="monthlygoal" id="inputmonthlygoals" placeholder="monthly goal">
-    </div>
-  </div>
- 
-  <div class="form-group row">
-    <div class="col-sm-2">Checkbox</div>
-    <div class="col-sm-10">
-      <div class="form-check">
-        <input class="form-check-input" name="motionweb" value='1' type="checkbox" id="gridCheck1">
-        <label class="form-check-label" for="gridCheck1">
-          Motion web
-        </label>
-       
-      </div>
-       <div class="form-check">
-        <input class="form-check-input" name="motionapp" value='1' type="checkbox" id="gridCheck2">
-        <label class="form-check-label" for="gridCheck2">
-          Motion app
-        </label>
-       
-      </div>
-    </div>
-  </div>
-  <div class="form-group row">
-    <div class="col-sm-10">
-      <button type="submit" class="btn btn-primary">Apply</button>
-    </div>
-  </div>
-</form>
-@if(! empty($m_user) )
-<div><a href="{{ url('/createtour') }}" >   <button type="button" class="btn btn-warning"> please Join the tour </button> </a> </div>
-@endif
-</div> -->
 
 
-
-
-
-
-
-
- <style media="screen">
+<style media="screen">
       .btn.btn-lg {
         background-color: #ccece8 !important;
        /* padding: 12px 32px !important; */
@@ -150,16 +45,12 @@
       font-size: 70% !important;
     }
   </style>
+@if(! empty($m_users) && $m_users->users_id == Auth::id())
 
 <div class="container-fluid mt-1">
       <div class="row">
         <div class="col-xs-4 pr-3 pl-2">
          <a href="{{ url('/mypage') }}"> <button type="button" class="btn blue">My Page</button> </a>
-        </div>
-        <div class="col-xs-4 pr-3 pl-2">
-        @if(! empty($m_user))
-        <a href="{{ route('edit', $m_user->id) }}">  <button type="button" class="btn blue">Edit</button></a>
-        @endif
         </div>
         <div class="col-xs-6 pl-2 pt-2">
       @if(! empty($m_user))
@@ -171,7 +62,7 @@
         </div>
       </div>
     </div>
-<form action="{{ route('store') }}" method="POST" >
+<form action="{{ route('update',$m_users->id) }}" method="POST" >
 {{ csrf_field() }}
 <div class="container-fluid">
 <!-- temporary -->
@@ -181,7 +72,7 @@
         </div>
          <div class="container">
             <div class="d-flex flex-row-reverse p-0 d-inline-block justify-content-end">
-              <input type="text" placeholder="serialnumber" required='true' name='serialnumber' class="form-control mx-0 my-0 d-inline-block" style="width: 60%; height:10%; font-size:70%" id="serialnumberinput">
+              <input type="text" placeholder="serialnumber" required='true'  value="{{ $m_users->serial_number }}" name='serialnumber' class="form-control mx-0 my-0 d-inline-block" style="width: 60%; height:10%; font-size:70%" id="serialnumberinput">
             </div>
           </div>
       </div>
@@ -218,7 +109,7 @@
                 </div>
               </div>
               <div class="col-3 p-0 pl-1">
-                <input type="text" class="form-control d-inline-block" name='inputheight' style="width: 100%; height:50%; font-size:50%" id="heightinput" min='100' max='220' placeholder="Height in cm">
+                <input type="text" class="form-control d-inline-block" name='inputheight' value="{{ $m_users->stride * 2.5 }}" style="width: 100%; height:50%; font-size:50%" id="heightinput" min='100' max='220' placeholder="Height in cm">
               </div>
               <div class="col-3 p-0 pl-1">
                 <button type="button" class="btn blue cal" style="width: 100%; height:50%; font-size:70%" onclick="calculateStride()">Calculate</button>
@@ -232,7 +123,7 @@
           </div>
           <div class="container">
             <div class="d-flex flex-row-reverse p-0 d-inline-block justify-content-end">
-              <input type="number" placeholder="Stride length(in cm)" name='stridelength' class="form-control mx-0 my-0 d-inline-block" style="width: 60%; height:10%; font-size:70%" min="45" max="85" id="strideinput">
+              <input type="number" placeholder="Stride length(in cm)" value="{{ $m_users->stride }}" name='stridelength' class="form-control mx-0 my-0 d-inline-block" style="width: 60%; height:10%; font-size:70%" min="45" max="85" id="strideinput">
             </div>
           </div>
         </div>
@@ -267,7 +158,7 @@
               <div class="col-6 p-0">
                 <!-- <input type="text" class="form-control d-inline-block" style="width: 100%; height:50%; font-size:70%" id="inlineFormInputName2" placeholder="Gender"> -->
                 <div class="d-flex flex-row-reverse p-0 d-inline-block justify-content-center">
-                  <input type="number" name='dailygoal'  placeholder="Steps" class="form-control mx-0 my-0 d-inline-block" style="width: 100%; height:10%; font-size:70%" min="1000" max="10000" id="daily_stepsInput" onchange="estimateDailyDist()">
+                  <input type="number" name='dailygoal' value="{{ $m_users->step_goal_per_day }}"  placeholder="Steps" class="form-control mx-0 my-0 d-inline-block" style="width: 100%; height:10%; font-size:70%" min="0" max="10000" id="daily_stepsInput" onchange="estimateDailyDist()">
                 </div>
               </div>
               <div class="col-6 p-0 pl-1 text-align-right">
@@ -282,7 +173,9 @@
               <div class="col-6 p-0">
                 <!-- <input type="text" class="form-control d-inline-block" style="width: 100%; height:50%; font-size:70%" id="inlineFormInputName2" placeholder="Gender"> -->
                 <div class="d-flex flex-row-reverse p-0 d-inline-block justify-content-center">
-                  <input type="number" placeholder="Distance (in km)" name='dailydistance' class="form-control mx-0 my-0 d-inline-block" style="width: 100%; height:10%; font-size:70%" min="1" max="100" id="daily_distInput" onchange="estimateDailySteps()">
+            
+                  <input type="number" placeholder="Distance (in km)" value="{{ $m_users->step_goal_per_day*$m_users->user_stride/100000 }}" name='dailydistance' class="form-control mx-0 my-0 d-inline-block" style="width: 100%; height:10%; font-size:70%" min="0" max="100" id="daily_distInput" onchange="estimateDailySteps()">
+                
                 </div>
               </div>
               <div class="col-6 p-0 pl-1 text-align-right">
@@ -324,7 +217,7 @@
               <div class="col-6 p-0">
                 <!-- <input type="text" class="form-control d-inline-block" style="width: 100%; height:50%; font-size:70%" id="inlineFormInputName2" placeholder="Gender"> -->
                 <div class="d-flex flex-row-reverse p-0 d-inline-block justify-content-center">
-                  <input type="number" placeholder="Steps" name='monthlygoal' class="form-control mx-0 my-0 d-inline-block" style="width: 100%; height:10%; font-size:70%" min="1000" max="10000000" id="monthly_stepsInput" onchange="estimateMonthlyDist()">
+                  <input type="number" placeholder="Steps" name='monthlygoal' value="{{ $m_users->step_goals_per_month }}" class="form-control mx-0 my-0 d-inline-block" style="width: 100%; height:10%; font-size:70%" min="0" max="10000000" id="monthly_stepsInput" onchange="estimateMonthlyDist()">
                 </div>
               </div>
               <div class="col-6 p-0 pl-1 text-align-right">
@@ -339,7 +232,9 @@
               <div class="col-6 p-0">
                 <!-- <input type="text" class="form-control d-inline-block" style="width: 100%; height:50%; font-size:70%" id="inlineFormInputName2" placeholder="Gender"> -->
                 <div class="d-flex flex-row-reverse p-0 d-inline-block justify-content-center">
-                  <input type="number" placeholder="Distance (in km)" name='monthlydistance' class="form-control mx-0 my-0 d-inline-block" style="width: 100%; height:10%; font-size:70%" min="10" max="1000" id="monthly_distInput" onchange="estimateMonthlySteps()">
+            
+                  <input type="number" placeholder="Distance (in km)" name='monthlydistance' value="{{ $m_users->step_goals_per_month*$m_users->user_stride/100000 }}" class="form-control mx-0 my-0 d-inline-block" style="width: 100%; height:10%; font-size:70%" min="0" max="1000" id="monthly_distInput" onchange="estimateMonthlySteps()">
+                
                 </div>
               </div>
               <div class="col-6 p-0 pl-1 text-align-right">
@@ -361,11 +256,20 @@
       <p>Motion:-</p>
       <div class="d-flex flex-row justify-content-around justify-content-sm-start">
         <div class="form-check form-check-inline pl-3">
-          <input class="form-check-input" type="checkbox" name='motionapp' id="inlineCheckbox1" value="1">
+    
+        @if($m_users->motion_app == 0)
+          <input class="form-check-input" type="checkbox" name='motionapp' id="inlineCheckbox1" >
+        @else
+         <input class="form-check-input" type="checkbox" name='motionapp' id="inlineCheckbox1"  checked>
+        @endif
           <label class="form-check-label" for="inlineCheckbox1" style="font-size:70%">Animation in mobile application</label>
         </div>
         <div class="form-check form-check-inline pl-3">
-          <input class="form-check-input" type="checkbox" name='motionweb' id="inlineCheckbox2" value="1">
+        @if($m_users->motion_web == 0)
+          <input class="form-check-input" type="checkbox" name='motionweb' id="inlineCheckbox2" >
+        @else
+         <input class="form-check-input" type="checkbox" name='motionweb' id="inlineCheckbox2" checked>
+        @endif
           <label class="form-check-label" for="inlineCheckbox2" style="font-size:70%">Animation in web application</label>
         </div>
       </div>
@@ -398,6 +302,9 @@
       </div>
     </div>
   </form>
+
+
+
   <script type="text/javascript">
     function calculateStride() {
       var x = document.getElementById("heightinput").value;
@@ -452,5 +359,7 @@
       }
     }
   </script>
-
-@endsection
+@else
+<h3> Sorry! You are not authorized to see this page. </h3>
+@endif
+  @endsection
