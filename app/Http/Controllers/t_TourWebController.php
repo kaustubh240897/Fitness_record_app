@@ -129,7 +129,7 @@ class t_TourWebController extends Controller
         $t_tour->m__users_id = $u_id;
         $t_tour->m__tours_id = $id ;
         $t_tour->start_datetime = $mytime->toDateTimeString();
-        $t_tour->status = 'InProgress';
+        $t_tour->status = 'Inprogress';
        
         $t_tour->save();
         return redirect(route('index'))->with('successMsg','your tour Successfully selected');
