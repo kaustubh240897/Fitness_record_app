@@ -232,7 +232,7 @@ else{
   console.log(weekDates[1].getMonth());
 
   var dataLabel = ['Days', 'Steps', { role: 'style' }, { role: 'annotation' } ];
-  var steps = 100;
+  var steps = 0;
   var row1 = ['Mon', steps, '#7acdc4', weekDates[0].getDate() ];
   var row2 = ['Tue', steps, '#7acdc4', weekDates[1].getDate() ];
   var row3 = ['Wed', steps, '#7acdc4', weekDates[2].getDate() ];
