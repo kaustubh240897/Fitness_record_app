@@ -53,8 +53,8 @@
          <a href="{{ url('/mypage') }}"> <button type="button" class="btn blue">My Page</button> </a>
         </div>
         <div class="col-xs-6 pl-2 pt-2">
-      @if(! empty($m_user))
-      <p class="text-break mb-0">Level:- {{ $m_user->tour_level }} </p>
+      @if(! empty($m_users))
+      <p class="text-break mb-0">Level:- {{ $m_users->tour_level }} </p>
       @else
       <p class="text-break mb-0">Level:- None </p>
       @endif
