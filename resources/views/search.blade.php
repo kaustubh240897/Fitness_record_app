@@ -1,15 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- <div class='container'>
 
-<h4> Your data on {{ $search }}</h4>
-
-{{ $search }} {{ $search_data }}  {{ $search_data*$get_m_user_stride/100000 }}(km)  @if($search_data > $get_m_user_daily_goal ) * (goal {{ $get_m_user_daily_goal }} steps daily)  @endif
-
-
-
-</div> -->
 
 <div class="table-responsive-sm mt-4 mx-sm-3">
      @if(! empty($search_data)) 

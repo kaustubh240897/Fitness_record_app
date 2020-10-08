@@ -525,7 +525,7 @@ class m_UsersWebController extends Controller
            $m_users->motion_app = $request->input('motionapp')? 1:0;
        }
         $m_users->save();
-        return redirect(route('create'))->with('successMsg','your info Successfully updated');
+        return redirect(route('index'))->with('successMsg','your info Successfully updated');
     }
     else{
         return redirect(route('create'))->with('dangerMsg','your are sending invalid data');

@@ -154,7 +154,7 @@ background-color: #f2dcdb !important;
         @endif
         <div class="col">
           <a href="{{ url('/mycollection') }}" >  <button type="button" class="btn blue">MyCollection</button> </a>
-          <a href="{{ url('/mypage') }}" > <button type="button" class="btn blue">MyProfile</button> </a>
+          <a href="{{ url('/') }}"> <button type="button" class="btn blue">MyProfile</button> </a>
           <a href="{{ url('/userdailyhistory') }}" > <button type="button" class="btn blue">MyHistory</button> </a>
         </div>
       </div>
