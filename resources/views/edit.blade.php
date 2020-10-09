@@ -109,7 +109,7 @@
                 </div>
               </div>
               <div class="col-3 p-0 pl-1">
-                <input type="text" class="form-control d-inline-block" name='inputheight' value="{{ $m_users->stride * 2.5 }}" style="width: 100%; height:50%; font-size:50%" id="heightinput" min='100' max='220' placeholder="Height in cm">
+                <input type="number" class="form-control d-inline-block" name='inputheight' value="{{ $m_users->stride * 2.5 }}" style="width: 100%; height:50%; font-size:50%" id="heightinput" min='112' max='212' placeholder="Height in cm">
               </div>
               <div class="col-3 p-0 pl-1">
                 <button type="button" class="btn blue cal" style="width: 100%; height:50%; font-size:70%" onclick="calculateStride()">Calculate</button>
@@ -158,7 +158,7 @@
               <div class="col-6 p-0">
                 <!-- <input type="text" class="form-control d-inline-block" style="width: 100%; height:50%; font-size:70%" id="inlineFormInputName2" placeholder="Gender"> -->
                 <div class="d-flex flex-row-reverse p-0 d-inline-block justify-content-center">
-                  <input type="number" name='dailygoal' value="{{ $m_users->step_goal_per_day }}"  placeholder="Steps" class="form-control mx-0 my-0 d-inline-block" style="width: 100%; height:10%; font-size:70%" min="0" max="10000" id="daily_stepsInput" onchange="estimateDailyDist()">
+                  <input type="number" name='dailygoal' value="{{ $m_users->step_goal_per_day }}"  placeholder="Steps" class="form-control mx-0 my-0 d-inline-block" style="width: 100%; height:10%; font-size:70%" min="0" max="181000" id="daily_stepsInput" onchange="estimateDailyDist()">
                 </div>
               </div>
               <div class="col-6 p-0 pl-1 text-align-right">
@@ -217,7 +217,7 @@
               <div class="col-6 p-0">
                 <!-- <input type="text" class="form-control d-inline-block" style="width: 100%; height:50%; font-size:70%" id="inlineFormInputName2" placeholder="Gender"> -->
                 <div class="d-flex flex-row-reverse p-0 d-inline-block justify-content-center">
-                  <input type="number" placeholder="Steps" name='monthlygoal' value="{{ $m_users->step_goals_per_month }}" class="form-control mx-0 my-0 d-inline-block" style="width: 100%; height:10%; font-size:70%" min="0" max="10000000" id="monthly_stepsInput" onchange="estimateMonthlyDist()">
+                  <input type="number" placeholder="Steps" name='monthlygoal' value="{{ $m_users->step_goals_per_month }}" class="form-control mx-0 my-0 d-inline-block" style="width: 100%; height:10%; font-size:70%" min="0" max="1818000" id="monthly_stepsInput" onchange="estimateMonthlyDist()">
                 </div>
               </div>
               <div class="col-6 p-0 pl-1 text-align-right">
@@ -313,9 +313,9 @@
       var p = document.getElementById("p_strideLength");
       var strideLength;
       if (option==="Male") {
-        strideLength = x/2.5;
+        strideLength = (x/2.5).toFixed(0);
       } else {
-        strideLength = x/2.5;
+        strideLength = (x/2.5).toFixed(0);
       }
       p.innerHTML = strideLength;
       console.log(x);
@@ -332,7 +332,7 @@
 
 
       if (daily_steps>=1) {
-        p_dailyEstDist.innerHTML = (daily_steps * 55/100000).toFixed(2);
+        p_dailyEstDist.innerHTML = (daily_steps * 55/100000).toFixed(0);
       }
 
     }
@@ -341,21 +341,21 @@
       var p_dailyEstSteps = document.getElementById("daily_estSteps");
 
       if (daily_dist>=1) {
-        p_dailyEstSteps.innerHTML = (daily_dist*100000/55).toFixed(2);
+        p_dailyEstSteps.innerHTML = (daily_dist*100000/55).toFixed(0);
       }
     }
     function estimateMonthlyDist() {
       var monthly_steps = document.getElementById("monthly_stepsInput").value;
       var p_monthlyEstDist = document.getElementById("monthly_estDist");
       if (monthly_steps>=1) {
-        p_monthlyEstDist.innerHTML = (monthly_steps*55/100000).toFixed(2);
+        p_monthlyEstDist.innerHTML = (monthly_steps*55/100000).toFixed(0);
       }
     }
     function estimateMonthlySteps() {
       var monthly_dist = document.getElementById("monthly_distInput").value;
       var p_monthlyEstSteps = document.getElementById("monthly_estSteps");
       if (monthly_dist>=1) {
-        p_monthlyEstSteps.innerHTML = (monthly_dist*100000/55).toFixed(2);
+        p_monthlyEstSteps.innerHTML = (monthly_dist*100000/55).toFixed(0);
       }
     }
   </script>

@@ -317,21 +317,21 @@ class m_UsersWebController extends Controller
     if($request->gridRadios == '3'){
 
         $this->validate($request,[
-         'inputheight'=> 'required|gt:100|lt:220',
+         'inputheight'=> 'required|gt:112|lt:212',
         
            ]);
         }
     if($request->gridRadios == '4'){
 
         $this->validate($request,[
-         'stridelength'=> 'required|gt:40|lt:85',
+         'stridelength'=> 'required|gt:45|lt:85',
          
           ]);
         }
     if($request->radio_daily == '5'){
 
         $this->validate($request,[
-         'dailygoal'=> 'required|gt:1|lt:1000000',
+         'dailygoal'=> 'required|gt:1000|lt:181000',
           ]);
         }
     if($request->radio_daily == '6'){
@@ -343,13 +343,13 @@ class m_UsersWebController extends Controller
     if($request->radio_monthly == '7'){
 
         $this->validate($request,[
-         'monthlygoal'=> 'required|gt:10|lt:10000000',
+         'monthlygoal'=> 'required|gt:18000|lt:1818000',
           ]);
         }
     if($request->radio_daily == '8'){
 
         $this->validate($request,[
-         'monthlydistance'=> 'required|gt:1|lt:1000',
+         'monthlydistance'=> 'required|gt:10|lt:1000',
           ]);
         }
     
@@ -422,11 +422,13 @@ class m_UsersWebController extends Controller
     {
         $m_users = m_Users::where('id', $id)->first();
         if(! empty($m_users) && $m_users->users_id == Auth::id()){
-        return view('edit', compact('m_users'));
+        $t_tour = t_Tour::where('m__users_id', $m_users->users_id)->orderBy('created_at','DESC')->first();
+        return view('edit', compact('m_users','t_tour'));
         }
         else{
         $m_users = null;
-        return view('edit', compact('m_users'));
+        $t_tour = null;
+        return view('edit', compact('m_users','t_tour'));
         }
     }
 
@@ -442,21 +444,21 @@ class m_UsersWebController extends Controller
         if($request->gridRadios == '3'){
 
         $this->validate($request,[
-         'inputheight'=> 'required|gt:100|lt:220',
+         'inputheight'=> 'required|gt:112|lt:212',
         
            ]);
         }
     if($request->gridRadios == '4'){
 
         $this->validate($request,[
-         'stridelength'=> 'required|gt:40|lt:85',
+         'stridelength'=> 'required|gt:45|lt:85',
          
           ]);
         }
     if($request->radio_daily == '5'){
 
         $this->validate($request,[
-         'dailygoal'=> 'required|gt:1|lt:1000000',
+         'dailygoal'=> 'required|gt:1000|lt:181000',
           ]);
         }
     if($request->radio_daily == '6'){
@@ -468,13 +470,13 @@ class m_UsersWebController extends Controller
     if($request->radio_monthly == '7'){
 
         $this->validate($request,[
-         'monthlygoal'=> 'required|gt:10|lt:10000000',
+         'monthlygoal'=> 'required|gt:18000|lt:1818000',
           ]);
         }
     if($request->radio_daily == '8'){
 
         $this->validate($request,[
-         'monthlydistance'=> 'required|gt:1|lt:1000',
+         'monthlydistance'=> 'required|gt:10|lt:1000',
           ]);
         }
 
