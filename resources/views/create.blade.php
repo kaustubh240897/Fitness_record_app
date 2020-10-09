@@ -320,7 +320,7 @@
 
 
       if (daily_steps>=1) {
-        p_dailyEstDist.innerHTML = (daily_steps * 55/100000).toFixed(0);
+        p_dailyEstDist.innerHTML = (daily_steps * 70/100000).toFixed(0);
       }
 
     }
@@ -329,21 +329,21 @@
       var p_dailyEstSteps = document.getElementById("daily_estSteps");
 
       if (daily_dist>=1) {
-        p_dailyEstSteps.innerHTML = (daily_dist*100000/55).toFixed(0);
+        p_dailyEstSteps.innerHTML = (daily_dist*100000/70).toFixed(0);
       }
     }
     function estimateMonthlyDist() {
       var monthly_steps = document.getElementById("monthly_stepsInput").value;
       var p_monthlyEstDist = document.getElementById("monthly_estDist");
       if (monthly_steps>=1) {
-        p_monthlyEstDist.innerHTML = (monthly_steps*55/100000).toFixed(0);
+        p_monthlyEstDist.innerHTML = (monthly_steps*70/100000).toFixed(0);
       }
     }
     function estimateMonthlySteps() {
       var monthly_dist = document.getElementById("monthly_distInput").value;
       var p_monthlyEstSteps = document.getElementById("monthly_estSteps");
       if (monthly_dist>=1) {
-        p_monthlyEstSteps.innerHTML = (monthly_dist*100000/55).toFixed(0);
+        p_monthlyEstSteps.innerHTML = (monthly_dist*100000/70).toFixed(0);
       }
     }
   </script>
