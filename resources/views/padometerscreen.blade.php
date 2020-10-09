@@ -50,8 +50,13 @@
            id="btnMyHistory" value="" onclick="myhistory.performClick(this.value);">My history</button> </a>
         </div>
         <div class="col-xs-3">
-         <a href="{{ url('/') }}" >   <button type="button" class="btn blue mr-1 mb-1"
+          @if(! empty($m__users_id))
+          <a href="{{ route('edit', $m__users_id) }}">  <button type="button" class="btn blue mr-1 mb-1"
            id="btnMyProfile" value="" onclick="myprofile.performClick(this.value);">My Profile</button> </a>
+          @else
+          <a href="{{ url('/') }}" >   <button type="button" class="btn blue mr-1 mb-1"
+           id="btnMyProfile" value="" onclick="myprofile.performClick(this.value);">My Profile</button> </a>
+          @endif
         </div>
       </div>
     </div>

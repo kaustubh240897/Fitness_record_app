@@ -20,7 +20,11 @@
     }
     </style>
  <div class="container-fluid mt-1">
-    <a href="{{ url('/') }}" >  <button type="button" class="btn btn-lg">My Profile</button> </a>
+    @if(! empty($m__users_id))
+          <a href="{{ route('edit', $m__users_id) }}">  <button type="button" class="btn blue">MyProfile</button></a>
+          @else
+          <a href="{{ url('/') }}"> <button type="button" class="btn blue mb-1">MyProfile</button> </a>
+    @endif
     </div>
     <div class="container-fluid mt-3 pl-sm-4">
       <div class="row pl-2">

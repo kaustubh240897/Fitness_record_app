@@ -70,7 +70,7 @@ class t_TourWebController extends Controller
 
             //dd($current_tour->m_tours['tour_title']);
             if($tours != null){
-            return view('tourselection', compact('tours','current_tour','all_t_Tours','get_m_user_daily_goal','get_m_user_stride','get_t_tour','steps','checkpoints','total'));
+            return view('tourselection', compact('tours','m__users_id','current_tour','all_t_Tours','get_m_user_daily_goal','get_m_user_stride','get_t_tour','steps','checkpoints','total'));
             }
             else{
                 return view('emptycheckpoints', compact('tours'));
@@ -87,8 +87,9 @@ class t_TourWebController extends Controller
             $steps = 0;
             $checkpoints = null;
             $total = 0;
+            $m__users_id = null;
             if($tours != null){
-            return view('tourselection', compact('tours','current_tour','all_t_Tours','get_m_user_daily_goal','get_m_user_stride','get_t_tour','steps','checkpoints','total'));
+            return view('tourselection', compact('tours','m__users_id','current_tour','all_t_Tours','get_m_user_daily_goal','get_m_user_stride','get_t_tour','steps','checkpoints','total'));
             }
             else{
                 return view('emptycheckpoints', compact('tours'));

@@ -154,7 +154,11 @@ background-color: #f2dcdb !important;
         @endif
         <div class="col">
           <a href="{{ url('/mycollection') }}" >  <button type="button" class="btn blue mb-1">MyCollection</button> </a>
+          @if(! empty($m__users_id))
+          <a href="{{ route('edit', $m__users_id) }}">  <button type="button" class="btn blue">MyProfile</button></a>
+          @else
           <a href="{{ url('/') }}"> <button type="button" class="btn blue mb-1">MyProfile</button> </a>
+          @endif
           <a href="{{ url('/userdailyhistory') }}" > <button type="button" class="btn blue mb-1">MyHistory</button> </a>
         </div>
       </div>
@@ -256,7 +260,7 @@ background-color: #f2dcdb !important;
     </div>
   </div>
  @else
- <h4> Sorry there are no checkpoints.</h4>
+ <h4> Sorry there are no checkpoints, Please select the tour.</h4>
  @endif
 </div>
 

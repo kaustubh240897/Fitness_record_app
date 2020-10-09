@@ -199,7 +199,7 @@ class m_UsersWebController extends Controller
             }
             
     
-            return view('myPage', compact('today_data','get_m_user_monthly_goal','current_month_steps','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','session_value','checkpoints','checkpointsr','total','current_week_datas'));
+            return view('myPage', compact('today_data','m__users_id','get_m_user_monthly_goal','current_month_steps','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','session_value','checkpoints','checkpointsr','total','current_week_datas'));
         }
         else{
             $today_data = null;
@@ -214,8 +214,9 @@ class m_UsersWebController extends Controller
             $total = 0;
             $current_week_datas = null;
             $current_month_steps = 0;
+            $m__users_id = null;
 
-            return view('myPage', compact('today_data','get_m_user_monthly_goal','current_month_steps','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','session_value','checkpoints','checkpointsr','total','current_week_datas'));
+            return view('myPage', compact('today_data','m__users_id','get_m_user_monthly_goal','current_month_steps','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','session_value','checkpoints','checkpointsr','total','current_week_datas'));
         }
 
     }
@@ -265,7 +266,7 @@ class m_UsersWebController extends Controller
             }
             
     
-            return view('padometerscreen', compact('today_data','current_month_steps','get_m_user_monthly_goal','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','total','current_week_datas'));
+            return view('padometerscreen', compact('today_data','m__users_id','current_month_steps','get_m_user_monthly_goal','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','total','current_week_datas'));
         }
         else{
             $today_data = null;
@@ -279,7 +280,7 @@ class m_UsersWebController extends Controller
             $current_week_datas = null;
             $current_month_steps = 0;
 
-            return view('padometerscreen', compact('today_data','current_month_steps','get_m_user_monthly_goal','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','total','current_week_datas'));
+            return view('padometerscreen', compact('today_data','m__users_id','current_month_steps','get_m_user_monthly_goal','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','total','current_week_datas'));
         }
 
     }

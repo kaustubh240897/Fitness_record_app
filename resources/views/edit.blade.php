@@ -109,7 +109,7 @@
                 </div>
               </div>
               <div class="col-3 p-0 pl-1">
-                <input type="number" class="form-control d-inline-block" name='inputheight' value="{{ $m_users->stride * 2.5 }}" style="width: 100%; height:50%; font-size:50%" id="heightinput" min='112' max='212' placeholder="Height in cm">
+                <input type="number" class="form-control d-inline-block" name='inputheight' value="{{ round($m_users->stride * 2.5) }}" style="width: 100%; height:50%; font-size:50%" id="heightinput" min='112' max='212' placeholder="Height in cm">
               </div>
               <div class="col-3 p-0 pl-1">
                 <button type="button" class="btn blue cal" style="width: 100%; height:50%; font-size:70%" onclick="calculateStride()">Calculate</button>
@@ -123,7 +123,7 @@
           </div>
           <div class="container">
             <div class="d-flex flex-row-reverse p-0 d-inline-block justify-content-end">
-              <input type="number" placeholder="Stride length(in cm)" value="{{ $m_users->stride }}" name='stridelength' class="form-control mx-0 my-0 d-inline-block" style="width: 60%; height:10%; font-size:70%" min="45" max="85" id="strideinput">
+              <input type="number" placeholder="Stride length(in cm)" value="{{ round($m_users->stride) }}" name='stridelength' class="form-control mx-0 my-0 d-inline-block" style="width: 60%; height:10%; font-size:70%" min="45" max="85" id="strideinput">
             </div>
           </div>
         </div>
@@ -158,7 +158,7 @@
               <div class="col-6 p-0">
                 <!-- <input type="text" class="form-control d-inline-block" style="width: 100%; height:50%; font-size:70%" id="inlineFormInputName2" placeholder="Gender"> -->
                 <div class="d-flex flex-row-reverse p-0 d-inline-block justify-content-center">
-                  <input type="number" name='dailygoal' value="{{ $m_users->step_goal_per_day }}"  placeholder="Steps" class="form-control mx-0 my-0 d-inline-block" style="width: 100%; height:10%; font-size:70%" min="0" max="181000" id="daily_stepsInput" onchange="estimateDailyDist()">
+                  <input type="number" name='dailygoal' value="{{ round($m_users->step_goal_per_day) }}"  placeholder="Steps" class="form-control mx-0 my-0 d-inline-block" style="width: 100%; height:10%; font-size:70%" min="0" max="181000" id="daily_stepsInput" onchange="estimateDailyDist()">
                 </div>
               </div>
               <div class="col-6 p-0 pl-1 text-align-right">
@@ -174,7 +174,7 @@
                 <!-- <input type="text" class="form-control d-inline-block" style="width: 100%; height:50%; font-size:70%" id="inlineFormInputName2" placeholder="Gender"> -->
                 <div class="d-flex flex-row-reverse p-0 d-inline-block justify-content-center">
 
-                  <input type="number" placeholder="Distance (in km)" value="{{ $m_users->step_goal_per_day*$m_users->user_stride/100000 }}" name='dailydistance' class="form-control mx-0 my-0 d-inline-block" style="width: 100%; height:10%; font-size:70%" min="0" max="100" id="daily_distInput" onchange="estimateDailySteps()">
+                  <input type="number" placeholder="Distance (in km)" value="{{ round($m_users->step_goal_per_day*$m_users->user_stride/100000) }}" name='dailydistance' class="form-control mx-0 my-0 d-inline-block" style="width: 100%; height:10%; font-size:70%" min="0" max="100" id="daily_distInput" onchange="estimateDailySteps()">
 
                 </div>
               </div>
@@ -217,7 +217,7 @@
               <div class="col-6 p-0">
                 <!-- <input type="text" class="form-control d-inline-block" style="width: 100%; height:50%; font-size:70%" id="inlineFormInputName2" placeholder="Gender"> -->
                 <div class="d-flex flex-row-reverse p-0 d-inline-block justify-content-center">
-                  <input type="number" placeholder="Steps" name='monthlygoal' value="{{ $m_users->step_goals_per_month }}" class="form-control mx-0 my-0 d-inline-block" style="width: 100%; height:10%; font-size:70%" min="0" max="1818000" id="monthly_stepsInput" onchange="estimateMonthlyDist()">
+                  <input type="number" placeholder="Steps" name='monthlygoal' value="{{ round($m_users->step_goals_per_month) }}" class="form-control mx-0 my-0 d-inline-block" style="width: 100%; height:10%; font-size:70%" min="0" max="1818000" id="monthly_stepsInput" onchange="estimateMonthlyDist()">
                 </div>
               </div>
               <div class="col-6 p-0 pl-1 text-align-right">
@@ -233,7 +233,7 @@
                 <!-- <input type="text" class="form-control d-inline-block" style="width: 100%; height:50%; font-size:70%" id="inlineFormInputName2" placeholder="Gender"> -->
                 <div class="d-flex flex-row-reverse p-0 d-inline-block justify-content-center">
 
-                  <input type="number" placeholder="Distance (in km)" name='monthlydistance' value="{{ $m_users->step_goals_per_month*$m_users->user_stride/100000 }}" class="form-control mx-0 my-0 d-inline-block" style="width: 100%; height:10%; font-size:70%" min="0" max="1000" id="monthly_distInput" onchange="estimateMonthlySteps()">
+                  <input type="number" placeholder="Distance (in km)" name='monthlydistance' value="{{ round(($m_users->step_goals_per_month)*($m_users->user_stride)/100000) }}" class="form-control mx-0 my-0 d-inline-block" style="width: 100%; height:10%; font-size:70%" min="0" max="1000" id="monthly_distInput" onchange="estimateMonthlySteps()">
 
                 </div>
               </div>
@@ -332,7 +332,7 @@
 
 
       if (daily_steps>=1) {
-        p_dailyEstDist.innerHTML = (daily_steps * 55/100000).toFixed(0);
+        p_dailyEstDist.innerHTML = (daily_steps * ({{ $m_users->stride }})/100000).toFixed(0);
       }
 
     }
@@ -341,21 +341,21 @@
       var p_dailyEstSteps = document.getElementById("daily_estSteps");
 
       if (daily_dist>=1) {
-        p_dailyEstSteps.innerHTML = (daily_dist*100000/55).toFixed(0);
+        p_dailyEstSteps.innerHTML = (daily_dist*100000/({{ $m_users->stride }})).toFixed(0);
       }
     }
     function estimateMonthlyDist() {
       var monthly_steps = document.getElementById("monthly_stepsInput").value;
       var p_monthlyEstDist = document.getElementById("monthly_estDist");
       if (monthly_steps>=1) {
-        p_monthlyEstDist.innerHTML = (monthly_steps*55/100000).toFixed(0);
+        p_monthlyEstDist.innerHTML = (monthly_steps*({{ $m_users->stride }})/100000).toFixed(0);
       }
     }
     function estimateMonthlySteps() {
       var monthly_dist = document.getElementById("monthly_distInput").value;
       var p_monthlyEstSteps = document.getElementById("monthly_estSteps");
       if (monthly_dist>=1) {
-        p_monthlyEstSteps.innerHTML = (monthly_dist*100000/55).toFixed(0);
+        p_monthlyEstSteps.innerHTML = (monthly_dist*100000/({{ $m_users->stride }})).toFixed(0);
       }
     }
   </script>
