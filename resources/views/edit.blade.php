@@ -76,7 +76,7 @@
             </div>
           </div>
       </div>
-      
+
 <!-- /temporary -->
 
       <div class="row">
@@ -92,8 +92,8 @@
           </div>
           <br>
           <div class="form-check form-check-inline pt-2">
-            <input class="form-check-input" type="radio" required='true' name="gridRadios" id="inlineRadio1" value="4">
-            <label class="form-check-label" for="inlineRadio1">Manual</label>
+            <input class="form-check-input" type="radio" required='true' name="gridRadios" id="inlineRadio2" value="4">
+            <label class="form-check-label" for="inlineRadio2">Manual</label>
           </div>
         </div>
         <div class="col">
@@ -143,13 +143,13 @@
  <div class="row">
         <div class="col-3 pl-3">
           <div class="form-check form-check-inline pb-1">
-            <input class="form-check-input" type="radio" required='true' name="radio_daily" id="inlineRadio1" value="5">
-            <label class="form-check-label p-1" for="inlineRadio1">Steps</label>
+            <input class="form-check-input" type="radio" required='true' name="radio_daily" id="inlineRadio3" value="5">
+            <label class="form-check-label p-1" for="inlineRadio3">Steps</label>
           </div>
           <br>
           <div class="form-check form-check-inline pt-2">
-            <input class="form-check-input" type="radio" required='true' name="radio_daily" id="inlineRadio1" value="6">
-            <label class="form-check-label" for="inlineRadio1">Distance</label>
+            <input class="form-check-input" type="radio" required='true' name="radio_daily" id="inlineRadio4" value="6">
+            <label class="form-check-label" for="inlineRadio4">Distance</label>
           </div>
         </div>
         <div class="col">
@@ -173,9 +173,9 @@
               <div class="col-6 p-0">
                 <!-- <input type="text" class="form-control d-inline-block" style="width: 100%; height:50%; font-size:70%" id="inlineFormInputName2" placeholder="Gender"> -->
                 <div class="d-flex flex-row-reverse p-0 d-inline-block justify-content-center">
-            
+
                   <input type="number" placeholder="Distance (in km)" value="{{ $m_users->step_goal_per_day*$m_users->user_stride/100000 }}" name='dailydistance' class="form-control mx-0 my-0 d-inline-block" style="width: 100%; height:10%; font-size:70%" min="0" max="100" id="daily_distInput" onchange="estimateDailySteps()">
-                
+
                 </div>
               </div>
               <div class="col-6 p-0 pl-1 text-align-right">
@@ -202,13 +202,13 @@
       <div class="row">
         <div class="col-3 pl-3">
           <div class="form-check form-check-inline pb-1">
-            <input class="form-check-input" type="radio" required='true' name="radio_monthly" id="inlineRadio1" value="7">
-            <label class="form-check-label p-1" for="inlineRadio1">Steps</label>
+            <input class="form-check-input" type="radio" required='true' name="radio_monthly" id="inlineRadio5" value="7">
+            <label class="form-check-label p-1" for="inlineRadio5">Steps</label>
           </div>
           <br>
           <div class="form-check form-check-inline pt-2">
-            <input class="form-check-input" type="radio" required='true' name="radio_monthly" id="inlineRadio1" value="8">
-            <label class="form-check-label" for="inlineRadio1">Distance</label>
+            <input class="form-check-input" type="radio" required='true' name="radio_monthly" id="inlineRadio6" value="8">
+            <label class="form-check-label" for="inlineRadio6">Distance</label>
           </div>
         </div>
         <div class="col">
@@ -232,9 +232,9 @@
               <div class="col-6 p-0">
                 <!-- <input type="text" class="form-control d-inline-block" style="width: 100%; height:50%; font-size:70%" id="inlineFormInputName2" placeholder="Gender"> -->
                 <div class="d-flex flex-row-reverse p-0 d-inline-block justify-content-center">
-            
+
                   <input type="number" placeholder="Distance (in km)" name='monthlydistance' value="{{ $m_users->step_goals_per_month*$m_users->user_stride/100000 }}" class="form-control mx-0 my-0 d-inline-block" style="width: 100%; height:10%; font-size:70%" min="0" max="1000" id="monthly_distInput" onchange="estimateMonthlySteps()">
-                
+
                 </div>
               </div>
               <div class="col-6 p-0 pl-1 text-align-right">
@@ -256,7 +256,7 @@
       <p>Motion:-</p>
       <div class="d-flex flex-row justify-content-around justify-content-sm-start">
         <div class="form-check form-check-inline pl-3">
-    
+
         @if($m_users->motion_app == 0)
           <input class="form-check-input" type="checkbox" name='motionapp' id="inlineCheckbox1" >
         @else
@@ -321,7 +321,7 @@
       console.log(x);
       console.log(option);
     }
-  
+
     function estimateDailyDist() {
       var daily_steps = document.getElementById("daily_stepsInput").value;
 

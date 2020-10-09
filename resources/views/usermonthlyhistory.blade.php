@@ -12,21 +12,21 @@
     .dropdown-menu.blue {
       background-color: #ccece8 !important;
     }
-   
+
     </style>
-   
+
 
 
 <div class="container-fluid">
       <div class="row justify-content-around">
         <div class="col-xs-3">
-         <a href="{{ url('/mypage') }}" > <button type="button" class="btn blue mr-1">My Page</button> </a>
+         <a href="{{ url('/mypage') }}" > <button type="button" class="btn blue mr-1 mb-1">My Page</button> </a>
         </div>
         <div class="col-xs-3">
-         <a href="{{ url('/userdailyhistory') }}" >  <button type="button" class="btn blue mr-1" onclick="changeText()" id="bt1">Daily Data</button> </a>
+         <a href="{{ url('/userdailyhistory') }}" >  <button type="button" class="btn blue mr-1 mb-1" onclick="changeText()" id="bt1">Daily Data</button> </a>
         </div>
         <div class="dropdown">
-          <button class="btn blue dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button class="btn blue dropdown-toggle mb-1" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Sort by
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
@@ -36,8 +36,8 @@
         </div>
       </div>
     </div>
-    
-     
+
+
 
  <div class="table-responsive-sm mt-4 mx-sm-3">
         <table class="table table-hover" id="collections_table">

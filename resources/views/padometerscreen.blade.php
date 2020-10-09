@@ -38,16 +38,20 @@
 <div class="container-fluid">
       <div class="row justify-content-around">
         <div class="col-xs-3">
-         <a href="{{ url('/mypage') }}" >   <button type="button" class="btn blue mr-1">My page</button> </a>
+         <a href="{{ url('/mypage') }}" >   <button type="button" class="btn blue mr-1 mb-1"
+           id="btnMyPage" value="" onclick="mypage.performClick(this.value);">My page</button> </a>
         </div>
         <div class="col-xs-3">
-         <a href="{{ url('/mycollection') }}" >   <button type="button" class="btn blue mr-1">My collection</button> </a>
+         <a href="{{ url('/mycollection') }}" >   <button type="button" class="btn blue mr-1 mb-1"
+           id="btnMyCollection" value="" onclick="mycollection.performClick(this.value);">My collection</button> </a>
         </div>
         <div class="col-xs-3">
-         <a href="{{ url('/userdailyhistory') }}" >   <button type="button" class="btn blue mr-1">My history</button> </a>
+         <a href="{{ url('/userdailyhistory') }}" >   <button type="button" class="btn blue mr-1 mb-1"
+           id="btnMyHistory" value="" onclick="myhistory.performClick(this.value);">My history</button> </a>
         </div>
         <div class="col-xs-3">
-         <a href="{{ url('/') }}" >   <button type="button" class="btn blue mr-1">My Profile</button> </a>
+         <a href="{{ url('/') }}" >   <button type="button" class="btn blue mr-1 mb-1"
+           id="btnMyProfile" value="" onclick="myprofile.performClick(this.value);">My Profile</button> </a>
         </div>
       </div>
     </div>
@@ -58,7 +62,7 @@
         </div>
         @if(! empty($today_data))
         <div class="col-xs-6 mt-3 pt-3">
-        @if($get_m_user_daily_goal <=  $today_data) 
+        @if($get_m_user_daily_goal <=  $today_data)
           <p class="mb-0 overlay-text pt-3" style="font-size:70%; color: red">Completed!</p>
         @else
            <p class="mb-0 overlay-text pt-3" style="font-size:70%; color: red">Inprogress!</p>
@@ -210,7 +214,7 @@ function init() {
     comp = {{ $today_data*$get_m_user_stride/100000 }};
     if({{ $today_data*$get_m_user_stride/100000 }} > {{ $get_m_user_daily_goal*$get_m_user_stride/100000 }})
     { rem = 0;
-    } 
+    }
     else{
     rem =  {{ ($get_m_user_daily_goal*$get_m_user_stride/100000)-($today_data*$get_m_user_stride/100000) }};
     }

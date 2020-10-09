@@ -43,7 +43,7 @@ background-color: #f2dcdb !important;
 }
 .StepProgress {
   position: relative;
-  padding-left: 45px;
+  padding-left: 10px;
   list-style: none;
 }
 .StepProgress::before {
@@ -51,7 +51,7 @@ background-color: #f2dcdb !important;
   content: '';
   position: absolute;
   top: 0;
-  left: 15px;
+  left: 20px;
   width: 20px;
   height: 100%;
   border-left: 4px solid #CCC;
@@ -61,13 +61,13 @@ background-color: #f2dcdb !important;
   counter-increment: list;
 }
 .StepProgress-item:not(:last-child) {
-  padding-bottom: 40px;
+  padding-bottom: 60px;
 }
 .StepProgress-item::before {
   display: inline-block;
   content: '';
   position: absolute;
-  left: -30px;
+  left: 10px;
   height: 100%;
   width: 24px;
 }
@@ -76,7 +76,7 @@ background-color: #f2dcdb !important;
   display: inline-block;
   position: absolute;
   top: 0;
-  left: -40px;
+  left: 0px;
   width: 24px;
   height: 18px;
   border: 1px solid #CCC;
@@ -88,7 +88,7 @@ background-color: #f2dcdb !important;
   display: inline-block;
   position: absolute;
   top: 0;
-  left: -44px;
+  left: -4px;
   width: 32px;
   height: 18px;
   border: 1px solid #CCC;
@@ -115,7 +115,7 @@ background-color: #f2dcdb !important;
   width: 24px;
   height: 18px;
   top: -4px;
-  left: -40px;
+  left: 0px;
   font-size: 14px;
   text-align: center;
   color: green;
@@ -153,9 +153,9 @@ background-color: #f2dcdb !important;
         <h6> You have not started tour yet! </h6>
         @endif
         <div class="col">
-          <a href="{{ url('/mycollection') }}" >  <button type="button" class="btn blue">MyCollection</button> </a>
-          <a href="{{ url('/') }}"> <button type="button" class="btn blue">MyProfile</button> </a>
-          <a href="{{ url('/userdailyhistory') }}" > <button type="button" class="btn blue">MyHistory</button> </a>
+          <a href="{{ url('/mycollection') }}" >  <button type="button" class="btn blue mb-1">MyCollection</button> </a>
+          <a href="{{ url('/') }}"> <button type="button" class="btn blue mb-1">MyProfile</button> </a>
+          <a href="{{ url('/userdailyhistory') }}" > <button type="button" class="btn blue mb-1">MyHistory</button> </a>
         </div>
       </div>
     </div>
@@ -244,15 +244,15 @@ background-color: #f2dcdb !important;
  @if(! empty($checkpoints))
   <div class="row">
     <div class="col" id="checkPoint_name">
-     
+
     </div>
-    <div class="col pt-2">
+    <div class="col pt-2 pl-3">
       <ul class="StepProgress" id="progress_bar">
-        
+
       </ul>
     </div>
     <div class="col" id="checkPoint_name2">
-     
+
     </div>
   </div>
  @else
@@ -338,7 +338,7 @@ if({{ $today_data }} > 0){
     comp = {{ $today_data*$get_m_user_stride/100000 }};
     if({{ $today_data*$get_m_user_stride/100000 }} > {{ $get_m_user_daily_goal*$get_m_user_stride/100000 }})
     { rem = 0;
-    } 
+    }
     else{
     rem =  {{ ($get_m_user_daily_goal*$get_m_user_stride/100000)-($today_data*$get_m_user_stride/100000) }};
     }
@@ -373,7 +373,7 @@ var row6 = ['Sat', steps, '#7acdc4', weekDates[5].getDate() ];
 var row7 = ['Sun', steps, '#7acdc4', weekDates[6].getDate() ];
 //console.log(formatDate(weekDates[0]));
 var current_week_datas1 = {!! json_encode($current_week_datas) !!}
- 
+
 
 Object.keys(current_week_datas1).forEach((single_day_data, i) => {
   //console.log(current_week_datas[single_day_data]);
@@ -474,14 +474,14 @@ function formatDate(d) {
   var steplist = document.getElementById("progress_bar");
   var checkPoint_col = document.getElementById("checkPoint_name");
   var checkPoint_col2 = document.getElementById("checkPoint_name2");
-  
+
 
 if({{ $session_value }} === false){
   var get_m_user_stride = {{ $get_m_user_stride }};
   var steps = {{ $steps }};
   var dist_walked = (get_m_user_stride * steps)/100000;
   var flag1 = 0;
-  
+
 
 
   var checkpoints = {!! json_encode($checkpoints) !!};
@@ -489,7 +489,9 @@ if({{ $session_value }} === false){
     var tag = document.createElement("li");
     tag.className = "StepProgress-item";
     var name_p = document.createElement("p");
+    name_p.style.fontSize = "70%";
     var name_p2 = document.createElement("p");
+    name_p2.style.fontSize = "70%";
     Object.keys(item).forEach((key, i) => {
       if (key == "checkpoint_title") {
         // console.log(item[key]);
@@ -507,12 +509,16 @@ if({{ $session_value }} === false){
             }
           }
        }
-     
+
     });
     var flexRow = document.createElement("div");
-    flexRow.className = "d-flex flex-row";
+    flexRow.className = "d-flex flex-row justify-content-start";
+    flexRow.style.height = "60px";
+    flexRow.style.width = "100px";
     var flexRowRev = document.createElement("div");
-    flexRowRev.className = "d-flex flex-row-reverse";
+    flexRowRev.className = "d-flex flex-row-reverse justify-content-start";
+    flexRowRev.style.height = "60px";
+    flexRowRev.style.maxWidth = "100px"
     var btnDiv = document.createElement("div");
     // var pDiv = document.createElement("div");
     var btn = document.createElement("button");
@@ -544,7 +550,7 @@ else{
   var steps = {{ $steps }};
   var dist_walked = (get_m_user_stride * steps)/100000;
   var flag1 = 0;
-  
+
 
 
   var checkpoints = {!! json_encode($checkpointsr) !!};
@@ -552,7 +558,9 @@ else{
     var tag = document.createElement("li");
     tag.className = "StepProgress-item";
     var name_p = document.createElement("p");
+    name_p.style.fontSize = "70%";
     var name_p2 = document.createElement("p");
+    name_p2.style.fontSize = "70%";
     Object.keys(item).forEach((key, i) => {
       if (key == "checkpoint_title") {
         // console.log(item[key]);
@@ -570,12 +578,16 @@ else{
             }
           }
        }
-     
+
     });
     var flexRow = document.createElement("div");
-    flexRow.className = "d-flex flex-row";
+    flexRow.className = "d-flex flex-row justify-content-start";
+    flexRow.style.height = "60px";
+    flexRow.style.width = "100px";
     var flexRowRev = document.createElement("div");
-    flexRowRev.className = "d-flex flex-row-reverse";
+    flexRowRev.className = "d-flex flex-row-reverse justify-content-start";
+    flexRowRev.style.height = "60px";
+    flexRowRev.style.maxWidth = "60px"
     var btnDiv = document.createElement("div");
     // var pDiv = document.createElement("div");
     var btn = document.createElement("button");

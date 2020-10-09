@@ -26,16 +26,16 @@
 <div class="container-fluid mt-2">
       <div class="row justify-content-around">
         <div class="col-xs-3">
-         <a href="{{ url('/mypage') }}" >  <button type="button" class="btn blue mr-1" style="font-size:70%">MyPage</button> </a>
+         <a href="{{ url('/mypage') }}" >  <button type="button" class="btn blue mr-1 mb-1" style="font-size:70%">MyPage</button> </a>
         </div>
         <div class="col-xs-3">
-         <a href="{{ url('/createtour') }}" >  <button type="button" class="btn blue mr-1" style="font-size:70%">Show Tours</button> </a>
+         <a href="{{ url('/createtour') }}" >  <button type="button" class="btn blue mr-1 mb-1" style="font-size:70%">Show Tours</button> </a>
         </div>
         <div class="col-xs-3">
-        <a href="{{ url('/reversemycollection') }}"> <button type="button" class="btn blue mr-1" style="font-size:70%">Sort by latest</button> </a>
+        <a href="{{ url('/reversemycollection') }}"> <button type="button" class="btn blue mr-1 mb-1" style="font-size:70%">Sort by latest</button> </a>
         </div>
         <div class="col-xs-3">
-         <a href="{{ url('/mycollection') }}" > <button type="button" class="btn blue mr-1" style="font-size:70%">Sort by oldest</button> </a>
+         <a href="{{ url('/mycollection') }}" > <button type="button" class="btn blue mr-1 mb-1" style="font-size:70%">Sort by oldest</button> </a>
         </div>
       </div>
     </div>
@@ -52,7 +52,7 @@
             </thead>
   @if(! empty($get_t_collections))
     <tbody>
-   
+
   @foreach($get_t_collections as $get_t_collection)
   @if($get_t_collection->m_collections->collection_category == 'tour')
      <tr class="collectionsRow">
@@ -61,8 +61,8 @@
       <td style="font-size:70%"> {{ $get_t_collection->created_at }} </td>
       <td style="font-size:70%"> {{ $counter[$loop->iteration-1] }}*</td>
     </tr>
-   
- 
+
+
   @else
      <tr class="collectionsRow">
       <td style="font-size:70%">{{ $get_t_collection->m_collections->collection_category }}</td>
@@ -85,7 +85,7 @@
         It's been a long time since you visited us. We've something special for you.
     </div>
 </div>
- 
+
 
 
 

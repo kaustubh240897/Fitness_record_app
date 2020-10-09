@@ -21,7 +21,7 @@
     }
     .StepProgress {
       position: relative;
-      padding-left: 45px;
+      padding-left: 10px;
       list-style: none;
     }
     .StepProgress::before {
@@ -29,7 +29,7 @@
       content: '';
       position: absolute;
       top: 0;
-      left: 15px;
+      left: 20px;
       width: 20px;
       height: 100%;
       border-left: 4px solid #CCC;
@@ -39,13 +39,13 @@
       counter-increment: list;
     }
     .StepProgress-item:not(:last-child) {
-      padding-bottom: 40px;
+      padding-bottom: 60px;
     }
     .StepProgress-item::before {
       display: inline-block;
       content: '';
       position: absolute;
-      left: -30px;
+      left: 10px;
       height: 100%;
       width: 24px;
     }
@@ -54,7 +54,7 @@
       display: inline-block;
       position: absolute;
       top: 0;
-      left: -40px;
+      left: 0px;
       width: 24px;
       height: 18px;
       border: 1px solid #CCC;
@@ -66,7 +66,7 @@
       display: inline-block;
       position: absolute;
       top: 0;
-      left: -44px;
+      left: -4px;
       width: 32px;
       height: 18px;
       border: 1px solid #CCC;
@@ -93,7 +93,7 @@
       width: 24px;
       height: 18px;
       top: -4px;
-      left: -40px;
+      left: 0px;
       font-size: 14px;
       text-align: center;
       color: green;
@@ -110,7 +110,7 @@
 <div class="container-fluid mt-1">
    <a href="{{ url('/createtour') }}" > <button type="button" class="btn blue">Tour Selection Page</button></a>
     </div>
- 
+
     <div class="container-fluid mt-3 pl-sm-4">
       <div class="row pl-2">
         <div class="col-4 col-sm-2 p-1 pl-2">
@@ -137,7 +137,7 @@
         </div>
       </div>
     </div>
-  
+
 
    <div class="container">
       <div class="row pl-2">
@@ -151,7 +151,7 @@
               @else
               <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="1" >
               @endif
-              
+
               <label class="form-check-label" for="inlineRadio1">Normal</label>
             </div>
             <div class="form-check form-check-inline pl-3">
@@ -175,15 +175,15 @@
 @if(! empty($checkpoints))
 <div class="row">
     <div class="col" id="checkPoint_name">
-     
+
     </div>
     <div class="col pt-2">
       <ul class="StepProgress" id="progress_bar">
-        
+
       </ul>
     </div>
     <div class="col" id="checkPoint_name2">
-     
+
     </div>
   </div>
 
@@ -191,7 +191,7 @@
 <h4> Sorry there are no checkpoints.</h4>
 @endif
 
- 
+
 </div>
 @if(! empty($current_tour))
 @if($current_tour->status == 'Done')
@@ -210,14 +210,14 @@
 var steplist = document.getElementById("progress_bar");
   var checkPoint_col = document.getElementById("checkPoint_name");
   var checkPoint_col2 = document.getElementById("checkPoint_name2");
-  
+
 
 if({{ $value }} === false){
   var get_m_user_stride = {{ $user_stride }};
   var steps = {{ $steps }};
   var dist_walked = (get_m_user_stride * steps)/100000;
   var flag1 = 0;
-  
+
 
 
   var checkpoints = {!! json_encode($checkpoints) !!};
@@ -225,7 +225,9 @@ if({{ $value }} === false){
     var tag = document.createElement("li");
     tag.className = "StepProgress-item";
     var name_p = document.createElement("p");
+    name_p.style.fontSize = "70%";
     var name_p2 = document.createElement("p");
+    name_p2.style.fontSize = "70%";
     Object.keys(item).forEach((key, i) => {
       if (key == "checkpoint_title") {
         // console.log(item[key]);
@@ -243,12 +245,16 @@ if({{ $value }} === false){
             }
           }
        }
-     
+
     });
     var flexRow = document.createElement("div");
-    flexRow.className = "d-flex flex-row";
+    flexRow.className = "d-flex flex-row justify-content-start";
+    flexRow.style.height = "60px";
+    flexRow.style.width = "100px";
     var flexRowRev = document.createElement("div");
-    flexRowRev.className = "d-flex flex-row-reverse";
+    flexRowRev.className = "d-flex flex-row-reverse justify-content-start";
+    flexRowRev.style.height = "60px";
+    flexRowRev.style.maxWidth = "100px";
     var btnDiv = document.createElement("div");
     // var pDiv = document.createElement("div");
     var btn = document.createElement("button");
@@ -280,7 +286,7 @@ else{
   var steps = {{ $steps }};
   var dist_walked = (get_m_user_stride * steps)/100000;
   var flag1 = 0;
-  
+
 
 
   var checkpoints = {!! json_encode($checkpointsr) !!};
@@ -288,7 +294,9 @@ else{
     var tag = document.createElement("li");
     tag.className = "StepProgress-item";
     var name_p = document.createElement("p");
+    name_p.style.fontSize = "70%";
     var name_p2 = document.createElement("p");
+    name_p2.style.fontSize = "70%";
     Object.keys(item).forEach((key, i) => {
       if (key == "checkpoint_title") {
         // console.log(item[key]);
@@ -306,12 +314,16 @@ else{
             }
           }
        }
-     
+
     });
     var flexRow = document.createElement("div");
-    flexRow.className = "d-flex flex-row";
+    flexRow.className = "d-flex flex-row justify-content-start";
+    flexRow.style.height = "60px";
+    flexRow.style.width = "100px";
     var flexRowRev = document.createElement("div");
-    flexRowRev.className = "d-flex flex-row-reverse";
+    flexRowRev.className = "d-flex flex-row-reverse justify-content-start";
+    flexRowRev.style.height = "60px";
+    flexRowRev.style.maxWidth = "100px"
     var btnDiv = document.createElement("div");
     // var pDiv = document.createElement("div");
     var btn = document.createElement("button");
@@ -336,7 +348,7 @@ else{
     checkPoint_col2.appendChild(flexRowRev);
     console.log(item["checkpoint_category"]);
   });
-  
+
 }
 
 </script>
