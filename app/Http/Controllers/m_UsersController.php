@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Http\Requests\m_UsersRequest;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Resources\m_Users\m_UsersCollection;
 use App\Http\Resources\m_Users\m_UsersResource;
 
@@ -18,7 +19,7 @@ class m_UsersController extends Controller
      */
     public function index()
     {
-        return m_UsersCollection::collection(m_Users::paginate(10));
+        return m_UsersCollection::collection(m_Users::where('users_id', Auth::id())->paginate(10));
     }
 
     /**
@@ -39,23 +40,29 @@ class m_UsersController extends Controller
      */
     public function store(m_UsersRequest $request)
     {
-        //
-        $m_user = new m_Users;
+        if($request->users_id != Auth::id()){
+             return response()->json(["message" => "Unauthorized request"], 401);
+            }
+        elseif(m_Users::where('users_id', Auth::id())->count() != 0){
+            return response()->json(["message" => "you have already created m_user for this user, Integrity error."], 409);
+        }
+            $m_user = new m_Users;
 
-        $m_user->serial_number = $request->serial_number;
-        $m_user->stride = $request->stride;
-        $m_user->step_goal_per_day = $request->step_goal_per_day;
-        $m_user->step_goals_per_month = $request->step_goals_per_month;
-        $m_user->tour_level = $request->tour_level;
-        $m_user->motion_app = $request->motion_app;
-        $m_user->motion_web = $request->motion_web;
-        $m_user->save();
+            $m_user->serial_number = $request->serial_number;
+            $m_user->stride = $request->stride;
+            $m_user->users_id = $request->users_id;
+            $m_user->step_goal_per_day = $request->step_goal_per_day;
+            $m_user->step_goals_per_month = $request->step_goals_per_month;
+            $m_user->tour_level = $request->tour_level;
+            $m_user->motion_app = $request->motion_app;
+            $m_user->motion_web = $request->motion_web;
+            $m_user->save();
 
 
-        return response([
-            'data' => new m_UsersResource($m_user)
+            return response([
+                'data' => new m_UsersResource($m_user)
 
-        ], Response::HTTP_CREATED);
+            ], Response::HTTP_CREATED);
     }
 
     /**
@@ -64,10 +71,17 @@ class m_UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(m_Users $m_user)
+    public function show($m_user)
     {
-        //
-         return new m_UsersResource($m_user);
+        $m_User =  m_Users::where('id', $m_user)->first();
+        if(is_null($m_User)){
+        return response()->json(["message" => "Record not found"], 404);
+        }
+        elseif($m_User->users_id != Auth::id()){
+        return response()->json(["message" => "Unauthorized request"], 401);
+        }
+        return new m_UsersResource($m_User,201);
+        // return new m_UsersResource($m_user);
     }
 
     /**

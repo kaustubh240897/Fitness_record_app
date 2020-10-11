@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Http\Requests\t_StepsRequest;
 use App\Http\Resources\t_StepsResource;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\t_Steps;
 use App\m_Users;
@@ -21,7 +21,12 @@ class StepsController extends Controller
      */
     public function index(m_Users $m_user)
     {
-        //
+        if(is_null($m_user)){
+        return response()->json(["message" => "Record not found"], 404);
+        }
+        elseif($m_user->users_id != Auth::id()){
+        return response()->json(["message" => "Unauthorized request"], 401);
+        }
         
         return t_StepsCollection::collection($m_user->t_steps);
     }
@@ -65,6 +70,12 @@ class StepsController extends Controller
         // //
         // $steps = t_Steps::create($request->all());
         // return response()->json($steps,201);
+        if($m_user->users_id != Auth::id()){
+        return response()->json(["message" => "Unauthorized request"], 401);
+        }
+        elseif(is_null($m_user)){
+        return response()->json(["message" => "Record not found"], 404);
+        }
         $steps = new t_Steps($request->all());
         $m_user->t_steps()->save($steps);
         return response([
@@ -85,7 +96,11 @@ class StepsController extends Controller
     {
         
         $steps =  t_Steps::where('m__users_id', $m_user)->where('id', $step)->first();
-        if(is_null($steps)){
+        
+        if($m_user != Auth::id()){
+        return response()->json(["message" => "Unauthorized request"], 401);
+        }
+        elseif(is_null($steps)){
         return response()->json(["message" => "Record not found"], 404);
         }
         return new t_StepsResource($steps,201);

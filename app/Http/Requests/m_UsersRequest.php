@@ -27,6 +27,7 @@ class m_UsersRequest extends FormRequest
             //
             'serial_number' => 'required|max:255|unique:m__users',
             'stride' => 'required|max:3',
+            'users_id' => 'required',
             'step_goal_per_day' => 'required|max:10',
             'step_goals_per_month' => 'required|max:15',
             'tour_level' => 'required|max:3',
