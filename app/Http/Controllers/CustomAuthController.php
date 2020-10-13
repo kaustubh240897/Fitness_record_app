@@ -16,7 +16,7 @@ class CustomAuthController extends Controller
         $this->validation($request);
         $request['password'] = bcrypt($request->password);
         User::create($request->all());
-        return redirect('/')->with('Status', 'You are registered');
+        return redirect('/custom-login')->with('Status', 'You are registered please login now');
        
     }
      public function showLoginForm(){
@@ -35,14 +35,14 @@ class CustomAuthController extends Controller
                 return redirect()->route('padometerscreen')->with('Status', 'You are Successfully logged in');
             }
 
-            return redirect('/')->with('Status', 'You are Successfully logged in');
+            return redirect()->route('create')->with('Status', 'You are Successfully logged in');
         }
         // login if serial number exists otherwise register it .
         else{
             $this->validation($request);
             $request['password'] = bcrypt($request->password);
             User::create($request->all());
-            return redirect('/')->with('Status', 'You are Successfully registered');
+            return redirect()->route('custom.login')->with('Status', 'You are Successfully registered please login now.');
 
         }
         return "oops something is wrong";

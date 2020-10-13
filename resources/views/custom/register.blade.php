@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+@if (session('Status'))
+<div class="alert alert-success" role="alert">
+   {{ session('Status') }}
+</div>
+@endif
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +13,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom registration</title>
 </head>
+
 <body>
+
     <div class='container'>
         <div class='row'>
             <div class='col-lg-offset-3 col-lg-6'>

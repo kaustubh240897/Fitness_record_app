@@ -40,7 +40,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('/custom-register', 'CustomAuthController@showRegisterForm')->name('custom.register');
-Route::post('/custom-register', 'CustomAuthController@Register');
+Route::post('/custom-register', 'CustomAuthController@Register')->name('custom.register');
 
 Route::get('/custom-login', 'CustomAuthController@showLoginForm')->name('custom.login');
-Route::post('/custom-login', 'CustomAuthController@Login');
+Route::post('/custom-login', 'CustomAuthController@Login')->name('custom.login');
