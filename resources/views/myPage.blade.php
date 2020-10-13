@@ -126,6 +126,10 @@ background-color: #f2dcdb !important;
   display: block;
 }
 
+a {
+color: #000000 !important;
+text-decoration: none !important;
+}
 
 </style>
 
@@ -155,7 +159,7 @@ background-color: #f2dcdb !important;
         <div class="col">
           <a href="{{ url('/mycollection') }}" >  <button type="button" class="btn blue mb-1">MyCollection</button> </a>
           @if(! empty($m__users_id))
-          <a href="{{ route('edit', $m__users_id) }}">  <button type="button" class="btn blue">MyProfile</button></a>
+          <a href="{{ route('edit', $m__users_id) }}">  <button type="button" class="btn blue mb-1">MyProfile</button></a>
           @else
           <a href="{{ url('/') }}"> <button type="button" class="btn blue mb-1">MyProfile</button> </a>
           @endif

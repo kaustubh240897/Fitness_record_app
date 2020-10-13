@@ -359,6 +359,16 @@
       }
     }
   </script>
+  <script type="text/javascript">
+    var r2 = document.getElementById("inlineRadio2");
+    var r3 = document.getElementById("inlineRadio3");
+    var r5 = document.getElementById("inlineRadio5");
+    r2.checked = "true";
+    r3.checked = "true";
+    r5.checked = "true";
+    estimateDailyDist();
+    estimateMonthlyDist();
+  </script>
 @else
 <h3> Sorry! You are not authorized to see this page. </h3>
 @endif
