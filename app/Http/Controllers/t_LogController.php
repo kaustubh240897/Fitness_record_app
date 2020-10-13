@@ -16,7 +16,15 @@ class t_LogController extends Controller
      */
     public function index(m_Users $m_user)
     {
-        //
+        if(is_null($m_user)){
+        return response()->json(["message" => "Record not found"], 404);
+        }
+        elseif($m_user->users_id != Auth::id()){
+        return response()->json(["message" => "Unauthorized request"], 401);
+        }
+        
+        //return t_StepsCollection::collection($m_user->t_steps);
+        
         return t_LogResource::collection($m_user->t_logs);
     }
 

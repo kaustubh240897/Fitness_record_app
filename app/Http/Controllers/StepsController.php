@@ -71,10 +71,10 @@ class StepsController extends Controller
         // $steps = t_Steps::create($request->all());
         // return response()->json($steps,201);
         if($m_user->users_id != Auth::id()){
-        return response()->json(["message" => "Unauthorized request"], 401);
+            return response()->json(["message" => "Unauthorized request"], 401);
         }
         elseif(is_null($m_user)){
-        return response()->json(["message" => "Record not found"], 404);
+            return response()->json(["message" => "Record not found"], 404);
         }
         $steps = new t_Steps($request->all());
         $m_user->t_steps()->save($steps);

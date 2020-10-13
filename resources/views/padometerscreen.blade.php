@@ -65,6 +65,9 @@
         <div class="col-xs-6 mt-0">
           <div id="chart_div"></div>
         </div>
+        @if( empty($m__users_id))
+        <h2> Please make your profile first <a href="/">click here </a> </h2> <br/>
+        @endif
         @if(! empty($today_data))
         <div class="col-xs-6 mt-3 pt-3">
         @if($get_m_user_daily_goal <=  $today_data)

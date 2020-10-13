@@ -37,3 +37,10 @@ Route::get('/mycollection', 't_CollectionWebController@index')->name('mycollecti
 Route::get('/reversemycollection', 't_CollectionWebController@reverseIndex')->name('reversemycollection');
 Route::get('/mycollection/{id}','t_CollectionWebController@show')->name('collectiondetails');
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/custom-register', 'CustomAuthController@showRegisterForm')->name('custom.register');
+Route::post('/custom-register', 'CustomAuthController@Register');
+
+Route::get('/custom-login', 'CustomAuthController@showLoginForm')->name('custom.login');
+Route::post('/custom-login', 'CustomAuthController@Login');

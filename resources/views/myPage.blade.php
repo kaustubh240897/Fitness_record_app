@@ -243,6 +243,9 @@ background-color: #f2dcdb !important;
       </div>
     </div>
 
+@if ( empty($m__users_id))
+ <h2> Please create your profile first <a href="/">click here </a> </h2> <br/>
+@endif
 
 <div class="container-fluid">
  @if(! empty($checkpoints))

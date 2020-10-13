@@ -277,6 +277,7 @@ class m_UsersWebController extends Controller
             $steps = null;
             $checkpoints = null;
             $total = 0;
+            $m__users_id = null;
             $current_week_datas = null;
             $current_month_steps = 0;
 
