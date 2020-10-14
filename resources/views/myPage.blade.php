@@ -140,30 +140,29 @@ text-decoration: none !important;
         </div>
          @if(! empty($get_t_tour))
         <div class="col">
-          <p class="mb-0" style="font-size:50%">Today's Goal:-</p>
-          <p class="mb-0" style="font-size:50%">Steps = {{ $get_m_user_daily_goal }}  </p>
-          <p class="mb-0" style="font-size:50%">Distance = {{ $get_m_user_daily_goal*$get_m_user_stride/100000 }} (km) </p>
-          <p class="mb-0" style="font-size:50%">Remaining:-</p>
-          <p class="mb-0" style="font-size:50%">Steps = @if($get_m_user_daily_goal <=  $today_data) 0  @else {{ $get_m_user_daily_goal-$today_data }} @endif</p>
-          <p class="mb-0" style="font-size:50%">Distance = @if($get_m_user_daily_goal <=  $today_data) 0  @else {{ ($get_m_user_daily_goal-$today_data)*$get_m_user_stride/100000 }} @endif km</p>
+          <p class="mb-0" style="font-size:70%">1日の目標歩数</p>
+          <p class="mb-0" style="font-size:70%">{{ $get_m_user_daily_goal }}歩</p>
+          <p class="mb-0" style="font-size:70%">{{ $get_m_user_daily_goal*$get_m_user_stride/100000 }} (km)</p>
+          <p class="mb-0" style="font-size:70%">目標まで</p>
+          <p class="mb-0" style="font-size:70%">@if($get_m_user_daily_goal <=  $today_data) 0  @else {{ $get_m_user_daily_goal-$today_data }}歩 @endif</p>
+          <p class="mb-0" style="font-size:70%">@if($get_m_user_daily_goal <=  $today_data) 0  @else {{ ($get_m_user_daily_goal-$today_data)*$get_m_user_stride/100000 }} @endif km</p>
         </div>
         <div class="col">
-          <p class="mb-0" style="font-size:70%">Today's Steps travelled:-</p>
-          <p class="mb-0" style="font-size:70%">Steps = {{ $today_data }}</p>
-          <p class="mb-0" style="font-size:70%">Today's distance travelled:-</p>
-          <p class="mb-0" style="font-size:70%">Steps = {{ $today_data*$get_m_user_stride/100000 }}Km</p>
+          <p class="mb-0" style="font-size:70%">コレクションに99件のアイ</p>
+          <p class="mb-0" style="font-size:70%"></p>
+          <p class="mb-0" style="font-size:70%">アイテムが追加されました。</p>
         </div>
          @else
         <h6> You have not started tour yet! </h6>
         @endif
         <div class="col">
-          <a href="{{ url('/mycollection') }}" >  <button type="button" class="btn blue mb-1">MyCollection</button> </a>
-          @if(! empty($m__users_id))
+          <a href="{{ url('/mycollection') }}" >  <button type="button" class="btn blue mb-1" style="font-size: 50%">マイコレクション</button> </a>
+          <!-- @if(! empty($m__users_id))
           <a href="{{ route('edit', $m__users_id) }}">  <button type="button" class="btn blue mb-1">MyProfile</button></a>
           @else
           <a href="{{ url('/') }}"> <button type="button" class="btn blue mb-1">MyProfile</button> </a>
-          @endif
-          <a href="{{ url('/userdailyhistory') }}" > <button type="button" class="btn blue mb-1">MyHistory</button> </a>
+          @endif -->
+          <a href="{{ url('/userdailyhistory') }}" > <button type="button" class="btn blue mb-1" style="font-size: 50%">マイヒストリ</button> </a>
         </div>
       </div>
     </div>
@@ -172,20 +171,24 @@ text-decoration: none !important;
         <div class="col">
           <div class="container-fluid overlay-text2">
             <div class="row">
-              <div class="col text-center">
-                <p class="mb-0" style="font-size:50%">Completed this month:-</p>
-                <p class="mb-0" style="font-size:50%">{{ $current_month_steps }}Steps({{ round(($current_month_steps*$get_m_user_stride/100000),2) }}Km)</p>
-                 @if($get_m_user_monthly_goal <= $current_month_steps)
-                <p class="mb-0 pb-3 pl-3" style="font-size:50%; color: red">Completed!</p>
-                @else
-                <p class="mb-0 pb-3" style="font-size:70%; color: red">Inprogress!</p>
-                @endif
+              <div class="col border-right pl-3 text-center">
+                <p class="mb-0 pl-3 pt-3" style="font-size:50%">月間累計</p> <!--Completed this month -->
+                <p class="mb-0 pl-3 pt-3" style="font-size:50%">{{ $current_month_steps }}歩({{ $current_month_steps*$get_m_user_stride/100000 }}Km)</p>
+              </div>
+              <div class="col-6">
                 <p class="mb-0" style="font-size:50%">Remaining this month:-</p>
                 @if($get_m_user_monthly_goal <= $current_month_steps)
                 <p class="mb-0" style="font-size:50%">0 steps</p>
                 @else
-                 <p class="mb-0" style="font-size:70%"> {{ $get_m_user_monthly_goal-$current_month_steps }} steps <br/>({{ round(($get_m_user_monthly_goal-$current_month_steps)*$get_m_user_stride/100000,2) }} Km) </p>
+                 <p class="mb-0" style="font-size:50%"> {{ $get_m_user_monthly_goal-$current_month_steps }} steps <br/>({{ round(($get_m_user_monthly_goal-$current_month_steps)*$get_m_user_stride/100000,2) }} Km) </p>
                 @endif
+                @if($get_m_user_monthly_goal <= $current_month_steps)
+                <p class="mb-0 pb-3 pl-3" style="font-size:50%; color: red">Completed!</p>
+                @else
+                <p class="mb-0 pb-3" style="font-size:50%; color: red">Inprogress!</p>
+                @endif
+                <p class="mb-0 pt-3" style="font-size:50%">月間目標</p>
+                <p class="mb-0 pt-3" style="font-size:50%">{{ $get_m_user_monthly_goal}}歩</p>
               </div>
             </div>
           </div>
@@ -236,7 +239,7 @@ text-decoration: none !important;
     <div class="container-fluid">
       <div class="d-flex flex-row justify-content-start">
         <div class="p-1">
-          <p style="font-size: 80%">Current Tour:-</p>
+          <p style="font-size: 80%">現在の選択ツアー</p>
         </div>
         <div class="">
           <button type="button" class="btn btn-danger btn-sm"></button>
@@ -284,8 +287,8 @@ function drawChart(id, title, comp, rem) {
   data.addColumn('string', 'Volume');
   data.addColumn('number', 'Mortgage Volume');
   data.addRows([
-      ['A', comp],
-      ['B', rem]
+      ['Completed', comp],
+      ['Remaining', rem]
       ]);
   var options = {
       title:title,
@@ -312,8 +315,6 @@ function drawChart(id, title, comp, rem) {
   var percent = 0;
     // start the animation loop
     var handler = setInterval(function(){
-        // values increment
-        percent += 1;
         // apply new values
         data.setValue(0, 1, percent);
         data.setValue(1, 1, 100 - percent);
@@ -325,6 +326,8 @@ function drawChart(id, title, comp, rem) {
           clearInterval(handler);
             centerText('#chart_div', 0, 40, 60);
         }
+        // values increment
+        percent += 1;
 
     }, 15);
 

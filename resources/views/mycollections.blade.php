@@ -26,16 +26,16 @@
 <div class="container-fluid mt-2">
       <div class="row justify-content-around">
         <div class="col-xs-3">
-         <a href="{{ url('/mypage') }}" >  <button type="button" class="btn blue mr-1 mb-1" style="font-size:70%">MyPage</button> </a>
+         <a href="{{ url('/mypage') }}" >  <button type="button" class="btn blue mr-1 mb-1" style="font-size:70%">マイページへ戻る</button> </a>
         </div>
         <div class="col-xs-3">
-         <a href="{{ url('/createtour') }}" >  <button type="button" class="btn blue mr-1 mb-1" style="font-size:70%">Show Tours</button> </a>
+         <a href="{{ url('/createtour') }}" >  <button type="button" class="btn blue mr-1 mb-1" style="font-size:70%">ツアー別表示</button> </a>
         </div>
         <div class="col-xs-3">
-        <a href="{{ url('/reversemycollection') }}"> <button type="button" class="btn blue mr-1 mb-1" style="font-size:70%">Sort by latest</button> </a>
+        <a href="{{ url('/reversemycollection') }}"> <button type="button" class="btn blue mr-1 mb-1" style="font-size:70%">取得の新しい順</button> </a>
         </div>
         <div class="col-xs-3">
-         <a href="{{ url('/mycollection') }}" > <button type="button" class="btn blue mr-1 mb-1" style="font-size:70%">Sort by oldest</button> </a>
+         <a href="{{ url('/mycollection') }}" > <button type="button" class="btn blue mr-1 mb-1" style="font-size:70%">取得の古い順</button> </a>
         </div>
       </div>
     </div>
@@ -44,10 +44,10 @@
         <table class="table table-hover" id="collections_table">
             <thead>
               <tr>
-                <th scope="col">Type</th>
-                <th scope="col">Name</th>
-                <th scope="col">Earned Date</th>
-                <th scope="col">Count</th>
+                <th scope="col">アイテムの種類</th>
+                <th scope="col">アイテムの名前</th>
+                <th scope="col">取得年月日</th>
+                <th scope="col">取得回数</th>
               </tr>
             </thead>
   @if(! empty($get_t_collections))

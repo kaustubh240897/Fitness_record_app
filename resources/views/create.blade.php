@@ -55,7 +55,7 @@
 <div class="container-fluid mt-1">
       <div class="row">
         <div class="col-xs-4 pr-3 pl-2">
-         <a href="{{ url('/mypage') }}"> <button type="button" class="btn blue">My Page</button> </a>
+         <a href="{{ url('/mypage') }}"> <button type="button" class="btn blue">マイページへ戻る</button> </a>
         </div>
         <div class="col-xs-4 pr-3 pl-2">
         @if(! empty($m_user))
@@ -64,11 +64,11 @@
         </div>
         <div class="col-xs-6 pl-2 pt-2">
       @if(! empty($m_user))
-      <p class="text-break mb-0">Level:- {{ $m_user->tour_level }} </p>
+      <p class="text-break mb-0">あなたのレベルはLv.{{ $m_user->tour_level }}です。</p>
       @else
-      <p class="text-break mb-0">Level:- None </p>
+      <p class="text-break mb-0">あなたのレベルはLv.0です。</p>
       @endif
-          <p class="text-break">Your level will keep increasing as you complete the tours.</p>
+          <p class="text-break">ツアーの踏破に応じてレベルアップします。レベルアップすると・・・？</p>
         </div>
       </div>
     </div>
@@ -91,19 +91,19 @@
 
       <div class="row">
         <div class="col">
-          <p>2. Stride:-</p>
+          <p>1歩あたりの距離指定</p>
         </div>
       </div>
       <div class="row">
         <div class="col-3 pl-3">
           <div class="form-check form-check-inline pb-1">
             <input class="form-check-input" type="radio" required='true' name="gridRadios" id="inlineRadio1" value="3">
-            <label class="form-check-label p-1" for="inlineRadio1">Calculate</label>
+            <label class="form-check-label p-1" for="inlineRadio1">性別と身長から算出</label>
           </div>
           <br>
           <div class="form-check form-check-inline pt-2">
             <input class="form-check-input" type="radio" required='true' name="gridRadios" id="inlineRadio2" value="4">
-            <label class="form-check-label" for="inlineRadio2">Manual</label>
+            <label class="form-check-label" for="inlineRadio2">自由設定</label>
           </div>
         </div>
         <div class="col">
@@ -122,7 +122,7 @@
                 <input type="number" class="form-control d-inline-block" name='inputheight' style="width: 100%; height:50%; font-size:50%" id="heightinput" min='112' max='212' placeholder="Height in cm">
               </div>
               <div class="col-3 p-0 pl-1">
-                <button type="button" class="btn blue cal" style="width: 100%; height:50%; font-size:70%" onclick="calculateStride()">Calculate</button>
+                <button type="button" class="btn blue cal" style="width: 100%; height:50%; font-size:70%" onclick="calculateStride()">計算</button>
               </div>
               <div class="col-3 p-0 pl-1">
                 <div class="d-flex flex-row justify-content-sm-end">
@@ -141,25 +141,25 @@
     </div>
     <div class="container pt-2">
       <div class="d-flex flex-row justify-content-center">
-        <p style="font-size: 70%">*Stride length should be between 45cm - 85cm</p>
+        <p style="font-size: 70%">※1歩あたりの距離指定は45Cm~85Cmの範囲である必要があります。</p>
       </div>
     </div>
     <div class="container-fluid">
       <div class="row">
         <div class="col">
-          <p>3. Daily Goal:-</p>
+          <p>1日あたりの目標指定</p>
         </div>
       </div>
  <div class="row">
         <div class="col-3 pl-3">
           <div class="form-check form-check-inline pb-1">
             <input class="form-check-input" type="radio" required='true' name="radio_daily" id="inlineRadio3" value="5">
-            <label class="form-check-label p-1" for="inlineRadio3">Steps</label>
+            <label class="form-check-label p-1" for="inlineRadio3">歩数で指定</label>
           </div>
           <br>
           <div class="form-check form-check-inline pt-2">
             <input class="form-check-input" type="radio" required='true' name="radio_daily" id="inlineRadio4" value="6">
-            <label class="form-check-label" for="inlineRadio4">Distance</label>
+            <label class="form-check-label" for="inlineRadio4">距離で指定</label>
           </div>
         </div>
         <div class="col">
@@ -198,25 +198,25 @@
     </div>
     <div class="container">
       <div class="d-flex flex-row justify-content-center">
-        <p style="font-size: 70%">Daily distance should be less than 100km</p>
+        <p style="font-size: 70%">※1日あたりの目標指定は100,000歩を超えない範囲である必要があります。</p>
       </div>
     </div>
     <div class="container-fluid">
       <div class="row">
         <div class="col">
-          <p>4. Monthly Goal:-</p>
+          <p>1ヵ月あたりの目標指定</p>
         </div>
       </div>
       <div class="row">
         <div class="col-3 pl-3">
           <div class="form-check form-check-inline pb-1">
             <input class="form-check-input" type="radio" required='true' name="radio_monthly" id="inlineRadio5" value="7">
-            <label class="form-check-label p-1" for="inlineRadio5">Steps</label>
+            <label class="form-check-label p-1" for="inlineRadio5">日数で指定</label>
           </div>
           <br>
           <div class="form-check form-check-inline pt-2">
             <input class="form-check-input" type="radio" required='true' name="radio_monthly" id="inlineRadio6" value="8">
-            <label class="form-check-label" for="inlineRadio6">Distance</label>
+            <label class="form-check-label" for="inlineRadio6">距離で指定</label>
           </div>
         </div>
         <div class="col">
@@ -255,47 +255,47 @@
     </div>
     <div class="container">
       <div class="d-flex flex-row justify-content-center">
-        <p style="font-size: 70%">Monthly distance should be less than 1000km.</p>
+        <p style="font-size: 70%">※1ヵ月あたりの目標指定は1000Kmを超えない範囲である必要があります。</p>
       </div>
     </div>
     <div class="container-fluid">
-      <p>Motion:-</p>
+      <p>モーション表示の設定</p>
       <div class="d-flex flex-row justify-content-around justify-content-sm-start">
         <div class="form-check form-check-inline pl-3">
           <input class="form-check-input" type="checkbox" name='motionapp' id="inlineCheckbox1" value="1">
-          <label class="form-check-label" for="inlineCheckbox1" style="font-size:70%">Animation in mobile application</label>
+          <label class="form-check-label" for="inlineCheckbox1" style="font-size:70%">アプリでの表示はモーション表示あり</label>
         </div>
         <div class="form-check form-check-inline pl-3">
           <input class="form-check-input" type="checkbox" name='motionweb' id="inlineCheckbox2" value="1">
-          <label class="form-check-label" for="inlineCheckbox2" style="font-size:70%">Animation in web application</label>
+          <label class="form-check-label" for="inlineCheckbox2" style="font-size:70%">Webでの表示はモーション表示あり</label>
         </div>
       </div>
     </div>
     <div class="container pt-2">
       <div class="d-flex flex-row justify-content-center">
-        <p style="font-size: 70%">*Some text for stride length</p>
+        <p style="font-size: 70%">※モーション表示の説明・・・・・・・・・・・・・</p>
       </div>
     </div>
     <div class="container-fluid">
       <div class="row">
         <div class="col-6 col-sm-3">
-          <p style="font-size: 70%">Currently Selected Tour:-</p>
+          <p style="font-size: 70%">現在選択中のツアー</p>
         </div>
         <div class="col-6">
         @if(! empty($t_tour))
           <p class="text-break" style="font-size: 70%">Tourname :- {{ $t_tour->m_tours->tour_title }} {{ $t_tour->status }}</p>
         @elseif( empty($t_tour))
-          <p style="color: red; font-size: 70%">*No tour selected</p>
+          <p style="color: red; font-size: 70%">※選択中のツアーは既に踏破済です。</p>
         @endif
         @if( !empty($t_tour)  && $t_tour->status == 'Done' )
-          <p style="color: red; font-size: 70%">*Selected tour already completed</p>
+          <p style="color: red; font-size: 70%">※選択中のツアーは既に踏破済です。</p>
         @endif
         </div>
       </div>
     </div>
     <div class="container-fluid p-1">
       <div class="d-flex flex-row-reverse">
-        <button type="submit" class="btn blue">Tour Selection</button>
+        <button type="submit" class="btn blue">ツアーを選択</button>
       </div>
     </div>
   </form>

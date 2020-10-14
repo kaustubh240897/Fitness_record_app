@@ -36,35 +36,35 @@
       }
     }
     </style>
-   
+
 
 
 <div class="container-fluid">
       <div class="row justify-content-around">
         <div class="col-xs-3">
-         <a href="{{ url('/mypage') }}" > <button type="button" class="btn blue mr-1">My Page</button> </a>
+         <a href="{{ url('/mypage') }}" > <button type="button" class="btn blue mr-1">マイページへ戻る</button> </a>
         </div>
         <div class="col-xs-3">
-         <a href="{{ url('/usermonthlyhistory') }}" >  <button type="button" class="btn blue mr-1" onclick="changeText()" id="bt1">Monthly Data</button> </a>
+         <a href="{{ url('/usermonthlyhistory') }}" >  <button type="button" class="btn blue mr-1" onclick="changeText()" id="bt1">月別</button> </a>
         </div>
         <div class="dropdown">
           <button class="btn blue dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Sort by
+            成果の順序
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-          <a href="{{ url('/reverseuserdailyhistory') }}" >    <button class="btn blue dropdown-item mb-1" type="button">Latest</button> </a>
-          <a href="{{ url('/userdailyhistory') }}" >   <button class="btn blue dropdown-item" type="button">Oldest</button> </a>
+          <a href="{{ url('/reverseuserdailyhistory') }}" >    <button class="btn blue dropdown-item mb-1" type="button">最新</button> </a>
+          <a href="{{ url('/userdailyhistory') }}" >   <button class="btn blue dropdown-item" type="button">年代順</button> </a>
           </div>
         </div>
       </div>
     </div>
-    
+
      <div class="container-fluid mt-2 mb-2 pb-4">
         <div class="row float-right">
           <div class="col float-right mx-0">
           <form action='/search' method="get">
             <div class="input-group mx-0">
-              
+
               <input type="number" name='year' placeholder='yyyy' required='true' class="form-control mx-0" min="2020" id="yearinput">
               <input type="number" name='day' placeholder='dd' required='true' class="form-control mx-0" min="1" max='31' id="dayinput">
               <input type="number" name='month' placeholder='mm' required='true' class="form-control mx-0" min="1" max="12" id="monthinput">
@@ -82,10 +82,10 @@
         <table class="table table-hover" id="collections_table">
             <thead>
               <tr>
-                <th scope="col">Date</th>
-                <th scope="col">Steps</th>
-                <th scope="col">Est. dist.(km)<br/>(Stride {{ $get_m_user_stride }} cm)</th>
-                <th scope="col">Target ({{ $get_m_user_daily_goal }}steps)</th>
+                <th scope="col">実績年月日</th>
+                <th scope="col">歩数</th>
+                <th scope="col">距離換算<br/>(1歩あたり{{ $get_m_user_stride }} cm)</th>
+                <th scope="col">日目標達成 ({{ $get_m_user_daily_goal }}歩)</th>
               </tr>
             </thead>
             <tbody>
@@ -111,10 +111,10 @@
   <script type="text/javascript">
     function changeText() {
       var x = document.getElementById("bt1");
-      if (x.innerHTML === "Monthly Data") {
-        x.innerHTML = "Daily Data";
+      if (x.innerHTML === "月別") {
+        x.innerHTML = "毎日";
       } else {
-        x.innerHTML = "Monthly Data";
+        x.innerHTML = "月別";
       }
     }
   </script>

@@ -10,18 +10,18 @@ class CustomAuthController extends Controller
 {
     public function showRegisterForm(){
         return view('custom.register');
-       
+
     }
     public function Register(Request $request){
         $this->validation($request);
         $request['password'] = bcrypt($request->password);
         User::create($request->all());
         return redirect('/custom-login')->with('Status', 'You are registered please login now');
-       
+
     }
      public function showLoginForm(){
         return view('custom.login');
-       
+
     }
     public function Login(Request $request){
         $this->validate($request, [
@@ -46,7 +46,7 @@ class CustomAuthController extends Controller
 
         }
         return "oops something is wrong";
-       
+
     }
     public function validation($request){
         return $this->validate($request, [

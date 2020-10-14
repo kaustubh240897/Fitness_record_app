@@ -108,7 +108,7 @@
 
 
 <div class="container-fluid mt-1">
-   <a href="{{ url('/createtour') }}" > <button type="button" class="btn blue">Tour Selection Page</button></a>
+   <a href="{{ url('/createtour') }}" > <button type="button" class="btn blue">ツアー選択へ戻る</button></a>
     </div>
 
     <div class="container-fluid mt-3 pl-sm-4">
@@ -130,7 +130,7 @@
     <div class="container-fluid mt-3 pl-sm-4">
       <div class="row pl-2">
         <div class="col-4 col-sm-2 p-1 pl-2">
-          <p style="font-size: 80%">Comments:-</p>
+          <p style="font-size: 80%">ツアー概要</p>
         </div>
         <div class="col col-sm-5 p-1">
           <p class="border border-dark text-break" style="font-size: 80%">{{ $tours->tour_comment }}</p>
@@ -152,7 +152,7 @@
               <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="1" >
               @endif
 
-              <label class="form-check-label" for="inlineRadio1">Normal</label>
+              <label class="form-check-label" for="inlineRadio1">通常の踏破</label>
             </div>
             <div class="form-check form-check-inline pl-3">
              @if($value == 'true')
@@ -160,7 +160,7 @@
              @else
              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="2">
              @endif
-              <label class="form-check-label" for="inlineRadio2">Reverse</label>
+              <label class="form-check-label" for="inlineRadio2">逆方向に踏破</label>
             </div>
           </div>
         </div>

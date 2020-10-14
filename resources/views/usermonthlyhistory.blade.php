@@ -20,18 +20,18 @@
 <div class="container-fluid">
       <div class="row justify-content-around">
         <div class="col-xs-3">
-         <a href="{{ url('/mypage') }}" > <button type="button" class="btn blue mr-1 mb-1">My Page</button> </a>
+         <a href="{{ url('/mypage') }}" > <button type="button" class="btn blue mr-1 mb-1">マイページへ戻る</button> </a>
         </div>
         <div class="col-xs-3">
-         <a href="{{ url('/userdailyhistory') }}" >  <button type="button" class="btn blue mr-1 mb-1" onclick="changeText()" id="bt1">Daily Data</button> </a>
+         <a href="{{ url('/userdailyhistory') }}" >  <button type="button" class="btn blue mr-1 mb-1" onclick="changeText()" id="bt1">日別</button> </a>
         </div>
         <div class="dropdown">
           <button class="btn blue dropdown-toggle mb-1" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Sort by
+            成果の順序
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-          <a href="{{ url('/reverseusermonthlyhistory') }}" >    <button class="btn blue dropdown-item mb-1" type="button">Latest</button> </a>
-          <a href="{{ url('/usermonthlyhistory') }}" >   <button class="btn blue dropdown-item" type="button">Oldest</button> </a>
+          <a href="{{ url('/reverseusermonthlyhistory') }}" >    <button class="btn blue dropdown-item mb-1" type="button">最新</button> </a>
+          <a href="{{ url('/usermonthlyhistory') }}" >   <button class="btn blue dropdown-item" type="button">年代順</button> </a>
           </div>
         </div>
       </div>
@@ -43,10 +43,10 @@
         <table class="table table-hover" id="collections_table">
             <thead>
               <tr>
-                <th scope="col">Date</th>
-                <th scope="col">Steps</th>
-                <th scope="col">Est. dist.(km)<br/>(Stride {{ $get_m_user_stride }} cm)</th>
-                <th scope="col">Target ({{ $get_m_user_monthly_goal }}steps)</th>
+                <th scope="col">実績年月</th>
+                <th scope="col">歩数</th>
+                <th scope="col">距離換算<br/>(1歩あたり{{ $get_m_user_stride }} cm)</th>
+                <th scope="col">月目標達成 ({{ $get_m_user_monthly_goal }}歩)</th>
               </tr>
             </thead>
             <tbody>

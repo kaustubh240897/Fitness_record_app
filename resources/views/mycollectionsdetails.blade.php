@@ -24,10 +24,10 @@
     <table class="table table-hover" id="collections_table">
         <thead>
           <tr>
-            <th scope="col">Type</th>
-            <th scope="col">Name</th>
-            <th scope="col">Earned Date</th>
-            <th scope="col">Count</th>
+            <th scope="col">アイテムの種類</th>
+            <th scope="col">アイテムの名前</th>
+            <th scope="col">取得年月日</th>
+            <th scope="col">取得回数</th>
           </tr>
         </thead>
         @if(! empty($my_collections))
@@ -47,7 +47,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-3">
-        <p style="font-size:70%">Comments:-</p>
+        <p style="font-size:70%">アイテムの説明</p>
       </div>
       <div class="col-9">
       @if(! empty($my_collections->m_collections->m__checkpoints->comments))

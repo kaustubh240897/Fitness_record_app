@@ -31,6 +31,14 @@
   align-self: flex-start;
   transform: translateY(70%);
 }
+
+#test_font{
+          position: absolute;
+          visibility: hidden;
+          height: auto;
+          width: auto;
+          white-space: nowrap;
+      }
     </style>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js" integrity="sha512-WIklPM6qPCIp6d3fSSr90j+1unQHUOoWDS4sdTiR8gxUTnyZ8S2Mr8e10sKKJ/bhJgpAa/qG068RDkg6fIlNFA==" crossorigin="anonymous"></script>
@@ -38,18 +46,20 @@
 <div class="container-fluid">
       <div class="row justify-content-around">
         <div class="col-xs-3">
+         <a href="" >   <button type="button" class="btn pink mr-1 mb-1"
+           id="btnMyPage" value="" onclick="mypage.performClick(this.value);" style="font-size: 70%">レシピ</button> </a> <!--Recipe-->
+        </div>
+        <div class="col-xs-3">
+         <a href="" >   <button type="button" class="btn pink mr-1 mb-1"
+           id="btnMyCollection" value="" onclick="mycollection.performClick(this.value);" style="font-size: 70%">日めくりカレンダ
+</button> </a> <!--Daily Calendar-->
+        </div>
+        <div class="col-xs-6">
          <a href="{{ url('/mypage') }}" >   <button type="button" class="btn blue mr-1 mb-1"
-           id="btnMyPage" value="" onclick="mypage.performClick(this.value);">My page</button> </a>
+           id="btnMyHistory" value="" onclick="myhistory.performClick(this.value);" style="font-size: 70%">ウォーキングマイページ
+</button> </a> <!--MyPage-->
         </div>
-        <div class="col-xs-3">
-         <a href="{{ url('/mycollection') }}" >   <button type="button" class="btn blue mr-1 mb-1"
-           id="btnMyCollection" value="" onclick="mycollection.performClick(this.value);">My collection</button> </a>
-        </div>
-        <div class="col-xs-3">
-         <a href="{{ url('/userdailyhistory') }}" >   <button type="button" class="btn blue mr-1 mb-1"
-           id="btnMyHistory" value="" onclick="myhistory.performClick(this.value);">My history</button> </a>
-        </div>
-        <div class="col-xs-3">
+        <!-- <div class="col-xs-3">
           @if(! empty($m__users_id))
           <a href="{{ route('edit', $m__users_id) }}">  <button type="button" class="btn blue mr-1 mb-1"
            id="btnMyProfile" value="" onclick="myprofile.performClick(this.value);">My Profile</button> </a>
@@ -57,7 +67,7 @@
           <a href="{{ url('/') }}" >   <button type="button" class="btn blue mr-1 mb-1"
            id="btnMyProfile" value="" onclick="myprofile.performClick(this.value);">My Profile</button> </a>
           @endif
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="container-fluid">
@@ -65,6 +75,7 @@
         <div class="col-xs-6 mt-0">
           <div id="chart_div"></div>
         </div>
+        <div id="test_font" class="text-break"></div>
         @if( empty($m__users_id))
         <h2> Please make your profile first <a href="/">click here </a> </h2> <br/>
         @endif
@@ -75,12 +86,12 @@
         @else
            <p class="mb-0 overlay-text pt-3" style="font-size:70%; color: red">Inprogress!</p>
         @endif
-          <p class="mb-0" style="font-size:70%">Today's Goal:-</p>
-          <p class="mb-0" style="font-size:70%">Steps =  {{ $get_m_user_daily_goal }}</p>
-          <p class="mb-0" style="font-size:70%">Distance =  {{ $get_m_user_daily_goal*$get_m_user_stride/100000 }} (km)</p>
-          <p class="mb-0" style="font-size:70%">Remaining:-</p>
-          <p class="mb-0" style="font-size:70%">Steps = @if($get_m_user_daily_goal <=  $today_data) 0  @else {{ $get_m_user_daily_goal-$today_data }} @endif</p>
-          <p class="mb-0" style="font-size:70%">Distance = @if($get_m_user_daily_goal <=  $today_data) 0  @else {{ ($get_m_user_daily_goal-$today_data)*$get_m_user_stride/100000 }} @endif km</p>
+          <p class="mb-0" style="font-size:70%">1日の目標歩数</p>
+          <p class="mb-0" style="font-size:70%">{{ $get_m_user_daily_goal }}歩</p>
+          <p class="mb-0" style="font-size:70%">{{ $get_m_user_daily_goal*$get_m_user_stride/100000 }} (km)</p>
+          <p class="mb-0" style="font-size:70%">目標まで</p>
+          <p class="mb-0" style="font-size:70%">@if($get_m_user_daily_goal <=  $today_data) 0  @else {{ $get_m_user_daily_goal-$today_data }}歩 @endif</p>
+          <p class="mb-0" style="font-size:70%">@if($get_m_user_daily_goal <=  $today_data) 0  @else {{ ($get_m_user_daily_goal-$today_data)*$get_m_user_stride/100000 }} @endif km</p>
         </div>
          @else
         <h6> You have not started tour yet! </h6>
@@ -91,21 +102,25 @@
       <div class="float-xs-right"><div id="barchart_div"></div></div>
     </div>
     <div class="container-fluid overlay-text2">
-      <div class="d-flex flex-row justify-content-center">
-        <div class="pl-3">
-          <p class="mb-0" style="font-size:70%">Completed this month:-</p>
-          <p class="mb-0" style="font-size:70%">{{ $current_month_steps }}Steps({{ $current_month_steps*$get_m_user_stride/100000 }}Km)</p>
-          @if($get_m_user_monthly_goal <= $current_month_steps)
-          <p class="mb-0 pb-3" style="font-size:70%; color: red">Completed!</p>
-          @else
-          <p class="mb-0 pb-3" style="font-size:70%; color: red">Inprogress!</p>
-          @endif
-          <p class="mb-0 pt-3" style="font-size:70%">Remaining this month:-</p>
-          @if($get_m_user_monthly_goal <= $current_month_steps)
-          <p class="mb-0" style="font-size:70%">0 steps</p>
-          @else
-          <p class="mb-0" style="font-size:70%">{{ $get_m_user_monthly_goal-$current_month_steps }}({{ ($get_m_user_monthly_goal-$current_month_steps)*$get_m_user_stride/100000 }} Km</p>
-          @endif
+      <div class="row">
+          <div class="col border-right pl-3 text-center">
+            <p class="mb-0 pl-3 pt-3" style="font-size:70%">月間累計</p> <!--Completed this month -->
+            <p class="mb-0 pl-3 pt-3" style="font-size:70%">{{ $current_month_steps }}歩({{ $current_month_steps*$get_m_user_stride/100000 }}Km)</p>
+          </div>
+          <div class="col">
+            <p class="mb-0 pt-3" style="font-size:70%">目標まで</p>
+            @if($get_m_user_monthly_goal <= $current_month_steps)
+            <p class="mb-0" style="font-size:70%">0歩</p>
+            @else
+            <p class="mb-0" style="font-size:70%">{{ $get_m_user_monthly_goal-$current_month_steps }}歩({{ ($get_m_user_monthly_goal-$current_month_steps)*$get_m_user_stride/100000 }} Km)</p>
+            @endif
+            @if($get_m_user_monthly_goal <= $current_month_steps)
+            <p class="mb-0 pb-3" style="font-size:70%; color: red">Completed!</p>
+            @else
+            <p class="mb-0 pb-3" style="font-size:70%; color: red">Inprogress!</p>
+            @endif
+            <p class="mb-0 pt-3" style="font-size:70%">月間目標</p>
+            <p class="mb-0 pt-3" style="font-size:70%">{{ $get_m_user_monthly_goal}}歩</p>
         </div>
       </div>
     </div>
@@ -158,8 +173,8 @@ function drawChart(id, title, comp, rem) {
     data.addColumn('string', 'Volume');
     data.addColumn('number', 'Mortgage Volume');
     data.addRows([
-        ['A', comp],
-        ['B', rem]
+        ['Completed', comp],
+        ['Remaining', rem]
         ]);
     var options = {
         title:title,
@@ -186,36 +201,52 @@ function drawChart(id, title, comp, rem) {
     var percent = 0;
       // start the animation loop
       var handler = setInterval(function(){
-          // values increment
-          percent += 1;
+
           // apply new values
           data.setValue(0, 1, percent);
           data.setValue(1, 1, 100 - percent);
           // update the pie
           chart.draw(data, options);
+
           // check if we have reached the desired value
           if (percent >= comp_percent) {
             // stop the loop
             clearInterval(handler);
-              centerText('#chart_div', 0, 100, 140);
+              centerText('#chart_div');
           }
+          // values increment
+          percent += 1;
 
       }, 15);
 
+
 }
 
-function centerText(chart, idx, X, Y) {
-  var cht = document.querySelector(chart);
-  var txt = document.querySelectorAll(chart + " text");
-  //var chW = cht.width/2;
-  //var chH = cht.height/2;
-  //var txW = txt[idx].width/2;
-  //var txH = txt[idx].height/2;
-  //var W = chW - txW;
-  //var H = chH - txH;
-  txt[idx].setAttribute('x', X);
-  txt[idx].setAttribute('y', Y);
-}
+// function centerText(chart, idx, X, Y) {
+//   var cht = document.querySelector(chart);
+//   var txt = document.querySelectorAll(chart + " text");
+//   //var chW = cht.width/2;
+//   //var chH = cht.height/2;
+//   //var txW = txt[idx].width/2;
+//   //var txH = txt[idx].height/2;
+//   //var W = chW - txW;
+//   //var H = chH - txH;
+//   txt[idx].setAttribute('x', X);
+//   txt[idx].setAttribute('y', Y);
+// }
+function centerText(chart) {
+        var cht = document.querySelector(chart);
+          var txt = document.querySelector(chart + " text");
+          var test_txt = document.querySelector('#test_font');
+          test_txt.innerHTML = txt.innerHTML;
+          test_txt.style.fontFamily = txt.getAttribute('font-family');
+          test_txt.style.fontSize = txt.getAttribute('font-size') + 'px';
+          test_txt.style.fontWeight = txt.getAttribute('font-weight');
+          var X = (cht.clientWidth-test_txt.clientWidth)/2;
+          var Y = ((cht.clientHeight-test_txt.clientHeight)/2) + 1*document.querySelectorAll(chart + " rect").item(1).getAttribute('height');
+          txt.setAttribute('x', X);
+          txt.setAttribute('y', Y);
+        }
 
 function init() {
    if({{ $today_data }} > 0){
