@@ -13,6 +13,10 @@ use Validator;
 use Symfony\Component\HttpFoundation\Response;
 class StepsController extends Controller
 {
+    public function __construct()
+        {
+            $this->middleware('auth:api');
+        }
     
     /**
      * Display a listing of the resource.
@@ -21,12 +25,12 @@ class StepsController extends Controller
      */
     public function index(m_Users $m_user)
     {
-        if(is_null($m_user)){
-        return response()->json(["message" => "Record not found"], 404);
-        }
-        elseif($m_user->users_id != Auth::id()){
-        return response()->json(["message" => "Unauthorized request"], 401);
-        }
+        // if(is_null($m_user)){
+        // return response()->json(["message" => "Record not found"], 404);
+        // }
+        // elseif($m_user->users_id != Auth::id()){
+        // return response()->json(["message" => "Unauthorized request"], 401);
+        // }
         
         return t_StepsCollection::collection($m_user->t_steps);
     }
@@ -70,7 +74,10 @@ class StepsController extends Controller
         // //
         // $steps = t_Steps::create($request->all());
         // return response()->json($steps,201);
-        if($m_user->users_id != Auth::id()){
+
+
+
+         if($m_user->users_id != Auth::id()){
             return response()->json(["message" => "Unauthorized request"], 401);
         }
         elseif(is_null($m_user)){
@@ -97,15 +104,14 @@ class StepsController extends Controller
         
         $steps =  t_Steps::where('m__users_id', $m_user)->where('id', $step)->first();
         
-        if($m_user != Auth::id()){
-        return response()->json(["message" => "Unauthorized request"], 401);
-        }
-        elseif(is_null($steps)){
-        return response()->json(["message" => "Record not found"], 404);
-        }
+        // if($m_user != Auth::id()){
+        // return response()->json(["message" => "Unauthorized request"], 401);
+        // }
+        // elseif(is_null($steps)){
+        // return response()->json(["message" => "Record not found"], 404);
+        // }
         return new t_StepsResource($steps,201);
-         //return new t_StepsResource($m_user, $step);
-
+         
     }
 
     /**

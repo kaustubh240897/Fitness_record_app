@@ -5,7 +5,7 @@ use Auth;
 use Illuminate\Http\Request;
 use App\User;
 use App\m_Users;
-
+use Illuminate\Auth\Events\Registered;
 class CustomAuthController extends Controller
 {
     public function showRegisterForm(){
@@ -14,9 +14,15 @@ class CustomAuthController extends Controller
     }
     public function Register(Request $request){
         $this->validation($request);
+        $request['email'] = $request->name;
         $request['password'] = bcrypt($request->password);
-        User::create($request->all());
-        return redirect('/custom-login')->with('Status', 'You are registered please login now');
+        event(new Registered($user = User::create($request->all())));
+            $this->registered($request, $user);
+
+        return redirect()->route('create')->with('Status', 'You are Successfully registered ');
+        // User::create($request->all());
+        // Auth::login(User::create($request->all()));
+        // return redirect('/custom-login')->with('Status', 'You are registered please login now');
 
     }
      public function showLoginForm(){
@@ -40,14 +46,22 @@ class CustomAuthController extends Controller
         // login if serial number exists otherwise register it .
         else{
             $this->validation($request);
+            $request['email'] = $request->name;
             $request['password'] = bcrypt($request->password);
-            User::create($request->all());
-            return redirect()->route('custom.login')->with('Status', 'You are Successfully registered please login now.');
+            event(new Registered($user = User::create($request->all())));
+            $this->registered($request, $user);
+
+            return redirect()->route('create')->with('Status', 'You are Successfully registered ');
 
         }
         return "oops something is wrong";
 
     }
+    protected function registered(Request $request, $user)
+    {
+        return Auth::login($user);
+    }
+
     public function validation($request){
         return $this->validate($request, [
             'name' => 'required|unique:users|max:255',

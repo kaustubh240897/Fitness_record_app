@@ -12,6 +12,10 @@ use Symfony\Component\HttpFoundation\Response;
 
 class m_UsersController extends Controller
 {
+    public function __construct()
+        {
+            $this->middleware('auth:api');
+        }
     /**
      * Display a listing of the resource.
      *
@@ -19,7 +23,7 @@ class m_UsersController extends Controller
      */
     public function index()
     {
-        return m_UsersCollection::collection(m_Users::where('users_id', Auth::id())->paginate(10));
+        return m_UsersCollection::collection(m_Users::paginate(10));
     }
 
     /**
@@ -40,12 +44,12 @@ class m_UsersController extends Controller
      */
     public function store(m_UsersRequest $request)
     {
-        if($request->users_id != Auth::id()){
-             return response()->json(["message" => "Unauthorized request"], 401);
-            }
-        elseif(m_Users::where('users_id', Auth::id())->count() != 0){
-            return response()->json(["message" => "you have already created m_user for this user, Integrity error."], 409);
-        }
+        // if($request->users_id != Auth::id()){
+        //      return response()->json(["message" => "Unauthorized request"], 401);
+        //     }
+        // elseif(m_Users::where('users_id', Auth::id())->count() != 0){
+        //     return response()->json(["message" => "you have already created m_user for this user, Integrity error."], 409);
+        // }
             $m_user = new m_Users;
 
             $m_user->serial_number = $request->serial_number;
@@ -74,14 +78,14 @@ class m_UsersController extends Controller
     public function show($m_user)
     {
         $m_User =  m_Users::where('id', $m_user)->first();
-        if(is_null($m_User)){
-        return response()->json(["message" => "Record not found"], 404);
-        }
-        elseif($m_User->users_id != Auth::id()){
-        return response()->json(["message" => "Unauthorized request"], 401);
-        }
+        // if(is_null($m_User)){
+        // return response()->json(["message" => "Record not found"], 404);
+        // }
+        // elseif($m_User->users_id != Auth::id()){
+        // return response()->json(["message" => "Unauthorized request"], 401);
+        // }
         return new m_UsersResource($m_User,201);
-        // return new m_UsersResource($m_user);
+       
     }
 
     /**
