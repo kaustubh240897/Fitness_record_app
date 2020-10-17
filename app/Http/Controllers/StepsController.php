@@ -176,6 +176,6 @@ class StepsController extends Controller
         }
         
         $steps->delete();
-        return response()->json(["message" => "Successfully deleted"], 204);
+        return response()->json(["message" => "Successfully deleted"], 200);
     }
 }

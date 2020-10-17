@@ -53,7 +53,8 @@ Route::put('m_users/{m_user}', 'm_UsersController@update');
 Route::get('steps', 'StepsController@index');
 Route::get('steps/{step}','StepsController@show');
 Route::post('steps/','StepsController@store');
-
+Route::put('steps/{step}/', 'StepsController@update');
+Route::delete('steps/{step}/','StepsController@destroy');
 
 
 Route::group([
