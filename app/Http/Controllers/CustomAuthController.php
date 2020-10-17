@@ -40,7 +40,7 @@ class CustomAuthController extends Controller
         if(Auth::attempt(['name'=>$request->name, 'password'=>$request->password,'password_confirmation'=>$request->password])){
            $m_user = m_Users::where('users_id', Auth::id())->first();
             if ( $m_user !=null ) {// do your magic here
-                return redirect()->route('padometerscreen')->with('Status', 'You are Successfully logged in')->withCookie(
+                return redirect()->route('mypage')->with('Status', 'You are Successfully logged in')->withCookie(
                 'serialnumber', 
                 $request->email, 5340000, '/');
             }
