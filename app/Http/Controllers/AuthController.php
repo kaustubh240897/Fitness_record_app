@@ -22,14 +22,14 @@ class AuthController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function login() {
+    public function login(Request $request) {
             $credentials = request(['email', 'password']);
 
             if (! $token = JWTAuth::attempt($credentials)) {
                 return response()->json(['error' => 'Unauthorized'], 401);
                 }
                 return response()->json(['status'=>200,'token'=>$token])->withCookie(
-                'token', 
+                $request->email, 
                 JWTAuth::attempt($credentials), config('jwt.ttl'), '/');
     }
 

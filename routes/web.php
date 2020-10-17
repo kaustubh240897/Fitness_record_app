@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Auth::routes();
+//Auth::routes();
 Route::get('/', 'm_UsersWebController@create')->name('create');
 Route::post('/', 'm_UsersWebController@store')->name('store');
 Route::get('edit/{id}', 'm_UsersWebController@edit')->name('edit');
@@ -44,3 +44,4 @@ Route::post('/custom-register', 'CustomAuthController@Register')->name('custom.r
 
 Route::get('/custom-login', 'CustomAuthController@showLoginForm')->name('custom.login');
 Route::post('/custom-login', 'CustomAuthController@Login')->name('custom.login');
+Route::post('/logout', 'CustomAuthController@logout')->name('logout');

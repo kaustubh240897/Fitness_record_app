@@ -24,6 +24,7 @@
                         <p class='alert alert-danger'>{{ $error }} </p>
                     @endforeach
                 @endif
+                @if( empty(Auth::id()))
                 <form class='form-horizontal' action="{{ route('custom.register') }}" method='post'>
                  {{ csrf_field() }}
                     <div class="form-group">
@@ -44,6 +45,9 @@
                         </div>
                     </div>
                 </form>
+                @else
+                <h5> you are already logged in, please logout first! </h5>
+                @endif
             </div>
         </div>
     </div>

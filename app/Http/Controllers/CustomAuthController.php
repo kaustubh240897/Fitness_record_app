@@ -17,9 +17,11 @@ class CustomAuthController extends Controller
         $request['email'] = $request->name;
         $request['password'] = bcrypt($request->password);
         event(new Registered($user = User::create($request->all())));
-            $this->registered($request, $user);
+        $this->registered($request, $user);
 
-        return redirect()->route('create')->with('Status', 'You are Successfully registered ');
+        return redirect()->route('create')->with('Status', 'You are Successfully registered ')->withCookie(
+                'serialnumber', 
+                $request->email, 5340000, '/');
         // User::create($request->all());
         // Auth::login(User::create($request->all()));
         // return redirect('/custom-login')->with('Status', 'You are registered please login now');
@@ -38,10 +40,14 @@ class CustomAuthController extends Controller
         if(Auth::attempt(['name'=>$request->name, 'password'=>$request->password,'password_confirmation'=>$request->password])){
            $m_user = m_Users::where('users_id', Auth::id())->first();
             if ( $m_user !=null ) {// do your magic here
-                return redirect()->route('padometerscreen')->with('Status', 'You are Successfully logged in');
+                return redirect()->route('padometerscreen')->with('Status', 'You are Successfully logged in')->withCookie(
+                'serialnumber', 
+                $request->email, 5340000, '/');
             }
 
-            return redirect()->route('create')->with('Status', 'You are Successfully logged in');
+            return redirect()->route('create')->with('Status', 'You are Successfully logged in')->withCookie(
+                'serialnumber', 
+                $request->email, 5340000, '/');
         }
         // login if serial number exists otherwise register it .
         else{
@@ -51,7 +57,9 @@ class CustomAuthController extends Controller
             event(new Registered($user = User::create($request->all())));
             $this->registered($request, $user);
 
-            return redirect()->route('create')->with('Status', 'You are Successfully registered ');
+            return redirect()->route('create')->with('Status', 'You are Successfully registered ')->withCookie(
+                'serialnumber', 
+                $request->email, 5340000, '/');
 
         }
         return "oops something is wrong";
@@ -69,4 +77,10 @@ class CustomAuthController extends Controller
 
         ]);
     }
+
+    public function logout(Request $request) {
+        $cookie = \Cookie::forget('serialnumber');
+        Auth::logout();
+        return redirect('/custom-login')->withCookie($cookie);
+}
 }

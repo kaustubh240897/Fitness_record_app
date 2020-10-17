@@ -23,15 +23,15 @@ class m_UsersResource extends JsonResource
           'mobile_app' => $this->motion_app,
           'mobile_web' => $this->motion_web,
           'Total-distance(in m)' =>$this->t_steps->sum('steps') > 0 ? $this->t_steps->sum('steps')* $this->stride/ 100 : 'Not started yet!',
-          'href' => [
-              'steps' => route('steps.index', $this->id)
-          ],
-          'collection' => [
-              'usercollections' => route('usercollections.index', $this->id)
-          ],
-           'user_logs' => [
-              'logs' => route('logs.index', $this->id)
-          ]
+        //   'href' => [
+        //       'steps' => route('steps.index', $this->id)
+        //   ],
+        //   'collection' => [
+        //       'usercollections' => route('usercollections.index', $this->id)
+        //   ],
+        //    'user_logs' => [
+        //       'logs' => route('logs.index', $this->id)
+        //   ]
           
 
 

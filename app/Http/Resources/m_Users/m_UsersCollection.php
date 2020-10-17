@@ -17,10 +17,10 @@ class m_UsersCollection extends JsonResource
         return [
                  'id' => $this->id,
                  'stride(in cm)'=> $this->stride,
-                 'href' =>
-                 [
-                     'link' => route('m_users.show', $this->id)
-                 ]
+                //  'href' =>
+                //  [
+                //      'link' => route('m_users.show', $this->id)
+                //  ]
 
         ];
     }
