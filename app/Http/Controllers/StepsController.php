@@ -29,10 +29,10 @@ class StepsController extends Controller
         $m_user = m_Users::where('users_id', Auth::id())->first();
 
         if(is_null($m_user)){
-        return response()->json(["message" => "Record not found"], 404);
+            return response()->json(["message" => "Record not found"], 404);
         }
         elseif($m_user->users_id != Auth::id()){
-        return response()->json(["message" => "Unauthorized request"], 401);
+            return response()->json(["message" => "Unauthorized request"], 401);
         }
         
         return t_StepsCollection::collection($m_user->t_steps);
@@ -64,20 +64,6 @@ class StepsController extends Controller
      */
     public function store(t_StepsRequest $request)
     {
-        // $rules = [
-        //     'm__users_id' => 'required',
-        //     'steps'  => 'required',
-        //     'step_actual_datetime' => 'required|date_format:Y-m-d H:i:s',
-        //      'step_calc_datetime' => 'required|date_format:Y-m-d H:i:s',
-        // ];
-        // $validator = Validator::make($request->all(), $rules);
-        // if($validator->fails()){
-        //     return response()->json($validator->errors(), 400);
-        // }
-        // //
-        // $steps = t_Steps::create($request->all());
-        // return response()->json($steps,201);
-
         $m_user = m_Users::where('users_id', Auth::id())->first();
         $lastSteps = t_Steps::where('m__users_id', $m_user->id)->orderBy('step_actual_datetime', 'DESC')->first();
         
@@ -123,10 +109,10 @@ class StepsController extends Controller
         $steps =  t_Steps::where('m__users_id', $m_user->id)->where('id', $step)->first();
         
         if($m_user->users_id != Auth::id()){
-        return response()->json(["message" => "Unauthorized request"], 401);
+            return response()->json(["message" => "Unauthorized request"], 401);
         }
         elseif(is_null($steps)){
-        return response()->json(["message" => "Record not found"], 404);
+            return response()->json(["message" => "Record not found"], 404);
         }
         return new t_StepsResource($steps,201);
          
@@ -150,15 +136,18 @@ class StepsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, m_Users $m_user, t_Steps $step)
+    public function update(Request $request, $step)
     {
-        //
-        // $steps = t_Steps::find($step_id);
-        // if(is_null($steps)){
-        //     return response()->json(["message" => "Record not found"], 404);
-        // }
-        // $steps->update($request->all());
-        // return response()->json($step_id, 200);
+        
+        $m_user = m_Users::where('users_id', Auth::id())->first();
+        
+        $steps =  t_Steps::where('m__users_id', $m_user->id)->where('id', $step)->first();
+        if($m_user->users_id != Auth::id()){
+            return response()->json(["message" => "Unauthorized request"], 401);
+        }
+        elseif(is_null($steps)){
+            return response()->json(["message" => "Record not found"], 404);
+        }
         $step->update($request->all());
         return response([
             'data' => new t_StepsResource($step)
@@ -173,14 +162,20 @@ class StepsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, $step_id)
+    public function destroy(Request $request, $step)
     {
-        //
-        $steps = t_Steps::find($step_id);
-        if(is_null($steps)){
+        
+        $m_user = m_Users::where('users_id', Auth::id())->first();
+        
+        $steps =  t_Steps::where('m__users_id', $m_user->id)->where('id', $step)->first();
+        if($m_user->users_id != Auth::id()){
+            return response()->json(["message" => "Unauthorized request"], 401);
+        }
+        elseif(is_null($steps)){
             return response()->json(["message" => "Record not found"], 404);
         }
+        
         $steps->delete();
-        return response()->json(null, 204);
+        return response()->json(["message" => "Successfully deleted"], 204);
     }
 }
