@@ -20,7 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 #Route::apiResource('m_users', 'm_UsersController');
 
-Route::apiResource('m_collections', 'm_CollectionController');
+//Route::apiResource('m_collections', 'm_CollectionController');
 
 //Route::apiResource('steps', 'StepsController');
 
@@ -56,9 +56,9 @@ Route::post('steps/','StepsController@store');
 Route::put('steps/{step}/', 'StepsController@update');
 Route::delete('steps/{step}/','StepsController@destroy');
 
-Routes::get('logs/', 't_LogController@index');
-Routes::post('logs/', 't_LogController@store');
-Routes::put('logs/{log}/','t_LogController@update');
+Route::get('logs/', 't_LogController@index');
+Route::post('logs/', 't_LogController@store');
+Route::put('logs/{log}/','t_LogController@update');
 
 Route::group([
 
