@@ -3,43 +3,43 @@
 @section('content')
 
 
- <style media="screen">
-.btn.blue {
-  background-color: #ccece8 !important;
-  /* padding: 12px 32px !important; */
-}
+<style media="screen">
+  .btn.blue {
+    background-color: #ccece8 !important;
+    /* padding: 12px 32px !important; */
+  }
 
-.btn.pink {
-  background-color: #f2dcdb !important;
-  /* padding: 12px 32px !important; */
-}
-.chartcenter{
-    position: absolute;
-    top: 140px;
-    left:100px;
+  .btn.pink {
+    background-color: #f2dcdb !important;
+    /* padding: 12px 32px !important; */
+  }
+  .chartcenter{
+      position: absolute;
+      top: 140px;
+      left:100px;
 
-    text-align: center;
+      text-align: center;
 
-    color: red;
+      color: red;
 
-}
-.overlay-text {
-  align-self: flex-start;
-  transform: translateX(-150%);
-}
-.overlay-text2 {
-  align-self: flex-start;
-  transform: translateY(70%);
-}
+  }
+  .overlay-text {
+    align-self: flex-start;
+    transform: translateX(-150%);
+  }
+  .overlay-text2 {
+    align-self: flex-start;
+    transform: translateY(70%);
+  }
 
-#test_font{
-          position: absolute;
-          visibility: hidden;
-          height: auto;
-          width: auto;
-          white-space: nowrap;
-      }
-    </style>
+  #test_font{
+            position: absolute;
+            visibility: hidden;
+            height: auto;
+            width: auto;
+            white-space: nowrap;
+        }
+</style>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js" integrity="sha512-WIklPM6qPCIp6d3fSSr90j+1unQHUOoWDS4sdTiR8gxUTnyZ8S2Mr8e10sKKJ/bhJgpAa/qG068RDkg6fIlNFA==" crossorigin="anonymous"></script>
 
@@ -407,8 +407,6 @@ else{
       console.log(sun);
       return [mon, tue, wed, thu, fri, sat, sun];
     }
-    </script>
-
-
+</script>
 
 @endsection

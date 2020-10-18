@@ -18,7 +18,6 @@ class t_CollectionController extends Controller
     public function index(m_Collection $m_collection)
     {
         //
-        
         return $m_collection->t_collections;
     }
 

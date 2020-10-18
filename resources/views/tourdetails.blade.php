@@ -5,7 +5,7 @@
 
 
  <style media="screen">
-      .btn.btn-lg {
+     .btn.btn-lg {
         background-color: #ccece8 !important;
        /* padding: 12px 32px !important; */
      }
@@ -104,7 +104,7 @@
       display: block;
     }
 
-    </style>
+</style>
 
 
 <div class="container-fluid mt-1">
@@ -194,13 +194,13 @@
 
 </div>
 @if(! empty($current_tour))
-@if($current_tour->status == 'Done')
-<h5> Congrats! Your tour has been completed. </h5>
-@else
-<h3> You covered {{ $user_stride/100000 * $steps }} (Km) </h3>
-@endif
-@else
-<h4> you have not selected any tour. please select the tour </h4>
+  @if($current_tour->status == 'Done')
+    <h5> Congrats! Your tour has been completed. </h5>
+  @else
+    <h3> You covered {{ $user_stride/100000 * $steps }} (Km) </h3>
+  @endif
+  @else
+    <h4> you have not selected any tour. please select the tour </h4>
 @endif
 
 

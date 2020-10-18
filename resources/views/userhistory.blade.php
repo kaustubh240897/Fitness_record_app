@@ -3,7 +3,7 @@
 @section('content')
 
 
-  <style media="screen">
+<style media="screen">
     .btn.blue {
       background-color: #ccece8 !important;
       /* padding: 12px 32px !important; */

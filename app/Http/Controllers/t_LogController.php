@@ -23,8 +23,6 @@ class t_LogController extends Controller
         return response()->json(["message" => "Unauthorized request"], 401);
         }
         
-        //return t_StepsCollection::collection($m_user->t_steps);
-        
         return t_LogResource::collection($m_user->t_logs);
     }
 

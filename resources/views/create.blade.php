@@ -3,43 +3,43 @@
 @section('content')
 <div class='container'>
 @if (session('successMsg'))
-<div class="alert alert-success" role="alert">
-   {{ session('successMsg') }}
-</div>
+  <div class="alert alert-success" role="alert">
+    {{ session('successMsg') }}
+  </div>
 @endif
 
 @if (session('Status'))
-<div class="alert alert-success" role="alert">
-   {{ session('Status') }}
-</div>
+  <div class="alert alert-success" role="alert">
+    {{ session('Status') }}
+  </div>
 @endif
 
 @if (session('dangerMsg'))
-<div class="alert alert-danger" role="alert">
-   {{ session('dangerMsg') }}
-</div>
+  <div class="alert alert-danger" role="alert">
+    {{ session('dangerMsg') }}
+  </div>
 @endif
 
 @if ($errors->any())
-@foreach ($errors->all() as $error)
-<div class='alert alert-danger' role='alert'>
-{{ $error }}
-</div>
-@endforeach
+  @foreach ($errors->all() as $error)
+    <div class='alert alert-danger' role='alert'>
+      {{ $error }}
+    </div>
+  @endforeach
 @endif
 
 
 
- <style media="screen">
-      .btn.btn-lg {
+<style media="screen">
+    .btn.btn-lg {
         background-color: #ccece8 !important;
        /* padding: 12px 32px !important; */
      }
-     .btn.blue {
+    .btn.blue {
     background-color: #ccece8 !important;
     /* padding: 12px 32px !important; */
-  }
-     .btn.blue.cal {
+    }
+    .btn.blue.cal {
        background-color: #ccece8 !important;
        margin: 0 auto !important;
        padding: 0 !important;
@@ -55,32 +55,32 @@
 <div class="container-fluid mt-1">
       <div class="row">
         <div class="col-xs-4 pr-3 pl-2">
-         <a href="{{ url('/mypage') }}"> <button type="button" class="btn blue">マイページへ戻る</button> </a>
+          <a href="{{ url('/mypage') }}"> <button type="button" class="btn blue">マイページへ戻る</button> </a>
         </div>
         <div class="col-xs-4 pr-3 pl-2">
-        @if(! empty($m_user))
-        <a href="{{ route('edit', $m_user->id) }}">  <button type="button" class="btn blue">Edit</button></a>
-        @endif
+          @if(! empty($m_user))
+          <a href="{{ route('edit', $m_user->id) }}">  <button type="button" class="btn blue">Edit</button></a>
+          @endif
         </div>
         <div class="col-xs-6 pl-2 pt-2">
-      @if(! empty($m_user))
-      <p class="text-break mb-0">あなたのレベルはLv.{{ $m_user->tour_level }}です。</p>
-      @else
-      <p class="text-break mb-0">あなたのレベルはLv.0です。</p>
-      @endif
-          <p class="text-break">ツアーの踏破に応じてレベルアップします。レベルアップすると・・・？</p>
+          @if(! empty($m_user))
+            <p class="text-break mb-0">あなたのレベルはLv.{{ $m_user->tour_level }}です。</p>
+          @else
+            <p class="text-break mb-0">あなたのレベルはLv.0です。</p>
+          @endif
+            <p class="text-break">ツアーの踏破に応じてレベルアップします。レベルアップすると・・・？</p>
         </div>
       </div>
     </div>
 <form action="{{ route('store') }}" method="POST" >
-{{ csrf_field() }}
+  {{ csrf_field() }}
 <div class="container-fluid">
 <!-- temporary -->
       <div class="row">
         <div class="col">
           <p>1. Serial number:-</p>
         </div>
-         <div class="container">
+        <div class="container">
             <div class="d-flex flex-row-reverse p-0 d-inline-block justify-content-end">
               <input type="text" placeholder="serialnumber" required='true' name='serialnumber' class="form-control mx-0 my-0 d-inline-block" style="width: 60%; height:10%; font-size:70%" id="serialnumberinput">
             </div>
@@ -151,17 +151,17 @@
         </div>
       </div>
  <div class="row">
-        <div class="col-3 pl-3">
-          <div class="form-check form-check-inline pb-1">
+    <div class="col-3 pl-3">
+      <div class="form-check form-check-inline pb-1">
             <input class="form-check-input" type="radio" required='true' name="radio_daily" id="inlineRadio3" value="5">
             <label class="form-check-label p-1" for="inlineRadio3">歩数で指定</label>
-          </div>
+      </div>
           <br>
-          <div class="form-check form-check-inline pt-2">
+      <div class="form-check form-check-inline pt-2">
             <input class="form-check-input" type="radio" required='true' name="radio_daily" id="inlineRadio4" value="6">
             <label class="form-check-label" for="inlineRadio4">距離で指定</label>
-          </div>
-        </div>
+      </div>
+    </div>
         <div class="col">
           <div class="container">
             <div class="form-group row p-0 m-0 justify-content-end">
@@ -282,14 +282,14 @@
           <p style="font-size: 70%">現在選択中のツアー</p>
         </div>
         <div class="col-6">
-        @if(! empty($t_tour))
-          <p class="text-break" style="font-size: 70%">Tourname :- {{ $t_tour->m_tours->tour_title }} {{ $t_tour->status }}</p>
-        @elseif( empty($t_tour))
-          <p style="color: red; font-size: 70%">※選択中のツアーは既に踏破済です。</p>
-        @endif
-        @if( !empty($t_tour)  && $t_tour->status == 'Done' )
-          <p style="color: red; font-size: 70%">※選択中のツアーは既に踏破済です。</p>
-        @endif
+          @if(! empty($t_tour))
+            <p class="text-break" style="font-size: 70%">Tourname :- {{ $t_tour->m_tours->tour_title }} {{ $t_tour->status }}</p>
+          @elseif( empty($t_tour))
+            <p style="color: red; font-size: 70%">※選択中のツアーは既に踏破済です。</p>
+          @endif
+          @if( !empty($t_tour)  && $t_tour->status == 'Done' )
+            <p style="color: red; font-size: 70%">※選択中のツアーは既に踏破済です。</p>
+          @endif
         </div>
       </div>
     </div>

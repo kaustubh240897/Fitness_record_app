@@ -13,9 +13,8 @@ use App\m_Checkpoint;
 Use \Carbon\Carbon;
 class t_TourWebController extends Controller
 {
-    public function __construct()
-        {
-            $this->middleware('auth');
+    public function __construct(){
+        $this->middleware('auth');
         }
     /**
      * Display a listing of the resource.
@@ -117,15 +116,9 @@ class t_TourWebController extends Controller
     public function store(Request $request, $id)
     {
         //
-       // Session::put('reverse', 'true');
-       
-       
-       
-
         $t_tour = new t_Tour;
         $mytime = Carbon::now();
         $u_id = m_Users::where('users_id',Auth::id())->first()->id;
-        
 
         $t_tour->m__users_id = $u_id;
         $t_tour->m__tours_id = $id ;
@@ -136,20 +129,18 @@ class t_TourWebController extends Controller
         return redirect(route('index'))->with('successMsg','your tour Successfully selected');
     }
 
-    public function createtoursession(Request $request)
-        {
-            if($request->gridRadios == '4'){
+    public function createtoursession(Request $request){
+        if($request->gridRadios == '4'){
         
-               $request->session()->put('reverse', 'true');
+            $request->session()->put('reverse', 'true');
 
-            }
-            elseif($request->gridRadios == '3'){
-                $request->session()->put('reverse', 'false');
-            }
-            $value = $request->session()->get('reverse', 'false');
+        }
+        elseif($request->gridRadios == '3'){
+            $request->session()->put('reverse', 'false');
+        }
+        $value = $request->session()->get('reverse', 'false');
             
-            
-            return redirect(route('index'))->with('successMsg','your info Successfully updated');
+        return redirect(route('index'))->with('successMsg','your info Successfully updated');
         }
 
     /**
@@ -160,8 +151,7 @@ class t_TourWebController extends Controller
      */
     public function show(Request $request,$id)
     {
-        if(m_Users::where('users_id',Auth::id())->count() >0)
-        {
+        if(m_Users::where('users_id',Auth::id())->count() >0){
             $tours = m_Tour::find($id);
             if($tours){
                 $m__tours_id = $id;
@@ -213,7 +203,6 @@ class t_TourWebController extends Controller
         else{
             $tours = null;
             return view('emptycheckpoints', compact('tours'));
-
         }
     }
 

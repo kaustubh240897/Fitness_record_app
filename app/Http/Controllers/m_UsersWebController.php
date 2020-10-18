@@ -30,15 +30,6 @@ class m_UsersWebController extends Controller
             });
             $get_m_user_stride = m_Users::where('users_id', Auth::id())->first()->stride;
             $get_m_user_daily_goal = m_Users::where('users_id', Auth::id())->first()->step_goal_per_day;
-            //$get_last_7_days_datas = User::where('created_at','>=',Carbon::now()->subdays(15))->get(['name','created_at']);
-            // $days = t_Steps::whereBetween('step_actual_datetime', [Carbon::now(), Carbon::now()->addDays(-7)])
-            // ->orderBy('step_actual_datetime', 'DESC')
-            // ->get()
-            // ->groupBy(function ($val) {
-            //     return Carbon::parse($val->step_actual_datetime)->format('d');
-            // });
-
-            
             return view('userhistory', compact('current_week_datas','get_m_user_stride','get_m_user_daily_goal'));
             }
         else{
@@ -59,14 +50,6 @@ class m_UsersWebController extends Controller
             });
             $get_m_user_stride = m_Users::where('users_id', Auth::id())->first()->stride;
             $get_m_user_daily_goal = m_Users::where('users_id', Auth::id())->first()->step_goal_per_day;
-            //$get_last_7_days_datas = User::where('created_at','>=',Carbon::now()->subdays(15))->get(['name','created_at']);
-            // $days = t_Steps::whereBetween('step_actual_datetime', [Carbon::now(), Carbon::now()->addDays(-7)])
-            // ->orderBy('step_actual_datetime', 'DESC')
-            // ->get()
-            // ->groupBy(function ($val) {
-            //     return Carbon::parse($val->step_actual_datetime)->format('d');
-            // });
-
             
             return view('userhistory', compact('current_week_datas','get_m_user_stride','get_m_user_daily_goal'));
             }
@@ -197,7 +180,6 @@ class m_UsersWebController extends Controller
                 
 
             }
-            
     
             return view('myPage', compact('today_data','m__users_id','get_m_user_monthly_goal','current_month_steps','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','session_value','checkpoints','checkpointsr','total','current_week_datas'));
         }
@@ -260,7 +242,6 @@ class m_UsersWebController extends Controller
             }
             else{
                 $steps = 0;
-               
                 $total = 0;
 
             }
@@ -297,8 +278,7 @@ class m_UsersWebController extends Controller
     public function create()
     {
         $m_user = m_Users::where('users_id', Auth::id())->first();
-        if($m_user !=null)
-        {
+        if($m_user !=null){
         $m__user_id = $m_user->id;
         $t_tour = t_Tour::where('m__users_id', $m__user_id)->orderBy('created_at','DESC')->first();
         }
@@ -316,91 +296,91 @@ class m_UsersWebController extends Controller
      */
     public function store(Request $request)
     {
-    if($request->gridRadios == '3'){
-
-        $this->validate($request,[
-         'inputheight'=> 'required|gt:112|lt:212',
-        
-           ]);
-        }
-    if($request->gridRadios == '4'){
-
-        $this->validate($request,[
-         'stridelength'=> 'required|gt:45|lt:85',
-         
-          ]);
-        }
-    if($request->radio_daily == '5'){
-
-        $this->validate($request,[
-         'dailygoal'=> 'required|gt:1000|lt:181000',
-          ]);
-        }
-    if($request->radio_daily == '6'){
-
-        $this->validate($request,[
-         'dailydistance'=> 'required|gt:1|lt:100',
-          ]);
-        }
-    if($request->radio_monthly == '7'){
-
-        $this->validate($request,[
-         'monthlygoal'=> 'required|gt:18000|lt:1818000',
-          ]);
-        }
-    if($request->radio_daily == '8'){
-
-        $this->validate($request,[
-         'monthlydistance'=> 'required|gt:10|lt:1000',
-          ]);
-        }
-    
-    
-   if(!m_Users::where('users_id',Auth::id())->exists())
-   {
-
-        $m_users = new m_Users;
-        $m_users->users_id = Auth::id();
-        $m_users->serial_number = $request->serialnumber;
-
         if($request->gridRadios == '3'){
-        $m_users->stride= $request->inputheight/2.5;
-        }
+
+            $this->validate($request,[
+            'inputheight'=> 'required|gt:112|lt:212',
+            
+            ]);
+            }
         if($request->gridRadios == '4'){
-        $m_users->stride= $request->stridelength;
-        }
 
+            $this->validate($request,[
+            'stridelength'=> 'required|gt:45|lt:85',
+            
+            ]);
+            }
         if($request->radio_daily == '5'){
-        $m_users->step_goal_per_day= $request->dailygoal;
-        }
-        if($request->radio_daily == '6'){
-            if($request->inputheight !=null){
-        $m_users->step_goal_per_day= $request->dailydistance * 100000 * 2.5/($request->inputheight);
-            }
-            else{
-        $m_users->step_goal_per_day= $request->dailydistance * 100000 /($request->stridelength);
-            }
-        }
-        if($request->radio_monthly == '7'){
-        $m_users->step_goals_per_month = $request->monthlygoal;
-        }
-        if($request->radio_monthly == '8'){
-            if($request->inputheight !=null){
-        $m_users->step_goals_per_month = $request->monthlydistance * 100000 * 2.5 /($request->inputheight);
-            }
-            else{
-        $m_users->step_goals_per_month = $request->monthlydistance * 100000 /($request->stridelength);
-            }
-        }
-        $m_users->motion_web = $request->input('motionweb')? 1: 0;
-        $m_users->motion_app = $request->input('motionapp')? 1: 0;
-        $m_users->save();
-        return redirect(route('index'))->with('successMsg','your info Successfully added');
-     }
-    else{
-         return redirect(route('create'))->with('dangerMsg','your info already Successfully added, If you want to edit the details please click on edit.');
 
-    } 
+            $this->validate($request,[
+            'dailygoal'=> 'required|gt:1000|lt:181000',
+            ]);
+            }
+        if($request->radio_daily == '6'){
+
+            $this->validate($request,[
+            'dailydistance'=> 'required|gt:1|lt:100',
+            ]);
+            }
+        if($request->radio_monthly == '7'){
+
+            $this->validate($request,[
+            'monthlygoal'=> 'required|gt:18000|lt:1818000',
+            ]);
+            }
+        if($request->radio_daily == '8'){
+
+            $this->validate($request,[
+            'monthlydistance'=> 'required|gt:10|lt:1000',
+            ]);
+            }
+        
+        
+        if(!m_Users::where('users_id',Auth::id())->exists())
+        {
+
+            $m_users = new m_Users;
+            $m_users->users_id = Auth::id();
+            $m_users->serial_number = $request->serialnumber;
+
+            if($request->gridRadios == '3'){
+                $m_users->stride= $request->inputheight/2.5;
+            }
+            if($request->gridRadios == '4'){
+                $m_users->stride= $request->stridelength;
+            }
+
+            if($request->radio_daily == '5'){
+                $m_users->step_goal_per_day= $request->dailygoal;
+            }
+            if($request->radio_daily == '6'){
+                if($request->inputheight !=null){
+                    $m_users->step_goal_per_day= $request->dailydistance * 100000 * 2.5/($request->inputheight);
+                }
+                else{
+                    $m_users->step_goal_per_day= $request->dailydistance * 100000 /($request->stridelength);
+                }
+            }
+            if($request->radio_monthly == '7'){
+                $m_users->step_goals_per_month = $request->monthlygoal;
+            }
+            if($request->radio_monthly == '8'){
+                if($request->inputheight !=null){
+                    $m_users->step_goals_per_month = $request->monthlydistance * 100000 * 2.5 /($request->inputheight);
+                }
+                else{
+                    $m_users->step_goals_per_month = $request->monthlydistance * 100000 /($request->stridelength);
+                }
+            }
+            $m_users->motion_web = $request->input('motionweb')? 1: 0;
+            $m_users->motion_app = $request->input('motionapp')? 1: 0;
+            $m_users->save();
+            return redirect(route('index'))->with('successMsg','your info Successfully added');
+        }
+        else{
+            return redirect(route('create'))->with('dangerMsg','your info already Successfully added, If you want to edit the details please click on edit.');
+
+        } 
 }
 
     /**
@@ -424,13 +404,13 @@ class m_UsersWebController extends Controller
     {
         $m_users = m_Users::where('id', $id)->first();
         if(! empty($m_users) && $m_users->users_id == Auth::id()){
-        $t_tour = t_Tour::where('m__users_id', $m_users->users_id)->orderBy('created_at','DESC')->first();
-        return view('edit', compact('m_users','t_tour'));
+            $t_tour = t_Tour::where('m__users_id', $m_users->users_id)->orderBy('created_at','DESC')->first();
+            return view('edit', compact('m_users','t_tour'));
         }
         else{
-        $m_users = null;
-        $t_tour = null;
-        return view('edit', compact('m_users','t_tour'));
+            $m_users = null;
+            $t_tour = null;
+            return view('edit', compact('m_users','t_tour'));
         }
     }
 
@@ -445,95 +425,95 @@ class m_UsersWebController extends Controller
     {
         if($request->gridRadios == '3'){
 
-        $this->validate($request,[
-         'inputheight'=> 'required|gt:112|lt:212',
+            $this->validate($request,[
+            'inputheight'=> 'required|gt:112|lt:212',
         
            ]);
         }
-    if($request->gridRadios == '4'){
+        if($request->gridRadios == '4'){
 
-        $this->validate($request,[
-         'stridelength'=> 'required|gt:45|lt:85',
-         
-          ]);
-        }
-    if($request->radio_daily == '5'){
+            $this->validate($request,[
+            'stridelength'=> 'required|gt:45|lt:85',
+            
+            ]);
+            }
+        if($request->radio_daily == '5'){
 
-        $this->validate($request,[
-         'dailygoal'=> 'required|gt:1000|lt:181000',
-          ]);
-        }
-    if($request->radio_daily == '6'){
+            $this->validate($request,[
+            'dailygoal'=> 'required|gt:1000|lt:181000',
+            ]);
+            }
+        if($request->radio_daily == '6'){
 
-        $this->validate($request,[
-         'dailydistance'=> 'required|gt:1|lt:100',
-          ]);
-        }
-    if($request->radio_monthly == '7'){
+            $this->validate($request,[
+            'dailydistance'=> 'required|gt:1|lt:100',
+            ]);
+            }
+        if($request->radio_monthly == '7'){
 
-        $this->validate($request,[
-         'monthlygoal'=> 'required|gt:18000|lt:1818000',
-          ]);
-        }
-    if($request->radio_daily == '8'){
+            $this->validate($request,[
+            'monthlygoal'=> 'required|gt:18000|lt:1818000',
+            ]);
+            }
+        if($request->radio_daily == '8'){
 
-        $this->validate($request,[
-         'monthlydistance'=> 'required|gt:10|lt:1000',
-          ]);
-        }
+            $this->validate($request,[
+            'monthlydistance'=> 'required|gt:10|lt:1000',
+            ]);
+            }
 
         $m_users = m_Users::find($id);
-    if($m_users->users_id == Auth::id()){
-        $m_users->users_id = Auth::id();
-        $m_users->serial_number = $request->serialnumber;
+        if($m_users->users_id == Auth::id()){
+            $m_users->users_id = Auth::id();
+            $m_users->serial_number = $request->serialnumber;
 
-        if($request->gridRadios == '3'){
-        $m_users->stride= $request->inputheight/2.5;
-        }
-        if($request->gridRadios == '4'){
-        $m_users->stride= $request->stridelength;
-        }
+            if($request->gridRadios == '3'){
+                $m_users->stride= $request->inputheight/2.5;
+            }
+            if($request->gridRadios == '4'){
+                $m_users->stride= $request->stridelength;
+            }
 
-        if($request->radio_daily == '5'){
-        $m_users->step_goal_per_day= $request->dailygoal;
-        }
-        if($request->radio_daily == '6'){
-            if($request->inputheight !=null){
-        $m_users->step_goal_per_day= $request->dailydistance * 100000 * 2.5/($request->inputheight);
+            if($request->radio_daily == '5'){
+                $m_users->step_goal_per_day= $request->dailygoal;
+            }
+            if($request->radio_daily == '6'){
+                if($request->inputheight !=null){
+                    $m_users->step_goal_per_day= $request->dailydistance * 100000 * 2.5/($request->inputheight);
+                }
+                else{
+                    $m_users->step_goal_per_day= $request->dailydistance * 100000 /($request->stridelength);
+                }
+            }
+            if($request->radio_monthly == '7'){
+                $m_users->step_goals_per_month = $request->monthlygoal;
+            }
+            if($request->radio_monthly == '8'){
+                if($request->inputheight !=null){
+                    $m_users->step_goals_per_month = $request->monthlydistance * 100000 * 2.5 /($request->inputheight);
+                }
+                else{
+                    $m_users->step_goals_per_month = $request->monthlydistance * 100000 /($request->stridelength);
+                }
+            }
+            if($m_users->motion_web == 0){
+                $m_users->motion_web = $request->input('motionweb')? 1: $m_users->motion_web;
             }
             else{
-        $m_users->step_goal_per_day= $request->dailydistance * 100000 /($request->stridelength);
+                $m_users->motion_web = $request->input('motionweb')? 1:0;
             }
-        }
-        if($request->radio_monthly == '7'){
-        $m_users->step_goals_per_month = $request->monthlygoal;
-        }
-        if($request->radio_monthly == '8'){
-            if($request->inputheight !=null){
-        $m_users->step_goals_per_month = $request->monthlydistance * 100000 * 2.5 /($request->inputheight);
+            if($m_users->motion_app == 0){
+                $m_users->motion_app = $request->input('motionapp')? 1: $m_users->motion_app;
             }
             else{
-        $m_users->step_goals_per_month = $request->monthlydistance * 100000 /($request->stridelength);
+                $m_users->motion_app = $request->input('motionapp')? 1:0;
             }
-        }
-        if($m_users->motion_web == 0){
-        $m_users->motion_web = $request->input('motionweb')? 1: $m_users->motion_web;
-        }
-        else{
-            $m_users->motion_web = $request->input('motionweb')? 1:0;
-        }
-       if($m_users->motion_app == 0){
-        $m_users->motion_app = $request->input('motionapp')? 1: $m_users->motion_app;
-       }
-       else{
-           $m_users->motion_app = $request->input('motionapp')? 1:0;
-       }
         $m_users->save();
         return redirect(route('index'))->with('successMsg','your info Successfully updated');
-    }
-    else{
-        return redirect(route('create'))->with('dangerMsg','your are sending invalid data');
-    }
+        }
+        else{
+            return redirect(route('create'))->with('dangerMsg','your are sending invalid data');
+        }
     
     }
 

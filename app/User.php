@@ -8,7 +8,7 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable implements JWTSubject
 {
-     public function m_user()
+    public function m_user()
     {
         return $this->hasOne('App\m_Users');
     }

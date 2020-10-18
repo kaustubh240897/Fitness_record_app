@@ -18,7 +18,7 @@ class m_CollectionController extends Controller
     public function index()
     {
         //
-         return m_CollectionCollection::collection(m_Collection::paginate(10));
+        return m_CollectionCollection::collection(m_Collection::paginate(10));
     }
 
     /**

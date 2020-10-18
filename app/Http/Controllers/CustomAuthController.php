@@ -29,8 +29,8 @@ class CustomAuthController extends Controller
     }
      public function showLoginForm(){
         return view('custom.login');
-
     }
+    
     public function Login(Request $request){
         $this->validate($request, [
             'name' => 'required|max:255',
@@ -38,13 +38,12 @@ class CustomAuthController extends Controller
 
         ]);
         if(Auth::attempt(['name'=>$request->name, 'password'=>$request->password,'password_confirmation'=>$request->password])){
-           $m_user = m_Users::where('users_id', Auth::id())->first();
+            $m_user = m_Users::where('users_id', Auth::id())->first();
             if ( $m_user !=null ) {// do your magic here
                 return redirect()->route('mypage')->with('Status', 'You are Successfully logged in')->withCookie(
                 'serialnumber', 
                 $request->email, 5340000, '/');
             }
-
             return redirect()->route('create')->with('Status', 'You are Successfully logged in')->withCookie(
                 'serialnumber', 
                 $request->email, 5340000, '/');
@@ -61,7 +60,7 @@ class CustomAuthController extends Controller
                 'serialnumber', 
                 $request->email, 5340000, '/');
 
-        }
+            }
         return "oops something is wrong";
 
     }
@@ -82,5 +81,5 @@ class CustomAuthController extends Controller
         $cookie = \Cookie::forget('serialnumber');
         Auth::logout();
         return redirect('/custom-login')->withCookie($cookie);
-}
+    }
 }

@@ -274,7 +274,7 @@ text-decoration: none !important;
  @endif
 </div>
 
-    <script src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://www.gstatic.com/charts/loader.js"></script>
 <script>
 google.load("visualization", "1", {
   packages: ["corechart"]

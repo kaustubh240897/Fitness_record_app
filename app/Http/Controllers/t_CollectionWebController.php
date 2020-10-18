@@ -12,9 +12,8 @@ use Illuminate\Http\Request;
 
 class t_CollectionWebController extends Controller
 {
-    public function __construct()
-        {
-            $this->middleware('auth');
+    public function __construct(){
+        $this->middleware('auth');
         }
     /**
      * Display a listing of the resource.
@@ -26,10 +25,6 @@ class t_CollectionWebController extends Controller
     if(m_Users::where('users_id',Auth::id())->count() >0){
         $m__user_id = m_Users::where('users_id',Auth::id())->first()->id;
         
-        // $t_tours = t_Tour::distinct()->where('m__users_id', $m__user_id)->get(['m__tours_id','status']);
-        // $counts = t_Tour::where('m__users_id', $m__user_id)->where('status', 'Done')->get()->groupBy('m__tours_id');
-        
-
         $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->get()->unique('m__collection_id');
         $count_t_collections = t_Collection::where('m__users_id', $m__user_id)->get()->groupBy('m__collection_id');
         $counter = [];
@@ -56,17 +51,12 @@ class t_CollectionWebController extends Controller
         if(m_Users::where('users_id',Auth::id())->count() >0){
             $m__user_id = m_Users::where('users_id',Auth::id())->first()->id;
             
-            // $t_tours = t_Tour::distinct()->where('m__users_id', $m__user_id)->get(['m__tours_id','status']);
-            // $counts = t_Tour::where('m__users_id', $m__user_id)->where('status', 'Done')->get()->groupBy('m__tours_id');
-            
-
             $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->orderBy('created_at', 'DESC')->get()->unique('m__collection_id');
             $count_t_collections = t_Collection::where('m__users_id', $m__user_id)->orderBy('created_at', 'DESC')->get()->groupBy('m__collection_id');
             $counter = [];
             foreach($count_t_collections as $count){
                 $counter[] = $count->count();
             }
-            
             
             return view('mycollections', compact( 'counter','get_t_collections','count_t_collections'));
         }

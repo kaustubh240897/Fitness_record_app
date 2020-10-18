@@ -13,7 +13,7 @@
       background-color: #ccece8 !important;
     }
 
-    </style>
+  </style>
 
 
 
@@ -79,8 +79,5 @@
       }
     }
   </script>
-
-
-
 
 @endsection

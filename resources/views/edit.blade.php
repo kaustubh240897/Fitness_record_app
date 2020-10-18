@@ -1,31 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
-<div class='container'>
+  <div class='container'>
 @if (session('successMsg'))
-<div class="alert alert-success" role="alert">
-   {{ session('successMsg') }}
-</div>
+  <div class="alert alert-success" role="alert">
+    {{ session('successMsg') }}
+  </div>
 @endif
 
 @if (session('dangerMsg'))
-<div class="alert alert-danger" role="alert">
-   {{ session('dangerMsg') }}
-</div>
+  <div class="alert alert-danger" role="alert">
+    {{ session('dangerMsg') }}
+  </div>
 @endif
 
 @if ($errors->any())
-@foreach ($errors->all() as $error)
-<div class='alert alert-danger' role='alert'>
-{{ $error }}
-</div>
-@endforeach
+  @foreach ($errors->all() as $error)
+    <div class='alert alert-danger' role='alert'>
+    {{ $error }}
+    </div>
+  @endforeach
 @endif
 
 
 
 <style media="screen">
-      .btn.btn-lg {
+     .btn.btn-lg {
         background-color: #ccece8 !important;
        /* padding: 12px 32px !important; */
      }
@@ -140,7 +140,7 @@
           <p>3. Daily Goal:-</p>
         </div>
       </div>
- <div class="row">
+    <div class="row">
         <div class="col-3 pl-3">
           <div class="form-check form-check-inline pb-1">
             <input class="form-check-input" type="radio" required='true' name="radio_daily" id="inlineRadio3" value="5">
@@ -370,6 +370,6 @@
     estimateMonthlyDist();
   </script>
 @else
-<h3> Sorry! You are not authorized to see this page. </h3>
+  <h3> Sorry! You are not authorized to see this page. </h3>
 @endif
-  @endsection
+@endsection

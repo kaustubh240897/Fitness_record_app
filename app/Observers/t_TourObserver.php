@@ -30,9 +30,6 @@ class t_TourObserver
                 $get_t_collection->delete();
             }
         }
-
-
-
        $t_tours = t_Tour::where('m__users_id', $m__users_id)->get();
        foreach($t_tours as $t_tour){
            if($t_tour->status == 'Inprogress'){

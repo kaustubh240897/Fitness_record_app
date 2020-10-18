@@ -45,7 +45,7 @@ class m_UsersController extends Controller
     public function store(m_UsersRequest $request)
     {
         if($request->users_id != Auth::id()){
-             return response()->json(["message" => "Unauthorized request"], 401);
+            return response()->json(["message" => "Unauthorized request"], 401);
             }
         elseif(m_Users::where('users_id', Auth::id())->count() != 0){
             return response()->json(["message" => "you have already created m_user for this user, Integrity error."], 409);
@@ -79,10 +79,10 @@ class m_UsersController extends Controller
     {
         $m_User =  m_Users::where('id', $m_user)->first();
         if(is_null($m_User)){
-        return response()->json(["message" => "Record not found"], 404);
+            return response()->json(["message" => "Record not found"], 404);
         }
         elseif($m_User->users_id != Auth::id()){
-        return response()->json(["message" => "Unauthorized request"], 401);
+            return response()->json(["message" => "Unauthorized request"], 401);
         }
         return new m_UsersResource($m_User,201);
        
@@ -110,10 +110,10 @@ class m_UsersController extends Controller
     {
         $m_User =  m_Users::where('id', $m_user)->first();
         if(is_null($m_User)){
-        return response()->json(["message" => "Record not found"], 404);
+            return response()->json(["message" => "Record not found"], 404);
         }
         elseif($m_User->users_id != Auth::id()){
-        return response()->json(["message" => "Unauthorized request"], 401);
+            return response()->json(["message" => "Unauthorized request"], 401);
         }
         $m_user->update($request->all());
     }

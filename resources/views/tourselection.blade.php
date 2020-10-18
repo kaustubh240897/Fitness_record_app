@@ -9,8 +9,8 @@
 @endif
 
 
- <style media="screen">
-      .btn.btn-lg {
+<style media="screen">
+     .btn.btn-lg {
         background-color: #ccece8 !important;
        /* padding: 12px 32px !important; */
      }
@@ -18,7 +18,7 @@
        background-color: #ccece8 !important;
       /* padding: 12px 32px !important; */
     }
-    </style>
+</style>
  <div class="container-fluid mt-1">
     @if(! empty($m__users_id))
           <a href="{{ route('edit', $m__users_id) }}">  <button type="button" class="btn blue">個人設定へ戻る</button></a>
@@ -35,10 +35,10 @@
         @if(! empty($current_tour))
           <p class="border border-dark text-break" style="font-size: 80%"> {{ $current_tour->m_tours->tour_title }} (Total travelled {{ $steps * $get_m_user_stride/100000 }}KM/ Remaining @if($total <= $steps * $get_m_user_stride/100000) 0 Km @else {{ $total-$steps * $get_m_user_stride/100000 }}KM @endif)</p>
         @else
-        <p> You have not selected any tour please select a tour. </p>
+          <p> You have not selected any tour please select a tour. </p>
         @endif
         @if(! empty($current_tour) && $current_tour->status == 'Done')
-        <p> Your tour has been completed Please select another tour. </p>
+          <p> Your tour has been completed Please select another tour. </p>
         @endif
         </div>
       </div>
@@ -128,6 +128,5 @@
     <p>再度、同一ツアーを選択する場合、踏破は最初から開始となります。</p>
     <p>ただし、今回のツアー踏破中に得たコレクションは保持されます。</p>
   </div>
-
 
 @endsection

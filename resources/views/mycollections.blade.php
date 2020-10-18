@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class='container'>
+  <div class='container'>
 @if (session('successMsg'))
-<div class='alert alert-success' roles='alert'>
- {{ session('successMsg') }}
-</div>
+  <div class='alert alert-success' roles='alert'>
+    {{ session('successMsg') }}
+  </div>
 @endif
 
 
@@ -20,7 +20,7 @@
       .collectionsRow {
         cursor: pointer;
       }
-    </style>
+  </style>
 
 
 <div class="container-fluid mt-2">
@@ -76,18 +76,14 @@
 
   </tbody>
   @else
-  <h1> you don't have any collections yet! </h1>
+    <h1> you don't have any collections yet! </h1>
   @endif
-        </table>
+  </table>
   </div>
   <div class="toast" id="myToast">
     <div class="toast-body">
         It's been a long time since you visited us. We've something special for you.
     </div>
 </div>
-
-
-
-
 
 @endsection
