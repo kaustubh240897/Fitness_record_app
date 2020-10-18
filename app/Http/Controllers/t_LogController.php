@@ -9,20 +9,24 @@ use App\t_Log;
 use Symfony\Component\HttpFoundation\Response;
 class t_LogController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth:api');
+        }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(m_Users $m_user)
+    public function index()
     {
+        $m_user = m_Users::where('users_id', Auth::id())->first();
+
         if(is_null($m_user)){
-        return response()->json(["message" => "Record not found"], 404);
+            return response()->json(["message" => "Record not found"], 404);
         }
         elseif($m_user->users_id != Auth::id()){
-        return response()->json(["message" => "Unauthorized request"], 401);
+            return response()->json(["message" => "Unauthorized request"], 401);
         }
-        
         return t_LogResource::collection($m_user->t_logs);
     }
 
@@ -42,9 +46,16 @@ class t_LogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(t_LogRequest $request, m_Users $m_user)
+    public function store(t_LogRequest $request)
     {
         //
+        $m_user = m_Users::where('users_id', Auth::id())->first();
+        if($m_user->users_id != Auth::id()){
+            return response()->json(["message" => "Unauthorized request"], 401);
+        }
+        elseif(is_null($m_user)){
+            return response()->json(["message" => "Record not found"], 404);
+        }
         $logs = new t_Log($request->all());
         $m_user->t_logs()->save($logs);
         return response([
@@ -82,9 +93,17 @@ class t_LogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, m_Users $m_user, t_Log $log)
+    public function update(Request $request, t_Log $log)
     {
         //
+        $m_user = m_Users::where('users_id', Auth::id())->first();
+        $logs =  t_Log::where('m__users_id', $m_user->id)->where('id', $log)->first();
+        if($m_user->users_id != Auth::id()){
+            return response()->json(["message" => "Unauthorized request"], 401);
+        }
+        elseif(is_null($logs)){
+            return response()->json(["message" => "Record not found"], 404);
+        }
         $log->update($request->all());
         return response([
             'data' => new t_StepsResource($log)

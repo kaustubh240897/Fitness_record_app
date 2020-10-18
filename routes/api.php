@@ -29,20 +29,20 @@ Route::apiResource('m_collections', 'm_CollectionController');
 
 // });
 
-Route::group(['prefix'=>'m_users'],function(){
-    Route::apiResource('/{m_user}/logs', 't_LogController');
+// Route::group(['prefix'=>'m_users'],function(){
+//     Route::apiResource('/{m_user}/logs', 't_LogController');
 
-});
+// });
 
-Route::group(['prefix'=>'m_users'],function(){
-    Route::apiResource('/{m_user}/usercollections', 't_CollectionUserController');
+// Route::group(['prefix'=>'m_users'],function(){
+//     Route::apiResource('/{m_user}/usercollections', 't_CollectionUserController');
 
-});
+// });
 
 
-Route::group(['prefix'=>'m_collections'], function(){
-   Route::apiResource('/{m_collection}/collections', 't_CollectionController');
-});
+// Route::group(['prefix'=>'m_collections'], function(){
+//    Route::apiResource('/{m_collection}/collections', 't_CollectionController');
+// });
 
 
 Route::get('m_users/','m_UsersController@index');
@@ -56,6 +56,9 @@ Route::post('steps/','StepsController@store');
 Route::put('steps/{step}/', 'StepsController@update');
 Route::delete('steps/{step}/','StepsController@destroy');
 
+Routes::get('logs/', 't_LogController@index');
+Routes::post('logs/', 't_LogController@store');
+Routes::put('logs/{log}/','t_LogController@update');
 
 Route::group([
 

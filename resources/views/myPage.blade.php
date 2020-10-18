@@ -144,8 +144,8 @@ text-decoration: none !important;
           <p class="mb-0" style="font-size:70%">{{ $get_m_user_daily_goal }}歩</p>
           <p class="mb-0" style="font-size:70%">{{ $get_m_user_daily_goal*$get_m_user_stride/100000 }} (km)</p>
           <p class="mb-0" style="font-size:70%">目標まで</p>
-          <p class="mb-0" style="font-size:70%">@if($get_m_user_daily_goal <=  $today_data) 0  @else {{ $get_m_user_daily_goal-$today_data }}歩 @endif</p>
-          <p class="mb-0" style="font-size:70%">@if($get_m_user_daily_goal <=  $today_data) 0  @else {{ ($get_m_user_daily_goal-$today_data)*$get_m_user_stride/100000 }} @endif km</p>
+          <p class="mb-0" style="font-size:70%">@if($get_m_user_daily_goal <=  $today_data) 0  @else {{ $get_m_user_daily_goal-$today_data }} @endif steps remaining.</p>
+          <p class="mb-0" style="font-size:70%">@if($get_m_user_daily_goal <=  $today_data) 0  @else {{ ($get_m_user_daily_goal-$today_data)*$get_m_user_stride/100000 }} @endif km left.</p>
         </div>
         <div class="col">
           <p class="mb-0" style="font-size:70%">コレクションに99件のアイ</p>
