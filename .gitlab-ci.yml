@@ -64,7 +64,7 @@ before_script:
   - php artisan key:generate
   - php artisan config:cache
   # Run database migrations.
-  - php artisan migrate
+  - php artisan migrate --env=production
   # Run database seed
   - php artisan db:seed
 
