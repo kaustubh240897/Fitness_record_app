@@ -44,11 +44,11 @@ before_script:
   - npm install
   # Copy over testing configuration.
   # Don't forget to set the database config in .env.testing correctly
-  -APP_NAME=WalkingApp
-  -APP_ENV=local
-  -APP_KEY=base64:3hCBe/1neWnAkOkUNqjhVB/dClin2oc71Ditilno178=
-  -APP_DEBUG=true
-  -JWT_SECRET=gJRhTjBao6k7F0erSD7B9iTikyxWvPSvnjkfNkcL0uQLB9OWt21EOkjJCNimTSlY
+  - APP_NAME=WalkingApp
+  - APP_ENV=local
+  - APP_KEY=base64:3hCBe/1neWnAkOkUNqjhVB/dClin2oc71Ditilno178=
+  - APP_DEBUG=true
+  - JWT_SECRET=gJRhTjBao6k7F0erSD7B9iTikyxWvPSvnjkfNkcL0uQLB9OWt21EOkjJCNimTSlY
   - DB_HOST=mysql
   - DB_DATABASE=meiji_walking
   - DB_USERNAME= root
