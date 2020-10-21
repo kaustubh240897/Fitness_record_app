@@ -3,7 +3,11 @@
 @section('content')
 
  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js" integrity="sha512-WIklPM6qPCIp6d3fSSr90j+1unQHUOoWDS4sdTiR8gxUTnyZ8S2Mr8e10sKKJ/bhJgpAa/qG068RDkg6fIlNFA==" crossorigin="anonymous"></script>
-
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <style media="screen">
 .wrapper {
   height:50vh;
@@ -29,11 +33,11 @@ background-color: #f2dcdb !important;
   color: red;
 
 }
-.overlay-text2 {
+/* .overlay-text2 {
   align-self: flex-start;
   transform: translateY(30%);
   z-index: 50
-}
+} */
 
 .wrapper {
   width: 330px;
@@ -130,75 +134,227 @@ a {
 color: #000000 !important;
 text-decoration: none !important;
 }
+.relative {
+position: relative;
+}
+
+.absolute-center {
+position:absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+.text-center{
+text-align: center;
+}
+.speech-bubble {
+position: relative;
+background: #dce0e3;
+border-radius: .4em;
+}
+
+.speech-bubble:after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 50%;
+width: 0;
+height: 0;
+border: 10px solid transparent;
+border-top-color: #dce0e3;
+border-bottom: 0;
+margin-left: -12px;
+margin-bottom: -10px;
+}
+
+.overlay-text2 {
+align-self: flex-start;
+transform: translateY(50%);
+z-index: 50
+}
+.overlay-text3 {
+align-self: flex-start;
+transform: translateY(-300%);
+z-index: 50
+}
+.overlay-text4 {
+align-self: flex-start;
+transform: translateY(-42%);
+z-index: 50
+}
+.overlay-tri {
+align-self: flex-start;
+transform: translateY(-90%);
+z-index: 50
+}
+.overlay-btn1 {
+align-self: flex-start;
+transform: translatex(-80%);
+z-index: 50
+}
+.dot {
+height: 5vh;
+width: 5vh;
+background-color: #fff;
+border-radius: 50%;
+display: inline-block;
+}
+i {
+background-color: white;
+border-radius: 50%;
+border: 1px solid white;
+padding: 10px;
+}
+
+body {
+background-color: #f0f6f8;
+}
+.blackiconcolor {color:#dce0e3;}
+.fa { transform: scale(1.3,1.2);
+padding: 4px;
+font-weight: normal;}
+.nopadding {
+padding-top: 0 !important;
+padding-bottom: 0 !important;
+margin: 0 !important;
+}
+.vl {
+border-left: 6px solid green;
+}
 
 </style>
 
- <div class="container-fluid">
-      <div class="row no-gutters">
-        <div class="col">
-          <div id="chart_div"></div>
+@if ( empty($m__users_id))
+ <h2> Please create your profile first <a href="/" style="color: blue !important">click here </a> </h2> <br/>
+@else
+<div class="container pt-3" style="color:#FFFFFF; border-radius: 15px;">
+      <div class="row justify-content-center">
+        <div class="col col-sm-9 pt-1 text-center">
+          <p class="font-weight-bold pr-3 py-2" style="background: white; color:#3476ea; border: 2px solid white; border-radius: 15px;">2020# 10# 15# *#*# </p>
         </div>
-         @if(! empty($get_t_tour))
-        <div class="col">
-          <p class="mb-0" style="font-size:70%">1日の目標歩数</p>
-          <p class="mb-0" style="font-size:70%">{{ $get_m_user_daily_goal }}歩</p>
-          <p class="mb-0" style="font-size:70%">{{ $get_m_user_daily_goal*$get_m_user_stride/100000 }} (km)</p>
-          <p class="mb-0" style="font-size:70%">目標まで</p>
-          <p class="mb-0" style="font-size:70%">@if($get_m_user_daily_goal <=  $today_data) 0  @else {{ $get_m_user_daily_goal-$today_data }} @endif steps remaining.</p>
-          <p class="mb-0" style="font-size:70%">@if($get_m_user_daily_goal <=  $today_data) 0  @else {{ ($get_m_user_daily_goal-$today_data)*$get_m_user_stride/100000 }} @endif km left.</p>
+        <div class="col-xs-1 overlay-btn1">
+          <i class="fa fa-refresh fa-3x blackiconcolor overlay-btn1 shadow" aria-hidden="true"></i>
+          <p class="nopadding overlay-text3 text-center" style="font-size: 60%;color:#3476ea">#-#</p>
+          <p class="nopadding overlay-text3 text-center" style="font-size: 60%;color:#3476ea">##</p>
         </div>
-        <div class="col">
-          <p class="mb-0" style="font-size:70%">コレクションに99件のアイ</p>
-          <p class="mb-0" style="font-size:70%"></p>
-          <p class="mb-0" style="font-size:70%">アイテムが追加されました。</p>
+        <!-- <p class="pt-2" style="color:#3476ea;">text</p> -->
+      </div>
+    </div>
+    <div class="container pt-3">
+      <div class="row justify-content-around">
+        <div class="col-5 col-sm-4 text-center" style="background: white; border: 2px solid white; border-radius: 15px;">
+            <a href="#" style="color:#ff9327 !important; font-size: 80%">レシピ</a>
+            <img style="background: white; border: 1px solid white; border-radius: 15px;" src="recipe.jpg" alt="" class="card-img pb-2">
         </div>
-         @else
-        <h6> You have not started tour yet! </h6>
-        @endif
-        <div class="col">
-          <a href="{{ url('/mycollection') }}" >  <button type="button" class="btn blue mb-1" style="font-size: 50%">マイコレクション</button> </a>
-          <!-- @if(! empty($m__users_id))
-          <a href="{{ route('edit', $m__users_id) }}">  <button type="button" class="btn blue mb-1">MyProfile</button></a>
-          @else
-          <a href="{{ url('/') }}"> <button type="button" class="btn blue mb-1">MyProfile</button> </a>
-          @endif -->
-          <a href="{{ url('/userdailyhistory') }}" > <button type="button" class="btn blue mb-1" style="font-size: 50%">マイヒストリ</button> </a>
+        <div class="col-5 col-sm-4 text-center" style="background: white; border: 2px solid white; border-radius: 15px;">
+            <a href="#" style="color: blue !important; font-size: 80%">日めくりカレンダ</a>
+            <img style="background: white; border: 1px solid white; border-radius: 15px;" src="recipe.jpg" alt="" class="card-img pb-2">
         </div>
       </div>
     </div>
-    <div class="container-fluid">
-      <div class="d-flex flex-row-reverse justify-content-end">
+    <div class="container text-center pt-3">
+      <p class="font-weight-bold" style="color:#3476ea;">TEXT##</p>
+    </div>
+    <div class="container w-75 pb-3">
+      <div class="speech-bubble text-center">
+        <p class="mb-0 font-weight-bold" style="font-size:90%; color:#3476ea;">月間累計 {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
+      </div>
+    </div>
+    <div class="container pt-3">
+      <div class="relative w-100 h-50">
+    <canvas id="myChart"></canvas>
+    <div class="absolute-center text-center">
+      <p class="mb-0 p-0" style="font-size:70%; color:#3476ea;"> {{ ($today_data)*$get_m_user_stride/100000 }} km</p>
+      <p class="font-weight-bold mb-0 p-0 text-wrap" style="color:#3476ea;">{{ $today_data }}歩</p>
+      <p class="mb-0 mt-0 p-0" style="font-size:70%;">________________</p>
+      <p class="font-weight-bold mb-0 mt-0">{{ $get_m_user_daily_goal }}歩</p>
+      <p class="mb-0" style="font-size:70%;">{{ $get_m_user_daily_goal*$get_m_user_stride/100000 }} (km)</p>
+    </div>
+  </div>
+    </div>
+    <div class="container pt-3 mt-3">
+      <canvas id="ctx"></canvas>
+    </div>
+    @if(empty($get_t_tour))
+    <h6> You have not started tour yet! </h6>
+    @endif
+    <div class="container text-center pt-3">
+      <p class="font-weight-bold" style="color:#3476ea;">TEXT##</p>
+    </div>
+    <!-- <div class="container overlay-text2">
+      <div class="row">
         <div class="col">
-          <div class="container-fluid overlay-text2">
-            <div class="row">
-              <div class="col border-right pl-3 text-center">
-                <p class="mb-0 pl-3 pt-3" style="font-size:50%">月間累計</p> <!--Completed this month -->
-                <p class="mb-0 pl-3 pt-3" style="font-size:50%">{{ $current_month_steps }}歩({{ $current_month_steps*$get_m_user_stride/100000 }}Km)</p>
-              </div>
-              <div class="col-6">
-                <p class="mb-0" style="font-size:50%">Remaining this month:-</p>
-                @if($get_m_user_monthly_goal <= $current_month_steps)
-                <p class="mb-0" style="font-size:50%">0 steps</p>
-                @else
-                 <p class="mb-0" style="font-size:50%"> {{ $get_m_user_monthly_goal-$current_month_steps }} steps <br/>({{ round(($get_m_user_monthly_goal-$current_month_steps)*$get_m_user_stride/100000,2) }} Km) </p>
-                @endif
-                @if($get_m_user_monthly_goal <= $current_month_steps)
-                <p class="mb-0 pb-3 pl-3" style="font-size:50%; color: red">Completed!</p>
-                @else
-                <p class="mb-0 pb-3" style="font-size:50%; color: red">Inprogress!</p>
-                @endif
-                <p class="mb-0 pt-3" style="font-size:50%">月間目標</p>
-                <p class="mb-0 pt-3" style="font-size:50%">{{ $get_m_user_monthly_goal}}歩</p>
+          <br>
+          <br>
+          <br>
+          <div class="d-flex flex-row-reverse justify-content-center pl-3">
+            <div class="speech-bubble text-center">
+              <p class="mb-0 font-weight-bold" style="font-size:70%; color:#3476ea;">### 2,567# (1.69km) #### !</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="d-flex flex-row justify-content-center pr-3">
+            <div class="speech-bubble text-center">
+              <p class="mb-0 font-weight-bold" style="font-size:70%; color:#3476ea;">### 2,967# (1.69km) #### !</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-sm-3">
+
+        </div>
+        <div class="col col-sm-5 text-center">
+          <div class="d-flex flex-row-reverse pl-3 pb-3 mb-3">
+            <div class="text-center">
+              <p class="mb-0 font-weight-bold p-1 pr-sm-3" style="background: #dce0e3; font-size:70%; color:#3476ea; border: 2px solid #dce0e3; border-radius: 15px;">Remain @if($get_m_user_monthly_goal <= $current_month_steps) 0 @else {{ $get_m_user_monthly_goal-$current_month_steps }}歩 {{ round(($get_m_user_monthly_goal-$current_month_steps)*$get_m_user_stride/100000,2) }} @endif Km!</p>
+              <div class="d-flex flex-row-reverse">
+                <div class="col text-right border-left border-primary">
+                  <p style="font-size:95%"><br><br><br><br></p>
+                </div>
+                <div class="col">
+
+                </div>
               </div>
             </div>
           </div>
-          <div class="d-flex flex-row justify-content-center">
-              <div id="triangle_graph" class=""></div>
+          <div class="d-flex flex-row pr-3 overlay-text4">
+            <div class="text-center">
+              <p class="mb-0 font-weight-bold p-1 pl-sm-2 pl-md-3 ml-sm-4" style="background: #dce0e3; font-size:70%; color:#3476ea; border: 2px solid #dce0e3; border-radius: 15px;">月間累計 {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
+              <div class="row justify-content-center">
+                <div class="col border-right border-primary">
+                  <p style="font-size:100%"><br><br></p>
+                </div>
+                <div class="col">
+
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
+        <div class="col-sm-3">
+
+        </div>
+      </div>
+    </div>
+
+          <div class="container overlay-tri">
+            <div class="d-flex flex-row justify-content-center">
+                <div id="triangle_graph" class=""></div>
+            </div>
+            <div class="container pt-3">
+              <p class="text-center" style="background: blue; color:#FFFFFF; border: 2px solid blue; border-radius: 15px;">###### 215,000# (20.0km) ##</p>
+
+            </div>
+            </div>
           <script id="tri" type="text/javascript">
           var cnv;
             function setup() {
-              cnv = createCanvas(150, 75);
+              cnv = createCanvas(300, 150);
               // var x = windowWidth / 2;
               // var y = windowHeight / 4;
               // cnv.position(x, y);
@@ -206,9 +362,9 @@ text-decoration: none !important;
             }
 
             function draw() {
-              fill('#ccece8');
-              triangle(0, 75, 150, 75, 150, 0);
-              fill('#7acdc4');
+              fill('#dce0e3');
+              triangle(0, 150, 300, 150, 300, 0);
+              fill('#3476ea');
               if({{ $current_month_steps }}> 0){
                 var comp = {{ $current_month_steps }};
                 if({{ $get_m_user_monthly_goal }} > {{ $current_month_steps }} ){
@@ -220,174 +376,64 @@ text-decoration: none !important;
 
 
               }
-              else{
+               else{
                 var comp = 0;
                 var rem = 2000;
               }
               var k = (comp/(comp+rem));
-              var x = 150*k;
-              var y = 75 - 75*k;
-              triangle(0, 75, x, y, x, 75);
+              var x = 300*k;
+              var y = 150 - 150*k;
+              triangle(0, 150, x, y, x, 150);
             }
           </script>
-        </div>
-        <div class="col">
-          <div id="barchart_div">
-        </div>
-      </div>
-    </div>
-    <div class="container-fluid">
-      <div class="d-flex flex-row justify-content-start">
-        <div class="p-1">
-          <p style="font-size: 80%">現在の選択ツアー</p>
-        </div>
-        <div class="">
-          <button type="button" class="btn btn-danger btn-sm"></button>
-        </div>
-        <div class="p-1">
-          <p style="font-size: 80%">TourName (Total travelled {{ $steps*$get_m_user_stride/100000 }} Km/ Remaining @if(($steps*$get_m_user_stride/100000) >= $total) 0 Km @else {{ $total-($steps*$get_m_user_stride/100000) }}Km @endif)</p>
-        </div>
-      </div>
-    </div>
 
-@if ( empty($m__users_id))
- <h2> Please create your profile first <a href="/">click here </a> </h2> <br/>
-@endif
+  <script type="text/javascript">
+  var comp, rem;
+  if({{ $today_data }} > 0){
+      comp = {{ $today_data*$get_m_user_stride/100000 }};
+      if({{ $today_data*$get_m_user_stride/100000 }} > {{ $get_m_user_daily_goal*$get_m_user_stride/100000 }})
+      { rem = 0;
+      }
+      else{
+      rem =  {{ ($get_m_user_daily_goal*$get_m_user_stride/100000)-($today_data*$get_m_user_stride/100000) }};
+      }
+  }
+  else{
+      comp = 0;
+      rem = 2000;
+  }
+var data = {
+labels: [
+  "Completed",
+  "Remaining"
+],
+datasets: [
+  {
+    data: [comp, rem],
+    backgroundColor: [
+      "#3476ea",
+      "#dce0e3"
+    ]
+  }]
+};
 
-<div class="container-fluid">
- @if(! empty($checkpoints))
-  <div class="row">
-    <div class="col" id="checkPoint_name">
-
-    </div>
-    <div class="col pt-2 pl-3">
-      <ul class="StepProgress" id="progress_bar">
-
-      </ul>
-    </div>
-    <div class="col" id="checkPoint_name2">
-
-    </div>
-  </div>
- @else
- <h4> Sorry there are no checkpoints, Please select the tour.</h4>
- @endif
-</div>
-
-<script src="https://www.gstatic.com/charts/loader.js"></script>
-<script>
-google.load("visualization", "1", {
-  packages: ["corechart"]
+var promisedDeliveryChart = new Chart(document.getElementById('myChart'), {
+type: 'doughnut',
+data: data,
+options: {
+  responsive: true,
+  legend: {
+    display: false
+  },
+  cutoutPercentage: 85
+}
 });
 
-google.setOnLoadCallback(init);
-
-function drawChart(id, title, comp, rem) {
-  var data = new google.visualization.DataTable();
-  data.addColumn('string', 'Volume');
-  data.addColumn('number', 'Mortgage Volume');
-  data.addRows([
-      ['Completed', comp],
-      ['Remaining', rem]
-      ]);
-  var options = {
-      title:title,
-      width: 120,
-      height: 120,
-      colors: ['#7acdc4', '#ccece8'],
-      pieSliceText:'none',
-      pieHole: 0.70,
-      legend: 'none',
-      tooltip: {
-        text: 'percentage'
-      },
-      tooltip: {
-        textStyle: {
-          fontSize: 6
-        }
-      }
-      //legend: { position: 'labeled' },
-  };
-  var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-  chart.draw(data, options);
-
-  var comp_percent = (comp/(comp+rem))*100;
-  var percent = 0;
-    // start the animation loop
-    var handler = setInterval(function(){
-        // apply new values
-        data.setValue(0, 1, percent);
-        data.setValue(1, 1, 100 - percent);
-        // update the pie
-        chart.draw(data, options);
-        // check if we have reached the desired value
-        if (percent >= comp_percent) {
-          // stop the loop
-          clearInterval(handler);
-            centerText('#chart_div', 0, 40, 60);
-        }
-        // values increment
-        percent += 1;
-
-    }, 15);
-
-}
-
-function centerText(chart, idx, X, Y) {
-var cht = document.querySelector(chart);
-var txt = document.querySelectorAll(chart + " text");
-//var chW = cht.width/2;
-//var chH = cht.height/2;
-//var txW = txt[idx].width/2;
-//var txH = txt[idx].height/2;
-//var W = chW - txW;
-//var H = chH - txH;
-txt[idx].setAttribute('x', X);
-txt[idx].setAttribute('y', Y);
-}
-
-function init() {
-
-if({{ $today_data }} > 0){
-    comp = {{ $today_data*$get_m_user_stride/100000 }};
-    if({{ $today_data*$get_m_user_stride/100000 }} > {{ $get_m_user_daily_goal*$get_m_user_stride/100000 }})
-    { rem = 0;
-    }
-    else{
-    rem =  {{ ($get_m_user_daily_goal*$get_m_user_stride/100000)-($today_data*$get_m_user_stride/100000) }};
-    }
-}
-else{
-    comp = 0;
-    rem = 2000;
-}
-
-drawChart('chart_div', 'Step Count', comp, rem);
-}
 </script>
+<script type="text/javascript">
 
-
-<script>
-google.charts.load('current', {packages: ['corechart', 'bar']});
-google.charts.setOnLoadCallback(drawBasic);
-
-function drawBasic() {
-
-var weekDates = datesofWeek();
-console.log(weekDates[1].getMonth());
-
-var dataLabel = ['Days', 'Steps', { role: 'style' }, { role: 'annotation' } ];
-var steps = 0;
-var row1 = ['Mon', steps, '#7acdc4', weekDates[0].getDate() ];
-var row2 = ['Tue', steps, '#7acdc4', weekDates[1].getDate() ];
-var row3 = ['Wed', steps, '#7acdc4', weekDates[2].getDate() ];
-var row4 = ['Thu', steps, '#7acdc4', weekDates[3].getDate() ];
-var row5 = ['Fri', steps, '#7acdc4', weekDates[4].getDate() ];
-var row6 = ['Sat', steps, '#7acdc4', weekDates[5].getDate() ];
-var row7 = ['Sun', steps, '#7acdc4', weekDates[6].getDate() ];
-//console.log(formatDate(weekDates[0]));
 var current_week_datas1 = {!! json_encode($current_week_datas) !!}
-
+var stepsData = [1,1,1,1,1,1,1];
 
 Object.keys(current_week_datas1).forEach((single_day_data, i) => {
   //console.log(current_week_datas[single_day_data]);
@@ -397,269 +443,139 @@ Object.keys(current_week_datas1).forEach((single_day_data, i) => {
   });
   weekDates.forEach((item, i) => {
     if (formatDate(item) == single_day_data) {
-      if (i==0) {
-        row1[1] = parseInt(total);
-      }
-      if (i==1) {
-        row2[1] = parseInt(total);
-      }
-      if (i==2) {
-        row3[1] = parseInt(total);
-      }
-      if (i==3) {
-        row4[1] = parseInt(total);
-      }
-      if (i==4) {
-        row5[1] = parseInt(total);
-      }
-      if (i==5) {
-        row6[1] = parseInt(total);
-      }
-      if (i==6) {
-        row7[1] = parseInt(total);
-      }
+      stepsData[i] = parseInt(total);
     }
   });
 
 });
 
-var data = google.visualization.arrayToDataTable([
-     ['Days', 'Steps', { role: 'style' }, { role: 'annotation' } ],
-     row1,
-     row2,
-     row3,
-     row4,
-     row5,
-     row6,
-     row7
-  ]);
-  var view = new google.visualization.DataView(data);
-   view.setColumns([0, 1,
-                    { calc: "stringify",
-                      sourceColumn: 1,
-                      type: "string",
-                      role: "annotation" },
-                    2]);
-  var options = {
-    title: 'Last 7 days record',
+Chart.plugins.register({
+ afterDatasetsDraw: function(chart, ease) {
+    var barLabels = chart.options.barLabels;
+    if (!barLabels) return;
+    var ctx = chart.ctx;
+    chart.data.datasets.forEach(function(dataset, index) {
+      console.log("dataset");
+      console.log(index);
+       var meta = chart.getDatasetMeta(index);
+       if (!meta.hidden) {
+          meta.data.forEach(function(segment, index) {
+            if (stepsData[index]>0) {
+              console.log("segment");
+              console.log(index);
+               var model = segment._model,
+                   position = segment.tooltipPosition(),
+                   x = position.x,
+                   y = position.y,
+                   height = segment.height(),
+                   width = model.width,
+                   padding = width / 4;
+                   //console.log(segment);
+               ctx.save();
+               ctx.textBaseline = 'middle';
+               ctx.font = 'bold ' + width + 'px Arial';
+               ctx.fillStyle = '#FF9529'; //first label's font color
+               var encoded = barLabels.first[index];
+               var REG_HEX = /&#x([a-fA-F0-9]+);/g;
+               var   text1 = encoded.replace(REG_HEX, function(match, group1){
+               var num = parseInt(group1, 16); //=> 39
+               return String.fromCharCode(num); //=> '
+               });
+               var   text2 = barLabels.second[index];
+               var   textWidth = ctx.measureText(text1).width + padding;
+               if (stepsData[index]>2000) {
+                 ctx.fillText(text1, x-5, y-10);
+               }
+               ctx.font = 4*width/5 + 'px Arial';
+               ctx.fillStyle = '#3476ea'; //second label's font color
+               // ctx.translate(x, y);
+               ctx.rotate(-Math.PI / 2);
+               var textVertical = stepsData[index] + " steps";
+               ctx.fillText(textVertical, -chart.height+3*Chart.defaults.global.defaultFontSize, x+15);
+               // console.log("x: " + chart.width);
+               // console.log("y: " + chart.height);
+               ctx.restore();
+            }
+          });
+       }
+    });
+ }
+});
+
+
+Chart.pluginService.register({
+    afterDraw: function(chart) {
+        if (typeof chart.config.options.lineAt != 'undefined') {
+        	var lineAt = chart.config.options.lineAt;
+            var ctxPlugin = chart.chart.ctx;
+            var xAxe = chart.scales[chart.config.options.scales.xAxes[0].id];
+            var yAxe = chart.scales[chart.config.options.scales.yAxes[0].id];
+
+            // I'm not good at maths
+            // So I couldn't find a way to make it work ...
+            // ... without having the `min` property set to 0
+            if(yAxe.min != 0) return;
+
+            ctxPlugin.strokeStyle = "blue";
+        	ctxPlugin.beginPath();
+            lineAt = (lineAt - yAxe.min) * (100 / yAxe.max);
+            lineAt = (100 - lineAt) / 100 * (yAxe.height) + yAxe.top;
+            ctxPlugin.moveTo(xAxe.left, lineAt);
+            ctxPlugin.lineTo(xAxe.right, lineAt);
+            ctxPlugin.stroke();
+        }
+    }
+});
+
+var chart = new Chart(ctx, {
+ type: 'bar',
+ data: {
+    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+    datasets: [{
+       barThickness: 15,
+       maxBarThickness: 100,
+       label: '',
+       data: stepsData,
+       backgroundColor: ['#fd625e', '#01b8aa', '#01b8aa', '#01b8aa', '#fd625e', '#fd625e', '#01b8aa'],
+    }]
+ },
+ options: {
+   lineAt: 2000,
+    scales: {
+       yAxes: [{
+          ticks: {
+             beginAtZero: true,
+             stepSize: 1000,
+             min: 0
+          },
+       }],
+       xAxes: [{
+         gridLines: {
+                color: "rgba(0, 0, 0, 0)",
+            },
+            ticks: {
+               stepSize: 1000,
+            }
+       }]
+    },
+    barLabels: {
+      first: ['&#x2605;', '&#x2605;', '&#x2605;', '&#x2605;', '&#x2605;', '&#x2605;', '&#x2605;'],
+      second: ['', '', '', '', '', '','']
+    },
     legend: {
-    position: 'none'
-    },
-    annotations: {
-      alwaysOutside: true
-    },
-    animation:
-         {
-             "startup": true,
-             duration: 2000,
-             easing: 'out'
-         }
-  };
-
-  var chart = new google.visualization.ColumnChart(
-    document.getElementById('barchart_div'));
-
-  // var chartLarge = new google.visualization.ColumnChart(
-  //   document.getElementById('barchartLarge_div');
-  // )
-  //
-  // chartLarge.draw(view, options);
-
-  chart.draw(view, options);
-}
-function formatDate(d) {
-  //var d = new Date(date),
-      //month = '' + (d.getMonth() + 1),
-      day = d.getDate();
-      //year = d.getFullYear();
-
-  // if (month.length < 2)
-  //     month = '0' + month;
-  if (day.length < 2)
-      day = '0' + day;
-
-  return day;
-}
-</script>
-
-
-<script type="text/javascript">
-
-  var steplist = document.getElementById("progress_bar");
-  var checkPoint_col = document.getElementById("checkPoint_name");
-  var checkPoint_col2 = document.getElementById("checkPoint_name2");
-
-
-if({{ $session_value }} === false){
-  var get_m_user_stride = {{ $get_m_user_stride }};
-  var steps = {{ $steps }};
-  var dist_walked = (get_m_user_stride * steps)/100000;
-  var flag1 = 0;
-
-
-
-  var checkpoints = {!! json_encode($checkpoints) !!};
-  checkpoints.forEach((item, i) => {
-    var tag = document.createElement("li");
-    tag.className = "StepProgress-item";
-    var name_p = document.createElement("p");
-    name_p.style.fontSize = "70%";
-    var name_p2 = document.createElement("p");
-    name_p2.style.fontSize = "70%";
-    Object.keys(item).forEach((key, i) => {
-      if (key == "checkpoint_title") {
-        // console.log(item[key]);
-        var textnode = document.createTextNode(item[key]);
-        name_p.appendChild(textnode);
-      } else if (key == "distance") {
-          if (item[key] < dist_walked) {
-            tag.className = "StepProgress-item is-done";
-          } else {
-            flag1 += 1;
-            if (flag1 == 1) {
-              tag.className = "StepProgress-item current";
-            } else {
-              tag.className = "StepProgress-item";
+        display: false
+    }
+ },
+ plugins: [{
+      beforeInit: function(chart) {
+         chart.data.labels.forEach(function(e, i, a) {
+            if (/\n/.test(e)) {
+               a[i] = e.split(/\n/);
             }
-          }
-       }
-
-    });
-    var flexRow = document.createElement("div");
-    flexRow.className = "d-flex flex-row justify-content-start";
-    flexRow.style.height = "60px";
-    flexRow.style.width = "100px";
-    var flexRowRev = document.createElement("div");
-    flexRowRev.className = "d-flex flex-row-reverse justify-content-start";
-    flexRowRev.style.height = "60px";
-    flexRowRev.style.maxWidth = "100px"
-    var btnDiv = document.createElement("div");
-    // var pDiv = document.createElement("div");
-    var btn = document.createElement("button");
-    var btnDiv2 = document.createElement("div");
-    // var pDiv = document.createElement("div");
-    var btn2 = document.createElement("button");
-    btn.className = "btn btn-danger btn-sm";
-    btn2.className = "btn btn-danger btn-sm";
-    btnDiv.appendChild(btn);
-    btnDiv2.appendChild(btn2);
-
-
-    flexRow.appendChild(btnDiv);
-    flexRow.appendChild(name_p);
-    checkPoint_col.appendChild(flexRow);
-    steplist.appendChild(tag);
-
-    var text2 = document.createTextNode(item["distance"] + " " + item["checkpoint_category"]);
-    name_p2.appendChild(text2);
-    flexRowRev.appendChild(btnDiv2);
-    flexRowRev.appendChild(name_p2);
-    checkPoint_col2.appendChild(flexRowRev);
-    console.log(item["checkpoint_category"]);
-  });
-
-}
-else{
-   var get_m_user_stride = {{ $get_m_user_stride }};
-  var steps = {{ $steps }};
-  var dist_walked = (get_m_user_stride * steps)/100000;
-  var flag1 = 0;
-
-
-
-  var checkpoints = {!! json_encode($checkpointsr) !!};
-  checkpoints.forEach((item, i) => {
-    var tag = document.createElement("li");
-    tag.className = "StepProgress-item";
-    var name_p = document.createElement("p");
-    name_p.style.fontSize = "70%";
-    var name_p2 = document.createElement("p");
-    name_p2.style.fontSize = "70%";
-    Object.keys(item).forEach((key, i) => {
-      if (key == "checkpoint_title") {
-        // console.log(item[key]);
-        var textnode = document.createTextNode(item[key]);
-        name_p.appendChild(textnode);
-      } else if (key == "distance") {
-          if ({{ $total }}-item[key] <= dist_walked) {
-            tag.className = "StepProgress-item is-done";
-          } else {
-            flag1 += 1;
-            if (flag1 == 1) {
-              tag.className = "StepProgress-item current";
-            } else {
-              tag.className = "StepProgress-item";
-            }
-          }
-       }
-
-    });
-    var flexRow = document.createElement("div");
-    flexRow.className = "d-flex flex-row justify-content-start";
-    flexRow.style.height = "60px";
-    flexRow.style.width = "100px";
-    var flexRowRev = document.createElement("div");
-    flexRowRev.className = "d-flex flex-row-reverse justify-content-start";
-    flexRowRev.style.height = "60px";
-    flexRowRev.style.maxWidth = "60px"
-    var btnDiv = document.createElement("div");
-    // var pDiv = document.createElement("div");
-    var btn = document.createElement("button");
-    var btnDiv2 = document.createElement("div");
-    // var pDiv = document.createElement("div");
-    var btn2 = document.createElement("button");
-    btn.className = "btn btn-danger btn-sm";
-    btn2.className = "btn btn-danger btn-sm";
-    btnDiv.appendChild(btn);
-    btnDiv2.appendChild(btn2);
-
-
-    flexRow.appendChild(btnDiv);
-    flexRow.appendChild(name_p);
-    checkPoint_col.appendChild(flexRow);
-    steplist.appendChild(tag);
-
-    var text2 = document.createTextNode({{ $total }}-item["distance"] + " " + item["checkpoint_category"]);
-    name_p2.appendChild(text2);
-    flexRowRev.appendChild(btnDiv2);
-    flexRowRev.appendChild(name_p2);
-    checkPoint_col2.appendChild(flexRowRev);
-    console.log(item["checkpoint_category"]);
-  });
-
-}
-
-
+         });
+      }
+   }]
+});
 </script>
-<script type="text/javascript">
-  var weekMap = [6, 0, 1, 2, 3, 4, 5];
-  function datesofWeek() {
-    var now = new Date();
-    now.setHours(0, 0, 0, 0);
-    var mon = new Date(now);
-    mon.setDate(mon.getDate() - weekMap[mon.getDay()]);
-    var tue = new Date(now);
-    tue.setDate(tue.getDate() - weekMap[tue.getDay()] + 1);
-    var wed = new Date(now);
-    wed.setDate(wed.getDate() - weekMap[wed.getDay()] + 2);
-    var thu = new Date(now);
-    thu.setDate(thu.getDate() - weekMap[thu.getDay()] + 3);
-    var fri = new Date(now);
-    fri.setDate(fri.getDate() - weekMap[fri.getDay()] + 4);
-    var sat = new Date(now);
-    sat.setDate(sat.getDate() - weekMap[sat.getDay()] + 5);
-    var sun = new Date(now);
-    sun.setDate(sun.getDate() - weekMap[sun.getDay()] + 6);
-    sun.setHours(23, 59, 59, 999);
-    console.log(mon);
-    console.log(tue);
-    console.log(wed);
-    console.log(thu);
-    console.log(fri);
-    console.log(sat);
-    console.log(sun);
-    return [mon, tue, wed, thu, fri, sat, sun];
-  }
-  </script>
-
+@endif
 @endsection
