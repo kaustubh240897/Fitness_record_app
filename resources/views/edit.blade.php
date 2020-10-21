@@ -65,23 +65,11 @@
 <form action="{{ route('update',$m_users->id) }}" method="POST" >
 {{ csrf_field() }}
 <div class="container-fluid">
-<!-- temporary -->
-      <div class="row">
-        <div class="col">
-          <p>1. Serial number:-</p>
-        </div>
-         <div class="container">
-            <div class="d-flex flex-row-reverse p-0 d-inline-block justify-content-end">
-              <input type="text" placeholder="serialnumber" required='true'  value="{{ $m_users->serial_number }}" name='serialnumber' class="form-control mx-0 my-0 d-inline-block" style="width: 60%; height:10%; font-size:70%" id="serialnumberinput">
-            </div>
-          </div>
-      </div>
 
-<!-- /temporary -->
 
       <div class="row">
         <div class="col">
-          <p>2. Stride:-</p>
+          <p>1. Stride:-</p>
         </div>
       </div>
       <div class="row">
@@ -137,7 +125,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col">
-          <p>3. Daily Goal:-</p>
+          <p>2. Daily Goal:-</p>
         </div>
       </div>
     <div class="row">
@@ -196,7 +184,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col">
-          <p>4. Monthly Goal:-</p>
+          <p>3. Monthly Goal:-</p>
         </div>
       </div>
       <div class="row">

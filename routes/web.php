@@ -44,4 +44,6 @@ Route::post('/custom-register', 'CustomAuthController@Register')->name('custom.r
 
 Route::get('/custom-login', 'CustomAuthController@showLoginForm')->name('custom.login');
 Route::post('/custom-login', 'CustomAuthController@Login')->name('custom.login');
+
+Route::get('/logout', 'CustomAuthController@showlogout')->name('custom.logout');
 Route::post('/logout', 'CustomAuthController@logout')->name('logout');

@@ -24,7 +24,7 @@
                         <p class='alert alert-danger'>{{ $error }} </p>
                     @endforeach
                 @endif
-                @if( empty(Auth::id()))
+                @if( empty(Auth::id()) || empty(Auth::user()->name))
                 <form class='form-horizontal' action="{{ route('custom.register') }}" method='post'>
                  {{ csrf_field() }}
                     <div class="form-group">

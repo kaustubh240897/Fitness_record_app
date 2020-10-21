@@ -76,6 +76,13 @@ class CustomAuthController extends Controller
 
         ]);
     }
+    
+
+
+    public function showlogout(){
+        return view('custom.logout');
+
+    }
 
     public function logout(Request $request) {
         $cookie = \Cookie::forget('serialnumber');

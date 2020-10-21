@@ -75,19 +75,7 @@
 <form action="{{ route('store') }}" method="POST" >
   {{ csrf_field() }}
 <div class="container-fluid">
-<!-- temporary -->
-      <div class="row">
-        <div class="col">
-          <p>1. Serial number:-</p>
-        </div>
-        <div class="container">
-            <div class="d-flex flex-row-reverse p-0 d-inline-block justify-content-end">
-              <input type="text" placeholder="serialnumber" required='true' name='serialnumber' class="form-control mx-0 my-0 d-inline-block" style="width: 60%; height:10%; font-size:70%" id="serialnumberinput">
-            </div>
-          </div>
-      </div>
 
-<!-- /temporary -->
 
       <div class="row">
         <div class="col">

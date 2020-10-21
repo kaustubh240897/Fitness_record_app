@@ -80,7 +80,6 @@ class t_StepObserver
                         $t_collection->m__users_id = $m__user_id;
                         $t_collection->m__collection_id = $checkpoint->m__collection_id;
                         $t_collection->save();
-                        break;
                     
                     }
                  

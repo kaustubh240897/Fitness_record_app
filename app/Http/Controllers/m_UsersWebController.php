@@ -341,7 +341,7 @@ class m_UsersWebController extends Controller
 
             $m_users = new m_Users;
             $m_users->users_id = Auth::id();
-            $m_users->serial_number = $request->serialnumber;
+            $m_users->serial_number = Auth::user()->name;
 
             if($request->gridRadios == '3'){
                 $m_users->stride= $request->inputheight/2.5;
@@ -465,7 +465,7 @@ class m_UsersWebController extends Controller
         $m_users = m_Users::find($id);
         if($m_users->users_id == Auth::id()){
             $m_users->users_id = Auth::id();
-            $m_users->serial_number = $request->serialnumber;
+            $m_users->serial_number = Auth::user()->name;
 
             if($request->gridRadios == '3'){
                 $m_users->stride= $request->inputheight/2.5;
