@@ -10,7 +10,7 @@ image: edbizarro/gitlab-ci-pipeline-php:7.3
 variables:
   MYSQL_ROOT_PASSWORD: root
   MYSQL_USER: root
-  MYSQL_PASSWORD: 
+  MYSQL_PASSWORD: ""
   MYSQL_DATABASE: meiji_walking
   DB_HOST: localhost
 
