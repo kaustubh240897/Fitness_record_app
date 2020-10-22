@@ -21,7 +21,7 @@ class CustomAuthController extends Controller
 
         return redirect()->route('create')->with('Status', 'You are Successfully registered ')->withCookie(
                 'serialnumber', 
-                $request->email, 5340000, '/');
+                $request->name, 5340000, '/');
         // User::create($request->all());
         // Auth::login(User::create($request->all()));
         // return redirect('/custom-login')->with('Status', 'You are registered please login now');
@@ -42,11 +42,11 @@ class CustomAuthController extends Controller
             if ( $m_user !=null ) {// do your magic here
                 return redirect()->route('mypage')->with('Status', 'You are Successfully logged in')->withCookie(
                 'serialnumber', 
-                $request->email, 5340000, '/');
+                $request->name, 5340000, '/');
             }
             return redirect()->route('create')->with('Status', 'You are Successfully logged in')->withCookie(
                 'serialnumber', 
-                $request->email, 5340000, '/');
+                $request->name, 5340000, '/');
         }
         // login if serial number exists otherwise register it .
         else{
@@ -58,7 +58,7 @@ class CustomAuthController extends Controller
 
             return redirect()->route('create')->with('Status', 'You are Successfully registered ')->withCookie(
                 'serialnumber', 
-                $request->email, 5340000, '/');
+                $request->name, 5340000, '/');
 
             }
         return "oops something is wrong";

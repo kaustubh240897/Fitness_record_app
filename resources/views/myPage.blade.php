@@ -265,6 +265,14 @@ border-left: 6px solid green;
       <div class="relative w-100 h-50">
     <canvas id="myChart"></canvas>
     <div class="absolute-center text-center">
+     @if($get_t_tour->status == 'Inprogress')
+        <h6 style='color:green'> Your tour is in progress. </h6>
+        @elseif($get_t_tour->status == 'Done')
+        <h6 style='color:green'> Congrates! You have completed the tour. Please select another tour </h6>
+        @else
+        <h6 style='color:red'> You have not selected any tour yet! Please select a tour. </h6>
+      @endif
+      <h4> Today's Goal </h4>
       <p class="mb-0 p-0" style="font-size:70%; color:#3476ea;"> {{ ($today_data)*$get_m_user_stride/100000 }} km</p>
       <p class="font-weight-bold mb-0 p-0 text-wrap" style="color:#3476ea;">{{ $today_data }}歩</p>
       <p class="mb-0 mt-0 p-0" style="font-size:70%;">________________</p>
@@ -400,7 +408,7 @@ border-left: 6px solid green;
   }
   else{
       comp = 0;
-      rem = 2000;
+      rem = 100;
   }
 var data = {
 labels: [
@@ -430,10 +438,55 @@ options: {
 });
 
 </script>
+
+<script type="text/javascript">
+    var weekMap = [6, 0, 1, 2, 3, 4, 5];
+    function datesofWeek() {
+      var now = new Date();
+      now.setHours(0, 0, 0, 0);
+      var mon = new Date(now);
+      mon.setDate(mon.getDate() - weekMap[mon.getDay()]);
+      var tue = new Date(now);
+      tue.setDate(tue.getDate() - weekMap[tue.getDay()] + 1);
+      var wed = new Date(now);
+      wed.setDate(wed.getDate() - weekMap[wed.getDay()] + 2);
+      var thu = new Date(now);
+      thu.setDate(thu.getDate() - weekMap[thu.getDay()] + 3);
+      var fri = new Date(now);
+      fri.setDate(fri.getDate() - weekMap[fri.getDay()] + 4);
+      var sat = new Date(now);
+      sat.setDate(sat.getDate() - weekMap[sat.getDay()] + 5);
+      var sun = new Date(now);
+      sun.setDate(sun.getDate() - weekMap[sun.getDay()] + 6);
+      sun.setHours(23, 59, 59, 999);
+      console.log(mon);
+      console.log(tue);
+      console.log(wed);
+      console.log(thu);
+      console.log(fri);
+      console.log(sat);
+      console.log(sun);
+      return [mon, tue, wed, thu, fri, sat, sun];
+    }
+    function formatDate(d) {
+    //var d = new Date(date),
+        //month = '' + (d.getMonth() + 1),
+        day = d.getDate();
+        //year = d.getFullYear();
+
+    // if (month.length < 2)
+    //     month = '0' + month;
+    if (day.length < 2)
+        day = '0' + day;
+
+    return day;
+  }
+</script>
 <script type="text/javascript">
 
+
 var current_week_datas1 = {!! json_encode($current_week_datas) !!}
-var stepsData = [1,1,1,1,1,1,1];
+var stepsData = [0,0,0,0,0,0,0];
 
 Object.keys(current_week_datas1).forEach((single_day_data, i) => {
   //console.log(current_week_datas[single_day_data]);
@@ -441,6 +494,7 @@ Object.keys(current_week_datas1).forEach((single_day_data, i) => {
   current_week_datas1[single_day_data].forEach((item, i) => {
     total += parseInt(item["steps"]);
   });
+  var weekDates = datesofWeek();
   weekDates.forEach((item, i) => {
     if (formatDate(item) == single_day_data) {
       stepsData[i] = parseInt(total);
@@ -483,7 +537,7 @@ Chart.plugins.register({
                });
                var   text2 = barLabels.second[index];
                var   textWidth = ctx.measureText(text1).width + padding;
-               if (stepsData[index]>2000) {
+               if (stepsData[index]>{{ $get_m_user_daily_goal }}) {
                  ctx.fillText(text1, x-5, y-10);
                }
                ctx.font = 4*width/5 + 'px Arial';
@@ -540,7 +594,7 @@ var chart = new Chart(ctx, {
     }]
  },
  options: {
-   lineAt: 2000,
+   lineAt: {{ $get_m_user_daily_goal }},
     scales: {
        yAxes: [{
           ticks: {
@@ -576,6 +630,11 @@ var chart = new Chart(ctx, {
       }
    }]
 });
+
+
+
 </script>
+
+
 @endif
 @endsection

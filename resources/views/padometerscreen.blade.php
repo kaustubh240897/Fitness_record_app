@@ -79,12 +79,19 @@
         @if( empty($m__users_id))
         <h2> Please make your profile first <a href="/">click here </a> </h2> <br/>
         @endif
-        @if(! empty($today_data))
+        
         <div class="col-xs-6 mt-3 pt-3">
         @if($get_m_user_daily_goal <=  $today_data)
           <p class="mb-0 overlay-text pt-3" style="font-size:70%; color: red">Completed!</p>
         @else
            <p class="mb-0 overlay-text pt-3" style="font-size:70%; color: red">Inprogress!</p>
+        @endif
+        @if($get_t_tour->status == 'Inprogress')
+        <h6> Your tour is in progress. </h6>
+        @elseif($get_t_tour->status == 'Done')
+        <h6> Congrates! You have completed the tour. Please select another tour </h6>
+        @else
+        <h6> You have not selected any tour yet! Please select a tour. </h6>
         @endif
           <p class="mb-0" style="font-size:70%">1日の目標歩数</p>
           <p class="mb-0" style="font-size:70%">{{ $get_m_user_daily_goal }}歩</p>
@@ -93,9 +100,7 @@
           <p class="mb-0" style="font-size:70%">@if($get_m_user_daily_goal <=  $today_data) 0  @else {{ $get_m_user_daily_goal-$today_data }}歩 @endif</p>
           <p class="mb-0" style="font-size:70%">@if($get_m_user_daily_goal <=  $today_data) 0  @else {{ ($get_m_user_daily_goal-$today_data)*$get_m_user_stride/100000 }} @endif km</p>
         </div>
-         @else
-        <h6> You have not started tour yet! </h6>
-        @endif
+       
       </div>
     </div>
     <div class="container-fluid">
@@ -262,7 +267,7 @@ else{
   comp = 0;
   rem = 100;
 }
-  drawChart('chart_div', 'Step Count', comp, rem);
+  drawChart('chart_div', "Today's Step Count", comp, rem);
 }
   </script>
   <script>
