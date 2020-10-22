@@ -12,8 +12,8 @@ variables:
   DB_HOST: localhost
   DB_PORT: 3306
   DB_DATABASE: meiji_walking
-  DB_USERNAME: root
-  DB_PASSWORD: ""
+  DB_USERNAME: kaustubh
+  DB_PASSWORD: kd123456
 
 cache:
   key: "$CI_JOB_NAME-$CI_COMMIT_REF_SLUG"
