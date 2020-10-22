@@ -9,9 +9,6 @@
 @endif
 
 
-
-
-
  <style media="screen">
       .btn.blue {
           background-color: #ccece8 !important;
@@ -19,6 +16,9 @@
       }
       .collectionsRow {
         cursor: pointer;
+      }
+      .checked {
+        color: #0066ff;
       }
   </style>
 
@@ -59,7 +59,7 @@
       <td style="font-size:70%">{{ $get_t_collection->m_collections->collection_category }}</td>
       <td style="font-size:70%"><a href="{{ route('collectiondetails', $get_t_collection->m_collections->id) }}">{{ $get_t_collection->m_collections->collection_title }} </a></td>
       <td style="font-size:70%"> {{ $get_t_collection->created_at }} </td>
-      <td style="font-size:70%"> {{ $counter[$loop->iteration-1] }}*</td>
+      <td style="font-size:70%"> {{ $counter[$loop->iteration-1] }}<span class="fa fa-star checked"></span></td>
     </tr>
 
 
@@ -68,7 +68,7 @@
       <td style="font-size:70%">{{ $get_t_collection->m_collections->collection_category }}</td>
       <td style="font-size:70%"><a href="{{ route('collectiondetails', $get_t_collection->m_collections->id) }}">{{ $get_t_collection->m_collections->collection_title }}</a></td>
       <td style="font-size:70%"> {{ $get_t_collection->created_at }} </td>
-      <td style="font-size:70%"> {{ $counter[$loop->iteration-1] }}*</td>
+      <td style="font-size:70%"> {{ $counter[$loop->iteration-1] }}<span class="fa fa-star checked"></td>
     </tr>
   @endif
 

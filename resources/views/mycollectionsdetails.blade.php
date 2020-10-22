@@ -14,6 +14,9 @@
     @media only screen and (max-width: 768px) {
       .col-3 {width: 25%;}
     }
+     .checked {
+        color: #0066ff;
+    }
     </style>
 
 
@@ -36,7 +39,7 @@
             <td style="font-size:70%">{{ $my_collections->m_collections->collection_category }}</td>
             <td style="font-size:70%">{{ $my_collections->m_collections->collection_title }} </td>
             <td style="font-size:70%">{{ $my_collections->created_at }}</td>
-            <td style="font-size:70%">{{ $count }}*</td>
+            <td style="font-size:70%">{{ $count }}<span class="fa fa-star checked"></td>
           </tr>
         </tbody>
         @else
