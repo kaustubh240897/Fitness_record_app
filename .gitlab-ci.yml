@@ -8,11 +8,12 @@ image: edbizarro/gitlab-ci-pipeline-php:7.3
 
 # Variables
 variables:
-  MYSQL_ROOT_PASSWORD: root
-  MYSQL_USER: kaustubh
-  MYSQL_PASSWORD: kd123456
-  MYSQL_DATABASE: meiji_walking
+  DB_CONNECTION: mysql
   DB_HOST: localhost
+  DB_PORT: 3306
+  DB_DATABASE: meiji_walking
+  DB_USERNAME: root
+  DB_PASSWORD: ""
 
 cache:
   key: "$CI_JOB_NAME-$CI_COMMIT_REF_SLUG"
