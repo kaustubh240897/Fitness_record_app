@@ -9,7 +9,7 @@ image: edbizarro/gitlab-ci-pipeline-php:7.3
 # Variables
 variables:
   DB_CONNECTION: mysql
-  DB_HOST: localhost
+  DB_HOST: 127.0.0.1
   DB_PORT: 3306
   DB_DATABASE: meiji_walking
   DB_USERNAME: kaustubh
@@ -78,7 +78,8 @@ db-seeding:
     - yarn
   script:
     - mysql --version
-    - php artisan migrate:fresh --seed
+    - php artisan config:clear
+    - php artisan migrate:install
     - mysqldump --host="${DB_HOST}" --user="${MYSQL_USER}" --password="${MYSQL_PASSWORD}" "${MYSQL_DATABASE}" > db.sql
   artifacts:
     paths:
