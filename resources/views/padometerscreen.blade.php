@@ -180,12 +180,27 @@ z-index: 50
 }
 .overlay-text4 {
 align-self: flex-start;
-transform: translateY(-42%);
+transform: translate(-170%, -90%);
+z-index: 50;
+}
+.overlay-btn2 {
+align-self: flex-start;
+transform: translate(-55%,-95%);
+z-index: 50;
+}
+.overlay-btn4 {
+align-self: flex-start;
+transform: translate(-155%,-95%);
+z-index: 50;
+}
+.overlay-btn3 {
+align-self: flex-start;
+transform: translateX(30%);
 z-index: 50
 }
 .overlay-tri {
 align-self: flex-start;
-transform: translateY(-90%);
+transform: translateY(-70%);
 z-index: 50
 }
 .overlay-btn1 {
@@ -228,7 +243,7 @@ border-left: 6px solid green;
 @if ( empty($m__users_id))
  <h2> Please create your profile first <a href="/" style="color: blue !important">click here </a> </h2> <br/>
 @else
-<div class="container pt-3" style="color:#FFFFFF; border-radius: 15px;">
+<div class="container-fluid pt-3" style="color:#FFFFFF; border-radius: 15px;">
       <div class="row justify-content-center">
         <div class="col col-sm-9 pt-1 text-center">
           <p class="font-weight-bold pr-3 py-2" style="background: white; color:#3476ea; border: 2px solid white; border-radius: 15px;">2020# 10# 15# *#*# </p>
@@ -238,31 +253,30 @@ border-left: 6px solid green;
           <p class="nopadding overlay-text3 text-center" style="font-size: 60%;color:#3476ea">#-#</p>
           <p class="nopadding overlay-text3 text-center" style="font-size: 60%;color:#3476ea">##</p>
         </div>
-        <!-- <p class="pt-2" style="color:#3476ea;">text</p> -->
       </div>
     </div>
-    <div class="container pt-3">
+    <div class="container-fluid pt-3">
       <div class="row justify-content-around">
         <div class="col-5 col-sm-4 text-center" style="background: white; border: 2px solid white; border-radius: 15px;">
             <a href="#" style="color:#ff9327 !important; font-size: 80%">レシピ</a>
-            <img style="background: white; border: 1px solid white; border-radius: 15px;" src="recipe.jpg" alt="" class="card-img pb-2">
+            <img style="background: white; border: 1px solid white; border-radius: 15px;" src="{{ asset('storage/padometerscreen/recipe.jpg') }}" alt="" class="card-img pb-2">
         </div>
         <div class="col-5 col-sm-4 text-center" style="background: white; border: 2px solid white; border-radius: 15px;">
             <a href="#" style="color: blue !important; font-size: 80%">日めくりカレンダ</a>
-            <img style="background: white; border: 1px solid white; border-radius: 15px;" src="recipe.jpg" alt="" class="card-img pb-2">
+            <img style="background: white; border: 1px solid white; border-radius: 15px;" src="{{ asset('storage/padometerscreen/recipe.jpg') }}" alt="" class="card-img pb-2">
         </div>
       </div>
     </div>
-    <div class="container text-center pt-3">
+    <div class="container-fluid text-center pt-3">
       <p class="font-weight-bold" style="color:#3476ea;">TEXT##</p>
     </div>
-    <div class="container w-75 pb-3">
+    <div class="container-fluid w-75 pb-3">
       <div class="speech-bubble text-center">
         <p class="mb-0 font-weight-bold" style="font-size:90%; color:#3476ea;">月間累計 {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
       </div>
     </div>
-    <div class="container pt-3">
-      <div class="relative w-100 h-50">
+    <div class="container-fluid pt-3">
+  <div class="relative w-100 h-50">
     <canvas id="myChart"></canvas>
     <div class="absolute-center text-center">
       <p class="mb-0 p-0" style="font-size:70%; color:#3476ea;"> {{ ($today_data)*$get_m_user_stride/100000 }} km</p>
@@ -272,14 +286,30 @@ border-left: 6px solid green;
       <p class="mb-0" style="font-size:70%;">{{ $get_m_user_daily_goal*$get_m_user_stride/100000 }} (km)</p>
     </div>
   </div>
+  <div class="d-flex flex-row-reverse justify-content-start">
+    <a href="{{ url('/mypage') }}" >
+      <button class="d-none d-sm-none d-md-none d-lg-block overlay-text4"
+      style="font-size: 80%; border: 4px solid white; background: #3476ea; color: white; width: 40vh; height: 40vh;
+      border-radius: 50%" type="button" name="button">My Page</button>
+    </a>
+    <a href="{{ url('/mypage') }}" >
+      <button class="d-xs-block d-md-none overlay-btn2" style="font-size: 70%; border: 2px solid white; background: #3476ea; color: white;
+      width: 10vh; height: 10vh; border-radius: 50%" type="button" name="button">My Page</button>
+    </a>
+    <a href="{{ url('/mypage') }}" >
+      <button class="d-none d-md-block d-lg-none overlay-btn4" style="font-size: 70%; border: 2px solid white; background: #3476ea; color: white;
+      width: 10vh; height: 10vh; border-radius: 50%" type="button" name="button">My Page</button>
+    </a>
+    <p></p>
+  </div>
     </div>
-    <div class="container pt-3 mt-3">
+    <div class="container-fluid pt-3 mt-3">
       <canvas id="ctx"></canvas>
     </div>
     @if(empty($get_t_tour))
     <h6> You have not started tour yet! </h6>
     @endif
-    <div class="container text-center pt-3">
+    <div class="container-fluid text-center pt-3">
       <p class="font-weight-bold" style="color:#3476ea;">TEXT##</p>
     </div>
     <!-- <div class="container overlay-text2">
@@ -303,18 +333,18 @@ border-left: 6px solid green;
         </div>
       </div>
     </div> -->
-    <div class="container">
+    <div class="container-fluid d-lg-none">
       <div class="row justify-content-center">
         <div class="col-sm-3">
 
         </div>
-        <div class="col col-sm-5 text-center">
-          <div class="d-flex flex-row-reverse pl-3 pb-3 mb-3">
+         <div class="col col-sm-5 text-center">
+          <div class="d-flex flex-row-reverse pl-3 pb-3 mb-3 overlay-text2">
             <div class="text-center">
-              <p class="mb-0 font-weight-bold p-1 pr-sm-3" style="background: #dce0e3; font-size:70%; color:#3476ea; border: 2px solid #dce0e3; border-radius: 15px;">Remain @if($get_m_user_monthly_goal <= $current_month_steps) 0 @else {{ $get_m_user_monthly_goal-$current_month_steps }}歩 {{ round(($get_m_user_monthly_goal-$current_month_steps)*$get_m_user_stride/100000,2) }} @endif Km!</p>
+              <p class="mb-0 pb-0 font-weight-bold pr-sm-3" style="background: #dce0e3; font-size:70%; color:#3476ea; border: 2px solid #dce0e3; border-radius: 15px;">Remain @if($get_m_user_monthly_goal <= $current_month_steps) 0 @else {{ $get_m_user_monthly_goal-$current_month_steps }}歩 {{ round(($get_m_user_monthly_goal-$current_month_steps)*$get_m_user_stride/100000,2) }} @endif Km!</p>
               <div class="d-flex flex-row-reverse">
                 <div class="col text-right border-left border-primary">
-                  <p style="font-size:95%"><br><br><br><br></p>
+                  <p style="font-size:100%"><br><br><br><br></p>
                 </div>
                 <div class="col">
 
@@ -322,12 +352,50 @@ border-left: 6px solid green;
               </div>
             </div>
           </div>
-          <div class="d-flex flex-row pr-3 overlay-text4">
+          <div class="d-flex flex-row pr-3">
             <div class="text-center">
-              <p class="mb-0 font-weight-bold p-1 pl-sm-2 pl-md-3 ml-sm-4" style="background: #dce0e3; font-size:70%; color:#3476ea; border: 2px solid #dce0e3; border-radius: 15px;">月間累計 {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
+              <p class="mb-0 mt-0 pt-0 font-weight-bold pl-sm-2 pl-md-3" style="background: #dce0e3; font-size:70%; color:#3476ea; border: 2px solid #dce0e3; border-radius: 15px;">月間累計 {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
               <div class="row justify-content-center">
                 <div class="col border-right border-primary">
-                  <p style="font-size:100%"><br><br></p>
+                  <p style="font-size:100%"><br><br><br></p>
+                </div>
+                <div class="col">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+
+        </div>
+      </div>
+    </div>
+    <div class="container d-none d-lg-block">
+      <div class="row justify-content-center">
+        <div class="col-sm-3">
+
+        </div>
+         <div class="col col-sm-5 text-center">
+          <div class="d-flex flex-row-reverse pl-3 pb-3 mb-3 overlay-text2">
+            <div class="text-center">
+              <p class="mb-0 pb-0 font-weight-bold pr-sm-3" style="background: #dce0e3; font-size:70%; color:#3476ea; border: 2px solid #dce0e3; border-radius: 15px;">Remaing @if($get_m_user_monthly_goal <= $current_month_steps) 0 @else {{ $get_m_user_monthly_goal-$current_month_steps }}歩 {{ round(($get_m_user_monthly_goal-$current_month_steps)*$get_m_user_stride/100000,2) }} @endif Km!</p>
+              <div class="d-flex flex-row-reverse">
+                <div class="col text-right border-left border-primary">
+                  <p style="font-size:100%"><br><br><br><br></p>
+                </div>
+                <div class="col">
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex flex-row pl-3">
+            <div class="text-center">
+              <p class="mb-0 mt-0 pt-0 font-weight-bold pl-sm-2 pl-md-3 pl-3 pl-lg-3" style="background: #dce0e3; font-size:70%; color:#3476ea; border: 2px solid #dce0e3; border-radius: 15px;">月間累計 {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
+              <div class="row justify-content-center">
+                <div class="col border-right border-primary">
+                  <p style="font-size:100%"><br><br><br></p>
                 </div>
                 <div class="col">
 
@@ -342,13 +410,12 @@ border-left: 6px solid green;
       </div>
     </div>
 
-          <div class="container overlay-tri">
+          <div class="container-fluid overlay-tri">
             <div class="d-flex flex-row justify-content-center">
                 <div id="triangle_graph" class=""></div>
             </div>
-            <div class="container pt-3">
+            <div class="container-fluid pt-3">
               <p class="text-center" style="background: blue; color:#FFFFFF; border: 2px solid blue; border-radius: 15px;">###### 215,000# (20.0km) ##</p>
-
             </div>
             </div>
           <script id="tri" type="text/javascript">
