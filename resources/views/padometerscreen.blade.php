@@ -447,8 +447,8 @@ border-left: 6px solid green;
 
               }
                else{
-                var comp = 1000;
-                var rem = 2000;
+                var comp = 0;
+                var rem = {{ $get_m_user_monthly_goal }};
               }
               var k = (comp/(comp+rem));
               var x = 300*k;
@@ -471,7 +471,7 @@ border-left: 6px solid green;
   }
   else{
       comp = 0;
-      rem = 2000;
+      rem = {{ $get_m_user_daily_goal }};
   }
 var data = {
 labels: [
