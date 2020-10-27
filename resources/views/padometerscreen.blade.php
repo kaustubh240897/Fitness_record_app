@@ -500,6 +500,33 @@ options: {
 </script>
 <script type="text/javascript">
 var weekMap = [6, 0, 1, 2, 3, 4, 5];
+function datesofWeek() {
+  var now = new Date();
+  now.setHours(0, 0, 0, 0);
+  var mon = new Date(now);
+  mon.setDate(mon.getDate() - weekMap[mon.getDay()]);
+  var tue = new Date(now);
+  tue.setDate(tue.getDate() - weekMap[tue.getDay()] + 1);
+  var wed = new Date(now);
+  wed.setDate(wed.getDate() - weekMap[wed.getDay()] + 2);
+  var thu = new Date(now);
+  thu.setDate(thu.getDate() - weekMap[thu.getDay()] + 3);
+  var fri = new Date(now);
+  fri.setDate(fri.getDate() - weekMap[fri.getDay()] + 4);
+  var sat = new Date(now);
+  sat.setDate(sat.getDate() - weekMap[sat.getDay()] + 5);
+  var sun = new Date(now);
+  sun.setDate(sun.getDate() - weekMap[sun.getDay()] + 6);
+  sun.setHours(23, 59, 59, 999);
+  console.log(mon);
+  console.log(tue);
+  console.log(wed);
+  console.log(thu);
+  console.log(fri);
+  console.log(sat);
+  console.log(sun);
+  return [mon, tue, wed, thu, fri, sat, sun];
+}
 var current_week_datas1 = {!! json_encode($current_week_datas) !!}
 var stepsData = [0,0,0,0,0,0,0];
 var barBgColor = ['#3476ea', '#3476ea', '#3476ea', '#3476ea', '#3476ea', '#3476ea', '#3476ea'];
@@ -654,33 +681,6 @@ for (var i = 0; i < dataset.data.length; i++) {
   }
 }
 chart.update();
-  function datesofWeek() {
-    var now = new Date();
-    now.setHours(0, 0, 0, 0);
-    var mon = new Date(now);
-    mon.setDate(mon.getDate() - weekMap[mon.getDay()]);
-    var tue = new Date(now);
-    tue.setDate(tue.getDate() - weekMap[tue.getDay()] + 1);
-    var wed = new Date(now);
-    wed.setDate(wed.getDate() - weekMap[wed.getDay()] + 2);
-    var thu = new Date(now);
-    thu.setDate(thu.getDate() - weekMap[thu.getDay()] + 3);
-    var fri = new Date(now);
-    fri.setDate(fri.getDate() - weekMap[fri.getDay()] + 4);
-    var sat = new Date(now);
-    sat.setDate(sat.getDate() - weekMap[sat.getDay()] + 5);
-    var sun = new Date(now);
-    sun.setDate(sun.getDate() - weekMap[sun.getDay()] + 6);
-    sun.setHours(23, 59, 59, 999);
-    console.log(mon);
-    console.log(tue);
-    console.log(wed);
-    console.log(thu);
-    console.log(fri);
-    console.log(sat);
-    console.log(sun);
-    return [mon, tue, wed, thu, fri, sat, sun];
-  }
 </script>
 @endif
 @endsection
