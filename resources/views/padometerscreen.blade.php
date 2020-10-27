@@ -499,7 +499,7 @@ options: {
 
 </script>
 <script type="text/javascript">
-
+var weekMap = [6, 0, 1, 2, 3, 4, 5];
 var current_week_datas1 = {!! json_encode($current_week_datas) !!}
 var stepsData = [0,0,0,0,0,0,0];
 var barBgColor = ['#3476ea', '#3476ea', '#3476ea', '#3476ea', '#3476ea', '#3476ea', '#3476ea'];
@@ -654,7 +654,6 @@ for (var i = 0; i < dataset.data.length; i++) {
   }
 }
 chart.update();
-var weekMap = [6, 0, 1, 2, 3, 4, 5];
   function datesofWeek() {
     var now = new Date();
     now.setHours(0, 0, 0, 0);
