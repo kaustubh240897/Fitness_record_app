@@ -593,7 +593,7 @@ Chart.plugins.register({
                });
                var   text2 = barLabels.second[index];
                var   textWidth = ctx.measureText(text1).width + padding;
-               if (stepsData[index]>2000) {
+               if (stepsData[index]>={{$get_m_user_daily_goal}}) {
                  ctx.fillText(text1, x-5, y-10);
                }
                ctx.font = 4*width/5 + 'px Arial';
@@ -686,11 +686,11 @@ var chart = new Chart(ctx, {
       }
    }]
 });
-var colorChangeValue = 2000; //set this to whatever is the deciding color change value
+var colorChangeValue = {{$get_m_user_daily_goal}}; //set this to whatever is the deciding color change value
 var dataset = chart.data.datasets[0];
 for (var i = 0; i < dataset.data.length; i++) {
   if (dataset.data[i] > colorChangeValue) {
-    dataset.backgroundColor[i] = '#fd625e';
+    dataset.backgroundColor[i] = '#FF9529';
   }
 }
 chart.update();
