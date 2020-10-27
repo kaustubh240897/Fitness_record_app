@@ -279,6 +279,9 @@ border-left: 6px solid green;
   <div class="relative w-100 h-50">
     <canvas id="myChart"></canvas>
     <div class="absolute-center text-center">
+    @if($get_m_user_daily_goal <= $today_data)
+    <h6 style='color:green'> Completed </h6>
+    @endif
       <p class="mb-0 p-0" style="font-size:70%; color:#3476ea;"> {{ ($today_data)*$get_m_user_stride/100000 }} km</p>
       <p class="font-weight-bold mb-0 p-0 text-wrap" style="color:#3476ea;">{{ $today_data }}歩</p>
       <p class="mb-0 mt-0 p-0" style="font-size:70%;">________________</p>
@@ -415,7 +418,7 @@ border-left: 6px solid green;
                 <div id="triangle_graph" class=""></div>
             </div>
             <div class="container-fluid pt-3">
-              <p class="text-center" style="background: blue; color:#FFFFFF; border: 2px solid blue; border-radius: 15px;">###### 215,000# (20.0km) ##</p>
+              <p class="text-center" style="background: blue; color:#FFFFFF; border: 2px solid blue; border-radius: 15px;">Monthly Goal {{ $get_m_user_monthly_goal }}steps ({{ $get_m_user_monthly_goal*$get_m_user_stride/100000 }} km) ##</p>
             </div>
             </div>
           <script id="tri" type="text/javascript">
