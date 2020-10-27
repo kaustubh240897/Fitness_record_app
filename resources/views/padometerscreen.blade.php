@@ -657,7 +657,7 @@ var chart = new Chart(ctx, {
              beginAtZero: true,
              stepSize: 1000,
              min: 0,
-             max: 12000
+             max: {{$get_m_user_daily_goal}} + 2000
           },
        }],
        xAxes: [{
