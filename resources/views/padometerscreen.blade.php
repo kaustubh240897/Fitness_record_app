@@ -180,7 +180,7 @@ z-index: 50
 }
 .overlay-text4 {
 align-self: flex-start;
-transform: translate(-170%, -90%);
+transform: translate(-70%, -90%);
 z-index: 50;
 }
 .overlay-btn2 {
