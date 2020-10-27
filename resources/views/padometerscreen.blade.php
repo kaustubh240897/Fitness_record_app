@@ -500,6 +500,19 @@ options: {
 </script>
 <script type="text/javascript">
 var weekMap = [6, 0, 1, 2, 3, 4, 5];
+function formatDate(d) {
+  //var d = new Date(date),
+      //month = '' + (d.getMonth() + 1),
+      day = d.getDate();
+      //year = d.getFullYear();
+
+  // if (month.length < 2)
+  //     month = '0' + month;
+  if (day.length < 2)
+      day = '0' + day;
+
+  return day;
+}
 function datesofWeek() {
   var now = new Date();
   now.setHours(0, 0, 0, 0);
