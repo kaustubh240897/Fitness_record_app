@@ -304,7 +304,7 @@ border-left: 6px solid green;
   </div>
     </div>
     <div class="container-fluid pt-3 mt-3">
-      <canvas id="ctx"></canvas>
+      <canvas id="ctx" class="pt-3"></canvas>
     </div>
     @if(empty($get_t_tour))
     <h6> You have not started tour yet! </h6>
@@ -650,13 +650,14 @@ var chart = new Chart(ctx, {
     }]
  },
  options: {
-   lineAt: 2000,
+   lineAt: {{$get_m_user_daily_goal}},
     scales: {
        yAxes: [{
           ticks: {
              beginAtZero: true,
              stepSize: 1000,
-             min: 0
+             min: 0,
+             max: 12000
           },
        }],
        xAxes: [{
