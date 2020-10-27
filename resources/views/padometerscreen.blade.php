@@ -444,7 +444,7 @@ border-left: 6px solid green;
 
               }
                else{
-                var comp = 0;
+                var comp = 1000;
                 var rem = 2000;
               }
               var k = (comp/(comp+rem));
@@ -502,6 +502,8 @@ options: {
 
 var current_week_datas1 = {!! json_encode($current_week_datas) !!}
 var stepsData = [0,0,0,0,0,0,0];
+var barBgColor = ['#3476ea', '#3476ea', '#3476ea', '#3476ea', '#3476ea', '#3476ea', '#3476ea'];
+var weekDates = datesofWeek();
 
 Object.keys(current_week_datas1).forEach((single_day_data, i) => {
   //console.log(current_week_datas[single_day_data]);
@@ -604,7 +606,7 @@ var chart = new Chart(ctx, {
        maxBarThickness: 100,
        label: '',
        data: stepsData,
-       backgroundColor: ['#fd625e', '#01b8aa', '#01b8aa', '#01b8aa', '#fd625e', '#fd625e', '#01b8aa'],
+       backgroundColor: barBgColor,
     }]
  },
  options: {
@@ -644,6 +646,14 @@ var chart = new Chart(ctx, {
       }
    }]
 });
+var colorChangeValue = 2000; //set this to whatever is the deciding color change value
+var dataset = chart.data.datasets[0];
+for (var i = 0; i < dataset.data.length; i++) {
+  if (dataset.data[i] > colorChangeValue) {
+    dataset.backgroundColor[i] = '#fd625e';
+  }
+}
+chart.update();
 var weekMap = [6, 0, 1, 2, 3, 4, 5];
   function datesofWeek() {
     var now = new Date();
