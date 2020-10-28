@@ -13,7 +13,7 @@ building:
     - php artisan cache:clear
     - php artisan config:clear
     - php artisan storage:link
-    - sudo chown -R deployer:www-data /var/www/meiji_walking
+    - sudo chown -R ec2-user:www-data /var/www/meiji_walking
     - find /var/www/meiji_walking -type f -exec chmod 664 {} \;
     - find /var/www/meiji_walking -type d -exec chmod 775 {} \;
     - chgrp -R www-data storage bootstrap/cache
