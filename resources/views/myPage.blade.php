@@ -2,8 +2,8 @@
 
 @section('content')
 
- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js" integrity="sha512-WIklPM6qPCIp6d3fSSr90j+1unQHUOoWDS4sdTiR8gxUTnyZ8S2Mr8e10sKKJ/bhJgpAa/qG068RDkg6fIlNFA==" crossorigin="anonymous"></script>
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js" integrity="sha512-WIklPM6qPCIp6d3fSSr90j+1unQHUOoWDS4sdTiR8gxUTnyZ8S2Mr8e10sKKJ/bhJgpAa/qG068RDkg6fIlNFA==" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
@@ -271,10 +271,12 @@ border-left: 6px solid green;
                 @else
                  <p class="mb-0" style="font-size:50%"> {{ $get_m_user_monthly_goal-$current_month_steps }} steps <br/>({{ round(($get_m_user_monthly_goal-$current_month_steps)*$get_m_user_stride/100000,2) }} Km) </p>
                 @endif
-                @if($get_m_user_monthly_goal <= $current_month_steps)
-                <p class="mb-0 pb-3 pl-3" style="font-size:50%; color: red">Completed!</p>
-                @else
-                <p class="mb-0 pb-3" style="font-size:50%; color: red">Inprogress!</p>
+                @if($current_month_steps !=0)
+                  @if($get_m_user_monthly_goal <= $current_month_steps)
+                  <p class="mb-0 pb-3 pl-3" style="font-size:50%; color: red">Completed!</p>
+                  @else
+                  <p class="mb-0 pb-3" style="font-size:50%; color: red">Inprogress!</p>
+                  @endif
                 @endif
                 <p class="mb-0 pt-3" style="font-size:50%">月間目標</p>
                 <p class="mb-0 pt-3" style="font-size:50%">{{ $get_m_user_monthly_goal}}歩</p>
@@ -340,7 +342,7 @@ border-left: 6px solid green;
     </div>
 
 @if ( empty($m__users_id))
- <h2> Please create your profile first <a href="/">click here </a> </h2> <br/>
+ <h2> Please create your profile first <a href="/" style="color:blue !important"> click here </a> </h2> <br/>
 @endif
 
 <div class="container-fluid">
