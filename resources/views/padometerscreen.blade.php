@@ -1,11 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-@if (session('Status'))
-  <div class="alert alert-success" role="alert">
-    {{ session('Status') }}
-  </div>
-@endif
 
  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js" integrity="sha512-WIklPM6qPCIp6d3fSSr90j+1unQHUOoWDS4sdTiR8gxUTnyZ8S2Mr8e10sKKJ/bhJgpAa/qG068RDkg6fIlNFA==" crossorigin="anonymous"></script>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -173,6 +168,26 @@ margin-left: -12px;
 margin-bottom: -10px;
 }
 
+.speech-bubble-yel {
+position: relative;
+background: #ff9327;
+border-radius: .4em;
+}
+
+.speech-bubble-yel:after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 50%;
+width: 0;
+height: 0;
+border: 10px solid transparent;
+border-top-color: #ff9327;
+border-bottom: 0;
+margin-left: -12px;
+margin-bottom: -10px;
+}
+
 .overlay-text2 {
 align-self: flex-start;
 transform: translateY(50%);
@@ -185,17 +200,17 @@ z-index: 50
 }
 .overlay-text4 {
 align-self: flex-start;
-transform: translate(-70%, -90%);
+transform: translate(-49%, -70%);
 z-index: 50;
 }
 .overlay-btn2 {
 align-self: flex-start;
-transform: translate(-55%,-95%);
+transform: translate(0%,-50%);
 z-index: 50;
 }
 .overlay-btn4 {
 align-self: flex-start;
-transform: translate(-155%,-95%);
+transform: translate(-17%,-60%);
 z-index: 50;
 }
 .overlay-btn3 {
@@ -207,6 +222,16 @@ z-index: 50
 align-self: flex-start;
 transform: translateY(-70%);
 z-index: 50
+}
+.overlay-tri2 {
+align-self: flex-start;
+transform: translateY(-30%);
+z-index: 100
+}
+.overlay-pado {
+align-self: flex-start;
+transform: translateY(30%);
+z-index: 100
 }
 .overlay-btn1 {
 align-self: flex-start;
@@ -242,6 +267,37 @@ margin: 0 !important;
 .vl {
 border-left: 6px solid green;
 }
+.containerImg {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.centeredTxt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.overlay-textImg {
+align-self: flex-start;
+transform: translateY(-230%);
+z-index: 50
+}
+.overlay-textImgXS {
+align-self: flex-start;
+transform: translateY(-150%);
+z-index: 50
+}
+.overlay-textImgMD {
+align-self: flex-start;
+transform: translateY(-200%);
+z-index: 50
+}
+.overlay-text5 {
+align-self: flex-start;
+transform: translateY(120%);
+z-index: 50
+}
 
 </style>
 
@@ -251,181 +307,300 @@ border-left: 6px solid green;
 <div class="container-fluid pt-3" style="color:#FFFFFF; border-radius: 15px;">
       <div class="row justify-content-center">
         <div class="col col-sm-9 pt-1 text-center">
-          <p class="font-weight-bold pr-3 py-2" style="background: white; color:#3476ea; border: 2px solid white; border-radius: 15px;">2020# 10# 15# *#*# </p>
+          <p class="font-weight-bold pr-3 py-2" style="background: white; color:#2b63c6; border: 2px solid white; border-radius: 15px;">2020# 10# 15# *#*# </p>
         </div>
         <div class="col-xs-1 overlay-btn1">
           <i class="fa fa-refresh fa-3x blackiconcolor overlay-btn1 shadow" aria-hidden="true"></i>
-          <p class="nopadding overlay-text3 text-center" style="font-size: 60%;color:#3476ea">#-#</p>
-          <p class="nopadding overlay-text3 text-center" style="font-size: 60%;color:#3476ea">##</p>
+          <p class="nopadding overlay-text3 text-center" style="font-size: 60%;color:#2b63c6">#-#</p>
+          <p class="nopadding overlay-text3 text-center" style="font-size: 60%;color:#2b63c6">##</p>
         </div>
       </div>
     </div>
-    <div class="container-fluid pt-3">
-      <div class="row justify-content-around">
-        <div class="col-5 col-sm-4 text-center" style="background: white; border: 2px solid white; border-radius: 15px;">
-            <a href="#" style="color:#ff9327 !important; font-size: 80%">レシピ</a>
-            <img style="background: white; border: 1px solid white; border-radius: 15px;" src="{{ asset('storage/padometerscreen/recipe.jpg') }}" alt="" class="card-img pb-2">
-        </div>
-        <div class="col-5 col-sm-4 text-center" style="background: white; border: 2px solid white; border-radius: 15px;">
-            <a href="#" style="color: blue !important; font-size: 80%">日めくりカレンダ</a>
-            <img style="background: white; border: 1px solid white; border-radius: 15px;" src="{{ asset('storage/padometerscreen/recipe.jpg') }}" alt="" class="card-img pb-2">
-        </div>
+    <div class="container pt-2">
+      <div class="d-flex flex-row justify-content-around">
+          <img src="{{ asset('storage/padometerscreen/rec.png') }}" class="rounded" alt="">
+          <img src="{{ asset('storage/padometerscreen/cal.png') }}" class="rounded" alt="">
       </div>
     </div>
-    <div class="container-fluid text-center pt-3">
-      <p class="font-weight-bold" style="color:#3476ea;">TEXT##</p>
-    </div>
-    <div class="container-fluid w-75 pb-3">
-      <div class="speech-bubble text-center">
-        <p class="mb-0 font-weight-bold" style="font-size:90%; color:#3476ea;">月間累計 {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
+    @if($today_data >= $get_m_user_daily_goal)
+    <div class="container" style="background: url({{asset('storage/padometerscreen/complete01.png')}}); background-size: cover; background-position: center; background-repeat: no-repeat">
+      <div class="container-fluid text-center pt-3">
+        <p class="font-weight-bold" style="color:#2b63c6">TEXT##</p>
+      </div>
+      <div class="container-fluid w-75 pb-3">
+        <div class="speech-bubble-yel text-center">
+          <p class="mb-0 font-weight-bold" style="font-size:90%; color:white;">月間累計 {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
+        </div>
+      </div>
+      <div class="container-fluid text-center">
+        <img src="{{asset('storage/padometerscreen/star.png')}}" alt="">
+      </div>
+      <div class="container-fluid pt-3">
+    <div class="relative w-100 h-50" style="background: url({{asset('storage/padometerscreen/graphcomp.png')}}); background-size: 50% 100%; background-position: center; background-repeat: no-repeat">
+      <canvas id="myChart"></canvas>
+      <div class="absolute-center text-center">
+        <p class="mb-0 p-0" style="font-size:70%; color:#ff9327;"> {{ ($today_data)*$get_m_user_stride/100000 }} km</p>
+        <p class="font-weight-bold mb-0 p-0 text-wrap" style="color:#ff9327;">{{ $today_data }}歩</p>
+        <p class="mb-0 mt-0 p-0" style="font-size:70%;">----------------</p>
+        <p class="font-weight-bold mb-0 mt-0" style="color: #113A83">{{ $get_m_user_daily_goal }}歩</p>
+        <p class="mb-0" style="font-size:70%; color: #113A83">{{ $get_m_user_daily_goal*$get_m_user_stride/100000 }} (km)</p>
       </div>
     </div>
-    <div class="container-fluid pt-3">
-  <div class="relative w-100 h-50">
-    <canvas id="myChart"></canvas>
-    <div class="absolute-center text-center">
-    @if($get_m_user_daily_goal <= $today_data)
-    <h6 style='color:green'> Completed </h6>
+    <div class="d-flex flex-row-reverse justify-content-start">
+      <div class="d-none d-lg-block containerImg overlay-text4">
+        <a href="{{ url('/mypage') }}" class="p-0" >
+          <img class="" style="width: 40vh; height: 40vh" src="{{ asset('storage/padometerscreen/blue.png') }}" alt="">
+        </a>
+        <div class="centerText overlay-textImg">
+          center<br>line22222<br>line33
+        </div>
+      </div>
+      <div class="d-xs-block d-md-none containerImg overlay-btn2">
+        <a href="{{ url('/mypage') }}" class="p-0" >
+          <img class="" style="width: 15vh; height: 15vh" src="{{ asset('storage/padometerscreen/blue.png') }}" alt="">
+        </a>
+        <div class="centerText overlay-textImgXS" style="font-size: 80%">
+          center<br>line22222<br>line33
+        </div>
+      </div>
+      <!-- <a href="{{ url('/mypage') }}" >
+        <button class="d-xs-block d-md-none overlay-btn2" style="font-size: 70%; border: 2px solid white; background: #113A83; color: white;
+        width: 10vh; height: 10vh; border-radius: 50%; background-image: url({{ asset('storage/padometerscreen/blue.png') }}); background-size: cover;
+        background-position: center; display: inline-block;" type="button" name="button">My Page</button>
+      </a> -->
+      <div class="d-none d-md-block d-lg-none overlay-btn4 containerImg">
+        <a href="{{ url('/mypage') }}" class="p-0" >
+          <img class="" style="width: 20vh; height: 20vh" src="{{ asset('storage/padometerscreen/blue.png') }}" alt="">
+        </a>
+        <div class="centerText overlay-textImgMD" style="font-size: 100%">
+          center<br>line22222<br>line33
+        </div>
+      </div>
+      <!-- <a href="{{ url('/mypage') }}" >
+        <button class="d-none d-md-block d-lg-none overlay-btn4" style="font-size: 70%; border: 2px solid white; background: #113A83; color: white;
+        width: 10vh; height: 10vh; border-radius: 50%; background-image: url({{ asset('storage/padometerscreen/blue.png') }});" type="button" name="button">My Page</button>
+      </a> -->
+      <p></p>
+    </div>
+      </div>
+    </div>
+    @else
+    <div class="container">
+      <div class="container-fluid text-center pt-3">
+        <p class="font-weight-bold" style="color:#2b63c6">TEXT##</p>
+      </div>
+      <div class="container-fluid w-75 pb-3">
+        <div class="speech-bubble text-center">
+          <p class="mb-0 font-weight-bold" style="font-size:90%; color:#113A83;">月間累計 {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
+        </div>
+      </div>
+      <div class="container-fluid pt-3">
+    <div class="relative w-100 h-50" style="background: url({{asset('storage/padometerscreen/graph.png')}}); background-size: 50% 100%; background-position: center; background-repeat: no-repeat">
+      <canvas id="myChart"></canvas>
+      <div class="absolute-center text-center">
+        <p class="mb-0 p-0" style="font-size:70%; color:#2b63c6;"> {{ ($today_data)*$get_m_user_stride/100000 }} km</p>
+        <p class="font-weight-bold mb-0 p-0 text-wrap" style="color:#2b63c6;">{{ $today_data }}歩</p>
+        <p class="mb-0 mt-0 p-0" style="font-size:70%;">---------------</p>
+        <p class="font-weight-bold mb-0 mt-0" style="color:#113A83;">{{ $get_m_user_daily_goal }}歩</p>
+        <p class="mb-0" style="font-size:70%; color:#113A83;">{{ $get_m_user_daily_goal*$get_m_user_stride/100000 }} (km)</p>
+      </div>
+    </div>
+    <div class="d-flex flex-row-reverse justify-content-start">
+      <div class="d-none d-lg-block containerImg overlay-text4">
+        <a href="{{ url('/mypage') }}" class="p-0" >
+          <img class="" style="width: 40vh; height: 40vh" src="{{ asset('storage/padometerscreen/blue.png') }}" alt="">
+        </a>
+        <div class="centerText overlay-textImg">
+          center<br>line22222<br>line33
+        </div>
+      </div>
+      <div class="d-xs-block d-md-none containerImg overlay-btn2">
+        <a href="{{ url('/mypage') }}" class="p-0" >
+          <img class="" style="width: 15vh; height: 15vh" src="{{ asset('storage/padometerscreen/blue.png') }}" alt="">
+        </a>
+        <div class="centerText overlay-textImgXS" style="font-size: 80%">
+          center<br>line22222<br>line33
+        </div>
+      </div>
+      <!-- <a href="{{ url('/mypage') }}" >
+        <button class="d-xs-block d-md-none overlay-btn2" style="font-size: 70%; border: 2px solid white; background: #113A83; color: white;
+        width: 10vh; height: 10vh; border-radius: 50%; background-image: url({{ asset('storage/padometerscreen/blue.png') }}); background-size: cover;
+        background-position: center; display: inline-block;" type="button" name="button">My Page</button>
+      </a> -->
+      <div class="d-none d-md-block d-lg-none overlay-btn4 containerImg">
+        <a href="{{ url('/mypage') }}" class="p-0" >
+          <img class="" style="width: 20vh; height: 20vh" src="{{ asset('storage/padometerscreen/blue.png') }}" alt="">
+        </a>
+        <div class="centerText overlay-textImgMD" style="font-size: 100%">
+          center<br>line22222<br>line33
+        </div>
+      </div>
+      <!-- <a href="{{ url('/mypage') }}" >
+        <button class="d-none d-md-block d-lg-none overlay-btn4" style="font-size: 70%; border: 2px solid white; background: #113A83; color: white;
+        width: 10vh; height: 10vh; border-radius: 50%; background-image: url({{ asset('storage/padometerscreen/blue.png') }});" type="button" name="button">My Page</button>
+      </a> -->
+      <p></p>
+    </div>
+      </div>
+    </div>
     @endif
-      <p class="mb-0 p-0" style="font-size:70%; color:#3476ea;"> {{ ($today_data)*$get_m_user_stride/100000 }} km</p>
-      <p class="font-weight-bold mb-0 p-0 text-wrap" style="color:#3476ea;">{{ $today_data }}歩</p>
-      <p class="mb-0 mt-0 p-0" style="font-size:70%;">________________</p>
-      <p class="font-weight-bold mb-0 mt-0">{{ $get_m_user_daily_goal }}歩</p>
-      <p class="mb-0" style="font-size:70%;">{{ $get_m_user_daily_goal*$get_m_user_stride/100000 }} (km)</p>
-    </div>
-  </div>
-  <div class="d-flex flex-row-reverse justify-content-start">
-    <a href="{{ url('/mypage') }}" >
-      <button class="d-none d-sm-none d-md-none d-lg-block overlay-text4"
-      style="font-size: 80%; border: 4px solid white; background: #3476ea; color: white; width: 40vh; height: 40vh;
-      border-radius: 50%" type="button" name="button">My Page</button>
-    </a>
-    <a href="{{ url('/mypage') }}" >
-      <button class="d-xs-block d-md-none overlay-btn2" style="font-size: 70%; border: 2px solid white; background: #3476ea; color: white;
-      width: 10vh; height: 10vh; border-radius: 50%" type="button" name="button">My Page</button>
-    </a>
-    <a href="{{ url('/mypage') }}" >
-      <button class="d-none d-md-block d-lg-none overlay-btn4" style="font-size: 70%; border: 2px solid white; background: #3476ea; color: white;
-      width: 10vh; height: 10vh; border-radius: 50%" type="button" name="button">My Page</button>
-    </a>
-    <p></p>
-  </div>
-    </div>
     <div class="container-fluid pt-3 mt-3">
       <canvas id="ctx" class="pt-3"></canvas>
     </div>
     @if(empty($get_t_tour))
     <h6> You have not started tour yet! </h6>
     @endif
-    <div class="container-fluid text-center pt-3">
-      <p class="font-weight-bold" style="color:#3476ea;">TEXT##</p>
+    @if( $current_month_steps  >=  $get_m_user_monthly_goal )
+    <div class="container pt-3" style="background: url({{asset('storage/padometerscreen/complete01.png')}}); background-size: cover; background-position: center; background-repeat: no-repeat">
+      <div class="container-fluid text-center overlay-text5">
+        <p class="font-weight-bold" style="color:#2b63c6;">TEXT##</p>
+      </div>
+      <div class="container-fluid w-75 d-md-none">
+        <br>
+        <div class="speech-bubble-yel text-center">
+          <p class="mb-0 font-weight-bold" style="font-size:90%; color: white;">月間累計 {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
+        </div>
+      </div>
+      <div class="container-fluid pt-3 w-75 d-md-none">
+        <p class="text-center" style="background: white; color:#ff9327; border: 2px solid #ff9327; border-radius: 15px;">#### 215,000# (20.0km) ##</p>
+      </div>
+
+      <div class="container-fluid w-50 d-none d-md-block d-lg-none">
+        <br>
+        <div class="speech-bubble text-center" style="background: #ff9327">
+          <p class="mb-0 font-weight-bold" style="font-size:90%; color:#113A83;">月間累計 {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
+        </div>
+      </div>
+      <div class="container-fluid pt-3 w-50 d-none d-md-block d-lg-none">
+        <p class="text-center" style="background: white; color:#ff9327; border: 2px solid #ff9327; border-radius: 15px;">#### 215,000# (20.0km) ##</p>
+      </div>
+
+      <div class="container-fluid w-25 d-none d-lg-block">
+        <br>
+        <div class="speech-bubble text-center" style="background: #ff9327">
+          <p class="mb-0 font-weight-bold" style="font-size:90%; color:#113A83;">月間累計 {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
+        </div>
+      </div>
+      <div class="container-fluid pt-3 w-25 d-none d-lg-block">
+        <p class="text-center" style="background: white; color:#ff9327; border: 2px solid #ff9327; border-radius: 15px;">#### 215,000# (20.0km) ##</p>
+      </div>
+      <div class="container-fluid">
+        <p class="text-center" > <img src="{{asset('storage/padometerscreen/star.png')}}" alt=""> </p>
+      </div>
+
+            <div class="container-fluid overlay-tri2">
+              <div class="d-flex flex-row justify-content-center">
+                  <div id="triangle_graph" class=""></div>
+              </div>
+              <div class="container-fluid pt-3 w-25 d-none d-lg-block">
+                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">###### 215,000# (20.0km) ##</p>
+              </div>
+              <div class="container-fluid pt-3 w-50 d-none d-md-block d-lg-none">
+                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">###### 215,000# (20.0km) ##</p>
+              </div>
+              <div class="container-fluid pt-3 d-md-none">
+                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">###### 215,000# (20.0km) ##</p>
+              </div>
+              </div>
     </div>
-    <!-- <div class="container overlay-text2">
-      <div class="row">
-        <div class="col">
-          <br>
-          <br>
-          <br>
-          <div class="d-flex flex-row-reverse justify-content-center pl-3">
-            <div class="speech-bubble text-center">
-              <p class="mb-0 font-weight-bold" style="font-size:70%; color:#3476ea;">### 2,567# (1.69km) #### !</p>
+    @else
+    <div class="container">
+      <div class="container-fluid text-center pt-3 overlay-text5">
+        <p class="font-weight-bold" style="color:#2b63c6;">TEXT##</p>
+      </div>
+      <div class="container-fluid d-lg-none">
+        <div class="row justify-content-center">
+          <div class="col-sm-3">
+
+          </div>
+           <div class="col col-sm-5 text-center">
+            <div class="d-flex flex-row-reverse pl-3 pb-3 mb-3 overlay-text2">
+              <div class="text-center">
+                <p class="mb-0 pb-0 font-weight-bold pr-sm-3" style="background: #dce0e3; font-size:70%; color:#113A83; border: 2px solid #dce0e3; border-radius: 15px;">Remain @if($get_m_user_monthly_goal <= $current_month_steps) 0 @else {{ $get_m_user_monthly_goal-$current_month_steps }}歩 {{ round(($get_m_user_monthly_goal-$current_month_steps)*$get_m_user_stride/100000,2) }} @endif Km!</p>
+                <div class="d-flex flex-row-reverse">
+                  <div class="col text-right border-left border-primary">
+                    <p style="font-size:100%"><br><br><br><br></p>
+                  </div>
+                  <div class="col">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex flex-row pr-3">
+              <div class="text-center">
+                <p class="mb-0 mt-0 pt-0 font-weight-bold px-1 pl-sm-2 pl-md-3" style="background: white; font-size:70%; color:#2b63c6;; border: 1px solid #2b63c6;; border-radius: 15px;">月間累計 {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
+                <div class="row justify-content-center">
+                  <div class="col border-right border-primary">
+                    <p style="font-size:100%"><br><br><br></p>
+                  </div>
+                  <div class="col">
+
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col">
-          <div class="d-flex flex-row justify-content-center pr-3">
-            <div class="speech-bubble text-center">
-              <p class="mb-0 font-weight-bold" style="font-size:70%; color:#3476ea;">### 2,967# (1.69km) #### !</p>
-            </div>
+          <div class="col-sm-3">
+
           </div>
         </div>
       </div>
-    </div> -->
-    <div class="container-fluid d-lg-none">
-      <div class="row justify-content-center">
-        <div class="col-sm-3">
+      <div class="container d-none d-lg-block">
+        <div class="row justify-content-center">
+          <div class="col-sm-3">
 
-        </div>
-         <div class="col col-sm-5 text-center">
-          <div class="d-flex flex-row-reverse pl-3 pb-3 mb-3 overlay-text2">
-            <div class="text-center">
-              <p class="mb-0 pb-0 font-weight-bold pr-sm-3" style="background: #dce0e3; font-size:70%; color:#3476ea; border: 2px solid #dce0e3; border-radius: 15px;">Remain @if($get_m_user_monthly_goal <= $current_month_steps) 0 @else {{ $get_m_user_monthly_goal-$current_month_steps }}歩 {{ round(($get_m_user_monthly_goal-$current_month_steps)*$get_m_user_stride/100000,2) }} @endif Km!</p>
-              <div class="d-flex flex-row-reverse">
-                <div class="col text-right border-left border-primary">
-                  <p style="font-size:100%"><br><br><br><br></p>
+          </div>
+           <div class="col col-sm-5 text-center">
+            <div class="d-flex flex-row-reverse pl-3 pb-3 mb-3 overlay-text2">
+              <div class="text-center">
+                <p class="mb-0 pb-0 font-weight-bold pr-sm-3" style="background: #dce0e3; font-size:70%; color:#113A83; border: 2px solid #dce0e3; border-radius: 15px;">Remaing @if($get_m_user_monthly_goal <= $current_month_steps) 0 @else {{ $get_m_user_monthly_goal-$current_month_steps }}歩 {{ round(($get_m_user_monthly_goal-$current_month_steps)*$get_m_user_stride/100000,2) }} @endif Km!</p>
+                <div class="d-flex flex-row-reverse">
+                  <div class="col text-right border-left border-primary">
+                    <p style="font-size:100%"><br><br><br><br></p>
+                  </div>
+                  <div class="col">
+
+                  </div>
                 </div>
-                <div class="col">
+              </div>
+            </div>
+            <div class="d-flex flex-row pl-3">
+              <div class="text-center">
+                <p class="mb-0 mt-0 pt-0 font-weight-bold pl-sm-2 pl-md-3 pl-3 pl-lg-3 pr-3" style="background: white; font-size:70%; color:#2b63c6; border: 1px solid #2b63c6;; border-radius: 15px;">月間累計 {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
+                <div class="row justify-content-center">
+                  <div class="col border-right border-primary">
+                    <p style="font-size:100%"><br><br><br></p>
+                  </div>
+                  <div class="col">
 
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="d-flex flex-row pr-3">
-            <div class="text-center">
-              <p class="mb-0 mt-0 pt-0 font-weight-bold pl-sm-2 pl-md-3" style="background: #dce0e3; font-size:70%; color:#3476ea; border: 2px solid #dce0e3; border-radius: 15px;">月間累計 {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
-              <div class="row justify-content-center">
-                <div class="col border-right border-primary">
-                  <p style="font-size:100%"><br><br><br></p>
-                </div>
-                <div class="col">
+          <div class="col-sm-3">
 
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
-        <div class="col-sm-3">
-
         </div>
       </div>
-    </div>
-    <div class="container d-none d-lg-block">
-      <div class="row justify-content-center">
-        <div class="col-sm-3">
 
-        </div>
-         <div class="col col-sm-5 text-center">
-          <div class="d-flex flex-row-reverse pl-3 pb-3 mb-3 overlay-text2">
-            <div class="text-center">
-              <p class="mb-0 pb-0 font-weight-bold pr-sm-3" style="background: #dce0e3; font-size:70%; color:#3476ea; border: 2px solid #dce0e3; border-radius: 15px;">Remaing @if($get_m_user_monthly_goal <= $current_month_steps) 0 @else {{ $get_m_user_monthly_goal-$current_month_steps }}歩 {{ round(($get_m_user_monthly_goal-$current_month_steps)*$get_m_user_stride/100000,2) }} @endif Km!</p>
-              <div class="d-flex flex-row-reverse">
-                <div class="col text-right border-left border-primary">
-                  <p style="font-size:100%"><br><br><br><br></p>
-                </div>
-                <div class="col">
-
-                </div>
+            <div class="container-fluid overlay-tri">
+              <div class="d-flex flex-row justify-content-center">
+                  <div id="triangle_graph" class=""></div>
               </div>
-            </div>
-          </div>
-          <div class="d-flex flex-row pl-3">
-            <div class="text-center">
-              <p class="mb-0 mt-0 pt-0 font-weight-bold pl-sm-2 pl-md-3 pl-3 pl-lg-3" style="background: #dce0e3; font-size:70%; color:#3476ea; border: 2px solid #dce0e3; border-radius: 15px;">月間累計 {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
-              <div class="row justify-content-center">
-                <div class="col border-right border-primary">
-                  <p style="font-size:100%"><br><br><br></p>
-                </div>
-                <div class="col">
-
-                </div>
+              <div class="container-fluid pt-3 w-25 d-none d-lg-block">
+                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">###### 215,000# (20.0km) ##</p>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3">
-
-        </div>
-      </div>
+              <div class="container-fluid pt-3 w-50 d-none d-md-block d-lg-none">
+                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">###### 215,000# (20.0km) ##</p>
+              </div>
+              <div class="container-fluid pt-3 d-md-none">
+                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">###### 215,000# (20.0km) ##</p>
+              </div>
+              </div>
     </div>
-
-          <div class="container-fluid overlay-tri">
-            <div class="d-flex flex-row justify-content-center">
-                <div id="triangle_graph" class=""></div>
-            </div>
-            <div class="container-fluid pt-3">
-              <p class="text-center" style="background: blue; color:#FFFFFF; border: 2px solid blue; border-radius: 15px;">Monthly Goal {{ $get_m_user_monthly_goal }}steps ({{ $get_m_user_monthly_goal*$get_m_user_stride/100000 }} km) ##</p>
-            </div>
-            </div>
+    @endif
           <script id="tri" type="text/javascript">
           var cnv;
             function setup() {
@@ -437,28 +612,31 @@ border-left: 6px solid green;
             }
 
             function draw() {
-              fill('#dce0e3');
-              triangle(0, 150, 300, 150, 300, 0);
-              fill('#3476ea');
-              if({{ $current_month_steps }}> 0){
-                var comp = {{ $current_month_steps }};
-                if({{ $get_m_user_monthly_goal }} > {{ $current_month_steps }} ){
-                    var rem = {{ $get_m_user_monthly_goal-$current_month_steps }};
+              if ({{ $current_month_steps }} >= {{ $get_m_user_monthly_goal }}) {
+                fill('#FFD00D');
+                triangle(0, 150, 300, 150, 300, 0);
+              } else {
+                fill('#dce0e3');
+                triangle(0, 150, 300, 150, 300, 0);
+                fill('#113A83');
+                if({{ $current_month_steps }}> 0){
+                  var comp = {{ $current_month_steps }};
+                  if({{ $get_m_user_monthly_goal }} > {{ $current_month_steps }} ){
+                      var rem = {{ $get_m_user_monthly_goal-$current_month_steps }};
+                  }
+                  else{
+                    rem = 0;
+                  }
                 }
-                else{
-                  rem = 0;
+                 else{
+                  var comp = 0;
+                  var rem = 2000;
                 }
-
-
+                var k = (comp/(comp+rem));
+                var x = 300*k;
+                var y = 150 - 150*k;
+                triangle(0, 150, x, y, x, 150);
               }
-               else{
-                var comp = 0;
-                var rem = {{ $get_m_user_monthly_goal }};
-              }
-              var k = (comp/(comp+rem));
-              var x = 300*k;
-              var y = 150 - 150*k;
-              triangle(0, 150, x, y, x, 150);
             }
           </script>
 
@@ -475,8 +653,8 @@ border-left: 6px solid green;
       }
   }
   else{
-      comp = 0;
-      rem = {{ $get_m_user_daily_goal }};
+      comp = 500;
+      rem = 2000;
   }
 var data = {
 labels: [
@@ -487,7 +665,7 @@ datasets: [
   {
     data: [comp, rem],
     backgroundColor: [
-      "#3476ea",
+      "#113A83",
       "#dce0e3"
     ]
   }]
@@ -504,6 +682,10 @@ options: {
   cutoutPercentage: 85
 }
 });
+if ({{$today_data}} >= {{$get_m_user_daily_goal}}) {
+  promisedDeliveryChart.data.datasets[0].backgroundColor[0] = '#FFD00D';
+  promisedDeliveryChart.update();
+}
 
 </script>
 <script type="text/javascript">
@@ -549,7 +731,7 @@ function datesofWeek() {
   return [mon, tue, wed, thu, fri, sat, sun];
 }
 var current_week_datas1 = {!! json_encode($current_week_datas) !!}
-var stepsData = [0,0,0,0,0,0,0];
+var stepsData = [2500,2200,1280,1450,3999,0,1152];
 var barBgColor = ['#3476ea', '#3476ea', '#3476ea', '#3476ea', '#3476ea', '#3476ea', '#3476ea'];
 var weekDates = datesofWeek();
 
@@ -566,7 +748,11 @@ Object.keys(current_week_datas1).forEach((single_day_data, i) => {
   });
 
 });
-
+var maxSteps = Math.max(...stepsData);
+var maxY = maxSteps + 1000 - maxSteps%1000;
+console.log(maxY);
+const img = new Image();
+img.src = "{{ asset('storage/padometerscreen/star.png') }}";
 Chart.plugins.register({
  afterDatasetsDraw: function(chart, ease) {
     var barLabels = chart.options.barLabels;
@@ -602,7 +788,8 @@ Chart.plugins.register({
                var   text2 = barLabels.second[index];
                var   textWidth = ctx.measureText(text1).width + padding;
                if (stepsData[index]>={{$get_m_user_daily_goal}}) {
-                 ctx.fillText(text1, x-5, y-10);
+                 //ctx.fillText(text1, x-5, y-10);
+                 ctx.drawImage(img, x-15, y-35, 30, 30);
                }
                ctx.font = 4*width/5 + 'px Arial';
                ctx.fillStyle = '#3476ea'; //second label's font color
@@ -644,7 +831,6 @@ Chart.pluginService.register({
         }
     }
 });
-
 var chart = new Chart(ctx, {
  type: 'bar',
  data: {
@@ -665,7 +851,7 @@ var chart = new Chart(ctx, {
              beginAtZero: true,
              stepSize: 1000,
              min: 0,
-             max: {{$get_m_user_daily_goal}} + 2000
+             max: maxY + 2000
           },
        }],
        xAxes: [{
@@ -699,7 +885,7 @@ var colorChangeValue = {{$get_m_user_daily_goal}}; //set this to whatever is the
 var dataset = chart.data.datasets[0];
 for (var i = 0; i < dataset.data.length; i++) {
   if (dataset.data[i] >= colorChangeValue) {
-    dataset.backgroundColor[i] = '#FF9529';
+    dataset.backgroundColor[i] = '#FFD00D';
   }
 }
 chart.update();
