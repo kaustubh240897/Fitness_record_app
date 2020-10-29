@@ -630,7 +630,7 @@ z-index: 50
                 }
                  else{
                   var comp = 0;
-                  var rem = 2000;
+                  var rem = {{ $get_m_user_monthly_goal }};
                 }
                 var k = (comp/(comp+rem));
                 var x = 300*k;
@@ -653,8 +653,8 @@ z-index: 50
       }
   }
   else{
-      comp = 500;
-      rem = 2000;
+      comp = 0;
+      rem = {{ $get_m_user_monthly_goal }};
   }
 var data = {
 labels: [
@@ -731,7 +731,7 @@ function datesofWeek() {
   return [mon, tue, wed, thu, fri, sat, sun];
 }
 var current_week_datas1 = {!! json_encode($current_week_datas) !!}
-var stepsData = [2500,2200,1280,1450,3999,0,1152];
+var stepsData = [0,0,0,0,0,0,0];
 var barBgColor = ['#3476ea', '#3476ea', '#3476ea', '#3476ea', '#3476ea', '#3476ea', '#3476ea'];
 var weekDates = datesofWeek();
 
