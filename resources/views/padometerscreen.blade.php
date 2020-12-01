@@ -307,7 +307,7 @@ z-index: 50
 <div class="container-fluid pt-3" style="color:#FFFFFF; border-radius: 15px;">
       <div class="row justify-content-center">
         <div class="col col-sm-9 pt-1 text-center">
-          <p class="font-weight-bold pr-3 py-2" style="background: white; color:#2b63c6; border: 2px solid white; border-radius: 15px;">2020年 9月 15日 火曜日</p>
+          <p class="font-weight-bold pr-3 py-2" style="background: white; color:#2b63c6; border: 2px solid white; border-radius: 15px;">{{ $year }}年 {{ $month }}月 {{ $day }}日 火曜日</p>
         </div>
         <div class="col-xs-1 overlay-btn1">
           <i class="fa fa-refresh fa-3x blackiconcolor overlay-btn1 shadow" aria-hidden="true"></i>
@@ -462,7 +462,7 @@ z-index: 50
         </div>
       </div>
       <div class="container-fluid pt-3 w-75 d-md-none">
-        <p class="text-center" style="background: white; color:#ff9327; border: 2px solid #ff9327; border-radius: 15px;">#### 215,000# (20.0km) ##</p>
+        <p class="text-center" style="background: white; color:#ff9327; border: 2px solid #ff9327; border-radius: 15px;">今日までの累計 240,830歩 (158.95km)</p>
       </div>
 
       <div class="container-fluid w-50 d-none d-md-block d-lg-none">
@@ -482,7 +482,7 @@ z-index: 50
         </div>
       </div>
       <div class="container-fluid pt-3 w-25 d-none d-lg-block">
-        <p class="text-center" style="background: white; color:#ff9327; border: 2px solid #ff9327; border-radius: 15px;">今日までの累計 240,830歩 (158.95km)</p>
+        <p class="text-center" style="background: white; color:#ff9327; border: 2px solid #ff9327; border-radius: 15px;">今日までの累計 {{ $current_month_steps }}歩 ({{ $current_month_steps*$get_m_user_stride/100000 }} Km)</p>
       </div>
       <div class="container-fluid">
         <p class="text-center" > <img src="{{asset('storage/padometerscreen/star.png')}}" alt=""> </p>
@@ -493,13 +493,13 @@ z-index: 50
                   <div id="triangle_graph" class=""></div>
               </div>
               <div class="container-fluid pt-3 w-25 d-none d-lg-block">
-                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 240,000歩 (158.40km)</p>
+                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $current_month_steps }}歩 ({{ $current_month_steps*$get_m_user_stride/100000 }} Km)</p>
               </div>
               <div class="container-fluid pt-3 w-50 d-none d-md-block d-lg-none">
-                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 240,000歩 (158.40km)</p>
+                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $current_month_steps }}歩 ({{ $current_month_steps*$get_m_user_stride/100000 }} Km)</p>
               </div>
               <div class="container-fluid pt-3 d-md-none">
-                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 240,000歩 (158.40km)</p>
+                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $current_month_steps }}歩 ({{ $current_month_steps*$get_m_user_stride/100000 }} Km)</p>
               </div>
               </div>
     </div>
@@ -590,13 +590,13 @@ z-index: 50
                   <div id="triangle_graph" class=""></div>
               </div>
               <div class="container-fluid pt-3 w-25 d-none d-lg-block">
-                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 240,000歩 (158.40km)</p>
+                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $get_m_user_monthly_goal }}歩 ({{ $get_m_user_monthly_goal*$get_m_user_stride/100000 }} Km)</p>
               </div>
               <div class="container-fluid pt-3 w-50 d-none d-md-block d-lg-none">
-                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 240,000歩 (158.40km)</p>
+                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $get_m_user_monthly_goal }}歩 ({{ $get_m_user_monthly_goal*$get_m_user_stride/100000 }} Km)</p>
               </div>
               <div class="container-fluid pt-3 d-md-none">
-                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 240,000歩 (158.40km)</p>
+                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $get_m_user_monthly_goal }}歩 ({{ $get_m_user_monthly_goal*$get_m_user_stride/100000 }} Km)</p>
               </div>
               </div>
     </div>

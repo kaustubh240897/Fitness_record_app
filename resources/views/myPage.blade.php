@@ -336,7 +336,7 @@ border-left: 6px solid green;
           <button type="button" class="btn btn-danger btn-sm"></button>
         </div>
         <div class="p-1">
-          <p style="font-size: 80%">{{$get_t_tour}} (総移動量 {{ $steps*$get_m_user_stride/100000 }} Km/ 残り @if(($steps*$get_m_user_stride/100000) >= $total) 0 Km @else {{ $total-($steps*$get_m_user_stride/100000) }}Km @endif)</p>
+          <p style="font-size: 80%">{{ $get_t_tour->m_tours->tour_title }} (総移動量 {{ $steps*$get_m_user_stride/100000 }} Km/ 残り @if(($steps*$get_m_user_stride/100000) >= $total) 0 Km @else {{ $total-($steps*$get_m_user_stride/100000) }}Km @endif)</p>
         </div>
       </div>
     </div>

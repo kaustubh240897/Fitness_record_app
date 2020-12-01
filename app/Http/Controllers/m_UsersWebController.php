@@ -206,6 +206,9 @@ class m_UsersWebController extends Controller
     public function padometerScreen(Request $request){
         if(m_Users::where('users_id',Auth::id())->count() >0){
 
+            $day = date('d');
+            $month = date('m');
+            $year = date('Y');
             $m__users_id = m_Users::where('users_id',Auth::id())->first()->id;
             $today_data = t_Steps::where('m__users_id', $m__users_id)->whereDate('step_actual_datetime', Carbon::now()->toDateString())->get()->sum('steps');
             $current_month_steps = t_Steps::where('m__users_id', $m__users_id)->whereBetween('step_actual_datetime', [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])->orderBy('step_actual_datetime')->get()->sum('steps');
@@ -247,7 +250,7 @@ class m_UsersWebController extends Controller
             }
             
     
-            return view('padometerscreen', compact('today_data','m__users_id','current_month_steps','get_m_user_monthly_goal','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','total','current_week_datas'));
+            return view('padometerscreen', compact('year', 'day', 'month','today_data','m__users_id','current_month_steps','get_m_user_monthly_goal','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','total','current_week_datas'));
         }
         else{
             $today_data = null;
@@ -262,7 +265,7 @@ class m_UsersWebController extends Controller
             $current_week_datas = null;
             $current_month_steps = 0;
 
-            return view('padometerscreen', compact('today_data','m__users_id','current_month_steps','get_m_user_monthly_goal','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','total','current_week_datas'));
+            return view('padometerscreen', compact('year', 'day', 'month','today_data','m__users_id','current_month_steps','get_m_user_monthly_goal','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','total','current_week_datas'));
         }
 
     }
