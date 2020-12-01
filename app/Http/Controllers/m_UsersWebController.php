@@ -109,15 +109,15 @@ class m_UsersWebController extends Controller
 
     public function search(Request $request){
         if(m_Users::where('users_id',Auth::id())->count() >0){
-
-            $m__users_id = m_Users::where('users_id',Auth::id())->first()->id;
+            $m_users =  m_Users::where('users_id',Auth::id())->first();
+            $m__users_id = $m_users->id;
             $year = $request->get('year');
             $day = $request->get('day');
             $month = $request->get('month');
             $search = $year."-".$month."-".$day;
             $search_data = t_Steps::where('m__users_id', $m__users_id)->whereDate('step_actual_datetime', $search)->get()->sum('steps');
-            $get_m_user_stride = m_Users::where('users_id',Auth::id())->first()->stride;
-            $get_m_user_daily_goal = m_Users::where('users_id',Auth::id())->first()->step_goal_per_day;
+            $get_m_user_stride = $m_users->stride;
+            $get_m_user_daily_goal = $m_users->step_goal_per_day;
             return view('search', compact('search_data', 'search','get_m_user_stride','get_m_user_daily_goal'));
         }
         else{

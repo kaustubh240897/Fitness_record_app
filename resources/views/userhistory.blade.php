@@ -25,14 +25,14 @@
     }
     @media only screen and (min-width: 768px) {
       #monthinput {
-        max-width: 10%;
+        max-width: 20%;
 
       }
       #yearinput {
         max-width: 20%;
       }
       #dayinput {
-        max-width:10%;
+        max-width:20%;
       }
     }
     </style>
