@@ -76,13 +76,13 @@
 
   </tbody>
   @else
-    <h1> you don't have any collections yet! </h1>
+    <h1> まだコレクションはありません！ </h1>
   @endif
   </table>
   </div>
   <div class="toast" id="myToast">
     <div class="toast-body">
-        It's been a long time since you visited us. We've something special for you.
+    あなたが私たちを訪ねてから久しぶりです。私たちはあなたのために特別な何かを持っています。
     </div>
 </div>
 

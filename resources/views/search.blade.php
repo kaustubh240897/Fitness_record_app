@@ -8,10 +8,10 @@
         <table class="table table-hover" id="collections_table">
             <thead>
               <tr>
-                <th scope="col">Date</th>
-                <th scope="col">Steps</th>
+                <th scope="col">日付</th>
+                <th scope="col">ステップ</th>
                 <th scope="col">Est. dist.(km)<br/>(Stride {{ $get_m_user_stride }} cm)</th>
-                <th scope="col">Target ({{ $get_m_user_daily_goal }}steps)</th>
+                <th scope="col">目標 ({{ $get_m_user_daily_goal }}steps)</th>
               </tr>
             </thead>
             <tbody>
@@ -26,7 +26,7 @@
   </tbody>
 </table>
 @else
-    <h4> Oops You have no data on this date! </h4>
+    <h4> おっと、この日付のデータはありません！ </h4>
 @endif
 </div>
 

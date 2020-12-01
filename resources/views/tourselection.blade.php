@@ -33,12 +33,12 @@
         </div>
         <div class="col col-sm-5 p-1">
         @if(! empty($current_tour))
-          <p class="border border-dark text-break" style="font-size: 80%"> {{ $current_tour->m_tours->tour_title }} (Total travelled {{ $steps * $get_m_user_stride/100000 }}KM/ Remaining @if($total <= $steps * $get_m_user_stride/100000) 0 Km @else {{ $total-$steps * $get_m_user_stride/100000 }}KM @endif)</p>
+          <p class="border border-dark text-break" style="font-size: 80%"> {{ $current_tour->m_tours->tour_title }} (総移動量 {{ $steps * $get_m_user_stride/100000 }}KM/ 残り @if($total <= $steps * $get_m_user_stride/100000) 0 Km @else {{ $total-$steps * $get_m_user_stride/100000 }}KM @endif)</p>
         @else
-          <p> You have not selected any tour please select a tour. </p>
+          <p> ツアーを選択していません。ツアーを選択してください。 </p>
         @endif
         @if(! empty($current_tour) && $current_tour->status == 'Done')
-          <p> Your tour has been completed Please select another tour. </p>
+          <p> ツアーが完了しました別のツアーを選択してください。 </p>
         @endif
         </div>
       </div>
@@ -79,10 +79,10 @@
       @if(! empty($current_tour))
         <p class="border border-dark text-break" style="font-size: 80%">{{ $current_tour->m_tours->tour_title }} ({{ $total }}KM)</p>
       @else
-        <p> You have not selected any tour please select a tour. </p>
+        <p> ツアーを選択していません。ツアーを選択してください。 </p>
       @endif
       @if(! empty($current_tour) && $current_tour->status == 'Done')
-        <p> Your tour has been completed Please select another tour. </p>
+        <p> ツアーが完了しました別のツアーを選択してください。 </p>
       @endif
       </div>
     </div>

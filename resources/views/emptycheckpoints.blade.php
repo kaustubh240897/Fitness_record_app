@@ -1,6 +1,6 @@
 
 @if($tours == 'null')
- <h1> Sorry any tours do not exist. </h1>
+ <h1> 申し訳ありませんが、ツアーは存在しません。 </h1>
 @else
- <h1> oops you have not filled your profile details, please fill the details <a href="/">profile </a> </h1>
+ <h1> プロフィールの詳細を入力していません。詳細を入力してください<a href="/">profile </a> </h1>
 @endif

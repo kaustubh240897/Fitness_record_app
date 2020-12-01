@@ -302,17 +302,17 @@ z-index: 50
 </style>
 
 @if ( empty($m__users_id))
- <h2> Please create your profile first <a href="/" style="color: blue !important">click here </a> </h2> <br/>
+ <h2> 最初にプロファイルを作成してください <a href="/" style="color: blue !important">ここをクリック </a> </h2> <br/>
 @else
 <div class="container-fluid pt-3" style="color:#FFFFFF; border-radius: 15px;">
       <div class="row justify-content-center">
         <div class="col col-sm-9 pt-1 text-center">
-          <p class="font-weight-bold pr-3 py-2" style="background: white; color:#2b63c6; border: 2px solid white; border-radius: 15px;">2020# 10# 15# *#*# </p>
+          <p class="font-weight-bold pr-3 py-2" style="background: white; color:#2b63c6; border: 2px solid white; border-radius: 15px;">2020年 9月 15日 火曜日</p>
         </div>
         <div class="col-xs-1 overlay-btn1">
           <i class="fa fa-refresh fa-3x blackiconcolor overlay-btn1 shadow" aria-hidden="true"></i>
-          <p class="nopadding overlay-text3 text-center" style="font-size: 60%;color:#2b63c6">#-#</p>
-          <p class="nopadding overlay-text3 text-center" style="font-size: 60%;color:#2b63c6">##</p>
+          <p class="nopadding overlay-text3 text-center" style="font-size: 60%;color:#2b63c6">データ</p>
+          <p class="nopadding overlay-text3 text-center" style="font-size: 60%;color:#2b63c6">更新</p>
         </div>
       </div>
     </div>
@@ -325,11 +325,11 @@ z-index: 50
     @if($today_data >= $get_m_user_daily_goal)
     <div class="container" style="background: url({{asset('storage/padometerscreen/complete01.png')}}); background-size: cover; background-position: center; background-repeat: no-repeat">
       <div class="container-fluid text-center pt-3">
-        <p class="font-weight-bold" style="color:#2b63c6">TEXT##</p>
+        <p class="font-weight-bold" style="color:#2b63c6">今日の歩数</p>
       </div>
       <div class="container-fluid w-75 pb-3">
         <div class="speech-bubble-yel text-center">
-          <p class="mb-0 font-weight-bold" style="font-size:90%; color:white;">月間累計 {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
+          <p class="mb-0 font-weight-bold" style="font-size:90%; color:white;">今日の目標達成！</p>
         </div>
       </div>
       <div class="container-fluid text-center">
@@ -352,7 +352,7 @@ z-index: 50
           <img class="" style="width: 40vh; height: 40vh" src="{{ asset('storage/padometerscreen/blue.png') }}" alt="">
         </a>
         <div class="centerText overlay-textImg">
-          center<br>line22222<br>line33
+        北部九州<br>東西縦断ツアー<br>参加中！
         </div>
       </div>
       <div class="d-xs-block d-md-none containerImg overlay-btn2">
@@ -360,7 +360,7 @@ z-index: 50
           <img class="" style="width: 15vh; height: 15vh" src="{{ asset('storage/padometerscreen/blue.png') }}" alt="">
         </a>
         <div class="centerText overlay-textImgXS" style="font-size: 80%">
-          center<br>line22222<br>line33
+        北部九州<br>東西縦断ツアー<br>参加中！
         </div>
       </div>
       <!-- <a href="{{ url('/mypage') }}" >
@@ -373,7 +373,7 @@ z-index: 50
           <img class="" style="width: 20vh; height: 20vh" src="{{ asset('storage/padometerscreen/blue.png') }}" alt="">
         </a>
         <div class="centerText overlay-textImgMD" style="font-size: 100%">
-          center<br>line22222<br>line33
+        北部九州<br>東西縦断ツアー<br>参加中！
         </div>
       </div>
       <!-- <a href="{{ url('/mypage') }}" >
@@ -387,11 +387,11 @@ z-index: 50
     @else
     <div class="container">
       <div class="container-fluid text-center pt-3">
-        <p class="font-weight-bold" style="color:#2b63c6">TEXT##</p>
+        <p class="font-weight-bold" style="color:#2b63c6">今日の歩数</p>
       </div>
       <div class="container-fluid w-75 pb-3">
         <div class="speech-bubble text-center">
-          <p class="mb-0 font-weight-bold" style="font-size:90%; color:#113A83;">月間累計 {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
+          <p class="mb-0 font-weight-bold" style="font-size:90%; color:#113A83;">あと {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} で目標達成！</p>
         </div>
       </div>
       <div class="container-fluid pt-3">
@@ -411,7 +411,7 @@ z-index: 50
           <img class="" style="width: 40vh; height: 40vh" src="{{ asset('storage/padometerscreen/blue.png') }}" alt="">
         </a>
         <div class="centerText overlay-textImg">
-          center<br>line22222<br>line33
+        北部九州<br>東西縦断ツアー<br>参加中！
         </div>
       </div>
       <div class="d-xs-block d-md-none containerImg overlay-btn2">
@@ -419,7 +419,7 @@ z-index: 50
           <img class="" style="width: 15vh; height: 15vh" src="{{ asset('storage/padometerscreen/blue.png') }}" alt="">
         </a>
         <div class="centerText overlay-textImgXS" style="font-size: 80%">
-          center<br>line22222<br>line33
+        北部九州<br>東西縦断ツアー<br>参加中！
         </div>
       </div>
       <!-- <a href="{{ url('/mypage') }}" >
@@ -432,7 +432,7 @@ z-index: 50
           <img class="" style="width: 20vh; height: 20vh" src="{{ asset('storage/padometerscreen/blue.png') }}" alt="">
         </a>
         <div class="centerText overlay-textImgMD" style="font-size: 100%">
-          center<br>line22222<br>line33
+        北部九州<br>東西縦断ツアー<br>参加中！
         </div>
       </div>
       <!-- <a href="{{ url('/mypage') }}" >
@@ -448,17 +448,17 @@ z-index: 50
       <canvas id="ctx" class="pt-3"></canvas>
     </div>
     @if(empty($get_t_tour))
-    <h6> You have not started tour yet! </h6>
+    <h6> まだツアーを始めていません！ </h6>
     @endif
     @if( $current_month_steps  >=  $get_m_user_monthly_goal )
     <div class="container pt-3" style="background: url({{asset('storage/padometerscreen/complete01.png')}}); background-size: cover; background-position: center; background-repeat: no-repeat">
       <div class="container-fluid text-center overlay-text5">
-        <p class="font-weight-bold" style="color:#2b63c6;">TEXT##</p>
+        <p class="font-weight-bold" style="color:#2b63c6;">今日の歩数</p>
       </div>
       <div class="container-fluid w-75 d-md-none">
         <br>
         <div class="speech-bubble-yel text-center">
-          <p class="mb-0 font-weight-bold" style="font-size:90%; color: white;">月間累計 {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
+          <p class="mb-0 font-weight-bold" style="font-size:90%; color: white;">今月の目標達成！</p>
         </div>
       </div>
       <div class="container-fluid pt-3 w-75 d-md-none">
@@ -468,21 +468,21 @@ z-index: 50
       <div class="container-fluid w-50 d-none d-md-block d-lg-none">
         <br>
         <div class="speech-bubble text-center" style="background: #ff9327">
-          <p class="mb-0 font-weight-bold" style="font-size:90%; color:#113A83;">月間累計 {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
+          <p class="mb-0 font-weight-bold" style="font-size:90%; color:#113A83;">あと {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
         </div>
       </div>
       <div class="container-fluid pt-3 w-50 d-none d-md-block d-lg-none">
-        <p class="text-center" style="background: white; color:#ff9327; border: 2px solid #ff9327; border-radius: 15px;">#### 215,000# (20.0km) ##</p>
+        <p class="text-center" style="background: white; color:#ff9327; border: 2px solid #ff9327; border-radius: 15px;">今日までの累計 240,830歩 (158.95km)</p>
       </div>
 
       <div class="container-fluid w-25 d-none d-lg-block">
         <br>
         <div class="speech-bubble text-center" style="background: #ff9327">
-          <p class="mb-0 font-weight-bold" style="font-size:90%; color:#113A83;">月間累計 {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
+          <p class="mb-0 font-weight-bold" style="font-size:90%; color:#113A83;">あと {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
         </div>
       </div>
       <div class="container-fluid pt-3 w-25 d-none d-lg-block">
-        <p class="text-center" style="background: white; color:#ff9327; border: 2px solid #ff9327; border-radius: 15px;">#### 215,000# (20.0km) ##</p>
+        <p class="text-center" style="background: white; color:#ff9327; border: 2px solid #ff9327; border-radius: 15px;">今日までの累計 240,830歩 (158.95km)</p>
       </div>
       <div class="container-fluid">
         <p class="text-center" > <img src="{{asset('storage/padometerscreen/star.png')}}" alt=""> </p>
@@ -493,20 +493,20 @@ z-index: 50
                   <div id="triangle_graph" class=""></div>
               </div>
               <div class="container-fluid pt-3 w-25 d-none d-lg-block">
-                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">###### 215,000# (20.0km) ##</p>
+                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 240,000歩 (158.40km)</p>
               </div>
               <div class="container-fluid pt-3 w-50 d-none d-md-block d-lg-none">
-                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">###### 215,000# (20.0km) ##</p>
+                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 240,000歩 (158.40km)</p>
               </div>
               <div class="container-fluid pt-3 d-md-none">
-                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">###### 215,000# (20.0km) ##</p>
+                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 240,000歩 (158.40km)</p>
               </div>
               </div>
     </div>
     @else
     <div class="container">
       <div class="container-fluid text-center pt-3 overlay-text5">
-        <p class="font-weight-bold" style="color:#2b63c6;">TEXT##</p>
+        <p class="font-weight-bold" style="color:#2b63c6;">今月の歩数</p>
       </div>
       <div class="container-fluid d-lg-none">
         <div class="row justify-content-center">
@@ -516,7 +516,7 @@ z-index: 50
            <div class="col col-sm-5 text-center">
             <div class="d-flex flex-row-reverse pl-3 pb-3 mb-3 overlay-text2">
               <div class="text-center">
-                <p class="mb-0 pb-0 font-weight-bold pr-sm-3" style="background: #dce0e3; font-size:70%; color:#113A83; border: 2px solid #dce0e3; border-radius: 15px;">Remain @if($get_m_user_monthly_goal <= $current_month_steps) 0 @else {{ $get_m_user_monthly_goal-$current_month_steps }}歩 {{ round(($get_m_user_monthly_goal-$current_month_steps)*$get_m_user_stride/100000,2) }} @endif Km!</p>
+                <p class="mb-0 pb-0 font-weight-bold pr-sm-3" style="background: #dce0e3; font-size:70%; color:#113A83; border: 2px solid #dce0e3; border-radius: 15px;">残ります @if($get_m_user_monthly_goal <= $current_month_steps) 0 @else {{ $get_m_user_monthly_goal-$current_month_steps }}歩 {{ round(($get_m_user_monthly_goal-$current_month_steps)*$get_m_user_stride/100000,2) }} @endif Km!</p>
                 <div class="d-flex flex-row-reverse">
                   <div class="col text-right border-left border-primary">
                     <p style="font-size:100%"><br><br><br><br></p>
@@ -529,7 +529,7 @@ z-index: 50
             </div>
             <div class="d-flex flex-row pr-3">
               <div class="text-center">
-                <p class="mb-0 mt-0 pt-0 font-weight-bold px-1 pl-sm-2 pl-md-3" style="background: white; font-size:70%; color:#2b63c6;; border: 1px solid #2b63c6;; border-radius: 15px;">月間累計 {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
+                <p class="mb-0 mt-0 pt-0 font-weight-bold px-1 pl-sm-2 pl-md-3" style="background: white; font-size:70%; color:#2b63c6;; border: 1px solid #2b63c6;; border-radius: 15px;">あと {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
                 <div class="row justify-content-center">
                   <div class="col border-right border-primary">
                     <p style="font-size:100%"><br><br><br></p>
@@ -554,7 +554,7 @@ z-index: 50
            <div class="col col-sm-5 text-center">
             <div class="d-flex flex-row-reverse pl-3 pb-3 mb-3 overlay-text2">
               <div class="text-center">
-                <p class="mb-0 pb-0 font-weight-bold pr-sm-3" style="background: #dce0e3; font-size:70%; color:#113A83; border: 2px solid #dce0e3; border-radius: 15px;">Remaing @if($get_m_user_monthly_goal <= $current_month_steps) 0 @else {{ $get_m_user_monthly_goal-$current_month_steps }}歩 {{ round(($get_m_user_monthly_goal-$current_month_steps)*$get_m_user_stride/100000,2) }} @endif Km!</p>
+                <p class="mb-0 pb-0 font-weight-bold pr-sm-3" style="background: #dce0e3; font-size:70%; color:#113A83; border: 2px solid #dce0e3; border-radius: 15px;">残ります @if($get_m_user_monthly_goal <= $current_month_steps) 0 @else {{ $get_m_user_monthly_goal-$current_month_steps }}歩 {{ round(($get_m_user_monthly_goal-$current_month_steps)*$get_m_user_stride/100000,2) }} @endif Km!</p>
                 <div class="d-flex flex-row-reverse">
                   <div class="col text-right border-left border-primary">
                     <p style="font-size:100%"><br><br><br><br></p>
@@ -567,7 +567,7 @@ z-index: 50
             </div>
             <div class="d-flex flex-row pl-3">
               <div class="text-center">
-                <p class="mb-0 mt-0 pt-0 font-weight-bold pl-sm-2 pl-md-3 pl-3 pl-lg-3 pr-3" style="background: white; font-size:70%; color:#2b63c6; border: 1px solid #2b63c6;; border-radius: 15px;">月間累計 {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
+                <p class="mb-0 mt-0 pt-0 font-weight-bold pl-sm-2 pl-md-3 pl-3 pl-lg-3 pr-3" style="background: white; font-size:70%; color:#2b63c6; border: 1px solid #2b63c6;; border-radius: 15px;">あと {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
                 <div class="row justify-content-center">
                   <div class="col border-right border-primary">
                     <p style="font-size:100%"><br><br><br></p>
@@ -590,13 +590,13 @@ z-index: 50
                   <div id="triangle_graph" class=""></div>
               </div>
               <div class="container-fluid pt-3 w-25 d-none d-lg-block">
-                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">###### 215,000# (20.0km) ##</p>
+                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 240,000歩 (158.40km)</p>
               </div>
               <div class="container-fluid pt-3 w-50 d-none d-md-block d-lg-none">
-                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">###### 215,000# (20.0km) ##</p>
+                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 240,000歩 (158.40km)</p>
               </div>
               <div class="container-fluid pt-3 d-md-none">
-                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">###### 215,000# (20.0km) ##</p>
+                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 240,000歩 (158.40km)</p>
               </div>
               </div>
     </div>
@@ -795,7 +795,7 @@ Chart.plugins.register({
                ctx.fillStyle = '#3476ea'; //second label's font color
                // ctx.translate(x, y);
                ctx.rotate(-Math.PI / 2);
-               var textVertical = stepsData[index] + " steps";
+               var textVertical = stepsData[index] + "歩";
                ctx.fillText(textVertical, -chart.height+3*Chart.defaults.global.defaultFontSize, x+15);
                // console.log("x: " + chart.width);
                // console.log("y: " + chart.height);

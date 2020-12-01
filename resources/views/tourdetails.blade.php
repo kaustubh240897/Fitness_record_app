@@ -115,11 +115,11 @@
       <div class="row pl-2">
         <div class="col-4 col-sm-2 p-1 pl-2">
          @if(! empty($current_tour) && $current_tour->status == 'Done')
-         <p> Your tour has been completed Please select another tour. </p>
+         <p> ツアーが完了しました別のツアーを選択してください。 </p>
          @elseif(! empty($current_tour) && $current_tour->status == 'Inprogress')
           <p style="font-size: 80%">{{ $current_tour->m_tours->tour_title }}</p>
           @else
-          <p> You have not selected any tour.</p>
+          <p> ツアーを選択していません。</p>
           @endif
         </div>
         <div class="col col-sm-5 p-1">
@@ -188,19 +188,19 @@
   </div>
 
 @else
-<h4> Sorry there are no checkpoints.</h4>
+<h4> 申し訳ありませんが、チェックポイントはありません。</h4>
 @endif
 
 
 </div>
 @if(! empty($current_tour))
   @if($current_tour->status == 'Done')
-    <h5> Congrats! Your tour has been completed. </h5>
+    <h5> おめでとうございます！ツアーが完了しました。</h5>
   @else
-    <h3> You covered {{ $user_stride/100000 * $steps }} (Km) </h3>
+    <h3>あなたがカバーした {{ $user_stride/100000 * $steps }} (Km) </h3>
   @endif
   @else
-    <h4> you have not selected any tour. please select the tour </h4>
+    <h4> ツアーを選択していません。ツアーを選択してください </h4>
 @endif
 
 

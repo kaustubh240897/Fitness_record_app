@@ -21,7 +21,7 @@
 
 
  <div class="container-fluid mt-1">
-     <a href="{{ url('/mypage') }}" >  <button type="button" class="btn btn-lg">My Page</button> </a>
+     <a href="{{ url('/mypage') }}" >  <button type="button" class="btn btn-lg">マイページ</button> </a>
     </div>
     <div class="table-responsive-sm mt-4">
     <table class="table table-hover" id="collections_table">
@@ -43,7 +43,7 @@
           </tr>
         </tbody>
         @else
-        <h4>Sorry! No collection exists!</h4>
+        <h4>ごめんなさい！コレクションはありません！</h4>
         @endif
     </table>
   </div>
@@ -66,6 +66,6 @@
      <img class="img-fluid mx-auto" src="{{ asset($my_collections->m_collections->path . $my_collections->m_collections->filename) }}" alt="Sample">
   </div>
   @else
-  <h4> Sorry not exist. </h4>
+  <h4> 申し訳ありませんが存在しません。 </h4>
   @endif
 @endsection

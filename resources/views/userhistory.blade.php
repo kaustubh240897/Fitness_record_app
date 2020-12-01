@@ -69,7 +69,7 @@
               <input type="number" name='day' placeholder='dd' required='true' class="form-control mx-0" min="1" max='31' id="dayinput">
               <input type="number" name='month' placeholder='mm' required='true' class="form-control mx-0" min="1" max="12" id="monthinput">
               <span class='input-group-prepend'>
-                   <button type='submit' class='btn btn-primary'> Search
+                   <button type='submit' class='btn btn-primary'> 探す
                    </button>
                 </span>
             </div>
@@ -103,7 +103,7 @@
     </tr>
     @endforeach
     @else
-    <h4> Sorry you don't have history till now! </h4>
+    <h4> 申し訳ありませんが、今まで歴史がありません！ </h4>
     @endif
   </tbody>
 </table>

@@ -50,15 +50,15 @@
 <div class="container-fluid mt-1">
       <div class="row">
         <div class="col-xs-4 pr-3 pl-2">
-         <a href="{{ url('/mypage') }}"> <button type="button" class="btn blue">My Page</button> </a>
+         <a href="{{ url('/mypage') }}"> <button type="button" class="btn blue">マイページ</button> </a>
         </div>
         <div class="col-xs-6 pl-2 pt-2">
       @if(! empty($m_users))
-      <p class="text-break mb-0">Level:- {{ $m_users->tour_level }} </p>
+      <p class="text-break mb-0">レベル：- {{ $m_users->tour_level }} </p>
       @else
-      <p class="text-break mb-0">Level:- None </p>
+      <p class="text-break mb-0">レベル：- 無し </p>
       @endif
-          <p class="text-break">Your level will keep increasing as you complete the tours.</p>
+          <p class="text-break">ツアーを完了すると、レベルは上がり続けます。</p>
         </div>
       </div>
     </div>
@@ -69,19 +69,19 @@
 
       <div class="row">
         <div class="col">
-          <p>1. Stride:-</p>
+          <p>1. ストライド：-</p>
         </div>
       </div>
       <div class="row">
         <div class="col-3 pl-3">
           <div class="form-check form-check-inline pb-1">
             <input class="form-check-input" type="radio" required='true' name="gridRadios" id="inlineRadio1" value="3">
-            <label class="form-check-label p-1" for="inlineRadio1">Calculate</label>
+            <label class="form-check-label p-1" for="inlineRadio1">計算する</label>
           </div>
           <br>
           <div class="form-check form-check-inline pt-2">
             <input class="form-check-input" type="radio" required='true' name="gridRadios" id="inlineRadio2" value="4">
-            <label class="form-check-label" for="inlineRadio2">Manual</label>
+            <label class="form-check-label" for="inlineRadio2">マニュアル</label>
           </div>
         </div>
         <div class="col">
@@ -91,8 +91,8 @@
                 <!-- <input type="text" class="form-control d-inline-block" style="width: 100%; height:50%; font-size:70%" id="inlineFormInputName2" placeholder="Gender"> -->
                 <div class="input-group p-0 m-0 d-inline-block" style="width: 100%; height:100%; font-size:80%">
                   <select class="custom-select p-0" style="width: 100%; height:50%; font-size:70%" id="genderinput">
-                    <option value="1">Male</option>
-                    <option value="2">Female</option>
+                    <option value="1">男性</option>
+                    <option value="2">女性</option>
                   </select>
                 </div>
               </div>
@@ -100,11 +100,11 @@
                 <input type="number" class="form-control d-inline-block" name='inputheight' value="{{ round($m_users->stride * 2.5) }}" style="width: 100%; height:50%; font-size:50%" id="heightinput" min='112' max='212' placeholder="Height in cm">
               </div>
               <div class="col-3 p-0 pl-1">
-                <button type="button" class="btn blue cal" style="width: 100%; height:50%; font-size:70%" onclick="calculateStride()">Calculate</button>
+                <button type="button" class="btn blue cal" style="width: 100%; height:50%; font-size:70%" onclick="calculateStride()">計算する</button>
               </div>
               <div class="col-3 p-0 pl-1">
                 <div class="d-flex flex-row justify-content-sm-end">
-                  <p class="d-inline-block border float-right" id="p_strideLength">Length</p>
+                  <p class="d-inline-block border float-right" id="p_strideLength">長さ</p>
                 </div>
               </div>
             </div>
@@ -119,25 +119,25 @@
     </div>
     <div class="container pt-2">
       <div class="d-flex flex-row justify-content-center">
-        <p style="font-size: 70%">*Stride length should be between 45cm - 85cm</p>
+        <p style="font-size: 70%">*ストライドの長さは45cmから85cmの間でなければなりません</p>
       </div>
     </div>
     <div class="container-fluid">
       <div class="row">
         <div class="col">
-          <p>2. Daily Goal:-</p>
+          <p>2. 毎日の目標：-</p>
         </div>
       </div>
     <div class="row">
         <div class="col-3 pl-3">
           <div class="form-check form-check-inline pb-1">
             <input class="form-check-input" type="radio" required='true' name="radio_daily" id="inlineRadio3" value="5">
-            <label class="form-check-label p-1" for="inlineRadio3">Steps</label>
+            <label class="form-check-label p-1" for="inlineRadio3">ステップ</label>
           </div>
           <br>
           <div class="form-check form-check-inline pt-2">
             <input class="form-check-input" type="radio" required='true' name="radio_daily" id="inlineRadio4" value="6">
-            <label class="form-check-label" for="inlineRadio4">Distance</label>
+            <label class="form-check-label" for="inlineRadio4">距離</label>
           </div>
         </div>
         <div class="col">
@@ -151,7 +151,7 @@
               </div>
               <div class="col-6 p-0 pl-1 text-align-right">
                 <div class="d-flex flex-row justify-content-end">
-                  <p class="d-inline-block border float-right text-align-right pt-1" id="daily_estDist">Est. Distance</p>
+                  <p class="d-inline-block border float-right text-align-right pt-1" id="daily_estDist">です。距離</p>
                 </div>
               </div>
             </div>
@@ -168,7 +168,7 @@
               </div>
               <div class="col-6 p-0 pl-1 text-align-right">
                 <div class="d-flex flex-row justify-content-end">
-                  <p class="d-inline-block border float-right text-align-right pt-1" id="daily_estSteps">Est. Steps</p>
+                  <p class="d-inline-block border float-right text-align-right pt-1" id="daily_estSteps">です。手順</p>
                 </div>
               </div>
             </div>
@@ -178,25 +178,25 @@
     </div>
     <div class="container">
       <div class="d-flex flex-row justify-content-center">
-        <p style="font-size: 70%">Daily distance should be less than 100km</p>
+        <p style="font-size: 70%">毎日の距離は100km未満である必要があります</p>
       </div>
     </div>
     <div class="container-fluid">
       <div class="row">
         <div class="col">
-          <p>3. Monthly Goal:-</p>
+          <p>3. 毎月の目標：-</p>
         </div>
       </div>
       <div class="row">
         <div class="col-3 pl-3">
           <div class="form-check form-check-inline pb-1">
             <input class="form-check-input" type="radio" required='true' name="radio_monthly" id="inlineRadio5" value="7">
-            <label class="form-check-label p-1" for="inlineRadio5">Steps</label>
+            <label class="form-check-label p-1" for="inlineRadio5">ステップ</label>
           </div>
           <br>
           <div class="form-check form-check-inline pt-2">
             <input class="form-check-input" type="radio" required='true' name="radio_monthly" id="inlineRadio6" value="8">
-            <label class="form-check-label" for="inlineRadio6">Distance</label>
+            <label class="form-check-label" for="inlineRadio6">距離</label>
           </div>
         </div>
         <div class="col">
@@ -210,7 +210,7 @@
               </div>
               <div class="col-6 p-0 pl-1 text-align-right">
                 <div class="d-flex flex-row justify-content-end">
-                  <p class="d-inline-block border float-right text-align-right pt-1" id="monthly_estDist">Est. Distance</p>
+                  <p class="d-inline-block border float-right text-align-right pt-1" id="monthly_estDist">です。距離</p>
                 </div>
               </div>
             </div>
@@ -227,7 +227,7 @@
               </div>
               <div class="col-6 p-0 pl-1 text-align-right">
                 <div class="d-flex flex-row justify-content-end">
-                  <p class="d-inline-block border float-right text-align-right pt-1" id="monthly_estSteps">Est. Steps</p>
+                  <p class="d-inline-block border float-right text-align-right pt-1" id="monthly_estSteps">です。手順</p>
                 </div>
               </div>
             </div>
@@ -237,11 +237,11 @@
     </div>
     <div class="container">
       <div class="d-flex flex-row justify-content-center">
-        <p style="font-size: 70%">Monthly distance should be less than 1000km.</p>
+        <p style="font-size: 70%">月間距離は1000km未満である必要があります。</p>
       </div>
     </div>
     <div class="container-fluid">
-      <p>Motion:-</p>
+      <p>モーション：-</p>
       <div class="d-flex flex-row justify-content-around justify-content-sm-start">
         <div class="form-check form-check-inline pl-3">
 
@@ -250,7 +250,7 @@
         @else
          <input class="form-check-input" type="checkbox" name='motionapp' id="inlineCheckbox1"  checked>
         @endif
-          <label class="form-check-label" for="inlineCheckbox1" style="font-size:70%">Animation in mobile application</label>
+          <label class="form-check-label" for="inlineCheckbox1" style="font-size:70%">モバイルアプリケーションでのアニメーション</label>
         </div>
         <div class="form-check form-check-inline pl-3">
         @if($m_users->motion_web == 0)
@@ -258,35 +258,35 @@
         @else
          <input class="form-check-input" type="checkbox" name='motionweb' id="inlineCheckbox2" checked>
         @endif
-          <label class="form-check-label" for="inlineCheckbox2" style="font-size:70%">Animation in web application</label>
+          <label class="form-check-label" for="inlineCheckbox2" style="font-size:70%">Webアプリケーションのアニメーション</label>
         </div>
       </div>
     </div>
     <div class="container pt-2">
       <div class="d-flex flex-row justify-content-center">
-        <p style="font-size: 70%">*Some text for stride length</p>
+        <p style="font-size: 70%">*歩幅のテキスト</p>
       </div>
     </div>
     <div class="container-fluid">
       <div class="row">
         <div class="col-6 col-sm-3">
-          <p style="font-size: 70%">Currently Selected Tour:-</p>
+          <p style="font-size: 70%">現在選択されているツアー：-</p>
         </div>
         <div class="col-6">
         @if(! empty($t_tour))
-          <p class="text-break" style="font-size: 70%">Tourname :- {{ $t_tour->m_tours->tour_title }} {{ $t_tour->status }}</p>
+          <p class="text-break" style="font-size: 70%">トーナメント：- {{ $t_tour->m_tours->tour_title }} {{ $t_tour->status }}</p>
         @elseif( empty($t_tour))
-          <p style="color: red; font-size: 70%">*No tour selected</p>
+          <p style="color: red; font-size: 70%">*ツアーが選択されていません</p>
         @endif
         @if( !empty($t_tour)  && $t_tour->status == 'Done' )
-          <p style="color: red; font-size: 70%">*Selected tour already completed</p>
+          <p style="color: red; font-size: 70%">*選択したツアーはすでに完了しています</p>
         @endif
         </div>
       </div>
     </div>
     <div class="container-fluid p-1">
       <div class="d-flex flex-row-reverse">
-        <button type="submit" class="btn blue">Tour Selection</button>
+        <button type="submit" class="btn blue">ツアーセレクション</button>
       </div>
     </div>
   </form>

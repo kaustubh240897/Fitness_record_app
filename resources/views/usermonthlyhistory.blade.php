@@ -64,7 +64,7 @@
     </tr>
     @endforeach
     @else
-    <h4> Sorry you don't have history till now! </h4>
+    <h4> 申し訳ありませんが、今まで歴史がありません！ </h4>
     @endif
   </tbody>
 </table>

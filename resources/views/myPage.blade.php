@@ -233,8 +233,8 @@ border-left: 6px solid green;
           <p class="mb-0" style="font-size:70%">{{ $get_m_user_daily_goal }}歩</p>
           <p class="mb-0" style="font-size:70%">{{ $get_m_user_daily_goal*$get_m_user_stride/100000 }} (km)</p>
           <p class="mb-0" style="font-size:70%">目標まで</p>
-          <p class="mb-0" style="font-size:70%">@if($get_m_user_daily_goal <=  $today_data) 0  @else {{ $get_m_user_daily_goal-$today_data }} @endif steps remaining.</p>
-          <p class="mb-0" style="font-size:70%">@if($get_m_user_daily_goal <=  $today_data) 0  @else {{ ($get_m_user_daily_goal-$today_data)*$get_m_user_stride/100000 }} @endif km left.</p>
+          <p class="mb-0" style="font-size:70%">@if($get_m_user_daily_goal <=  $today_data) 0  @else {{ $get_m_user_daily_goal-$today_data }} @endif 残りのステップ。</p>
+          <p class="mb-0" style="font-size:70%">@if($get_m_user_daily_goal <=  $today_data) 0  @else {{ ($get_m_user_daily_goal-$today_data)*$get_m_user_stride/100000 }} @endif km 左.</p>
         </div>
         <div class="col">
           <p class="mb-0" style="font-size:70%">コレクションに99件のアイ</p>
@@ -242,7 +242,7 @@ border-left: 6px solid green;
           <p class="mb-0" style="font-size:70%">アイテムが追加されました。</p>
         </div>
          @else
-        <h6> You have not started tour yet! </h6>
+        <h6> まだツアーを始めていません！ </h6>
         @endif
         <div class="col">
           <a href="{{ url('/mycollection') }}" >  <button type="button" class="btn blue mb-1" style="font-size: 50%">マイコレクション</button> </a>
@@ -265,17 +265,17 @@ border-left: 6px solid green;
                 <p class="mb-0 pl-3 pt-3" style="font-size:50%">{{ $current_month_steps }}歩({{ $current_month_steps*$get_m_user_stride/100000 }}Km)</p>
               </div>
               <div class="col-6">
-                <p class="mb-0" style="font-size:50%">Remaining this month:-</p>
+                <p class="mb-0" style="font-size:50%">今月の残り：-</p>
                 @if($get_m_user_monthly_goal <= $current_month_steps)
-                <p class="mb-0" style="font-size:50%">0 steps</p>
+                <p class="mb-0" style="font-size:50%">0 ステップ</p>
                 @else
-                 <p class="mb-0" style="font-size:50%"> {{ $get_m_user_monthly_goal-$current_month_steps }} steps <br/>({{ round(($get_m_user_monthly_goal-$current_month_steps)*$get_m_user_stride/100000,2) }} Km) </p>
+                 <p class="mb-0" style="font-size:50%"> {{ $get_m_user_monthly_goal-$current_month_steps }} ステップ <br/>({{ round(($get_m_user_monthly_goal-$current_month_steps)*$get_m_user_stride/100000,2) }} Km) </p>
                 @endif
                 @if($current_month_steps !=0)
                   @if($get_m_user_monthly_goal <= $current_month_steps)
-                  <p class="mb-0 pb-3 pl-3" style="font-size:50%; color: red">Completed!</p>
+                  <p class="mb-0 pb-3 pl-3" style="font-size:50%; color: red">完了しました！</p>
                   @else
-                  <p class="mb-0 pb-3" style="font-size:50%; color: red">Inprogress!</p>
+                  <p class="mb-0 pb-3" style="font-size:50%; color: red">進行中！</p>
                   @endif
                 @endif
                 <p class="mb-0 pt-3" style="font-size:50%">月間目標</p>
@@ -336,13 +336,13 @@ border-left: 6px solid green;
           <button type="button" class="btn btn-danger btn-sm"></button>
         </div>
         <div class="p-1">
-          <p style="font-size: 80%">TourName (Total travelled {{ $steps*$get_m_user_stride/100000 }} Km/ Remaining @if(($steps*$get_m_user_stride/100000) >= $total) 0 Km @else {{ $total-($steps*$get_m_user_stride/100000) }}Km @endif)</p>
+          <p style="font-size: 80%">{{$get_t_tour}} (総移動量 {{ $steps*$get_m_user_stride/100000 }} Km/ 残り @if(($steps*$get_m_user_stride/100000) >= $total) 0 Km @else {{ $total-($steps*$get_m_user_stride/100000) }}Km @endif)</p>
         </div>
       </div>
     </div>
 
 @if ( empty($m__users_id))
- <h2> Please create your profile first <a href="/" style="color:blue !important"> click here </a> </h2> <br/>
+ <h2> 最初にプロファイルを作成してください <a href="/" style="color:blue !important"> ここをクリック </a> </h2> <br/>
 @endif
 
 <div class="container-fluid">
@@ -361,7 +361,7 @@ border-left: 6px solid green;
     </div>
   </div>
  @else
- <h4> Sorry there are no checkpoints, Please select the tour.</h4>
+ <h4> 申し訳ありませんが、チェックポイントはありません。ツアーを選択してください。</h4>
  @endif
 </div>
 <!-- <div class="container pt-3">
