@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120" height="120" viewBox="0 0 120 120">
+  <defs>
+    <filter id="Ellipse_36" x="0" y="0" width="120" height="120" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-opacity="0.2"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="北部九州_東西縦断ツアー_参加中_" x="16" y="29" width="88" height="63" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="_FIX_マイページリンク" data-name="[FIX]マイページリンク" transform="translate(15 -681)">
+    <g transform="matrix(1, 0, 0, 1, -15, 681)" filter="url(#Ellipse_36)">
+      <g id="Ellipse_36-2" data-name="Ellipse 36" transform="translate(15 15)" fill="#2b63c6" stroke="#fff" stroke-width="2">
+        <circle cx="45" cy="45" r="45" stroke="none"/>
+        <circle cx="45" cy="45" r="44" fill="none"/>
+      </g>
+    </g>
+    <g id="ico_step" transform="translate(7.583 692.483)">
+      <g id="足あとのアイコン素材" transform="translate(46.347 29.308)" opacity="0.2">
+        <path id="Path_16608" data-name="Path 16608" d="M3.4.193C-.485,1.435-.726,8.767,1.1,12.973l6.2-.464A36.356,36.356,0,0,0,8.11,5.241C8.094,3.279,6.977-.951,3.4.193Z" transform="translate(-9.347 41.227) rotate(-34)" fill="#fff"/>
+        <path id="Path_16609" data-name="Path 16609" d="M0,.651S-.207,6.6,3.942,6.145C7.618,5.737,6.2,0,6.2,0Z" transform="translate(-0.444 52.06) rotate(-34)" fill="#fff"/>
+        <path id="Path_16610" data-name="Path 16610" d="M4.711.193C1.134-.951.017,3.279,0,5.241a36.352,36.352,0,0,0,.807,7.269l6.2.464C8.837,8.767,8.6,1.435,4.711.193Z" transform="translate(8.284 43.255) rotate(-30)" fill="#fff"/>
+        <path id="Path_16611" data-name="Path 16611" d="M.27,0S-1.151,5.737,2.525,6.145C6.674,6.6,6.465.651,6.465.651Z" transform="translate(15.541 55.184) rotate(-30)" fill="#fff"/>
+      </g>
+      <g id="足あとのアイコン素材-2" data-name="足あとのアイコン素材" transform="translate(26.347 -4.692)" opacity="0.2">
+        <path id="Path_16608-2" data-name="Path 16608" d="M3.4.193C-.485,1.435-.726,8.767,1.1,12.973l6.2-.464A36.356,36.356,0,0,0,8.11,5.241C8.094,3.279,6.977-.951,3.4.193Z" transform="translate(-9.347 41.227) rotate(-34)" fill="#fff"/>
+        <path id="Path_16609-2" data-name="Path 16609" d="M0,.651S-.207,6.6,3.942,6.145C7.618,5.737,6.2,0,6.2,0Z" transform="translate(-0.444 52.06) rotate(-34)" fill="#fff"/>
+        <path id="Path_16610-2" data-name="Path 16610" d="M4.711.193C1.134-.951.017,3.279,0,5.241a36.352,36.352,0,0,0,.807,7.269l6.2.464C8.837,8.767,8.6,1.435,4.711.193Z" transform="translate(8.284 43.255) rotate(-30)" fill="#fff"/>
+        <path id="Path_16611-2" data-name="Path 16611" d="M.27,0S-1.151,5.737,2.525,6.145C6.674,6.6,6.465.651,6.465.651Z" transform="translate(15.541 55.184) rotate(-30)" fill="#fff"/>
+      </g>
+      <g id="足あとのアイコン素材-3" data-name="足あとのアイコン素材" transform="translate(9.347 -36.692)" opacity="0.2">
+        <path id="Path_16608-3" data-name="Path 16608" d="M3.4.193C-.485,1.435-.726,8.767,1.1,12.973l6.2-.464A36.356,36.356,0,0,0,8.11,5.241C8.094,3.279,6.977-.951,3.4.193Z" transform="translate(-9.347 41.227) rotate(-34)" fill="#fff"/>
+        <path id="Path_16609-3" data-name="Path 16609" d="M0,.651S-.207,6.6,3.942,6.145C7.618,5.737,6.2,0,6.2,0Z" transform="translate(-0.444 52.06) rotate(-34)" fill="#fff"/>
+        <path id="Path_16610-3" data-name="Path 16610" d="M4.711.193C1.134-.951.017,3.279,0,5.241a36.352,36.352,0,0,0,.807,7.269l6.2.464C8.837,8.767,8.6,1.435,4.711.193Z" transform="translate(8.284 43.255) rotate(-30)" fill="#fff"/>
+        <path id="Path_16611-3" data-name="Path 16611" d="M.27,0S-1.151,5.737,2.525,6.145C6.674,6.6,6.465.651,6.465.651Z" transform="translate(15.541 55.184) rotate(-30)" fill="#fff"/>
+      </g>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -15, 681)" filter="url(#北部九州_東西縦断ツアー_参加中_)">
+      <text id="北部九州_東西縦断ツアー_参加中_2" data-name="北部九州
+東西縦断ツアー
+参加中！" transform="translate(60 50)" fill="#fff" font-size="11" font-family="YuGothicUI-Bold, Yu Gothic UI" font-weight="700"><tspan x="-22" y="0">北部九州</tspan><tspan y="0" font-family="SegoeUI-Bold, Segoe UI"></tspan><tspan x="-34.206" y="15">東西縦断ツアー</tspan><tspan y="15" font-family="SegoeUI-Bold, Segoe UI"></tspan><tspan x="-22" y="30">参加中！</tspan></text>
+    </g>
+  </g>
+</svg>

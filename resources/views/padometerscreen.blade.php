@@ -298,7 +298,28 @@ align-self: flex-start;
 transform: translateY(120%);
 z-index: 50
 }
-
+.myPageBtn {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+}
+.refBtn {
+  position: fixed;
+  top: 9%;
+  right: 0;
+  z-index: 10;
+}
+.card {
+  border: none !important;
+  padding: none !important;
+  margin: 0 auto !important;
+  background-color: #f0f6f8;
+}
+.card.card-img-top {
+  padding: none !important;
+  margin: none !important;
+}
 </style>
 
 @if ( empty($m__users_id))
@@ -306,22 +327,50 @@ z-index: 50
 @else
 <div class="container-fluid pt-3" style="color:#FFFFFF; border-radius: 15px;">
       <div class="row justify-content-center">
-        <div class="col col-sm-9 pt-1 text-center">
+        <div class="col pt-1 text-center">
           <p class="font-weight-bold pr-3 py-2" style="background: white; color:#2b63c6; border: 2px solid white; border-radius: 15px;">{{ $year }}年 {{ $month }}月 {{ $day }}日 火曜日</p>
         </div>
-        <div class="col-xs-1 overlay-btn1">
-          <i class="fa fa-refresh fa-3x blackiconcolor overlay-btn1 shadow" aria-hidden="true"></i>
+        <!-- <div class="col-xs-1 overlay-btn1">
+          <i class="fa fa-refresh fa-3x blackiconcolor overlay-btn1 shadow sticky-top" aria-hidden="true"></i>
           <p class="nopadding overlay-text3 text-center" style="font-size: 60%;color:#2b63c6">データ</p>
           <p class="nopadding overlay-text3 text-center" style="font-size: 60%;color:#2b63c6">更新</p>
+        </div> -->
+      </div>
+    </div>
+    @if($today_data >= $get_m_user_daily_goal)
+    <a href="{{ url('/mypage') }}"><img class="myPageBtn" src="{{ asset('storage/padometerscreen/comp_mypgbtn.svg') }}" alt=""></a>
+    @else
+    <a href="{{ url('/mypage') }}"><img class="myPageBtn" src="{{ asset('storage/padometerscreen/mypgbtn.svg') }}" alt=""></a>
+    @endif
+    <a href="{{ url('/padometerscreen') }}"><img class="refBtn" src="{{ asset('storage/padometerscreen/refresh.svg') }}" alt=""></a>
+    <div class="container-fluid">
+      <div class="row">
+      <div class="col-6">
+      <div class="card">
+        <a href="#"><img class="card-img-top" src="{{ asset('storage/padometerscreen/rec.png') }}" alt="Card image cap"></a>
+      </div>
+      </div>
+      <div class="col-6">
+        <div class="card">
+          <a href="#"><img class="card-img-top" src="{{ asset('storage/padometerscreen/cal.png') }}" alt="Card image cap"></a>
         </div>
       </div>
-    </div>
-    <div class="container pt-2">
-      <div class="d-flex flex-row justify-content-around">
-          <img src="{{ asset('storage/padometerscreen/rec.png') }}" class="rounded" alt="">
-          <img src="{{ asset('storage/padometerscreen/cal.png') }}" class="rounded" alt="">
       </div>
     </div>
+    <div class="d-flex flex-row justify-content-around">
+      <!-- <p><img src="{{ asset('storage/padometerscreen/rec.png') }}" alt=""></p>
+      <p><img src="{{ asset('storage/padometerscreen/rec.png') }}" alt=""></p> -->
+    </div>
+    <!-- <div class="container-fluid pt-2 px-0 mx-0">
+      <div class="row px-0 mx-0">
+          <div class="col-5 px-0 mx-0">
+            <img src="{{ asset('storage/padometerscreen/rec.png') }}" alt="" style="object-fit: scale-down;">
+          </div>
+          <div class="col-5 px-0 mx-0">
+            <img src="{{ asset('storage/padometerscreen/cal.png') }}" alt="" style="object-fit: scale-down;">
+          </div>
+      </div>
+    </div> -->
     @if($today_data >= $get_m_user_daily_goal)
     <div class="container" style="background: url({{asset('storage/padometerscreen/complete01.png')}}); background-size: cover; background-position: center; background-repeat: no-repeat">
       <div class="container-fluid text-center pt-3">
@@ -346,7 +395,7 @@ z-index: 50
         <p class="mb-0" style="font-size:70%; color: #113A83">{{ $get_m_user_daily_goal*$get_m_user_stride/100000 }} (km)</p>
       </div>
     </div>
-    <div class="d-flex flex-row-reverse justify-content-start">
+    <!-- <div class="d-flex flex-row-reverse justify-content-start">
       <div class="d-none d-lg-block containerImg overlay-text4">
         <a href="{{ url('/mypage') }}" class="p-0" >
           <img class="" style="width: 40vh; height: 40vh" src="{{ asset('storage/padometerscreen/blue.png') }}" alt="">
@@ -362,26 +411,26 @@ z-index: 50
         <div class="centerText overlay-textImgXS" style="font-size: 80%">
         北部九州<br>東西縦断ツアー<br>参加中！
         </div>
-      </div>
+      </div> -->
       <!-- <a href="{{ url('/mypage') }}" >
         <button class="d-xs-block d-md-none overlay-btn2" style="font-size: 70%; border: 2px solid white; background: #113A83; color: white;
         width: 10vh; height: 10vh; border-radius: 50%; background-image: url({{ asset('storage/padometerscreen/blue.png') }}); background-size: cover;
         background-position: center; display: inline-block;" type="button" name="button">My Page</button>
       </a> -->
-      <div class="d-none d-md-block d-lg-none overlay-btn4 containerImg">
+      <!-- <div class="d-none d-md-block d-lg-none overlay-btn4 containerImg">
         <a href="{{ url('/mypage') }}" class="p-0" >
           <img class="" style="width: 20vh; height: 20vh" src="{{ asset('storage/padometerscreen/blue.png') }}" alt="">
         </a>
         <div class="centerText overlay-textImgMD" style="font-size: 100%">
         北部九州<br>東西縦断ツアー<br>参加中！
         </div>
-      </div>
+      </div> -->
       <!-- <a href="{{ url('/mypage') }}" >
         <button class="d-none d-md-block d-lg-none overlay-btn4" style="font-size: 70%; border: 2px solid white; background: #113A83; color: white;
         width: 10vh; height: 10vh; border-radius: 50%; background-image: url({{ asset('storage/padometerscreen/blue.png') }});" type="button" name="button">My Page</button>
       </a> -->
-      <p></p>
-    </div>
+      <!-- <p></p>
+    </div> -->
       </div>
     </div>
     @else
@@ -405,7 +454,7 @@ z-index: 50
         <p class="mb-0" style="font-size:70%; color:#113A83;">{{ $get_m_user_daily_goal*$get_m_user_stride/100000 }} (km)</p>
       </div>
     </div>
-    <div class="d-flex flex-row-reverse justify-content-start">
+    <!-- <div class="d-flex flex-row-reverse justify-content-start">
       <div class="d-none d-lg-block containerImg overlay-text4">
         <a href="{{ url('/mypage') }}" class="p-0" >
           <img class="" style="width: 40vh; height: 40vh" src="{{ asset('storage/padometerscreen/blue.png') }}" alt="">
@@ -421,26 +470,26 @@ z-index: 50
         <div class="centerText overlay-textImgXS" style="font-size: 80%">
         北部九州<br>東西縦断ツアー<br>参加中！
         </div>
-      </div>
+      </div> -->
       <!-- <a href="{{ url('/mypage') }}" >
         <button class="d-xs-block d-md-none overlay-btn2" style="font-size: 70%; border: 2px solid white; background: #113A83; color: white;
         width: 10vh; height: 10vh; border-radius: 50%; background-image: url({{ asset('storage/padometerscreen/blue.png') }}); background-size: cover;
         background-position: center; display: inline-block;" type="button" name="button">My Page</button>
       </a> -->
-      <div class="d-none d-md-block d-lg-none overlay-btn4 containerImg">
+      <!-- <div class="d-none d-md-block d-lg-none overlay-btn4 containerImg">
         <a href="{{ url('/mypage') }}" class="p-0" >
           <img class="" style="width: 20vh; height: 20vh" src="{{ asset('storage/padometerscreen/blue.png') }}" alt="">
         </a>
         <div class="centerText overlay-textImgMD" style="font-size: 100%">
         北部九州<br>東西縦断ツアー<br>参加中！
         </div>
-      </div>
+      </div> -->
       <!-- <a href="{{ url('/mypage') }}" >
         <button class="d-none d-md-block d-lg-none overlay-btn4" style="font-size: 70%; border: 2px solid white; background: #113A83; color: white;
         width: 10vh; height: 10vh; border-radius: 50%; background-image: url({{ asset('storage/padometerscreen/blue.png') }});" type="button" name="button">My Page</button>
       </a> -->
-      <p></p>
-    </div>
+      <!-- <p></p>
+    </div> -->
       </div>
     </div>
     @endif
@@ -462,7 +511,7 @@ z-index: 50
         </div>
       </div>
       <div class="container-fluid pt-3 w-75 d-md-none">
-        <p class="text-center" style="background: white; color:#ff9327; border: 2px solid #ff9327; border-radius: 15px;">今日までの累計 240,830歩 (158.95km)</p>
+        <p class="text-center" style="background: white; color:#ff9327; border: 2px solid #ff9327; border-radius: 15px;">今日までの累計 {{ $current_month_steps }}歩 ({{ $current_month_steps*$get_m_user_stride/100000 }} Km)</p>
       </div>
 
       <div class="container-fluid w-50 d-none d-md-block d-lg-none">
@@ -472,7 +521,7 @@ z-index: 50
         </div>
       </div>
       <div class="container-fluid pt-3 w-50 d-none d-md-block d-lg-none">
-        <p class="text-center" style="background: white; color:#ff9327; border: 2px solid #ff9327; border-radius: 15px;">今日までの累計 240,830歩 (158.95km)</p>
+        <p class="text-center" style="background: white; color:#ff9327; border: 2px solid #ff9327; border-radius: 15px;">今日までの累計 {{ $current_month_steps }}歩 ({{ $current_month_steps*$get_m_user_stride/100000 }} Km)</p>
       </div>
 
       <div class="container-fluid w-25 d-none d-lg-block">
