@@ -156,7 +156,7 @@
               <div class="col-6 p-0">
                 <!-- <input type="text" class="form-control d-inline-block" style="width: 100%; height:50%; font-size:70%" id="inlineFormInputName2" placeholder="Gender"> -->
                 <div class="d-flex flex-row-reverse p-0 d-inline-block justify-content-center">
-                  <input type="number" name='dailygoal'  placeholder="Steps" class="form-control mx-0 my-0 d-inline-block" style="width: 100%; height:10%; font-size:70%" min="1000" max="181000" id="daily_stepsInput" onchange="estimateDailyDist()">
+                  <input type="number" name='dailygoal'  placeholder="Steps" class="form-control mx-0 my-0 d-inline-block" style="width: 100%; height:10%; font-size:70%" min="1001" max="181000" id="daily_stepsInput" onchange="estimateDailyDist()">
                 </div>
               </div>
               <div class="col-6 p-0 pl-1 text-align-right">
