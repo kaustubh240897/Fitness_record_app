@@ -22,6 +22,7 @@ class CreateTToursTable extends Migration
             $table->dateTime('start_datetime', 0)->nullable();
             $table->dateTime('end_datetime', 0)->nullable();
             $table->dateTime('cancellation_datetime', 0)->nullable();
+            $table->boolean('direction')->default(0);
             $table->enum('status', ['Inprogress', 'Cancel', 'Done']);
             $table->timestamps();
         });

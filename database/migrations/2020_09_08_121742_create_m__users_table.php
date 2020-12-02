@@ -19,6 +19,13 @@ class CreateMUsersTable extends Migration
             $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('serial_number', 255)->unique();
             $table->smallInteger('stride');
+            $table->integer('step_monday');
+            $table->integer('step_tuesday');
+            $table->integer('step_wednesday');
+            $table->integer('step_thursday');
+            $table->integer('step_friday');
+            $table->integer('step_saturday');
+            $table->integer('step_sunday');
             $table->integer('step_goal_per_day');
             $table->integer('step_goals_per_month');
             $table->smallInteger('tour_level')->default(1);
