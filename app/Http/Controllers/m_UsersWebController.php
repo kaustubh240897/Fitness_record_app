@@ -254,6 +254,9 @@ class m_UsersWebController extends Controller
         }
         else{
             $today_data = null;
+            $day = date('d');
+            $month = date('m');
+            $year = date('Y');
             $get_m_user_stride = null;
             $get_m_user_daily_goal = null;
             $get_m_user_monthly_goal = null;
