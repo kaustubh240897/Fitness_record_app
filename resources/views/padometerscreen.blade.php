@@ -306,7 +306,7 @@ z-index: 50
 }
 .refBtn {
   position: fixed;
-  top: 9%;
+  top: 10%;
   right: 0;
   z-index: 10;
 }
@@ -319,6 +319,44 @@ z-index: 50
 .card.card-img-top {
   padding: none !important;
   margin: none !important;
+}
+@media only screen and (max-height: 667px) {
+  .refBtn {
+    position: fixed;
+    top: 11.5%;
+    right: 0;
+    z-index: 10;
+  }
+}
+@media only screen and (min-device-width: 360px) and (max-device-width: 420px) and (orientation: landscape) {
+/* CSS */
+.refBtn {
+  position: fixed;
+  top: 21.5%;
+  right: 0;
+  z-index: 10;
+}
+}
+* iPad Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+/* CSS */
+.refBtn {
+  position: fixed;
+  top: 0%;
+  right: 0;
+  z-index: 10;
+}
+}
+
+/* iPad Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+/* CSS */
+.refBtn {
+  position: fixed;
+  top: 8%;
+  right: 0;
+  z-index: 10;
+}
 }
 </style>
 
@@ -338,12 +376,16 @@ z-index: 50
       </div>
     </div>
     @if($today_data >= $get_m_user_daily_goal)
-    <a href="{{ url('/mypage') }}"><img class="myPageBtn" src="{{ asset('storage/padometerscreen/comp_mypgbtn.svg') }}" alt=""></a>
+    <a href="{{ url('/mypage') }}"><img style="border-radius: 50%" class="myPageBtn mr-2" src="{{ asset('storage/padometerscreen/comp_mypgbtn.png') }}" alt=""></a>
     @else
-    <a href="{{ url('/mypage') }}"><img class="myPageBtn" src="{{ asset('storage/padometerscreen/mypgbtn.svg') }}" alt=""></a>
+    <a href="{{ url('/mypage') }}"><img style="border-radius: 50%" class="myPageBtn mr-2" src="{{ asset('storage/padometerscreen/mypgbtn.png') }}" alt=""></a>
     @endif
-    <a href="{{ url('/padometerscreen') }}"><img class="refBtn" src="{{ asset('storage/padometerscreen/refresh.svg') }}" alt=""></a>
-    <div class="container-fluid">
+    <a href="{{ url('/padometerscreen') }}"><img style="border-radius: 50%" class="refBtn d-block d-sm-none mt-2 mr-2" src="{{ asset('storage/padometerscreen/ref.png') }}" alt=""></a>
+    <a href="{{ url('/padometerscreen') }}"><img style="border-radius: 50%" class="refBtn d-none d-sm-block d-md-none mt-2 mr-2" src="{{ asset('storage/padometerscreen/ref.png') }}" alt=""></a>
+    <a href="{{ url('/padometerscreen') }}"><img style="border-radius: 50%" class="refBtn d-none d-md-block d-lg-none mr-2" src="{{ asset('storage/padometerscreen/ref.png') }}" alt=""></a>
+    <a href="{{ url('/padometerscreen') }}"><img style="border-radius: 50%" class="refBtn d-none d-lg-block d-xl-none mt-4 mr-2" src="{{ asset('storage/padometerscreen/ref.png') }}" alt=""></a>
+    <a href="{{ url('/padometerscreen') }}"><img style="border-radius: 50%" class="refBtn d-none d-xl-block mt-5 mr-2" src="{{ asset('storage/padometerscreen/ref.png') }}" alt=""></a>
+    <div class="container-fluid pt-3">
       <div class="row">
       <div class="col-6">
       <div class="card">
