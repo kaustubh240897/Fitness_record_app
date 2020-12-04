@@ -28,7 +28,8 @@ class CustomAuthController extends Controller
 
     }
      public function showLoginForm(){
-        return view('custom.login');
+        $serialnumber = 123;
+        return view('custom.login', compact('serialnumber'));
     }
     
     public function Login(Request $request){
@@ -87,6 +88,12 @@ class CustomAuthController extends Controller
     public function logout(Request $request) {
         $cookie = \Cookie::forget('serialnumber');
         Auth::logout();
-        return redirect('/custom-login')->withCookie($cookie);
+        return redirect('/logged-out')->withCookie($cookie);
     }
+
+    public function thankpage(Request $request){
+        return view('thank');
+    }
+
+
 }
