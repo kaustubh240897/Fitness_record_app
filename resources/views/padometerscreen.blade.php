@@ -221,14 +221,14 @@ z-index: 50
 }
 .overlay-tri {
 align-self: flex-start;
-transform: translateY(-70%);
+transform: translateY(-40%);
 z-index: 0;
 margin-bottom: -2000px;
 }
 .overlay-tri2 {
 align-self: flex-start;
-transform: translateY(-30%);
-z-index: 0;
+transform: translateY(-20%);
+z-index: -1000 !important;
 }
 .overlay-pado {
 align-self: flex-start;
@@ -297,7 +297,7 @@ z-index: 50
 }
 .overlay-text5 {
 align-self: flex-start;
-transform: translateY(120%);
+transform: translateY(0%);
 z-index: 50;
 margin-bottom: -30px;
 }
@@ -361,6 +361,7 @@ margin-bottom: -30px;
   z-index: 10;
 }
 }
+
 </style>
 
 @if ( empty($m__users_id))
@@ -584,13 +585,13 @@ margin-bottom: -30px;
       <div class="container-fluid pt-3 w-25 d-none d-lg-block">
         <p class="text-center" style="background: white; color:#ff9327; border: 2px solid #ff9327; border-radius: 15px;">今日までの累計 {{ $current_month_steps }}歩 ({{ $current_month_steps*$get_m_user_stride/100000 }} Km)</p>
       </div>
-      <div class="container-fluid">
-        <p class="text-center" > <img src="{{asset('storage/padometerscreen/star.png')}}" alt=""> </p>
+      <div class="container-fluid" style="z-index: 2000 !important;">
+        <p style="z-index: 2000 !important;" class="text-center" > <img style="z-index: 2000 !important;" src="{{asset('storage/padometerscreen/star.png')}}" alt=""> </p>
       </div>
 
             <div class="container-fluid overlay-tri2">
               <div class="d-flex flex-row justify-content-center">
-                  <div id="triangle_graph" class=""></div>
+                  <div style="z-index: -1000 !important;" id="triangle_graph" class=""></div>
               </div>
               <div class="container-fluid pt-3 w-25 d-none d-lg-block">
                 <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $current_month_steps }}歩 ({{ $current_month_steps*$get_m_user_stride/100000 }} Km)</p>
@@ -601,6 +602,15 @@ margin-bottom: -30px;
               <div class="container-fluid pt-3 d-md-none">
                 <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $current_month_steps }}歩 ({{ $current_month_steps*$get_m_user_stride/100000 }} Km)</p>
               </div>
+              @if(!empty($get_t_tour))
+              <div class="row d-flex" style="background-color: #fff; margin-right: 0px !important; margin-left: 0px !important; padding: 0 !important">
+                <img class="" style="width: calc(100% + 60px); margin-left: -30px; margin-right: -30px;" src="{{ asset('storage/padometerscreen/blue_bottom.png') }}" alt="" >
+              </div>
+              @else
+              <div class="row d-flex" style="background-color: #fff; margin-right: 0px !important; margin-left: 0px !important; padding: 0 !important">
+                <img class="" style="width: calc(100% + 60px); margin-left: -30px; margin-right: -30px;" src="{{ asset('storage/padometerscreen/yellow_bottom.png') }}" alt="" >
+              </div>
+              @endif
               </div>
     </div>
     @else
@@ -698,9 +708,25 @@ margin-bottom: -30px;
               <div class="container-fluid pt-3 d-md-none">
                 <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $get_m_user_monthly_goal }}歩 ({{ $get_m_user_monthly_goal*$get_m_user_stride/100000 }} Km)</p>
               </div>
+
+              <!-- <div class="row" style="margin: 0 !important;">
+                <div class="col-12" style="margin: 0 !important;">
+                  <img class="" style="margin-left: -15px !important;" src="{{ asset('storage/padometerscreen/blue_bottom.png') }}" alt="" >
+                </div>
+              </div> -->
+              @if(!empty($get_t_tour))
+              <div class="row d-flex" style="background-color: #fff; margin-right: 0px !important; margin-left: 0px !important; padding: 0 !important">
+                <img class="" style="width: calc(100% + 60px); margin-left: -30px; margin-right: -30px;" src="{{ asset('storage/padometerscreen/blue_bottom.png') }}" alt="" >
+              </div>
+              @else
+              <div class="row d-flex" style="background-color: #fff; margin-right: 0px !important; margin-left: 0px !important; padding: 0 !important">
+                <img class="" style="width: calc(100% + 60px); margin-left: -30px; margin-right: -30px;" src="{{ asset('storage/padometerscreen/yellow_bottom.png') }}" alt="" >
+              </div>
+              @endif
               </div>
     </div>
     @endif
+
           <script id="tri" type="text/javascript">
           var cnv;
             function setup() {
