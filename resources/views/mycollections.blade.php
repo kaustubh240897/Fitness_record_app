@@ -56,7 +56,7 @@
   @foreach($get_t_collections as $get_t_collection)
   @if($get_t_collection->m_collections->collection_category == 'tour')
      <tr class="collectionsRow">
-      <td style="font-size:70%">{{ $get_t_collection->m_collections->collection_category }}</td>
+      <td style="font-size:70%">{{ $get_t_collection->m_collections->collection_category }}  tour {{ $get_t_collection->m_collections->m__tours->id }} </td>
       <td style="font-size:70%"><a href="{{ route('collectiondetails', $get_t_collection->m_collections->id) }}">{{ $get_t_collection->m_collections->collection_title }} </a></td>
       <td style="font-size:70%"> {{ $get_t_collection->created_at }} </td>
       <td style="font-size:70%"> {{ $counter[$loop->iteration-1] }}<span class="fa fa-star checked"></span></td>
@@ -65,7 +65,7 @@
 
   @else
      <tr class="collectionsRow">
-      <td style="font-size:70%">{{ $get_t_collection->m_collections->collection_category }}</td>
+      <td style="font-size:70%">{{ $get_t_collection->m_collections->collection_category }} tour {{ $get_t_collection->m_collections->m__checkpoints->m__tour_id }}</td>
       <td style="font-size:70%"><a href="{{ route('collectiondetails', $get_t_collection->m_collections->id) }}">{{ $get_t_collection->m_collections->collection_title }}</a></td>
       <td style="font-size:70%"> {{ $get_t_collection->created_at }} </td>
       <td style="font-size:70%"> {{ $counter[$loop->iteration-1] }}<span class="fa fa-star checked"></td>

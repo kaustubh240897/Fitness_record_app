@@ -1,6 +1,4 @@
-@extends('layouts.app')
 
-@section('content')
 @if (session('Status'))
 <div class="alert alert-success" role="alert">
    {{ session('Status') }}
@@ -115,12 +113,12 @@
                 @endif
                 @if( empty(Auth::id()) || empty(Auth::user()->name))
                 
-                <form style='display:none;' class='form-horizontal' action="{{ route('custom.login') }}" method='post'>
+                <form style='display:none;' class='form-horizontal' action="{{ route('custom.login',['serialnumber'=>$serial_number]) }}" method='post'>
                  {{ csrf_field() }}
                  
                     <div class="form-group">
                         <label for=""> Serial number </label>
-                        <input type='text' class='form-control'  placeholder='serial number' name='name' value="{{ $serialnumber }}">
+                        <input type='text' class='form-control'  placeholder='serial number' name='name' value="{{ $serial_number }}">
                     </div>
                     <div class="form-group">
                         <label style='display:none' for="exampleInputPassword1">Password</label>
@@ -151,4 +149,3 @@
     </script>
 </html>
 
-@endsection

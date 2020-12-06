@@ -44,7 +44,7 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('custom.login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('custom.manuallogin') }}">{{ __('Login') }}</a>
                             </li>
                            
                                 <li class="nav-item">
