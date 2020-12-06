@@ -191,7 +191,8 @@ margin-bottom: -10px;
 .overlay-text2 {
 align-self: flex-start;
 transform: translateY(50%);
-z-index: 50
+z-index: 50;
+margin-bottom: -500px;
 }
 .overlay-text3 {
 align-self: flex-start;
@@ -221,12 +222,13 @@ z-index: 50
 .overlay-tri {
 align-self: flex-start;
 transform: translateY(-70%);
-z-index: 50
+z-index: 0;
+margin-bottom: -2000px;
 }
 .overlay-tri2 {
 align-self: flex-start;
 transform: translateY(-30%);
-z-index: 100
+z-index: 0;
 }
 .overlay-pado {
 align-self: flex-start;
@@ -296,7 +298,8 @@ z-index: 50
 .overlay-text5 {
 align-self: flex-start;
 transform: translateY(120%);
-z-index: 50
+z-index: 50;
+margin-bottom: -30px;
 }
 .myPageBtn {
   position: fixed;
@@ -375,10 +378,16 @@ z-index: 50
         </div> -->
       </div>
     </div>
-    @if($today_data >= $get_m_user_daily_goal)
-    <a href="{{ url('/mypage') }}"><img style="border-radius: 50%" class="myPageBtn mr-2" src="{{ asset('storage/padometerscreen/comp_mypgbtn.png') }}" alt=""></a>
+    @if(empty($get_t_tour))
+    <!-- <a href="{{ url('/mypage') }}"><img style="border-radius: 50%" class="myPageBtn mr-2" src="{{ asset('storage/padometerscreen/comp_mypgtn.png') }}" alt=""></a> -->
+    <a href="{{ url('/createtour') }}"> <p class="myPageBtn mr-2 text-center pt-3 text-break px-2" style="color: #fff; font-size: 11px; font-weight: bold;width: 90px;height: 90px;border: solid 2px #ffffff; border-radius: 50% !important;
+    background: url({{asset('storage/padometerscreen/yellow.png')}}); background-size: fill; background-position: center; background-repeat: no-repeat">
+    ウォーキング <br> ツアーに <br> 参加しよう！ </p> </a>
     @else
-    <a href="{{ url('/mypage') }}"><img style="border-radius: 50%" class="myPageBtn mr-2" src="{{ asset('storage/padometerscreen/mypgbtn.png') }}" alt=""></a>
+    <!-- <a href="{{ url('/mypage') }}"><img style="border-radius: 50%" class="myPageBtn mr-2" src="{{ asset('storage/padometerscreen/mypgbtn.png') }}" alt=""></a> -->
+    <a href="{{ url('/mypage') }}"> <p class="myPageBtn mr-2 text-center pt-3 text-break px-2" style="color: #fff; font-size: 11px; font-weight: bold;width: 90px;height: 90px;border: solid 2px #ffffff; border-radius: 50% !important;
+    background: url({{asset('storage/padometerscreen/blue.png')}}); background-size: fill; background-position: center; background-repeat: no-repeat">
+    {{$get_t_tour->m_tours->tour_title}}<br> 参加中！ </p> </a>
     @endif
     <a href="{{ url('/padometerscreen') }}"><img style="border-radius: 50%" class="refBtn d-block d-sm-none mt-2 mr-2" src="{{ asset('storage/padometerscreen/ref.png') }}" alt=""></a>
     <a href="{{ url('/padometerscreen') }}"><img style="border-radius: 50%" class="refBtn d-none d-sm-block d-md-none mt-2 mr-2" src="{{ asset('storage/padometerscreen/ref.png') }}" alt=""></a>
@@ -623,7 +632,7 @@ z-index: 50
                 <p class="mb-0 mt-0 pt-0 font-weight-bold px-1 pl-sm-2 pl-md-3" style="background: white; font-size:70%; color:#2b63c6;; border: 1px solid #2b63c6;; border-radius: 15px;">あと {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
                 <div class="row justify-content-center">
                   <div class="col border-right border-primary">
-                    <p style="font-size:100%"><br><br><br></p>
+                    <p style="font-size:100%;"><br><br><br></p>
                   </div>
                   <div class="col">
 
