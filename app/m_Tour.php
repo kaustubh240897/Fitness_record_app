@@ -19,7 +19,7 @@ class m_Tour extends Model
     }
     public function m__collections()
     {
-        return $this->belongsTo(m_Collection::class);
+        return $this->belongsTo(m_Collection::class, 'm__collection_id');
     }
     protected $table = "m__tours";
      

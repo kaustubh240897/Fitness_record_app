@@ -33,6 +33,7 @@ Route::get('/createtour', 't_TourWebController@index')->name('index');
 Route::get('/createtour/{id}','t_TourWebController@show')->name('tourdetails');
 Route::post('/createtour/{id}', 't_TourWebController@store')->name('tourstore');
 Route::post('/createtour', 't_TourWebController@createtoursession')->name('createsession');
+Route::get('/bytourcollection', 't_CollectionWebController@byTour')->name('bytourcollection');
 Route::get('/mycollection', 't_CollectionWebController@index')->name('mycollection');
 Route::get('/reversemycollection', 't_CollectionWebController@reverseIndex')->name('reversemycollection');
 Route::get('/mycollection/{id}','t_CollectionWebController@show')->name('collectiondetails');

@@ -13,7 +13,7 @@ class m_Checkpoint extends Model
     }
      public function m_collections()
     {
-        return $this->belongsTo(m_Collection::class);
+        return $this->belongsTo(m_Collection::class, 'm__collection_id');
     }
 
 }

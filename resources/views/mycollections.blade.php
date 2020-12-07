@@ -29,7 +29,7 @@
          <a href="{{ url('/mypage') }}" >  <button type="button" class="btn blue mr-1 mb-1" style="font-size:70%">マイページへ戻る</button> </a>
         </div>
         <div class="col-xs-3">
-         <a href="{{ url('/createtour') }}" >  <button type="button" class="btn blue mr-1 mb-1" style="font-size:70%">ツアー別表示</button> </a>
+         <a href="{{ url('/bytourcollection') }}" >  <button type="button" class="btn blue mr-1 mb-1" style="font-size:70%">ツアー別表示</button> </a>
         </div>
         <div class="col-xs-3">
         <a href="{{ url('/reversemycollection') }}"> <button type="button" class="btn blue mr-1 mb-1" style="font-size:70%">取得の新しい順</button> </a>
