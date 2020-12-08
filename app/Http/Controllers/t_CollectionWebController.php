@@ -184,11 +184,13 @@ class t_CollectionWebController extends Controller
             $m__user_id = m_Users::where('users_id',Auth::id())->first()->id;
             $my_collections = t_Collection::where('m__users_id', $m__user_id)->where('m__collection_id', $id)->first();
             $count = t_Collection::where('m__users_id', $m__user_id)->where('m__collection_id', $id)->count();
-            if($my_collections->new_display_flag == 0){
-                          $t_collection = t_Collection::find($my_collections->id);
-                          $t_collection->new_display_flag = 1;
-                          $t_collection->save();
-            }
+            if(! empty($my_collections)){
+                if($my_collections->new_display_flag == 0){
+                            $t_collection = t_Collection::find($my_collections->id);
+                            $t_collection->new_display_flag = 1;
+                            $t_collection->save();
+                }
+        }
             return view('mycollectionsdetails', compact('my_collections','count'));
         }
         else{

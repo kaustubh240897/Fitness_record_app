@@ -52,7 +52,7 @@
                     </div>
                 </form>
                 @else
-                <h5> You are already logged in! </h5>
+                <h5> Serialnumber {{ Auth::user()->name }},  You are already logged in! </h5>
                 
 
                 <form class='form-horizontal' action="{{ route('logout') }}" method='post'>
