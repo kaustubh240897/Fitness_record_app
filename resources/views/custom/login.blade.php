@@ -111,8 +111,7 @@
                         <p class='alert alert-danger'>{{ $error }} </p>
                     @endforeach
                 @endif
-                @if( empty(Auth::id()) || empty(Auth::user()->name))
-                
+                              
                 <form style='display:none;' class='form-horizontal' action="{{ route('custom.login',['serialnumber'=>$serial_number]) }}" method='post'>
                  {{ csrf_field() }}
                  
@@ -135,9 +134,7 @@
                         </div>
                     </div>
                 </form>
-                @else
-                <h5> You are already logged in! </h5>
-                @endif
+               
             </div>
         </div>
     </div>

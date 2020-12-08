@@ -97,7 +97,7 @@
                 </div>
               </div>
               <div class="col-3 p-0 pl-1">
-                <input type="number" class="form-control d-inline-block" name='inputheight' value="{{ round($m_users->stride * 2.5) }}" style="width: 100%; height:50%; font-size:50%" id="heightinput" min='112' max='212' placeholder="Height in cm">
+                <input type="number" class="form-control d-inline-block" name='inputheight' value="{{ round($m_users->stride * 2.5) }}" style="width: 100%; height:50%; font-size:50%" id="heightinput" min='112' max='213' placeholder="Height in cm">
               </div>
               <div class="col-3 p-0 pl-1">
                 <button type="button" class="btn blue cal" style="width: 100%; height:50%; font-size:70%" onclick="calculateStride()">計算する</button>

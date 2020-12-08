@@ -53,6 +53,16 @@
                 </form>
                 @else
                 <h5> You are already logged in! </h5>
+                
+
+                <form class='form-horizontal' action="{{ route('logout') }}" method='post'>
+                 {{ csrf_field() }}
+                <div class="form-group row">
+                        <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary">Logout</button>
+                        </div>
+                    </div>
+                </form>
                 @endif
             </div>
         </div>

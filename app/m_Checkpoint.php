@@ -9,7 +9,7 @@ class m_Checkpoint extends Model
 {
     public function tours()
     {
-        return $this->belongsTo(m_Tour::class);
+        return $this->belongsTo(m_Tour::class, 'm__tour_id');
     }
      public function m_collections()
     {

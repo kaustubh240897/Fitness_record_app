@@ -305,14 +305,14 @@ class m_UsersWebController extends Controller
         if($request->gridRadios == '3'){
 
             $this->validate($request,[
-            'inputheight'=> 'required|gt:112|lt:212',
+            'inputheight'=> 'required|gt:111|lt:214',
             
             ]);
             }
         if($request->gridRadios == '4'){
 
             $this->validate($request,[
-            'stridelength'=> 'required|gt:45|lt:85',
+            'stridelength'=> 'required|gt:44|lt:86',
             
             ]);
             }
@@ -325,7 +325,7 @@ class m_UsersWebController extends Controller
         if($request->radio_daily == '6'){
 
             $this->validate($request,[
-            'dailydistance'=> 'required|gt:1|lt:100',
+            'dailydistance'=> 'required|gt:0|lt:101',
             ]);
             }
         if($request->radio_monthly == '7'){
@@ -337,7 +337,7 @@ class m_UsersWebController extends Controller
         if($request->radio_daily == '8'){
 
             $this->validate($request,[
-            'monthlydistance'=> 'required|gt:10|lt:1000',
+            'monthlydistance'=> 'required|gt:9|lt:1001',
             ]);
             }
         
@@ -432,14 +432,14 @@ class m_UsersWebController extends Controller
         if($request->gridRadios == '3'){
 
             $this->validate($request,[
-            'inputheight'=> 'required|gt:112|lt:212',
+            'inputheight'=> 'required|gt:111|lt:214',
         
            ]);
         }
         if($request->gridRadios == '4'){
 
             $this->validate($request,[
-            'stridelength'=> 'required|gt:45|lt:85',
+            'stridelength'=> 'required|gt:44|lt:86',
             
             ]);
             }
@@ -452,7 +452,7 @@ class m_UsersWebController extends Controller
         if($request->radio_daily == '6'){
 
             $this->validate($request,[
-            'dailydistance'=> 'required|gt:1|lt:100',
+            'dailydistance'=> 'required|gt:0|lt:101',
             ]);
             }
         if($request->radio_monthly == '7'){
@@ -464,7 +464,7 @@ class m_UsersWebController extends Controller
         if($request->radio_daily == '8'){
 
             $this->validate($request,[
-            'monthlydistance'=> 'required|gt:10|lt:1000',
+            'monthlydistance'=> 'required|gt:9|lt:1001',
             ]);
             }
 
