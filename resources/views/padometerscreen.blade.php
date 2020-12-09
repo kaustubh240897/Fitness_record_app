@@ -381,12 +381,12 @@ margin-bottom: -30px;
     </div>
     @if(empty($get_t_tour))
     <!-- <a href="{{ url('/mypage') }}"><img style="border-radius: 50%" class="myPageBtn mr-2" src="{{ asset('storage/padometerscreen/comp_mypgtn.png') }}" alt=""></a> -->
-    <a href="{{ url('/createtour') }}"> <p class="myPageBtn mr-2 text-center pt-3 text-break px-2" style="color: #fff; font-size: 11px; font-weight: bold;width: 90px;height: 90px;border: solid 2px #ffffff; border-radius: 50% !important;
+    <a href="{{ url('/createtour') }}"> <p id="btnMyPage" value="" onclick="mypage.performClick(this.value)" class="myPageBtn mr-2 text-center pt-3 text-break px-2" style="color: #fff; font-size: 11px; font-weight: bold;width: 90px;height: 90px;border: solid 2px #ffffff; border-radius: 50% !important;
     background: url({{asset('storage/padometerscreen/yellow.png')}}); background-size: fill; background-position: center; background-repeat: no-repeat">
     ウォーキング <br> ツアーに <br> 参加しよう！ </p> </a>
     @else
     <!-- <a href="{{ url('/mypage') }}"><img style="border-radius: 50%" class="myPageBtn mr-2" src="{{ asset('storage/padometerscreen/mypgbtn.png') }}" alt=""></a> -->
-    <a href="{{ url('/mypage') }}"> <p class="myPageBtn mr-2 text-center pt-3 text-break px-2" style="color: #fff; font-size: 11px; font-weight: bold;width: 90px;height: 90px;border: solid 2px #ffffff; border-radius: 50% !important;
+    <a href="{{ url('/mypage') }}"> <p id="btnMyPage2" value="" onclick="mypage.performClick(this.value)" class="myPageBtn mr-2 text-center pt-3 text-break px-2" style="color: #fff; font-size: 11px; font-weight: bold;width: 90px;height: 90px;border: solid 2px #ffffff; border-radius: 50% !important;
     background: url({{asset('storage/padometerscreen/blue.png')}}); background-size: fill; background-position: center; background-repeat: no-repeat">
     {{$get_t_tour->m_tours->tour_title}}<br> 参加中！ </p> </a>
     @endif
