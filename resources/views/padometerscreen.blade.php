@@ -768,6 +768,10 @@ margin-bottom: -30px;
 
   <script type="text/javascript">
   var dev = {{ $device }};
+  var motion_app = {{ $m__users->motion_app }};
+  var motion_web = {{ $m__users->motion_web}};
+  console.log(motion_app);
+  console.log(motion_web);
   var animation_time = 0;
   if (dev == 111) {
     animation_time = 3000;
