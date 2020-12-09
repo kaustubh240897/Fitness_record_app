@@ -142,13 +142,13 @@ class m_UsersWebController extends Controller
                 return Carbon::parse($val->step_actual_datetime)->format('d');
             });
             if (Browser::isMobile()) {
-                $device = 'mobile';
+                $device = 111;
             }
             elseif(Browser::isTablet()){
-                $device = 'mobile';
+                $device = 111;
             }
             else{
-                $device = 'desktop'; 
+                $device = 222; 
             }
             $get_m_user_stride = $m__users->stride;
             $get_m_user_daily_goal = $m__users->step_goal_per_day;
@@ -202,13 +202,13 @@ class m_UsersWebController extends Controller
             $m__users = null;
             $get_t_tour = null;
             if (Browser::isMobile()) {
-                $device = 'mobile';
+                $device = 111;
             }
             elseif(Browser::isTablet()){
-                $device = 'mobile';
+                $device = 111;
             }
             else{
-                $device = 'desktop';
+                $device = 222;
             }
             $steps = null;
             $session_value = false;
@@ -231,13 +231,13 @@ class m_UsersWebController extends Controller
             $month = date('m');
             $year = date('Y');
             if (Browser::isMobile()) {
-                $device = 'mobile';
+                $device = 111;
             }
             elseif(Browser::isTablet()){
-                $device = 'mobile';
+                $device = 111;
             }
             else{
-                $device = 'desktop';
+                $device = 222;
             }
             $m__users = m_Users::where('users_id',Auth::id())->first();
             $m__users_id = $m__users->id;
@@ -289,13 +289,13 @@ class m_UsersWebController extends Controller
             $month = date('m');
             $year = date('Y');
             if (Browser::isMobile()) {
-                $device = 'mobile';
+                $device = 111;
             }
             elseif(Browser::isTablet()){
-                $device = 'mobile';
+                $device = 111;
             }
             else{
-                $device = 'desktop';
+                $device = 222;
             }
             $m__users = null;
             $get_m_user_stride = null;
