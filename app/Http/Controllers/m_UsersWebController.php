@@ -51,7 +51,7 @@ class m_UsersWebController extends Controller
             });
             $get_m_user_stride = m_Users::where('users_id', Auth::id())->first()->stride;
             $get_m_user_daily_goal = m_Users::where('users_id', Auth::id())->first()->step_goal_per_day;
-            
+
             return view('userhistory', compact('current_week_datas','get_m_user_stride','get_m_user_daily_goal'));
             }
         else{
@@ -148,7 +148,7 @@ class m_UsersWebController extends Controller
                 $device = 111;
             }
             else{
-                $device = 222; 
+                $device = 222;
             }
             $get_m_user_stride = $m__users->stride;
             $get_m_user_daily_goal = $m__users->step_goal_per_day;
@@ -175,7 +175,7 @@ class m_UsersWebController extends Controller
                     $checkpoints = null;
                     $checkpointsr = null;
                     }
-                
+
                 if($get_t_tour !=null){
                     $steps = t_Steps::where('m__users_id',$m__users_id)->where('step_actual_datetime', '>=', $step_start_datetime)->get()->sum('steps');
                 }
@@ -188,11 +188,11 @@ class m_UsersWebController extends Controller
                 $checkpoints = null;
                 $checkpointsr = null;
                 $total = 0;
-                
+
 
             }
-    
-            return view('myPage', compact('device','today_data','m__users','m__users_id','get_m_user_monthly_goal','current_month_steps','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','session_value','checkpoints','checkpointsr','total','current_week_datas'));
+
+            return view('myPage', compact('device','today_data','m__users_id','get_m_user_monthly_goal','current_month_steps','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','session_value','checkpoints','checkpointsr','total','current_week_datas'));
         }
         else{
             $today_data = null;
@@ -265,8 +265,8 @@ class m_UsersWebController extends Controller
                             }
                     }
                 }
-               
-                
+
+
                 if($get_t_tour !=null){
                     $steps = t_Steps::where('m__users_id',$m__users_id)->where('step_actual_datetime', '>=', $step_start_datetime)->get()->sum('steps');
                 }
@@ -279,9 +279,9 @@ class m_UsersWebController extends Controller
                 $total = 0;
 
             }
-            
-    
-            return view('padometerscreen', compact('year', 'day', 'month','device','m__users','today_data','m__users_id','current_month_steps','get_m_user_monthly_goal','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','total','current_week_datas'));
+
+
+            return view('padometerscreen', compact('year', 'day', 'month','device','today_data','m__users_id','current_month_steps','get_m_user_monthly_goal','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','total','current_week_datas'));
         }
         else{
             $today_data = null;
@@ -347,14 +347,14 @@ class m_UsersWebController extends Controller
 
             $this->validate($request,[
             'inputheight'=> 'required|gt:111|lt:214',
-            
+
             ]);
             }
         if($request->gridRadios == '4'){
 
             $this->validate($request,[
             'stridelength'=> 'required|gt:44|lt:86',
-            
+
             ]);
             }
         if($request->radio_daily == '5'){
@@ -381,8 +381,8 @@ class m_UsersWebController extends Controller
             'monthlydistance'=> 'required|gt:9|lt:1001',
             ]);
             }
-        
-        
+
+
         if(!m_Users::where('users_id',Auth::id())->exists())
         {
 
@@ -427,7 +427,7 @@ class m_UsersWebController extends Controller
         else{
             return redirect(route('create'))->with('dangerMsg','your info already Successfully added, If you want to edit the details please click on edit.');
 
-        } 
+        }
 }
 
     /**
@@ -474,14 +474,14 @@ class m_UsersWebController extends Controller
 
             $this->validate($request,[
             'inputheight'=> 'required|gt:111|lt:214',
-        
+
            ]);
         }
         if($request->gridRadios == '4'){
 
             $this->validate($request,[
             'stridelength'=> 'required|gt:44|lt:86',
-            
+
             ]);
             }
         if($request->radio_daily == '5'){
@@ -561,7 +561,7 @@ class m_UsersWebController extends Controller
         else{
             return redirect(route('create'))->with('dangerMsg','your are sending invalid data');
         }
-    
+
     }
 
     public function showProfileDetails($id)
