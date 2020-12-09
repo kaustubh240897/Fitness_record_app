@@ -281,7 +281,7 @@ class m_UsersWebController extends Controller
             }
 
 
-            return view('padometerscreen', compact('year', 'day', 'month','device','today_data','m__users_id','current_month_steps','get_m_user_monthly_goal','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','total','current_week_datas'));
+            return view('padometerscreen', compact('year', 'day', 'month','device','m__users','today_data','m__users_id','current_month_steps','get_m_user_monthly_goal','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','total','current_week_datas'));
         }
         else{
             $today_data = null;
