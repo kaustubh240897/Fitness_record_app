@@ -767,19 +767,26 @@ margin-bottom: -30px;
           </script>
 
   <script type="text/javascript">
+  var dev = {{ $device }};
+  var animation_time = 0;
+  if (dev == 111) {
+    animation_time = 3000;
+  } else if (dev == 222) {
+    animation_time = 3000;
+  }
   console.log("todayData" + {{$today_data}});
   var comp, rem;
-  if({{ $today_data }} > 0){
+  if({{ $today_data }} > 0) {
       comp = {{ $today_data*$get_m_user_stride/100000 }};
-      if({{ $today_data*$get_m_user_stride/100000 }} > {{ $get_m_user_daily_goal*$get_m_user_stride/100000 }})
-      { rem = 0;
+      if({{ $today_data*$get_m_user_stride/100000 }} > {{ $get_m_user_daily_goal*$get_m_user_stride/100000 }}) {
+        rem = 0;
       }
-      else{
-      rem =  {{ ($get_m_user_daily_goal*$get_m_user_stride/100000)-($today_data*$get_m_user_stride/100000) }};
+      else {
+        rem =  {{ ($get_m_user_daily_goal*$get_m_user_stride/100000)-($today_data*$get_m_user_stride/100000) }};
       }
   }
   else{
-      comp = 0;
+      comp = 10000;
       rem = {{ $get_m_user_monthly_goal }};
   }
 var data = {
@@ -805,7 +812,14 @@ options: {
   legend: {
     display: false
   },
-  cutoutPercentage: 85
+  cutoutPercentage: 85,
+  animation: {
+    duration: animation_time, // general animation time
+  },
+  hover: {
+    animationDuration: animation_time/3, // duration of animations when hovering an item
+  },
+  responsiveAnimationDuration: 0, // animation duration after a resize
 }
 });
 if ({{$today_data}} >= {{$get_m_user_daily_goal}}) {
@@ -995,7 +1009,14 @@ var chart = new Chart(ctx, {
     },
     legend: {
         display: false
-    }
+    },
+    animation: {
+      duration: animation_time, // general animation time
+    },
+    hover: {
+      animationDuration: animation_time/3, // duration of animations when hovering an item
+    },
+    responsiveAnimationDuration: 0, // animation duration after a resize
  },
  plugins: [{
       beforeInit: function(chart) {
