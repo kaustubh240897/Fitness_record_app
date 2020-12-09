@@ -436,8 +436,8 @@ margin-bottom: -30px;
       <div class="container-fluid text-center">
         <img src="{{asset('storage/padometerscreen/star.png')}}" alt="">
       </div>
-      <div class="container-fluid pt-3">
-    <div class="relative w-100 h-50" style="background: url({{asset('storage/padometerscreen/graphcomp.png')}}); background-size: 50% 100%; background-position: center; background-repeat: no-repeat">
+    <div id="bg_season1" class="container-fluid pt-3" style="background-size: 100% 80%; background-position: right 100%;; background-repeat: no-repeat">
+    <div class="relative w-100 h-50" style="background: url({{asset('storage/padometerscreen/graphcomp.png')}}); background-position: center; background-repeat: no-repeat">
       <canvas id="myChart"></canvas>
       <div class="absolute-center text-center">
         <p class="mb-0 p-0" style="font-size:70%; color:#ff9327;"> {{ ($today_data)*$get_m_user_stride/100000 }} km</p>
@@ -447,43 +447,7 @@ margin-bottom: -30px;
         <p class="mb-0" style="font-size:70%; color: #113A83">{{ $get_m_user_daily_goal*$get_m_user_stride/100000 }} (km)</p>
       </div>
     </div>
-    <!-- <div class="d-flex flex-row-reverse justify-content-start">
-      <div class="d-none d-lg-block containerImg overlay-text4">
-        <a href="{{ url('/mypage') }}" class="p-0" >
-          <img class="" style="width: 40vh; height: 40vh" src="{{ asset('storage/padometerscreen/blue.png') }}" alt="">
-        </a>
-        <div class="centerText overlay-textImg">
-        北部九州<br>東西縦断ツアー<br>参加中！
-        </div>
-      </div>
-      <div class="d-xs-block d-md-none containerImg overlay-btn2">
-        <a href="{{ url('/mypage') }}" class="p-0" >
-          <img class="" style="width: 15vh; height: 15vh" src="{{ asset('storage/padometerscreen/blue.png') }}" alt="">
-        </a>
-        <div class="centerText overlay-textImgXS" style="font-size: 80%">
-        北部九州<br>東西縦断ツアー<br>参加中！
-        </div>
-      </div> -->
-      <!-- <a href="{{ url('/mypage') }}" >
-        <button class="d-xs-block d-md-none overlay-btn2" style="font-size: 70%; border: 2px solid white; background: #113A83; color: white;
-        width: 10vh; height: 10vh; border-radius: 50%; background-image: url({{ asset('storage/padometerscreen/blue.png') }}); background-size: cover;
-        background-position: center; display: inline-block;" type="button" name="button">My Page</button>
-      </a> -->
-      <!-- <div class="d-none d-md-block d-lg-none overlay-btn4 containerImg">
-        <a href="{{ url('/mypage') }}" class="p-0" >
-          <img class="" style="width: 20vh; height: 20vh" src="{{ asset('storage/padometerscreen/blue.png') }}" alt="">
-        </a>
-        <div class="centerText overlay-textImgMD" style="font-size: 100%">
-        北部九州<br>東西縦断ツアー<br>参加中！
-        </div>
-      </div> -->
-      <!-- <a href="{{ url('/mypage') }}" >
-        <button class="d-none d-md-block d-lg-none overlay-btn4" style="font-size: 70%; border: 2px solid white; background: #113A83; color: white;
-        width: 10vh; height: 10vh; border-radius: 50%; background-image: url({{ asset('storage/padometerscreen/blue.png') }});" type="button" name="button">My Page</button>
-      </a> -->
-      <!-- <p></p>
-    </div> -->
-      </div>
+    </div>
     </div>
     @else
     <div class="container">
@@ -495,8 +459,8 @@ margin-bottom: -30px;
           <p class="mb-0 font-weight-bold" style="font-size:90%; color:#113A83;">あと {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} で目標達成！</p>
         </div>
       </div>
-      <div class="container-fluid pt-3">
-    <div class="relative w-100 h-50" style="background: url({{asset('storage/padometerscreen/graph.png')}}); background-size: 50% 100%; background-position: center; background-repeat: no-repeat">
+    <div id="bg_season2" class="container-fluid pt-3 pb-3" style="background-size: 100% 80%; background-position: right 100%;; background-repeat: no-repeat">
+    <div class="relative w-100 h-50" style="background: url({{asset('storage/padometerscreen/graph.png')}}); background-size: 52% 104%; background-position: center; background-repeat: no-repeat">
       <canvas id="myChart"></canvas>
       <div class="absolute-center text-center">
         <p class="mb-0 p-0" style="font-size:70%; color:#2b63c6;"> {{ ($today_data)*$get_m_user_stride/100000 }} km</p>
@@ -506,43 +470,7 @@ margin-bottom: -30px;
         <p class="mb-0" style="font-size:70%; color:#113A83;">{{ $get_m_user_daily_goal*$get_m_user_stride/100000 }} (km)</p>
       </div>
     </div>
-    <!-- <div class="d-flex flex-row-reverse justify-content-start">
-      <div class="d-none d-lg-block containerImg overlay-text4">
-        <a href="{{ url('/mypage') }}" class="p-0" >
-          <img class="" style="width: 40vh; height: 40vh" src="{{ asset('storage/padometerscreen/blue.png') }}" alt="">
-        </a>
-        <div class="centerText overlay-textImg">
-        北部九州<br>東西縦断ツアー<br>参加中！
-        </div>
-      </div>
-      <div class="d-xs-block d-md-none containerImg overlay-btn2">
-        <a href="{{ url('/mypage') }}" class="p-0" >
-          <img class="" style="width: 15vh; height: 15vh" src="{{ asset('storage/padometerscreen/blue.png') }}" alt="">
-        </a>
-        <div class="centerText overlay-textImgXS" style="font-size: 80%">
-        北部九州<br>東西縦断ツアー<br>参加中！
-        </div>
-      </div> -->
-      <!-- <a href="{{ url('/mypage') }}" >
-        <button class="d-xs-block d-md-none overlay-btn2" style="font-size: 70%; border: 2px solid white; background: #113A83; color: white;
-        width: 10vh; height: 10vh; border-radius: 50%; background-image: url({{ asset('storage/padometerscreen/blue.png') }}); background-size: cover;
-        background-position: center; display: inline-block;" type="button" name="button">My Page</button>
-      </a> -->
-      <!-- <div class="d-none d-md-block d-lg-none overlay-btn4 containerImg">
-        <a href="{{ url('/mypage') }}" class="p-0" >
-          <img class="" style="width: 20vh; height: 20vh" src="{{ asset('storage/padometerscreen/blue.png') }}" alt="">
-        </a>
-        <div class="centerText overlay-textImgMD" style="font-size: 100%">
-        北部九州<br>東西縦断ツアー<br>参加中！
-        </div>
-      </div> -->
-      <!-- <a href="{{ url('/mypage') }}" >
-        <button class="d-none d-md-block d-lg-none overlay-btn4" style="font-size: 70%; border: 2px solid white; background: #113A83; color: white;
-        width: 10vh; height: 10vh; border-radius: 50%; background-image: url({{ asset('storage/padometerscreen/blue.png') }});" type="button" name="button">My Page</button>
-      </a> -->
-      <!-- <p></p>
-    </div> -->
-      </div>
+    </div>
     </div>
     @endif
     <div class="container-fluid pt-3 mt-3">
@@ -763,6 +691,24 @@ margin-bottom: -30px;
                 var y = 150 - 150*k;
                 triangle(0, 150, x, y, x, 150);
               }
+            }
+          </script>
+          <script type="text/javascript">
+            var mon = {{ $month }};
+            if({{$today_data}} >= {{$get_m_user_daily_goal}}) {
+              var bg_season = document.getElementById("bg_season1");
+            } else {
+              var bg_season = document.getElementById("bg_season2");
+            }
+            if (mon == 12 || mon == 1 || mon == 2) {
+              bg_season.style.backgroundImage = "url({{asset('storage/padometerscreen/bg01_winter01@2x.png')}})";
+            } else if (mon>=3 && mon<=5) {
+              bg_season.style.backgroundImage= "url({{asset('storage/padometerscreen/bg01_spring01@2x.png')}})";
+            } else if (mon>=6 && mon<=8) {
+              console.log("yes88");
+              bg_season.style.backgroundImage = "url({{asset('storage/padometerscreen/bg01_summer01@2x.png')}})";
+            } else if (mon>=9 && mon<=11) {
+              bg_season.style.backgroundImage = "url({{asset('storage/padometerscreen/bg01_autumn01@2x.png')}})";
             }
           </script>
 
