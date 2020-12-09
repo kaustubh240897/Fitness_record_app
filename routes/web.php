@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 //Auth::routes();
 Route::get('/', 'm_UsersWebController@create')->name('create');
 Route::post('/', 'm_UsersWebController@store')->name('store');
+Route::get('showprofiledetails/{id}', 'm_UsersWebController@showProfileDetails')->name('showprofiledetails');
 Route::get('edit/{id}', 'm_UsersWebController@edit')->name('edit');
 Route::post('update/{id}', 'm_UsersWebController@update')->name('update');
 Route::get('/userdailyhistory', 'm_UsersWebController@dailydata')->name('userhistory');
@@ -37,6 +38,7 @@ Route::get('/bytourcollection', 't_CollectionWebController@byTour')->name('bytou
 Route::get('/mycollection', 't_CollectionWebController@index')->name('mycollection');
 Route::get('/reversemycollection', 't_CollectionWebController@reverseIndex')->name('reversemycollection');
 Route::get('/mycollection/{id}','t_CollectionWebController@show')->name('collectiondetails');
+Route::get('/checkpointdetails/{id}','t_CollectionWebController@checkpointdetails')->name('checkpointdetails');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/logged-out', 'CustomAuthController@thankpage')->name('logout-page');
 

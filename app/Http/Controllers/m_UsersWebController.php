@@ -523,6 +523,20 @@ class m_UsersWebController extends Controller
     
     }
 
+    public function showProfileDetails($id)
+    {
+        $m_users = m_Users::where('id', $id)->first();
+        if(! empty($m_users) && $m_users->users_id == Auth::id()){
+            $t_tour = t_Tour::where('m__users_id', $m_users->users_id)->orderBy('created_at','DESC')->first();
+            return view('showprofiledetails', compact('m_users','t_tour'));
+        }
+        else{
+            $m_users = null;
+            $t_tour = null;
+            return view('showprofiledetails', compact('m_users','t_tour'));
+        }
+    }
+
     /**
      * Remove the specified resource from storage.
      *

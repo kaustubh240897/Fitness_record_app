@@ -27,8 +27,8 @@
 		}
 		.row
 		{
-		margin-right: -1px;
-		margin-left: -1px;
+		margin-right: 0px;
+		margin-left: 0px;
 		}
 	  	.wrapper1{
 	  		height:13rem;
@@ -127,6 +127,15 @@
 			text-align: right;
 			} 
 
+			.row-full{
+			width: 99vw;
+			position: relative;
+			margin-left: -49.5vw;
+			height: 100px;
+			/* margin-top: 100px; */
+			left: 50%;
+			}
+
 
 
 		.main .accordion {
@@ -207,8 +216,8 @@
 	<body>
 	<div class='container-fluid'>
 		<div class="row d-flex fixed-top" style="border-bottom: 1px solid white; z-index: 10; background-color: #2b63c6; position: fixed; top:0px;">
-			<div class='col-5 p-2' style="color:white;"><div class="ml-3" style='color: white;'>私のコレクション</div> </div>
-			<div class='col-7 p-2 c'>  <button class='button mr-4' style="color:white;">ツアーで並べ替え ↑↓ </button></div>
+			<div class=' p-2' style="color:white;"><div class="ml-1" style='color: white;'>私のコレクション</div> </div>
+			<div class=' ml-auto  p-2 '>  <button class='button mr-4' style="color:white;">ツアーで並べ替え ↑↓ </button></div>
 
 	    </div> 
 
@@ -222,13 +231,14 @@
 
 	<!-- partial:index.partial.html -->
 
-	<div class='row'>
+	<div class='row '>
 		<div class='col-12'>
 
-		<main class="main" >
+		<main class="main row-full" >
 
-			<div  style='background-color:#fffdfa;'>  
-				<div class="accordion" >
+			<div  style='background-color:#fffdfa;'>
+			
+			<div class="accordion" >
 				@foreach($tours as $tour)
 				
 				@foreach($tour->checkpoints as $checkpoint) 
@@ -247,7 +257,7 @@
 				
 				
 					@if($tour_status[$loop->iteration-1] == 'Done' ) <img src='storage/img/complete.png'>  @endif<span style='color:#2b63c6;'>@if($tour_status[$loop->iteration-1] == 'Done' )<a href="{{ route('collectiondetails', $tour->m__collections->id) }}">{{ $tour->tour_title }} </a> @else {{ $tour->tour_title }}  @endif </span></div>
-					<div class='c col-5' style='color:grey;'>{{ $tours_distance[$loop->iteration-1] }} km &nbsp <i class="fas fa-chevron-down"></i></div>
+					<div class='c col-5' style='color:grey;'>{{ $tours_distance[$loop->iteration-1] }} km &nbsp <i style='color:#2b63c6' class="fas fa-chevron-down"></i></div>
 					</h3>
 					
 					@foreach($tour->checkpoints as $checkpoint)

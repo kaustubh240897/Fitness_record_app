@@ -183,7 +183,7 @@ class t_CollectionWebController extends Controller
         if(m_Users::where('users_id',Auth::id())->count() >0){
             $m__user_id = m_Users::where('users_id',Auth::id())->first()->id;
             $my_collections = t_Collection::where('m__users_id', $m__user_id)->where('m__collection_id', $id)->first();
-            $count = t_Collection::where('m__users_id', $m__user_id)->where('m__collection_id', $id)->count();
+           // $count = t_Collection::where('m__users_id', $m__user_id)->where('m__collection_id', $id)->count();
             if(! empty($my_collections)){
                 if($my_collections->new_display_flag == 0){
                             $t_collection = t_Collection::find($my_collections->id);
@@ -191,12 +191,11 @@ class t_CollectionWebController extends Controller
                             $t_collection->save();
                 }
         }
-            return view('mycollectionsdetails', compact('my_collections','count'));
+            return view('mycollectionsdetails', compact('my_collections'));
         }
         else{
             $my_collections = null;
-            $count = 0;
-            return view('mycollectionsdetails', compact('my_collections','count'));
+            return view('mycollectionsdetails', compact('my_collections'));
         }
     }
 
@@ -209,6 +208,21 @@ class t_CollectionWebController extends Controller
     public function edit($id)
     {
         //
+    }
+
+    public function checkpointdetails(Request $request, $id)
+    {
+        if(m_Users::where('users_id',Auth::id())->count() >0){
+            $m__user_id = m_Users::where('users_id',Auth::id())->first()->id;
+            $my_collections = t_Collection::where('m__users_id', $m__user_id)->where('m__collection_id', $id)->first();
+           // $count = t_Collection::where('m__users_id', $m__user_id)->where('m__collection_id', $id)->count();
+            
+            return view('checkpointsdetails', compact('my_collections'));
+        }
+        else{
+            $my_collections = null;
+            return view('checkpointsdetails', compact('my_collections'));
+        }
     }
 
     /**
