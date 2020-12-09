@@ -49,9 +49,10 @@
 			  text-align: center;
 			  text-decoration: none;
 			  display: inline-block;
-			  margin: 4px 2px;
+			  margin: 4px 2px; 
 			  cursor: pointer;
 			  border-radius: 30px;
+			  outline: none !important;
 			}
 		.center {
 			  display: block;
@@ -159,7 +160,7 @@
 
             <div>
 			    <div class="row wrapper1 fixed-top" style='z-index: 0;'>	
-				    <div class='col-12 center'>  <img src='/storage/img/ico.png'> <b class='color'>Lv.1 </b> </div>
+				    <div class='col-12 center'>  <img src='/storage/img/ico.png'> <b class='color'>Lv.{{ $m_users->tour_level }} </b> </div>
 
 				    <div class='col-12 center1'><img class='wid1' src='/storage/img/text@3x.png'> </div>
 				   
@@ -177,7 +178,7 @@
 	                       <div class='col-6'>
 	                       	<b>高さ </b></div>
 	                       	<div class='col-6 c'>
-	                       	<b> 175.5 cm </b></div>
+	                       	<b> {{ number_format($m_users->stride/0.45, 2, '.', ',') }} cm </b></div>
 
 	                       </div>
 	                       <hr/>
@@ -194,16 +195,16 @@
 	                       <div class='col-8'>
 	                       	<b>ステップあたりの距離</b></div>
 	                       	<div class='col-4 c'>
-	                       	<b>65.0 cm</b></div>
+	                       	<b>{{ number_format($m_users->stride, 1, '.', ',') }} cm</b></div>
 
 	                       </div>
 	                       
 	                       <div class='mt-4'> <img src='/storage/img/ico-7.png'><b> 1日あたりの目標 </b> <img style='width:100%; height: 100%;' src='/storage/img/line1.png'></div>
 	                       <div class='row d-flex'>
 	                       <div class='col-8'>
-	                       	<b>6,000 ステップ</b></div>
+	                       	<b>{{ number_format($m_users->step_goal_per_day) }} ステップ</b></div>
 	                       	<div class='col-4 c'>
-	                       	<b>3.6 km</b></div>
+	                       	<b>{{ number_format($m_users->step_goal_per_day*$m_users->stride/100000, 2, '.', ',') }}  km</b></div>
 
 	                       </div>
 
@@ -212,19 +213,19 @@
 
 	                        <div class='row d-flex'>
 		                        <div class='col-2 mx-1'>
-		                       	  <b class='ml-2'>月</b> 3.6km</div>
+		                       	  <b class='ml-2'>月</b> {{ number_format($m_users->step_monday*$m_users->stride/100000, 2, '.', ',') }} km</div>
 		                       	<div class='col-2 mx-1'>
-		                       	  <b class='ml-2'>火</b> 3.6km</div>
+		                       	  <b class='ml-2'>火</b> {{ number_format($m_users->step_tuesday*$m_users->stride/100000, 2, '.', ',') }} km</div>
 		                         <div class='col-2 mx-1'>
-		                       	  <b class='ml-2'>水</b> 3.6km</div>
+		                       	  <b class='ml-2'>水</b> {{ number_format($m_users->step_wednesday*$m_users->stride/100000, 2, '.', ',') }} km</div>
 		                       	 <div class='col-2 mx-1'>
-		                       	  <b class='ml-2'>木 </b> 3.6km</div>
+		                       	  <b class='ml-2'>木 </b> {{ number_format($m_users->step_thursday*$m_users->stride/100000, 2, '.', ',') }} km</div>
 		                       	 <div class='col-2 mx-2'>
-		                       	  <b class='ml-2'>金</b> 3.6km</div>
+		                       	  <b class='ml-2'>金</b> {{ number_format($m_users->step_friday*$m_users->stride/100000, 2, '.', ',') }} km</div>
 		                       	 <div class='col-2 mx-1'>
-		                       	  <b class='ml-2'>土</b> 3.6km</div>
+		                       	  <b class='ml-2'>土</b> {{ number_format($m_users->step_saturday*$m_users->stride/100000, 2, '.', ',') }} km</div>
 		                       	 <div class='col-2 mx-1'>
-		                       	  <b class='ml-2' style='color:brown'>日</b> 3.6km</div>
+		                       	  <b class='ml-2' style='color:brown'>日</b> {{ number_format($m_users->step_sunday*$m_users->stride/100000, 2, '.', ',') }} km</div>
 		                       	  
 	                        </div>
 	                        <hr/>
@@ -233,7 +234,7 @@
 	                       <div class='col-8'>
 	                       	<b>1か月あたりの目標距離</b></div>
 	                       	<div class='col-4 c'>
-	                       	<b>86.4 km</b></div>
+	                       	<b>{{ number_format($m_users->step_goals_per_month) }} km</b></div>
 	                       </div>
 	                       <br>
 
@@ -243,7 +244,7 @@
 	                       <div class='col-8'>
 	                       	<b>アプリのモーション表示</b></div>
 	                       	<div class='col-4 c'>
-	                       	<p> はい </p></div>
+	                       	<p>@if($m_users->motion_app == '1' ) はい @else 無し  @endif </p></div>
 
 	                       </div>
 	                       <hr/>
@@ -252,10 +253,10 @@
 	                       <div class='col-8'>
 	                       	<b>Webでのモーション表示</b></div>
 	                       	<div class='col-4 c'>
-	                       	<p> 番号</p></div>
+	                       	<p> @if($m_users->motion_web == '0' ) 無し @else はい  @endif</p></div>
 
 	                       <!-- 	<div class='col-12 my-2'><img style='margin-left: 33%' class='wid1' src='img/btn@3x.png'> </div> -->
-                            <div class='col-12 text-center'><button class="button mt-2">登録内容の変更  ></button></div>
+                            <div class='col-12 text-center'><button type='submit' class="button mt-2">登録内容の変更  ></button></div>
 
                             <div class='col-12 mt-4'> <img style='width:100%; height: 100%;' src='/storage/img/bg-8@2x.png'></div>
 
@@ -268,9 +269,9 @@
 
 	                       </div>
 	                       <br/>
-	                        <h6><div class='row' ><div class='col-7' style='color: #2b63c6;'> Tour1 mmm </div> <div class='col-4 c' style='color:grey;'>0000 Km </div> </div></h6> 
+	                        <h6><div class='row' ><div class='col-7' style='color: #2b63c6;'> {{ $t_tour->m_tours->tour_title }} </div> <div class='col-4 c' style='color:grey;'>@foreach($t_tour->m_tours->checkpoints as $checkpoint) @if($checkpoint->checkpoint_category =='endpoint') {{ $checkpoint->distance }} km @endif @endforeach </div> </div></h6> 
 
-	                        <div class='col-12 text-center'> <b class='color'>189km / 200km</b></div> 
+	                        <div class='col-12 text-center'> <b class='color'>{{ $m_users->stride*$steps/100000 }} km/@foreach($t_tour->m_tours->checkpoints as $checkpoint) @if($checkpoint->checkpoint_category =='endpoint') {{ $checkpoint->distance }} km  @endif @endforeach</b></div> 
 
 	                         <div class='mt-4'> <img style='width:100%; height: auto;' src='/storage/img/error-1@3x.png'></div>
 

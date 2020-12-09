@@ -134,7 +134,8 @@ class m_UsersWebController extends Controller
     public function myPage(Request $request){
         if(m_Users::where('users_id',Auth::id())->count() >0){
 
-            $m__users_id = m_Users::where('users_id',Auth::id())->first()->id;
+            $m__users = m_Users::where('users_id',Auth::id())->first();
+            $m__users_id = $m__users->id;
             $today_data = t_Steps::where('m__users_id', $m__users_id)->whereDate('step_actual_datetime', Carbon::now()->toDateString())->get()->sum('steps');
             $current_month_steps = t_Steps::where('m__users_id', $m__users_id)->whereBetween('step_actual_datetime', [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])->orderBy('step_actual_datetime')->get()->sum('steps');
             $current_week_datas = t_Steps::where('m__users_id', $m__users_id)->whereBetween('step_actual_datetime', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->get()->groupBy(function ($val) {
@@ -149,9 +150,9 @@ class m_UsersWebController extends Controller
             else{
                 $device = 'desktop'; 
             }
-            $get_m_user_stride = m_Users::where('users_id', Auth::id())->first()->stride;
-            $get_m_user_daily_goal = m_Users::where('users_id', Auth::id())->first()->step_goal_per_day;
-            $get_m_user_monthly_goal = m_Users::where('users_id', Auth::id())->first()->step_goals_per_month;
+            $get_m_user_stride = $m__users->stride;
+            $get_m_user_daily_goal = $m__users->step_goal_per_day;
+            $get_m_user_monthly_goal = $m__users->step_goals_per_month;
             $get_t_tour = t_Tour::where('m__users_id', $m__users_id)->orderBy('start_datetime', 'DESC')->first();
             // for identifying tour is forward or reverse
             $session_value = $request->session()->get('reverse','false');
@@ -191,13 +192,14 @@ class m_UsersWebController extends Controller
 
             }
     
-            return view('myPage', compact('device','today_data','m__users_id','get_m_user_monthly_goal','current_month_steps','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','session_value','checkpoints','checkpointsr','total','current_week_datas'));
+            return view('myPage', compact('device','today_data','m__users','m__users_id','get_m_user_monthly_goal','current_month_steps','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','session_value','checkpoints','checkpointsr','total','current_week_datas'));
         }
         else{
             $today_data = null;
             $get_m_user_stride = null;
             $get_m_user_daily_goal = null;
             $get_m_user_monthly_goal = null;
+            $m__users = null;
             $get_t_tour = null;
             if (Browser::isMobile()) {
                 $device = 'mobile';
@@ -217,7 +219,7 @@ class m_UsersWebController extends Controller
             $current_month_steps = 0;
             $m__users_id = null;
 
-            return view('myPage', compact('device','today_data','m__users_id','get_m_user_monthly_goal','current_month_steps','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','session_value','checkpoints','checkpointsr','total','current_week_datas'));
+            return view('myPage', compact('device','today_data','m__users','m__users_id','get_m_user_monthly_goal','current_month_steps','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','session_value','checkpoints','checkpointsr','total','current_week_datas'));
         }
 
     }
@@ -237,15 +239,16 @@ class m_UsersWebController extends Controller
             else{
                 $device = 'desktop';
             }
-            $m__users_id = m_Users::where('users_id',Auth::id())->first()->id;
+            $m__users = m_Users::where('users_id',Auth::id())->first();
+            $m__users_id = $m__users->id;
             $today_data = t_Steps::where('m__users_id', $m__users_id)->whereDate('step_actual_datetime', Carbon::now()->toDateString())->get()->sum('steps');
             $current_month_steps = t_Steps::where('m__users_id', $m__users_id)->whereBetween('step_actual_datetime', [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])->orderBy('step_actual_datetime')->get()->sum('steps');
             $current_week_datas = t_Steps::where('m__users_id', $m__users_id)->whereBetween('step_actual_datetime', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->get()->groupBy(function ($val) {
                 return Carbon::parse($val->step_actual_datetime)->format('d');
             });
-            $get_m_user_stride = m_Users::where('users_id', Auth::id())->first()->stride;
-            $get_m_user_daily_goal = m_Users::where('users_id', Auth::id())->first()->step_goal_per_day;
-            $get_m_user_monthly_goal = m_Users::where('users_id', Auth::id())->first()->step_goals_per_month;
+            $get_m_user_stride = $m__users->stride;
+            $get_m_user_daily_goal = $m__users->step_goal_per_day;
+            $get_m_user_monthly_goal = $m__users->step_goals_per_month;
             $get_t_tour = t_Tour::where('m__users_id', $m__users_id)->orderBy('start_datetime', 'DESC')->first();
             // for identifying tour is forward or reverse
             if($get_t_tour != null){
@@ -278,7 +281,7 @@ class m_UsersWebController extends Controller
             }
             
     
-            return view('padometerscreen', compact('year', 'day', 'month','device','today_data','m__users_id','current_month_steps','get_m_user_monthly_goal','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','total','current_week_datas'));
+            return view('padometerscreen', compact('year', 'day', 'month','device','m__users','today_data','m__users_id','current_month_steps','get_m_user_monthly_goal','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','total','current_week_datas'));
         }
         else{
             $today_data = null;
@@ -294,6 +297,7 @@ class m_UsersWebController extends Controller
             else{
                 $device = 'desktop';
             }
+            $m__users = null;
             $get_m_user_stride = null;
             $get_m_user_daily_goal = null;
             $get_m_user_monthly_goal = null;
@@ -305,7 +309,7 @@ class m_UsersWebController extends Controller
             $current_week_datas = null;
             $current_month_steps = 0;
 
-            return view('padometerscreen', compact('year', 'day', 'month','device','today_data','m__users_id','current_month_steps','get_m_user_monthly_goal','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','total','current_week_datas'));
+            return view('padometerscreen', compact('year', 'day', 'month','m__users','device','today_data','m__users_id','current_month_steps','get_m_user_monthly_goal','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','total','current_week_datas'));
         }
 
     }
@@ -447,7 +451,7 @@ class m_UsersWebController extends Controller
     {
         $m_users = m_Users::where('id', $id)->first();
         if(! empty($m_users) && $m_users->users_id == Auth::id()){
-            $t_tour = t_Tour::where('m__users_id', $m_users->users_id)->orderBy('created_at','DESC')->first();
+            $t_tour = t_Tour::where('m__users_id', $m_users->id)->orderBy('created_at','DESC')->first();
             return view('edit', compact('m_users','t_tour'));
         }
         else{
@@ -564,13 +568,23 @@ class m_UsersWebController extends Controller
     {
         $m_users = m_Users::where('id', $id)->first();
         if(! empty($m_users) && $m_users->users_id == Auth::id()){
-            $t_tour = t_Tour::where('m__users_id', $m_users->users_id)->orderBy('created_at','DESC')->first();
-            return view('showprofiledetails', compact('m_users','t_tour'));
+            $t_tour = t_Tour::where('m__users_id', $m_users->id)->orderBy('created_at','DESC')->first();
+            if($t_tour !=null){
+                $tour_datetime = $t_tour->created_at->toDateTimeString();
+            }
+            if($t_tour !=null){
+                $steps = t_Steps::where('m__users_id',$m_users->id)->where('step_actual_datetime', '>=', $tour_datetime)->get()->sum('steps');
+            }
+            else{
+                $steps = 0;
+            }
+            return view('showprofiledetails', compact('m_users','t_tour','steps'));
         }
         else{
             $m_users = null;
             $t_tour = null;
-            return view('showprofiledetails', compact('m_users','t_tour'));
+            $steps = 0;
+            return view('showprofiledetails', compact('m_users','t_tour','steps'));
         }
     }
 

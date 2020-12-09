@@ -59,6 +59,7 @@
 		  cursor: pointer;
 		  border-radius: 16px;
 		  border: 1px solid white;
+		  outline: none !important ;
 		}
 		
 		
