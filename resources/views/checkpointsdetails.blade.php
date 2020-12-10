@@ -50,7 +50,7 @@
 </head>
 
 <body>
-
+@if(! empty($my_collections))
   		<div class='container-fluid'>
 
                     
@@ -97,7 +97,9 @@
 			</div>
 		</div>
 		
-
+@else
+    <h4> チェックポイントはありません。 </h4>
+@endif
 </body>
 @endsection
 
