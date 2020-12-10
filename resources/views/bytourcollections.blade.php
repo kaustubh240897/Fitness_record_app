@@ -237,7 +237,7 @@
 
 		<main class="main row-full" >
 
-			<div  style='background-color:#fffdfa;'>
+			<div  style='background-color:#fffdfa; padding-bottom:13rem;'>
 			
 			<div class="accordion" >
 				@foreach($tours as $tour)
@@ -288,6 +288,12 @@
 				
 				
 			</div>
+			<div class='row' style='background-color: #eef4f6; position: relative; z-index: 10;'>
+				<div class='col-12'>
+				<img style='width: 100%; height: auto;' src='/storage/img/bg@3x.png'>
+			    </div>
+
+		</div>
 			</div>
 
 

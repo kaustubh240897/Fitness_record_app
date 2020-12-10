@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+@if (session('successMsg'))
+<div class='alert alert-success' roles='alert'>
+ {{ session('successMsg') }}
+</div>
+@endif
 <div class='container'>
 
 
@@ -109,6 +114,12 @@
 
 <div class="container-fluid mt-1">
    <a href="{{ url('/createtour') }}" > <button type="button" class="btn blue">ツアー選択へ戻る</button></a>
+   
+ <form action="{{ route('tourstore', $tours->id) }}" method="POST" >
+      {{ csrf_field() }}
+      {{ method_field('post') }}
+      <button type="submit" class="btn btn-sm blue" style="font-size:70%"> Tour selection</button>
+      </form>
     </div>
 
     <div class="container-fluid mt-3 pl-sm-4">

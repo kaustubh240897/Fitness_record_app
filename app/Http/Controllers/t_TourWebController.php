@@ -126,7 +126,7 @@ class t_TourWebController extends Controller
         $t_tour->status = 'Inprogress';
 
         $t_tour->save();
-        return redirect(route('index'))->with('successMsg','your tour Successfully selected');
+        return redirect( route('tourdetails', $id))->with('successMsg','your tour Successfully selected');
     }
 
     public function createtoursession(Request $request){

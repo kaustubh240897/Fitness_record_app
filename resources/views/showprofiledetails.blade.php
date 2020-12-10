@@ -45,7 +45,7 @@
 			  background-color:#2b63c6 ;
 			  border: none;
 			  color: white;
-			  padding: 15px 100px;
+			  padding: 15px 90px;
 			  text-align: center;
 			  text-decoration: none;
 			  display: inline-block;
@@ -149,7 +149,7 @@
 </style>
 
 </head>
-
+@if(! empty($m_users) && $m_users->users_id == Auth::id())
 <body style='background-color: white;'>
 
 	    	<div class='container-fluid'>
@@ -269,13 +269,18 @@
 
 	                       </div>
 	                       <br/>
-	                        <h6><div class='row' ><div class='col-7' style='color: #2b63c6;'> {{ $t_tour->m_tours->tour_title }} </div> <div class='col-4 c' style='color:grey;'>@foreach($t_tour->m_tours->checkpoints as $checkpoint) @if($checkpoint->checkpoint_category =='endpoint') {{ $checkpoint->distance }} km @endif @endforeach </div> </div></h6> 
-
-	                        <div class='col-12 text-center'> <b class='color'>{{ $m_users->stride*$steps/100000 }} km/@foreach($t_tour->m_tours->checkpoints as $checkpoint) @if($checkpoint->checkpoint_category =='endpoint') {{ $checkpoint->distance }} km  @endif @endforeach</b></div> 
-
-	                         <div class='mt-4'> <img style='width:100%; height: auto;' src='/storage/img/error-1@3x.png'></div>
-
-	                          <div class='mt-4'> <img style='width:100%; height: auto;' src='/storage/img/error@3x.png'></div>
+						   @if(! empty($t_tour))
+								@if($t_tour->status == 'Done')
+								<h6><div class='row' ><div class='col-7' style='color: #2b63c6;'><a href="{{ route('collectiondetails', $t_tour->m_tours->m__collections->id) }}"> {{ $t_tour->m_tours->tour_title }} </a> </div> <div class='col-4 c' style='color:grey;'>@foreach($t_tour->m_tours->checkpoints as $checkpoint) @if($checkpoint->checkpoint_category =='endpoint') {{ $checkpoint->distance }} km @endif @endforeach </div> </div></h6> 
+								<div class='mt-4'> <img style='width:100%; height: auto;' src='/storage/img/error@3x.png'></div>	
+								@else
+								<h6><div class='row' ><div class='col-7' style='color: #2b63c6;'> {{ $t_tour->m_tours->tour_title }} </div> <div class='col-4 c' style='color:grey;'>@foreach($t_tour->m_tours->checkpoints as $checkpoint) @if($checkpoint->checkpoint_category =='endpoint') {{ $checkpoint->distance }} km @endif @endforeach </div> </div></h6> 
+								<div class='col-12 text-center'> <b class='color'>{{ $m_users->stride*$steps/100000 }} km/@foreach($t_tour->m_tours->checkpoints as $checkpoint) @if($checkpoint->checkpoint_category =='endpoint') {{ $checkpoint->distance }} km  @endif @endforeach</b></div> 
+								@endif
+							@else
+								<div class='mt-4'> <img style='width:100%; height: auto;' src='/storage/img/error-1@3x.png'></div>
+							@endif
+	                        
                              <div class='row'>
 	                          <div class='col-12 text-center my-3'><button class="button mt-2">登録内容の変更  ></button></div>
 	                      </div>
@@ -293,5 +298,8 @@
          
 
     	</body>
+@else
+  <h3> ごめんなさい！このページにアクセスする権限がありません。 </h3>
+@endif
 @endsection
 
