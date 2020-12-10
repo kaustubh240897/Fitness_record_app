@@ -118,7 +118,7 @@
  <form action="{{ route('tourstore', $tours->id) }}" method="POST" >
       {{ csrf_field() }}
       {{ method_field('post') }}
-      <button type="submit" class="btn btn-sm blue" style="font-size:70%"> Tour selection</button>
+      <button type="submit" class="btn btn-sm blue" style="font-size:70%"> Select this tour</button>
       </form>
     </div>
 
