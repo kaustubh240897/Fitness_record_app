@@ -736,7 +736,7 @@ margin-bottom: -30px;
       }
   }
   else{
-      comp = 10000;
+      comp = 0;
       rem = {{ $get_m_user_monthly_goal }};
   }
 var data = {

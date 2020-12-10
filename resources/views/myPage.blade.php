@@ -8,6 +8,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/domarrow.css') }}" />
+    <script type="text/javascript" src="{{ URL::asset('js/domarrow.js') }}"></script>
 <style media="screen">
 .wrapper {
   height:50vh;
@@ -45,90 +47,228 @@ background-color: #f2dcdb !important;
   font-size: 14px;
   border: 1px solid #CCC;
 }
+
 .StepProgress {
   position: relative;
-  padding-left: 10px;
+  padding-left: 40px;
   list-style: none;
 }
 .StepProgress::before {
   display: inline-block;
   content: '';
   position: absolute;
-  top: 0;
-  left: 20px;
-  width: 20px;
-  height: 100%;
-  border-left: 4px solid #CCC;
+  left: 15px;
+  width: 10px;
+  height: 0;
+  border-left: 2px solid #CCC;
 }
 .StepProgress-item {
   position: relative;
   counter-increment: list;
 }
+.StepProgress-itemStart {
+  position: relative;
+  counter-increment: list;
+  left: 4px;
+}
+.StepProgress-item2 {
+  position: relative;
+  counter-increment: list;
+  left: -3px;
+}
 .StepProgress-item:not(:last-child) {
-  padding-bottom: 60px;
+  padding-bottom: 12px;
+}
+.StepProgress-itemStart:not(:last-child) {
+  padding-bottom: 12px;
+}
+.StepProgress-item2:not(:last-child) {
+  padding-bottom: 10px;
 }
 .StepProgress-item::before {
   display: inline-block;
   content: '';
   position: absolute;
-  left: 10px;
+  top: 19px;
+  left: -31px;
   height: 100%;
-  width: 24px;
+  width: 10px;
+  border-left: 3px solid #cadcf6;
+}
+.StepProgress-item2::before {
+  display: inline-block;
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: -32px;
+  height: 100%;
+  width: 10px;
+}
+.StepProgress-itemStart::before {
+  display: inline-block;
+  content: '';
+  position: absolute;
+  left: -31px;
+  height: 100%;
+  width: 10px;
+  border-left: 3px solid #cadcf6;
+  top: 20px;
+  z-index: 2
+}
+.StepProgress-itemStart.is-done::before {
+  display: inline-block;
+  content: '';
+  position: absolute;
+  left: -31px;
+  height: 100%;
+  width: 10px;
+  border-left: 3px solid #e68f00;
+  top: 20px;
+  z-index: 2;
+  padding-top: 0px;
 }
 .StepProgress-item::after {
   content: '';
   display: inline-block;
   position: absolute;
-  top: 0;
-  left: 0px;
-  width: 24px;
-  height: 18px;
-  border: 1px solid #CCC;
+  top: 4px;
+  left: -37px;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #cadcf6;
   border-radius: 50%;
-  background-color: #FFF;
+  background-color: #cadcf6;
+  z-index: 3
 }
-.StepProgress-item:first-child::after {
+.StepProgress-item2::after {
+  background-image: url({{asset('storage/padometerscreen/star_blue.png')}});
+  content: '';
+  background-size: 20px 20px;
+  display: inline-block;
+  position: absolute;
+  top: 4px;
+  left: -40.5px;
+  width: 20px;
+  height: 20px;
+  /* width: 12px;
+  height: 12px;
+  border: 2px solid #CCC; */
+  /* border-radius: 50%; */
+  background-color: transparent;
+}
+.StepProgress-item2.is-done::after {
+  background-image: url({{asset('storage/padometerscreen/star_yellow.png')}});
+  content: '';
+  background-size: 20px 20px;
+  display: inline-block;
+  position: absolute;
+  top: 2px;
+  left: -40.5px;
+  width: 20px;
+  height: 20px;
+  /* width: 12px;
+  height: 12px;
+  border: 2px solid #CCC; */
+  /* border-radius: 50%; */
+  background-color: transparent;
+}
+.StepProgress-itemStart::after {
+  background-image: url({{asset('storage/padometerscreen/star_blue.png')}});;
+  content: '';
+  background-size: 20px 20px;
+  display: inline-block;
+  position: absolute;
+  top: 2px;
+  left: -40px;
+  width: 20px;
+  height: 20px;
+  /* width: 12px;
+  height: 12px;
+  border: 2px solid #CCC;
+  border-radius: 50%; */
+  background-color: transparent;
+}
+.StepProgress-itemStart.is-done::after {
+  background-image: url({{asset('storage/padometerscreen/star_yellow.png')}});;
+  content: '';
+  background-size: 20px 20px;
+  display: inline-block;
+  position: absolute;
+  top: 2px;
+  left: -40px;
+  width: 20px;
+  height: 20px;
+  /* width: 12px;
+  height: 12px;
+  border: 2px solid #CCC;
+  border-radius: 50%; */
+  background-color: transparent;
+}
+.StepProgress-item.is-done::before {
+  display: inline-block;
+  content: '';
+  position: absolute;
+  top: 19px;
+  left: -31px;
+  height: 100%;
+  width: 10px;
+  border-left: 3px solid #e68f00;
+}
+.StepProgress-item.is-done::after {
   content: '';
   display: inline-block;
   position: absolute;
-  top: 0;
-  left: -4px;
-  width: 32px;
-  height: 18px;
-  border: 1px solid #CCC;
+  top: 4px;
+  left: -37px;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #e68f00;
   border-radius: 50%;
-  background-color: #FFF;
+  background-color: #ffd00d;
+  z-index: 3
 }
-.StepProgress-item.is-done::before {
-  border-left: 4px solid green;
+.StepProgress-item.current::before {
+  border-left: 3px solid #7ea8ef;
+  top: 19px;
 }
-.StepProgress-item.is-done::after {
-  content: "✔";
+.StepProgress-item.current::after {
+  content: "";
   font-size: 10px;
   color: #FFF;
   text-align: center;
-  border: 2px solid green;
-  background-color: green;
-}
-.StepProgress-item.current::before {
-  border-left: 4px solid #CCC;
-}
-.StepProgress-item.current::after {
-  /* content: counter(list); */
-  padding-top: 1px;
-  width: 24px;
-  height: 18px;
-  top: -4px;
-  left: 0px;
-  font-size: 14px;
-  text-align: center;
-  color: green;
-  border: 1px solid green;
-  background-color: white;
+  border: 1px solid #7ea8ef;
+  background-color: #7ea8ef;
+  top: 4px;
 }
 .StepProgress strong {
   display: block;
 }
+
+.speech-bubble {
+	position: relative;
+	background: #cadcf6;
+	border-radius: .2em;
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	top: 10px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border: 3px solid transparent;
+	border-top-color: #cadcf6;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+
+  border-right:10px solid #cadcf6;
+	margin-left: -12px;
+  margin-right: 0px;
+  margin-top: 0px;
+	margin-bottom: 10px;
+}
+
 
 a {
 color: #000000 !important;
@@ -148,7 +288,7 @@ transform: translate(-50%, -50%);
 .text-center{
 text-align: center;
 }
-.speech-bubble {
+/* .speech-bubble {
 position: relative;
 background: #dce0e3;
 border-radius: .4em;
@@ -166,7 +306,7 @@ border-top-color: #dce0e3;
 border-bottom: 0;
 margin-left: -12px;
 margin-bottom: -10px;
-}
+} */
 
 .overlay-text2 {
 align-self: flex-start;
@@ -219,7 +359,13 @@ margin: 0 !important;
 .vl {
 border-left: 6px solid green;
 }
-
+/* PB */
+.dd {
+  position: absolute;
+}
+.dist_t {
+  text-align: right !important;
+}
 </style>
 
  <div class="container-fluid">
@@ -345,7 +491,7 @@ border-left: 6px solid green;
  <h2> 最初にプロファイルを作成してください <a href="/" style="color:blue !important"> ここをクリック </a> </h2> <br/>
 @endif
 
-<div class="container-fluid">
+<!-- <div class="container-fluid">
  @if(! empty($checkpoints))
   <div class="row">
     <div class="col" id="checkPoint_name">
@@ -363,7 +509,14 @@ border-left: 6px solid green;
  @else
  <h4> 申し訳ありませんが、チェックポイントはありません。ツアーを選択してください。</h4>
  @endif
+</div> -->
+@if(! empty($checkpoints))
+<div class="container-fluid pb-3" id="progress_bar">
+
 </div>
+@else
+<h4> 申し訳ありませんが、チェックポイントはありません。ツアーを選択してください。</h4>
+@endif
 <!-- <div class="container pt-3">
       <div class="relative w-100 h-50">
     <canvas id="myChart"></canvas>
@@ -591,8 +744,9 @@ function formatDate(d) {
 <script type="text/javascript">
 
   var steplist = document.getElementById("progress_bar");
-  var checkPoint_col = document.getElementById("checkPoint_name");
-  var checkPoint_col2 = document.getElementById("checkPoint_name2");
+  var tr_count_id = 1;
+  // var checkPoint_col = document.getElementById("checkPoint_name");
+  // var checkPoint_col2 = document.getElementById("checkPoint_name2");
 
 
 if({{ $session_value }} === false){
@@ -602,66 +756,218 @@ if({{ $session_value }} === false){
   var flag1 = 0;
 
 
-
   var checkpoints = {!! json_encode($checkpoints) !!};
   checkpoints.forEach((item, i) => {
-    var tag = document.createElement("li");
-    tag.className = "StepProgress-item";
-    var name_p = document.createElement("p");
-    name_p.style.fontSize = "70%";
-    var name_p2 = document.createElement("p");
-    name_p2.style.fontSize = "70%";
-    Object.keys(item).forEach((key, i) => {
-      if (key == "checkpoint_title") {
-        // console.log(item[key]);
-        var textnode = document.createTextNode(item[key]);
-        name_p.appendChild(textnode);
-      } else if (key == "distance") {
-          if (item[key] < dist_walked) {
-            tag.className = "StepProgress-item is-done";
+    var div_flex = document.createElement("div");
+    div_flex.className = "d-flex flex-row justify-content-between";
+    var div_dist = document.createElement("div");
+    div_dist.className = "dist_t";
+    var div_prog = document.createElement("div");
+    div_prog.className = "d-flex flex-row w-50";
+    var div_sp = document.createElement("div");
+    div_sp.className = "StepProgress";
+    var div_textRight = document.createElement("div");
+    div_textRight.className = "pl-3 w-25 text-left text-break";
+    var div_dist_p = document.createElement("p");
+    div_dist_p.className = "text-right";
+    div_dist_p.innerHTML = item["distance"].toString() + "km";
+    div_dist.appendChild(div_dist_p);
+    if (i == 0) {
+      if (item["distance"] < dist_walked) {
+          // tag.className = "StepProgress-item is-done";
+          var div_sp_li = document.createElement("li");
+          div_sp_li.className = "StepProgress-itemStart is-done";
+          var div_sp_li_p = document.createElement("p");
+          div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+          div_sp_li_p.innerHTML = item["checkpoint_title"];
+          div_sp_li.appendChild(div_sp_li_p);
+          div_sp.appendChild(div_sp_li);
+        } else {
+          flag1 += 1;
+          if (flag1 == 1) {
+            // tag.className = "StepProgress-item current";
+            var div_sp_li = document.createElement("li");
+            div_sp_li.className = "StepProgress-itemStart";
+            var div_sp_li_p = document.createElement("p");
+            div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+            div_sp_li_p.innerHTML = item["checkpoint_title"];
+            div_sp_li.appendChild(div_sp_li_p);
+            div_sp.appendChild(div_sp_li);
           } else {
-            flag1 += 1;
-            if (flag1 == 1) {
-              tag.className = "StepProgress-item current";
-            } else {
-              tag.className = "StepProgress-item";
-            }
+            // tag.className = "StepProgress-item";
+            var div_sp_li = document.createElement("li");
+            div_sp_li.className = "StepProgress-itemStart";
+            var div_sp_li_p = document.createElement("p");
+            div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+            div_sp_li_p.innerHTML = item["checkpoint_title"];
+            div_sp_li.appendChild(div_sp_li_p);
+            div_sp.appendChild(div_sp_li);
           }
-       }
+        }
+    } else if (i == checkpoints.length - 1) {
+      if (item["distance"] <= dist_walked) {
+          // tag.className = "StepProgress-item is-done";
+          var div_sp_li = document.createElement("li");
+          div_sp_li.className = "StepProgress-item2 is-done";
+          var div_sp_li_p = document.createElement("p");
+          div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+          div_sp_li_p.innerHTML = item["checkpoint_title"];
+          div_sp_li.appendChild(div_sp_li_p);
+          div_sp.appendChild(div_sp_li);
+        } else {
+          flag1 += 1;
+          if (flag1 == 1) {
+            // tag.className = "StepProgress-item current";
+            var div_sp_li = document.createElement("li");
+            div_sp_li.className = "StepProgress-item2";
+            var div_sp_li_p = document.createElement("p");
+            div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+            div_sp_li_p.innerHTML = item["checkpoint_title"];
+            div_sp_li.appendChild(div_sp_li_p);
+            div_sp.appendChild(div_sp_li);
+          } else {
+            // tag.className = "StepProgress-item";
+            var div_sp_li = document.createElement("li");
+            div_sp_li.className = "StepProgress-item2";
+            var div_sp_li_p = document.createElement("p");
+            div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+            div_sp_li_p.innerHTML = item["checkpoint_title"];
+            div_sp_li.appendChild(div_sp_li_p);
+            div_sp.appendChild(div_sp_li);
+          }
+        }
+    } else {
+      if (item["distance"] <= dist_walked) {
+          // tag.className = "StepProgress-item is-done";
+          var div_sp_li = document.createElement("li");
+          div_sp_li.className = "StepProgress-item is-done";
+          var div_sp_li_p = document.createElement("p");
+          div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+          div_sp_li_p.innerHTML = item["checkpoint_title"];
+          div_sp_li.appendChild(div_sp_li_p);
+          div_sp.appendChild(div_sp_li);
+        } else {
+          flag1 += 1;
+          if (flag1 == 1) {
+            // tag.className = "StepProgress-item current";
+            var div_sp_li = document.createElement("li");
+            div_sp_li.className = "StepProgress-item current";
+            var div_sp_li_p = document.createElement("p");
+            div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+            div_sp_li_p.innerHTML = item["checkpoint_title"];
+            div_sp_li.appendChild(div_sp_li_p);
+            div_sp.appendChild(div_sp_li);
+          } else {
+            // tag.className = "StepProgress-item";
+            var div_sp_li = document.createElement("li");
+            div_sp_li.className = "StepProgress-item";
+            var div_sp_li_p = document.createElement("p");
+            div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+            div_sp_li_p.innerHTML = item["checkpoint_title"];
+            div_sp_li.appendChild(div_sp_li_p);
+            div_sp.appendChild(div_sp_li);
+          }
+        }
+    }
+    var div_textRight_p = document.createElement("p");
+    div_textRight_p.className = "py-0 my-0 pl-3 text-center dd";
+    if (item["checkpoint_category"]) {
+      div_textRight_p.innerHTML = item["checkpoint_category"];
+      div_textRight_p.id = "ar"+tr_count_id.toString();
+      console.log(div_textRight_p.id);
+      if (tr_count_id > 1) {
+        var id_to = "#" +"ar"+ tr_count_id.toString();
+        var id_from = "#" +"ar"+ (tr_count_id-1).toString();
+        console.log(id_to);
+        console.log(id_from);
+        var div_con = document.createElement("connection");
+        // div_con.from = id_from;
+        // div_con.to = id_to;
+        // div_con.color = "#cadcf6";
+        // div_con.fromX="0.7";
+        // div_con.fromY="12";
+        // div_con.toX="0.7";
+        // div_con.toY="10";
+        var con_html = '<connection from="'+id_from+'" to="'+id_to+'" color="#cadcf6" fromX="0.7" fromY="1" toX="0.7" toY="0" tail></connection>';
+        document.write(con_html);
+      }
+      tr_count_id += 1;
+    } else {
+      div_textRight_p.innerHTML = "";
+    }
 
-    });
-    var flexRow = document.createElement("div");
-    flexRow.className = "d-flex flex-row justify-content-start";
-    flexRow.style.height = "60px";
-    flexRow.style.width = "100px";
-    var flexRowRev = document.createElement("div");
-    flexRowRev.className = "d-flex flex-row-reverse justify-content-start";
-    flexRowRev.style.height = "60px";
-    flexRowRev.style.maxWidth = "100px"
-    var btnDiv = document.createElement("div");
-    // var pDiv = document.createElement("div");
-    var btn = document.createElement("button");
-    var btnDiv2 = document.createElement("div");
-    // var pDiv = document.createElement("div");
-    var btn2 = document.createElement("button");
-    btn.className = "btn btn-danger btn-sm";
-    btn2.className = "btn btn-danger btn-sm";
-    btnDiv.appendChild(btn);
-    btnDiv2.appendChild(btn2);
+    div_textRight.appendChild(div_textRight_p);
+    div_flex.appendChild(div_dist);
+    div_prog.appendChild(div_sp);
+    div_flex.appendChild(div_prog);
+    div_flex.appendChild(div_textRight);
+    steplist.appendChild(div_flex);
 
-
-    flexRow.appendChild(btnDiv);
-    flexRow.appendChild(name_p);
-    checkPoint_col.appendChild(flexRow);
-    steplist.appendChild(tag);
-
-    var text2 = document.createTextNode(item["distance"] + " " + item["checkpoint_category"]);
-    name_p2.appendChild(text2);
-    flexRowRev.appendChild(btnDiv2);
-    flexRowRev.appendChild(name_p2);
-    checkPoint_col2.appendChild(flexRowRev);
-    console.log(item["checkpoint_category"]);
   });
+
+
+
+
+
+  // var checkpoints = {!! json_encode($checkpoints) !!};
+  // checkpoints.forEach((item, i) => {
+  //   var tag = document.createElement("li");
+  //   tag.className = "StepProgress-item";
+  //   var name_p = document.createElement("p");
+  //   name_p.style.fontSize = "70%";
+  //   var name_p2 = document.createElement("p");
+  //   name_p2.style.fontSize = "70%";
+  //   Object.keys(item).forEach((key, i) => {
+  //     if (key == "checkpoint_title") {
+  //       // console.log(item[key]);
+  //       var textnode = document.createTextNode(item[key]);
+  //       name_p.appendChild(textnode);
+  //     } else if (key == "distance") {
+  //         if (item[key] < dist_walked) {
+  //           tag.className = "StepProgress-item is-done";
+  //         } else {
+  //           flag1 += 1;
+  //           if (flag1 == 1) {
+  //             tag.className = "StepProgress-item current";
+  //           } else {
+  //             tag.className = "StepProgress-item";
+  //           }
+  //         }
+  //      }
+  //
+  //   });
+  //   var flexRow = document.createElement("div");
+  //   flexRow.className = "d-flex flex-row justify-content-start";
+  //   flexRow.style.height = "60px";
+  //   flexRow.style.width = "100px";
+  //   var flexRowRev = document.createElement("div");
+  //   flexRowRev.className = "d-flex flex-row-reverse justify-content-start";
+  //   flexRowRev.style.height = "60px";
+  //   flexRowRev.style.maxWidth = "100px"
+  //   var btnDiv = document.createElement("div");
+  //   // var pDiv = document.createElement("div");
+  //   var btn = document.createElement("button");
+  //   var btnDiv2 = document.createElement("div");
+  //   // var pDiv = document.createElement("div");
+  //   var btn2 = document.createElement("button");
+  //   btn.className = "btn btn-danger btn-sm";
+  //   btn2.className = "btn btn-danger btn-sm";
+  //   btnDiv.appendChild(btn);
+  //   btnDiv2.appendChild(btn2);
+  //
+  //
+  //   flexRow.appendChild(btnDiv);
+  //   flexRow.appendChild(name_p);
+  //   checkPoint_col.appendChild(flexRow);
+  //   steplist.appendChild(tag);
+  //
+  //   var text2 = document.createTextNode(item["distance"] + " " + item["checkpoint_category"]);
+  //   name_p2.appendChild(text2);
+  //   flexRowRev.appendChild(btnDiv2);
+  //   flexRowRev.appendChild(name_p2);
+  //   checkPoint_col2.appendChild(flexRowRev);
+  //   console.log(item["checkpoint_category"]);
+  // });
 
 }
 else{
@@ -671,66 +977,217 @@ else{
   var flag1 = 0;
 
 
-
   var checkpoints = {!! json_encode($checkpointsr) !!};
   checkpoints.forEach((item, i) => {
-    var tag = document.createElement("li");
-    tag.className = "StepProgress-item";
-    var name_p = document.createElement("p");
-    name_p.style.fontSize = "70%";
-    var name_p2 = document.createElement("p");
-    name_p2.style.fontSize = "70%";
-    Object.keys(item).forEach((key, i) => {
-      if (key == "checkpoint_title") {
-        // console.log(item[key]);
-        var textnode = document.createTextNode(item[key]);
-        name_p.appendChild(textnode);
-      } else if (key == "distance") {
-          if ({{ $total }}-item[key] <= dist_walked) {
-            tag.className = "StepProgress-item is-done";
+    var div_flex = document.createElement("div");
+    div_flex.className = "d-flex flex-row justify-content-between";
+    var div_dist = document.createElement("div");
+    div_dist.className = "dist_t";
+    var div_prog = document.createElement("div");
+    div_prog.className = "d-flex flex-row w-50";
+    var div_sp = document.createElement("div");
+    div_sp.className = "StepProgress";
+    var div_textRight = document.createElement("div");
+    div_textRight.className = "pl-3 w-25 text-left text-break";
+    var div_dist_p = document.createElement("p");
+    div_dist_p.className = "text-right";
+    div_dist_p.innerHTML = item["distance"].toString() + "km";
+    div_dist.appendChild(div_dist_p);
+    if (i == 0) {
+      if ({{ $total }}-item["distance"] <= dist_walked) {
+          // tag.className = "StepProgress-item is-done";
+          var div_sp_li = document.createElement("li");
+          div_sp_li.className = "StepProgress-itemStart is-done";
+          var div_sp_li_p = document.createElement("p");
+          div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+          div_sp_li_p.innerHTML = item["checkpoint_title"];
+          div_sp_li.appendChild(div_sp_li_p);
+          div_sp.appendChild(div_sp_li);
+        } else {
+          flag1 += 1;
+          if (flag1 == 1) {
+            // tag.className = "StepProgress-item current";
+            var div_sp_li = document.createElement("li");
+            div_sp_li.className = "StepProgress-itemStart";
+            var div_sp_li_p = document.createElement("p");
+            div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+            div_sp_li_p.innerHTML = item["checkpoint_title"];
+            div_sp_li.appendChild(div_sp_li_p);
+            div_sp.appendChild(div_sp_li);
           } else {
-            flag1 += 1;
-            if (flag1 == 1) {
-              tag.className = "StepProgress-item current";
-            } else {
-              tag.className = "StepProgress-item";
-            }
+            // tag.className = "StepProgress-item";
+            var div_sp_li = document.createElement("li");
+            div_sp_li.className = "StepProgress-itemStart";
+            var div_sp_li_p = document.createElement("p");
+            div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+            div_sp_li_p.innerHTML = item["checkpoint_title"];
+            div_sp_li.appendChild(div_sp_li_p);
+            div_sp.appendChild(div_sp_li);
           }
-       }
+        }
+    } else if (i == checkpoints.length - 1) {
+      if ({{ $total }}-item["distance"] <= dist_walked) {
+          // tag.className = "StepProgress-item is-done";
+          var div_sp_li = document.createElement("li");
+          div_sp_li.className = "StepProgress-item2 is-done";
+          var div_sp_li_p = document.createElement("p");
+          div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+          div_sp_li_p.innerHTML = item["checkpoint_title"];
+          div_sp_li.appendChild(div_sp_li_p);
+          div_sp.appendChild(div_sp_li);
+        } else {
+          flag1 += 1;
+          if (flag1 == 1) {
+            // tag.className = "StepProgress-item current";
+            var div_sp_li = document.createElement("li");
+            div_sp_li.className = "StepProgress-item2";
+            var div_sp_li_p = document.createElement("p");
+            div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+            div_sp_li_p.innerHTML = item["checkpoint_title"];
+            div_sp_li.appendChild(div_sp_li_p);
+            div_sp.appendChild(div_sp_li);
+          } else {
+            // tag.className = "StepProgress-item";
+            var div_sp_li = document.createElement("li");
+            div_sp_li.className = "StepProgress-item2";
+            var div_sp_li_p = document.createElement("p");
+            div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+            div_sp_li_p.innerHTML = item["checkpoint_title"];
+            div_sp_li.appendChild(div_sp_li_p);
+            div_sp.appendChild(div_sp_li);
+          }
+        }
+    } else {
+      if ({{ $total }}-item["distance"] <= dist_walked) {
+          // tag.className = "StepProgress-item is-done";
+          var div_sp_li = document.createElement("li");
+          div_sp_li.className = "StepProgress-item is-done";
+          var div_sp_li_p = document.createElement("p");
+          div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+          div_sp_li_p.innerHTML = item["checkpoint_title"];
+          div_sp_li.appendChild(div_sp_li_p);
+          div_sp.appendChild(div_sp_li);
+        } else {
+          flag1 += 1;
+          if (flag1 == 1) {
+            // tag.className = "StepProgress-item current";
+            var div_sp_li = document.createElement("li");
+            div_sp_li.className = "StepProgress-item current";
+            var div_sp_li_p = document.createElement("p");
+            div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+            div_sp_li_p.innerHTML = item["checkpoint_title"];
+            div_sp_li.appendChild(div_sp_li_p);
+            div_sp.appendChild(div_sp_li);
+          } else {
+            // tag.className = "StepProgress-item";
+            var div_sp_li = document.createElement("li");
+            div_sp_li.className = "StepProgress-item";
+            var div_sp_li_p = document.createElement("p");
+            div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+            div_sp_li_p.innerHTML = item["checkpoint_title"];
+            div_sp_li.appendChild(div_sp_li_p);
+            div_sp.appendChild(div_sp_li);
+          }
+        }
+    }
+    var div_textRight_p = document.createElement("p");
+    div_textRight_p.className = "py-0 my-0 pl-3 text-center dd";
+    if (item["checkpoint_category"]) {
+      div_textRight_p.innerHTML = item["checkpoint_category"];
+      div_textRight_p.id = "ar"+tr_count_id.toString();
+      console.log(div_textRight_p.id);
+      if (tr_count_id > 1) {
+        var id_to = "#" +"ar"+ tr_count_id.toString();
+        var id_from = "#" +"ar"+ (tr_count_id-1).toString();
+        console.log(id_to);
+        console.log(id_from);
+        var div_con = document.createElement("connection");
+        // div_con.from = id_from;
+        // div_con.to = id_to;
+        // div_con.color = "#cadcf6";
+        // div_con.fromX="0.7";
+        // div_con.fromY="12";
+        // div_con.toX="0.7";
+        // div_con.toY="10";
+        var con_html = '<connection from="'+id_from+'" to="'+id_to+'" color="#cadcf6" fromX="0.7" fromY="1" toX="0.7" toY="0" tail></connection>';
+        document.write(con_html);
+      }
+      tr_count_id += 1;
+    } else {
+      div_textRight_p.innerHTML = "";
+    }
 
-    });
-    var flexRow = document.createElement("div");
-    flexRow.className = "d-flex flex-row justify-content-start";
-    flexRow.style.height = "60px";
-    flexRow.style.width = "100px";
-    var flexRowRev = document.createElement("div");
-    flexRowRev.className = "d-flex flex-row-reverse justify-content-start";
-    flexRowRev.style.height = "60px";
-    flexRowRev.style.maxWidth = "60px"
-    var btnDiv = document.createElement("div");
-    // var pDiv = document.createElement("div");
-    var btn = document.createElement("button");
-    var btnDiv2 = document.createElement("div");
-    // var pDiv = document.createElement("div");
-    var btn2 = document.createElement("button");
-    btn.className = "btn btn-danger btn-sm";
-    btn2.className = "btn btn-danger btn-sm";
-    btnDiv.appendChild(btn);
-    btnDiv2.appendChild(btn2);
+    div_textRight.appendChild(div_textRight_p);
+    div_flex.appendChild(div_dist);
+    div_prog.appendChild(div_sp);
+    div_flex.appendChild(div_prog);
+    div_flex.appendChild(div_textRight);
+    steplist.appendChild(div_flex);
 
-
-    flexRow.appendChild(btnDiv);
-    flexRow.appendChild(name_p);
-    checkPoint_col.appendChild(flexRow);
-    steplist.appendChild(tag);
-
-    var text2 = document.createTextNode({{ $total }}-item["distance"] + " " + item["checkpoint_category"]);
-    name_p2.appendChild(text2);
-    flexRowRev.appendChild(btnDiv2);
-    flexRowRev.appendChild(name_p2);
-    checkPoint_col2.appendChild(flexRowRev);
-    console.log(item["checkpoint_category"]);
   });
+
+
+
+
+  // var checkpoints = {!! json_encode($checkpointsr) !!};
+  // checkpoints.forEach((item, i) => {
+  //   var tag = document.createElement("li");
+  //   tag.className = "StepProgress-item";
+  //   var name_p = document.createElement("p");
+  //   name_p.style.fontSize = "70%";
+  //   var name_p2 = document.createElement("p");
+  //   name_p2.style.fontSize = "70%";
+  //   Object.keys(item).forEach((key, i) => {
+  //     if (key == "checkpoint_title") {
+  //       // console.log(item[key]);
+  //       var textnode = document.createTextNode(item[key]);
+  //       name_p.appendChild(textnode);
+  //     } else if (key == "distance") {
+  //         if ({{ $total }}-item[key] <= dist_walked) {
+  //           tag.className = "StepProgress-item is-done";
+  //         } else {
+  //           flag1 += 1;
+  //           if (flag1 == 1) {
+  //             tag.className = "StepProgress-item current";
+  //           } else {
+  //             tag.className = "StepProgress-item";
+  //           }
+  //         }
+  //      }
+  //
+  //   });
+  //   var flexRow = document.createElement("div");
+  //   flexRow.className = "d-flex flex-row justify-content-start";
+  //   flexRow.style.height = "60px";
+  //   flexRow.style.width = "100px";
+  //   var flexRowRev = document.createElement("div");
+  //   flexRowRev.className = "d-flex flex-row-reverse justify-content-start";
+  //   flexRowRev.style.height = "60px";
+  //   flexRowRev.style.maxWidth = "60px"
+  //   var btnDiv = document.createElement("div");
+  //   // var pDiv = document.createElement("div");
+  //   var btn = document.createElement("button");
+  //   var btnDiv2 = document.createElement("div");
+  //   // var pDiv = document.createElement("div");
+  //   var btn2 = document.createElement("button");
+  //   btn.className = "btn btn-danger btn-sm";
+  //   btn2.className = "btn btn-danger btn-sm";
+  //   btnDiv.appendChild(btn);
+  //   btnDiv2.appendChild(btn2);
+  //
+  //
+  //   flexRow.appendChild(btnDiv);
+  //   flexRow.appendChild(name_p);
+  //   checkPoint_col.appendChild(flexRow);
+  //   steplist.appendChild(tag);
+  //
+  //   var text2 = document.createTextNode({{ $total }}-item["distance"] + " " + item["checkpoint_category"]);
+  //   name_p2.appendChild(text2);
+  //   flexRowRev.appendChild(btnDiv2);
+  //   flexRowRev.appendChild(name_p2);
+  //   checkPoint_col2.appendChild(flexRowRev);
+  //   console.log(item["checkpoint_category"]);
+  // });
 
 }
 
