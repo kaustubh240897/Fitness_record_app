@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14.768" height="19.5" viewBox="0 0 14.768 19.5">
+    <defs>
+        <clipPath id="clip">
+            <use xlink:href="#fill"/>
+        </clipPath>
+        <style>
+            .cls-2{fill:none;stroke:#e68f00;stroke-width:1.2px}.cls-3{stroke:none}
+        </style>
+    </defs>
+    <g id="ico" transform="translate(.268)">
+        <g id="Union_8" fill="none">
+            <path d="M5 13a2 2 0 0 1-2-2v-.6a5.5 5.5 0 1 1 5 0v.6a2 2 0 0 1-2 2z" class="cls-3" transform="translate(3.5 4.5)"/>
+            <path fill="#e68f00" d="M6 11.8c.441 0 .8-.36.8-.8V9.666l.654-.335C8.9 8.591 9.8 7.124 9.8 5.5c0-2.371-1.93-4.3-4.3-4.3-2.371 0-4.3 1.929-4.3 4.3 0 1.624.899 3.092 2.346 3.831l.654.335V11c0 .44.359.8.8.8h1M6 13H5c-1.105 0-2-.895-2-2v-.6c-1.781-.91-3-2.763-3-4.9C0 2.462 2.462 0 5.5 0 8.537 0 11 2.462 11 5.5c0 2.137-1.22 3.99-3 4.9v.6c0 1.105-.895 2-2 2z" transform="translate(3.5 4.5)"/>
+        </g>
+        <g id="Rectangle_2065" class="cls-2" transform="translate(7.5 18.5)">
+            <rect id="fill" width="3" height="1" class="cls-3" rx=".5"/>
+            <path fill="none" d="M0 .4h3M2.4 0v1M3 .6H0m.6.4V0" clip-path="url(#clip)"/>
+        </g>
+        <path id="Line_488" d="M0 0L0 3" class="cls-2" transform="translate(8)"/>
+        <path id="Line_489" d="M0 0L2 3" class="cls-2" transform="translate(2 1)"/>
+        <path id="Line_490" d="M0 0L2 1" class="cls-2" transform="translate(0 6)"/>
+    </g>
+</svg>
