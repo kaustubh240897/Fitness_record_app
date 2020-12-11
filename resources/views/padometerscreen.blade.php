@@ -9,20 +9,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <style media="screen">
-.wrapper {
-  height:50vh;
-  font-size: 10px;
-  border: 1px solid #CCC;
-}
-.btn.blue {
-background-color: #ccece8 !important;
-/* padding: 12px 32px !important; */
-}
 
-.btn.pink {
-background-color: #f2dcdb !important;
-/* padding: 12px 32px !important; */
-}
+
 .chartcenter{
   position: absolute;
   top: -100px;
@@ -33,107 +21,12 @@ background-color: #f2dcdb !important;
   color: red;
 
 }
-/* .overlay-text2 {
-  align-self: flex-start;
-  transform: translateY(30%);
-  z-index: 50
-} */
 
-.wrapper {
-  width: 330px;
-  font-family: 'Helvetica';
-  font-size: 14px;
-  border: 1px solid #CCC;
-}
-.StepProgress {
-  position: relative;
-  padding-left: 10px;
-  list-style: none;
-}
-.StepProgress::before {
-  display: inline-block;
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 20px;
-  width: 20px;
-  height: 100%;
-  border-left: 4px solid #CCC;
-}
-.StepProgress-item {
-  position: relative;
-  counter-increment: list;
-}
-.StepProgress-item:not(:last-child) {
-  padding-bottom: 60px;
-}
-.StepProgress-item::before {
-  display: inline-block;
-  content: '';
-  position: absolute;
-  left: 10px;
-  height: 100%;
-  width: 24px;
-}
-.StepProgress-item::after {
-  content: '';
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  left: 0px;
-  width: 24px;
-  height: 18px;
-  border: 1px solid #CCC;
-  border-radius: 50%;
-  background-color: #FFF;
-}
-.StepProgress-item:first-child::after {
-  content: '';
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  left: -4px;
-  width: 32px;
-  height: 18px;
-  border: 1px solid #CCC;
-  border-radius: 50%;
-  background-color: #FFF;
-}
-.StepProgress-item.is-done::before {
-  border-left: 4px solid green;
-}
-.StepProgress-item.is-done::after {
-  content: "✔";
-  font-size: 10px;
-  color: #FFF;
-  text-align: center;
-  border: 2px solid green;
-  background-color: green;
-}
-.StepProgress-item.current::before {
-  border-left: 4px solid #CCC;
-}
-.StepProgress-item.current::after {
-  /* content: counter(list); */
-  padding-top: 1px;
-  width: 24px;
-  height: 18px;
-  top: -4px;
-  left: 0px;
-  font-size: 14px;
-  text-align: center;
-  color: green;
-  border: 1px solid green;
-  background-color: white;
-}
-.StepProgress strong {
-  display: block;
-}
 
-a {
+/* a {
 color: #000000 !important;
 text-decoration: none !important;
-}
+} */
 .relative {
 position: relative;
 }
@@ -148,13 +41,13 @@ transform: translate(-50%, -50%);
 .text-center{
 text-align: center;
 }
-.speech-bubble {
+.speech-bubble2 {
 position: relative;
 background: #dce0e3;
 border-radius: .4em;
 }
 
-.speech-bubble:after {
+.speech-bubble2:after {
 content: '';
 position: absolute;
 bottom: 0;
@@ -455,7 +348,7 @@ margin-bottom: -30px;
         <p class="font-weight-bold" style="color:#2b63c6">今日の歩数</p>
       </div>
       <div class="container-fluid w-75 pb-3">
-        <div class="speech-bubble text-center">
+        <div class="speech-bubble2 text-center">
           <p class="mb-0 font-weight-bold" style="font-size:90%; color:#113A83;">あと {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} で目標達成！</p>
         </div>
       </div>
@@ -496,7 +389,7 @@ margin-bottom: -30px;
 
       <div class="container-fluid w-50 d-none d-md-block d-lg-none">
         <br>
-        <div class="speech-bubble text-center" style="background: #ff9327">
+        <div class="speech-bubble2 text-center" style="background: #ff9327">
           <p class="mb-0 font-weight-bold" style="font-size:90%; color:#113A83;">あと {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
         </div>
       </div>
@@ -506,7 +399,7 @@ margin-bottom: -30px;
 
       <div class="container-fluid w-25 d-none d-lg-block">
         <br>
-        <div class="speech-bubble text-center" style="background: #ff9327">
+        <div class="speech-bubble2 text-center" style="background: #ff9327">
           <p class="mb-0 font-weight-bold" style="font-size:90%; color:#113A83;">あと {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
         </div>
       </div>

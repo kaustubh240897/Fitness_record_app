@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20.421" height="18.447" viewBox="0 0 20.421 18.447">
+    <defs>
+        <style>
+            .cls-1{fill:#ffd00d}
+        </style>
+    </defs>
+    <g id="ico" transform="translate(9.347 -36.692)">
+        <path id="Path_16608" d="M2.179.124C-.311.92-.466 5.621.7 8.317l3.977-.3A23.307 23.307 0 0 0 5.2 3.36C5.189 2.1 4.473-.61 2.179.124z" class="cls-1" transform="rotate(-34 60.09 35.086)"/>
+        <path id="Path_16609" d="M0 .418s-.133 3.816 2.527 3.521C4.883 3.678 3.973 0 3.973 0z" class="cls-1" transform="rotate(-34 74.3 29.225)"/>
+        <path id="Path_16610" d="M3.02.124C.727-.61.011 2.1 0 3.36a23.3 23.3 0 0 0 .518 4.66l3.976.3C5.665 5.621 5.51.92 3.02.124z" class="cls-1" transform="rotate(-18 136.999 12.159)"/>
+        <path id="Path_16611" d="M.173 0s-.911 3.678 1.446 3.939c2.66.3 2.526-3.522 2.526-3.522z" class="cls-1" transform="rotate(-18 165.145 7.035)"/>
+    </g>
+</svg>
