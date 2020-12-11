@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
-
 <style media="screen">
     .btn.blue {
       background-color: #ccece8 !important;
@@ -11,34 +9,7 @@
     .dropdown-menu.blue {
       background-color: #ccece8 !important;
     }
-    @media only screen and (max-width: 768px) {
-      #monthinput {
-        max-width: 25%;
-
-      }
-      #yearinput {
-        max-width: 35%;
-      }
-      #dayinput{
-        max-width: 25%;
-      }
-    }
-    @media only screen and (min-width: 768px) {
-      #monthinput {
-        max-width: 20%;
-
-      }
-      #yearinput {
-        max-width: 20%;
-      }
-      #dayinput {
-        max-width:20%;
-      }
-    }
-    </style>
-
-
-
+</style>
 <div class="container-fluid">
       <div class="row justify-content-around">
         <div class="col-xs-3">
@@ -59,56 +30,26 @@
       </div>
     </div>
 
-     <div class="container-fluid mt-2 mb-2 pb-4">
-        <div class="row float-right">
-          <div class="col float-right mx-0">
-          <form action='/search' method="get">
-            <div class="input-group mx-0">
-
-              <input type="number" name='year' placeholder='yyyy' required='true' class="form-control mx-0" min="2020" id="yearinput">
-              <input type="number" name='day' placeholder='dd' required='true' class="form-control mx-0" min="1" max='31' id="dayinput">
-              <input type="number" name='month' placeholder='mm' required='true' class="form-control mx-0" min="1" max="12" id="monthinput">
-              <span class='input-group-prepend'>
-                   <button type='submit' class='btn btn-primary'> 探す
-                   </button>
-                </span>
-            </div>
-          </form>
-          </div>
-        </div>
-    </div>
-
- <div class="table-responsive-sm mt-4 mx-sm-3">
-        <table class="table table-hover" id="collections_table">
-            <thead>
-              <tr>
-                <th scope="col">実績年月日</th>
-                <th scope="col">歩数</th>
-                <th scope="col">距離換算<br/>(1歩あたり{{ $get_m_user_stride }} cm)</th>
-                <th scope="col">日目標達成 ({{ $get_m_user_daily_goal }}歩)</th>
-              </tr>
-            </thead>
-            <tbody>
-    @if(! empty($current_week_datas))
-    @foreach($current_week_datas as $current_week_data => $steps)
+@if(! empty($d))
+    @foreach($d as $s => $steps)
     @php($total = 0)
     @foreach($steps as $step)
        @php($total += $step->steps)
     @endforeach
     <tr class="collectionsRow">
-      <td style="font-size:70%">{{ date("Y-m-d ", strtotime($step->step_actual_datetime))  }}</td>
-      <td style="font-size:70%">{{ $total }}  </td>
-      <td style="font-size:70%"> {{ $total*$get_m_user_stride/100000 }} km  </td>
-      <td style="font-size:70%">  @if($total > $get_m_user_daily_goal ) * (goal {{ $get_m_user_daily_goal }} steps)  @endif</td>
+      <td style="font-size:70%">{{ date("Y-m-d ", strtotime($step->step_actual_datetime))  }} ({{ date("l", strtotime($step->step_actual_datetime))  }})</td>
+      <td style="font-size:70%">{{ $total }} steps ( {{ $total*$get_m_user_stride/100000 }} km ) </td>
+      <td style="font-size:70%">  @if($total > $get_m_user_daily_goal ) Completed (goal {{ $get_m_user_daily_goal }} steps) @else Incomplete(goal {{ $get_m_user_daily_goal }} steps)  @endif </td>
+      @php($perct =  $total/$get_m_user_daily_goal *100)
+      {{ $perct }} %
     </tr>
+    <br>
     @endforeach
     @else
     <h4> 申し訳ありませんが、今まで歴史がありません！ </h4>
     @endif
-  </tbody>
-</table>
-</div>
-  <script type="text/javascript">
+
+    <script type="text/javascript">
     function changeText() {
       var x = document.getElementById("bt1");
       if (x.innerHTML === "月別") {
@@ -118,6 +59,5 @@
       }
     }
   </script>
-
 
 @endsection

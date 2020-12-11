@@ -37,38 +37,27 @@
       </div>
     </div>
 
-
-
- <div class="table-responsive-sm mt-4 mx-sm-3">
-        <table class="table table-hover" id="collections_table">
-            <thead>
-              <tr>
-                <th scope="col">実績年月</th>
-                <th scope="col">歩数</th>
-                <th scope="col">距離換算<br/>(1歩あたり{{ $get_m_user_stride }} cm)</th>
-                <th scope="col">月目標達成 ({{ $get_m_user_monthly_goal }}歩)</th>
-              </tr>
-            </thead>
-            <tbody>
-    @if(! empty($current_month_datas))
-    @foreach($current_month_datas as $current_month_data => $steps)
+  
+    @if(! empty($m))
+    @foreach($m as $s => $steps)
     @php($total = 0)
     @foreach($steps as $step)
        @php($total += $step->steps)
     @endforeach
     <tr class="collectionsRow">
-      <td style="font-size:70%">{{ date("Y-m ", strtotime($step->step_actual_datetime))  }}</td>
-      <td style="font-size:70%">{{ $total }}  </td>
-      <td style="font-size:70%"> {{ $total*$get_m_user_stride/100000 }} km  </td>
-      <td style="font-size:70%">  @if($total > $get_m_user_monthly_goal ) * (goal {{ $get_m_user_monthly_goal }} steps)  @endif</td>
+      <td style="font-size:70%">{{ date("Y-m-d ", strtotime($step->step_actual_datetime))  }} ({{ date("l", strtotime($step->step_actual_datetime))  }})</td>
+      <td style="font-size:70%">{{ $total }} steps ( {{ $total*$get_m_user_stride/100000 }} km ) </td>
+      <td style="font-size:70%">  @if($total > $get_m_user_monthly_goal ) Completed (goal {{ $get_m_user_monthly_goal }} steps) @else Incomplete(goal {{ $get_m_user_monthly_goal }} steps)  @endif </td>
+      @php($perct =  $total/$get_m_user_monthly_goal *100)
+      {{ $perct }} %
     </tr>
+    <br>
     @endforeach
     @else
     <h4> 申し訳ありませんが、今まで歴史がありません！ </h4>
     @endif
-  </tbody>
-</table>
-</div>
+
+ 
   <script type="text/javascript">
     function changeText() {
       var x = document.getElementById("bt1");

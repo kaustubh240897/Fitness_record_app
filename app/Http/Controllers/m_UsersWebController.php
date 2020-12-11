@@ -25,13 +25,21 @@ class m_UsersWebController extends Controller
     public function dailydata()
     {
         if(m_Users::where('users_id',Auth::id())->count() >0){
+            
             $m__users_id = m_Users::where('users_id',Auth::id())->first()->id;
+            $year = 2020;
+            $month = 12; 
+            $d = t_Steps::where('m__users_id', $m__users_id)->whereYear('created_at', '=', $year)
+            ->whereMonth('created_at', '=', $month)
+            ->get()->groupBy(function ($val) {
+                return Carbon::parse($val->step_actual_datetime)->format('d');
+            });       
             $current_week_datas = t_Steps::where('m__users_id', $m__users_id)->whereBetween('step_actual_datetime', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->get()->groupBy(function ($val) {
                 return Carbon::parse($val->step_actual_datetime)->format('d');
             });
             $get_m_user_stride = m_Users::where('users_id', Auth::id())->first()->stride;
             $get_m_user_daily_goal = m_Users::where('users_id', Auth::id())->first()->step_goal_per_day;
-            return view('userhistory', compact('current_week_datas','get_m_user_stride','get_m_user_daily_goal'));
+            return view('userhistory', compact('current_week_datas','get_m_user_stride','get_m_user_daily_goal','d'));
             }
         else{
             $current_week_datas=null;
@@ -66,6 +74,11 @@ class m_UsersWebController extends Controller
         if(m_Users::where('users_id',Auth::id())->count() >0){
 
             $m__users_id = m_Users::where('users_id', Auth::id())->first()->id;
+            $year = 2020;
+            $m = t_Steps::where('m__users_id', $m__users_id)->whereYear('created_at', '=', $year)
+            ->get()->groupBy(function ($val) {
+                return Carbon::parse($val->step_actual_datetime)->format('m');
+            });
             $current_month_datas = t_Steps::where('m__users_id', $m__users_id)->whereBetween('step_actual_datetime', [Carbon::now()->startOfYear(), Carbon::now()->endOfYear()])->orderBy('step_actual_datetime')->get()->groupBy(function ($val) {
                 return Carbon::parse($val->step_actual_datetime)->format('m');
             });
@@ -73,7 +86,7 @@ class m_UsersWebController extends Controller
             $get_m_user_monthly_goal = m_Users::where('users_id', Auth::id())->first()->step_goals_per_month;
 
 
-            return view('usermonthlyhistory', compact('current_month_datas','get_m_user_stride','get_m_user_monthly_goal'));
+            return view('usermonthlyhistory', compact('current_month_datas','get_m_user_stride','get_m_user_monthly_goal','m'));
         }
         else{
             $current_month_datas = null;
