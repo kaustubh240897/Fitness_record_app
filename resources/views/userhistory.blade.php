@@ -16,22 +16,22 @@
          <a href="{{ url('/mypage') }}" > <button type="button" class="btn blue mr-1">マイページへ戻る</button> </a>
         </div>
         <div class="col-xs-3">
-         <a href="{{ url('/usermonthlyhistory') }}" >  <button type="button" class="btn blue mr-1" onclick="changeText()" id="bt1">月別</button> </a>
+         <a href="{{ route('usermonthlyhistory', [now()->year]) }}" >  <button type="button" class="btn blue mr-1" onclick="changeText()" id="bt1">月別</button> </a>
         </div>
         <div class="dropdown">
           <button class="btn blue dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             成果の順序
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-          <a href="{{ url('/reverseuserdailyhistory') }}" >    <button class="btn blue dropdown-item mb-1" type="button">最新</button> </a>
-          <a href="{{ url('/userdailyhistory') }}" >   <button class="btn blue dropdown-item" type="button">年代順</button> </a>
+          <a href="{{ url('/reverseuserdailyhistory',[now()->year,now()->month]) }}" >    <button class="btn blue dropdown-item mb-1" type="button">最新</button> </a>
+          <a href="{{ route('userhistory', [now()->year,now()->month]) }}" >   <button class="btn blue dropdown-item" type="button">年代順</button> </a>
           </div>
         </div>
       </div>
     </div>
 
-@if(! empty($d))
-    @foreach($d as $s => $steps)
+@if(! empty($dates))
+    @foreach($dates as $date => $steps)
     @php($total = 0)
     @foreach($steps as $step)
        @php($total += $step->steps)
