@@ -45,7 +45,7 @@
        @php($total += $step->steps)
     @endforeach
     <tr class="collectionsRow">
-      <td style="font-size:70%">{{ date("Y-m-d ", strtotime($step->step_actual_datetime))  }} ({{ date("l", strtotime($step->step_actual_datetime))  }})</td>
+      <td style="font-size:70%">{{ date("m ", strtotime($step->step_actual_datetime))  }} ({{ date("l", strtotime($step->step_actual_datetime))  }})</td>
       <td style="font-size:70%">{{ $total }} steps ( {{ $total*$get_m_user_stride/100000 }} km ) </td>
       <td style="font-size:70%">  @if($total > $get_m_user_monthly_goal ) Completed (goal {{ $get_m_user_monthly_goal }} steps) @else Incomplete(goal {{ $get_m_user_monthly_goal }} steps)  @endif </td>
       @php($perct =  $total/$get_m_user_monthly_goal *100)
