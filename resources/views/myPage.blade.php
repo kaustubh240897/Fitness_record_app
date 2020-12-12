@@ -1130,8 +1130,6 @@ var def_path = "{{URL::asset('storage/mypage/box1_sel.png')}}";
 
     var steplist = document.getElementById("progress_bar");
     var tr_count_id = 1;
-    // var checkPoint_col = document.getElementById("checkPoint_name");
-    // var checkPoint_col2 = document.getElementById("checkPoint_name2");
 
 
   if({{ $session_value }} === false){
@@ -1310,71 +1308,6 @@ var def_path = "{{URL::asset('storage/mypage/box1_sel.png')}}";
       steplist.appendChild(div_flex);
 
     });
-
-
-
-
-
-    // var checkpoints = {!! json_encode($checkpoints) !!};
-    // checkpoints.forEach((item, i) => {
-    //   var tag = document.createElement("li");
-    //   tag.className = "StepProgress-item";
-    //   var name_p = document.createElement("p");
-    //   name_p.style.fontSize = "70%";
-    //   var name_p2 = document.createElement("p");
-    //   name_p2.style.fontSize = "70%";
-    //   Object.keys(item).forEach((key, i) => {
-    //     if (key == "checkpoint_title") {
-    //       // console.log(item[key]);
-    //       var textnode = document.createTextNode(item[key]);
-    //       name_p.appendChild(textnode);
-    //     } else if (key == "distance") {
-    //         if (item[key] < dist_walked) {
-    //           tag.className = "StepProgress-item is-done";
-    //         } else {
-    //           flag1 += 1;
-    //           if (flag1 == 1) {
-    //             tag.className = "StepProgress-item current";
-    //           } else {
-    //             tag.className = "StepProgress-item";
-    //           }
-    //         }
-    //      }
-    //
-    //   });
-    //   var flexRow = document.createElement("div");
-    //   flexRow.className = "d-flex flex-row justify-content-start";
-    //   flexRow.style.height = "60px";
-    //   flexRow.style.width = "100px";
-    //   var flexRowRev = document.createElement("div");
-    //   flexRowRev.className = "d-flex flex-row-reverse justify-content-start";
-    //   flexRowRev.style.height = "60px";
-    //   flexRowRev.style.maxWidth = "100px"
-    //   var btnDiv = document.createElement("div");
-    //   // var pDiv = document.createElement("div");
-    //   var btn = document.createElement("button");
-    //   var btnDiv2 = document.createElement("div");
-    //   // var pDiv = document.createElement("div");
-    //   var btn2 = document.createElement("button");
-    //   btn.className = "btn btn-danger btn-sm";
-    //   btn2.className = "btn btn-danger btn-sm";
-    //   btnDiv.appendChild(btn);
-    //   btnDiv2.appendChild(btn2);
-    //
-    //
-    //   flexRow.appendChild(btnDiv);
-    //   flexRow.appendChild(name_p);
-    //   checkPoint_col.appendChild(flexRow);
-    //   steplist.appendChild(tag);
-    //
-    //   var text2 = document.createTextNode(item["distance"] + " " + item["checkpoint_category"]);
-    //   name_p2.appendChild(text2);
-    //   flexRowRev.appendChild(btnDiv2);
-    //   flexRowRev.appendChild(name_p2);
-    //   checkPoint_col2.appendChild(flexRowRev);
-    //   console.log(item["checkpoint_category"]);
-    // });
-
   }
   else{
      var get_m_user_stride = {{ $get_m_user_stride }};
@@ -1512,10 +1445,7 @@ var def_path = "{{URL::asset('storage/mypage/box1_sel.png')}}";
         div_textRight_p.id = "ar"+tr_count_id.toString();
         console.log(div_textRight_p.id);
         if (tr_count_id > 1) {
-          var id_to = "#" +"ar"+ tr_count_id.toString();
-          var id_from = "#" +"ar"+ (tr_count_id-1).toString();
-          console.log(id_to);
-          console.log(id_from);
+
           var div_con = document.createElement("connection");
 
           if (i == checkpoints.length - 1) {
@@ -1539,68 +1469,6 @@ var def_path = "{{URL::asset('storage/mypage/box1_sel.png')}}";
 
     });
 
-
-
-
-    // var checkpoints = {!! json_encode($checkpointsr) !!};
-    // checkpoints.forEach((item, i) => {
-    //   var tag = document.createElement("li");
-    //   tag.className = "StepProgress-item";
-    //   var name_p = document.createElement("p");
-    //   name_p.style.fontSize = "70%";
-    //   var name_p2 = document.createElement("p");
-    //   name_p2.style.fontSize = "70%";
-    //   Object.keys(item).forEach((key, i) => {
-    //     if (key == "checkpoint_title") {
-    //       // console.log(item[key]);
-    //       var textnode = document.createTextNode(item[key]);
-    //       name_p.appendChild(textnode);
-    //     } else if (key == "distance") {
-    //         if ({{ $total }}-item[key] <= dist_walked) {
-    //           tag.className = "StepProgress-item is-done";
-    //         } else {
-    //           flag1 += 1;
-    //           if (flag1 == 1) {
-    //             tag.className = "StepProgress-item current";
-    //           } else {
-    //             tag.className = "StepProgress-item";
-    //           }
-    //         }
-    //      }
-    //
-    //   });
-    //   var flexRow = document.createElement("div");
-    //   flexRow.className = "d-flex flex-row justify-content-start";
-    //   flexRow.style.height = "60px";
-    //   flexRow.style.width = "100px";
-    //   var flexRowRev = document.createElement("div");
-    //   flexRowRev.className = "d-flex flex-row-reverse justify-content-start";
-    //   flexRowRev.style.height = "60px";
-    //   flexRowRev.style.maxWidth = "60px"
-    //   var btnDiv = document.createElement("div");
-    //   // var pDiv = document.createElement("div");
-    //   var btn = document.createElement("button");
-    //   var btnDiv2 = document.createElement("div");
-    //   // var pDiv = document.createElement("div");
-    //   var btn2 = document.createElement("button");
-    //   btn.className = "btn btn-danger btn-sm";
-    //   btn2.className = "btn btn-danger btn-sm";
-    //   btnDiv.appendChild(btn);
-    //   btnDiv2.appendChild(btn2);
-    //
-    //
-    //   flexRow.appendChild(btnDiv);
-    //   flexRow.appendChild(name_p);
-    //   checkPoint_col.appendChild(flexRow);
-    //   steplist.appendChild(tag);
-    //
-    //   var text2 = document.createTextNode({{ $total }}-item["distance"] + " " + item["checkpoint_category"]);
-    //   name_p2.appendChild(text2);
-    //   flexRowRev.appendChild(btnDiv2);
-    //   flexRowRev.appendChild(name_p2);
-    //   checkPoint_col2.appendChild(flexRowRev);
-    //   console.log(item["checkpoint_category"]);
-    // });
 
   }
 
