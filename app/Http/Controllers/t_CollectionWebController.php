@@ -246,52 +246,7 @@ class t_CollectionWebController extends Controller
         //
     }
 
-    public function checkpointdetails(Request $request, $id)
-    {
-        if(m_Users::where('users_id',Auth::id())->count() >0){
-            $m__user_id = m_Users::where('users_id',Auth::id())->first()->id;
-            $my_collections = t_Collection::where('m__users_id', $m__user_id)->where('m__collection_id', $id)->first();
-           // $count = t_Collection::where('m__users_id', $m__user_id)->where('m__collection_id', $id)->count();
-           if(! empty($my_collections)){
-                if($my_collections->m_collections->collection_category == 'checkpoint'){
-                    $get_tour_id =  $my_collections->m_collections->m__checkpoints->tours->id;
-                }
-                    else{
-                        $get_tour_id =  $my_collections->m_collections->m__tours->id;
-                    }
-                    $query_checkpoints = m_Checkpoint::where('m__tour_id',$get_tour_id);
-                    $total = 0;
-                        if($query_checkpoints != null){
-                            $checkpoints = $query_checkpoints->orderBy('distance')->get();
-                            $checkpointsr = m_Checkpoint::where('m__tour_id',$get_tour_id)->orderBy('distance', 'DESC')->get();
-                            foreach ($checkpoints as $checkpoint) {
-                                if($checkpoint->checkpoint_category == 'endpoint'){
-                                    $total = $checkpoint->distance;
-                                    }
-                            }
-                        }
-                        else{
-                            $checkpoints = null;
-                            $checkpointsr = null;
-                            }
-            }
-            else{
-                $checkpoints = null;
-                $checkpointsr = null;
-                $total = 0;
-            }
-            
-            return view('checkpointsdetails', compact('my_collections','total','checkpoints','checkpointsr'));
-        }
-        else{
-            $my_collections = null;
-            $checkpoints = null;
-            $checkpointsr = null;
-            $total = null;
-            return view('checkpointsdetails', compact('my_collections','total','checkpoints','checkpointsr'));
-        }
-    }
-
+    
     /**
      * Update the specified resource in storage.
      *

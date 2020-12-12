@@ -215,6 +215,50 @@ class t_TourWebController extends Controller
         }
     }
 
+
+    public function checkpointdetails(Request $request, $id)
+    {
+        if(m_Users::where('users_id',Auth::id())->count() >0){
+            $m__user_id = m_Users::where('users_id',Auth::id())->first()->id;
+            
+            $my_checkpoint = m_Checkpoint::where('id',$id)->get()->first();
+           
+           if(! empty($my_checkpoint)){
+                    $get_tour_id =  $my_checkpoint->tours->id;             
+                    $query_checkpoints = m_Checkpoint::where('m__tour_id',$get_tour_id);
+                    $total = 0;
+                        if($query_checkpoints != null){
+                            $checkpoints = $query_checkpoints->orderBy('distance')->get();
+                            $checkpointsr = m_Checkpoint::where('m__tour_id',$get_tour_id)->orderBy('distance', 'DESC')->get();
+                            foreach ($checkpoints as $checkpoint) {
+                                if($checkpoint->checkpoint_category == 'endpoint'){
+                                    $total = $checkpoint->distance;
+                                    }
+                            }
+                        }
+                        else{
+                            $checkpoints = null;
+                            $checkpointsr = null;
+                            }
+            }
+            else{
+                $checkpoints = null;
+                $checkpointsr = null;
+                $total = 0;
+            }
+            
+            return view('checkpointsdetails', compact('my_checkpoint','total','checkpoints','checkpointsr'));
+        }
+        else{
+            $my_checkpoint = null;
+            $checkpoints = null;
+            $checkpointsr = null;
+            $total = null;
+            return view('checkpointsdetails', compact('my_checkpoint','total','checkpoints','checkpointsr'));
+        }
+    }
+
+
     /**
      * Show the form for editing the specified resource.
      *
