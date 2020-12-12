@@ -213,7 +213,7 @@ class t_CollectionWebController extends Controller
                 $total = 0;
 
             }
-
+            $session_value = $request->session()->get('reverse','false');
            // $count = t_Collection::where('m__users_id', $m__user_id)->where('m__collection_id', $id)->count();
             if(! empty($my_collections)){
                 if($my_collections->new_display_flag == 0){
@@ -222,7 +222,7 @@ class t_CollectionWebController extends Controller
                             $t_collection->save();
                 }
         }
-            return view('mycollectionsdetails', compact('my_collections','m__users','total','checkpoints','checkpointsr'));
+            return view('mycollectionsdetails', compact('my_collections','m__users','total','checkpoints','checkpointsr','session_value'));
         }
         else{
             $my_collections = null;
@@ -230,8 +230,9 @@ class t_CollectionWebController extends Controller
             $checkpoints = null;
             $checkpointsr = null;
             $total = 0;
+            $session_value = false;
 
-            return view('mycollectionsdetails', compact('my_collections','m__users','total','checkpoints','checkpointsr'));
+            return view('mycollectionsdetails', compact('my_collections','m__users','total','checkpoints','checkpointsr','session_value'));
         }
     }
 

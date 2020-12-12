@@ -222,6 +222,7 @@ class t_TourWebController extends Controller
             $m__user_id = m_Users::where('users_id',Auth::id())->first()->id;
             
             $my_checkpoint = m_Checkpoint::where('id',$id)->get()->first();
+            $session_value = $request->session()->get('reverse','false');
            
            if(! empty($my_checkpoint)){
                     $get_tour_id =  $my_checkpoint->tours->id;             
@@ -247,14 +248,15 @@ class t_TourWebController extends Controller
                 $total = 0;
             }
             
-            return view('checkpointsdetails', compact('my_checkpoint','total','checkpoints','checkpointsr'));
+            return view('checkpointsdetails', compact('my_checkpoint','total','checkpoints','checkpointsr','session_value'));
         }
         else{
             $my_checkpoint = null;
             $checkpoints = null;
             $checkpointsr = null;
             $total = null;
-            return view('checkpointsdetails', compact('my_checkpoint','total','checkpoints','checkpointsr'));
+            $session_value = false;
+            return view('checkpointsdetails', compact('my_checkpoint','total','checkpoints','checkpointsr','session_value'));
         }
     }
 
