@@ -33,12 +33,12 @@ Route::get('/padometerscreen','m_UsersWebController@padometerScreen')->name('pad
 Route::get('/createtour', 't_TourWebController@index')->name('index');
 Route::get('/createtour/{id}','t_TourWebController@show')->name('tourdetails');
 Route::post('/createtour/{id}', 't_TourWebController@store')->name('tourstore');
+Route::get('/checkpointdetails/{id}','t_TourWebController@checkpointdetails')->name('checkpointdetails');
 Route::post('/createtour', 't_TourWebController@createtoursession')->name('createsession');
 Route::get('/bytourcollection', 't_CollectionWebController@byTour')->name('bytourcollection');
 Route::get('/mycollection', 't_CollectionWebController@index')->name('mycollection');
 Route::get('/reversemycollection', 't_CollectionWebController@reverseIndex')->name('reversemycollection');
 Route::get('/mycollection/{id}','t_CollectionWebController@show')->name('collectiondetails');
-Route::get('/checkpointdetails/{id}','t_CollectionWebController@checkpointdetails')->name('checkpointdetails');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/logged-out', 'CustomAuthController@thankpage')->name('logout-page');
 

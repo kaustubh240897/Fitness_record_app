@@ -282,23 +282,23 @@
 </head>
 
 <body>
-@if(! empty($my_collections))
+@if(! empty($my_checkpoint))
   		<div class='container-fluid'>
 
 
 		   <div class="row d-flex fixed-top" style=" z-index:0; background-color: #2b63c6; position: fixed; top:0px;">
-
-				<div class='col-10 p-2 mx-3' style="color:white;"><img class='mx-2' src='/storage/img/label-1.png'>{{ $my_collections->m_collections->collection_title }} </div>
-
+				  		 	    
+				<div class='col-10 p-2 mx-3' style="color:white;"><img class='mx-2' src='/storage/img/label-1.png'>{{ $my_checkpoint->m_collections->collection_title }} </div>
+							   
 			</div>
 
 
 
 			<div class='row fixed-top' style='position: relative;'>
 				<div class='col-12 wrapper'>
-					<p class='ml-3 mt-3 color'>{{ $my_collections->m_collections->m__checkpoints->tours->tour_title }} </p>
-					<p class='color'> <img class='ml-3' src='/storage/img/label-1.png'> {{ $my_collections->m_collections->collection_title }} </p>
-
+					<p class='ml-3 mt-3 color'>{{ $my_checkpoint->tours->tour_title }} </p>
+					<p class='color'> <img class='ml-3' src='/storage/img/label-1.png'> {{ $my_checkpoint->m_collections->collection_title }} </p>
+					 		
 			    </div>
             </div>
 
@@ -312,7 +312,7 @@
 
 	    <div class='container-fluid' style='background-color: #f2f2f2'>
 	        <img src='/storage/img/line@3x.png' class='wid my-2'>
-	        <b>  <text class='hr my-1'>{{ $my_collections->m_collections->m__checkpoints->comments }} </text></b>
+	        <b>  <text class='hr my-1'>{{ $my_checkpoint->comments }} </text></b>
 	        <img src='/storage/img/lineDown.png' class='wid mt-2'>
 
 	        <div class='col-12 my-2' style='color: #2b63c6;'>

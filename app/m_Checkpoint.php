@@ -2,7 +2,7 @@
 
 namespace App;
 use App\m_Tour;
-use app\m_Collection;
+use App\m_Collection;
 use Illuminate\Database\Eloquent\Model;
 
 class m_Checkpoint extends Model

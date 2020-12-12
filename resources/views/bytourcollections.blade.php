@@ -31,7 +31,7 @@
 		margin-left: 0px;
 		}
 	  	.wrapper1{
-	  		height:13rem;
+	  		/* height:13rem; */
 	  		font-size: 15px;
 	  		background-color: #2b63c6;
 	  		
@@ -115,6 +115,7 @@
 					
 
 		body {
+		overflow-x: hidden;
 		font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 		font-size: 1rem;
 		font-weight: normal;
@@ -123,10 +124,13 @@
 		background: #fffdfa;
 		z-index:9;
 		position: relative;
+	
 		}
+	
 		div.c {
 			text-align: right;
-			} 
+			}
+		 
 
 			.row-full{
 			width: 99vw;
@@ -141,10 +145,14 @@
 
 		.main .accordion {
 		max-width: 100%;
+	
+   
+        overflow-x: hidden;
+
 		height: auto;
 		/* margin: 0 auto; */
 		/* padding: 4rem 0 2rem 0; */
-		margin-top: 13rem;
+		margin-top: 14rem;
 		}
 		.main .accordion-item {
 		/* padding: 0.5rem 0; */
@@ -199,13 +207,7 @@
 		}
 
 
-		@media only screen and (max-width: 768px) {
-		.main .accordion {
-			/* max-width: 100%; */
-			height: auto;
-			/* margin: 0 auto; */
-			margin-top: 13rem;
-		}
+		
 		}
 
 				
@@ -218,7 +220,7 @@
 	<div class='container-fluid'>
 		<div class="row d-flex fixed-top" style="border-bottom: 1px solid white; z-index: 10; background-color: #2b63c6; position: fixed; top:0px;">
 			<div class=' p-2' style="color:white;"><div class="ml-1" style='color: white;'>私のコレクション</div> </div>
-			<div class=' ml-auto  p-2 '>  <button class='button mr-4' style="color:white;">ツアーで並べ替え ↑↓ </button></div>
+			<div class=' ml-auto  p-2 '>  <button class='button mr-1' style="color:white;">ツアーで並べ替え ↑↓ </button></div>
 
 	    </div> 
 
@@ -227,17 +229,14 @@
 
 			<div class='col-12'><img class='center' src='storage/img/star_mycol.png'> </div>
 	    </div> 
-				
+					
 
-
-	<!-- partial:index.partial.html -->
-
-	<div class='row '>
+	<div class='row'>
 		<div class='col-12'>
 
 		<main class="main row-full" >
 
-			<div  style='background-color:#fffdfa; padding-bottom:13rem;'>
+			<div  style='background-color:#fffdfa; padding-bottom:100%;'>
 			
 			<div class="accordion" >
 				@foreach($tours as $tour)
@@ -288,7 +287,7 @@
 				
 				
 			</div>
-			<div class='row' style='background-color: #eef4f6; position: relative; z-index: 10;'>
+			<div class='row' style='background-color: #eef4f6; position: relative; z-index: 10; max-width:100%;'>
 				<div class='col-12'>
 				<img style='width: 100%; height: auto;' src='/storage/img/bg@3x.png'>
 			    </div>
@@ -302,7 +301,7 @@
 	</div>
     </div>
 
-	<!-- partial -->
+	
 	<script>
 		const accordionItem = document.querySelectorAll(".accordion-item");
 
