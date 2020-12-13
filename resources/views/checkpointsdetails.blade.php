@@ -351,7 +351,7 @@
       var title = {!! json_encode( $my_checkpoint->checkpoint_title) !!};
       console.log(title);
       checkpoints.forEach((item, i) => {
-      //  {{ $my_collections->m_collections->m__checkpoints->checkpoint_title }}
+      
         console.log(item["checkpoint_title"]);
         if (item["checkpoint_title"] == title) {
           dist_walked = item["distance"];
