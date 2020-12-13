@@ -341,10 +341,10 @@
 
   var steplist = document.getElementById(prog_id);
   var flag1 = 0;
-  var value = true;
+  var value = {{$session_value}};
   var tr_count_id = 1;
 
-  if (value) {
+  if (!value) {
     var checkpoints = {!! json_encode($checkpoints) !!};
     if ( {!! json_encode($my_checkpoint->m_collections->collection_category) !!} == 'checkpoint') {
       prog_id = "progress_bar_col";
@@ -651,7 +651,7 @@
               div_sp_li.appendChild(div_sp_li_p);
               div_sp.appendChild(div_sp_li);
             }
-          }
+         }
       }
       var div_textRight_p = document.createElement("p");
       div_textRight_p.className = "py-0 my-0 pl-3 text-center dd";
