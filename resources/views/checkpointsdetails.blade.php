@@ -104,7 +104,7 @@
       display: inline-block;
       content: '';
       position: absolute;
-      left: -30px;
+      left: -35px;
       height: 100%;
       width: 10px;
       border-left: 3px solid #cadcf6;
@@ -115,7 +115,7 @@
       display: inline-block;
       content: '';
       position: absolute;
-      left: -30px;
+      left: -35px;
       height: 100%;
       width: 10px;
       border-left: 3px solid #e68f00;
@@ -143,7 +143,7 @@
       display: inline-block;
       position: absolute;
       top: 4px;
-      left: -40.5px;
+      left: -37px;
       width: 20px;
       height: 20px;
       /* width: 12px;
@@ -159,7 +159,7 @@
       display: inline-block;
       position: absolute;
       top: 2px;
-      left: -40.5px;
+      left: -37px;
       width: 20px;
       height: 20px;
       /* width: 12px;
@@ -175,7 +175,7 @@
       display: inline-block;
       position: absolute;
       top: 2px;
-      left: -39px;
+      left: -44px;
       width: 20px;
       height: 20px;
       /* width: 12px;
@@ -191,7 +191,7 @@
       display: inline-block;
       position: absolute;
       top: 2px;
-      left: -39px;
+      left: -44px;
       width: 20px;
       height: 20px;
       /* width: 12px;
@@ -238,6 +238,10 @@
       }
       .StepProgress strong {
       display: block;
+      }
+
+      .dist_t_p {
+        width: 30px;
       }
 
       .speech-bubble {
@@ -317,10 +321,10 @@
 
 	        <div class='col-12 my-2' style='color: #2b63c6;'>
                 <h6> A relaxing trip to herokiku mountains.</h6>
-               
+
 	        </div>
 
-		    
+
     <div class="container-fluid pt-3" id="progress_bar">
 
     </div>
@@ -349,7 +353,7 @@
       var title = {!! json_encode( $my_checkpoint->checkpoint_title) !!};
       console.log(title);
       checkpoints.forEach((item, i) => {
-      
+
         console.log(item["checkpoint_title"]);
         if (item["checkpoint_title"] == title) {
           dist_walked = item["distance"];
@@ -369,7 +373,7 @@
       var div_textRight = document.createElement("div");
       div_textRight.className = "pl-3 w-25 text-left text-break";
       var div_dist_p = document.createElement("p");
-      div_dist_p.className = "text-right";
+      div_dist_p.className = "text-right dist_t_p";
       div_dist_p.style.color = "#113a83";
       div_dist_p.innerHTML = item["distance"].toString() + "km";
       div_dist.appendChild(div_dist_p);
@@ -531,7 +535,7 @@
       var title = {!! json_encode( $my_checkpoint->checkpoint_title) !!};
       console.log(title);
       checkpoints.forEach((item, i) => {
-     
+
         console.log(item["checkpoint_title"]);
         if (item["checkpoint_title"] == title) {
           dist_walked = item["distance"];
@@ -551,7 +555,7 @@
       var div_textRight = document.createElement("div");
       div_textRight.className = "pl-3 w-25 text-left text-break";
       var div_dist_p = document.createElement("p");
-      div_dist_p.className = "text-right";
+      div_dist_p.className = "text-right dist_t_p";
       div_dist_p.innerHTML = item["distance"].toString() + "km";
       div_dist.appendChild(div_dist_p);
       if (i == 0) {
