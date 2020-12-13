@@ -317,10 +317,14 @@
 
 	        <div class='col-12 my-2' style='color: #2b63c6;'>
                 <h6> A relaxing trip to herokiku mountains.</h6>
-                0km
+               
 	        </div>
 
-		    <div class='row mt-2' style='background-color: #eef4f6;'>
+		    
+    <div class="container-fluid pt-3" id="progress_bar">
+
+    </div>
+    <div class='row mt-2' style='background-color: #eef4f6;'>
 		    	<br>
 		    	<br>
 				<div class='col-12'>
@@ -328,12 +332,6 @@
 			    </div>
 			</div>
 		</div>
-    <div class="container-fluid pt-3" id="progress_bar">
-
-    </div>
-@else
-    <h4> チェックポイントはありません。 </h4>
-@endif
 
 <script type="text/javascript">
   var prog_id = "progress_bar";
@@ -533,7 +531,7 @@
       var title = {!! json_encode( $my_checkpoint->checkpoint_title) !!};
       console.log(title);
       checkpoints.forEach((item, i) => {
-      //  {{ $my_collections->m_collections->m__checkpoints->checkpoint_title }}
+     
         console.log(item["checkpoint_title"]);
         if (item["checkpoint_title"] == title) {
           dist_walked = item["distance"];
@@ -700,6 +698,9 @@
   console.log(dist_walked);
   console.log(checkpoints);
 </script>
-</body>
+@else
+    <h4> チェックポイントはありません。 </h4>
+@endif
+
 </body>
 @endsection
