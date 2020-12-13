@@ -111,7 +111,7 @@
           </div>
           <div class="container">
             <div class="d-flex flex-row-reverse p-0 d-inline-block justify-content-end">
-              <input type="number" placeholder="Stride length(in cm)" value="{{ round($m_users->stride) }}" name='stridelength' class="form-control mx-0 my-0 d-inline-block" style="width: 60%; height:10%; font-size:70%" min="45" max="85" id="strideinput">
+              <p><input type="number" placeholder="Stride length(in cm)" value="{{ round($m_users->stride) }}" name='stridelength' class="form-control mx-0 my-0 d-inline-block" style="width: 60%; height:10%; font-size:70%" min="45" max="85" id="strideinput"></p>
             </div>
           </div>
         </div>
