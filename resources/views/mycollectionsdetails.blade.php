@@ -362,28 +362,23 @@
 			    </div>
 			</div>
 		</div>
-  @else
-    <h4> コレクションはありません。 </h4>
-  @endif
+
 
   <script type="text/javascript">
     var prog_id = "progress_bar_tour";
     var dist_walked = {{$total}};
+    var checkpoints;
+    var value = true;
+    if (value) {
+      checkpoints = {!! json_encode($checkpoints) !!};
+    }
     if ( {!! json_encode($my_collections->m_collections->collection_category) !!} == 'checkpoint') {
       prog_id = "progress_bar_col";
-
-    }
-    var steplist = document.getElementById(prog_id);
-    var flag1 = 0;
-    var value = false;
-    var tr_count_id = 1;
-
-    if (value) {
-      var checkpoints = {!! json_encode($checkpoints) !!};
-      if ( {!! json_encode($my_collections->m_collections->collection_category) !!} == 'checkpoint') {
-        prog_id = "progress_bar_col";
-        var title = {!! json_encode( $my_collections->m_collections->m__checkpoints->checkpoint_title) !!};
-        console.log(title);
+      console.log("checkpoint");
+      var title = {!! json_encode( $my_collections->m_collections->m__checkpoints->checkpoint_title) !!};
+      console.log(title);
+      if (value) {
+        checkpoints = {!! json_encode($checkpoints) !!};
         checkpoints.forEach((item, i) => {
         //  {{ $my_collections->m_collections->m__checkpoints->checkpoint_title }}
           console.log(item["checkpoint_title"]);
@@ -392,7 +387,27 @@
             console.log(dist_walked);
           }
         });
+      } else {
+        checkpoints = {!! json_encode($checkpointsr) !!};
+        checkpoints.forEach((item, i) => {
+        //  {{ $my_collections->m_collections->m__checkpoints->checkpoint_title }}
+          console.log(item["checkpoint_title"]);
+          if (item["checkpoint_title"] == title) {
+            dist_walked = {{$total}} - item["distance"];
+            console.log(dist_walked);
+          }
+        });
       }
+
+    }
+    var steplist = document.getElementById(prog_id);
+    var flag1 = 0;
+
+    var tr_count_id = 1;
+
+    if (value) {
+      var checkpoints = {!! json_encode($checkpoints) !!};
+
       checkpoints.forEach((item, i) => {
         var div_flex = document.createElement("div");
         div_flex.className = "d-flex flex-row justify-content-between";
@@ -562,19 +577,7 @@
       // var dist_walked = {{$total}} - dist_walked;
       var flag1 = 0;
       var checkpoints = {!! json_encode($checkpointsr) !!};
-      if ( {!! json_encode($my_collections->m_collections->collection_category) !!} == 'checkpoint') {
-        prog_id = "progress_bar_col";
-        var title = {!! json_encode( $my_collections->m_collections->m__checkpoints->checkpoint_title) !!};
-        console.log(title);
-        checkpoints.forEach((item, i) => {
-        //  {{ $my_collections->m_collections->m__checkpoints->checkpoint_title }}
-          console.log(item["checkpoint_title"]);
-          if (item["checkpoint_title"] == title) {
-            dist_walked = item["distance"];
-            console.log(dist_walked);
-          }
-        });
-      }
+
       checkpoints.forEach((item, i) => {
         var div_flex = document.createElement("div");
         div_flex.className = "d-flex flex-row justify-content-between";
@@ -734,6 +737,9 @@
     console.log(dist_walked);
     console.log(checkpoints);
   </script>
+  @else
+    <h4> コレクションはありません。 </h4>
+  @endif
 </body>
 
 @endsection
