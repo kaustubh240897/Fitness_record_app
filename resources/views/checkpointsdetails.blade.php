@@ -287,9 +287,9 @@
 
 
 		   <div class="row d-flex fixed-top" style=" z-index:0; background-color: #2b63c6; position: fixed; top:0px;">
-				  		 	    
+
 				<div class='col-10 p-2 mx-3' style="color:white;"><img class='mx-2' src='/storage/img/label-1.png'>{{ $my_checkpoint->m_collections->collection_title }} </div>
-							   
+
 			</div>
 
 
@@ -298,7 +298,7 @@
 				<div class='col-12 wrapper'>
 					<p class='ml-3 mt-3 color'>{{ $my_checkpoint->tours->tour_title }} </p>
 					<p class='color'> <img class='ml-3' src='/storage/img/label-1.png'> {{ $my_checkpoint->m_collections->collection_title }} </p>
-					 		
+
 			    </div>
             </div>
 
@@ -346,9 +346,9 @@
 
   if (value) {
     var checkpoints = {!! json_encode($checkpoints) !!};
-    if ( {!! json_encode($my_collections->m_collections->collection_category) !!} == 'checkpoint') {
+    if ( {!! json_encode($my_checkpoint->m_collections->collection_category) !!} == 'checkpoint') {
       prog_id = "progress_bar_col";
-      var title = {!! json_encode( $my_collections->m_collections->m__checkpoints->checkpoint_title) !!};
+      var title = {!! json_encode( $my_checkpoint->checkpoint_title) !!};
       console.log(title);
       checkpoints.forEach((item, i) => {
       //  {{ $my_collections->m_collections->m__checkpoints->checkpoint_title }}
@@ -528,9 +528,9 @@
     // var dist_walked = {{$total}} - dist_walked;
     var flag1 = 0;
     var checkpoints = {!! json_encode($checkpointsr) !!};
-    if ( {!! json_encode($my_collections->m_collections->collection_category) !!} == 'checkpoint') {
+    if ( {!! json_encode($my_checkpoint->m_collections->collection_category) !!} == 'checkpoint') {
       prog_id = "progress_bar_col";
-      var title = {!! json_encode( $my_collections->m_collections->m__checkpoints->checkpoint_title) !!};
+      var title = {!! json_encode( $my_checkpoint->checkpoint_title) !!};
       console.log(title);
       checkpoints.forEach((item, i) => {
       //  {{ $my_collections->m_collections->m__checkpoints->checkpoint_title }}
