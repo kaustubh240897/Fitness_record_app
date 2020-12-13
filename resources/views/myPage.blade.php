@@ -586,7 +586,7 @@ font-style: normal;
 line-height: 1.56;
 letter-spacing: normal;
 text-align: left;
-color: #ffd00d;;">139km / 430km</p>
+color: #ffd00d;;">{{ number_format($steps*$get_m_user_stride/100000,1,'.','') }}km / {{ $total }}km</p>
       </div>
     </div>
   </div>
