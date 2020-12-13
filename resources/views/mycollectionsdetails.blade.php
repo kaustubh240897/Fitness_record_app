@@ -348,10 +348,752 @@
                  <div id="progress_bar_tour" class="">
 
                  </div>
+                 <script type="text/javascript">
+                   var prog_id = "progress_bar_tour";
+                   var dist_walked = {{$total}};
+                   var checkpoints;
+                   var value = true;
+                   if (value) {
+                     checkpoints = {!! json_encode($checkpoints) !!};
+                   }
+                   if ( {!! json_encode($my_collections->m_collections->collection_category) !!} == 'checkpoint') {
+                     prog_id = "progress_bar_col";
+                     console.log("checkpoint");
+                     var title = {!! json_encode($my_collections->m_collections->m__tours->tour_title) !!};
+                     console.log(title);
+                     if (value) {
+                       checkpoints = {!! json_encode($checkpoints) !!};
+                       checkpoints.forEach((item, i) => {
+                         console.log(item["checkpoint_title"]);
+                         if (item["checkpoint_title"] == title) {
+                           dist_walked = item["distance"];
+                           console.log(dist_walked);
+                         }
+                       });
+                     } else {
+                       checkpoints = {!! json_encode($checkpointsr) !!};
+                       checkpoints.forEach((item, i) => {
+                         console.log(item["checkpoint_title"]);
+                         if (item["checkpoint_title"] == title) {
+                           dist_walked = {{$total}} - item["distance"];
+                           console.log(dist_walked);
+                         }
+                       });
+                     }
+
+                   }
+                   var steplist = document.getElementById(prog_id);
+                   var flag1 = 0;
+
+                   var tr_count_id = 1;
+
+                   if (value) {
+                     var checkpoints = {!! json_encode($checkpoints) !!};
+
+                     checkpoints.forEach((item, i) => {
+                       var div_flex = document.createElement("div");
+                       div_flex.className = "d-flex flex-row justify-content-between";
+                       var div_dist = document.createElement("div");
+                       div_dist.className = "dist_t";
+                       var div_prog = document.createElement("div");
+                       div_prog.className = "d-flex flex-row w-50";
+                       var div_sp = document.createElement("div");
+                       div_sp.className = "StepProgress";
+                       var div_textRight = document.createElement("div");
+                       div_textRight.className = "pl-3 w-25 text-left text-break";
+                       var div_dist_p = document.createElement("p");
+                       div_dist_p.className = "text-right";
+                       div_dist_p.style.color = "#113a83";
+                       div_dist_p.innerHTML = item["distance"].toString() + "km";
+                       div_dist.appendChild(div_dist_p);
+                       if (i == 0) {
+                         if (item["distance"] < dist_walked) {
+                             // tag.className = "StepProgress-item is-done";
+                             var div_sp_li = document.createElement("li");
+                             div_sp_li.className = "StepProgress-itemStart is-done";
+                             var div_sp_li_p = document.createElement("p");
+                             div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+                             div_sp_li_p.style.fontSize = "80%";
+                             div_sp_li_p.innerHTML = item["checkpoint_title"];
+                             div_sp_li.appendChild(div_sp_li_p);
+                             div_sp.appendChild(div_sp_li);
+                           } else {
+                             flag1 += 1;
+                             if (flag1 == 1) {
+                               // tag.className = "StepProgress-item current";
+                               var div_sp_li = document.createElement("li");
+                               div_sp_li.className = "StepProgress-itemStart";
+                               var div_sp_li_p = document.createElement("p");
+                               div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
+                               div_sp_li_p.style.fontSize = "80%";
+                               div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li.appendChild(div_sp_li_p);
+                               div_sp.appendChild(div_sp_li);
+                             } else {
+                               // tag.className = "StepProgress-item";
+                               var div_sp_li = document.createElement("li");
+                               div_sp_li.className = "StepProgress-itemStart";
+                               var div_sp_li_p = document.createElement("p");
+                               div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
+                               div_sp_li_p.style.fontSize = "80%";
+                               div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li.appendChild(div_sp_li_p);
+                               div_sp.appendChild(div_sp_li);
+                             }
+                           }
+                       } else if (i == checkpoints.length - 1) {
+                         if (item["distance"] <= dist_walked) {
+                             // tag.className = "StepProgress-item is-done";
+                             var div_sp_li = document.createElement("li");
+                             div_sp_li.className = "StepProgress-item2 is-done";
+                             var div_sp_li_p = document.createElement("p");
+                             div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
+                             div_sp_li_p.style.fontSize = "80%";
+                             div_sp_li_p.innerHTML = item["checkpoint_title"];
+                             div_sp_li.appendChild(div_sp_li_p);
+                             div_sp.appendChild(div_sp_li);
+                           } else {
+                             flag1 += 1;
+                             if (flag1 == 1) {
+                               // tag.className = "StepProgress-item current";
+                               var div_sp_li = document.createElement("li");
+                               div_sp_li.className = "StepProgress-item2";
+                               var div_sp_li_p = document.createElement("p");
+                               div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
+                               div_sp_li_p.style.fontSize = "80%";
+                               div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li.appendChild(div_sp_li_p);
+                               div_sp.appendChild(div_sp_li);
+                             } else {
+                               // tag.className = "StepProgress-item";
+                               var div_sp_li = document.createElement("li");
+                               div_sp_li.className = "StepProgress-item2";
+                               var div_sp_li_p = document.createElement("p");
+                               div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
+                               div_sp_li_p.style.fontSize = "80%";
+                               div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li.appendChild(div_sp_li_p);
+                               div_sp.appendChild(div_sp_li);
+                             }
+                           }
+                       } else {
+                         if (item["distance"] <= dist_walked) {
+                             // tag.className = "StepProgress-item is-done";
+                             var div_sp_li = document.createElement("li");
+                             div_sp_li.className = "StepProgress-item is-done";
+                             var div_sp_li_p = document.createElement("p");
+                             div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
+                             div_sp_li_p.style.fontSize = "80%";
+                             div_sp_li_p.innerHTML = item["checkpoint_title"];
+                             div_sp_li.appendChild(div_sp_li_p);
+                             div_sp.appendChild(div_sp_li);
+                           } else {
+                             flag1 += 1;
+                             if (flag1 == 1) {
+                               // tag.className = "StepProgress-item current";
+                               var div_sp_li = document.createElement("li");
+                               div_sp_li.className = "StepProgress-item current";
+                               var div_sp_li_p = document.createElement("p");
+                               div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
+                               div_sp_li_p.style.fontSize = "80%";
+                               div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li.appendChild(div_sp_li_p);
+                               div_sp.appendChild(div_sp_li);
+                             } else {
+                               // tag.className = "StepProgress-item";
+                               var div_sp_li = document.createElement("li");
+                               div_sp_li.className = "StepProgress-item";
+                               var div_sp_li_p = document.createElement("p");
+                               div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
+                               div_sp_li_p.style.fontSize = "80%";
+                               div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li.appendChild(div_sp_li_p);
+                               div_sp.appendChild(div_sp_li);
+                             }
+                           }
+                       }
+                       var div_textRight_p = document.createElement("p");
+                       div_textRight_p.className = "py-0 my-0 pl-3 text-center dd right_t";
+                       div_textRight_p.style.width = '20%';
+                       div_textRight_p.style.color = "#2b63c6";
+                       div_textRight_p.style.fontWeight = "bold";
+
+                       if (item["checkpoint_category"]) {
+                         if (i == checkpoints.length - 1) {
+                             div_textRight_p.className = "py-0 my-0 pl-3 text-xs-left text-sm-center dd pb-0 mb-0 ";
+                             div_textRight_p.innerHTML = '<img  class = "pt-1 pb-0 mb-0" src="{{URL::asset('storage/mypage/flag.png')}}" alt="flag"/>' + item["checkpoint_category"].substring(0, 3);;
+                         } else {
+                           div_textRight_p.innerHTML = item["checkpoint_category"];
+                         }
+                         div_textRight_p.id = "ar"+tr_count_id.toString();
+                         console.log(div_textRight_p.id);
+                         if (tr_count_id > 1) {
+                           var id_to = "#" +"ar"+ tr_count_id.toString();
+                           var id_from = "#" +"ar"+ (tr_count_id-1).toString();
+                           console.log(id_to);
+                           console.log(id_from);
+                           var div_con = document.createElement("connection");
+
+                           if (i == checkpoints.length - 1) {
+
+                             var con_html = '<connection from="'+id_from+'" to="'+id_to+'" color="#cadcf6" fromX="0.6" fromY="1.2" toX="0.6" toY="0.1"></connection>';
+                           } else {
+                             var con_html = '<connection from="'+id_from+'" to="'+id_to+'" color="#cadcf6" fromX="0.6" fromY="1.2" toX="0.6" toY="0.1" tail></connection>';
+                           }
+                           document.write(con_html);
+                         }
+                         tr_count_id += 1;
+                       } else {
+                         div_textRight_p.innerHTML = "";
+                       }
+
+                       div_textRight.appendChild(div_textRight_p);
+                       div_flex.appendChild(div_dist);
+                       div_prog.appendChild(div_sp);
+                       div_flex.appendChild(div_prog);
+                       div_flex.appendChild(div_textRight);
+                       steplist.appendChild(div_flex);
+
+                     });
+                   } else {
+                     // var dist_walked = {{$total}} - dist_walked;
+                     var flag1 = 0;
+                     var checkpoints = {!! json_encode($checkpointsr) !!};
+
+                     checkpoints.forEach((item, i) => {
+                       var div_flex = document.createElement("div");
+                       div_flex.className = "d-flex flex-row justify-content-between";
+                       var div_dist = document.createElement("div");
+                       div_dist.className = "dist_t";
+                       var div_prog = document.createElement("div");
+                       div_prog.className = "d-flex flex-row w-50";
+                       var div_sp = document.createElement("div");
+                       div_sp.className = "StepProgress";
+                       var div_textRight = document.createElement("div");
+                       div_textRight.className = "pl-3 w-25 text-left text-break";
+                       var div_dist_p = document.createElement("p");
+                       div_dist_p.className = "text-right";
+                       div_dist_p.innerHTML = item["distance"].toString() + "km";
+                       div_dist.appendChild(div_dist_p);
+                       if (i == 0) {
+                         if ({{ $total }}-item["distance"] <= dist_walked) {
+                             // tag.className = "StepProgress-item is-done";
+                             var div_sp_li = document.createElement("li");
+                             div_sp_li.className = "StepProgress-itemStart is-done";
+                             var div_sp_li_p = document.createElement("p");
+                             div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+                             div_sp_li_p.innerHTML = item["checkpoint_title"];
+                             div_sp_li.appendChild(div_sp_li_p);
+                             div_sp.appendChild(div_sp_li);
+                           } else {
+                             flag1 += 1;
+                             if (flag1 == 1) {
+                               // tag.className = "StepProgress-item current";
+                               var div_sp_li = document.createElement("li");
+                               div_sp_li.className = "StepProgress-itemStart";
+                               var div_sp_li_p = document.createElement("p");
+                               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+                               div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li.appendChild(div_sp_li_p);
+                               div_sp.appendChild(div_sp_li);
+                             } else {
+                               // tag.className = "StepProgress-item";
+                               var div_sp_li = document.createElement("li");
+                               div_sp_li.className = "StepProgress-itemStart";
+                               var div_sp_li_p = document.createElement("p");
+                               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+                               div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li.appendChild(div_sp_li_p);
+                               div_sp.appendChild(div_sp_li);
+                             }
+                           }
+                       } else if (i == checkpoints.length - 1) {
+                         if ({{ $total }}-item["distance"] <= dist_walked) {
+                             // tag.className = "StepProgress-item is-done";
+                             var div_sp_li = document.createElement("li");
+                             div_sp_li.className = "StepProgress-item2 is-done";
+                             var div_sp_li_p = document.createElement("p");
+                             div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+                             div_sp_li_p.innerHTML = item["checkpoint_title"];
+                             div_sp_li.appendChild(div_sp_li_p);
+                             div_sp.appendChild(div_sp_li);
+                           } else {
+                             flag1 += 1;
+                             if (flag1 == 1) {
+                               // tag.className = "StepProgress-item current";
+                               var div_sp_li = document.createElement("li");
+                               div_sp_li.className = "StepProgress-item2";
+                               var div_sp_li_p = document.createElement("p");
+                               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+                               div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li.appendChild(div_sp_li_p);
+                               div_sp.appendChild(div_sp_li);
+                             } else {
+                               // tag.className = "StepProgress-item";
+                               var div_sp_li = document.createElement("li");
+                               div_sp_li.className = "StepProgress-item2";
+                               var div_sp_li_p = document.createElement("p");
+                               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+                               div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li.appendChild(div_sp_li_p);
+                               div_sp.appendChild(div_sp_li);
+                             }
+                           }
+                       } else {
+                         if ({{ $total }}-item["distance"] <= dist_walked) {
+                             // tag.className = "StepProgress-item is-done";
+                             var div_sp_li = document.createElement("li");
+                             div_sp_li.className = "StepProgress-item is-done";
+                             var div_sp_li_p = document.createElement("p");
+                             div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+                             div_sp_li_p.innerHTML = item["checkpoint_title"];
+                             div_sp_li.appendChild(div_sp_li_p);
+                             div_sp.appendChild(div_sp_li);
+                           } else {
+                             flag1 += 1;
+                             if (flag1 == 1) {
+                               // tag.className = "StepProgress-item current";
+                               var div_sp_li = document.createElement("li");
+                               div_sp_li.className = "StepProgress-item current";
+                               var div_sp_li_p = document.createElement("p");
+                               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+                               div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li.appendChild(div_sp_li_p);
+                               div_sp.appendChild(div_sp_li);
+                             } else {
+                               // tag.className = "StepProgress-item";
+                               var div_sp_li = document.createElement("li");
+                               div_sp_li.className = "StepProgress-item";
+                               var div_sp_li_p = document.createElement("p");
+                               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+                               div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li.appendChild(div_sp_li_p);
+                               div_sp.appendChild(div_sp_li);
+                             }
+                           }
+                       }
+                       var div_textRight_p = document.createElement("p");
+                       div_textRight_p.className = "py-0 my-0 pl-3 text-center dd";
+                       div_textRight_p.style.width = '20%';
+                       div_textRight_p.style.color = "#2b63c6";
+                       div_textRight_p.style.fontWeight = "bold";
+
+                       if (item["checkpoint_category"]) {
+                         if (i == checkpoints.length - 1) {
+                             div_textRight_p.className = "py-0 my-0 pl-3 text-left dd";
+                             div_textRight_p.innerHTML = '<img  class = "pt-1" src="{{URL::asset('storage/mypage/flag.png')}}" alt="flag"/>' + item["checkpoint_category"].substring(0, 3);;
+                         } else {
+                           div_textRight_p.innerHTML = item["checkpoint_category"];
+                         }
+                         div_textRight_p.id = "ar"+tr_count_id.toString();
+                         console.log(div_textRight_p.id);
+                         if (tr_count_id > 1) {
+                           var id_to = "#" +"ar"+ tr_count_id.toString();
+                           var id_from = "#" +"ar"+ (tr_count_id-1).toString();
+                           console.log(id_to);
+                           console.log(id_from);
+                           var div_con = document.createElement("connection");
+
+                           if (i == checkpoints.length - 1) {
+                             var con_html = '<connection from="'+id_from+'" to="'+id_to+'" color="#cadcf6" fromX="0.6" fromY="1.2" toX="0.6" toY="0.1"></connection>';
+                           } else {
+                             var con_html = '<connection from="'+id_from+'" to="'+id_to+'" color="#cadcf6" fromX="0.6" fromY="1.2" toX="0.6" toY="0.1" tail></connection>';
+                           }
+                           document.write(con_html);
+                         }
+                         tr_count_id += 1;
+                       } else {
+                         div_textRight_p.innerHTML = "";
+                       }
+
+                       div_textRight.appendChild(div_textRight_p);
+                       div_flex.appendChild(div_dist);
+                       div_prog.appendChild(div_sp);
+                       div_flex.appendChild(div_prog);
+                       div_flex.appendChild(div_textRight);
+                       steplist.appendChild(div_flex);
+
+                     });
+                   }
+
+                   console.log(dist_walked);
+                   console.log(checkpoints);
+                 </script>
                  @else
                  <div id="progress_bar_col" class="">
 
                  </div>
+                 <script type="text/javascript">
+                   var prog_id = "progress_bar_tour";
+                   var dist_walked = {{$total}};
+                   var checkpoints;
+                   var value = true;
+                   if (value) {
+                     checkpoints = {!! json_encode($checkpoints) !!};
+                   }
+                   if ( {!! json_encode($my_collections->m_collections->collection_category) !!} == 'checkpoint') {
+                     prog_id = "progress_bar_col";
+                     console.log("checkpoint");
+                     var title = {!! json_encode($my_collections->m_collections->m__checkpoints->checkpoint_title) !!};
+                     console.log(title);
+                     if (value) {
+                       checkpoints = {!! json_encode($checkpoints) !!};
+                       checkpoints.forEach((item, i) => {
+                         console.log(item["checkpoint_title"]);
+                         if (item["checkpoint_title"] == title) {
+                           dist_walked = item["distance"];
+                           console.log(dist_walked);
+                         }
+                       });
+                     } else {
+                       checkpoints = {!! json_encode($checkpointsr) !!};
+                       checkpoints.forEach((item, i) => {
+                         console.log(item["checkpoint_title"]);
+                         if (item["checkpoint_title"] == title) {
+                           dist_walked = {{$total}} - item["distance"];
+                           console.log(dist_walked);
+                         }
+                       });
+                     }
+
+                   }
+                   var steplist = document.getElementById(prog_id);
+                   var flag1 = 0;
+
+                   var tr_count_id = 1;
+
+                   if (value) {
+                     var checkpoints = {!! json_encode($checkpoints) !!};
+
+                     checkpoints.forEach((item, i) => {
+                       var div_flex = document.createElement("div");
+                       div_flex.className = "d-flex flex-row justify-content-between";
+                       var div_dist = document.createElement("div");
+                       div_dist.className = "dist_t";
+                       var div_prog = document.createElement("div");
+                       div_prog.className = "d-flex flex-row w-50";
+                       var div_sp = document.createElement("div");
+                       div_sp.className = "StepProgress";
+                       var div_textRight = document.createElement("div");
+                       div_textRight.className = "pl-3 w-25 text-left text-break";
+                       var div_dist_p = document.createElement("p");
+                       div_dist_p.className = "text-right";
+                       div_dist_p.style.color = "#113a83";
+                       div_dist_p.innerHTML = item["distance"].toString() + "km";
+                       div_dist.appendChild(div_dist_p);
+                       if (i == 0) {
+                         if (item["distance"] < dist_walked) {
+                             // tag.className = "StepProgress-item is-done";
+                             var div_sp_li = document.createElement("li");
+                             div_sp_li.className = "StepProgress-itemStart is-done";
+                             var div_sp_li_p = document.createElement("p");
+                             div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+                             div_sp_li_p.style.fontSize = "80%";
+                             div_sp_li_p.innerHTML = item["checkpoint_title"];
+                             div_sp_li.appendChild(div_sp_li_p);
+                             div_sp.appendChild(div_sp_li);
+                           } else {
+                             flag1 += 1;
+                             if (flag1 == 1) {
+                               // tag.className = "StepProgress-item current";
+                               var div_sp_li = document.createElement("li");
+                               div_sp_li.className = "StepProgress-itemStart";
+                               var div_sp_li_p = document.createElement("p");
+                               div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
+                               div_sp_li_p.style.fontSize = "80%";
+                               div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li.appendChild(div_sp_li_p);
+                               div_sp.appendChild(div_sp_li);
+                             } else {
+                               // tag.className = "StepProgress-item";
+                               var div_sp_li = document.createElement("li");
+                               div_sp_li.className = "StepProgress-itemStart";
+                               var div_sp_li_p = document.createElement("p");
+                               div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
+                               div_sp_li_p.style.fontSize = "80%";
+                               div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li.appendChild(div_sp_li_p);
+                               div_sp.appendChild(div_sp_li);
+                             }
+                           }
+                       } else if (i == checkpoints.length - 1) {
+                         if (item["distance"] <= dist_walked) {
+                             // tag.className = "StepProgress-item is-done";
+                             var div_sp_li = document.createElement("li");
+                             div_sp_li.className = "StepProgress-item2 is-done";
+                             var div_sp_li_p = document.createElement("p");
+                             div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
+                             div_sp_li_p.style.fontSize = "80%";
+                             div_sp_li_p.innerHTML = item["checkpoint_title"];
+                             div_sp_li.appendChild(div_sp_li_p);
+                             div_sp.appendChild(div_sp_li);
+                           } else {
+                             flag1 += 1;
+                             if (flag1 == 1) {
+                               // tag.className = "StepProgress-item current";
+                               var div_sp_li = document.createElement("li");
+                               div_sp_li.className = "StepProgress-item2";
+                               var div_sp_li_p = document.createElement("p");
+                               div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
+                               div_sp_li_p.style.fontSize = "80%";
+                               div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li.appendChild(div_sp_li_p);
+                               div_sp.appendChild(div_sp_li);
+                             } else {
+                               // tag.className = "StepProgress-item";
+                               var div_sp_li = document.createElement("li");
+                               div_sp_li.className = "StepProgress-item2";
+                               var div_sp_li_p = document.createElement("p");
+                               div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
+                               div_sp_li_p.style.fontSize = "80%";
+                               div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li.appendChild(div_sp_li_p);
+                               div_sp.appendChild(div_sp_li);
+                             }
+                           }
+                       } else {
+                         if (item["distance"] <= dist_walked) {
+                             // tag.className = "StepProgress-item is-done";
+                             var div_sp_li = document.createElement("li");
+                             div_sp_li.className = "StepProgress-item is-done";
+                             var div_sp_li_p = document.createElement("p");
+                             div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
+                             div_sp_li_p.style.fontSize = "80%";
+                             div_sp_li_p.innerHTML = item["checkpoint_title"];
+                             div_sp_li.appendChild(div_sp_li_p);
+                             div_sp.appendChild(div_sp_li);
+                           } else {
+                             flag1 += 1;
+                             if (flag1 == 1) {
+                               // tag.className = "StepProgress-item current";
+                               var div_sp_li = document.createElement("li");
+                               div_sp_li.className = "StepProgress-item current";
+                               var div_sp_li_p = document.createElement("p");
+                               div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
+                               div_sp_li_p.style.fontSize = "80%";
+                               div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li.appendChild(div_sp_li_p);
+                               div_sp.appendChild(div_sp_li);
+                             } else {
+                               // tag.className = "StepProgress-item";
+                               var div_sp_li = document.createElement("li");
+                               div_sp_li.className = "StepProgress-item";
+                               var div_sp_li_p = document.createElement("p");
+                               div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
+                               div_sp_li_p.style.fontSize = "80%";
+                               div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li.appendChild(div_sp_li_p);
+                               div_sp.appendChild(div_sp_li);
+                             }
+                           }
+                       }
+                       var div_textRight_p = document.createElement("p");
+                       div_textRight_p.className = "py-0 my-0 pl-3 text-center dd right_t";
+                       div_textRight_p.style.width = '20%';
+                       div_textRight_p.style.color = "#2b63c6";
+                       div_textRight_p.style.fontWeight = "bold";
+
+                       if (item["checkpoint_category"]) {
+                         if (i == checkpoints.length - 1) {
+                             div_textRight_p.className = "py-0 my-0 pl-3 text-xs-left text-sm-center dd pb-0 mb-0 ";
+                             div_textRight_p.innerHTML = '<img  class = "pt-1 pb-0 mb-0" src="{{URL::asset('storage/mypage/flag.png')}}" alt="flag"/>' + item["checkpoint_category"].substring(0, 3);;
+                         } else {
+                           div_textRight_p.innerHTML = item["checkpoint_category"];
+                         }
+                         div_textRight_p.id = "ar"+tr_count_id.toString();
+                         console.log(div_textRight_p.id);
+                         if (tr_count_id > 1) {
+                           var id_to = "#" +"ar"+ tr_count_id.toString();
+                           var id_from = "#" +"ar"+ (tr_count_id-1).toString();
+                           console.log(id_to);
+                           console.log(id_from);
+                           var div_con = document.createElement("connection");
+
+                           if (i == checkpoints.length - 1) {
+
+                             var con_html = '<connection from="'+id_from+'" to="'+id_to+'" color="#cadcf6" fromX="0.6" fromY="1.2" toX="0.6" toY="0.1"></connection>';
+                           } else {
+                             var con_html = '<connection from="'+id_from+'" to="'+id_to+'" color="#cadcf6" fromX="0.6" fromY="1.2" toX="0.6" toY="0.1" tail></connection>';
+                           }
+                           document.write(con_html);
+                         }
+                         tr_count_id += 1;
+                       } else {
+                         div_textRight_p.innerHTML = "";
+                       }
+
+                       div_textRight.appendChild(div_textRight_p);
+                       div_flex.appendChild(div_dist);
+                       div_prog.appendChild(div_sp);
+                       div_flex.appendChild(div_prog);
+                       div_flex.appendChild(div_textRight);
+                       steplist.appendChild(div_flex);
+
+                     });
+                   } else {
+                     // var dist_walked = {{$total}} - dist_walked;
+                     var flag1 = 0;
+                     var checkpoints = {!! json_encode($checkpointsr) !!};
+
+                     checkpoints.forEach((item, i) => {
+                       var div_flex = document.createElement("div");
+                       div_flex.className = "d-flex flex-row justify-content-between";
+                       var div_dist = document.createElement("div");
+                       div_dist.className = "dist_t";
+                       var div_prog = document.createElement("div");
+                       div_prog.className = "d-flex flex-row w-50";
+                       var div_sp = document.createElement("div");
+                       div_sp.className = "StepProgress";
+                       var div_textRight = document.createElement("div");
+                       div_textRight.className = "pl-3 w-25 text-left text-break";
+                       var div_dist_p = document.createElement("p");
+                       div_dist_p.className = "text-right";
+                       div_dist_p.innerHTML = item["distance"].toString() + "km";
+                       div_dist.appendChild(div_dist_p);
+                       if (i == 0) {
+                         if ({{ $total }}-item["distance"] <= dist_walked) {
+                             // tag.className = "StepProgress-item is-done";
+                             var div_sp_li = document.createElement("li");
+                             div_sp_li.className = "StepProgress-itemStart is-done";
+                             var div_sp_li_p = document.createElement("p");
+                             div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+                             div_sp_li_p.innerHTML = item["checkpoint_title"];
+                             div_sp_li.appendChild(div_sp_li_p);
+                             div_sp.appendChild(div_sp_li);
+                           } else {
+                             flag1 += 1;
+                             if (flag1 == 1) {
+                               // tag.className = "StepProgress-item current";
+                               var div_sp_li = document.createElement("li");
+                               div_sp_li.className = "StepProgress-itemStart";
+                               var div_sp_li_p = document.createElement("p");
+                               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+                               div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li.appendChild(div_sp_li_p);
+                               div_sp.appendChild(div_sp_li);
+                             } else {
+                               // tag.className = "StepProgress-item";
+                               var div_sp_li = document.createElement("li");
+                               div_sp_li.className = "StepProgress-itemStart";
+                               var div_sp_li_p = document.createElement("p");
+                               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+                               div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li.appendChild(div_sp_li_p);
+                               div_sp.appendChild(div_sp_li);
+                             }
+                           }
+                       } else if (i == checkpoints.length - 1) {
+                         if ({{ $total }}-item["distance"] <= dist_walked) {
+                             // tag.className = "StepProgress-item is-done";
+                             var div_sp_li = document.createElement("li");
+                             div_sp_li.className = "StepProgress-item2 is-done";
+                             var div_sp_li_p = document.createElement("p");
+                             div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+                             div_sp_li_p.innerHTML = item["checkpoint_title"];
+                             div_sp_li.appendChild(div_sp_li_p);
+                             div_sp.appendChild(div_sp_li);
+                           } else {
+                             flag1 += 1;
+                             if (flag1 == 1) {
+                               // tag.className = "StepProgress-item current";
+                               var div_sp_li = document.createElement("li");
+                               div_sp_li.className = "StepProgress-item2";
+                               var div_sp_li_p = document.createElement("p");
+                               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+                               div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li.appendChild(div_sp_li_p);
+                               div_sp.appendChild(div_sp_li);
+                             } else {
+                               // tag.className = "StepProgress-item";
+                               var div_sp_li = document.createElement("li");
+                               div_sp_li.className = "StepProgress-item2";
+                               var div_sp_li_p = document.createElement("p");
+                               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+                               div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li.appendChild(div_sp_li_p);
+                               div_sp.appendChild(div_sp_li);
+                             }
+                           }
+                       } else {
+                         if ({{ $total }}-item["distance"] <= dist_walked) {
+                             // tag.className = "StepProgress-item is-done";
+                             var div_sp_li = document.createElement("li");
+                             div_sp_li.className = "StepProgress-item is-done";
+                             var div_sp_li_p = document.createElement("p");
+                             div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+                             div_sp_li_p.innerHTML = item["checkpoint_title"];
+                             div_sp_li.appendChild(div_sp_li_p);
+                             div_sp.appendChild(div_sp_li);
+                           } else {
+                             flag1 += 1;
+                             if (flag1 == 1) {
+                               // tag.className = "StepProgress-item current";
+                               var div_sp_li = document.createElement("li");
+                               div_sp_li.className = "StepProgress-item current";
+                               var div_sp_li_p = document.createElement("p");
+                               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+                               div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li.appendChild(div_sp_li_p);
+                               div_sp.appendChild(div_sp_li);
+                             } else {
+                               // tag.className = "StepProgress-item";
+                               var div_sp_li = document.createElement("li");
+                               div_sp_li.className = "StepProgress-item";
+                               var div_sp_li_p = document.createElement("p");
+                               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+                               div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li.appendChild(div_sp_li_p);
+                               div_sp.appendChild(div_sp_li);
+                             }
+                           }
+                       }
+                       var div_textRight_p = document.createElement("p");
+                       div_textRight_p.className = "py-0 my-0 pl-3 text-center dd";
+                       div_textRight_p.style.width = '20%';
+                       div_textRight_p.style.color = "#2b63c6";
+                       div_textRight_p.style.fontWeight = "bold";
+
+                       if (item["checkpoint_category"]) {
+                         if (i == checkpoints.length - 1) {
+                             div_textRight_p.className = "py-0 my-0 pl-3 text-left dd";
+                             div_textRight_p.innerHTML = '<img  class = "pt-1" src="{{URL::asset('storage/mypage/flag.png')}}" alt="flag"/>' + item["checkpoint_category"].substring(0, 3);;
+                         } else {
+                           div_textRight_p.innerHTML = item["checkpoint_category"];
+                         }
+                         div_textRight_p.id = "ar"+tr_count_id.toString();
+                         console.log(div_textRight_p.id);
+                         if (tr_count_id > 1) {
+                           var id_to = "#" +"ar"+ tr_count_id.toString();
+                           var id_from = "#" +"ar"+ (tr_count_id-1).toString();
+                           console.log(id_to);
+                           console.log(id_from);
+                           var div_con = document.createElement("connection");
+
+                           if (i == checkpoints.length - 1) {
+                             var con_html = '<connection from="'+id_from+'" to="'+id_to+'" color="#cadcf6" fromX="0.6" fromY="1.2" toX="0.6" toY="0.1"></connection>';
+                           } else {
+                             var con_html = '<connection from="'+id_from+'" to="'+id_to+'" color="#cadcf6" fromX="0.6" fromY="1.2" toX="0.6" toY="0.1" tail></connection>';
+                           }
+                           document.write(con_html);
+                         }
+                         tr_count_id += 1;
+                       } else {
+                         div_textRight_p.innerHTML = "";
+                       }
+
+                       div_textRight.appendChild(div_textRight_p);
+                       div_flex.appendChild(div_dist);
+                       div_prog.appendChild(div_sp);
+                       div_flex.appendChild(div_prog);
+                       div_flex.appendChild(div_textRight);
+                       steplist.appendChild(div_flex);
+
+                     });
+                   }
+
+                   console.log(dist_walked);
+                   console.log(checkpoints);
+                 </script>
                  @endif
 
 		    <div class='row mt-2' style='background-color: #eef4f6;'>
@@ -364,379 +1106,7 @@
 		</div>
 
 
-  <script type="text/javascript">
-    var prog_id = "progress_bar_tour";
-    var dist_walked = {{$total}};
-    var checkpoints;
-    var value = true;
-    if (value) {
-      checkpoints = {!! json_encode($checkpoints) !!};
-    }
-    if ( {!! json_encode($my_collections->m_collections->collection_category) !!} == 'checkpoint') {
-      prog_id = "progress_bar_col";
-      console.log("checkpoint");
-      var title = {!! json_encode( $my_collections->m_collections->m__checkpoints->checkpoint_title) !!};
-      console.log(title);
-      if (value) {
-        checkpoints = {!! json_encode($checkpoints) !!};
-        checkpoints.forEach((item, i) => {
-        //  {{ $my_collections->m_collections->m__checkpoints->checkpoint_title }}
-          console.log(item["checkpoint_title"]);
-          if (item["checkpoint_title"] == title) {
-            dist_walked = item["distance"];
-            console.log(dist_walked);
-          }
-        });
-      } else {
-        checkpoints = {!! json_encode($checkpointsr) !!};
-        checkpoints.forEach((item, i) => {
-        //  {{ $my_collections->m_collections->m__checkpoints->checkpoint_title }}
-          console.log(item["checkpoint_title"]);
-          if (item["checkpoint_title"] == title) {
-            dist_walked = {{$total}} - item["distance"];
-            console.log(dist_walked);
-          }
-        });
-      }
 
-    }
-    var steplist = document.getElementById(prog_id);
-    var flag1 = 0;
-
-    var tr_count_id = 1;
-
-    if (value) {
-      var checkpoints = {!! json_encode($checkpoints) !!};
-
-      checkpoints.forEach((item, i) => {
-        var div_flex = document.createElement("div");
-        div_flex.className = "d-flex flex-row justify-content-between";
-        var div_dist = document.createElement("div");
-        div_dist.className = "dist_t";
-        var div_prog = document.createElement("div");
-        div_prog.className = "d-flex flex-row w-50";
-        var div_sp = document.createElement("div");
-        div_sp.className = "StepProgress";
-        var div_textRight = document.createElement("div");
-        div_textRight.className = "pl-3 w-25 text-left text-break";
-        var div_dist_p = document.createElement("p");
-        div_dist_p.className = "text-right";
-        div_dist_p.style.color = "#113a83";
-        div_dist_p.innerHTML = item["distance"].toString() + "km";
-        div_dist.appendChild(div_dist_p);
-        if (i == 0) {
-          if (item["distance"] < dist_walked) {
-              // tag.className = "StepProgress-item is-done";
-              var div_sp_li = document.createElement("li");
-              div_sp_li.className = "StepProgress-itemStart is-done";
-              var div_sp_li_p = document.createElement("p");
-              div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
-              div_sp_li_p.style.fontSize = "80%";
-              div_sp_li_p.innerHTML = item["checkpoint_title"];
-              div_sp_li.appendChild(div_sp_li_p);
-              div_sp.appendChild(div_sp_li);
-            } else {
-              flag1 += 1;
-              if (flag1 == 1) {
-                // tag.className = "StepProgress-item current";
-                var div_sp_li = document.createElement("li");
-                div_sp_li.className = "StepProgress-itemStart";
-                var div_sp_li_p = document.createElement("p");
-                div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
-                div_sp_li_p.style.fontSize = "80%";
-                div_sp_li_p.innerHTML = item["checkpoint_title"];
-                div_sp_li.appendChild(div_sp_li_p);
-                div_sp.appendChild(div_sp_li);
-              } else {
-                // tag.className = "StepProgress-item";
-                var div_sp_li = document.createElement("li");
-                div_sp_li.className = "StepProgress-itemStart";
-                var div_sp_li_p = document.createElement("p");
-                div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
-                div_sp_li_p.style.fontSize = "80%";
-                div_sp_li_p.innerHTML = item["checkpoint_title"];
-                div_sp_li.appendChild(div_sp_li_p);
-                div_sp.appendChild(div_sp_li);
-              }
-            }
-        } else if (i == checkpoints.length - 1) {
-          if (item["distance"] <= dist_walked) {
-              // tag.className = "StepProgress-item is-done";
-              var div_sp_li = document.createElement("li");
-              div_sp_li.className = "StepProgress-item2 is-done";
-              var div_sp_li_p = document.createElement("p");
-              div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
-              div_sp_li_p.style.fontSize = "80%";
-              div_sp_li_p.innerHTML = item["checkpoint_title"];
-              div_sp_li.appendChild(div_sp_li_p);
-              div_sp.appendChild(div_sp_li);
-            } else {
-              flag1 += 1;
-              if (flag1 == 1) {
-                // tag.className = "StepProgress-item current";
-                var div_sp_li = document.createElement("li");
-                div_sp_li.className = "StepProgress-item2";
-                var div_sp_li_p = document.createElement("p");
-                div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
-                div_sp_li_p.style.fontSize = "80%";
-                div_sp_li_p.innerHTML = item["checkpoint_title"];
-                div_sp_li.appendChild(div_sp_li_p);
-                div_sp.appendChild(div_sp_li);
-              } else {
-                // tag.className = "StepProgress-item";
-                var div_sp_li = document.createElement("li");
-                div_sp_li.className = "StepProgress-item2";
-                var div_sp_li_p = document.createElement("p");
-                div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
-                div_sp_li_p.style.fontSize = "80%";
-                div_sp_li_p.innerHTML = item["checkpoint_title"];
-                div_sp_li.appendChild(div_sp_li_p);
-                div_sp.appendChild(div_sp_li);
-              }
-            }
-        } else {
-          if (item["distance"] <= dist_walked) {
-              // tag.className = "StepProgress-item is-done";
-              var div_sp_li = document.createElement("li");
-              div_sp_li.className = "StepProgress-item is-done";
-              var div_sp_li_p = document.createElement("p");
-              div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
-              div_sp_li_p.style.fontSize = "80%";
-              div_sp_li_p.innerHTML = item["checkpoint_title"];
-              div_sp_li.appendChild(div_sp_li_p);
-              div_sp.appendChild(div_sp_li);
-            } else {
-              flag1 += 1;
-              if (flag1 == 1) {
-                // tag.className = "StepProgress-item current";
-                var div_sp_li = document.createElement("li");
-                div_sp_li.className = "StepProgress-item current";
-                var div_sp_li_p = document.createElement("p");
-                div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
-                div_sp_li_p.style.fontSize = "80%";
-                div_sp_li_p.innerHTML = item["checkpoint_title"];
-                div_sp_li.appendChild(div_sp_li_p);
-                div_sp.appendChild(div_sp_li);
-              } else {
-                // tag.className = "StepProgress-item";
-                var div_sp_li = document.createElement("li");
-                div_sp_li.className = "StepProgress-item";
-                var div_sp_li_p = document.createElement("p");
-                div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
-                div_sp_li_p.style.fontSize = "80%";
-                div_sp_li_p.innerHTML = item["checkpoint_title"];
-                div_sp_li.appendChild(div_sp_li_p);
-                div_sp.appendChild(div_sp_li);
-              }
-            }
-        }
-        var div_textRight_p = document.createElement("p");
-        div_textRight_p.className = "py-0 my-0 pl-3 text-center dd right_t";
-        div_textRight_p.style.width = '20%';
-        div_textRight_p.style.color = "#2b63c6";
-        div_textRight_p.style.fontWeight = "bold";
-
-        if (item["checkpoint_category"]) {
-          if (i == checkpoints.length - 1) {
-              div_textRight_p.className = "py-0 my-0 pl-3 text-xs-left text-sm-center dd pb-0 mb-0 ";
-              div_textRight_p.innerHTML = '<img  class = "pt-1 pb-0 mb-0" src="{{URL::asset('storage/mypage/flag.png')}}" alt="flag"/>' + item["checkpoint_category"].substring(0, 3);;
-          } else {
-            div_textRight_p.innerHTML = item["checkpoint_category"];
-          }
-          div_textRight_p.id = "ar"+tr_count_id.toString();
-          console.log(div_textRight_p.id);
-          if (tr_count_id > 1) {
-            var id_to = "#" +"ar"+ tr_count_id.toString();
-            var id_from = "#" +"ar"+ (tr_count_id-1).toString();
-            console.log(id_to);
-            console.log(id_from);
-            var div_con = document.createElement("connection");
-
-            if (i == checkpoints.length - 1) {
-
-              var con_html = '<connection from="'+id_from+'" to="'+id_to+'" color="#cadcf6" fromX="0.6" fromY="1.2" toX="0.6" toY="0.1"></connection>';
-            } else {
-              var con_html = '<connection from="'+id_from+'" to="'+id_to+'" color="#cadcf6" fromX="0.6" fromY="1.2" toX="0.6" toY="0.1" tail></connection>';
-            }
-            document.write(con_html);
-          }
-          tr_count_id += 1;
-        } else {
-          div_textRight_p.innerHTML = "";
-        }
-
-        div_textRight.appendChild(div_textRight_p);
-        div_flex.appendChild(div_dist);
-        div_prog.appendChild(div_sp);
-        div_flex.appendChild(div_prog);
-        div_flex.appendChild(div_textRight);
-        steplist.appendChild(div_flex);
-
-      });
-    } else {
-      // var dist_walked = {{$total}} - dist_walked;
-      var flag1 = 0;
-      var checkpoints = {!! json_encode($checkpointsr) !!};
-
-      checkpoints.forEach((item, i) => {
-        var div_flex = document.createElement("div");
-        div_flex.className = "d-flex flex-row justify-content-between";
-        var div_dist = document.createElement("div");
-        div_dist.className = "dist_t";
-        var div_prog = document.createElement("div");
-        div_prog.className = "d-flex flex-row w-50";
-        var div_sp = document.createElement("div");
-        div_sp.className = "StepProgress";
-        var div_textRight = document.createElement("div");
-        div_textRight.className = "pl-3 w-25 text-left text-break";
-        var div_dist_p = document.createElement("p");
-        div_dist_p.className = "text-right";
-        div_dist_p.innerHTML = item["distance"].toString() + "km";
-        div_dist.appendChild(div_dist_p);
-        if (i == 0) {
-          if ({{ $total }}-item["distance"] <= dist_walked) {
-              // tag.className = "StepProgress-item is-done";
-              var div_sp_li = document.createElement("li");
-              div_sp_li.className = "StepProgress-itemStart is-done";
-              var div_sp_li_p = document.createElement("p");
-              div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
-              div_sp_li_p.innerHTML = item["checkpoint_title"];
-              div_sp_li.appendChild(div_sp_li_p);
-              div_sp.appendChild(div_sp_li);
-            } else {
-              flag1 += 1;
-              if (flag1 == 1) {
-                // tag.className = "StepProgress-item current";
-                var div_sp_li = document.createElement("li");
-                div_sp_li.className = "StepProgress-itemStart";
-                var div_sp_li_p = document.createElement("p");
-                div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
-                div_sp_li_p.innerHTML = item["checkpoint_title"];
-                div_sp_li.appendChild(div_sp_li_p);
-                div_sp.appendChild(div_sp_li);
-              } else {
-                // tag.className = "StepProgress-item";
-                var div_sp_li = document.createElement("li");
-                div_sp_li.className = "StepProgress-itemStart";
-                var div_sp_li_p = document.createElement("p");
-                div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
-                div_sp_li_p.innerHTML = item["checkpoint_title"];
-                div_sp_li.appendChild(div_sp_li_p);
-                div_sp.appendChild(div_sp_li);
-              }
-            }
-        } else if (i == checkpoints.length - 1) {
-          if ({{ $total }}-item["distance"] <= dist_walked) {
-              // tag.className = "StepProgress-item is-done";
-              var div_sp_li = document.createElement("li");
-              div_sp_li.className = "StepProgress-item2 is-done";
-              var div_sp_li_p = document.createElement("p");
-              div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
-              div_sp_li_p.innerHTML = item["checkpoint_title"];
-              div_sp_li.appendChild(div_sp_li_p);
-              div_sp.appendChild(div_sp_li);
-            } else {
-              flag1 += 1;
-              if (flag1 == 1) {
-                // tag.className = "StepProgress-item current";
-                var div_sp_li = document.createElement("li");
-                div_sp_li.className = "StepProgress-item2";
-                var div_sp_li_p = document.createElement("p");
-                div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
-                div_sp_li_p.innerHTML = item["checkpoint_title"];
-                div_sp_li.appendChild(div_sp_li_p);
-                div_sp.appendChild(div_sp_li);
-              } else {
-                // tag.className = "StepProgress-item";
-                var div_sp_li = document.createElement("li");
-                div_sp_li.className = "StepProgress-item2";
-                var div_sp_li_p = document.createElement("p");
-                div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
-                div_sp_li_p.innerHTML = item["checkpoint_title"];
-                div_sp_li.appendChild(div_sp_li_p);
-                div_sp.appendChild(div_sp_li);
-              }
-            }
-        } else {
-          if ({{ $total }}-item["distance"] <= dist_walked) {
-              // tag.className = "StepProgress-item is-done";
-              var div_sp_li = document.createElement("li");
-              div_sp_li.className = "StepProgress-item is-done";
-              var div_sp_li_p = document.createElement("p");
-              div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
-              div_sp_li_p.innerHTML = item["checkpoint_title"];
-              div_sp_li.appendChild(div_sp_li_p);
-              div_sp.appendChild(div_sp_li);
-            } else {
-              flag1 += 1;
-              if (flag1 == 1) {
-                // tag.className = "StepProgress-item current";
-                var div_sp_li = document.createElement("li");
-                div_sp_li.className = "StepProgress-item current";
-                var div_sp_li_p = document.createElement("p");
-                div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
-                div_sp_li_p.innerHTML = item["checkpoint_title"];
-                div_sp_li.appendChild(div_sp_li_p);
-                div_sp.appendChild(div_sp_li);
-              } else {
-                // tag.className = "StepProgress-item";
-                var div_sp_li = document.createElement("li");
-                div_sp_li.className = "StepProgress-item";
-                var div_sp_li_p = document.createElement("p");
-                div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
-                div_sp_li_p.innerHTML = item["checkpoint_title"];
-                div_sp_li.appendChild(div_sp_li_p);
-                div_sp.appendChild(div_sp_li);
-              }
-            }
-        }
-        var div_textRight_p = document.createElement("p");
-        div_textRight_p.className = "py-0 my-0 pl-3 text-center dd";
-        div_textRight_p.style.width = '20%';
-        div_textRight_p.style.color = "#2b63c6";
-        div_textRight_p.style.fontWeight = "bold";
-
-        if (item["checkpoint_category"]) {
-          if (i == checkpoints.length - 1) {
-              div_textRight_p.className = "py-0 my-0 pl-3 text-left dd";
-              div_textRight_p.innerHTML = '<img  class = "pt-1" src="{{URL::asset('storage/mypage/flag.png')}}" alt="flag"/>' + item["checkpoint_category"].substring(0, 3);;
-          } else {
-            div_textRight_p.innerHTML = item["checkpoint_category"];
-          }
-          div_textRight_p.id = "ar"+tr_count_id.toString();
-          console.log(div_textRight_p.id);
-          if (tr_count_id > 1) {
-            var id_to = "#" +"ar"+ tr_count_id.toString();
-            var id_from = "#" +"ar"+ (tr_count_id-1).toString();
-            console.log(id_to);
-            console.log(id_from);
-            var div_con = document.createElement("connection");
-
-            if (i == checkpoints.length - 1) {
-              var con_html = '<connection from="'+id_from+'" to="'+id_to+'" color="#cadcf6" fromX="0.6" fromY="1.2" toX="0.6" toY="0.1"></connection>';
-            } else {
-              var con_html = '<connection from="'+id_from+'" to="'+id_to+'" color="#cadcf6" fromX="0.6" fromY="1.2" toX="0.6" toY="0.1" tail></connection>';
-            }
-            document.write(con_html);
-          }
-          tr_count_id += 1;
-        } else {
-          div_textRight_p.innerHTML = "";
-        }
-
-        div_textRight.appendChild(div_textRight_p);
-        div_flex.appendChild(div_dist);
-        div_prog.appendChild(div_sp);
-        div_flex.appendChild(div_prog);
-        div_flex.appendChild(div_textRight);
-        steplist.appendChild(div_flex);
-
-      });
-    }
-
-    console.log(dist_walked);
-    console.log(checkpoints);
-  </script>
   @else
     <h4> コレクションはありません。 </h4>
   @endif
