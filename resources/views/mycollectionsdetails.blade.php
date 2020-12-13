@@ -352,8 +352,8 @@
                    var prog_id = "progress_bar_tour";
                    var dist_walked = {{$total}};
                    var checkpoints;
-                   var value = true;
-                   if (value) {
+                   var value = {{$session_value}};
+                   if (!value) {
                      checkpoints = {!! json_encode($checkpoints) !!};
                    }
                    if ( {!! json_encode($my_collections->m_collections->collection_category) !!} == 'checkpoint') {
@@ -361,7 +361,7 @@
                      console.log("checkpoint");
                      var title = {!! json_encode($my_collections->m_collections->m__tours->tour_title) !!};
                      console.log(title);
-                     if (value) {
+                     if (!value) {
                        checkpoints = {!! json_encode($checkpoints) !!};
                        checkpoints.forEach((item, i) => {
                          console.log(item["checkpoint_title"]);
@@ -387,7 +387,7 @@
 
                    var tr_count_id = 1;
 
-                   if (value) {
+                   if (!value) {
                      var checkpoints = {!! json_encode($checkpoints) !!};
 
                      checkpoints.forEach((item, i) => {
@@ -727,8 +727,8 @@
                    var prog_id = "progress_bar_tour";
                    var dist_walked = {{$total}};
                    var checkpoints;
-                   var value = true;
-                   if (value) {
+                   var value = {{$session_value}};
+                   if (!value) {
                      checkpoints = {!! json_encode($checkpoints) !!};
                    }
                    if ( {!! json_encode($my_collections->m_collections->collection_category) !!} == 'checkpoint') {
@@ -736,7 +736,7 @@
                      console.log("checkpoint");
                      var title = {!! json_encode($my_collections->m_collections->m__checkpoints->checkpoint_title) !!};
                      console.log(title);
-                     if (value) {
+                     if (!value) {
                        checkpoints = {!! json_encode($checkpoints) !!};
                        checkpoints.forEach((item, i) => {
                          console.log(item["checkpoint_title"]);
@@ -762,7 +762,7 @@
 
                    var tr_count_id = 1;
 
-                   if (value) {
+                   if (!value) {
                      var checkpoints = {!! json_encode($checkpoints) !!};
 
                      checkpoints.forEach((item, i) => {
