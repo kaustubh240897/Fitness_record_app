@@ -6,6 +6,77 @@
   <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/domarrow.css') }}" />
   <script type="text/javascript" src="{{ URL::asset('js/domarrow.js') }}"></script>
    <style media="screen">
+
+    div.c {
+		  text-align: right;
+		} 
+
+		.wrapper{
+	  		height:8rem;
+	  		font-size: 15px;
+	  		z-index: 9;
+	  		background-color: #2b63c6;	
+	  	}
+	  	div.sticky {
+			  position: -webkit-sticky; /* Safari */
+			  position: sticky;
+			  top: 0;
+			}
+		.hr {
+		  border:none;
+		  border-bottom:1px dashed #e9d0af;
+		  color:black;
+		  text-decoration-color: #f5e9dd;
+		  height:1px;
+		  width:50%;
+		}
+
+		.wid{
+			width: 100%;
+			height: 100%;	
+
+		}
+		p.color{
+			color:white;
+		}
+		
+	    .button {
+			  
+			  border: solid 1px #2b63c6;
+			  color: #2b63c6;
+			  padding: 15px 80px;
+			  text-align: center;
+			  text-decoration: none;
+			  display: inline-block;
+			  margin: 4px 2px;
+			  cursor: pointer;
+			  border-radius: 30px;
+			  outline: none !important;
+			  
+			}
+		.button1 {
+			  background-color:orange ;
+			  border: none;
+			  color: white;
+			  padding: 15px 80px;
+			  text-align: center;
+			  text-decoration: none;
+			  display: inline-block;
+			 /* margin: 4px 2px;*/
+			  cursor: pointer;
+			  border-radius: 30px;
+			  outline: none !important;
+
+			  
+			}
+			.refBtn {
+			  position: fixed;
+			  bottom: 10%!important;
+			  z-index: 10;
+			  right:auto; 
+			  left:auto;
+			}
+			
        .btn.btn-lg {
           background-color: #ccece8 !important;
          /* padding: 12px 32px !important; */
@@ -251,106 +322,39 @@
 
   </style>
 </head>
+
+<div class='container'>
+<body style='background-color: #f2f2f2'>
+
+<div class='container-fluid'>
+
+              
+       <div class="row d-flex fixed-top" style=" z-index:0; background-color: #2b63c6; position: fixed; top:0px;">
+               
+          <div class='col-10 p-2 mx-3' style="color:white;">{{ $tours->tour_title }} </div>
+         
+            <div class='col-12 mx-2'> <img class='mr-2 mb-2' src='/storage/img/ico.png'> <font style='color:#ffcc00;'>{{ $total }} Km </font></div>
+           
+         
+         <div>
+           
+     </div>
+    
+      </div>
+
+</div>
 @if (session('successMsg'))
-<div class='alert alert-success' roles='alert'>
+<div class='alert alert-success' style='margin-top:5rem;' roles='alert'>
  {{ session('successMsg') }}
 </div>
 @endif
-<div class='container'>
+<div class='container-fluid' style='background-color: #f2f2f2'>
+           <img src='/storage/img/line@3x.png' class='wid' style='margin-top: 6rem;'>
+            <b>  <text class='hr my-1'>{{ $tours->tour_comment }}</text></b>
+           <img src='/storage/img/lineDown.png' class='wid mt-4'>
 
-<div class="container-fluid mt-1">
-   <a href="{{ url('/createtour') }}" > <button type="button" class="btn blue">ツアー選択へ戻る</button></a>
-
- <form action="{{ route('tourstore', $tours->id) }}" method="POST" >
-      {{ csrf_field() }}
-      {{ method_field('post') }}
-      <button type="submit" class="btn btn-sm blue" style="font-size:70%"> Select this tour</button>
-      </form>
-    </div>
-
-    <div class="container-fluid mt-3 pl-sm-4">
-      <div class="row pl-2">
-        <div class="col-4 col-sm-2 p-1 pl-2">
-         @if(! empty($current_tour) && $current_tour->status == 'Done')
-         <p> ツアーが完了しました別のツアーを選択してください。 </p>
-         @elseif(! empty($current_tour) && $current_tour->status == 'Inprogress')
-          <p style="font-size: 80%">{{ $current_tour->m_tours->tour_title }}</p>
-          @else
-          <p> ツアーを選択していません。</p>
-          @endif
-        </div>
-        <div class="col col-sm-5 p-1">
-          <p class="border border-dark text-break" style="font-size: 80%">{{ $tours->tour_title }} ({{ $total }}Km)</p>
-        </div>
-      </div>
-    </div>
-    <div class="container-fluid mt-3 pl-sm-4">
-      <div class="row pl-2">
-        <div class="col-4 col-sm-2 p-1 pl-2">
-          <p style="font-size: 80%">ツアー概要</p>
-        </div>
-        <div class="col col-sm-5 p-1">
-          <p class="border border-dark text-break" style="font-size: 80%">{{ $tours->tour_comment }}</p>
-        </div>
-      </div>
-    </div>
-
-
-   <div class="container">
-      <div class="row pl-2">
-        <div class="col-4 col-sm-2 p-1 pl-2">
-        </div>
-        <div class="col col-sm-5 p-1">
-          <div class="d-flex flex-row justify-content-between pl-3">
-            <div class="form-check form-check-inline pr-3">
-              @if($value=='false')
-              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="1" checked>
-              @else
-              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="1" >
-              @endif
-
-              <label class="form-check-label" for="inlineRadio1">通常の踏破</label>
-            </div>
-            <div class="form-check form-check-inline pl-3">
-             @if($value == 'true')
-             <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="2" checked>
-             @else
-             <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="2">
-             @endif
-              <label class="form-check-label" for="inlineRadio2">逆方向に踏破</label>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-
-
-
-<!--
-<div class="container-fluid">
-@if(! empty($checkpoints))
-<div class="row">
-    <div class="col" id="checkPoint_name">
-
-    </div>
-    <div class="col pt-2">
-      <ul class="StepProgress" id="progress_bar">
-
-      </ul>
-    </div>
-    <div class="col" id="checkPoint_name2">
-
-    </div>
-  </div>
-
-@else
-<h4> 申し訳ありませんが、チェックポイントはありません。</h4>
-@endif
-
-
-</div> -->
-@if(! empty($checkpoints))
+          
+           @if(! empty($checkpoints))
 <div class="container-fluid pt-3" id="progress_bar">
 
 </div>
@@ -367,7 +371,22 @@
     <h4> ツアーを選択していません。ツアーを選択してください </h4>
 @endif
 
+<div class='row'>
+                      <div class='col-12 text-center my-3'><a href='/createtour'><button class="button mt-2"><  登録内容の変更 </button></a></div>
+                        <div class='col-12 text-center'>
+                          <form action="{{ route('tourstore', $tours->id) }}" method="POST" >
+                            {{ csrf_field() }}
+                            {{ method_field('post') }}
+                            <button type='submit' class="button1  refBtn"><  登録内容の変更jjj </button>
+                          </form>
+                          </div>
+                    </div>
 
+ 
+</div>
+
+
+</body>
 
 <script type="text/javascript">
 
@@ -842,4 +861,11 @@ else{
 }
 
 </script>
+
+         
+
+
+
+
+
 @endsection
