@@ -325,7 +325,7 @@
         <div class="goalTxt text-center" style="border-radius: 18px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
     background-color: #113a83; color: #fff">
-          1日の目標 8,000歩 (5.28km)
+          1日の目標 {{$get_m_user_monthly_goal}}歩 ({{ $get_m_user_monthly_goal*$get_m_user_stride/100000 }} km)
         </div>
       </div>
       <div class="container-fluid text-center">
@@ -398,6 +398,7 @@
     var table_body = document.getElementById("yearly_table");
     var goal = {{$get_m_user_monthly_goal}};
     console.log(goal);
+    var dist_km = 0;
     var dates = {!! json_encode($months) !!};
     if (is_rev == 1) {
       var totalDays = daysInThisMonth();
@@ -461,11 +462,13 @@
           tr.className = "comp";
           td1.className = "comp_td text-left";
           td1.innerHTML = d.getDate();
-          td2.innerHTML = totalSteps;
+          dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
+          td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
           td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="{{URL::asset('storage/history/co.svg')}}" alt="">';
         } else {
           td1.innerHTML = d.getDate();
-          td2.innerHTML = totalSteps;
+          dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
+          td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
           td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span>';
         }
         tr.appendChild(td1);
@@ -534,11 +537,13 @@
           tr.className = "comp";
           td1.className = "comp_td text-left";
           td1.innerHTML = d.getMonth() + 1;
-          td2.innerHTML = totalSteps;
+          dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
+          td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
           td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="{{URL::asset('storage/history/co.svg')}}" alt="">';
         } else {
           td1.innerHTML = d.getMonth() + 1;
-          td2.innerHTML = totalSteps;
+          dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
+          td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
           td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span>';
         }
         tr.appendChild(td1);
