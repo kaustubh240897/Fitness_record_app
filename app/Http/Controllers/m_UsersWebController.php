@@ -562,44 +562,44 @@ class m_UsersWebController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if($request->gridRadios == '3'){
+        // if($request->gridRadios == '3'){
 
-            $this->validate($request,[
-            'inputheight'=> 'required|gt:111|lt:214',
+        //     $this->validate($request,[
+        //     'inputheight'=> 'required|gt:111|lt:214',
 
-           ]);
-        }
-        if($request->gridRadios == '4'){
+        //    ]);
+        // }
+        // if($request->gridRadios == '4'){
 
-            $this->validate($request,[
-            'stridelength'=> 'required|gt:44|lt:86',
+        //     $this->validate($request,[
+        //     'stridelength'=> 'required|gt:44|lt:86',
 
-            ]);
-            }
-        if($request->radio_daily == '5'){
+        //     ]);
+        //     }
+        // if($request->radio_daily == '5'){
 
-            $this->validate($request,[
-            'dailygoal'=> 'required|gt:1000|lt:181000',
-            ]);
-            }
-        if($request->radio_daily == '6'){
+        //     $this->validate($request,[
+        //     'dailygoal'=> 'required|gt:1000|lt:181000',
+        //     ]);
+        //     }
+        // if($request->radio_daily == '6'){
 
-            $this->validate($request,[
-            'dailydistance'=> 'required|gt:0|lt:101',
-            ]);
-            }
-        if($request->radio_monthly == '7'){
+        //     $this->validate($request,[
+        //     'dailydistance'=> 'required|gt:0|lt:101',
+        //     ]);
+        //     }
+        // if($request->radio_monthly == '7'){
 
-            $this->validate($request,[
-            'monthlygoal'=> 'required|gt:18000|lt:1818000',
-            ]);
-            }
-        if($request->radio_daily == '8'){
+        //     $this->validate($request,[
+        //     'monthlygoal'=> 'required|gt:18000|lt:1818000',
+        //     ]);
+        //     }
+        // if($request->radio_daily == '8'){
 
-            $this->validate($request,[
-            'monthlydistance'=> 'required|gt:9|lt:1001',
-            ]);
-            }
+        //     $this->validate($request,[
+        //     'monthlydistance'=> 'required|gt:9|lt:1001',
+        //     ]);
+        //     }
 
         $m_users = m_Users::find($id);
         if($m_users->users_id == Auth::id()){
