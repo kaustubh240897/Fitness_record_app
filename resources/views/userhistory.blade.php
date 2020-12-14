@@ -184,6 +184,14 @@
   background-color: #2b63c6 !important;
   color: #fff;
 }
+.selected_sort {
+  color: #2b63c6;
+  font-weight: bold;
+}
+.not_selected_sort {
+  color: #000;
+  font-weight: normal;
+}
 </style>
 <div class="container-fluid sticky-top">
   			    <div class="row d-flex justify-content-between pb-0 mb-0" style="background-color: #2B63C6; height:30px">
@@ -209,11 +217,11 @@
             並び替え ↑↓
           </button>
           <div class="dropdown-menu speech-bubble dropdown-menu-right" aria-labelledby="dropdownMenu2">
-          <a href="https://www.youtube.com/" >  <label class="radio-inline">
-      <input type="radio" name="optradio">Option 1
+          <a id="sort_newest" onclick="sortHistory(this.id);" >  <label class="radio-inline pl-2">
+      <input id="sort_newest_radio" class="pt-3" type="radio" name="optradio"><span id="sort_newest_span" class="not_selected_sort pl-2 pb-2" style="font-size: 100%">実績の新しい順</span>
     </label></a>
-          <a href="https://gaana.com/" >   <label class="radio-inline">
-      <input type="radio" name="optradio">Option 2
+          <a id="sort_oldest" onclick="sortHistory(this.id);">   <label class="radio-inline pl-2 pb-2">
+      <input id="sort_oldest_radio" class="pt-3" type="radio" name="optradio"><span id="sort_oldest_span" class="not_selected_sort pl-2 pb-1" style="font-size: 100%">実績の古い順</span>
     </label> </a>
           </div>
         </div>
@@ -344,7 +352,7 @@
         </div>
       </div>
     </div>
-<div class="container-fluid">
+<!-- <div class="container-fluid">
       <div class="row justify-content-around">
         <div class="col-xs-3">
          <a href="{{ url('/mypage') }}" > <button type="button" class="btn blue mr-1">マイページへ戻る</button> </a>
@@ -362,7 +370,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
 @if(! empty($dates))
     @foreach($dates as $date => $steps)
@@ -383,9 +391,32 @@
     <h4> 申し訳ありませんが、今まで歴史がありません！ </h4>
     @endif
     <script type="text/javascript">
-  
     var is_rev = {{$reverse}};
-    console.log(is_rev);
+    if (is_rev == 1) {
+      document.getElementById("sort_newest_span").className = "selected_sort pl-2 pb-2";
+      document.getElementById("sort_newest_radio").checked = true;
+    } else {
+      document.getElementById("sort_oldest_span").className = "selected_sort pl-2 pb-2";
+      document.getElementById("sort_oldest_radio").checked = true;
+    }
+    function sortHistory(id) {
+      var url = "";
+      if (id == "sort_newest") {
+        url = "{{ url('/reverseuserdailyhistory',['year','month']) }}";
+        url = url.replace('year',{{$y}});
+        url = url.replace('month',{{$m}});
+        location.reload();location.href=url;
+      } else {
+        url = "{{ route('userhistory', ['year','month']) }}";
+        url = url.replace('year',{{$y}});
+        url = url.replace('month',{{$m}});
+        location.reload();location.href=url;
+      }
+    }
+    </script>
+    <script type="text/javascript">
+    console.log({{$y}});
+    console.log({{$m}});
     var table_body = document.getElementById("monthly_table");
     var goal = {{$get_m_user_daily_goal}};
     console.log(goal);
@@ -594,13 +625,17 @@
     }
 
 
-var selected = 12;
+var selected = {{$m}};
 //var tab_year = 2020;
-var selectedyear = 2020;
+var selectedyear = {{$y}};
 var tab_yearly_selectedyear = 2020;
 var monthsContainer = document.getElementById('monthsContainer');
 var yearsContainer = document.getElementById('yearsContainer');
 var yearnumber = document.getElementById('yearnumber');
+yearnumber.innerHTML = selectedyear;
+var sel_mon = document.getElementById(selected);
+sel_mon.className = "px-1 selected_month";
+sel_mon.scrollIntoView();
 var url = "{{ route('userhistory', ['year','month']) }}";
 function myFunc(id)
       {
@@ -623,8 +658,8 @@ function myFunc(id)
           if (id!=selected) {
             var sel = document.getElementById(selected);
             var clicked = document.getElementById(id);
-            sel.className = "px-1 not_selected_month";
-            clicked.className = "px-1 selected_month";
+            // sel.className = "px-1 not_selected_month";
+            // clicked.className = "px-1 selected_month";
             selected = parseInt(id);
             clicked.scrollIntoView();
             //row_top.scrollIntoView();

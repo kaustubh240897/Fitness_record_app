@@ -190,6 +190,14 @@
   background-color: #2b63c6 !important;
   color: #fff;
 }
+.selected_sort {
+  color: #2b63c6;
+  font-weight: bold;
+}
+.not_selected_sort {
+  color: #000;
+  font-weight: normal;
+}
   </style>
 
 
@@ -217,12 +225,12 @@
               並び替え ↑↓
             </button>
             <div class="dropdown-menu speech-bubble dropdown-menu-right" aria-labelledby="dropdownMenu2">
-            <a href="https://www.youtube.com/" >  <label class="radio-inline">
-        <input type="radio" name="optradio">Option 1
-      </label></a>
-            <a href="https://gaana.com/" >   <label class="radio-inline">
-        <input type="radio" name="optradio">Option 2
-      </label> </a>
+              <a id="sort_newest" onclick="sortHistory(this.id);" >  <label class="radio-inline pl-2">
+          <input id="sort_newest_radio" class="pt-3" type="radio" name="optradio"><span id="sort_newest_span" class="not_selected_sort pl-2 pb-2" style="font-size: 100%">実績の新しい順</span>
+        </label></a>
+              <a id="sort_oldest" onclick="sortHistory(this.id);">   <label class="radio-inline pl-2 pb-2">
+          <input id="sort_oldest_radio" class="pt-3" type="radio" name="optradio"><span id="sort_oldest_span" class="not_selected_sort pl-2 pb-1" style="font-size: 100%">実績の古い順</span>
+        </label> </a>
             </div>
           </div>
                     </div>
@@ -277,7 +285,7 @@
             <div class="col-12 w-100">
               <div id="yearsContainer" class=" scrolling-wrapper row flex-row flex-nowrap">
                 <div class="col">
-                  <button id="2020" onclick="myFunc2(this.id);" class="px-1 selected_month" style="background-color:#fff;">2020</button>
+                  <button id="2020" onclick="myFunc2(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">2020</button>
                 </div>
                 <div class="col">
                   <button id="2019" onclick="myFunc2(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">2019</button>
@@ -394,6 +402,28 @@
 
     <script type="text/javascript">
     var is_rev = {{$reverse}};
+    if (is_rev == 1) {
+      document.getElementById("sort_newest_span").className = "selected_sort pl-2 pb-2";
+      document.getElementById("sort_newest_radio").checked = true;
+    } else {
+      document.getElementById("sort_oldest_span").className = "selected_sort pl-2 pb-2";
+      document.getElementById("sort_oldest_radio").checked = true;
+    }
+    function sortHistory(id) {
+      var url = "";
+      if (id == "sort_newest") {
+        url = "{{ url('/reverseusermonthlyhistory', ['year']) }}";
+        url = url.replace('year',{{$y}});
+        location.reload();location.href=url;
+      } else {
+        url = "{{ route('usermonthlyhistory', ['year']) }}";
+        url = url.replace('year',{{$y}});
+        location.reload();location.href=url;
+      }
+    }
+    </script>
+    <script type="text/javascript">
+    var is_rev = {{$reverse}};
     console.log(is_rev);
     var table_body = document.getElementById("yearly_table");
     var goal = {{$get_m_user_monthly_goal}};
@@ -461,12 +491,12 @@
         if (totalSteps > goal) {
           tr.className = "comp";
           td1.className = "comp_td text-left";
-          td1.innerHTML = d.getDate();
+          td1.innerHTML = d.getMonth() + 1;
           dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
           td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
           td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="{{URL::asset('storage/history/co.svg')}}" alt="">';
         } else {
-          td1.innerHTML = d.getDate();
+          td1.innerHTML = d.getMonth() + 1;
           dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
           td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
           td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span>';
@@ -599,7 +629,9 @@
   var selected = 12;
   //var tab_year = 2020;
   var selectedyear = 2020;
-  var tab_yearly_selectedyear = 2020;
+  var tab_yearly_selectedyear = {{$y}};
+  document.getElementById(tab_yearly_selectedyear).className = "px-1 selected_month";
+  document.getElementById(tab_yearly_selectedyear).scrollIntoView();
   var monthsContainer = document.getElementById('monthsContainer');
   var yearsContainer = document.getElementById('yearsContainer');
   var yearnumber = document.getElementById('yearnumber');
@@ -634,6 +666,7 @@
             }
             $('html, body').animate({ scrollTop: 0 }, 'fast');
         }
+        var url = "{{ route('usermonthlyhistory', ['year']) }}";
         function myFunc2(id)
               {
 
@@ -653,11 +686,13 @@
                   if (id!=tab_yearly_selectedyear) {
                     var sel = document.getElementById(tab_yearly_selectedyear);
                     var clicked = document.getElementById(id);
-                    sel.className = "px-1 not_selected_month";
-                    clicked.className = "px-1 selected_month";
+                    // sel.className = "px-1 not_selected_month";
+                    // clicked.className = "px-1 selected_month";
                     tab_yearly_selectedyear = parseInt(id);
                     clicked.scrollIntoView();
                     console.log("inmyfun2", tab_yearly_selectedyear);
+                    url = url.replace('year',tab_yearly_selectedyear);
+                    location.reload();location.href=url;
                   }
               }
         let touchstartX = 0;
