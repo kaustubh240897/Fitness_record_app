@@ -409,8 +409,45 @@
                                     </button>
                                   </div>
                                   <div class="modal-body">
-                                    sdhlhsdHDlAHDlAIHFASKLFHBAKJSFBASKJHFkHFKJ?fBLASBFLFBKASFASLFalsAF  sdhlhsdHDlAHDlAIHFASKLFHBAKJSFBASKJHFkHFKJ?fBLASBFLFBKASFASLFalsAF
-                                    sdhlhsdHDlAHDlAIHFASKLFHBAKJSFBASKJHFkHFKJ?fBLASBFLFBKASFASLFalsAF sdhlhsdHDlAHDlAIHFASKLFHBAKJSFBASKJHFkHFKJ?fBLASBFLFBKASFASLFalsAF
+                                  <div class="container">
+                                  
+                                    <div class="row justify-content-center px-3">
+                                      <div class="col">
+                                        <div class="form-check form-check-inline">
+                                        <?php $value = Session::get('reverse','false'); ?>
+                                          @if($value == 'false')
+                                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="3" checked>
+                                          @else
+                                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="3">
+                                          @endif
+
+                                        <label class="form-check-label" for="inlineRadio1">通常の踏破</label>
+                                      </div>
+                                      </div>
+                                      <div class="col">
+                                        <div class="form-check form-check-inline">
+                                          @if($value == 'true')
+                                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="4" checked>
+                                          @else
+                                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="4">
+                                          @endif
+                                          <label class="form-check-label" for="inlineRadio2">逆方向に踏破</label>
+                                        </div>
+                                      </div>
+                                     
+                                  </div>
+                                  <div class='container mt-5'>
+
+
+                                      @foreach($constant_data as $c)
+                                      <div class='row py-2' style='background-color: #fdf2e3;' >
+                                      <div class='col-1'> <img class='mr-2' src='/storage/img/point.png'></div><div class='col-10'> {{ $c }}
+                                      </div>
+                                      </div>
+                                      @endforeach
+
+
+                                      </div>
                                   </div>
                                   <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

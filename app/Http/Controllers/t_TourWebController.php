@@ -127,33 +127,41 @@ class t_TourWebController extends Controller
         $t_tour->m__tours_id = $id ;
         $t_tour->start_datetime = $mytime->toDateTimeString();
         $t_tour->status = 'Inprogress';
-
+        if($request->gridRadios == '4'){
+            $request->session()->put('reverse', 'true');
+            $t_tour->direction = 1;
+        }
+        elseif($request->gridRadios == '3'){
+            $request->session()->put('reverse', 'false');
+            $t_tour->direction = 0;
+        }
+        
         $t_tour->save();
         return redirect( route('tourdetails', $id))->with('successMsg','your tour Successfully selected');
     }
 
-    public function createtoursession(Request $request){
-        if($request->gridRadios == '4'){
+    // public function createtoursession(Request $request){
+    //     if($request->gridRadios == '4'){
         
-            $request->session()->put('reverse', 'true');
-            $u_id = m_Users::where('users_id', Auth::id())->first()->id;
-            $t_tour = t_Tour::where('m__users_id', $u_id)->orderBy('start_datetime', 'DESC')->first();
-            $t_tour->direction = 1;
-            $t_tour->save();
+    //         $request->session()->put('reverse', 'true');
+    //         $u_id = m_Users::where('users_id', Auth::id())->first()->id;
+    //         $t_tour = t_Tour::where('m__users_id', $u_id)->orderBy('start_datetime', 'DESC')->first();
+    //         $t_tour->direction = 1;
+    //         $t_tour->save();
 
 
-        }
-        elseif($request->gridRadios == '3'){
-            $request->session()->put('reverse', 'false');
-            $u_id = m_Users::where('users_id', Auth::id())->first()->id;
-            $t_tour = t_Tour::where('m__users_id', $u_id)->orderBy('start_datetime', 'DESC')->first();
-            $t_tour->direction = 0;
-            $t_tour->save();
-        }
-        $value = $request->session()->get('reverse', 'false');
+    //     }
+    //     elseif($request->gridRadios == '3'){
+    //         $request->session()->put('reverse', 'false');
+    //         $u_id = m_Users::where('users_id', Auth::id())->first()->id;
+    //         $t_tour = t_Tour::where('m__users_id', $u_id)->orderBy('start_datetime', 'DESC')->first();
+    //         $t_tour->direction = 0;
+    //         $t_tour->save();
+    //     }
+    //     $value = $request->session()->get('reverse', 'false');
             
-        return redirect(route('index'))->with('successMsg','your info Successfully updated');
-    }
+    //     return redirect(route('index'))->with('successMsg','your info Successfully updated');
+    // }
 
     /**
      * Display the specified resource.
@@ -168,6 +176,7 @@ class t_TourWebController extends Controller
             if($tours){
                 $m__tours_id = $id;
                 $m__users_id = m_Users::where('users_id',Auth::id())->first()->id;
+                $constant_data = Config::get('constants.myData');
                 //dd($m__users_id);
                 $get_t_tour = t_Tour::where('m__tours_id', $m__tours_id)->where('m__users_id', $m__users_id)->where('status', 'Inprogress')->orderBy('start_datetime','DESC')->first();
                 if($get_t_tour !=null){
@@ -205,7 +214,7 @@ class t_TourWebController extends Controller
                     return view('emptycheckpoints', compact('tours'));
                     }
                 else{
-                    return view('tourdetails', compact('tours','current_tour','value','checkpoints','checkpointsr','total','steps','user_stride'));
+                    return view('tourdetails', compact('tours','current_tour','value','checkpoints','checkpointsr','total','steps','user_stride','constant_data'));
                 }
             }
             else{
@@ -214,7 +223,8 @@ class t_TourWebController extends Controller
         }    
         else{
             $tours = null;
-            return view('emptycheckpoints', compact('tours'));
+            $constant_data = null;
+            return view('emptycheckpoints', compact('tours','constant_data'));
         }
     }
 
