@@ -18,7 +18,9 @@ class CreateMUsersTable extends Migration
             $table->unsignedBigInteger('users_id');
             $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('serial_number', 255)->unique();
-            $table->smallInteger('stride');
+            $table->boolean('gender')->default(0);
+            $table->string('height', 255)->default(170);
+            $table->smallInteger('stride')->default(76.5);
             $table->integer('step_monday')->default(1000);
             $table->integer('step_tuesday')->default(1000);
             $table->integer('step_wednesday')->default(1000);

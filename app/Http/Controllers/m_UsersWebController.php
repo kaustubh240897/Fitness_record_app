@@ -488,7 +488,8 @@ class m_UsersWebController extends Controller
             $m_users = new m_Users;
             $m_users->users_id = Auth::id();
             $m_users->serial_number = Auth::user()->name;
-
+            $m_users->height = $request->inputheight;
+            //$m_users->gender = $request->gender; 
            
             // $m_users->stride= $request->inputheight/2.5;
             $m_users->stride= $request->stridelength;
@@ -497,10 +498,16 @@ class m_UsersWebController extends Controller
             
             $m_users->step_goal_per_day= $request->dailygoal;   
             // $m_users->step_goal_per_day= $request->dailydistance * 100000 /($request->stridelength);
-                
+            $m_users->step_monday= $request->dailygoal_1* 100000 /($request->stridelength);
+            $m_users->step_tuesday = $request->dailygoal_2* 100000 /($request->stridelength);
+            $m_users->step_wednesday = $request->dailygoal_3* 100000 /($request->stridelength);
+            $m_users->step_thursday = $request->dailygoal_4* 100000 /($request->stridelength);
+            $m_users->step_friday = $request->dailygoal_5* 100000 /($request->stridelength);
+            $m_users->step_saturday = $request->dailygoal_6* 100000 /($request->stridelength);
+            $m_users->step_sunday = $request->dailygoal_7* 100000 /($request->stridelength); 
             
         
-            $m_users->step_goals_per_month = $request->dailygoal*30;
+            $m_users->step_goals_per_month = ($m_users->step_monday+$m_users->step_tuesday+$m_users->step_wednesday+$m_users->step_thursday+$m_users->step_friday+$m_users->step_saturday+$m_users->step_sunday)*4; 
             //$m_users->step_goals_per_month = $request->monthlydistance * 100000 /($request->stridelength);
                 
             
