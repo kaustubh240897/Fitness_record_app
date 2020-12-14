@@ -541,7 +541,7 @@ class m_UsersWebController extends Controller
      */
     public function edit($id)
     {
-        $m_users = m_Users::where('id', $id)->first();
+        $m_users = m_Users::where('id', $id)->get()->first();
         if(! empty($m_users) && $m_users->users_id == Auth::id()){
             $t_tour = t_Tour::where('m__users_id', $m_users->id)->orderBy('created_at','DESC')->first();
             return view('edit', compact('m_users','t_tour'));
