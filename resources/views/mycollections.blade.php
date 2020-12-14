@@ -196,6 +196,7 @@ background-color: #2b63c6;" id="dropdownMenu2" data-toggle="dropdown" aria-haspo
     @endforeach
 
   </div>
+  </div>
     <div class="d-flex flex-row" style="position: absolute; bottom: 0; left: 0; background-color: #eef4f6;">
       <img class="w-100" src='/storage/img/bg@3x.png'>
     </div>

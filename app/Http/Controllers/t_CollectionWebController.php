@@ -23,6 +23,7 @@ class t_CollectionWebController extends Controller
     public function byTour(){
        if(m_Users::where('users_id',Auth::id())->count() >0 ){
             $m__user_id = m_Users::where('users_id',Auth::id())->first()->id;
+            $index = 0;
             $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->get()->unique('m__collection_id');
             $count_t_collections = t_Collection::where('m__users_id', $m__user_id)->get()->groupBy('m__collection_id');
             $count_m_collection = m_collection::all()->count();
@@ -84,7 +85,7 @@ class t_CollectionWebController extends Controller
             $tours_distance[] = m_Checkpoint::where('m__tour_id', $tour_id[$i])->where('checkpoint_category', 'endpoint')->get()->first()->distance;
         }   
         
-    return view('bytourcollections', compact('get_t_collections','tour_id', 'tours','counter','latest_date','tours_distance','tour_status','unseen_checkpoint_array'));
+    return view('bytourcollections', compact('get_t_collections','tour_id', 'tours','counter','latest_date','tours_distance','tour_status','unseen_checkpoint_array','index'));
        }
     else{
        $tour_id = null;
@@ -95,7 +96,8 @@ class t_CollectionWebController extends Controller
        $tour_status = null;
        $unseen_checkpoint_array = null;
        $get_t_collections = null;
-    return view('bytourcollections', compact('get_t_collections','tour_id', 'tours','counter','latest_date','tours_distance','tour_status','unseen_checkpoint_array'));
+       $index = null;
+    return view('bytourcollections', compact('get_t_collections','tour_id', 'tours','counter','latest_date','tours_distance','tour_status','unseen_checkpoint_array','index'));
 
     }
 
@@ -105,7 +107,7 @@ class t_CollectionWebController extends Controller
     {  
     if(m_Users::where('users_id',Auth::id())->count() >0){
         $m__user_id = m_Users::where('users_id',Auth::id())->first()->id;
-        
+        $index = 1;
         $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->get()->unique('m__collection_id');
         $count_t_collections = t_Collection::where('m__users_id', $m__user_id)->get()->groupBy('m__collection_id');
         $counter = [];
@@ -114,13 +116,14 @@ class t_CollectionWebController extends Controller
         }
         
         
-        return view('mycollections', compact( 'counter','get_t_collections','count_t_collections'));
+        return view('mycollections', compact( 'counter','get_t_collections','count_t_collections','index'));
     }
     else{
         $counter = null;
         $get_t_collections = null;
         $count_t_collections = null;
-        return view('mycollections', compact( 'counter','get_t_collections','count_t_collections'));
+        $index = null;
+        return view('mycollections', compact( 'counter','get_t_collections','count_t_collections','index'));
     }
 
 
@@ -131,7 +134,7 @@ class t_CollectionWebController extends Controller
     {
         if(m_Users::where('users_id',Auth::id())->count() >0){
             $m__user_id = m_Users::where('users_id',Auth::id())->first()->id;
-            
+            $index = 2;
             $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->orderBy('created_at', 'DESC')->get()->unique('m__collection_id');
             $count_t_collections = t_Collection::where('m__users_id', $m__user_id)->orderBy('created_at', 'DESC')->get()->groupBy('m__collection_id');
             $counter = [];
@@ -139,13 +142,14 @@ class t_CollectionWebController extends Controller
                 $counter[] = $count->count();
             }
             
-            return view('mycollections', compact( 'counter','get_t_collections','count_t_collections'));
+            return view('mycollections', compact( 'counter','get_t_collections','count_t_collections','index'));
         }
         else{
             $counter = null;
             $get_t_collections = null;
             $count_t_collections = null;
-            return view('mycollections', compact( 'counter','get_t_collections','count_t_collections'));
+            $index = null;
+            return view('mycollections', compact( 'counter','get_t_collections','count_t_collections','index'));
         }
 
         
