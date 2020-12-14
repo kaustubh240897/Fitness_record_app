@@ -44,7 +44,7 @@
 
 			  border: solid 1px #2b63c6;
 			  color: #2b63c6;
-			  padding: 15px 80px;
+			  padding: 15px 40px;
 			  text-align: center;
 			  text-decoration: none;
 			  display: inline-block;
@@ -58,7 +58,7 @@
 			  background-color:orange ;
 			  border: none;
 			  color: white;
-			  padding: 15px 80px;
+			  padding: 15px 40px;
 			  text-align: center;
 			  text-decoration: none;
 			  display: inline-block;
@@ -372,12 +372,12 @@
 @endif
 
 <div class='row'>
-                      <div class='col-12 text-center my-3'><a href='/createtour'><button class="button mt-2"><  登録内容の変更 </button></a></div>
+                      <div class='col-12 text-center my-3'><a href='/createtour'><button class="button mt-2"><  リストに戻る </button></a></div>
                         <div class='col-12 text-center'>
                           <form action="{{ route('tourstore', $tours->id) }}" method="POST" >
                             {{ csrf_field() }}
                             {{ method_field('post') }}
-                            <button type='submit' class="button1  refBtn"><  登録内容の変更jjj </button>
+                            <button type='submit' class="button1  refBtn"><  このツアーを選択してください </button>
                           </form>
                           </div>
                     </div>

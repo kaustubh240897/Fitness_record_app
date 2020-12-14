@@ -133,19 +133,19 @@ class t_TourWebController extends Controller
         if($request->gridRadios == '4'){
         
             $request->session()->put('reverse', 'true');
-            // $u_id = m_Users::where('users_id', Auth::id())->first()->id;
-            // $t_tour = t_Tour::where('m__users_id', $u_id)->orderBy('start_datetime', 'DESC')->first();
-            // $t_tour->direction = 1;
-            // $t_tour->save();
+            $u_id = m_Users::where('users_id', Auth::id())->first()->id;
+            $t_tour = t_Tour::where('m__users_id', $u_id)->orderBy('start_datetime', 'DESC')->first();
+            $t_tour->direction = 1;
+            $t_tour->save();
 
 
         }
         elseif($request->gridRadios == '3'){
             $request->session()->put('reverse', 'false');
-            // $u_id = m_Users::where('users_id', Auth::id())->first()->id;
-            // $t_tour = t_Tour::where('m__users_id', $u_id)->orderBy('start_datetime', 'DESC')->first();
-            // $t_tour->direction = 0;
-            // $t_tour->save();
+            $u_id = m_Users::where('users_id', Auth::id())->first()->id;
+            $t_tour = t_Tour::where('m__users_id', $u_id)->orderBy('start_datetime', 'DESC')->first();
+            $t_tour->direction = 0;
+            $t_tour->save();
         }
         $value = $request->session()->get('reverse', 'false');
             
