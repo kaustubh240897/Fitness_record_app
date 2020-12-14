@@ -194,7 +194,7 @@
 	                       <div class='col-6'>
 	                       	<b>高さ </b></div>
 	                       	<div class='col-6 c'>
-	                       	<b> {{ number_format($m_users->stride/0.45, 2, '.', ',') }} cm </b></div>
+	                       	<b> {{ number_format($m_users->height, 2, '.', ',') }} cm </b></div>
 
 	                       </div>
 	                       <hr/>
@@ -202,7 +202,7 @@
 	                       <div class='col-6'>
 	                       	<b>性別</b></div>
 	                       	<div class='col-6 c'>
-	                       	<b> 男性</b></div>
+	                       	<b> @if($m_users->gender == 0) 男性 @else  女性 @endif</b></div>
 
 	                       </div>
 	                       <hr/>
@@ -272,7 +272,7 @@
 	                       	<p> @if($m_users->motion_web == '0' ) 無し @else はい  @endif</p></div>
 
 	                       <!-- 	<div class='col-12 my-2'><img style='margin-left: 33%' class='wid1' src='img/btn@3x.png'> </div> -->
-                            <div class='col-12 text-center'><button type='submit' class="button mt-2">登録内容の変更  ></button></div>
+                            <div class='col-12 text-center'><a href="{{ route('edit', $m_users->id) }}"><button type='submit' class="button mt-2">登録内容の変更  ></button></a></div>
 
                             <div class='col-12 mt-4'> <img style='width:100%; height: 100%;' src='/storage/img/bg-8@2x.png'></div>
 
@@ -298,7 +298,7 @@
 							@endif
 
                              <div class='row'>
-	                          <div class='col-12 text-center my-3'><button class="button mt-2">登録内容の変更  ></button></div>
+	                          <div class='col-12 text-center my-3'><a href="/createtour"><button class="button mt-2">ツアーの変更  ></button></a></div>
 	                      </div>
 
 
