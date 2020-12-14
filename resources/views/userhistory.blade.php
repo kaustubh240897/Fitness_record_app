@@ -176,6 +176,14 @@
 .body {
   background-color: #f0f6f8;
 }
+.comp_td {
+  background-color: #ffd00d !important;
+  color: #793800;
+}
+.incomp_td {
+  background-color: #2b63c6 !important;
+  color: #fff;
+}
 </style>
 <div class="container-fluid sticky-top">
   			    <div class="row d-flex justify-content-between pb-0 mb-0" style="background-color: #2B63C6; height:30px">
@@ -297,7 +305,7 @@
     </div>
     <div id="tableContainer" class="container-fluid p-0 my-0">
       <table id="swipeContainer" class="table table-striped text-center my-0">
-        <tbody>
+        <tbody id="monthly_table">
           <tr>
             <td style="background-color: #2b63c6; color: #fff">00 (曜)</td>
             <td style="color: #2b63c6;">Otto</td>
@@ -404,9 +412,9 @@
             <td style="color: #2b63c6;">120<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="co.svg" alt=""> </td>
           </tr>
           <tr class="comp">
-            <td class="w-25" style="background-color: #ffd00d; color: #793800;">00 (曜)</td>
-            <td class="w-50" style="color: #2b63c6;">Otto</td>
-            <td class="w-25" style="color: #2b63c6;">@mdo</td>
+            <td class="" style="background-color: #ffd00d; color: #793800;">00 (曜)</td>
+            <td class="" style="color: #2b63c6;">Otto</td>
+            <td class="" style="color: #2b63c6;">@mdo</td>
           </tr>
         </tbody>
       </table>
@@ -543,8 +551,81 @@
     <h4> 申し訳ありませんが、今まで歴史がありません！ </h4>
     @endif
     <script type="text/javascript">
+    var table_body = document.getElementById("monthly_table");
+    var goal = {{$get_m_user_daily_goal}};
+    console.log(goal);
     var dates = {!! json_encode($dates) !!};
-    
+    Object.keys(dates).reverse().forEach((date, i) => {
+      console.log("ddd",date);
+      var day_symbol = "(曜)";
+      var td1 = document.createElement("td");
+      td1.className = "incomp_td w-25";
+      var td2 = document.createElement("td");
+      td2.className = "w-50";
+      td2.style.color = "#2b63c6";
+      var td3 = document.createElement("td");
+      td3.className = "w-25";
+      td3.style.color = "#2b63c6";
+      var tr = document.createElement("tr");
+      var totalSteps = 0;
+      var d = new Date();
+      dates[date].forEach((item, i) => {
+        totalSteps += item["steps"];
+        var datee = item["step_actual_datetime"];
+        d = new Date(datee);
+      });
+      console.log("date",d);
+      console.log("day",d.getDate());
+      console.log("day_name",d.getDay());
+      console.log(totalSteps);
+      switch (d.getDay()) {
+        case 0:
+          day_symbol = " (月)";
+          console.log(day_symbol);
+          break;
+        case 1:
+          day_symbol = " (火)";
+          console.log(day_symbol);
+          break;
+        case 2:
+          day_symbol = " (水)";
+          console.log(day_symbol);
+          break;
+        case 3:
+          day_symbol = " (木)";
+          console.log(day_symbol);
+          break;
+        case 4:
+          day_symbol = " (金)";
+          console.log(day_symbol);
+          break;
+        case 5:
+          day_symbol = " (土)";
+          console.log(day_symbol);
+          break;
+        case 6:
+          day_symbol = " (日)";
+          console.log(day_symbol);
+          break;
+        default:
+
+      }
+      if (totalSteps > goal) {
+        tr.className = "comp";
+        td1.className = "comp_td w-25";
+        td1.innerHTML = d.getDate() + day_symbol;
+        td2.innerHTML = totalSteps;
+        td3.innerHTML = (totalSteps/goal)*100 + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="co.svg" alt="">';
+      } else {
+        td1.innerHTML = d.getDate() + day_symbol;
+        td2.innerHTML = totalSteps;
+        td3.innerHTML = (totalSteps/goal)*100 + '<span style="font-size:80%">%</span>';
+      }
+      tr.appendChild(td1);
+      tr.appendChild(td2);
+      tr.appendChild(td3);
+      table_body.appendChild(tr);
+    });
     console.log(dates);
     </script>
     <script type="text/javascript">
