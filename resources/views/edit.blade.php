@@ -468,8 +468,8 @@ input[type=number] {
 <div class="container-fluid text-center pt-3">
   <button class="w-100 py-1" type="submit" name="button" style="border: solid 1px #2b63c6; background-color: #2b63c6; border-radius: 25px;
   font-size: 120%; font-weight: bold; color: #fff">変更内容を登録   &nbsp; <span style="font-size: 100%; font-weight: normal;">  ></span> </button>
-  <button class="w-100 py-1 mt-3" type="button" name="button" style="border: solid 1px #2b63c6; background-color: rgba(255, 255, 255, 0); border-radius: 25px;
-  font-size: 100%; font-weight: normal; color: #2b63c6;">キャンセル </button>
+  <a href="/padometerscreen"><button class="w-100 py-1 mt-3" type="button" name="button" style="border: solid 1px #2b63c6; background-color: rgba(255, 255, 255, 0); border-radius: 25px;
+  font-size: 100%; font-weight: normal; color: #2b63c6;">キャンセル </button></a>
 </div>
 <div class="container-fluid text-center">
   <img src="{{ asset('storage/settings/bg@3x.png') }}" alt="" style="max-width: 100%;">
@@ -508,7 +508,7 @@ input[type=number] {
 
 </script>
 <script type="text/javascript">
-  
+
   function copyGoal() {
     var d_goal_dist = parseFloat(document.getElementById("est_daily_dist").innerHTML);
     ds_1.value =  d_goal_dist;
