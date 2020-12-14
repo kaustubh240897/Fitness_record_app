@@ -190,13 +190,13 @@
   				        <div class='col-4 shadow-lg mb-0 pb-0 mt-1 pt-1' > <p class="shadow-lg mb-0 pb-0" style="color:white; font-size: 80%">マイヒストリ</p> </div>
                     <!-- <p class="text-center" style="color:white; font-size: 80%">マイヒストリ</p> -->
                     <div class="col-2 mb-0 pb-0 mt-1 shadow-lg padding-0">
-                      <button id="tab_monthly" class="text-center selected_tab mb-0 pb-0" style="color: white; font-size: 80%;
-                        background-color: #2b63c6;" onclick="changeTab(this.id);">月間</button>
+                      <a href="{{ route('userhistory', [now()->year,now()->month]) }}"><button id="tab_monthly" class="text-center selected_tab mb-0 pb-0" style="color: white; font-size: 80%;
+                        background-color: #2b63c6;" onclick="changeTab(this.id);">月間</button></a>
                     </div>
                     <div class="col-2 mb-0 pb-0 mt-1 shadow-lg padding-0">
 
-                        <button id="tab_yearly" class="text-center not_selected_tab mb-0 pb-0" style="color: white; font-size: 80%;
-                          background-color: #2b63c6;" onclick="changeTab(this.id);">月間</button>
+                        <a href="{{ route('usermonthlyhistory', [now()->year]) }}"><button id="tab_yearly" class="text-center not_selected_tab mb-0 pb-0" style="color: white; font-size: 80%;
+                          background-color: #2b63c6;" onclick="changeTab(this.id);">月間</button></a>
                     </div>
   				        <div class='col-4 pb-0 mb-0 shadow-lg'>
                      <!-- <button class="text-center" style="color: white; font-size: 80%; border-radius: 12px;
@@ -306,180 +306,12 @@
     <div id="tableContainer" class="container-fluid p-0 my-0">
       <table id="swipeContainer" class="table table-striped text-center my-0">
         <tbody id="monthly_table">
-          <tr>
-            <td style="background-color: #2b63c6; color: #fff">00 (曜)</td>
-            <td style="color: #2b63c6;">Otto</td>
-            <td style="color: #2b63c6;">@mdo</td>
-          </tr>
-          <tr>
-            <td style="background-color: #2b63c6; color: #fff">00 (曜)</td>
-            <td style="color: #2b63c6;">Otto</td>
-            <td style="color: #2b63c6;">@mdo</td>
-          </tr>
-          <tr>
-            <td style="background-color: #2b63c6; color: #fff">00 (曜)</td>
-            <td style="color: #2b63c6;">Otto</td>
-            <td style="color: #2b63c6;">@mdo</td>
-          </tr>
-          <tr>
-            <td style="background-color: #2b63c6; color: #fff">00 (曜)</td>
-            <td style="color: #2b63c6;">Otto</td>
-            <td style="color: #2b63c6;">@mdo</td>
-          </tr>
-          <tr>
-            <td style="background-color: #2b63c6; color: #fff">00 (曜)</td>
-            <td style="color: #2b63c6;">Otto</td>
-            <td style="color: #2b63c6;">@mdo</td>
-          </tr>
-          <tr>
-            <td style="background-color: #2b63c6; color: #fff">00 (曜)</td>
-            <td style="color: #2b63c6;">Otto</td>
-            <td style="color: #2b63c6;">@mdo</td>
-          </tr>
-          <tr>
-            <td style="background-color: #2b63c6; color: #fff">00 (曜)</td>
-            <td style="color: #2b63c6;">Otto</td>
-            <td style="color: #2b63c6;">@mdo</td>
-          </tr>
-          <tr>
-            <td style="background-color: #2b63c6; color: #fff">00 (曜)</td>
-            <td style="color: #2b63c6;">Otto</td>
-            <td style="color: #2b63c6;">@mdo</td>
-          </tr>
-          <tr>
-            <td style="background-color: #2b63c6; color: #fff">00 (曜)</td>
-            <td style="color: #2b63c6;">Otto</td>
-            <td style="color: #2b63c6;">@mdo</td>
-          </tr>
-          <tr>
-            <td style="background-color: #2b63c6; color: #fff">00 (曜)</td>
-            <td style="color: #2b63c6;">Otto</td>
-            <td style="color: #2b63c6;">@mdo</td>
-          </tr>
-          <tr>
-            <td style="background-color: #2b63c6; color: #fff">00 (曜)</td>
-            <td style="color: #2b63c6;">Otto</td>
-            <td style="color: #2b63c6;">@mdo</td>
-          </tr>
-          <tr>
-            <td style="background-color: #2b63c6; color: #fff">00 (曜)</td>
-            <td style="color: #2b63c6;">Otto</td>
-            <td style="color: #2b63c6;">@mdo</td>
-          </tr>
-          <tr>
-            <td style="background-color: #2b63c6; color: #fff">00 (曜)</td>
-            <td style="color: #2b63c6;">Otto</td>
-            <td style="color: #2b63c6;">@mdo</td>
-          </tr>
-          <tr>
-            <td style="background-color: #2b63c6; color: #fff">00 (曜)</td>
-            <td style="color: #2b63c6;">Otto</td>
-            <td style="color: #2b63c6;">@mdo</td>
-          </tr>
-          <tr>
-            <td style="background-color: #2b63c6; color: #fff">00 (曜)</td>
-            <td style="color: #2b63c6;">Otto</td>
-            <td style="color: #2b63c6;">@mdo</td>
-          </tr>
-          <tr>
-            <td style="background-color: #2b63c6; color: #fff">00 (曜)</td>
-            <td style="color: #2b63c6;">Otto</td>
-            <td style="color: #2b63c6;">@mdo</td>
-          </tr>
-          <tr>
-            <td style="background-color: #2b63c6; color: #fff">00 (曜)</td>
-            <td style="color: #2b63c6;">Otto</td>
-            <td style="color: #2b63c6;">@mdo</td>
-          </tr>
-          <tr class="comp">
-            <td style="background-color: #ffd00d; color: #793800;">00 (曜)</td>
-            <td style="color: #2b63c6;">Otto</td>
-            <td style="color: #2b63c6;">@mdo</td>
-          </tr>
-          <tr>
-            <td style="background-color: #2b63c6; color: #fff">00 (曜)</td>
-            <td style="color: #2b63c6;">Otto</td>
-            <td style="color: #2b63c6;">@mdo</td>
-          </tr>
-          <tr>
-            <td style="background-color: #2b63c6; color: #fff">00 (曜)</td>
-            <td style="color: #2b63c6;">Otto</td>
-            <td style="color: #2b63c6;">@mdo</td>
-          </tr>
-          <tr class="comp">
-            <td style="background-color: #ffd00d; color: #793800;">00 (曜)</td>
-            <td style="color: #2b63c6;">Otto</td>
-            <td style="color: #2b63c6;">120<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="co.svg" alt=""> </td>
-          </tr>
-          <tr class="comp">
-            <td class="" style="background-color: #ffd00d; color: #793800;">00 (曜)</td>
-            <td class="" style="color: #2b63c6;">Otto</td>
-            <td class="" style="color: #2b63c6;">@mdo</td>
-          </tr>
+
         </tbody>
       </table>
       <table id="swipeContainer2" class="table table-striped text-center my-0 invisible">
         <tbody>
-          <tr class="comp">
-            <td class="text-left" style="background-color: #2b63c6; color: #fff">1</td>
-            <td class="text-center" style="color: #2b63c6;">228,000 歩 ( 150.48 km)</td>
-            <td class="text-center" style="color: #2b63c6;">120<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="co.svg" alt=""></td>
-          </tr>
-          <tr>
-            <td class="text-left" style="background-color: #2b63c6; color: #fff">1</td>
-            <td class="text-center" style="color: #2b63c6;">228,000 歩 ( 150.48 km)</td>
-            <td class="text-center" style="color: #2b63c6;">95<span style="font-size:80%">%</span></td>
-          </tr>
-          <tr>
-            <td class="text-left" style="background-color: #2b63c6; color: #fff">1</td>
-            <td class="text-center" style="color: #2b63c6;">228,000 歩 ( 150.48 km)</td>
-            <td class="text-center" style="color: #2b63c6;">120<span style="font-size:80%">%</span></td>
-          </tr>
-          <tr>
-            <td class="text-left" style="background-color: #2b63c6; color: #fff">1</td>
-            <td class="text-center" style="color: #2b63c6;">228,000 歩 ( 150.48 km)</td>
-            <td class="text-center" style="color: #2b63c6;">120<span style="font-size:80%">%</span></td>
-          </tr>
-          <tr>
-            <td class="text-left" style="background-color: #2b63c6; color: #fff">1</td>
-            <td class="text-center" style="color: #2b63c6;">228,000 歩 ( 150.48 km)</td>
-            <td class="text-center" style="color: #2b63c6;">120<span style="font-size:80%">%</span></td>
-          </tr>
-          <tr class="comp">
-            <td class="text-left" style="background-color: #2b63c6; color: #fff">1</td>
-            <td class="text-center" style="color: #2b63c6;">228,000 歩 ( 150.48 km)</td>
-            <td class="text-center" style="color: #2b63c6;">120<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="co.svg" alt=""></td>
-          </tr>
-          <tr>
-            <td class="text-left" style="background-color: #2b63c6; color: #fff">1</td>
-            <td class="text-center" style="color: #2b63c6;">228,000 歩 ( 150.48 km)</td>
-            <td class="text-center" style="color: #2b63c6;">120<span style="font-size:80%">%</span></td>
-          </tr>
-          <tr>
-            <td class="text-left" style="background-color: #2b63c6; color: #fff">1</td>
-            <td class="text-center" style="color: #2b63c6;">228,000 歩 ( 150.48 km)</td>
-            <td class="text-center" style="color: #2b63c6;">120<span style="font-size:80%">%</span></td>
-          </tr>
-          <tr>
-            <td class="text-left" style="background-color: #2b63c6; color: #fff">1</td>
-            <td class="text-center" style="color: #2b63c6;">228,000 歩 ( 150.48 km)</td>
-            <td class="text-center" style="color: #2b63c6;">120<span style="font-size:80%">%</span></td>
-          </tr>
-          <tr>
-            <td class="text-left" style="background-color: #2b63c6; color: #fff">1</td>
-            <td class="text-center" style="color: #2b63c6;">228,000 歩 ( 150.48 km)</td>
-            <td class="text-center" style="color: #2b63c6;">120<span style="font-size:80%">%</span></td>
-          </tr>
-          <tr>
-            <td class="text-left" style="background-color: #2b63c6; color: #fff">1</td>
-            <td class="text-center" style="color: #2b63c6;">228,000 歩 ( 150.48 km)</td>
-            <td class="text-center" style="color: #2b63c6;">120<span style="font-size:80%">%</span></td>
-          </tr>
-          <tr>
-            <td class="text-left" style="background-color: #2b63c6; color: #fff">1</td>
-            <td class="text-center" style="color: #2b63c6;">228,000 歩 ( 150.48 km)</td>
-            <td class="text-center" style="color: #2b63c6;">120<span style="font-size:80%">%</span></td>
-          </tr>
+
         </tbody>
       </table>
       <div class="goalTxt text-center" style="border-radius: 18px;
@@ -489,7 +321,7 @@
       </div>
     </div>
     <div class="container-fluid text-center">
-      <img src="bg@3x.png" alt="" style="max-width: 100%;">
+      <img src="{{URL::asset('storage/history/bg@3x.png')}}" alt="" style="max-width: 100%;">
     </div>
     <!-- style="transform: scaleY(1.2) !important;" -->
     <div class="container-fluid navfix" style="background-color: #2b63c6;">
@@ -538,95 +370,177 @@
     @foreach($steps as $step)
        @php($total += $step->steps)
     @endforeach
-    <tr class="collectionsRow">
+    <!-- <tr class="collectionsRow">
       <td style="font-size:70%">{{ date("d ", strtotime($step->step_actual_datetime))  }} ({{ date("l", strtotime($step->step_actual_datetime))  }})</td>
       <td style="font-size:70%">{{ $total }} steps ( {{ $total*$get_m_user_stride/100000 }} km ) </td>
       <td style="font-size:70%">  @if($total > $get_m_user_daily_goal ) Completed (goal {{ $get_m_user_daily_goal }} steps) @else Incomplete(goal {{ $get_m_user_daily_goal }} steps)  @endif </td>
       @php($perct =  $total/$get_m_user_daily_goal *100)
       {{ $perct }} %
     </tr>
-    <br>
+    <br> -->
     @endforeach
     @else
     <h4> 申し訳ありませんが、今まで歴史がありません！ </h4>
     @endif
     <script type="text/javascript">
+    var is_rev = {{$reverse}};
+    console.log(is_rev);
     var table_body = document.getElementById("monthly_table");
     var goal = {{$get_m_user_daily_goal}};
     console.log(goal);
     var dates = {!! json_encode($dates) !!};
-    Object.keys(dates).reverse().forEach((date, i) => {
-      console.log("ddd",date);
-      var day_symbol = "(曜)";
-      var td1 = document.createElement("td");
-      td1.className = "incomp_td w-25";
-      var td2 = document.createElement("td");
-      td2.className = "w-50";
-      td2.style.color = "#2b63c6";
-      var td3 = document.createElement("td");
-      td3.className = "w-25";
-      td3.style.color = "#2b63c6";
-      var tr = document.createElement("tr");
-      var totalSteps = 0;
-      var d = new Date();
-      dates[date].forEach((item, i) => {
-        totalSteps += item["steps"];
-        var datee = item["step_actual_datetime"];
-        d = new Date(datee);
-      });
-      console.log("date",d);
-      console.log("day",d.getDate());
-      console.log("day_name",d.getDay());
-      console.log(totalSteps);
-      switch (d.getDay()) {
-        case 0:
-          day_symbol = " (月)";
-          console.log(day_symbol);
-          break;
-        case 1:
-          day_symbol = " (火)";
-          console.log(day_symbol);
-          break;
-        case 2:
-          day_symbol = " (水)";
-          console.log(day_symbol);
-          break;
-        case 3:
-          day_symbol = " (木)";
-          console.log(day_symbol);
-          break;
-        case 4:
-          day_symbol = " (金)";
-          console.log(day_symbol);
-          break;
-        case 5:
-          day_symbol = " (土)";
-          console.log(day_symbol);
-          break;
-        case 6:
-          day_symbol = " (日)";
-          console.log(day_symbol);
-          break;
-        default:
+    if (is_rev == 1) {
+      var totalDays = daysInThisMonth();
+      console.log(totalDays);
+      Object.keys(dates).reverse().forEach((date, i) => {
+        console.log("ddd",date);
+        var day_symbol = "(曜)";
+        var td1 = document.createElement("td");
+        td1.className = "incomp_td w-25";
+        var td2 = document.createElement("td");
+        td2.className = "w-50";
+        td2.style.color = "#2b63c6";
+        var td3 = document.createElement("td");
+        td3.className = "w-25";
+        td3.style.color = "#2b63c6";
+        var tr = document.createElement("tr");
+        var totalSteps = 0;
+        var d = new Date();
+        dates[date].forEach((item, i) => {
+          totalSteps += item["steps"];
+          var datee = item["step_actual_datetime"];
+          d = new Date(datee);
+        });
+        console.log("date",d);
+        console.log("day",d.getDate());
+        console.log("day_name",d.getDay());
+        console.log(totalSteps);
+        switch (d.getDay()) {
+          case 0:
+            day_symbol = " (月)";
+            console.log(day_symbol);
+            break;
+          case 1:
+            day_symbol = " (火)";
+            console.log(day_symbol);
+            break;
+          case 2:
+            day_symbol = " (水)";
+            console.log(day_symbol);
+            break;
+          case 3:
+            day_symbol = " (木)";
+            console.log(day_symbol);
+            break;
+          case 4:
+            day_symbol = " (金)";
+            console.log(day_symbol);
+            break;
+          case 5:
+            day_symbol = " (土)";
+            console.log(day_symbol);
+            break;
+          case 6:
+            day_symbol = " (日)";
+            console.log(day_symbol);
+            break;
+          default:
 
-      }
-      if (totalSteps > goal) {
-        tr.className = "comp";
-        td1.className = "comp_td w-25";
-        td1.innerHTML = d.getDate() + day_symbol;
-        td2.innerHTML = totalSteps;
-        td3.innerHTML = (totalSteps/goal)*100 + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="co.svg" alt="">';
-      } else {
-        td1.innerHTML = d.getDate() + day_symbol;
-        td2.innerHTML = totalSteps;
-        td3.innerHTML = (totalSteps/goal)*100 + '<span style="font-size:80%">%</span>';
-      }
-      tr.appendChild(td1);
-      tr.appendChild(td2);
-      tr.appendChild(td3);
-      table_body.appendChild(tr);
-    });
+        }
+        if (totalSteps > goal) {
+          tr.className = "comp";
+          td1.className = "comp_td w-25";
+          td1.innerHTML = d.getDate() + day_symbol;
+          td2.innerHTML = totalSteps;
+          td3.innerHTML = (totalSteps/goal)*100 + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="{{URL::asset('storage/history/co.svg')}}" alt="">';
+        } else {
+          td1.innerHTML = d.getDate() + day_symbol;
+          td2.innerHTML = totalSteps;
+          td3.innerHTML = (totalSteps/goal)*100 + '<span style="font-size:80%">%</span>';
+        }
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+        table_body.appendChild(tr);
+      });
+    } else {
+      Object.keys(dates).forEach((date, i) => {
+        console.log("ddd",date);
+        var day_symbol = "(曜)";
+        var td1 = document.createElement("td");
+        td1.className = "incomp_td w-25";
+        var td2 = document.createElement("td");
+        td2.className = "w-50";
+        td2.style.color = "#2b63c6";
+        var td3 = document.createElement("td");
+        td3.className = "w-25";
+        td3.style.color = "#2b63c6";
+        var tr = document.createElement("tr");
+        var totalSteps = 0;
+        var d = new Date();
+        dates[date].forEach((item, i) => {
+          totalSteps += item["steps"];
+          var datee = item["step_actual_datetime"];
+          d = new Date(datee);
+        });
+        console.log("date",d);
+        console.log("day",d.getDate());
+        console.log("day_name",d.getDay());
+        console.log(totalSteps);
+        switch (d.getDay()) {
+          case 0:
+            day_symbol = " (月)";
+            console.log(day_symbol);
+            break;
+          case 1:
+            day_symbol = " (火)";
+            console.log(day_symbol);
+            break;
+          case 2:
+            day_symbol = " (水)";
+            console.log(day_symbol);
+            break;
+          case 3:
+            day_symbol = " (木)";
+            console.log(day_symbol);
+            break;
+          case 4:
+            day_symbol = " (金)";
+            console.log(day_symbol);
+            break;
+          case 5:
+            day_symbol = " (土)";
+            console.log(day_symbol);
+            break;
+          case 6:
+            day_symbol = " (日)";
+            console.log(day_symbol);
+            break;
+          default:
+
+        }
+        if (totalSteps > goal) {
+          tr.className = "comp";
+          td1.className = "comp_td w-25";
+          td1.innerHTML = d.getDate() + day_symbol;
+          td2.innerHTML = totalSteps;
+          td3.innerHTML = (totalSteps/goal)*100 + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="{{URL::asset('storage/history/co.svg')}}" alt="">';
+        } else {
+          td1.innerHTML = d.getDate() + day_symbol;
+          td2.innerHTML = totalSteps;
+          td3.innerHTML = (totalSteps/goal)*100 + '<span style="font-size:80%">%</span>';
+        }
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+        table_body.appendChild(tr);
+      });
+    }
     console.log(dates);
+    function daysInThisMonth() {
+      var now = new Date();
+      return new Date(now.getFullYear(), now.getMonth()+1, 0).getDate();
+    }
     </script>
     <script type="text/javascript">
     function changeText() {
