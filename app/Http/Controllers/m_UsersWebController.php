@@ -605,48 +605,33 @@ class m_UsersWebController extends Controller
         if($m_users->users_id == Auth::id()){
             $m_users->users_id = Auth::id();
             $m_users->serial_number = Auth::user()->name;
+            $m_users->height = $request->inputheight;
+            //$m_users->gender = $request->gender; 
+           
+            // $m_users->stride= $request->inputheight/2.5;
+            $m_users->stride= $request->stridelength;
+            
 
-            if($request->gridRadios == '3'){
-                $m_users->stride= $request->inputheight/2.5;
-            }
-            if($request->gridRadios == '4'){
-                $m_users->stride= $request->stridelength;
-            }
+            
+            $m_users->step_goal_per_day= $request->dailygoal;   
+            // $m_users->step_goal_per_day= $request->dailydistance * 100000 /($request->stridelength);
+            $m_users->step_monday= $request->dailygoal_1* 100000 /($request->stridelength);
+            $m_users->step_tuesday = $request->dailygoal_2* 100000 /($request->stridelength);
+            $m_users->step_wednesday = $request->dailygoal_3* 100000 /($request->stridelength);
+            $m_users->step_thursday = $request->dailygoal_4* 100000 /($request->stridelength);
+            $m_users->step_friday = $request->dailygoal_5* 100000 /($request->stridelength);
+            $m_users->step_saturday = $request->dailygoal_6* 100000 /($request->stridelength);
+            $m_users->step_sunday = $request->dailygoal_7* 100000 /($request->stridelength); 
+            
+        
+            $m_users->step_goals_per_month = ($m_users->step_monday+$m_users->step_tuesday+$m_users->step_wednesday+$m_users->step_thursday+$m_users->step_friday+$m_users->step_saturday+$m_users->step_sunday)*4; 
+            //$m_users->step_goals_per_month = $request->monthlydistance * 100000 /($request->stridelength);
+                
+            
+            $m_users->motion_web = $request->input('motionweb')? 1: 0;
+            $m_users->motion_app = $request->input('motionapp')? 1: 0;
 
-            if($request->radio_daily == '5'){
-                $m_users->step_goal_per_day= $request->dailygoal;
-            }
-            if($request->radio_daily == '6'){
-                if($request->inputheight !=null){
-                    $m_users->step_goal_per_day= $request->dailydistance * 100000 * 2.5/($request->inputheight);
-                }
-                else{
-                    $m_users->step_goal_per_day= $request->dailydistance * 100000 /($request->stridelength);
-                }
-            }
-            if($request->radio_monthly == '7'){
-                $m_users->step_goals_per_month = $request->monthlygoal;
-            }
-            if($request->radio_monthly == '8'){
-                if($request->inputheight !=null){
-                    $m_users->step_goals_per_month = $request->monthlydistance * 100000 * 2.5 /($request->inputheight);
-                }
-                else{
-                    $m_users->step_goals_per_month = $request->monthlydistance * 100000 /($request->stridelength);
-                }
-            }
-            if($m_users->motion_web == 0){
-                $m_users->motion_web = $request->input('motionweb')? 1: $m_users->motion_web;
-            }
-            else{
-                $m_users->motion_web = $request->input('motionweb')? 1:0;
-            }
-            if($m_users->motion_app == 0){
-                $m_users->motion_app = $request->input('motionapp')? 1: $m_users->motion_app;
-            }
-            else{
-                $m_users->motion_app = $request->input('motionapp')? 1:0;
-            }
+            
         $m_users->save();
         return redirect(route('index'))->with('successMsg','your info Successfully updated');
         }
