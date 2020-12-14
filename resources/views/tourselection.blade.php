@@ -110,11 +110,16 @@
 			        <img src='/storage/img/line@3x.png' class='wid'>
 			    </div>
 			    <div class='container mt-5'>
-			    	<div class='row py-2' style='background-color: #fdf2e3;' >
-			    		<div class='col-1'>
-                             <img class='mr-2' src='/storage/img/point.png'></div><div class='col-10'> By making the open state default for when :checked isn't detected, we can make this system accessable for browsers that don't recognize :checked. The fallback is simply an open accordion. The accordion can be manipulated with Javascript (if needed) by changing the "checked" property of the input element.
-			    		</div>
-			    	</div>
+			    	
+			    		
+						@foreach($constant_data as $c)
+						<div class='row py-2' style='background-color: #fdf2e3;' >
+						<div class='col-1'> <img class='mr-2' src='/storage/img/point.png'></div><div class='col-10'> {{ $c }}
+						</div>
+						</div>
+						@endforeach
+						
+			    	
 			    </div>
 			   <div class='row mt-4' style='background-color: #eef4f6; position: relative; z-index: 11;'>
 				<div class='col-12 mt-3'>

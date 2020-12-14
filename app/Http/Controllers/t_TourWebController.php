@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Session;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Config;
 use App\t_Tour;
 use App\m_Tour;
 use App\m_Users;
@@ -26,6 +27,7 @@ class t_TourWebController extends Controller
         if(m_Users::where('users_id',Auth::id())->count() >0){
        
             $tours = m_Tour::all();
+            $constant_data = Config::get('constants.myData');
             $m__users_id = m_Users::where('users_id',Auth::id())->first()->id;
             $current_tour = t_Tour::where('m__users_id', $m__users_id)->orderBy('start_datetime','DESC')->get()->first();
             $all_t_Tours = t_Tour::where('m__users_id', $m__users_id)->get();
@@ -69,7 +71,7 @@ class t_TourWebController extends Controller
 
             //dd($current_tour->m_tours['tour_title']);
             if($tours != null){
-            return view('tourselection', compact('tours','m__users_id','current_tour','all_t_Tours','get_m_user_daily_goal','get_m_user_stride','get_t_tour','steps','checkpoints','total'));
+            return view('tourselection', compact('tours','m__users_id','current_tour','all_t_Tours','get_m_user_daily_goal','get_m_user_stride','get_t_tour','steps','checkpoints','total','constant_data'));
             }
             else{
                 return view('emptycheckpoints', compact('tours'));
@@ -87,8 +89,9 @@ class t_TourWebController extends Controller
             $checkpoints = null;
             $total = 0;
             $m__users_id = null;
+            $constant_data = null;
             if($tours != null){
-            return view('tourselection', compact('tours','m__users_id','current_tour','all_t_Tours','get_m_user_daily_goal','get_m_user_stride','get_t_tour','steps','checkpoints','total'));
+            return view('tourselection', compact('tours','m__users_id','current_tour','all_t_Tours','get_m_user_daily_goal','get_m_user_stride','get_t_tour','steps','checkpoints','total','constant_data'));
             }
             else{
                 return view('emptycheckpoints', compact('tours'));
