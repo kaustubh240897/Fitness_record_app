@@ -58,23 +58,20 @@
 			  background-color:orange ;
 			  border: none;
 			  color: white;
-			  padding: 15px 40px;
-			  text-align: center;
+        height: 30px;
 			  text-decoration: none;
-			  display: inline-block;
+
 			 /* margin: 4px 2px;*/
 			  cursor: pointer;
 			  border-radius: 30px;
 			  outline: none !important;
-
+        font-size: 80%;
 
 			}
 			.refBtn {
 			  position: fixed;
-			  bottom: 10%!important;
+			  bottom: 72px !important;
 			  z-index: 10;
-			  right:auto;
-			  left:auto;
 			}
 
        .btn.btn-lg {
@@ -314,7 +311,10 @@
       position: absolute;
       }
       .dist_t {
-      text-align: right !important;
+      text-align: center !important;
+      }
+      .dist_t_p {
+        width: 30px;
       }
       .right_t {
       line-height: 0.8;
@@ -389,14 +389,16 @@
 @endif
 
 <div class='row'>
-                      <div class='col-12 text-center my-3'><a href='/createtour'><button class="button mt-2"><  リストに戻る </button></a></div>
+                      <div class='col-12 text-center my-3'><a href='/createtour'> <p class="mb-4  text-center" style="border: solid 1px #2b63c6; border-radius: 15px"><  リストに戻る</p> </a></div>
                         <div class='col-12 text-center'>
                           <form action="{{ route('tourstore', $tours->id) }}" method="POST" >
                             {{ csrf_field() }}
                             {{ method_field('post') }}
                             <!-- Button trigger modal -->
-                            <button type='button' class="button1  refBtn" data-toggle="modal" data-target="#exampleModalCenter"><  このツアーを選択してください </button>
-                            
+                            <div class="d-flex flex-row justify-content-center">
+                              <button type='button' class="button1 w-100 refBtn text-center " data-toggle="modal" data-target="#exampleModalCenter"> < このツアーを選択してください  </button>
+                            </div>
+
 
                             <!-- Modal -->
                             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -410,7 +412,7 @@
                                   </div>
                                   <div class="modal-body">
                                   <div class="container">
-                                  
+
                                     <div class="row justify-content-center px-3">
                                       <div class="col">
                                         <div class="form-check form-check-inline">
@@ -434,7 +436,7 @@
                                           <label class="form-check-label" for="inlineRadio2">逆方向に踏破</label>
                                         </div>
                                       </div>
-                                     
+
                                   </div>
                                   <div class='container mt-5'>
 
@@ -456,7 +458,7 @@
                                 </div>
                               </div>
                             </div>
-                            
+
                           </form>
                           </div>
                     </div>

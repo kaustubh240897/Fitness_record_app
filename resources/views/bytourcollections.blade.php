@@ -17,7 +17,7 @@
 	  		 border-bottom: 1px solid white;
 			 /* border-bottom-color: white;*/
 			  box-shadow: 5px white !important;
-		  		
+
 	  	}
 		  .container-fluid {
 			padding-right:1px;
@@ -34,16 +34,16 @@
 	  		/* height:13rem; */
 	  		font-size: 15px;
 	  		background-color: #2b63c6;
-	  		
+
 	  	}
 	  	.top{
 				margin-top: 8rem;
 				margin-left: 0rem;
 				background-color: #fffdfa !important;
 				z-index: 9;
-				
+
 			}
-	  
+
 	  	.shadow {
 		  border-bottom: 1px solid ;
 		 /* border-bottom-color: white;*/
@@ -61,8 +61,8 @@
 		  border: 1px solid white;
 		  outline: none !important ;
 		}
-		
-		
+
+
 		*,
 		*::after,
 		*::before {
@@ -92,18 +92,18 @@
 				position: relative;
 				z-index: 1;
 
-				
+
 			}
 
 			.circle {
-				
+
 				color: white;
 				text-decoration: none;
 				display: inline-block;
 				border-radius: 2px;
 			}
 
-			
+
 
 			.circle .badge {
 				position: absolute;
@@ -112,7 +112,7 @@
 			.color{
 				background-color:white !important;
 			}
-					
+
 
 		body {
 		overflow-x: hidden;
@@ -124,13 +124,13 @@
 		background: #fffdfa;
 		z-index:9;
 		position: relative;
-	
+
 		}
-	
+
 		div.c {
 			text-align: right;
 			}
-		 
+
 
 			.row-full{
 			width: 99vw;
@@ -145,8 +145,8 @@
 
 		.main .accordion {
 		max-width: 100%;
-	
-   
+
+
         overflow-x: hidden;
 
 		height: auto;
@@ -207,12 +207,49 @@
 		}
 
 
-		
+
 		}
 
-				
+    .selected_sort {
+      color: #2b63c6;
+      font-weight: bold;
+    }
+    .not_selected_sort {
+      color: #000;
+      font-weight: normal;
+    }
+    .dropdown-toggle::after {
+        display:none !important;
+    }
+    .dropdown-menu {
+       /* min-width: 6rem; */
+       z-index: 10 !important;
+       margin-top: 10px !important;
+       border-radius: 18px !important;
+   }
+   .speech-bubble {
+    position: relative;
+    background: #fff;
+    border-radius: .4em;
+     padding-left: 10px;
+   }
 
-						
+   .speech-bubble:after {
+    content: '';
+    position: absolute;
+    bottom: 80%;
+    right: 20%;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+     border-bottom:20px solid #fff;
+    margin-left: 0px;
+     margin-right: 20px;
+     margin-top: 0px;
+    margin-bottom: 20px;
+   }
+
+
 	</style>
 </head>
 @if(! empty($get_t_collections))
@@ -220,16 +257,36 @@
 	<div class='container-fluid'>
 		<div class="row d-flex fixed-top" style="border-bottom: 1px solid white; z-index: 10; background-color: #2b63c6; position: fixed; top:0px;">
 			<div class=' p-2' style="color:white;"><div class="ml-1" style='color: white;'>私のコレクション</div> </div>
-			<div class=' ml-auto  p-2 '>  <button class='button mr-1' style="color:white;">ツアーで並べ替え ↑↓ </button></div>
+			<div class=' ml-auto  p-2 '>
+        <!-- <button class='button mr-1' style="color:white;">ツアーで並べ替え ↑↓ </button> -->
+        <div class="dropdown p-1">
+   <button class="text-center dropdown-toggle" type="" style="color: white; font-size: 80%; border-radius: 12px;
+   border: solid 1px #ffffff;
+   background-color: #2b63c6;" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   ツアーで並べ替え ↑↓
+   </button>
+   <div class="dropdown-menu speech-bubble dropdown-menu-right" aria-labelledby="dropdownMenu2">
+   <a id="group_by_tour" onclick="sortHistory(this.id);" >  <label class="radio-inline pl-2 pb-2">
+   <input id="group_by_tour_radio" class="pt-3" type="radio" name="optradio"><span id="sort_newest_span" class="not_selected_sort pl-2 pb-2" style="font-size: 100%">実績の新しい順</span>
+   </label></a>
+   <a id="sort_oldest" onclick="sortHistory(this.id);">   <label class="radio-inline pl-2 pb-2">
+   <input id="sort_oldest_radio" class="pt-3" type="radio" name="optradio"><span id="sort_oldest_span" class="not_selected_sort pl-2 pb-1" style="font-size: 100%">実績の古い順</span>
+   </label> </a>
+   <a id="sort_newest" onclick="sortHistory(this.id);">   <label class="radio-inline pl-2 pb-2">
+   <input id="sort_newest_radio" class="pt-3" type="radio" name="optradio"><span id="sort_oldest_span" class="not_selected_sort pl-2 pb-1" style="font-size: 100%">実績の古い順2</span>
+   </label> </a>
+   </div>
+   </div>
+      </div>
 
-	    </div> 
+	    </div>
 
-				
-		<div class="row wrapper1 fixed-top" style='z-index: 0;'>	
+
+		<div class="row wrapper1 fixed-top" style='z-index: 0;'>
 
 			<div class='col-12'><img class='center' src='storage/img/star_mycol.png'> </div>
-	    </div> 
-					
+	    </div>
+
 
 	<div class='row'>
 		<div class='col-12'>
@@ -237,29 +294,29 @@
 		<main class="main row-full" >
 
 			<div  style='background-color:#fffdfa; padding-bottom:100%;'>
-			
+
 			<div class="accordion" >
 				@foreach($tours as $tour)
-				
-				@foreach($tour->checkpoints as $checkpoint) 
+
+				@foreach($tour->checkpoints as $checkpoint)
 
 				@if(in_array($checkpoint->id, $unseen_checkpoint_array))
-				<div class="accordion-item" style='background-color:white !important; z-index:9; position:relative; background-color: #ffffcc !important; border: 1px solid #e6e600;'>  <h3 class="title" style=' margin-bottom: 1rem; padding: 0.5rem 0rem 0rem 0.5rem;  '><div> 
-					<img src='storage/img/point.png'>  
-				@php 
+				<div class="accordion-item" style='background-color:white !important; z-index:9; position:relative; background-color: #ffffcc !important; border: 1px solid #e6e600;'>  <h3 class="title" style=' margin-bottom: 1rem; padding: 0.5rem 0rem 0rem 0.5rem;  '><div>
+					<img src='storage/img/point.png'>
+				@php
 						break;
-					@endphp 
+					@endphp
 				@elseif($loop->iteration == $tour->checkpoints->count())
-				<div class="accordion-item" style='background-color:white !important; z-index:9; position:relative;'> <h3 class="title" style=' margin-bottom: 1rem; padding: 0.5rem 0rem 0rem 0.5rem;  '><div> 
-					
-				@endif 
+				<div class="accordion-item" style='background-color:white !important; z-index:9; position:relative;'> <h3 class="title" style=' margin-bottom: 1rem; padding: 0.5rem 0rem 0rem 0.5rem;  '><div>
+
+				@endif
 				@endforeach
-				
-				
+
+
 					@if($tour_status[$loop->iteration-1] == 'Done' ) <img src='storage/img/complete.png'>  @endif<span style='color:#2b63c6;'>@if($tour_status[$loop->iteration-1] == 'Done' )<a href="{{ route('collectiondetails', $tour->m__collections->id) }}">{{ $tour->tour_title }} </a> @else {{ $tour->tour_title }}  @endif </span></div>
 					<div class='c col-5' style='color:grey;'>{{ $tours_distance[$loop->iteration-1] }} km &nbsp <i style='color:#2b63c6' class="fas fa-chevron-down"></i></div>
 					</h3>
-					
+
 					@foreach($tour->checkpoints as $checkpoint)
 					@if( $counter[$checkpoint->m__collection_id] >0)
 					<div class='paragraph'>
@@ -269,23 +326,23 @@
 					@else
 					<div class='col-4 circle'><span> <a href="{{ route('collectiondetails', $checkpoint->m_collections->id) }}"> <img src="{{ asset($checkpoint->m_collections->path . $checkpoint->m_collections->filename) }}" class="rounded-circle" alt="image" width="80" height="80"> </a> </span> </div>
 					@endif
-					<div class='col-6'> <img src='storage/img/label-1.png'><br><a href="{{ route('collectiondetails', $checkpoint->m_collections->id) }}">{{ $checkpoint->checkpoint_title }}  </a></div> 
+					<div class='col-6'> <img src='storage/img/label-1.png'><br><a href="{{ route('collectiondetails', $checkpoint->m_collections->id) }}">{{ $checkpoint->checkpoint_title }}  </a></div>
 						<div class='col-4'> </div>
 						<div class='col-8 c checked'> @if($counter[$checkpoint->m__collection_id] >5)+@endif @for($i=0; $i<$counter[$checkpoint->m__collection_id]; $i++) @if($i <=5)<img src='storage/img/star.png'>@endif @endfor<font style='color:#cbaca3;'> {{ $latest_date[$checkpoint->m__collection_id] }} </font>
 						</div>
 					</div>
 					</div>
-					
-					@endif  
+
+					@endif
 					@endforeach
-					
+
 			</div>
 
-			<br> 
+			<br>
 				@endforeach
 				</div>
-				
-				
+
+
 			</div>
 			<div class='row' style='background-color: #eef4f6; position: relative; z-index: 10; max-width:100%;'>
 				<div class='col-12'>
@@ -301,7 +358,7 @@
 	</div>
     </div>
 
-	
+
 	<script>
 		const accordionItem = document.querySelectorAll(".accordion-item");
 
@@ -317,10 +374,27 @@
 		);
 	</script>
 
+  <script type="text/javascript">
+
+  function sortHistory(id) {
+    console.log("yes");
+    var url = "";
+    if (id == "sort_newest") {
+      url = "/reversemycollection";
+      location.reload();location.href=url;
+    } else if (id == "sort_oldest") {
+      url = "/mycollection";
+      location.reload();location.href=url;
+    } else {
+      url = "/bytourcollection";
+      location.reload();location.href=url;
+    }
+  }
+  </script>
 	</body>
 @else
 	<div style='margin-top:10rem; z-index:10;'>
 		<h1 style='color:black !important;'> まだコレクションはありません！ </h1>
 	</div>
-@endif 
+@endif
 @endsection

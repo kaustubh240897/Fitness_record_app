@@ -304,7 +304,7 @@ input[type=number] {
         <!-- <input id="daily_stepsInput" type="number"  name='dailygoal' value="" class="d-none"> -->
         <div class="col-4">
           <div class="d-flex flex-row">
-            <input id="daily_stepsInput" class="w-100" type="number"  name='dailygoal' value=""><span style="background-color: #f2f4f6;">s</span>
+            <input id="daily_stepsInput" class="w-100" type="number"  name='dailygoal' value=""><span style="background-color: #f2f4f6;">歩</span>
           </div>
         </div>
         <!-- <p class="text-center" style="width: 22px; height: 22px;border-radius: 20px; border: 1px solid #2b63c6;"> <span class="pb-3">+</span> </p> -->
@@ -445,14 +445,22 @@ input[type=number] {
   <div class="d-flex flex-row justify-content-between px-2" style="border-bottom: 3px solid rgb(248,252,253);">
     <p style="font-size: 80%; font-weight: bold; color: #2b63c6;">アプリでのモーション表示</p>
     <div class="custom-control custom-switch">
-      <input name="motionapp" type="checkbox" class="custom-control-input" id="customSwitch1">
+      @if($m_users->motion_app == 0)
+        <input name="motionapp" type="checkbox" class="custom-control-input" id="customSwitch1" >
+      @else
+       <input name="motionapp" type="checkbox" class="custom-control-input" id="customSwitch1" checked>
+      @endif
       <label class="custom-control-label" for="customSwitch1"> <span style="color: #2b63c6;">あり</span> </label>
     </div>
   </div>
   <div class="d-flex flex-row justify-content-between px-2 pt-3">
     <p style="font-size: 80%; font-weight: bold; color: #2b63c6;">Webでのモーション表示</p>
     <div class="custom-control custom-switch">
-      <input name="motionweb" type="checkbox" class="custom-control-input" id="customSwitch2">
+      @if($m_users->motion_web == 0)
+        <input name="motionweb" type="checkbox" class="custom-control-input" id="customSwitch2">
+      @else
+       <input name="motionweb" type="checkbox" class="custom-control-input" id="customSwitch2" checked>
+      @endif
       <label class="custom-control-label" for="customSwitch2"> <span style="color: #2b63c6;">なし</span> </label>
     </div>
   </div>
