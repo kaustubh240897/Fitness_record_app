@@ -365,44 +365,44 @@ class m_UsersWebController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->gridRadios == '3'){
+        
 
-            $this->validate($request,[
-            'inputheight'=> 'required|gt:111|lt:214',
+        // $this->validate($request,[
+        //     'inputheight'=> 'required|gt:111|lt:214',
 
-            ]);
-            }
-        if($request->gridRadios == '4'){
+        //     ]);
+            
+        
 
-            $this->validate($request,[
-            'stridelength'=> 'required|gt:44|lt:86',
+        // $this->validate($request,[
+        //     'stridelength'=> 'required|gt:44|lt:86',
 
-            ]);
-            }
-        if($request->radio_daily == '5'){
+        //     ]);
+            
+       
 
-            $this->validate($request,[
-            'dailygoal'=> 'required|gt:1000|lt:181000',
-            ]);
-            }
-        if($request->radio_daily == '6'){
+        // $this->validate($request,[
+        //     'dailygoal'=> 'required|gt:1000|lt:181000',
+        //     ]);
+            
+        
 
-            $this->validate($request,[
-            'dailydistance'=> 'required|gt:0|lt:101',
-            ]);
-            }
-        if($request->radio_monthly == '7'){
+        // $this->validate($request,[
+        //     'dailydistance'=> 'required|gt:0|lt:101',
+        //     ]);
+            
+        
 
-            $this->validate($request,[
-            'monthlygoal'=> 'required|gt:18000|lt:1818000',
-            ]);
-            }
-        if($request->radio_daily == '8'){
+        // $this->validate($request,[
+        //     'monthlygoal'=> 'required|gt:18000|lt:1818000',
+        //     ]);
+            
+       
 
-            $this->validate($request,[
-            'monthlydistance'=> 'required|gt:9|lt:1001',
-            ]);
-            }
+        // $this->validate($request,[
+        //     'monthlydistance'=> 'required|gt:9|lt:1001',
+        //     ]);
+            
 
 
         if(!m_Users::where('users_id',Auth::id())->exists())
@@ -412,35 +412,21 @@ class m_UsersWebController extends Controller
             $m_users->users_id = Auth::id();
             $m_users->serial_number = Auth::user()->name;
 
-            if($request->gridRadios == '3'){
-                $m_users->stride= $request->inputheight/2.5;
-            }
-            if($request->gridRadios == '4'){
-                $m_users->stride= $request->stridelength;
-            }
+           
+            // $m_users->stride= $request->inputheight/2.5;
+            $m_users->stride= $request->stridelength;
+            
 
-            if($request->radio_daily == '5'){
-                $m_users->step_goal_per_day= $request->dailygoal;
-            }
-            if($request->radio_daily == '6'){
-                if($request->inputheight !=null){
-                    $m_users->step_goal_per_day= $request->dailydistance * 100000 * 2.5/($request->inputheight);
-                }
-                else{
-                    $m_users->step_goal_per_day= $request->dailydistance * 100000 /($request->stridelength);
-                }
-            }
-            if($request->radio_monthly == '7'){
-                $m_users->step_goals_per_month = $request->monthlygoal;
-            }
-            if($request->radio_monthly == '8'){
-                if($request->inputheight !=null){
-                    $m_users->step_goals_per_month = $request->monthlydistance * 100000 * 2.5 /($request->inputheight);
-                }
-                else{
-                    $m_users->step_goals_per_month = $request->monthlydistance * 100000 /($request->stridelength);
-                }
-            }
+            
+            $m_users->step_goal_per_day= $request->dailygoal;   
+            // $m_users->step_goal_per_day= $request->dailydistance * 100000 /($request->stridelength);
+                
+            
+        
+            $m_users->step_goals_per_month = $request->dailygoal*30;
+            //$m_users->step_goals_per_month = $request->monthlydistance * 100000 /($request->stridelength);
+                
+            
             $m_users->motion_web = $request->input('motionweb')? 1: 0;
             $m_users->motion_app = $request->input('motionapp')? 1: 0;
             $m_users->save();
