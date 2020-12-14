@@ -1149,7 +1149,6 @@ var def_path = "{{URL::asset('storage/mypage/box1_sel.png')}}";
     var dist_walked = (get_m_user_stride * steps)/100000;
     var flag1 = 0;
 
-
     var checkpoints = {!! json_encode($checkpoints) !!};
     checkpoints.forEach((item, i) => {
       var div_flex = document.createElement("div");
@@ -1325,7 +1324,6 @@ var def_path = "{{URL::asset('storage/mypage/box1_sel.png')}}";
     var steps = {{ $steps }};
     var dist_walked = (get_m_user_stride * steps)/100000;
     var flag1 = 0;
-
 
     var checkpoints = {!! json_encode($checkpointsr) !!};
     checkpoints.forEach((item, i) => {
