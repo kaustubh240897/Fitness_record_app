@@ -227,7 +227,7 @@
           <div class="col-10 mb-0">
             <div id="monthsContainer" class="pl-3 mb-0 scrolling-wrapper row  flex-nowrap ">
               <div class="col">
-                <button id="12" onclick="myFunc(this.id);" class="px-1 selected_month" style="background-color:#fff;">12</button>
+                <button id="12" onclick="myFunc(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">12</button>
               </div>
               <div class="col">
                 <button id="11" onclick="myFunc(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">11</button>
@@ -317,7 +317,7 @@
       <div class="goalTxt text-center" style="border-radius: 18px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   background-color: #113a83; color: #fff">
-        1日の目標 8,000歩 (5.28km)
+        1日の目標 {{$get_m_user_daily_goal}}歩 ({{ $get_m_user_daily_goal*$get_m_user_stride/100000 }} km)
       </div>
     </div>
     <div class="container-fluid text-center">
@@ -383,6 +383,7 @@
     <h4> 申し訳ありませんが、今まで歴史がありません！ </h4>
     @endif
     <script type="text/javascript">
+  
     var is_rev = {{$reverse}};
     console.log(is_rev);
     var table_body = document.getElementById("monthly_table");
@@ -451,11 +452,13 @@
           tr.className = "comp";
           td1.className = "comp_td w-25";
           td1.innerHTML = d.getDate() + day_symbol;
-          td2.innerHTML = totalSteps;
+          dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
+          td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
           td3.innerHTML = (totalSteps/goal)*100 + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="{{URL::asset('storage/history/co.svg')}}" alt="">';
         } else {
           td1.innerHTML = d.getDate() + day_symbol;
-          td2.innerHTML = totalSteps;
+          dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
+          td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
           td3.innerHTML = (totalSteps/goal)*100 + '<span style="font-size:80%">%</span>';
         }
         tr.appendChild(td1);
@@ -523,11 +526,13 @@
           tr.className = "comp";
           td1.className = "comp_td w-25";
           td1.innerHTML = d.getDate() + day_symbol;
-          td2.innerHTML = totalSteps;
+          dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
+          td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
           td3.innerHTML = (totalSteps/goal)*100 + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="{{URL::asset('storage/history/co.svg')}}" alt="">';
         } else {
           td1.innerHTML = d.getDate() + day_symbol;
-          td2.innerHTML = totalSteps;
+          dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
+          td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
           td3.innerHTML = (totalSteps/goal)*100 + '<span style="font-size:80%">%</span>';
         }
         tr.appendChild(td1);
@@ -567,16 +572,16 @@
     function navItemClick(id) {
       console.log(id);
       if (id != currentNav) {
-        console.log("if",id);
-        clicked_imgid = id + "_img";
-        clicked_imgName = id + "_sel.png";
-        cur_imgid = currentNav + "_img";
-        cur_imgName = currentNav + ".png";
-        cur_title = currentNav + "_title";
-        clicked_title = id + "_title";
-        clicked_imgName = def_path.replace("box1_sel.png",clicked_imgName);
-        cur_imgName = def_path.replace("box1_sel.png",cur_imgName);
-        document.getElementById(currentNav).className = "col-3 padding-0 pt-2 navItem";
+          console.log("if",id);
+          clicked_imgid = id + "_img";
+          clicked_imgName = id + "_sel.png";
+          cur_imgid = currentNav + "_img";
+          cur_imgName = currentNav + ".png";
+          cur_title = currentNav + "_title";
+          clicked_title = id + "_title";
+          clicked_imgName = def_path.replace("box1_sel.png",clicked_imgName);
+          cur_imgName = def_path.replace("box1_sel.png",cur_imgName);
+          document.getElementById(currentNav).className = "col-3 padding-0 pt-2 navItem";
           document.getElementById(cur_imgid).src = cur_imgName;
           document.getElementById(id).className = "col-3 padding-0 pt-2 navItem is-active";
           document.getElementById(clicked_imgid).src = clicked_imgName;
@@ -584,11 +589,11 @@
           document.getElementById(cur_title).style.fontWeight = "normal";
           document.getElementById(clicked_title).style.color = "#fddb66";
           document.getElementById(clicked_title).style.fontWeight = "bold";
-        currentNav = id;
+          currentNav = id;
       }
     }
 
-var firstRow = document.getElementById('row_top');
+
 var selected = 12;
 //var tab_year = 2020;
 var selectedyear = 2020;
@@ -596,6 +601,7 @@ var tab_yearly_selectedyear = 2020;
 var monthsContainer = document.getElementById('monthsContainer');
 var yearsContainer = document.getElementById('yearsContainer');
 var yearnumber = document.getElementById('yearnumber');
+var url = "{{ route('userhistory', ['year','month']) }}";
 function myFunc(id)
       {
 
@@ -624,6 +630,20 @@ function myFunc(id)
             //row_top.scrollIntoView();
             $('html, body').animate({ scrollTop: 0 }, 'fast');
             console.log("inmyfun2", selected);
+            url = url.replace('year',selectedyear);
+            url = url.replace('month',selected);
+            console.log("url",url);
+            // $.ajax({
+            //     method: 'get',
+            //     url: url,
+            // }).done(function(response, status){
+            //     //
+            //     console.log("done");
+            // }).fail(function(jqXHR, textStatus, errorThrown){
+            //     //
+            //     console.log("fail");
+            // });
+            location.reload();location.href=url;
           }
           $('html, body').animate({ scrollTop: 0 }, 'fast');
       }
