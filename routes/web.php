@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 //Auth::routes();
 Route::get('/', 'm_UsersWebController@create')->name('create');
 Route::post('/', 'm_UsersWebController@store')->name('store');
-Route::get('showprofiledetails/{id}', 'm_UsersWebController@showProfileDetails')->name('showprofiledetails');
+Route::get('showprofiledetails', 'm_UsersWebController@showProfileDetails')->name('showprofiledetails');
 Route::get('edit/{id}', 'm_UsersWebController@edit')->name('edit');
 Route::post('update/{id}', 'm_UsersWebController@update')->name('update');
 Route::get('/userdailyhistory/{year}/{month}', 'm_UsersWebController@dailydata')->name('userhistory');
