@@ -288,6 +288,23 @@
      .right_t {
      line-height: 0.8;
      }
+     .navfix {
+       position: fixed;
+       bottom: 0;
+       left: 0;
+       z-index: 10;
+     }
+     .navItem {
+         height: 66px;
+     }
+
+     .navItem.is-active {
+         margin-top: -10px;
+         /* margin-bottom: -10px; */
+         height: 76px;
+         background-color: #174493;
+          border-radius: 5px
+     }
   </style>
 </head>
 <body>
@@ -340,7 +357,7 @@
 
 	    </div>
 
-	    <div class='container-fluid' style='background-color: #f2f2f2'>
+	    <div class='container-fluid' style='background-color: #f2f2f2; bottom: 66px;'>
 	               <img src='/storage/img/line@3x.png' class='wid my-2'>
 	              <b>  <text class='hr my-1'> @if($my_collections->m_collections->collection_category == 'tour') {{ $my_collections->m_collections->m__tours->tour_comment }} @else {{ $my_collections->m_collections->m__checkpoints->comments }}  @endif</text></b>
 	               <img src='/storage/img/lineDown.png' class='wid mt-2'>
@@ -1101,13 +1118,7 @@
                  </script>
                  @endif
 
-		    <div class='row mt-2' style='background-color: #eef4f6;'>
-		    	<br>
-		    	<br>
-				<div class='col-12'>
-				<img class='wid' src='/storage/img/bg@3x.png'>
-			    </div>
-			</div>
+
 		</div>
 
 
@@ -1115,6 +1126,37 @@
   @else
     <h4> コレクションはありません。 </h4>
   @endif
+  <div class="d-flex flex-row" style="position: absolute; bottom: 0; left: 0; background-color: #eef4f6;">
+    <img class="w-100" src='/storage/img/bg@3x.png'>
+  </div>
+  <div class="container-fluid navfix" style="background-color: #2b63c6;">
+    <div class="row d-flex text-center">
+      <div class="col-3 padding-0 pt-2 navItem" style="border-right: 2px solid #113a83;" id="box1" onclick="navItemClick(this.id);">
+        <a href='/mypage'>
+          <img id="box1_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box1.png')}}" alt="">
+          <p id="box1_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: normal;text-align: center;color: #fff;">マイページ</p>
+      </a>
+      </div>
+      <div class="col-3 padding-0 pt-2 navItem" style="border-right: 2px solid #113a83;" id="box2" onclick="navItemClick(this.id);">
+        <a href='/mycollection'>
+          <img id="box2_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box2.png')}}" alt="">
+          <p id="box2_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: normal;text-align: center;color: #fff;">コレクション</p>
+        </a>
+      </div>
+      <div class="col-3 padding-0 pt-2 navItem" style="border-right: 2px solid #113a83;" id="box3" onclick="navItemClick(this.id);">
+        <a href="{{ route('userhistory', [now()->year,now()->month]) }}" >
+          <img id="box3_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box3.png')}}" alt="">
+          <p id="box3_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: normal;text-align: center;color: #ffffff;">マイヒストリ</p>
+        </a>
+      </div>
+      <div class="col-3 padding-0 pt-2 navItem" id="box4" onclick="navItemClick(this.id);">
+        <a href="/showprofiledetails">
+          <img id="box4_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box4.png')}}" alt="">
+          <p id="box4_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: normal;text-align: center;color: #ffffff;">設定</p>
+        </a>
+      </div>
+    </div>
+  </div>
 </body>
 
 @endsection

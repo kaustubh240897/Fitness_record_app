@@ -336,31 +336,39 @@
           1日の目標 {{$get_m_user_monthly_goal}}歩 ({{ $get_m_user_monthly_goal*$get_m_user_stride/100000 }} km)
         </div>
       </div>
-      <div class="container-fluid text-center">
-        <img src="{{URL::asset('storage/history/bg@3x.png')}}" alt="" style="max-width: 100%;">
+      <div class="d-flex flex-row" style="position: absolute; bottom: 0;background-color: #eef4f6;">
+        <img class="w-100" src='/storage/img/bg@3x.png'>
       </div>
       <!-- style="transform: scaleY(1.2) !important;" -->
       <div class="container-fluid navfix" style="background-color: #2b63c6;">
         <div class="row d-flex text-center">
           <div class="col-3 padding-0 pt-2 navItem" style="border-right: 2px solid #113a83;" id="box1" onclick="navItemClick(this.id);">
-            <img id="box1_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box1.png')}}" alt="">
-            <p id="box1_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: normal;text-align: center;color: #ffffff;">マイページ</p>
+            <a href='/mypage'>
+              <img id="box1_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box1.png')}}" alt="">
+              <p id="box1_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: normal;text-align: center;color: #fff;">マイページ</p>
+          </a>
           </div>
           <div class="col-3 padding-0 pt-2 navItem" style="border-right: 2px solid #113a83;" id="box2" onclick="navItemClick(this.id);">
-            <img id="box2_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box2.png')}}" alt="">
-            <p id="box2_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: normal;text-align: center;color: #ffffff;">コレクション</p>
+            <a href='/mycollection'>
+              <img id="box2_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box2.png')}}" alt="">
+              <p id="box2_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: normal;text-align: center;color: #ffffff;">コレクション</p>
+            </a>
           </div>
           <div class="col-3 padding-0 pt-2 navItem is-active" style="border-right: 2px solid #113a83;" id="box3" onclick="navItemClick(this.id);">
-            <img id="box3_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box3_sel.png')}}" alt="">
-            <p id="box3_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: bold;text-align: center;color: #fddb66;">マイヒストリ</p>
+            <a href="{{ route('userhistory', [now()->year,now()->month]) }}" >
+              <img id="box3_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box3_sel.png')}}" alt="">
+              <p id="box3_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: bold;text-align: center;color: #fddb66;">マイヒストリ</p>
+            </a>
           </div>
           <div class="col-3 padding-0 pt-2 navItem" id="box4" onclick="navItemClick(this.id);">
-            <img id="box4_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box4.png')}}" alt="">
-            <p id="box4_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: normal;text-align: center;color: #ffffff;">設定</p>
+            <a href="/showprofiledetails">
+              <img id="box4_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box4.png')}}" alt="">
+              <p id="box4_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: normal;text-align: center;color: #ffffff;">設定</p>
+            </a>
           </div>
         </div>
       </div>
-<div class="container-fluid">
+<!-- <div class="container-fluid">
       <div class="row justify-content-around">
         <div class="col-xs-3">
          <a href="{{ url('/mypage') }}" > <button type="button" class="btn blue mr-1 mb-1">マイページへ戻る</button> </a>
@@ -378,7 +386,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
 
     @if(! empty($months))

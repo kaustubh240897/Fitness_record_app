@@ -319,6 +319,23 @@
       .right_t {
       line-height: 0.8;
       }
+      .navfix {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+      }
+      .navItem {
+          height: 66px;
+      }
+
+      .navItem.is-active {
+          margin-top: -10px;
+          /* margin-bottom: -10px; */
+          height: 76px;
+          background-color: #174493;
+           border-radius: 5px
+      }
 
   </style>
 </head>
@@ -385,7 +402,34 @@
 
 </div>
 
-
+<div class="container-fluid navfix" style="background-color: #2b63c6;">
+  <div class="row d-flex text-center">
+    <div class="col-3 padding-0 pt-2 navItem" style="border-right: 2px solid #113a83;" id="box1" onclick="navItemClick(this.id);">
+      <a href='/mypage'>
+        <img id="box1_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box1.png')}}" alt="">
+        <p id="box1_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: normal;text-align: center;color: #fff;">マイページ</p>
+    </a>
+    </div>
+    <div class="col-3 padding-0 pt-2 navItem" style="border-right: 2px solid #113a83;" id="box2" onclick="navItemClick(this.id);">
+      <a href='/mycollection'>
+        <img id="box2_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box2.png')}}" alt="">
+        <p id="box2_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: normal;text-align: center;color: #fff;">コレクション</p>
+      </a>
+    </div>
+    <div class="col-3 padding-0 pt-2 navItem" style="border-right: 2px solid #113a83;" id="box3" onclick="navItemClick(this.id);">
+      <a href="{{ route('userhistory', [now()->year,now()->month]) }}" >
+        <img id="box3_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box3.png')}}" alt="">
+        <p id="box3_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: normal;text-align: center;color: #ffffff;">マイヒストリ</p>
+      </a>
+    </div>
+    <div class="col-3 padding-0 pt-2 navItem" id="box4" onclick="navItemClick(this.id);">
+      <a href="/showprofiledetails">
+        <img id="box4_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box4.png')}}" alt="">
+        <p id="box4_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: normal;text-align: center;color: #ffffff;">設定</p>
+      </a>
+    </div>
+  </div>
+</div>
 </body>
 
 <script type="text/javascript">

@@ -328,14 +328,10 @@
     <div class="container-fluid pt-3" id="progress_bar">
 
     </div>
-    <div class='row mt-2' style='background-color: #eef4f6;'>
-		    	<br>
-		    	<br>
-				<div class='col-12'>
-				<img class='wid' src='/storage/img/bg@3x.png'>
-			    </div>
-			</div>
 		</div>
+    <div class="d-flex flex-row" style="position: absolute; bottom: 0; left: 0; background-color: #eef4f6;">
+      <img class="w-100" src='/storage/img/bg@3x.png'>
+    </div>
 
 <script type="text/javascript">
   var prog_id = "progress_bar";
