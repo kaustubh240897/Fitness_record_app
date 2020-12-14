@@ -851,20 +851,28 @@ color: #ffd00d;;">{{ number_format($steps*$get_m_user_stride/100000,1,'.','') }}
     <div class="container-fluid navfix" style="background-color: #2b63c6;">
       <div class="row d-flex text-center">
         <div class="col-3 padding-0 pt-2 navItem is-active" style="border-right: 2px solid #113a83;" id="box1" onclick="navItemClick(this.id);">
-          <img id="box1_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box1_sel.png')}}" alt="">
-          <p id="box1_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: bold;text-align: center;color: #fddb66;">マイページ</p>
+          <a href='/mypage'>
+            <img id="box1_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box1_sel.png')}}" alt="">
+            <p id="box1_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: bold;text-align: center;color: #fddb66;">マイページ</p>
+        </a>
         </div>
         <div class="col-3 padding-0 pt-2 navItem" style="border-right: 2px solid #113a83;" id="box2" onclick="navItemClick(this.id);">
-          <img id="box2_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box2.png')}}" alt="">
-          <p id="box2_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: normal;text-align: center;color: #ffffff;">コレクション</p>
+          <a href='/mycollection'>
+            <img id="box2_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box2.png')}}" alt="">
+            <p id="box2_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: normal;text-align: center;color: #ffffff;">コレクション</p>
+          </a>
         </div>
         <div class="col-3 padding-0 pt-2 navItem" style="border-right: 2px solid #113a83;" id="box3" onclick="navItemClick(this.id);">
-          <img id="box3_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box3.png')}}" alt="">
-          <p id="box3_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: normal;text-align: center;color: #ffffff;">マイヒストリ</p>
+          <a href="{{ route('userhistory', [now()->year,now()->month]) }}" >
+            <img id="box3_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box3.png')}}" alt="">
+            <p id="box3_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: normal;text-align: center;color: #ffffff;">マイヒストリ</p>
+          </a>
         </div>
         <div class="col-3 padding-0 pt-2 navItem" id="box4" onclick="navItemClick(this.id);">
-          <img id="box4_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box4.png')}}" alt="">
-          <p id="box4_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: normal;text-align: center;color: #ffffff;">設定</p>
+          <a href="/showprofiledetails">
+            <img id="box4_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box4.png')}}" alt="">
+            <p id="box4_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: normal;text-align: center;color: #ffffff;">設定</p>
+          </a>
         </div>
       </div>
     </div>
