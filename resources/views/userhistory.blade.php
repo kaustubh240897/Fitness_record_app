@@ -193,8 +193,8 @@
   font-weight: normal;
 }
 </style>
-<div class="container-fluid sticky-top">
-  			    <div class="row d-flex justify-content-between pb-0 mb-0" style="background-color: #2B63C6; height:30px">
+<div class="container-fluid sticky-top" style='padding-bottom:30rem;'>
+  			    <div class="row d-flex justify-content-between pb-0 mb-0" style="background-color: #2B63C6; height:30px; ">
   				        <div class='col-4 shadow-lg mb-0 pb-0 mt-1 pt-1' > <p class="shadow-lg mb-0 pb-0" style="color:white; font-size: 80%">マイヒストリ</p> </div>
                     <!-- <p class="text-center" style="color:white; font-size: 80%">マイヒストリ</p> -->
                     <div class="col-2 mb-0 pb-0 mt-1 shadow-lg padding-0">
@@ -328,9 +328,10 @@
         1日の目標 {{$get_m_user_daily_goal}}歩 ({{ $get_m_user_daily_goal*$get_m_user_stride/100000 }} km)
       </div>
     </div>
-    <div class="d-flex flex-row" style="position: absolute; bottom: 0;background-color: #eef4f6;">
-      <img class="w-100" src='/storage/img/bg@3x.png'>
-    </div>
+    <div class='row' style='background-color: #eef4f6; position: relative; z-index: 5; '>
+				<div class='col-12'>
+				<img style='width: 100%; height: auto;' src='/storage/img/bg@3x.png'>
+	</div>
     <!-- style="transform: scaleY(1.2) !important;" -->
     <div class="container-fluid navfix" style="background-color: #2b63c6;">
       <div class="row d-flex text-center">
