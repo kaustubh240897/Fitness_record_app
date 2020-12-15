@@ -712,12 +712,12 @@ if({{ $value }} === false){
     div_textRight_p.style.color = "#2b63c6";
     div_textRight_p.style.fontWeight = "bold";
 
-    if (item["checkpoint_category"]) {
+    if (item["prefectures"]) {
       if (i == checkpoints.length - 1) {
           div_textRight_p.className = "py-0 my-0 pl-3 text-xs-left text-sm-center dd pb-0 mb-0 ";
-          div_textRight_p.innerHTML = '<img  class = "pt-1 pb-0 mb-0" src="{{URL::asset('storage/mypage/flag.png')}}" alt="flag"/>' + item["checkpoint_category"].substring(0, 3);;
+          div_textRight_p.innerHTML = '<img  class = "pt-1 pb-0 mb-0" src="{{URL::asset('storage/mypage/flag.png')}}" alt="flag"/>' + item["prefectures"].substring(0, 5);;
       } else {
-        div_textRight_p.innerHTML = item["checkpoint_category"];
+        div_textRight_p.innerHTML = item["prefectures"];
       }
       div_textRight_p.id = "ar"+tr_count_id.toString();
       console.log(div_textRight_p.id);
@@ -774,7 +774,7 @@ else{
     div_dist_p.innerHTML = item["distance"].toString() + "km";
     div_dist.appendChild(div_dist_p);
     if (i == 0) {
-      if ({{ $total }}-item["distance"] <= dist_walked) {
+      if ({{ $total }}-item["distance"] < dist_walked) {
           // tag.className = "StepProgress-item is-done";
           var div_sp_li = document.createElement("li");
           div_sp_li.className = "StepProgress-itemStart is-done";
@@ -876,12 +876,12 @@ else{
     div_textRight_p.style.color = "#2b63c6";
     div_textRight_p.style.fontWeight = "bold";
 
-    if (item["checkpoint_category"]) {
+    if (item["prefectures"]) {
       if (i == checkpoints.length - 1) {
           div_textRight_p.className = "py-0 my-0 pl-3 text-left dd";
-          div_textRight_p.innerHTML = '<img  class = "pt-1" src="{{URL::asset('storage/mypage/flag.png')}}" alt="flag"/>' + item["checkpoint_category"].substring(0, 3);;
+          div_textRight_p.innerHTML = '<img  class = "pt-1" src="{{URL::asset('storage/mypage/flag.png')}}" alt="flag"/>' + item["prefectures"].substring(0, 5);;
       } else {
-        div_textRight_p.innerHTML = item["checkpoint_category"];
+        div_textRight_p.innerHTML = item["prefectures"];
       }
       div_textRight_p.id = "ar"+tr_count_id.toString();
       console.log(div_textRight_p.id);

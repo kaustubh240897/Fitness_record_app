@@ -206,6 +206,10 @@ margin-bottom: -30px;
   right: 0;
   z-index: 10;
 }
+.botImg {
+  position: fixed;
+  bottom: 0;
+}
 .card {
   border: none !important;
   padding: none !important;
@@ -283,11 +287,11 @@ margin-bottom: -30px;
     background: url({{asset('storage/padometerscreen/blue.png')}}); background-size: fill; background-position: center; background-repeat: no-repeat">
     {{$get_t_tour->m_tours->tour_title}}<br> 参加中！ </p> </a>
     @endif
-    <a href="{{ url('/padometerscreen') }}"><img style="border-radius: 50%" class="refBtn d-block d-sm-none mt-3 mr-2" src="{{ asset('storage/padometerscreen/ref.png') }}" alt=""></a>
-    <a href="{{ url('/padometerscreen') }}"><img style="border-radius: 50%" class="refBtn d-none d-sm-block d-md-none mt-3 mr-2" src="{{ asset('storage/padometerscreen/ref.png') }}" alt=""></a>
-    <a href="{{ url('/padometerscreen') }}"><img style="border-radius: 50%" class="refBtn d-none d-md-block d-lg-none mt-3 mr-2" src="{{ asset('storage/padometerscreen/ref.png') }}" alt=""></a>
-    <a href="{{ url('/padometerscreen') }}"><img style="border-radius: 50%" class="refBtn d-none d-lg-block d-xl-none mt-3 mr-2" src="{{ asset('storage/padometerscreen/ref.png') }}" alt=""></a>
-    <a href="{{ url('/padometerscreen') }}"><img style="border-radius: 50%" class="refBtn d-none d-xl-block mt-3 mr-2" src="{{ asset('storage/padometerscreen/ref.png') }}" alt=""></a>
+    <a href="{{ url('/padometerscreen') }}"><img style="border-radius: 50%" class="refBtn d-block d-sm-none mt-2 mr-2" src="{{ asset('storage/padometerscreen/ref.png') }}" alt=""></a>
+    <a href="{{ url('/padometerscreen') }}"><img style="border-radius: 50%" class="refBtn d-none d-sm-block d-md-none mt-2 mr-2" src="{{ asset('storage/padometerscreen/ref.png') }}" alt=""></a>
+    <a href="{{ url('/padometerscreen') }}"><img style="border-radius: 50%" class="refBtn d-none d-md-block d-lg-none mt-2 mr-2" src="{{ asset('storage/padometerscreen/ref.png') }}" alt=""></a>
+    <a href="{{ url('/padometerscreen') }}"><img style="border-radius: 50%" class="refBtn d-none d-lg-block d-xl-none mt-2 mr-2" src="{{ asset('storage/padometerscreen/ref.png') }}" alt=""></a>
+    <a href="{{ url('/padometerscreen') }}"><img style="border-radius: 50%" class="refBtn d-none d-xl-block mt-2 mr-2" src="{{ asset('storage/padometerscreen/ref.png') }}" alt=""></a>
     <div class="container-fluid pt-3">
       <div class="row">
       <div class="col-6">
