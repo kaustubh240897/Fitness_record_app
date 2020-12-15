@@ -539,7 +539,7 @@ padding-top: 0
   @if ( empty($m__users_id))
    <h2> 最初にプロファイルを作成してください <a href="/" style="color:blue !important"> ここをクリック </a> </h2> <br/>
   @else
-  <a href="{{ url('/padometerscreen') }}"><img style="border-radius: 50%" class="refBtn mr-2" src="{{ asset('storage/mypage/ref-blue.png') }}" alt=""></a>
+  <a href="{{ url('/mypage') }}"><img style="border-radius: 50%" class="refBtn mr-2" src="{{ asset('storage/mypage/ref-blue.png') }}" alt=""></a>
   <div class="container-fluid">
         <div class="row" style="padding: 0 16px 0 0;
                                 box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
@@ -563,7 +563,9 @@ padding-top: 0
     <div class="row" style=" padding: 14px 1px 1px;
 background-color: #2b63c6;">
       <div class="col-1 text-right">
+        @if (($steps*$get_m_user_stride/100000) >  $total )
         <img src="{{ asset('storage/mypage/ico_tours.svg') }}" class="pl-2" alt="">
+        @endif
       </div>
       <div class="col-9">
         <p class="pl-2" style="margin: 1px 0 2px 10px;
@@ -1142,7 +1144,6 @@ var def_path = "{{URL::asset('storage/mypage/box1_sel.png')}}";
     var steplist = document.getElementById("progress_bar");
     var tr_count_id = 1;
 
-
   if({{ $session_value }} === false){
     var get_m_user_stride = {{ $get_m_user_stride }};
     var steps = {{ $steps }};
@@ -1320,6 +1321,7 @@ var def_path = "{{URL::asset('storage/mypage/box1_sel.png')}}";
     });
   }
   else{
+    console.log("inelse");
      var get_m_user_stride = {{ $get_m_user_stride }};
     var steps = {{ $steps }};
     var dist_walked = (get_m_user_stride * steps)/100000;
@@ -1339,10 +1341,10 @@ var def_path = "{{URL::asset('storage/mypage/box1_sel.png')}}";
       div_textRight.className = "pl-3 w-25 text-left text-break";
       var div_dist_p = document.createElement("p");
       div_dist_p.className = "text-right dist_t_p";
-      div_dist_p.innerHTML = item["distance"].toString() + "km";
+      div_dist_p.innerHTML = ({{ $total }}-item["distance"]).toString() + "km";
       div_dist.appendChild(div_dist_p);
       if (i == 0) {
-        if ({{ $total }}-item["distance"] <= dist_walked) {
+        if (({{ $total }}-item["distance"]) < dist_walked) {
             // tag.className = "StepProgress-item is-done";
             var div_sp_li = document.createElement("li");
             div_sp_li.className = "StepProgress-itemStart is-done";
@@ -1374,7 +1376,7 @@ var def_path = "{{URL::asset('storage/mypage/box1_sel.png')}}";
             }
           }
       } else if (i == checkpoints.length - 1) {
-        if ({{ $total }}-item["distance"] <= dist_walked) {
+        if (({{ $total }}-item["distance"]) <= dist_walked) {
             // tag.className = "StepProgress-item is-done";
             var div_sp_li = document.createElement("li");
             div_sp_li.className = "StepProgress-item2 is-done";
@@ -1406,7 +1408,7 @@ var def_path = "{{URL::asset('storage/mypage/box1_sel.png')}}";
             }
           }
       } else {
-        if ({{ $total }}-item["distance"] <= dist_walked) {
+        if (({{ $total }}-item["distance"]) <= dist_walked) {
             // tag.className = "StepProgress-item is-done";
             var div_sp_li = document.createElement("li");
             div_sp_li.className = "StepProgress-item is-done";
@@ -1439,25 +1441,33 @@ var def_path = "{{URL::asset('storage/mypage/box1_sel.png')}}";
           }
       }
       var div_textRight_p = document.createElement("p");
-      div_textRight_p.className = "py-0 my-0 pl-3 text-center dd";
+      div_textRight_p.className = "py-0 my-0 pl-3 text-center dd right_t";
       div_textRight_p.style.width = '20%';
       div_textRight_p.style.color = "#2b63c6";
       div_textRight_p.style.fontWeight = "bold";
 
       if (item["checkpoint_category"]) {
         if (i == checkpoints.length - 1) {
-            div_textRight_p.className = "py-0 my-0 pl-3 text-left dd";
-            div_textRight_p.innerHTML = '<img  class = "pt-1" src="{{URL::asset('storage/mypage/flag.png')}}" alt="flag"/>' + item["checkpoint_category"].substring(0, 3);;
+          console.log("cp", "last");
+            div_textRight_p.className = "py-0 my-0 pl-3 text-xs-left text-sm-center dd pb-0 mb-0 ";
+            div_textRight_p.innerHTML = '<img  class = "pt-1 pb-0 mb-0" src="{{URL::asset('storage/mypage/flag.png')}}" alt="flag"/>' + item["checkpoint_category"].substring(0, 3);;
         } else {
           div_textRight_p.innerHTML = item["checkpoint_category"];
         }
         div_textRight_p.id = "ar"+tr_count_id.toString();
         console.log(div_textRight_p.id);
         if (tr_count_id > 1) {
-
+          var id_to = "#" +"ar"+ tr_count_id.toString();
+          var id_from = "#" +"ar"+ (tr_count_id-1).toString();
+          console.log(id_to);
+          console.log(id_from);
           var div_con = document.createElement("connection");
 
           if (i == checkpoints.length - 1) {
+            var motion_app = {{ $m__users->motion_app }};
+            var motion_web = {{ $m__users->motion_web}};
+            console.log(motion_app);
+            console.log(motion_web);
             var con_html = '<connection from="'+id_from+'" to="'+id_to+'" color="#cadcf6" fromX="0.6" fromY="1.2" toX="0.6" toY="0.1"></connection>';
           } else {
             var con_html = '<connection from="'+id_from+'" to="'+id_to+'" color="#cadcf6" fromX="0.6" fromY="1.2" toX="0.6" toY="0.1" tail></connection>';
@@ -1475,6 +1485,7 @@ var def_path = "{{URL::asset('storage/mypage/box1_sel.png')}}";
       div_flex.appendChild(div_prog);
       div_flex.appendChild(div_textRight);
       steplist.appendChild(div_flex);
+
 
     });
 
