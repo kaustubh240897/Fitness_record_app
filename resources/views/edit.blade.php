@@ -226,8 +226,8 @@ input[type=number] {
 {{ csrf_field() }}
 
 <div class="container-fluid pt-0 mt-0">
-  <p class="w-100 text-center" style="font-weight: bold; color: #2b63c6;">最近の歩数</p>
-  <p class="w-100 text-center overlay-line1"><img src="{{ asset('storage/settings/lineUp.png') }}" alt=""></p>
+  <p class=" text-center" style="font-weight: bold; color: #2b63c6;">最近の歩数</p>
+  <p class=" text-center overlay-line1"><img src="{{ asset('storage/settings/lineUp.png') }}" alt="" style="max-width: 100%"></p>
 </div>
 <div class="container-fluid">
   <div class="d-flex flex-row" style="border-bottom: 3px solid #2b63c6;">
@@ -241,9 +241,9 @@ input[type=number] {
 <div class="container-fluid pt-3">
   <p class="pl-2" style="font-weight: bold; color: #2b63c6;">身長</p>
   <div class="d-flex flex-row pb-2" style="border-bottom: 3px solid rgb(248,252,253);">
-    <div class="col-4">
+    <div class="col-4 pl-2">
       <div class="d-flex flex-row">
-        <input id="heightinput" class="w-100" type="number" step="any" name='inputheight' value="{{ $m_users->height }}"><span style="background-color: #f2f4f6;">cm</span>
+        <input id="heightinput" class="w-100" type="number" step="any" name='inputheight' value="{{ $m_users->height }}"><span class=" pl-1  " style="background-color: #f2f4f6; z-index: -1;">cm</span>
       </div>
     </div>
     <!-- <p class="pl-2" style="font-size: 110%;"> <span id="h_show" class="px-3 py-1" style="background-color: #f2f4f6; border: 1px solid #f2f4f6; border-radius: 5px;">175.5 cm</span> </p> -->
@@ -273,14 +273,14 @@ input[type=number] {
   </div>
   <div class="d-flex flex-row pb-2">
     <!-- <input id="strideinput" type="number"  name='stridelength' value="" class="d-none"> -->
-    <div class="col-4">
+    <div class="col-4 pl-2">
       <div class="d-flex flex-row">
-        <input id="strideinput" class="w-100" type="number" step="any" name='stridelength' value="{{ $m_users->stride }}"><span style="background-color: #f2f4f6;">cm</span>
+        <input id="strideinput" class="w-100" type="number" step="any" name='stridelength' value="{{ $m_users->stride }}"><span class=" pl-1  " style="background-color: #f2f4f6; z-index: -1;">cm</span>
       </div>
     </div>
     <!-- <p class="text-center" style="width: 22px; height: 22px;border-radius: 20px; border: 1px solid #2b63c6;"> <span class="pb-3">+</span> </p> -->
-    <p class="pl-2"><img id="stride_add" src="{{ asset('storage/settings/btn_add@3x.png') }}" style="height: 22px; width: 22px;" class="" alt="" onclick="setStride(this.id)"></p>
-    <p class="pl-2"><img id="stride_sub" src="{{ asset('storage/settings/btn_sub@3x.png') }}" style="height: 22px; width: 22px;" class="" alt="" onclick="setStride(this.id)"></p>
+    <p class="pl-3"><img id="stride_add" src="{{ asset('storage/settings/btn_add@3x.png') }}" style="height: 22px; width: 22px;" class="" alt="" onclick="setStride(this.id)"></p>
+    <p class="pl-3"><img id="stride_sub" src="{{ asset('storage/settings/btn_sub@3x.png') }}" style="height: 22px; width: 22px;" class="" alt="" onclick="setStride(this.id)"></p>
   </div>
   <div class="box2 sb10 pl-2 d-flex flex-row justify-content-center">
     <div class="col-1">
@@ -299,17 +299,17 @@ input[type=number] {
 </div>
 <div class="container-fluid pt-3 pb-3">
   <div class="d-flex flex-row pb-2 justify-content-between">
-    <div class="col ml-0 pl-2" style="">
+    <div class="col w-100 ml-0 pl-2" style="">
       <div class="d-flex flex-row">
         <!-- <input id="daily_stepsInput" type="number"  name='dailygoal' value="" class="d-none"> -->
-        <div class="col-4">
+        <div class="col-4 pl-2">
           <div class="d-flex flex-row">
-            <input id="daily_stepsInput" class="w-100" type="number"  name='dailygoal' value="{{ $m_users->step_goal_per_day }}"><span style="background-color: #f2f4f6;">s</span>
+            <input id="daily_stepsInput" class="w-100" type="number"  name='dailygoal' value="{{ $m_users->step_goal_per_day }}"><span class="pt-1" class=" pl-1  " style="background-color: #f2f4f6; z-index: -1;">歩</span>
           </div>
         </div>
         <!-- <p class="text-center" style="width: 22px; height: 22px;border-radius: 20px; border: 1px solid #2b63c6;"> <span class="pb-3">+</span> </p> -->
-        <p class="pl-2"><img id="daily_steps_add" onclick="setDailySteps(this.id);" src="{{ asset('storage/settings/btn_add@3x.png') }}" style="height: 22px; width: 22px;" class="" alt=""></p>
-        <p class="pl-2"><img id="daily_steps_sub" onclick="setDailySteps(this.id);" src="{{ asset('storage/settings/btn_sub@3x.png') }}" style="height: 22px; width: 22px;" class="" alt=""></p>
+        <p class="pl-3"><img id="daily_steps_add" onclick="setDailySteps(this.id);" src="{{ asset('storage/settings/btn_add@3x.png') }}" style="height: 22px; width: 22px;" class="" alt=""></p>
+        <p class="pl-3"><img id="daily_steps_sub" onclick="setDailySteps(this.id);" src="{{ asset('storage/settings/btn_sub@3x.png') }}" style="height: 22px; width: 22px;" class="" alt=""></p>
       </div>
     </div>
     <div class="col-3 px-0 mx-0">
@@ -420,15 +420,15 @@ input[type=number] {
 </div>
 <div class="container-fluid pb-3">
   <div class="d-flex flex-row justify-content-between pt-3">
-    <p class="pl-2 pt-1" style="font-size: 80%; font-weight: bold; color: #2b63c6;">曜日ごとの目標距離</p>
-    <p class="pr-2 text-center" style="font-weight: bold; color: #2b63c6;">{{ number_format($m_users->step_goals_per_month*$m_users->stride/100000, 2 ,'.',',') }} km</p>
+    <p class="pl-2 pt-1" style="font-size: 80%; font-weight: bold; color: #2b63c6;">1ヶ月あたりの目標距離</p>
+    <p id="est_monthly_dist" class="pr-2 text-center" style="font-weight: bold; color: #2b63c6;">{{ number_format($m_users->step_goals_per_month*$m_users->stride/100000, 2 ,'.',',') }} km</p>
   </div>
   <div class="box2 sb12 pl-2 d-flex flex-row justify-content-center">
     <div class="col-1">
       <img src="{{ asset('storage/settings/ico_ caution_b@3x.png') }}" alt="">
     </div>
     <div class="col-11">
-      <p class="" style="color: #707070;">1日あたりの目標指定は100,000歩を超えない範囲である必要があります。</p>
+      <p class="" style="color: #707070;">1ヵ月あたりの目標指定は1,000kmを超えない範囲である必要があります。</p>
     </div>
   </div>
 </div>
@@ -494,10 +494,10 @@ input[type=number] {
         <p id="box3_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: normal;text-align: center;color: #ffffff;">マイヒストリ</p>
       </a>
     </div>
-    <div class="col-3 padding-0 pt-2 navItem" id="box4" onclick="navItemClick(this.id);">
+    <div class="col-3 padding-0 pt-2 navItem is-active" id="box4" onclick="navItemClick(this.id);">
       <a href="/showprofiledetails">
-        <img id="box4_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box4.png')}}" alt="">
-        <p id="box4_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: normal;text-align: center;color: #ffffff;">設定</p>
+        <img id="box4_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box4_sel.png')}}" alt="">
+        <p id="box4_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: bold;text-align: center;color: #fddb66;">設定</p>
       </a>
     </div>
   </div>
