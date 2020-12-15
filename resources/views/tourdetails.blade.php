@@ -404,7 +404,7 @@
                             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                               <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
-                                  <div class="modal-header text-center">
+                                  <div class="modal-header">
                                     <h5 class="modal-title" style='color:#2b63c6;' id="exampleModalLongTitle">ツアーの方向を選択してください</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                       <span aria-hidden="true">&times;</span>
@@ -414,7 +414,7 @@
                                   <div class="container">
 
                                     <div class="row justify-content-center px-3">
-                                      <div class="col-12">
+                                      <div class="col">
                                         <div class="form-check form-check-inline">
                                         <?php $value = Session::get('reverse','false'); ?>
                                           @if($value == 'false')
@@ -423,10 +423,10 @@
                                           <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="3">
                                           @endif
 
-                                        <label class="form-check-label" style="color:#2b63c6;" for="inlineRadio1">通常の踏破</label>
-                                      <!-- </div> -->
+                                        <label class="form-check-label" style='color:#2b63c6;' for="inlineRadio1">通常の踏破</label>
                                       </div>
-                                       <br>
+                                      <!-- </div> -->
+                                      <br>
                                       <!-- <div class="col"> -->
                                         <div class="form-check form-check-inline">
                                           @if($value == 'true')
