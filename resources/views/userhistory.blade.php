@@ -328,7 +328,7 @@
         1日の目標 {{$get_m_user_daily_goal}}歩 ({{ $get_m_user_daily_goal*$get_m_user_stride/100000 }} km)
       </div>
     </div>
-    <div style="padding-top:30rem;">
+    <div style="padding-top:25rem;">
     <div class='row' style='background-color: #eef4f6; position: relative; z-index: 5; '>
 				<div class='col-12'>
 				<img style='width: 100%; height: auto;' src='/storage/img/bg@3x.png'>
