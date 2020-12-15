@@ -45,7 +45,7 @@
 			  background-color:#2b63c6 ;
 			  border: none;
 			  color: white;
-			  padding: 15px 90px;
+			  padding: 15px 70px;
 			  text-align: center;
 			  text-decoration: none;
 			  display: inline-block;
@@ -70,6 +70,7 @@
 				margin-top: 15rem;
 				background-color: white;
 				z-index: 9;
+				width:100%;
 				color: #2b63c6;
 			}
 
@@ -102,8 +103,27 @@
 
 			}
 
-				/* On screens that are 992px or less, set the background color to blue */
-				@media screen and (max-width: 992px) {
+				
+
+            .navfix {
+              position: fixed;
+              bottom: 0;
+              left: 0;
+              z-index: 10;
+            }
+            .navItem {
+                height: 66px;
+            }
+
+            .navItem.is-active {
+                margin-top: -10px;
+                /* margin-bottom: -10px; */
+                height: 76px;
+                background-color: #174493;
+                 border-radius: 5px
+            }
+			/* On screens that are 992px or less, set the background color to blue */
+			@media screen and (max-width: 992px) {
 				  .center1 {
 				  display: block;
 				  margin-top: -1rem;
@@ -143,24 +163,6 @@
 			      }
 
 		        }
-
-            .navfix {
-              position: fixed;
-              bottom: 0;
-              left: 0;
-              z-index: 10;
-            }
-            .navItem {
-                height: 66px;
-            }
-
-            .navItem.is-active {
-                margin-top: -10px;
-                /* margin-bottom: -10px; */
-                height: 76px;
-                background-color: #174493;
-                 border-radius: 5px
-            }
 
 </style>
 
