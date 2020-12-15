@@ -634,10 +634,10 @@ class m_UsersWebController extends Controller
 
             
         $m_users->save();
-        return redirect(route('index'))->with('successMsg','your info Successfully updated');
+        return redirect(route('mypage'))->with('successMsg','your info Successfully updated');
         }
         else{
-            return redirect(route('create'))->with('dangerMsg','your are sending invalid data');
+            return redirect(route('mypage'))->with('dangerMsg','your are sending invalid data');
         }
 
     }
