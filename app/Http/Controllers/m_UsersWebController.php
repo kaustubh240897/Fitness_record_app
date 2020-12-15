@@ -651,9 +651,9 @@ class m_UsersWebController extends Controller
             $min = 10000;
             foreach($m_tours as $m_tour){
             $count = t_Tour::where('m__users_id', $m_users->id)->where('m__tours_id', $m_tour->id)->count();
-            if($count <= $min){
-                $min = $count;
-            }
+                if($count < $min){
+                    $min = $count;
+                }
             }
             if($m_users->tour_level != $min+1){
               $m_users->tour_level = $min+1;

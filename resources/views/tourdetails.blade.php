@@ -404,8 +404,8 @@
                             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                               <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
-                                  <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                  <div class="modal-header text-center">
+                                    <h5 class="modal-title" style='color:#2b63c6;' id="exampleModalLongTitle">ツアーの方向を選択してください</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                       <span aria-hidden="true">&times;</span>
                                     </button>
@@ -414,7 +414,7 @@
                                   <div class="container">
 
                                     <div class="row justify-content-center px-3">
-                                      <div class="col">
+                                      <div class="col-12">
                                         <div class="form-check form-check-inline">
                                         <?php $value = Session::get('reverse','false'); ?>
                                           @if($value == 'false')
@@ -423,21 +423,24 @@
                                           <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="3">
                                           @endif
 
-                                        <label class="form-check-label" for="inlineRadio1">通常の踏破</label>
+                                        <label class="form-check-label" style="color:#2b63c6;" for="inlineRadio1">通常の踏破</label>
+                                      <!-- </div> -->
                                       </div>
-                                      </div>
-                                      <div class="col">
+                                       <br>
+                                      <!-- <div class="col"> -->
                                         <div class="form-check form-check-inline">
                                           @if($value == 'true')
-                                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="4" checked>
+                                          <input class="form-check-input ml-3" type="radio" name="gridRadios" id="gridRadios2" value="4" checked>
                                           @else
-                                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="4">
+                                            <input class="form-check-input ml-3" type="radio" name="gridRadios" id="gridRadios2" value="4">
                                           @endif
-                                          <label class="form-check-label" for="inlineRadio2">逆方向に踏破</label>
+                                          <label class="form-check-label" style='color:#2b63c6;' for="inlineRadio2">逆方向に踏破</label>
                                         </div>
                                       </div>
 
                                   </div>
+                                  <hr/>
+                                  <img class='mr-1' style='width:100%; height:auto;' src='/storage/img/tour-change.png'>
                                   <div class='container mt-5'>
 
 
