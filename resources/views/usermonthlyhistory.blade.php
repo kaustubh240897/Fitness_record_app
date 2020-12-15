@@ -212,7 +212,7 @@
                       <div class="col-2 mb-0 pb-0 mt-1 shadow-lg padding-0">
 
                           <a href="{{ route('usermonthlyhistory', [now()->year]) }}"><button id="tab_yearly" class="text-center selected_tab mb-0 pb-0" style="color: white; font-size: 80%;
-                            background-color: #2b63c6;" onclick="changeTab(this.id);">月間</button></a>
+                            background-color: #2b63c6;" onclick="changeTab(this.id);">年間</button></a>
                       </div>
     				        <div class='col-4 pb-0 mb-0 shadow-lg'>
                        <!-- <button class="text-center" style="color: white; font-size: 80%; border-radius: 12px;
