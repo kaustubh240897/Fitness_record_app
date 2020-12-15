@@ -371,7 +371,7 @@
            <img src='/storage/img/lineDown.png' class='wid mt-4'>
 
 
-           @if(! empty($checkpoints))
+@if(! empty($checkpoints))
 <div class="container-fluid pt-3" id="progress_bar">
 
 </div>
@@ -452,8 +452,8 @@
                                       </div>
                                   </div>
                                   <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn btn-primary">Select tour</button>
                                   </div>
                                 </div>
                               </div>

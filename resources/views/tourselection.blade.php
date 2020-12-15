@@ -79,6 +79,7 @@
 			    <div class='container mt-4'>
 
         @if(! empty($current_tour))
+		<a href="{{ route('tourdetails', $current_tour->m_tours->id) }}" style="text-decoration: none;">
 					@if($current_tour->status == 'Done')
 			    	<div class='row border py-2'>
 
