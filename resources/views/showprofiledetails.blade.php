@@ -2,7 +2,7 @@
 
 @section('content')
 <head>
-@if (session('successMsg'))
+<!-- @if (session('successMsg'))
   <div class="alert alert-success" role="alert">
     {{ session('successMsg') }}
   </div>
@@ -12,7 +12,7 @@
   <div class="alert alert-danger" role="alert">
     {{ session('dangerMsg') }}
   </div>
-@endif
+@endif -->
 
 @if ($errors->any())
   @foreach ($errors->all() as $error)
@@ -250,7 +250,7 @@
 	                       <div class='col-8'>
 	                       	<b>1か月あたりの目標距離</b></div>
 	                       	<div class='col-4 c'>
-	                       	<b>{{ number_format($m_users->step_goals_per_month) }} km</b></div>
+	                       	<b>{{ number_format($m_users->step_goals_per_month*$m_users->stride/100000, 2 ,'.',',') }} km</b></div>
 	                       </div>
 	                       <br>
 

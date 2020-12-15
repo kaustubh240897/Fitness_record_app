@@ -537,7 +537,7 @@ padding-top: 0
    @endif
   </div> -->
   @if ( empty($m__users_id))
-   <h2> 最初にプロファイルを作成してください <a href="/" style="color:blue !important"> ここをクリック </a> </h2> <br/>
+    <h2> 最初にプロファイルを作成してください <a href="/" style="color:blue !important"> ここをクリック </a> </h2> <br/>
   @else
   <a href="{{ url('/mypage') }}"><img style="border-radius: 50%" class="refBtn mr-2" src="{{ asset('storage/mypage/ref-blue.png') }}" alt=""></a>
   <div class="container-fluid">
@@ -878,7 +878,7 @@ color: #ffd00d;;">{{ number_format($steps*$get_m_user_stride/100000,1,'.','') }}
         </div>
       </div>
     </div>
-  @endif
+  
 <script type="text/javascript">
 var currentNav = "box1";
 var clickedNav = "";
@@ -2047,5 +2047,6 @@ var def_path = "{{URL::asset('storage/mypage/box1_sel.png')}}";
   }
   chart.update();
   </script>
+@endif
 </body>
   @endsection

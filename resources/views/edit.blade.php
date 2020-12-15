@@ -2,7 +2,7 @@
 
 @section('content')
 
-@if (session('successMsg'))
+<!-- @if (session('successMsg'))
   <div class="alert alert-success" role="alert">
     {{ session('successMsg') }}
   </div>
@@ -12,7 +12,7 @@
   <div class="alert alert-danger" role="alert">
     {{ session('dangerMsg') }}
   </div>
-@endif
+@endif -->
 
 @if ($errors->any())
   @foreach ($errors->all() as $error)
@@ -313,7 +313,7 @@ input[type=number] {
       </div>
     </div>
     <div class="col-3 px-0 mx-0">
-      <p id="est_daily_dist" class="text-center" style="font-weight: bold; color: #2b63c6;">4.5 km</p>
+      <p id="est_daily_dist" class="text-center" style="font-weight: bold; color: #2b63c6;">{{ number_format($m_users->step_goal_per_day*$m_users->stride/100000, 2 ,'.',',') }} km</p>
     </div>
   </div>
   <div class="box2 sb11 pl-2 d-flex flex-row justify-content-center">
@@ -345,7 +345,7 @@ input[type=number] {
     <p class="pl-2 pt-1" style="color: #2b63c6; font-weight: bold; font-size: 80%;">月</p>
     <div class="col-4">
       <div class="d-flex flex-row">
-        <input id="daily_stepsInput_1" class="w-100" type="number" step="any" name='dailygoal_1' value="{{ $m_users->step_monday }}"><span class=" pl-1  " style="background-color: #f2f4f6; z-index: -1;">km</span>
+        <input id="daily_stepsInput_1" class="w-100" type="number" step="any" name='dailygoal_1' value="{{ number_format($m_users->step_monday*$m_users->stride/100000, 2 ,'.',',') }}"><span style="background-color: #f2f4f6;">km</span>
       </div>
     </div>
     <p class="pl-3"><img id="dailygoal_1_add" onclick="getDailygoal1(this.id)" src="{{ asset('storage/settings/btn_add@3x.png') }}" style="height: 22px; width: 22px;" class="" alt=""></p>
@@ -356,7 +356,7 @@ input[type=number] {
     <p class="pl-2 pt-1" style="color: #2b63c6; font-weight: bold; font-size: 80%;">火</p>
     <div class="col-4">
       <div class="d-flex flex-row">
-        <input id="daily_stepsInput_2" class="w-100" type="number" step="any" name='dailygoal_2' value="{{ $m_users->step_tuesday }}"><span class=" pl-1  " style="background-color: #f2f4f6; z-index: -1;">km</span>
+        <input id="daily_stepsInput_2" class="w-100" type="number" step="any" name='dailygoal_2' value="{{ number_format($m_users->step_tuesday*$m_users->stride/100000, 2 ,'.',',') }}"><span style="background-color: #f2f4f6;">km</span>
       </div>
     </div>
     <p class="pl-3"><img id="dailygoal_2_add" onclick="getDailygoal2(this.id)" src="{{ asset('storage/settings/btn_add@3x.png') }}" style="height: 22px; width: 22px;" class="" alt=""></p>
@@ -367,7 +367,7 @@ input[type=number] {
     <p class="pl-2 pt-1" style="color: #2b63c6; font-weight: bold; font-size: 80%;">水</p>
     <div class="col-4">
       <div class="d-flex flex-row">
-        <input id="daily_stepsInput_3" class="w-100" type="number" step="any" name='dailygoal_3' value="{{ $m_users->step_wednesday }}"><span class=" pl-1  " style="background-color: #f2f4f6; z-index: -1;">km</span>
+        <input id="daily_stepsInput_3" class="w-100" type="number" step="any" name='dailygoal_3' value="{{ number_format($m_users->step_wednesday*$m_users->stride/100000, 2 ,'.',',') }}"><span style="background-color: #f2f4f6;">km</span>
       </div>
     </div>
     <p class="pl-3"><img id="dailygoal_3_add" onclick="getDailygoal3(this.id)" src="{{ asset('storage/settings/btn_add@3x.png') }}" style="height: 22px; width: 22px;" class="" alt=""></p>
@@ -378,7 +378,7 @@ input[type=number] {
     <p class="pl-2 pt-1" style="color: #2b63c6; font-weight: bold; font-size: 80%;">木</p>
     <div class="col-4">
       <div class="d-flex flex-row">
-        <input id="daily_stepsInput_4" class="w-100" type="number" step="any" name='dailygoal_4' value="{{ $m_users->step_thursday }}"><span class=" pl-1  " style="background-color: #f2f4f6; z-index: -1;">km</span>
+        <input id="daily_stepsInput_4" class="w-100" type="number" step="any" name='dailygoal_4' value="{{ number_format($m_users->step_thursday*$m_users->stride/100000, 2 ,'.',',') }}"><span style="background-color: #f2f4f6;">km</span>
       </div>
     </div>
     <p class="pl-3"><img id="dailygoal_4_add" onclick="getDailygoal4(this.id)" src="{{ asset('storage/settings/btn_add@3x.png') }}" style="height: 22px; width: 22px;" class="" alt=""></p>
@@ -389,7 +389,7 @@ input[type=number] {
     <p class="pl-2 pt-1" style="color: #2b63c6; font-weight: bold; font-size: 80%;">金</p>
     <div class="col-4">
       <div class="d-flex flex-row">
-        <input id="daily_stepsInput_5" class="w-100" type="number" step="any"  name='dailygoal_5' value="{{ $m_users->step_friday }}"><span class=" pl-1  " style="background-color: #f2f4f6; z-index: -1;">km</span>
+        <input id="daily_stepsInput_5" class="w-100" type="number" step="any"  name='dailygoal_5' value="{{ number_format($m_users->step_friday*$m_users->stride/100000, 2 ,'.',',') }}"><span style="background-color: #f2f4f6;">km</span>
       </div>
     </div>
     <p class="pl-3"><img id="dailygoal_5_add" onclick="getDailygoal5(this.id)" src="{{ asset('storage/settings/btn_add@3x.png') }}" style="height: 22px; width: 22px;" class="" alt=""></p>
@@ -400,7 +400,7 @@ input[type=number] {
     <p class="pl-2 pt-1" style="color: #2b63c6; font-weight: bold; font-size: 80%;">土</p>
     <div class="col-4">
       <div class="d-flex flex-row">
-        <input id="daily_stepsInput_6" class="w-100" type="number" step="any" name='dailygoal_6' value="{{ $m_users->step_saturday }}"><span class=" pl-1  " style="background-color: #f2f4f6; z-index: -1;">km</span>
+        <input id="daily_stepsInput_6" class="w-100" type="number" step="any" name='dailygoal_6' value="{{ number_format($m_users->step_saturday*$m_users->stride/100000, 2 ,'.',',') }}"><span style="background-color: #f2f4f6;">km</span>
       </div>
     </div>
     <p class="pl-3"><img id="dailygoal_6_add" onclick="getDailygoal6(this.id)" src="{{ asset('storage/settings/btn_add@3x.png') }}" style="height: 22px; width: 22px;" class="" alt=""></p>
@@ -411,7 +411,7 @@ input[type=number] {
     <p class="pl-2 pt-1" style="color: #e28c8c; font-weight: bold; font-size: 80%;">日</p>
     <div class="col-4">
       <div class="d-flex flex-row">
-        <input id="daily_stepsInput_7" class="w-100" type="number" step="any" name='dailygoal_7' value="{{ $m_users->step_sunday }}"><span class=" pl-1  " style="background-color: #f2f4f6; z-index: -1;">km</span>
+        <input id="daily_stepsInput_7" class="w-100" type="number" step="any" name='dailygoal_7' value="{{ number_format($m_users->step_sunday*$m_users->stride/100000, 2 ,'.',',') }}"><span style="background-color: #f2f4f6;">km</span>
       </div>
     </div>
     <p class="pl-3"><img id="dailygoal_7_add" onclick="getDailygoal7(this.id)" src="{{ asset('storage/settings/btn_add@3x.png') }}" style="height: 22px; width: 22px;" class="" alt=""></p>
@@ -450,7 +450,7 @@ input[type=number] {
       @else
        <input name="motionapp" type="checkbox" class="custom-control-input" id="customSwitch1" checked>
       @endif
-      <label class="custom-control-label" for="customSwitch1"> <span style="color: #2b63c6;">あり</span> </label>
+      <label class="custom-control-label" for="customSwitch1"> <span style="color: #2b63c6;">@if($m_users->motion_app == 0)なし @else あり @endif</span> </label>
     </div>
   </div>
   <div class="d-flex flex-row justify-content-between px-2 pt-3">
@@ -461,7 +461,7 @@ input[type=number] {
       @else
        <input name="motionweb" type="checkbox" class="custom-control-input" id="customSwitch2" checked>
       @endif
-      <label class="custom-control-label" for="customSwitch2"> <span style="color: #2b63c6;">なし</span> </label>
+      <label class="custom-control-label" for="customSwitch2"> <span style="color: #2b63c6;">@if($m_users->motion_web == 0)なし @else あり @endif</span> </label>
     </div>
   </div>
 </div>
