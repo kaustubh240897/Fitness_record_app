@@ -7,6 +7,7 @@ use App\m_Users;
 use App\t_Steps;
 use App\User;
 use App\t_Tour;
+use App\m_Tour;
 use App\m_Checkpoint;
 Use \Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -646,6 +647,20 @@ class m_UsersWebController extends Controller
         $m_users = m_Users::where('users_id', Auth::id())->first();
         if(! empty($m_users) && $m_users->users_id == Auth::id()){
             $t_tour = t_Tour::where('m__users_id', $m_users->id)->orderBy('created_at','DESC')->first();
+            $m_tours = m_Tour::all();
+            $min = 10000;
+            foreach($m_tours as $m_tour){
+            $count = t_Tour::where('m__users_id', $m_users->id)->where('m__tours_id', $m_tour->id)->count();
+            if($count <= $min){
+                $min = $count;
+            }
+            }
+            if($m_users->tour_level != $min+1){
+              $m_users->tour_level = $min+1;
+              $m_users->save();
+            }
+            
+            
             if($t_tour !=null){
                 $tour_datetime = $t_tour->created_at->toDateTimeString();
             }
