@@ -1126,9 +1126,9 @@
   @else
     <h4> コレクションはありません。 </h4>
   @endif
-  <div class="d-flex flex-row" style="position: absolute; bottom: 0; left: 0; background-color: #eef4f6;">
-    <img class="w-100" src='/storage/img/bg@3x.png'>
-  </div>
+  <div class="row" style="position: relative;  background-color: #eef4f6;">
+      <img style="width:100%; height:auto;" src='/storage/img/bg@3x.png'>
+    </div>
   <div class="container-fluid navfix" style="background-color: #2b63c6;">
     <div class="row d-flex text-center">
       <div class="col-3 padding-0 pt-2 navItem" style="border-right: 2px solid #113a83;" id="box1" onclick="navItemClick(this.id);">
