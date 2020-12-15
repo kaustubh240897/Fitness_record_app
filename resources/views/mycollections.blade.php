@@ -196,7 +196,7 @@ background-color: #2b63c6;" id="dropdownMenu2" data-toggle="dropdown" aria-haspo
     @endforeach
 
   </div>
-  
+
   <div class='row' style='background-color: #eef4f6; position: relative; z-index: 10;'>
 				<div class='col-12'>
 				<img style='width: 100%; height: auto;' src='/storage/img/bg@3x.png'>
@@ -238,7 +238,13 @@ background-color: #2b63c6;" id="dropdownMenu2" data-toggle="dropdown" aria-haspo
   </div>
 
   <script type="text/javascript">
-
+  if ({{$index}} == 0) {
+		document.getElementById("group_by_tour_radio").checked = true;
+	} else if ({{$index}} == 1) {
+		document.getElementById("sort_oldest_radio").checked = true;
+	} else if ({{$index}} == 2) {
+		document.getElementById("sort_newest_radio").checked = true;
+	}
   function sortHistory(id) {
     console.log("yes");
     var url = "";

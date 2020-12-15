@@ -232,7 +232,7 @@ input[type=number] {
       <div class="d-flex flex-row pb-2" style="border-bottom: 3px solid rgb(248,252,253);">
         <div class="col-4 pl-2">
           <div class="d-flex flex-row">
-            <input id="heightinput" class="w-100" type="number" step="any" name='inputheight' value="170" onchange="heightChange()" required><span  class=" px-1  " style="background-color: #f2f4f6; z-index: -1;">cm</span>
+            <input id="heightinput" class="w-100" type="number" step="any" name='inputheight' value="170" onchange="heightChange()" required><span  class=" pl-1  " style="background-color: #f2f4f6; z-index: -1;">cm</span>
           </div>
         </div>
         <!-- <p class="pl-2" style="font-size: 110%;"> <span id="h_show" class="px-3 py-1" style="background-color: #f2f4f6; border: 1px solid #f2f4f6; border-radius: 5px;">175.5 cm</span> </p> -->
@@ -647,6 +647,12 @@ input[type=number] {
             strideLength = (x/2.5).toFixed(0);
           } else {
             strideLength = (x/3).toFixed(0);
+          }
+          if (strideLength>85) {
+            strideLength = 85;
+          }
+          if (strideLength<45) {
+            strideLength = 45;
           }
           s_input.value = strideLength;
         }
