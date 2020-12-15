@@ -2,11 +2,11 @@
 
 @section('content')
 
-@if (session('successMsg'))
+<!-- @if (session('successMsg'))
 <div class='alert alert-success' style='margin-top:5rem;' roles='alert'>
  {{ session('successMsg') }}
 </div>
-@endif
+@endif -->
 
 
 <style media="screen">

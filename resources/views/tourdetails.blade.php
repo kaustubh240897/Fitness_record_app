@@ -360,11 +360,11 @@
       </div>
 
 </div>
-@if (session('successMsg'))
+<!-- @if (session('successMsg'))
 <div class='alert alert-success' style='margin-top:5rem;' roles='alert'>
  {{ session('successMsg') }}
 </div>
-@endif
+@endif -->
 <div class='container-fluid' style='background-color: #f2f2f2'>
            <img src='/storage/img/line@3x.png' class='wid' style='margin-top: 6rem;'>
             <b>  <text class='hr my-1'>{{ $tours->tour_comment }}</text></b>

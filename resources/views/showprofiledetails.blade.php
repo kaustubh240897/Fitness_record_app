@@ -2,7 +2,7 @@
 
 @section('content')
 <head>
-@if (session('successMsg'))
+<!-- @if (session('successMsg'))
   <div class="alert alert-success" role="alert">
     {{ session('successMsg') }}
   </div>
@@ -12,7 +12,7 @@
   <div class="alert alert-danger" role="alert">
     {{ session('dangerMsg') }}
   </div>
-@endif
+@endif -->
 
 @if ($errors->any())
   @foreach ($errors->all() as $error)
