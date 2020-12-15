@@ -455,8 +455,13 @@
                                       </div>
                                   </div>
                                   <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                    <button type="submit" class="btn btn-primary">Select tour</button>
+                                   
+                                    
+                                    <div class='row'>
+                                    <div class='col-12 text-center mr-2'><button type="submit" class="button" style='background-color:#2b63c6 ; color:white'>ツアーの変更</button></div>
+                                   
+                                    <div class='col-12 text-center mr-2'><button type="button" class='button mt-2' style='background-color:white;' data-dismiss="modal">閉じる</button></div>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
