@@ -389,13 +389,13 @@
 @endif
 
 <div class='row'>
-                      <div class='col-12 text-center my-3'><a href='/createtour'> <p class="mb-4  text-center" style="border: solid 1px #2b63c6; border-radius: 15px"><  リストに戻る</p> </a></div>
+                      <div class='col-12 text-center my-3' style='margin-bottom:25% !important;'><a href='/createtour'> <p class="mb-4  text-center" style="border: solid 1px #2b63c6; border-radius: 15px;"><  リストに戻る</p> </a></div>
                         <div class='col-12 text-center'>
                           <form action="{{ route('tourstore', $tours->id) }}" method="POST" >
                             {{ csrf_field() }}
                             {{ method_field('post') }}
                             <!-- Button trigger modal -->
-                            <div class="d-flex flex-row justify-content-center">
+                            <div class="d-flex flex-row justify-content-center my-2">
                               <button type='button' class="button1 w-100 refBtn text-center " data-toggle="modal" data-target="#exampleModalCenter"> < このツアーを選択してください  </button>
                             </div>
 
