@@ -319,7 +319,7 @@
 				<div class='col-12'><img class='center' src='storage/img/star_mycol.png'> </div>
 		    </div>
 		</div>
-	<div class='container-fluid'>
+	<div class='container-fluid' style="margin-top: 70px !important">
 
 
 

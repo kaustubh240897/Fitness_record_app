@@ -201,7 +201,7 @@
 
 			    </div>
         </div>
-	    	<div class='container-fluid'>
+	    	<div class='container-fluid ' style="margin-top: 70px !important">
 
 
             <div>
