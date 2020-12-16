@@ -309,8 +309,9 @@
 </head>
 <body>
 @if(! empty($my_collections))
-<div class="fixed-top">
-  <div class="container-fluid bg-white fixed-top py-0 my-0 px-3" style="height:28px !important;">
+<div class='container-fluid'>
+
+  <div class="container-fluid bg-white fixed-top py-0 my-0 px-3" style="height:28px !important; position: fixed; top: 0">
     <div class="d-flex flex-row justify-content-between">
       <div class="p-0">
         <img src="{{ asset('storage/mypage/ico_back.png') }}" alt="" onclick="goBack()" style="cursor: pointer;">
@@ -328,41 +329,37 @@
     window.history.back();
   }
   </script>
-  <div class=" d-flex flex-row " style=" z-index:0; background-color: #2b63c6; ">
+			  		 <div class="row d-flex fixed-top" style=" z-index:0; background-color: #2b63c6; ">
 
-     <div class='col-10 p-2 mx-3' style="color:white;">@if($my_collections->m_collections->collection_category == 'tour') <span class="badge badge-pill badge-warning ml-2 mr-1">ツアー</span> @else <img class='mx-2' src="/storage/img/label-1.png">  @endif{{ $my_collections->m_collections->collection_title }}  </div>
+						    <div class='col-10 p-2 mx-3' style="color:white;">@if($my_collections->m_collections->collection_category == 'tour') <span class="badge badge-pill badge-warning ml-2 mr-1">ツアー</span> @else <img class='mx-2' src="/storage/img/label-1.png">  @endif{{ $my_collections->m_collections->collection_title }}  </div>
 
-</div>
+					 </div>
 
-<div class='c mx-2 my-2 ' style='z-index:0;'><img style='border: solid  #2b63c6;' src="{{ asset($my_collections->m_collections->path . $my_collections->m_collections->filename) }}" class= "rounded-circle" alt="Cinque Terre" width="
- 80" height="80">
-</div>
+					 <div class='c mx-2 my-2 fixed-top' style='z-index:0;'><img style='border: solid  #2b63c6;' src="{{ asset($my_collections->m_collections->path . $my_collections->m_collections->filename) }}" class= "rounded-circle" alt="Cinque Terre" width="
+					 	80" height="80">
+					 </div>
 
-<div class='row ' style='position:relative;'>
- <div class='col-12 wrapper'>
-  @if($my_collections->m_collections->collection_category == 'tour')
-   <p class='ml-3 mt-3 color'><img class='mr-1' src='/storage/img/complete.png'>{{ $my_collections->m_collections->m__tours->tour_title }} </p>
-    <p class='color'> <span class="badge badge-pill badge-warning ml-2 mr-1">ツアー</span>  {{ $my_collections->m_collections->collection_title }} </p>
-    <div class='row d-flex wrapper1'>
-      <div class='col p-2 ml-5'> <img class='mr-2 mb-2' src='/storage/img/ico.png'> <font style='color:#ffcc00;'>430 Km </font></div>
-      <div class='col p-2 c' style='color:white;'><span class="fa fa-star checked mx-1 "></span> {{ $my_collections->m_collections->updated_at->format('Y/m/d') }}  </div>
-   </div>
- @else
- <p class='ml-3 mt-3 color'>{{ $my_collections->m_collections->m__checkpoints->tours->tour_title }} </p>
- <p class='color'> <img class='ml-3' src='/storage/img/label-1.png'> {{ $my_collections->m_collections->collection_title }} </p>
- <div class='c' style='color:white;'><span class="fa fa-star checked mx-1"></span>{{ $my_collections->m_collections->updated_at->format('Y/m/d') }} </div>
- @endif
-
-
- </div>
+					 <div class='row fixed-top' style='position:relative;'>
+					 	<div class='col-12 wrapper'>
+             @if($my_collections->m_collections->collection_category == 'tour')
+					 		<p class='ml-3 mt-3 color'><img class='mr-1' src='/storage/img/complete.png'>{{ $my_collections->m_collections->m__tours->tour_title }} </p>
+               <p class='color'> <span class="badge badge-pill badge-warning ml-2 mr-1">ツアー</span>  {{ $my_collections->m_collections->collection_title }} </p>
+               <div class='row d-flex wrapper1'>
+						 		 <div class='col p-2 ml-5'> <img class='mr-2 mb-2' src='/storage/img/ico.png'> <font style='color:#ffcc00;'>430 Km </font></div>
+						 		 <div class='col p-2 c' style='color:white;'><span class="fa fa-star checked mx-1 "></span> {{ $my_collections->m_collections->updated_at->format('Y/m/d') }}  </div>
+					 		</div>
+            @else
+            <p class='ml-3 mt-3 color'>{{ $my_collections->m_collections->m__checkpoints->tours->tour_title }} </p>
+            <p class='color'> <img class='ml-3' src='/storage/img/label-1.png'> {{ $my_collections->m_collections->collection_title }} </p>
+            <div class='c' style='color:white;'><span class="fa fa-star checked mx-1"></span>{{ $my_collections->m_collections->updated_at->format('Y/m/d') }} </div>
+            @endif
 
 
-
- </div>
-</div>
-<div class='container-fluid'>
+					 	</div>
 
 
+
+  					</div>
             @if(! empty($my_collections))
             @if($my_collections->m_collections->collection_category == 'tour')
               <div class="container text-center" style='background-image: url("/storage/img/celebrate.png")'>
@@ -1146,10 +1143,10 @@
   @else
     <h4> コレクションはありません。 </h4>
   @endif
-  <div class='d-flex flex-row' style='background-color: #eef4f6; position: relative; z-index: 5;'>
-    <div class='col-12'>
-    <img style='width: 100%; height: auto;' src='/storage/img/bg@3x.png'>
-  </div>
+  <div class='d-flex flex-row' style='background-color: #eef4f6; position: relative; z-index: 5; '>
+      <div class='col-12'>
+      <img style='width: 100%; height: auto;' src='/storage/img/bg@3x.png'>
+</div>
 </div>
   <div class="container-fluid navfix" style="background-color: #2b63c6;">
     <div class="row d-flex text-center">

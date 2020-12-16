@@ -192,7 +192,7 @@ background-color: #2b63c6;" id="dropdownMenu2" data-toggle="dropdown" aria-haspo
 <div class='container-fluid' >
 
   @if(! empty($get_t_collections))
-  <div class='row py-2' style='margin-top:15rem; z-index: 9; position: relative; background-color: white; padding-bottom: 0%;'>
+  <div class='row py-2' style='margin-top:18rem; z-index: 9; position: relative; background-color: white; padding-bottom: 0%;'>
   @foreach($get_t_collections as $get_t_collection)
     @if($get_t_collection->new_display_flag == 0)
       <div class='col-4 circle'>

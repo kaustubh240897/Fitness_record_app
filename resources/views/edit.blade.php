@@ -245,7 +245,7 @@ input[type=number] {
 <form action="{{ route('update',$m_users->id) }}" method="POST" >
 {{ csrf_field() }}
 
-<div class="container-fluid pt-0 mt-0">
+<div class="container-fluid pt-0 mt-0" style="margin-top: 70px !important">
   <p class=" text-center" style="font-weight: bold; color: #2b63c6;">最近の歩数</p>
   <p class=" text-center overlay-line1"><img src="{{ asset('storage/settings/lineUp.png') }}" alt="" style="max-width: 100%"></p>
 </div>
