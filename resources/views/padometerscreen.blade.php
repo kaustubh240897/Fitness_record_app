@@ -216,9 +216,49 @@ margin-bottom: -30px;
 .botCont {
   margin-left: -10% !important;
   padding: 0 !important;
-  width: 120%;
+  width: 118%;
   transform: translateY(125%) !important;
 }
+.rt_pos {
+  right: 0% !important;
+}
+@media only screen and (min-device-width: 390px) and (max-device-width: 447px) {
+/* CSS */
+.botCont {
+  padding: 0 !important;
+  width: 118%;
+  transform: translateY(125%) !important;
+}
+.rt_pos {
+  right: 1% !important;
+  padding-bottom: 2.5% !important;
+}
+}
+@media only screen and (min-device-width: 448px) and (max-device-width: 575px) {
+/* CSS */
+.botCont {
+  padding: 0 !important;
+  width: 115%;
+  transform: translateY(125%) !important;
+}
+.rt_pos {
+  right: 0% !important;
+  padding-bottom: 2.5% !important;
+}
+}
+/* @media only screen and (min-device-width: 390px)  {
+
+.botCont {
+  margin-left: -10% !important;
+  padding: 0 !important;
+  width: 118%;
+  transform: translateY(125%) !important;
+}
+.rt_pos {
+  right: 1% !important;
+  padding-bottom: 2.5% !important;
+}
+} */
 .container-fluid.overlay-tri.container-fluid.white.m-0.p-0 {
   background: #fff !important;
   background-color: #fff !important;
@@ -461,7 +501,7 @@ padding-right: -8px;
                         <p> <img src="{{ asset('storage/padometerscreen/ico_arrow_r.png') }}" alt=""> </p>
                       </div>
                     </div>
-                    <div class="col-4 text-right p-0 m-0" style="right: 1.2%;">
+                    <div class="col-4 text-right p-0 m-0 rt_pos">
                       <div class="float-right p-0 m-0" style="border: solid 2px #2b63c6; background-color: #2b63c6;  width: 96px;height: 100px; border-radius: 50%">
 
                       </div>
@@ -596,13 +636,13 @@ padding-right: -8px;
                   <div class="row  p-0 m-0 pl-2" style=" ">
                     <div class="col text-left p-0 m-0">
                       <div class="d-flex flex-row">
-                        <p class="">疑似ツアーで全国を歩こう！
+                        <p class="pl-2">疑似ツアーで全国を歩こう！
                                   ウォーキングの各種設定や
                                     詳細情報の確認もこちら。</p>
-                        <p> <img src="{{ asset('storage/padometerscreen/ico_arrow_r.png') }}" alt=""> </p>
+                        <p> <img class="pl-3" src="{{ asset('storage/padometerscreen/ico_arrow_r.png') }}" alt=""> </p>
                       </div>
                     </div>
-                    <div class="col-4 text-right p-0 m-0" style="right: 1.2%;">
+                    <div class="col-4 text-right p-0 m-0 rt_pos" >
                       <div class="float-right p-0 m-0" style="border: solid 2px #2b63c6; background-color: #2b63c6;  width: 96px;height: 100px; border-radius: 50%">
 
                       </div>
