@@ -208,9 +208,29 @@ input[type=number] {
   </style>
 <body>
 
-    <div class="container-fluid sticky-top p-0 m-0 w-100" style="box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5); background-color: #2b63c6;">
+  <div class="fixed-top">
+    <div class="container-fluid bg-white  py-0 my-0 px-3" style="height:28px !important;">
+      <div class="d-flex flex-row justify-content-between">
+        <div class="p-0">
+          <img src="{{ asset('storage/mypage/ico_back.png') }}" alt="" onclick="goBack()" style="cursor: pointer;">
+        </div>
+        <div class="p-0">
+          <p class="text-center" style="font-size: 120%">ウォーキング</p>
+        </div>
+        <div class="p-0">
+          <a href="/padometerscreen"><img src="{{ asset('storage/mypage/close.png') }}" alt=""></a>
+        </div>
+      </div>
+    </div>
+    <script>
+    function goBack() {
+      window.history.back();
+    }
+    </script>
+    <div class="container-fluid p-0 m-0 w-100" style="box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5); background-color: #2b63c6;">
       <p class="p-2 w-100" style="color: #fff; font-size: 80%; font-weight: bold"> <span class="pl-2">設定</span> <span class="pl-2">></span>  <span class="pl-2">個人設定の変更</span> </p>
     </div>
+  </div>
 <form action="{{ route('store') }}" method="POST" >
   {{ csrf_field() }}
 

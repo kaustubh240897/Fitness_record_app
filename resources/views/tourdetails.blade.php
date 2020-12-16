@@ -340,24 +340,43 @@
   </style>
 </head>
 
-<div class='container'>
 <body style='background-color: #f2f2f2'>
+<div class="fixed-top">
+  <div class="container-fluid bg-white  py-0 my-0 px-3" style="height:28px !important;">
+    <div class="d-flex flex-row justify-content-between">
+      <div class="p-0">
+        <img src="{{ asset('storage/mypage/ico_back.png') }}" alt="" onclick="goBack()" style="cursor: pointer;">
+      </div>
+      <div class="p-0">
+        <p class="text-center" style="font-size: 120%">ウォーキング</p>
+      </div>
+      <div class="p-0">
+        <a href="/padometerscreen"><img src="{{ asset('storage/mypage/close.png') }}" alt=""></a>
+      </div>
+    </div>
+  </div>
+  <script>
+  function goBack() {
+    window.history.back();
+  }
+  </script>
+  <div class=" row flex-row" style=" z-index:0; background-color: #2b63c6;">
 
+     <div class='col-10 p-2 mx-3' style="color:white;">{{ $tours->tour_title }} </div>
+
+       <div class='col-12 '> <img class='mr-2 mb-2' src='/storage/img/ico.png'> <font style='color:#ffcc00;'>{{ $total }} Km </font></div>
+
+
+    <div>
+
+</div>
+
+ </div>
+</div>
 <div class='container-fluid'>
 
 
-       <div class="row d-flex fixed-top" style=" z-index:0; background-color: #2b63c6; position: fixed; top:0px;">
 
-          <div class='col-10 p-2 mx-3' style="color:white;">{{ $tours->tour_title }} </div>
-
-            <div class='col-12 mx-2'> <img class='mr-2 mb-2' src='/storage/img/ico.png'> <font style='color:#ffcc00;'>{{ $total }} Km </font></div>
-
-
-         <div>
-
-     </div>
-
-      </div>
 
 </div>
 <!-- @if (session('successMsg'))
@@ -455,11 +474,11 @@
                                       </div>
                                   </div>
                                   <div class="modal-footer">
-                                   
-                                    
+
+
                                     <div class='row'>
                                     <div class='col-12 text-center mr-2'><button type="submit" class="button" style='background-color:#2b63c6 ; color:white'>ツアーの変更</button></div>
-                                   
+
                                     <div class='col-12 text-center mr-2'><button type="button" class='button mt-2' style='background-color:white;' data-dismiss="modal">閉じる</button></div>
                                     </div>
                                   </div>

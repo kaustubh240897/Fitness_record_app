@@ -135,9 +135,26 @@
 
 </head>
 <body style='background-color: white;'>
-
-<div class='container-fluid' >
-  <div class="row d-flex fixed-top" style="border-bottom: 1px solid white; z-index: 10; background-color: #2b63c6; position: fixed; top:0px;">
+<div class="fixed-top">
+  <div class="container-fluid bg-white  py-0 my-0 px-3" style="height:28px !important;">
+    <div class="d-flex flex-row justify-content-between">
+      <div class="p-0">
+        <img src="{{ asset('storage/mypage/ico_back.png') }}" alt="" onclick="goBack()" style="cursor: pointer;">
+      </div>
+      <div class="p-0">
+        <p class="text-center" style="font-size: 120%">ウォーキング</p>
+      </div>
+      <div class="p-0">
+        <a href="/padometerscreen"><img src="{{ asset('storage/mypage/close.png') }}" alt=""></a>
+      </div>
+    </div>
+  </div>
+  <script>
+  function goBack() {
+    window.history.back();
+  }
+  </script>
+  <div class="row d-flex" style="border-bottom: 1px solid white; z-index: 10; background-color: #2b63c6; ">
    <div class=' p-2' style="color:white;"><div class="ml-4" style='color: white;'>私のコレクション</div> </div>
    <div class='ml-auto p-2 c'>
      <!-- <button class='button mr-4' style="color:white;">ツアーで並べ替え ↑↓ </button> -->
@@ -165,12 +182,14 @@ background-color: #2b63c6;" id="dropdownMenu2" data-toggle="dropdown" aria-haspo
 
 
 
-  <div class="row wrapper1 fixed-top" style='z-index: 0;'>
+  <div class="row wrapper1 " style='z-index: 0;'>
 
     <div class='col-12'><img class='center' src='/storage/img/star_mycol.png'> </div>
 
 
   </div>
+</div>
+<div class='container-fluid' >
 
   @if(! empty($get_t_collections))
   <div class='row py-2' style='margin-top:15rem; z-index: 9; position: relative; background-color: white; padding-bottom: 0%;'>
