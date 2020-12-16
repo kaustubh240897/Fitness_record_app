@@ -510,7 +510,12 @@ input[type=number] {
 
 </script>
 <script type="text/javascript">
-
+  var inp_gender = {{ $m_users->gender }};
+  if (inp_gender == 1) {
+    setGender("btn_female");
+  } else {
+    setGender("btn_male");
+  }
   var h_input = document.getElementById("heightinput");
   var s_input = document.getElementById("strideinput");
   var ds_input = document.getElementById("daily_stepsInput");
