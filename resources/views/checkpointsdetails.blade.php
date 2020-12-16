@@ -287,24 +287,40 @@
 
 <body>
 @if(! empty($my_checkpoint))
+<div class="fixed-top ">
+	<div class="container-fluid bg-white  py-0 my-0 px-3" style="height:28px !important;">
+    <div class="d-flex flex-row justify-content-between">
+      <div class="p-0">
+        <img src="{{ asset('storage/mypage/ico_back.png') }}" alt="" onclick="goBack()" style="cursor: pointer;">
+      </div>
+      <div class="p-0">
+        <p class="text-center" style="font-size: 120%">ウォーキング</p>
+      </div>
+      <div class="p-0">
+        <a href="/padometerscreen"><img src="{{ asset('storage/mypage/close.png') }}" alt=""></a>
+      </div>
+    </div>
+  </div>
+	<div class=" d-flex flex-row " style=" z-index:0; background-color: #2b63c6; ">
+
+	 <div class='col-10 p-2 mx-3' style="color:white;"><img class='mx-2' src='/storage/img/label-1.png'>{{ $my_checkpoint->m_collections->collection_title }} </div>
+
+ </div>
+
+
+
+ <div class='row ' style='position: relative;'>
+	 <div class='col-12 wrapper'>
+		 <p class='ml-3 mt-3 color'>{{ $my_checkpoint->tours->tour_title }} </p>
+		 <p class='color'> <img class='ml-3' src='/storage/img/label-1.png'> {{ $my_checkpoint->m_collections->collection_title }} </p>
+
+		 </div>
+			 </div>
+</div>
   		<div class='container-fluid'>
 
 
-		   <div class="row d-flex fixed-top" style=" z-index:0; background-color: #2b63c6; position: fixed; top:0px;">
 
-				<div class='col-10 p-2 mx-3' style="color:white;"><img class='mx-2' src='/storage/img/label-1.png'>{{ $my_checkpoint->m_collections->collection_title }} </div>
-
-			</div>
-
-
-
-			<div class='row fixed-top' style='position: relative;'>
-				<div class='col-12 wrapper'>
-					<p class='ml-3 mt-3 color'>{{ $my_checkpoint->tours->tour_title }} </p>
-					<p class='color'> <img class='ml-3' src='/storage/img/label-1.png'> {{ $my_checkpoint->m_collections->collection_title }} </p>
-
-			    </div>
-            </div>
 
 	    </div>
 
@@ -329,10 +345,18 @@
 
     </div>
 		</div>
-    <div class="row" style="position: relative;  background-color: #eef4f6;">
-      <img style="width:100%; height:auto;" src='/storage/img/bg@3x.png'>
-    </div>
+		<div class='d-flex flex-row' style='background-color: #eef4f6; position: relative; z-index: 5;'>
+			<div class='col-12'>
+			<img style='width: 100%; height: auto;' src='/storage/img/bg@3x.png'>
+		</div>
+	</div>
 
+
+		<script>
+		function goBack() {
+			window.history.back();
+		}
+		</script>
 <script type="text/javascript">
   var prog_id = "progress_bar";
   var dist_walked = {{$total}};

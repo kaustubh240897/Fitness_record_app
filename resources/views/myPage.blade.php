@@ -536,11 +536,30 @@ padding-top: 0
    <h4> 申し訳ありませんが、チェックポイントはありません。ツアーを選択してください。</h4>
    @endif
   </div> -->
+  <div class="container-fluid bg-white fixed-top py-0 my-0 px-3" style="height:28px !important;">
+    <div class="d-flex flex-row justify-content-between">
+      <div class="p-0">
+        <img src="{{ asset('storage/mypage/ico_back.png') }}" alt="" onclick="goBack()" style="cursor: pointer;">
+      </div>
+      <div class="p-0">
+        <p class="text-center" style="font-size: 120%">ウォーキング</p>
+      </div>
+      <div class="p-0">
+        <a href="/padometerscreen"><img src="{{ asset('storage/mypage/close.png') }}" alt=""></a>
+      </div>
+    </div>
+  </div>
+  <script>
+  function goBack() {
+    window.history.back();
+  }
+  </script>
   @if ( empty($m__users_id))
-    <h2> 最初にプロファイルを作成してください <a href="/" style="color:blue !important"> ここをクリック </a> </h2> <br/>
+    <h2> 最初にプロファイルを作成してください <a href="/" style="color:blue !important; margin-top: 28px !important"> ここをクリック </a> </h2> <br/>
   @else
+
   <a href="{{ url('/mypage') }}"><img style="border-radius: 50%" class="refBtn mr-2" src="{{ asset('storage/mypage/ref-blue.png') }}" alt=""></a>
-  <div class="container-fluid">
+  <div class="container-fluid" style="margin-top: 28px !important">
         <div class="row" style="padding: 0 16px 0 0;
                                 box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
                                 background-color: #ffdd80;">
@@ -878,6 +897,8 @@ color: #ffd00d;;">{{ number_format($steps*$get_m_user_stride/100000,1,'.','') }}
         </div>
       </div>
     </div>
+
+
 
 <script type="text/javascript">
 var currentNav = "box1";

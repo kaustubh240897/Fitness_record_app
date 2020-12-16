@@ -267,40 +267,60 @@
 
 	</style>
 </head>
+
+
+
+
 @if(! empty($get_t_collections))
-	<body>
+	<body >
+		<div class="fixed-top">
+			<div class="container-fluid bg-white py-0 my-0 px-3" style="height:28px !important;">
+				<div class="d-flex flex-row justify-content-between">
+					<div class="p-0">
+						<img src="{{ asset('storage/mypage/ico_back.png') }}" alt="" onclick="goBack()" style="cursor: pointer;">
+					</div>
+					<div class="p-0">
+						<p class="text-center" style="font-size: 120%">ウォーキング</p>
+					</div>
+					<div class="p-0">
+						<a href="/padometerscreen"><img src="{{ asset('storage/mypage/close.png') }}" alt=""></a>
+					</div>
+				</div>
+			</div>
+			<div class="row d-flex " style="border-bottom: 1px solid white; z-index: 10; background-color: #2b63c6; ">
+				<div class=' p-2' style="color:white;"><div class="ml-1" style='color: white;'>私のコレクション</div> </div>
+				<div class=' ml-auto  p-2 '>
+	        <!-- <button class='button mr-1' style="color:white;">ツアーで並べ替え ↑↓ </button> -->
+	        <div class="dropdown p-1">
+	   <button class="text-center dropdown-toggle" type="" style="color: white; font-size: 80%; border-radius: 12px;
+	   border: solid 1px #ffffff;
+	   background-color: #2b63c6;" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	   ツアーで並べ替え ↑↓
+	   </button>
+	   <div class="dropdown-menu speech-bubble dropdown-menu-right" aria-labelledby="dropdownMenu2">
+	   <a id="group_by_tour" onclick="sortHistory(this.id);" >  <label class="radio-inline pl-2 pb-2">
+	   <input id="group_by_tour_radio" class="pt-3" type="radio" name="optradio"><span id="sort_newest_span" class="not_selected_sort pl-2 pb-2" style="font-size: 100%">実績の新しい順</span>
+	   </label></a>
+	   <a id="sort_oldest" onclick="sortHistory(this.id);">   <label class="radio-inline pl-2 pb-2">
+	   <input id="sort_oldest_radio" class="pt-3" type="radio" name="optradio"><span id="sort_oldest_span" class="not_selected_sort pl-2 pb-1" style="font-size: 100%">実績の古い順</span>
+	   </label> </a>
+	   <a id="sort_newest" onclick="sortHistory(this.id);">   <label class="radio-inline pl-2 pb-2">
+	   <input id="sort_newest_radio" class="pt-3" type="radio" name="optradio"><span id="sort_oldest_span" class="not_selected_sort pl-2 pb-1" style="font-size: 100%">実績の古い順2</span>
+	   </label> </a>
+	   </div>
+	   </div>
+	      </div>
+
+		    </div>
+
+
+			<div class="row wrapper1 " style='z-index: 0;'>
+
+				<div class='col-12'><img class='center' src='storage/img/star_mycol.png'> </div>
+		    </div>
+		</div>
 	<div class='container-fluid'>
-		<div class="row d-flex fixed-top" style="border-bottom: 1px solid white; z-index: 10; background-color: #2b63c6; position: fixed; top:0px;">
-			<div class=' p-2' style="color:white;"><div class="ml-1" style='color: white;'>私のコレクション</div> </div>
-			<div class=' ml-auto  p-2 '>
-        <!-- <button class='button mr-1' style="color:white;">ツアーで並べ替え ↑↓ </button> -->
-        <div class="dropdown p-1">
-   <button class="text-center dropdown-toggle" type="" style="color: white; font-size: 80%; border-radius: 12px;
-   border: solid 1px #ffffff;
-   background-color: #2b63c6;" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   ツアーで並べ替え ↑↓
-   </button>
-   <div class="dropdown-menu speech-bubble dropdown-menu-right" aria-labelledby="dropdownMenu2">
-   <a id="group_by_tour" onclick="sortHistory(this.id);" >  <label class="radio-inline pl-2 pb-2">
-   <input id="group_by_tour_radio" class="pt-3" type="radio" name="optradio"><span id="sort_newest_span" class="not_selected_sort pl-2 pb-2" style="font-size: 100%">実績の新しい順</span>
-   </label></a>
-   <a id="sort_oldest" onclick="sortHistory(this.id);">   <label class="radio-inline pl-2 pb-2">
-   <input id="sort_oldest_radio" class="pt-3" type="radio" name="optradio"><span id="sort_oldest_span" class="not_selected_sort pl-2 pb-1" style="font-size: 100%">実績の古い順</span>
-   </label> </a>
-   <a id="sort_newest" onclick="sortHistory(this.id);">   <label class="radio-inline pl-2 pb-2">
-   <input id="sort_newest_radio" class="pt-3" type="radio" name="optradio"><span id="sort_oldest_span" class="not_selected_sort pl-2 pb-1" style="font-size: 100%">実績の古い順2</span>
-   </label> </a>
-   </div>
-   </div>
-      </div>
 
-	    </div>
-
-
-		<div class="row wrapper1 fixed-top" style='z-index: 0;'>
-
-			<div class='col-12'><img class='center' src='storage/img/star_mycol.png'> </div>
-	    </div>
 
 
 	<div class='row'>
@@ -446,4 +466,9 @@
 		</div>
 	</div>
 </div>
+<script>
+function goBack() {
+	window.history.back();
+}
+</script>
 @endsection
