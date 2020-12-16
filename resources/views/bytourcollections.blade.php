@@ -248,7 +248,22 @@
      margin-top: 0px;
     margin-bottom: 20px;
    }
+	 .navfix {
+	   position: fixed;
+	   bottom: 0;
+	   z-index: 10;
+	 }
+	 .navItem {
+	     height: 66px;
+	 }
 
+	 .navItem.is-active {
+	     margin-top: -10px;
+	     /* margin-bottom: -10px; */
+	     height: 76px;
+	     background-color: #174493;
+	      border-radius: 5px
+	 }
 
 	</style>
 </head>
