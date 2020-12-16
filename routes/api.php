@@ -59,6 +59,7 @@ Route::delete('steps/{step}/','StepsController@destroy');
 Route::get('logs/', 't_LogController@index');
 Route::post('logs/', 't_LogController@store');
 Route::put('logs/{log}/','t_LogController@update');
+Route::get('checkserialnumber/{serial_number}','CheckSerialNumberController@show');
 
 Route::group([
 
