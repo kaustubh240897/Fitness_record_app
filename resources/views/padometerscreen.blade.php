@@ -495,13 +495,13 @@ padding-right: -8px;
                   <div class="row  p-0 m-0 pl-2" style=" ">
                     <div class="col text-left p-0 m-0">
                       <div class="d-flex flex-row">
-                        <p class="">疑似ツアーで全国を歩こう！
+                        <p class="pl-2">疑似ツアーで全国を歩こう！
                                   ウォーキングの各種設定や
                                     詳細情報の確認もこちら。</p>
-                        <p> <img src="{{ asset('storage/padometerscreen/ico_arrow_r.png') }}" alt=""> </p>
+                        <p> <img class="pl-3" src="{{ asset('storage/padometerscreen/ico_arrow_r.png') }}" alt=""> </p>
                       </div>
                     </div>
-                    <div class="col-4 text-right p-0 m-0 rt_pos">
+                    <div class="col-4 text-right p-0 m-0 rt_pos" >
                       <div class="float-right p-0 m-0" style="border: solid 2px #2b63c6; background-color: #2b63c6;  width: 96px;height: 100px; border-radius: 50%">
 
                       </div>
@@ -514,14 +514,14 @@ padding-right: -8px;
                 <div class="row  p-0 m-0 pl-2" style=" ">
                   <div class="col text-left p-0 m-0">
                     <div class="d-flex flex-row">
-                      <p class="">疑似ツアーで全国を歩こう！
-                        ウォーキングの各種設定や
-                        詳細情報の確認もこちら。</p>
-                      <p> <img src="{{ asset('storage/padometerscreen/ico_arrow_R_orange.png') }}" alt=""> </p>
+                      <p class="pl-2">疑似ツアーで全国を歩こう！
+                                ウォーキングの各種設定や
+                                  詳細情報の確認もこちら。</p>
+                      <p> <img class="pl-3" src="{{ asset('storage/padometerscreen/ico_arrow_R_orange.png') }}" alt=""> </p>
                     </div>
                   </div>
-                  <div class="col-4 text-right p-0 m-0" style="right: 1.2%;">
-                    <div class="float-right p-0 m-0" style="border: solid 2px #ff9327; background-color: #ff9327;  width: 96px;height: 100px; border-radius: 50%">
+                  <div class="col-4 text-right p-0 m-0 rt_pos" >
+                    <div class="float-right p-0 m-0" style="border: solid 2px #2b63c6; background-color: #2b63c6;  width: 96px;height: 100px; border-radius: 50%">
 
                     </div>
                   </div>
@@ -655,14 +655,14 @@ padding-right: -8px;
                 <div class="row  p-0 m-0 pl-2" style=" ">
                   <div class="col text-left p-0 m-0">
                     <div class="d-flex flex-row">
-                      <p class="">疑似ツアーで全国を歩こう！
-                        ウォーキングの各種設定や
-                        詳細情報の確認もこちら。</p>
-                      <p> <img src="{{ asset('storage/padometerscreen/ico_arrow_R_orange.png') }}" alt=""> </p>
+                      <p class="pl-2">疑似ツアーで全国を歩こう！
+                                ウォーキングの各種設定や
+                                  詳細情報の確認もこちら。</p>
+                      <p> <img class="pl-3" src="{{ asset('storage/padometerscreen/ico_arrow_R_orange.png') }}" alt=""> </p>
                     </div>
                   </div>
-                  <div class="col-4 text-right p-0 m-0" style="right: 1.2%;">
-                    <div class="float-right p-0 m-0" style="border: solid 2px #ff9327; background-color: #ff9327;  width: 96px;height: 100px; border-radius: 50%">
+                  <div class="col-4 text-right p-0 m-0 rt_pos" >
+                    <div class="float-right p-0 m-0" style="border: solid 2px #2b63c6; background-color: #2b63c6;  width: 96px;height: 100px; border-radius: 50%">
 
                     </div>
                   </div>
