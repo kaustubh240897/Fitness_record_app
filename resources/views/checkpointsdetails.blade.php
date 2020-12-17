@@ -309,7 +309,7 @@
 	    </div>
 
 	    <div>
-		    <img style='z-index: -1; margin-top: 200px' src='/storage/img/img@3x.png' class='wid'>
+		    <img style='z-index: -1; margin-top: 0px' src='/storage/img/img@3x.png' class='wid'>
 		</div>
 
 
