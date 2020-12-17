@@ -364,7 +364,7 @@
 
      <div class='col-10 p-2 mx-3' style="color:white;">{{ $tours->tour_title }} </div>
 
-       <div class='col-12 '> <img class='mr-2 mb-2' src='/storage/img/ico.png'> <font style='color:#ffcc00;'>{{ $total }} Km </font></div>
+       <div class='col-12 '> <img class='mx-2 mb-2' src='/storage/img/ico.png'> <font style='color:#ffcc00;'>{{ $total }} Km </font></div>
 
 
     <div>
