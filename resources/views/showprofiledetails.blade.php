@@ -58,7 +58,7 @@
 			  display: block;
 			  margin-left: auto;
 			  margin-right: auto;
-			  margin-top: 6rem;
+			  margin-top: 4rem;
 			  margin-left: 42%;
 
 			  position: relative;

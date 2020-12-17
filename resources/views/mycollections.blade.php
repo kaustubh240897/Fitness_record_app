@@ -50,7 +50,7 @@
 			  display: block;
 			  margin-left: auto;
 			  margin-right: auto;
-			  margin-top: 4rem;
+			  margin-top: 3rem;
 
 			  position: relative;
 			  z-index: 1;
@@ -197,7 +197,7 @@ background-color: #2b63c6;" id="dropdownMenu2" data-toggle="dropdown" aria-haspo
     @if($get_t_collection->new_display_flag == 0)
       <div class='col-4 circle'>
         <span class="badge badge-pill badge-warning">New</span>
-         <span> <img style='border: solid  #ffcc00'; src="{{ asset($get_t_collection->m_collections->path . $get_t_collection->m_collections->filename) }}" class="rounded-circle" alt="Cinque Terre" width="80" height="80"> </span>
+         <span> <img style='border: solid  #ffcc00;' src="{{ asset($get_t_collection->m_collections->path . $get_t_collection->m_collections->filename) }}" class="rounded-circle" alt="Cinque Terre" width="80" height="80"> </span>
       </div>
     @else
     <div class='col-4'>
