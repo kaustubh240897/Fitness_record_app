@@ -187,7 +187,7 @@ class t_CollectionWebController extends Controller
         if(m_Users::where('users_id',Auth::id())->count() >0){
             $m__users = m_Users::where('users_id',Auth::id())->first();
             $m__user_id = $m__users->id;
-            $my_collections = t_Collection::where('m__users_id', $m__user_id)->where('m__collection_id', $id)->first();
+            $my_collections = t_Collection::where('m__users_id', $m__user_id)->where('m__collection_id', $id)->orderBy('created_at', 'DESC')->first();
             if(! empty($my_collections)){
                 if($my_collections->m_collections->collection_category == 'checkpoint'){
                     $get_tour_id =  $my_collections->m_collections->m__checkpoints->tours->id;
@@ -219,11 +219,15 @@ class t_CollectionWebController extends Controller
             }
             $session_value = $request->session()->get('reverse','false');
            // $count = t_Collection::where('m__users_id', $m__user_id)->where('m__collection_id', $id)->count();
+            
             if(! empty($my_collections)){
-                if($my_collections->new_display_flag == 0){
-                            $t_collection = t_Collection::find($my_collections->id);
-                            $t_collection->new_display_flag = 1;
-                            $t_collection->save();
+                $my_checkpoint_collections = t_Collection::where('m__users_id', $m__user_id)->where('m__collection_id', $id)->get();
+                foreach($my_checkpoint_collections as $my_checkpoint_collection){
+                    if($my_checkpoint_collection->new_display_flag == 0){
+                                //$t_collection = t_Collection::find($my_collections->id);
+                                $my_checkpoint_collection->new_display_flag = 1;
+                                $my_checkpoint_collection->save();
+                    }
                 }
         }
             return view('mycollectionsdetails', compact('my_collections','m__users','total','checkpoints','checkpointsr','session_value'));
