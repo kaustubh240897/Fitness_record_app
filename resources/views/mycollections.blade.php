@@ -135,77 +135,65 @@
 
 </head>
 <body style='background-color: white;'>
-
-<div class='container-fluid' style="margin-top: 28px">
-  <div class="row d-flex fixed-top" style="border-bottom: 1px solid white; z-index: 10; background-color: #2b63c6; position: fixed; top:28px;">
-   <div class=' p-2' style="color:white;"><div class="ml-4" style='color: white;'>私のコレクション</div> </div>
-   <div class='ml-auto p-2 c'>
+  <div class='container-fluid' style="margin-top: 28px">
+    <div class="row d-flex fixed-top" style="border-bottom: 1px solid white; z-index: 10; background-color: #2b63c6; position: fixed; top:28px;">
+      <div class=' p-2' style="color:white;"><div class="ml-4" style='color: white;'>私のコレクション</div> </div>
+        <div class='ml-auto p-2 c'>
      <!-- <button class='button mr-4' style="color:white;">ツアーで並べ替え ↑↓ </button> -->
-     <div class="dropdown p-1">
-<button class="text-center dropdown-toggle" type="" style="color: white; font-size: 80%; border-radius: 12px;
-border: solid 1px #ffffff;
-background-color: #2b63c6;" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-ツアーで並べ替え ↑↓
-</button>
-<div class="dropdown-menu speech-bubble dropdown-menu-right" aria-labelledby="dropdownMenu2">
-<a id="group_by_tour" onclick="sortHistory(this.id);" >  <label class="radio-inline pl-2 pb-2">
-<input id="group_by_tour_radio" class="pt-3" type="radio" name="optradio"><span id="sort_newest_span" class="not_selected_sort pl-2 pb-2" style="font-size: 100%">実績の新しい順</span>
-</label></a>
-<a id="sort_oldest" onclick="sortHistory(this.id);">   <label class="radio-inline pl-2 pb-2">
-<input id="sort_oldest_radio" class="pt-3" type="radio" name="optradio"><span id="sort_oldest_span" class="not_selected_sort pl-2 pb-1" style="font-size: 100%">実績の古い順</span>
-</label> </a>
-<a id="sort_newest" onclick="sortHistory(this.id);">   <label class="radio-inline pl-2 pb-2">
-<input id="sort_newest_radio" class="pt-3" type="radio" name="optradio"><span id="sort_oldest_span" class="not_selected_sort pl-2 pb-1" style="font-size: 100%">実績の古い順2</span>
-</label> </a>
-</div>
-</div>
-   </div>
-
-  </div>
-
-
-
-  <div class="row wrapper1 fixed-top" style='z-index: 0;'>
-
-    <div class='col-12'><img class='center' src='/storage/img/star_mycol.png'> </div>
-
-
-  </div>
-
-  @if(! empty($get_t_collections))
-  <div class='row py-2' style='margin-top:15rem; z-index: 9; position: relative; background-color: white; padding-bottom: 0%;'>
-  @foreach($get_t_collections as $get_t_collection)
-    @if($get_t_collection->new_display_flag == 0)
-      <div class='col-4 circle'>
-        <span class="badge badge-pill badge-warning">New</span>
-         <span> <img style='border: solid  #ffcc00;' src="{{ asset($get_t_collection->m_collections->path . $get_t_collection->m_collections->filename) }}" class="rounded-circle" alt="Cinque Terre" width="80" height="80"> </span>
-      </div>
-    @else
-    <div class='col-4'>
-        <img src="{{ asset($get_t_collection->m_collections->path . $get_t_collection->m_collections->filename) }}"  class=" rounded-circle" alt="Cinque Terre" width="80" height="80">
-      </div>
-    @endif
-        <div class='col-8'> <img src='/storage/img/label-1.png'><br><a href="{{ route('collectiondetails', $get_t_collection->m_collections->id) }}">{{ $get_t_collection->m_collections->collection_title }} </a></div>
-      <div class='col-4'> </div>
-      <div class='col-8 c checked'> @if($counter[$loop->iteration-1] >5)+@endif  @for($i=0; $i<$counter[$loop->iteration-1]; $i++) @if($i <=5)<img src='storage/img/star.png'>@endif @endfor
-        <font style='color:#cbaca3;'> {{ $get_t_collection->created_at->format('Y-m-d') }} </font>
+          <div class="dropdown p-1">
+            <button class="text-center dropdown-toggle" type="" style="color: white; font-size: 80%; border-radius: 12px;
+              border: solid 1px #ffffff;background-color: #2b63c6;" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              ツアーで並べ替え ↑↓
+            </button>
+            <div class="dropdown-menu speech-bubble dropdown-menu-right" aria-labelledby="dropdownMenu2">
+              <a id="group_by_tour" onclick="sortHistory(this.id);" >  <label class="radio-inline pl-2 pb-2">
+                <input id="group_by_tour_radio" class="pt-3" type="radio" name="optradio"><span id="sort_newest_span" class="not_selected_sort pl-2 pb-2" style="font-size: 100%">実績の新しい順</span>
+                  </label>
+              </a>
+              <a id="sort_oldest" onclick="sortHistory(this.id);">   <label class="radio-inline pl-2 pb-2">
+                  <input id="sort_oldest_radio" class="pt-3" type="radio" name="optradio"><span id="sort_oldest_span" class="not_selected_sort pl-2 pb-1" style="font-size: 100%">実績の古い順</span>
+                    </label> \
+              </a>
+              <a id="sort_newest" onclick="sortHistory(this.id);">   <label class="radio-inline pl-2 pb-2">
+                <input id="sort_newest_radio" class="pt-3" type="radio" name="optradio"><span id="sort_oldest_span" class="not_selected_sort pl-2 pb-1" style="font-size: 100%">実績の古い順2</span>
+                </label> 
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
 
+      <div class="row wrapper1 fixed-top" style='z-index: 0;'>
+        <div class='col-12'><img class='center' src='/storage/img/star_mycol.png'> </div>
+      </div>
 
+    @if(! empty($get_t_collections))
+      <div class='row py-2' style='margin-top:15rem; z-index: 9; position: relative; background-color: white; padding-bottom: 0%;'>
+        @foreach($get_t_collections as $get_t_collection)
+          @if($get_t_collection->new_display_flag == 0)
+            <div class='col-4 circle'>
+              <span class="badge badge-pill badge-warning">New</span>
+                <span> <img style='border: solid  #ffcc00;' src="{{ asset($get_t_collection->m_collections->path . $get_t_collection->m_collections->filename) }}" class="rounded-circle" alt="Cinque Terre" width="80" height="80"> </span>
+            </div>
+          @else
+            <div class='col-4'>
+              <img src="{{ asset($get_t_collection->m_collections->path . $get_t_collection->m_collections->filename) }}"  class=" rounded-circle" alt="Img" width="80" height="80">
+            </div>
+          @endif
+              <div class='col-8'> <img src='/storage/img/label-1.png'><br><a href="{{ route('collectiondetails', $get_t_collection->m_collections->id) }}">{{ $get_t_collection->m_collections->collection_title }} </a></div>
+                <div class='col-4'> </div>
+                  <div class='col-8 c checked'> @if($counter[$loop->iteration-1] >5)+@endif  @for($i=0; $i<$counter[$loop->iteration-1]; $i++) @if($i <=5)<img src='storage/img/star.png'>@endif @endfor
+                      <font style='color:#cbaca3;'> {{ $get_t_collection->created_at->format('Y-m-d') }} </font>
+                  </div>
                 <br/>
-    @endforeach
-
-  </div>
-
-  <div class='row' style='background-color: #eef4f6; position: relative; z-index: 10;'>
+        @endforeach
+    </div>
+    <div class='row' style='background-color: #eef4f6; position: relative; z-index: 10;'>
 				<div class='col-12'>
-				<img style='width: 100%; height: auto;' src='/storage/img/bg@3x.png'>
-	</div>
-
-  </div>
-
-
-@else
+				  <img style='width: 100%; height: auto;' src='/storage/img/bg@3x.png'>
+	      </div>
+    </div>
+  @else
     <h1> まだコレクションはありません！ </h1>
   @endif
   <div class="container-fluid navfix" style="background-color: #2b63c6;">
@@ -238,31 +226,29 @@ background-color: #2b63c6;" id="dropdownMenu2" data-toggle="dropdown" aria-haspo
   </div>
 
   <script type="text/javascript">
-  if ({{$index}} == 0) {
-		document.getElementById("group_by_tour_radio").checked = true;
-	} else if ({{$index}} == 1) {
-		document.getElementById("sort_oldest_radio").checked = true;
-	} else if ({{$index}} == 2) {
-		document.getElementById("sort_newest_radio").checked = true;
-	}
-  function sortHistory(id) {
-    console.log("yes");
-    var url = "";
-    if (id == "sort_newest") {
-      url = "/reversemycollection";
-      location.reload();location.href=url;
-    } else if (id == "sort_oldest") {
-      url = "/mycollection";
-      location.reload();location.href=url;
-    } else {
-      url = "/bytourcollection";
-      location.reload();location.href=url;
-    }
-  }
+      if ({{$index}} == 0) {
+        document.getElementById("group_by_tour_radio").checked = true;
+      } else if ({{$index}} == 1) {
+        document.getElementById("sort_oldest_radio").checked = true;
+      } else if ({{$index}} == 2) {
+        document.getElementById("sort_newest_radio").checked = true;
+      }
+      function sortHistory(id) {
+        console.log("yes");
+        var url = "";
+        if (id == "sort_newest") {
+          url = "/reversemycollection";
+          location.reload();location.href=url;
+        } else if (id == "sort_oldest") {
+          url = "/mycollection";
+          location.reload();location.href=url;
+        } else {
+          url = "/bytourcollection";
+          location.reload();location.href=url;
+        }
+      }
   </script>
   
 </body>
-
-
 
 @endsection

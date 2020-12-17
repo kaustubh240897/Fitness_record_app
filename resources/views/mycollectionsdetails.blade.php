@@ -362,10 +362,7 @@
 	              <b>  <text class='hr my-1'> @if($my_collections->m_collections->collection_category == 'tour') {{ $my_collections->m_collections->m__tours->tour_comment }} @else {{ $my_collections->m_collections->m__checkpoints->comments }}  @endif</text></b>
 	               <img src='/storage/img/lineDown.png' class='wid mt-2'>
 
-	               <div class='col-12 my-2' style='color: #2b63c6;'>
-                    <h6> A relaxing trip to herokiku mountains.</h6>
-                    0km
-	               </div>
+	               
                  @if($my_collections->m_collections->collection_category == 'tour')
                  <div id="progress_bar_tour" class="">
 
