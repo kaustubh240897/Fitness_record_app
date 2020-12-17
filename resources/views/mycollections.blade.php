@@ -260,7 +260,7 @@ background-color: #2b63c6;" id="dropdownMenu2" data-toggle="dropdown" aria-haspo
     }
   }
   </script>
-  </script>
+  
 </body>
 
 
