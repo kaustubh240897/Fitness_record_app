@@ -63,25 +63,6 @@
         @endguest
 
         <main class="">
-
-          <div class="container-fluid bg-white fixed-top py-0 my-0 px-3" style="height:28px !important; z-index:11; position:fixed; top: 0">
-            <div class="d-flex flex-row justify-content-between">
-              <div class="p-0">
-                <img src="{{ asset('storage/mypage/ico_back.png') }}" alt="" onclick="goBack()" style="cursor: pointer;">
-              </div>
-              <div class="p-0">
-                <p class="text-center" style="font-size: 120%"> ウォーキング </p>
-              </div>
-              <div class="p-0">
-                <a href="/padometerscreen"><img src="{{ asset('storage/mypage/close.png') }}" alt=""></a>
-              </div>
-            </div>
-          </div>
-          <script>
-          function goBack() {
-            window.history.back();
-          }
-          </script>
             @yield('content')
         </main>
     </div>

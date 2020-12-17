@@ -193,8 +193,8 @@
   font-weight: normal;
 }
 </style>
-<div class="container-fluid sticky-top" >
-  			    <div class="row d-flex justify-content-between pb-0 mb-0" style="background-color: #2B63C6; height:30px; ">
+<div class="container-fluid sticky-top" style="top:28px;" >
+  			    <div class="row d-flex justify-content-between pb-0 mb-0" style="background-color: #2B63C6; height:30px;">
   				        <div class='col-4 shadow-lg mb-0 pb-0 mt-1 pt-1' > <p class="shadow-lg mb-0 pb-0" style="color:white; font-size: 80%">マイヒストリ</p> </div>
                     <!-- <p class="text-center" style="color:white; font-size: 80%">マイヒストリ</p> -->
                     <div class="col-2 mb-0 pb-0 mt-1 shadow-lg padding-0">
@@ -273,7 +273,7 @@
             </div>
           </div>
         </div>
-        <div id="year_list" class="row d-flex pt-1 invisible w-100" style="background-color:#fff; z-index: 0">
+        <div id="year_list" class="row d-flex pt-1 invisible w-100" style="background-color:#fff; z-index: 0;">
           <div class="col-12 w-100">
             <div id="yearsContainer" class=" scrolling-wrapper row flex-row flex-nowrap">
               <div class="col">
@@ -311,7 +311,7 @@
           </table>
         </div>
     </div>
-    <div id="tableContainer" class="container-fluid p-0 my-0">
+    <div id="tableContainer" class="container-fluid p-0 my-0" style="margin-top:28px !important">
       <table id="swipeContainer" class="table table-striped text-center my-0">
         <tbody id="monthly_table">
 
@@ -322,13 +322,14 @@
 
         </tbody>
       </table>
-      <div class="goalTxt text-center" style="border-radius: 18px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-  background-color: #113a83; color: #fff">
-        1日の目標 {{$get_m_user_daily_goal}}歩 ({{ $get_m_user_daily_goal*$get_m_user_stride/100000 }} km)
-      </div>
+
     </div>
-    <div style="padding-top:25rem;">
+    <div class="goalTxt text-center" style="border-radius: 18px;
+box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+background-color: #113a83; color: #fff">
+      1日の目標 {{$get_m_user_daily_goal}}歩 ({{ $get_m_user_daily_goal*$get_m_user_stride/100000 }} km)
+    </div>
+    <div style="padding-top:0;">
       <div class='d-flex flex-row' style='background-color: #eef4f6; position: relative; z-index: 5;'>
         <div class='col-12'>
         <img style='width: 100%; height: auto;' src='/storage/img/bg@3x.png'>
@@ -496,12 +497,12 @@
           td1.innerHTML = d.getDate() + day_symbol;
           dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
           td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
-          td3.innerHTML = (totalSteps/goal)*100 + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="{{URL::asset('storage/history/co.svg')}}" alt="">';
+          td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="{{URL::asset('storage/history/co.svg')}}" alt="">';
         } else {
           td1.innerHTML = d.getDate() + day_symbol;
           dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
           td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
-          td3.innerHTML = (totalSteps/goal)*100 + '<span style="font-size:80%">%</span>';
+          td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span>';
         }
         tr.appendChild(td1);
         tr.appendChild(td2);
@@ -570,12 +571,12 @@
           td1.innerHTML = d.getDate() + day_symbol;
           dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
           td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
-          td3.innerHTML = (totalSteps/goal)*100 + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="{{URL::asset('storage/history/co.svg')}}" alt="">';
+          td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="{{URL::asset('storage/history/co.svg')}}" alt="">';
         } else {
           td1.innerHTML = d.getDate() + day_symbol;
           dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
           td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
-          td3.innerHTML = (totalSteps/goal)*100 + '<span style="font-size:80%">%</span>';
+          td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span>';
         }
         tr.appendChild(td1);
         tr.appendChild(td2);

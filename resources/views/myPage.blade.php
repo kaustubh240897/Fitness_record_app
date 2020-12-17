@@ -536,24 +536,7 @@ padding-top: 0
    <h4> 申し訳ありませんが、チェックポイントはありません。ツアーを選択してください。</h4>
    @endif
   </div> -->
-  <div class="container-fluid bg-white fixed-top py-0 my-0 px-3" style="height:28px !important;">
-    <div class="d-flex flex-row justify-content-between">
-      <div class="p-0">
-        <img src="{{ asset('storage/mypage/ico_back.png') }}" alt="" onclick="goBack()" style="cursor: pointer;">
-      </div>
-      <div class="p-0">
-        <p class="text-center" style="font-size: 120%">ウォーキング</p>
-      </div>
-      <div class="p-0">
-        <a href="/padometerscreen"><img src="{{ asset('storage/mypage/close.png') }}" alt=""></a>
-      </div>
-    </div>
-  </div>
-  <script>
-  function goBack() {
-    window.history.back();
-  }
-  </script>
+  
   @if ( empty($m__users_id))
     <h2> 最初にプロファイルを作成してください <a href="/" style="color:blue !important; margin-top: 28px !important"> ここをクリック </a> </h2> <br/>
   @else

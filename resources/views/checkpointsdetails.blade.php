@@ -287,10 +287,10 @@
 
 <body>
 @if(! empty($my_checkpoint))
-  		<div class='container-fluid'>
+  		<div class='container-fluid' style="margin-top: 28px;">
 
 
-		   <div class="row d-flex fixed-top" style=" z-index:10; background-color: #2b63c6; position: fixed; top:0px;">
+		   <div class="row d-flex fixed-top" style=" z-index:1; background-color: #2b63c6; position: fixed; top:28px;">
 
 				<div class='col-10 p-2 mx-3' style="color:white;"><img class='mx-2' src='/storage/img/label-1.png'>{{ $my_checkpoint->m_collections->collection_title }}</div>
 
@@ -298,9 +298,9 @@
 
 
 
-			<div class='row fixed-top' style='position: relative;'>
+			<div class='row fixed-top' style='position: relative; z-index: 3;'>
 				<div class='col-12 wrapper'>
-					<p class='ml-3 mt-3 color'>{{ $my_checkpoint->tours->tour_title }}ss </p>
+					<p class='ml-3 mt-3 color'>{{ $my_checkpoint->tours->tour_title }} </p>
 					<p class='color'> <img class='ml-3' src='/storage/img/label-1.png'> {{ $my_checkpoint->m_collections->collection_title }} </p>
 
 			    </div>
@@ -309,7 +309,7 @@
 	    </div>
 
 	    <div>
-		    <img style='z-index: -1;' src='/storage/img/img@3x.png' class='wid'>
+		    <img style='z-index: -1; margin-top: 200px' src='/storage/img/img@3x.png' class='wid'>
 		</div>
 
 

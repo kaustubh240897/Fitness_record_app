@@ -309,16 +309,16 @@
 </head>
 <body>
 @if(! empty($my_collections))
-<div class='container-fluid'>
+<div class='container-fluid' style="margin-top:28px">
 
-              
-			  		 <div class="row d-flex fixed-top" style=" z-index:0; background-color: #2b63c6; ">
+
+			  		 <div class="row d-flex fixed-top" style=" z-index:0; background-color: #2b63c6; position:fixed; top:28px">
 
 						    <div class='col-10 p-2 mx-3' style="color:white;">@if($my_collections->m_collections->collection_category == 'tour') <span class="badge badge-pill badge-warning ml-2 mr-1">ツアー</span> @else <img class='mx-2' src="/storage/img/label-1.png">  @endif{{ $my_collections->m_collections->collection_title }}  </div>
 
 					 </div>
 
-					 <div class='c mx-2 my-2 fixed-top' style='z-index:0;'><img style='border: solid  #2b63c6;' src="{{ asset($my_collections->m_collections->path . $my_collections->m_collections->filename) }}" class= "rounded-circle" alt="Cinque Terre" width="
+					 <div class='c mx-2 my-2 fixed-top' style='z-index:0; margin-top:28px'><img  style='border: solid  #2b63c6;' src="{{ asset($my_collections->m_collections->path . $my_collections->m_collections->filename) }}" class= "rounded-circle mt-3" alt="Cinque Terre" width="
 					 	80" height="80">
 					 </div>
 
