@@ -50,7 +50,7 @@
 			  display: block;
 			  margin-left: auto;
 			  margin-right: auto;
-			  margin-top: 4rem;
+			  margin-top: 5rem;
 
 			  position: relative;
 			  z-index: 1;
