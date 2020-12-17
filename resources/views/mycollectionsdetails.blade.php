@@ -311,24 +311,7 @@
 @if(! empty($my_collections))
 <div class='container-fluid'>
 
-  <div class="container-fluid bg-white fixed-top py-0 my-0 px-3" style="height:28px !important; position: fixed; top: 0">
-    <div class="d-flex flex-row justify-content-between">
-      <div class="p-0">
-        <img src="{{ asset('storage/mypage/ico_back.png') }}" alt="" onclick="goBack()" style="cursor: pointer;">
-      </div>
-      <div class="p-0">
-        <p class="text-center" style="font-size: 120%">ウォーキング</p>
-      </div>
-      <div class="p-0">
-        <a href="/padometerscreen"><img src="{{ asset('storage/mypage/close.png') }}" alt=""></a>
-      </div>
-    </div>
-  </div>
-  <script>
-  function goBack() {
-    window.history.back();
-  }
-  </script>
+              
 			  		 <div class="row d-flex fixed-top" style=" z-index:0; background-color: #2b63c6; ">
 
 						    <div class='col-10 p-2 mx-3' style="color:white;">@if($my_collections->m_collections->collection_category == 'tour') <span class="badge badge-pill badge-warning ml-2 mr-1">ツアー</span> @else <img class='mx-2' src="/storage/img/label-1.png">  @endif{{ $my_collections->m_collections->collection_title }}  </div>

@@ -201,144 +201,124 @@
   </style>
 
 
-  <div class="fixed-top">
-    <div class="container-fluid bg-white py-0 my-0 px-3" style="height:28px !important;">
-      <div class="d-flex flex-row justify-content-between">
-        <div class="p-0">
-          <img src="{{ asset('storage/mypage/ico_back.png') }}" alt="" onclick="goBack()" style="cursor: pointer;">
-        </div>
-        <div class="p-0">
-          <p class="text-center" style="font-size: 120%">ウォーキング</p>
-        </div>
-        <div class="p-0">
-          <a href="/padometerscreen"><img src="{{ asset('storage/mypage/close.png') }}" alt=""></a>
-        </div>
-      </div>
-    </div>
-    <script>
-    function goBack() {
-      window.history.back();
-    }
-    </script>
-    <div class="container-fluid ">
-      			    <div class="row d-flex justify-content-between pb-0 mb-0" style="background-color: #2B63C6; height:30px">
-      				        <div class='col-4 shadow-lg mb-0 pb-0 mt-1 pt-1' > <p class="shadow-lg mb-0 pb-0" style="color:white; font-size: 80%">マイヒストリ</p> </div>
-                        <!-- <p class="text-center" style="color:white; font-size: 80%">マイヒストリ</p> -->
-                        <div class="col-2 mb-0 pb-0 mt-1 shadow-lg padding-0">
-                          <a href="{{ route('userhistory', [now()->year,now()->month]) }}"><button id="tab_monthly" class="text-center not_selected_tab mb-0 pb-0" style="color: white; font-size: 80%;
-                            background-color: #2b63c6;" onclick="changeTab(this.id);">月間</button></a>
-                        </div>
-                        <div class="col-2 mb-0 pb-0 mt-1 shadow-lg padding-0">
-
-                            <a href="{{ route('usermonthlyhistory', [now()->year]) }}"><button id="tab_yearly" class="text-center selected_tab mb-0 pb-0" style="color: white; font-size: 80%;
-                              background-color: #2b63c6;" onclick="changeTab(this.id);">年間</button></a>
-                        </div>
-      				        <div class='col-4 pb-0 mb-0 shadow-lg'>
-                         <!-- <button class="text-center" style="color: white; font-size: 80%; border-radius: 12px;
-                        border: solid 1px #ffffff;
-                        background-color: #2b63c6;">並び替え ↑↓</button> -->
-                        <div class="dropdown p-1">
-              <button class="text-center dropdown-toggle" type="" style="color: white; font-size: 80%; border-radius: 12px;
-             border: solid 1px #ffffff;
-             background-color: #2b63c6;" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                並び替え ↑↓
-              </button>
-              <div class="dropdown-menu speech-bubble dropdown-menu-right" aria-labelledby="dropdownMenu2">
-                <a id="sort_newest" onclick="sortHistory(this.id);" >  <label class="radio-inline pl-2">
-            <input id="sort_newest_radio" class="pt-3" type="radio" name="optradio"><span id="sort_newest_span" class="not_selected_sort pl-2 pb-2" style="font-size: 100%">実績の新しい順</span>
-          </label></a>
-                <a id="sort_oldest" onclick="sortHistory(this.id);">   <label class="radio-inline pl-2 pb-2">
-            <input id="sort_oldest_radio" class="pt-3" type="radio" name="optradio"><span id="sort_oldest_span" class="not_selected_sort pl-2 pb-1" style="font-size: 100%">実績の古い順</span>
-          </label> </a>
-              </div>
-            </div>
+  <div class="container-fluid sticky-top">
+    			    <div class="row d-flex justify-content-between pb-0 mb-0" style="background-color: #2B63C6; height:30px">
+    				        <div class='col-4 shadow-lg mb-0 pb-0 mt-1 pt-1' > <p class="shadow-lg mb-0 pb-0" style="color:white; font-size: 80%">マイヒストリ</p> </div>
+                      <!-- <p class="text-center" style="color:white; font-size: 80%">マイヒストリ</p> -->
+                      <div class="col-2 mb-0 pb-0 mt-1 shadow-lg padding-0">
+                        <a href="{{ route('userhistory', [now()->year,now()->month]) }}"><button id="tab_monthly" class="text-center not_selected_tab mb-0 pb-0" style="color: white; font-size: 80%;
+                          background-color: #2b63c6;" onclick="changeTab(this.id);">月間</button></a>
                       </div>
-               </div>
-               <!-- filter:blur(1px); -->
-            <div id="month_list" class="row d-flex pt-2 pb-0 mb-0  invisible" style="background-color:#fff; z-index: 0">
-              <div class="col-2 w-100 padding-0 mb-0">
-                <p id="yearnumber" class="w-100 pl-3" style="font-weight: bold; color: #2b63c6;background-color: #fff; height: 27px;">2020</p>
-              </div>
-              <div class="col-10 mb-0">
-                <div id="monthsContainer" class="pl-3 mb-0 scrolling-wrapper row  flex-nowrap ">
-                  <div class="col">
-                    <button id="12" onclick="myFunc(this.id);" class="px-1 selected_month" style="background-color:#fff;">12</button>
-                  </div>
-                  <div class="col">
-                    <button id="11" onclick="myFunc(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">11</button>
-                  </div>
-                  <div class="col">
-                    <button id="10" onclick="myFunc(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">10</button>
-                  </div>
-                  <div class="col">
-                    <button id="9" onclick="myFunc(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">9</button>
-                  </div>
-                  <div class="col">
-                    <button id="8" onclick="myFunc(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">8</button>
-                  </div>
-                  <div class="col">
-                    <button id="7" onclick="myFunc(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">7</button>
-                  </div>
-                  <div class="col">
-                    <button id="6" onclick="myFunc(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">6</button>
-                  </div>
-                  <div class="col">
-                    <button id="5" onclick="myFunc(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">5</button>
-                  </div>
-                  <div class="col">
-                    <button id="4" onclick="myFunc(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">4</button>
-                  </div>
-                  <div class="col">
-                    <button id="3" onclick="myFunc(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">3</button>
-                  </div>
-                  <div class="col">
-                    <button id="2" onclick="myFunc(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">2</button>
-                  </div>
-                  <div class="col">
-                    <button id="1" onclick="myFunc(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">1</button>
-                  </div>
+                      <div class="col-2 mb-0 pb-0 mt-1 shadow-lg padding-0">
+
+                          <a href="{{ route('usermonthlyhistory', [now()->year]) }}"><button id="tab_yearly" class="text-center selected_tab mb-0 pb-0" style="color: white; font-size: 80%;
+                            background-color: #2b63c6;" onclick="changeTab(this.id);">年間</button></a>
+                      </div>
+    				        <div class='col-4 pb-0 mb-0 shadow-lg'>
+                       <!-- <button class="text-center" style="color: white; font-size: 80%; border-radius: 12px;
+                      border: solid 1px #ffffff;
+                      background-color: #2b63c6;">並び替え ↑↓</button> -->
+                      <div class="dropdown p-1">
+            <button class="text-center dropdown-toggle" type="" style="color: white; font-size: 80%; border-radius: 12px;
+           border: solid 1px #ffffff;
+           background-color: #2b63c6;" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              並び替え ↑↓
+            </button>
+            <div class="dropdown-menu speech-bubble dropdown-menu-right" aria-labelledby="dropdownMenu2">
+              <a id="sort_newest" onclick="sortHistory(this.id);" >  <label class="radio-inline pl-2">
+          <input id="sort_newest_radio" class="pt-3" type="radio" name="optradio"><span id="sort_newest_span" class="not_selected_sort pl-2 pb-2" style="font-size: 100%">実績の新しい順</span>
+        </label></a>
+              <a id="sort_oldest" onclick="sortHistory(this.id);">   <label class="radio-inline pl-2 pb-2">
+          <input id="sort_oldest_radio" class="pt-3" type="radio" name="optradio"><span id="sort_oldest_span" class="not_selected_sort pl-2 pb-1" style="font-size: 100%">実績の古い順</span>
+        </label> </a>
+            </div>
+          </div>
+                    </div>
+             </div>
+             <!-- filter:blur(1px); -->
+          <div id="month_list" class="row d-flex pt-2 pb-0 mb-0  invisible" style="background-color:#fff; z-index: 0">
+            <div class="col-2 w-100 padding-0 mb-0">
+              <p id="yearnumber" class="w-100 pl-3" style="font-weight: bold; color: #2b63c6;background-color: #fff; height: 27px;">2020</p>
+            </div>
+            <div class="col-10 mb-0">
+              <div id="monthsContainer" class="pl-3 mb-0 scrolling-wrapper row  flex-nowrap ">
+                <div class="col">
+                  <button id="12" onclick="myFunc(this.id);" class="px-1 selected_month" style="background-color:#fff;">12</button>
+                </div>
+                <div class="col">
+                  <button id="11" onclick="myFunc(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">11</button>
+                </div>
+                <div class="col">
+                  <button id="10" onclick="myFunc(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">10</button>
+                </div>
+                <div class="col">
+                  <button id="9" onclick="myFunc(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">9</button>
+                </div>
+                <div class="col">
+                  <button id="8" onclick="myFunc(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">8</button>
+                </div>
+                <div class="col">
+                  <button id="7" onclick="myFunc(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">7</button>
+                </div>
+                <div class="col">
+                  <button id="6" onclick="myFunc(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">6</button>
+                </div>
+                <div class="col">
+                  <button id="5" onclick="myFunc(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">5</button>
+                </div>
+                <div class="col">
+                  <button id="4" onclick="myFunc(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">4</button>
+                </div>
+                <div class="col">
+                  <button id="3" onclick="myFunc(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">3</button>
+                </div>
+                <div class="col">
+                  <button id="2" onclick="myFunc(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">2</button>
+                </div>
+                <div class="col">
+                  <button id="1" onclick="myFunc(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">1</button>
                 </div>
               </div>
             </div>
-            <div id="year_list" class="row d-flex pt-1" style="background-color:#fff; z-index: 0">
-              <div class="col-12 w-100">
-                <div id="yearsContainer" class=" scrolling-wrapper row flex-row flex-nowrap">
-                  <div class="col">
-                    <button id="2020" onclick="myFunc2(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">2020</button>
-                  </div>
-                  <div class="col">
-                    <button id="2019" onclick="myFunc2(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">2019</button>
-                  </div>
-                  <div class="col">
-                    <button id="2018" onclick="myFunc2(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">2018</button>
-                  </div>
+          </div>
+          <div id="year_list" class="row d-flex pt-1" style="background-color:#fff; z-index: 0">
+            <div class="col-12 w-100">
+              <div id="yearsContainer" class=" scrolling-wrapper row flex-row flex-nowrap">
+                <div class="col">
+                  <button id="2020" onclick="myFunc2(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">2020</button>
+                </div>
+                <div class="col">
+                  <button id="2019" onclick="myFunc2(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">2019</button>
+                </div>
+                <div class="col">
+                  <button id="2018" onclick="myFunc2(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">2018</button>
                 </div>
               </div>
             </div>
-            <div id="tab_monthly_row" class="row d-flex my-0 py-0 invisible">
-              <table class="table table-striped text-center my-0 py-0">
-                <thead class="py-0 my-0" style="background-color: #ffffff;">
-                  <tr>
-                    <th scope="col" style="color: #2b63c6; font-weight: bold; font-size: 85%;">日にち</th>
-                    <th scope="col" style="color: #2b63c6; font-weight: bold; font-size: 85%;">歩数 (距離換算)</th>
-                    <th scope="col" style="color: #2b63c6; font-weight: bold; font-size: 85%;">達成率</th>
-                  </tr>
-                </thead>
-              </table>
-            </div>
-            <div id="tab_yearly_row" class="row d-flex my-0">
-              <table class="table table-striped text-center my-0">
-                <thead style="background-color: #ffffff;">
-                  <tr>
-                    <th scope="col" style="color: #2b63c6; font-weight: bold; font-size: 85%;">月</th>
-                    <th scope="col" style="color: #2b63c6; font-weight: bold; font-size: 85%;">歩数 (距離換算)</th>
-                    <th scope="col" style="color: #2b63c6; font-weight: bold; font-size: 85%;">達成率</th>
-                  </tr>
-                </thead>
-              </table>
-            </div>
-        </div>
-  </div>
+          </div>
+          <div id="tab_monthly_row" class="row d-flex my-0 py-0 invisible">
+            <table class="table table-striped text-center my-0 py-0">
+              <thead class="py-0 my-0" style="background-color: #ffffff;">
+                <tr>
+                  <th scope="col" style="color: #2b63c6; font-weight: bold; font-size: 85%;">日にち</th>
+                  <th scope="col" style="color: #2b63c6; font-weight: bold; font-size: 85%;">歩数 (距離換算)</th>
+                  <th scope="col" style="color: #2b63c6; font-weight: bold; font-size: 85%;">達成率</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <div id="tab_yearly_row" class="row d-flex my-0">
+            <table class="table table-striped text-center my-0">
+              <thead style="background-color: #ffffff;">
+                <tr>
+                  <th scope="col" style="color: #2b63c6; font-weight: bold; font-size: 85%;">月</th>
+                  <th scope="col" style="color: #2b63c6; font-weight: bold; font-size: 85%;">歩数 (距離換算)</th>
+                  <th scope="col" style="color: #2b63c6; font-weight: bold; font-size: 85%;">達成率</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+      </div>
       <div id="tableContainer" class="container-fluid p-0 my-0">
         <table id="swipeContainer" class="table table-striped text-center my-0  invisible">
           <tbody id="monthly_table">
@@ -801,5 +781,37 @@
       }
     }
   </script>
+  <script type="text/javascript">
+      var tab_monthly = document.getElementById('tab_monthly');
+      var tab_yearly = document.getElementById('tab_yearly');
+      var tab_yearly_row = document.getElementById('tab_yearly_row');
+      var tab_monthly_row = document.getElementById('tab_monthly_row');
+      var month_list = document.getElementById('month_list');
+      var year_list = document.getElementById('year_list');
+      var table1 = document.getElementById('swipeContainer');
+      var table2 = document.getElementById('swipeContainer2');
+      var tableContainer = document.getElementById('tableContainer');
+        function changeTab(id) {
+          if (id == 'tab_yearly') {
+            tab_yearly.className = "text-center selected_tab";
+            tab_monthly.className = "text-center not_selected_tab";
+            tab_yearly_row.className = "row d-flex my-0";
+            tab_monthly_row.className = "row d-flex my-0 invisible";
+            month_list.className= "row d-flex pt-1 invisible";
+            year_list.className = "row d-flex pt-1";
+            table2.className = "table table-striped text-center my-0";
+            table1.className = "table table-striped text-center my-0 invisible";
+          } else if (id == 'tab_monthly') {
+            tab_yearly.className = "text-center not_selected_tab";
+            tab_monthly.className = "text-center selected_tab";
+            tab_yearly_row.className = "row d-flex my-0 invisible";
+            tab_monthly_row.className = "row d-flex my-0";
+            year_list.className = "row d-flex pt-1 invisible";
+            month_list.className = "row d-flex pt-1";
+            table2.className = "table table-striped text-center my-0 invisible";
+            table1.className = "table table-striped text-center my-0";
+          }
+        }
+      </script>
 
 @endsection

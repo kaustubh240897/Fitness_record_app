@@ -384,7 +384,7 @@
  {{ session('successMsg') }}
 </div>
 @endif -->
-<div class='container-fluid' style='background-color: #f2f2f2'>
+<div class='container-fluid' style='background-color: #f2f2f2; margin-top: 28px'>
            <img src='/storage/img/line@3x.png' class='wid' style='margin-top: 6rem;'>
             <b>  <text class='hr my-1'>{{ $tours->tour_comment }}</text></b>
            <img src='/storage/img/lineDown.png' class='wid mt-4'>
