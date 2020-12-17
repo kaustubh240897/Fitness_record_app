@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+
+
 @section('content')
 <head>
 <!-- @if (session('successMsg'))
@@ -270,7 +272,7 @@
 @if(! empty($get_t_collections))
 	<body>
 	<div class='container-fluid'>
-		<div class="row d-flex fixed-top" style="border-bottom: 1px solid white; z-index: 10; background-color: #2b63c6; position: fixed; top:0px;">
+		<div class="row d-flex fixed-top" style="border-bottom: 1px solid white; z-index: 10; background-color: #2b63c6; position: fixed; top:28px;">
 			<div class=' p-2' style="color:white;"><div class="ml-1" style='color: white;'>私のコレクション</div> </div>
 			<div class=' ml-auto  p-2 '>
         <!-- <button class='button mr-1' style="color:white;">ツアーで並べ替え ↑↓ </button> -->

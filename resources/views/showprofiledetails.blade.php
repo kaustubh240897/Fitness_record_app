@@ -58,7 +58,7 @@
 			  display: block;
 			  margin-left: auto;
 			  margin-right: auto;
-			  margin-top: 5rem;
+			  margin-top: 6rem;
 			  margin-left: 42%;
 
 			  position: relative;
@@ -170,42 +170,20 @@
 @if(! empty($m_users) && $m_users->users_id == Auth::id())
 <body style='background-color: white;'>
 
-        <div class="fixed-top">
-          <div class="container-fluid bg-white  py-0 my-0 px-3" style="height:28px !important;">
-            <div class="d-flex flex-row justify-content-between">
-              <div class="p-0">
-                <img src="{{ asset('storage/mypage/ico_back.png') }}" alt="" onclick="goBack()" style="cursor: pointer;">
-              </div>
-              <div class="p-0">
-                <p class="text-center" style="font-size: 120%">ウォーキング</p>
-              </div>
-              <div class="p-0">
-                <a href="/padometerscreen"><img src="{{ asset('storage/mypage/close.png') }}" alt=""></a>
-              </div>
-            </div>
-          </div>
-          <script>
-          function goBack() {
-            window.history.back();
-          }
-          </script>
-          <div class="row d-flex " style="border-bottom: 1px #003366 solid; z-index: 10; background-color: #2b63c6;  box-shadow: 5px 2px #003366;">
+	    	<div class='container-fluid' style="margin-top: 28px">
+			    <div class="row d-flex fixed-top" style="border-bottom: 1px white; z-index: 10; background-color: #2b63c6; position: fixed; top:28px; box-shadow: 5px 2px #003366;">
 				   <div class='col-12 p-2' style="color:white;"><div class="ml-4" style='color: white;'>構成 </div> </div>
 
 			    </div>
-          <div class="row wrapper1 " style='z-index: 0;'>
+
+            <div>
+			    <div class="row wrapper1 fixed-top" style='z-index: 0;'>
 				    <div class='col-12 center'>  <img src='/storage/img/ico.png'> <b class='color'>Lv.{{ $m_users->tour_level }} </b> </div>
 
 				    <div class='col-12 center1'><img class='wid1' src='/storage/img/text@3x.png'> </div>
 
 
 			    </div>
-        </div>
-	    	<div class='container-fluid ' style="margin-top: 70px !important">
-
-
-            <div>
-
 			    <div class='row'>
 
 			    	<div class='col-12 top'> <div class='text-center mt-2'> <b>個人設定 </b> </div>

@@ -201,7 +201,7 @@
   </style>
 
 
-  <div class="container-fluid sticky-top">
+  <div class="container-fluid sticky-top" style="margin-top: 28px">
     			    <div class="row d-flex justify-content-between pb-0 mb-0" style="background-color: #2B63C6; height:30px">
     				        <div class='col-4 shadow-lg mb-0 pb-0 mt-1 pt-1' > <p class="shadow-lg mb-0 pb-0" style="color:white; font-size: 80%">マイヒストリ</p> </div>
                       <!-- <p class="text-center" style="color:white; font-size: 80%">マイヒストリ</p> -->
@@ -319,7 +319,7 @@
             </table>
           </div>
       </div>
-      <div id="tableContainer" class="container-fluid p-0 my-0">
+      <div id="tableContainer" class="container-fluid p-0 my-0" style="margin-top: 28px">
         <table id="swipeContainer" class="table table-striped text-center my-0  invisible">
           <tbody id="monthly_table">
 
@@ -330,13 +330,14 @@
 
           </tbody>
         </table>
-        <div class="goalTxt text-center" style="border-radius: 18px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-    background-color: #113a83; color: #fff">
-          1日の目標 {{$get_m_user_monthly_goal}}歩 ({{ $get_m_user_monthly_goal*$get_m_user_stride/100000 }} km)
-        </div>
+
       </div>
-    <div style='padding-top:25rem;'>
+      <div class="goalTxt text-center" style="border-radius: 18px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  background-color: #113a83; color: #fff">
+        1日の目標 {{$get_m_user_monthly_goal}}歩 ({{ $get_m_user_monthly_goal*$get_m_user_stride/100000 }} km)
+      </div>
+    <div style='padding-top:0;'>
       <div class='d-flex flex-row' style='background-color: #eef4f6; position: relative; z-index: 5;'>
 				<div class='col-12'>
 				<img style='width: 100%; height: auto;' src='/storage/img/bg@3x.png'>
