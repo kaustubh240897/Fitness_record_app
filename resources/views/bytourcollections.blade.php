@@ -87,7 +87,7 @@
 				display: block;
 				margin-left: auto;
 				margin-right: auto;
-				margin-top: 3rem !important;
+				margin-top: 4rem !important;
 
 				position: relative;
 				z-index: 1;
