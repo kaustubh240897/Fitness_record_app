@@ -288,52 +288,40 @@
 <body>
 @if(! empty($my_checkpoint))
   		<div class='container-fluid' style="margin-top: 28px;">
+		    <div class="row d-flex fixed-top" style=" z-index:1; background-color: #2b63c6; position: fixed; top:28px;">
+          <div class='col-10 p-2 mx-3' style="color:white;"><img class='mx-2' src='/storage/img/label-1.png'>{{ $my_checkpoint->m_collections->collection_title }}
+          </div>
+			  </div>
 
-
-		   <div class="row d-flex fixed-top" style=" z-index:1; background-color: #2b63c6; position: fixed; top:28px;">
-
-				<div class='col-10 p-2 mx-3' style="color:white;"><img class='mx-2' src='/storage/img/label-1.png'>{{ $my_checkpoint->m_collections->collection_title }}</div>
-
-			</div>
-
-
-
-			<div class='row fixed-top' style='position: relative; z-index: 3;'>
-				<div class='col-12 wrapper'>
-					<p class='ml-3 mt-3 color'>{{ $my_checkpoint->tours->tour_title }} </p>
-					<p class='color'> <img class='ml-3' src='/storage/img/label-1.png'> {{ $my_checkpoint->m_collections->collection_title }} </p>
-
+			  <div class='row fixed-top' style='position: relative; z-index: 3;'>
+				  <div class='col-12 wrapper'>
+					  <p class='ml-3 mt-3 color'>{{ $my_checkpoint->tours->tour_title }} </p>
+					  <p class='color'> <img class='ml-3' src='/storage/img/label-1.png'> {{ $my_checkpoint->m_collections->collection_title }} </p>
 			    </div>
-            </div>
+        </div>
 
 	    </div>
-
 	    <div>
 		    <img style='z-index: -1; margin-top: 0px' src='/storage/img/img@3x.png' class='wid'>
-		</div>
-
-
+		  </div>
 
 	    <div class='container-fluid' style='background-color: #f2f2f2'>
 	        <img src='/storage/img/line@3x.png' class='wid my-2'>
-	        <b>  <text class='hr my-1'>{{ $my_checkpoint->comments }} </text></b>
-	        <img src='/storage/img/lineDown.png' class='wid mt-2'>
+	          <b>  <text class='hr my-1'>{{ $my_checkpoint->comments }} </text></b>
+	          <img src='/storage/img/lineDown.png' class='wid mt-2'>
 
-	        <div class='col-12 my-2' style='color: #2b63c6;'>
-                <h6> A relaxing trip to herokiku mountains.</h6>
+	            <div class='col-12 my-2' style='color: #2b63c6;'>
+                <h6> {{ $my_checkpoint->tours->tour_title }}</h6>
+	            </div>
 
-	        </div>
-
-
-    <div class="container-fluid pt-3" id="progress_bar">
-
-    </div>
-		</div>
+              <div class="container-fluid pt-3" id="progress_bar">
+              </div>
+		  </div>
 		<div class='d-flex flex-row' style='background-color: #eef4f6; position: relative; z-index: 5;'>
 			<div class='col-12'>
-			<img style='width: 100%; height: auto;' src='/storage/img/bg@3x.png'>
-		</div>
-	</div>
+			  <img style='width: 100%; height: auto;' src='/storage/img/bg@3x.png'>
+		  </div>
+	  </div>
 
 
 <script type="text/javascript">
