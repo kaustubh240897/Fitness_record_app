@@ -249,13 +249,13 @@ background-color: #2b63c6;" id="dropdownMenu2" data-toggle="dropdown" aria-haspo
     console.log("yes");
     var url = "";
     if (id == "sort_newest") {
-      url = "/reversemycollection";
+      url = "http://3.114.126.114/reversemycollection";
       location.reload();location.href=url;
     } else if (id == "sort_oldest") {
-      url = "/mycollection";
+      url = "http://3.114.126.114/mycollection";
       location.reload();location.href=url;
     } else {
-      url = "/bytourcollection";
+      url = "http://3.114.126.114/bytourcollection";
       location.reload();location.href=url;
     }
   }
