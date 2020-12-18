@@ -251,12 +251,9 @@ class m_UsersWebController extends Controller
                     $checkpointsr = null;
                     }
 
-                if($get_t_tour !=null){
-                    $steps = t_Steps::where('m__users_id',$m__users_id)->where('step_actual_datetime', '>=', $step_start_datetime)->get()->sum('steps');
-                }
-                else{
-                    $steps = 0;
-                }
+                
+                $steps = t_Steps::where('m__users_id',$m__users_id)->where('step_actual_datetime', '>=', $step_start_datetime)->get()->sum('steps');
+                
             }
             else{
                 $steps = 0;
