@@ -690,7 +690,9 @@
   console.log(checkpoints);
 </script>
 @else
-    <h4> チェックポイントはありません。 </h4>
+  <div class='text-center'>
+    <h4 class='mt-5'> チェックポイントはありません。 </h4>
+  </div>
 @endif
 
 </body>

@@ -538,7 +538,9 @@ padding-top: 0
   </div> -->
   
   @if ( empty($m__users_id))
-    <h2> 最初にプロファイルを作成してください <a href="/" style="color:blue !important; margin-top: 28px !important"> ここをクリック </a> </h2> <br/>
+  <div class='text-center'>
+    <h2 class='mt-5'> 最初にプロファイルを作成してください <a href="/" style="color:blue !important; margin-top: 28px !important"> ここをクリック </a> </h2>
+  </div>
   @else
 
   <a href="{{ url('/mypage') }}"><img style="border-radius: 50%" class="refBtn mr-2" src="{{ asset('storage/mypage/ref-blue.png') }}" alt=""></a>

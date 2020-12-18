@@ -400,7 +400,9 @@ background-color: #113a83; color: #fff">
     <br> -->
     @endforeach
     @else
-    <h4> 申し訳ありませんが、今まで歴史がありません！ </h4>
+    <div class='text-center'>
+    <h4 class='mt-5'> 申し訳ありませんが、今まで歴史がありません！ </h4>
+    </div>
     @endif
     <script type="text/javascript">
     var is_rev = {{$reverse}};

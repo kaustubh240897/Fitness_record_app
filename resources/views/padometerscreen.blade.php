@@ -325,7 +325,9 @@ padding-right: -8px;
 </style>
 
 @if ( empty($m__users_id))
- <h2> 最初にプロファイルを作成してください <a href="/" style="color: blue !important">ここをクリック </a> </h2> <br/>
+<div class='text-center'>
+ <h2 class='mt-5'> 最初にプロファイルを作成してください <a href="/" style="color: blue !important">ここをクリック </a> </h2>
+</div>
 @else
 <div class="container-fluid pt-3" style="color:#FFFFFF; border-radius: 15px;">
       <div class="row justify-content-center">

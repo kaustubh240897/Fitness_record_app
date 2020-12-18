@@ -1121,7 +1121,9 @@
 
 
   @else
-    <h4> コレクションはありません。 </h4>
+  <div class='text-center'>
+    <h4 class='mt-5'> コレクションはありません。 </h4>
+  </div>
   @endif
   <div class='d-flex flex-row' style='background-color: #eef4f6; position: relative; z-index: 5; '>
       <div class='col-12'>
