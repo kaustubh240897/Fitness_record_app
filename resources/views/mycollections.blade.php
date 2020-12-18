@@ -238,13 +238,13 @@
     var url = "";
     if (id == "sort_newest") {
       url = "http://3.114.126.114/reversemycollection";
-      window.location.href=url;
+      document.location=url;
     } else if (id == "sort_oldest") {
       url = "http://3.114.126.114/mycollection";
-      window.location.href=url;
+      document.location=url;
     } else {
       url = "http://3.114.126.114/bytourcollection";
-      window.location.href=url;
+      document.location=url;
     }
   }
   </script>
