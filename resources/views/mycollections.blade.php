@@ -156,7 +156,7 @@
               </a>
               <a id="sort_newest" onclick="sortHistory(this.id);">   <label class="radio-inline pl-2 pb-2">
                 <input id="sort_newest_radio" class="pt-3" type="radio" name="optradio"><span id="sort_oldest_span" class="not_selected_sort pl-2 pb-1" style="font-size: 100%">実績の古い順2</span>
-                </label> 
+                </label>
               </a>
             </div>
           </div>
@@ -238,18 +238,18 @@
     var url = "";
     if (id == "sort_newest") {
       url = "http://3.114.126.114/reversemycollection";
-      location.reload();location.href=url;
+      window.location.href=url;
     } else if (id == "sort_oldest") {
       url = "http://3.114.126.114/mycollection";
-      location.reload();location.href=url;
+      window.location.href=url;
     } else {
       url = "http://3.114.126.114/bytourcollection";
-      location.reload();location.href=url;
+      window.location.href=url;
     }
   }
   </script>
   </script>
-  
+
 </body>
 
 @endsection
