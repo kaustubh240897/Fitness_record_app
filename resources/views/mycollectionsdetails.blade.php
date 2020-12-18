@@ -1128,7 +1128,7 @@
   <div class='d-flex flex-row' style='background-color: #eef4f6; position: relative; z-index: 5; '>
       <div class='col-12'>
       <img style='width: 100%; height: auto;' src='/storage/img/bg@3x.png'>
-</div>
+  </div>
 </div>
   <div class="container-fluid navfix" style="background-color: #2b63c6;">
     <div class="row d-flex text-center">
@@ -1136,7 +1136,7 @@
         <a href='/mypage'>
           <img id="box1_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box1.png')}}" alt="">
           <p id="box1_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: normal;text-align: center;color: #fff;">マイページ</p>
-      </a>
+        </a>
       </div>
       <div class="col-3 padding-0 pt-2 navItem" style="border-right: 2px solid #113a83;" id="box2" onclick="navItemClick(this.id);">
         <a href='/mycollection'>

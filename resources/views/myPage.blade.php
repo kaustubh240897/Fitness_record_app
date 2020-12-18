@@ -548,65 +548,61 @@ padding-top: 0
         <div class="row" style="padding: 0 16px 0 0;
                                 box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
                                 background-color: #ffdd80;">
-          <div class="col-2 text-center pl-2 p-2" style=";
-          background-color: #ffd00d;">
-
-                <img src="{{ asset('storage/mypage/ico_alert.svg') }}" alt="Icon">
-
+          <div class="col-2 text-center pl-2 p-2" style="background-color: #ffd00d;">
+              <img src="{{ asset('storage/mypage/ico_alert.svg') }}" alt="Icon">
           </div>
           <div class="col-10">
             <p class="pt-1" style="
-    font-family: RoundedMplus1c;
-    font-size: 90%;
-    text-align: left;
-    color: #5f2f00;">コレクションに99件のアイテムが追加されました！</p>
+              font-family: RoundedMplus1c;
+              font-size: 90%;
+              text-align: left;
+              color: #5f2f00;">コレクションに99件のアイテムが追加されました！</p>
           </div>
         </div>
-      </div>
+  </div>
       <div class="container-fluid">
-    <div class="row" style=" padding: 14px 1px 1px;
-background-color: #2b63c6;">
-      <div class="col-1 text-right">
-        @if (($steps*$get_m_user_stride/100000) >  $total )
-        <img src="{{ asset('storage/mypage/ico_tours.svg') }}" class="pl-2" alt="">
-        @endif
-      </div>
-      <div class="col-9">
-        <p class="pl-2" style="margin: 1px 0 2px 10px;
-font-family: RoundedMplus1cBold;
-font-weight: bold;
-text-align: left;
-color: #ffffff;">北陸３県ゆったり満喫旅</p>
-      </div>
+        <div class="row" style=" padding: 14px 1px 1px;
+          background-color: #2b63c6;">
+          <div class="col-1 text-right">
+            @if (($steps*$get_m_user_stride/100000) >  $total )
+              <img src="{{ asset('storage/mypage/ico_tours.svg') }}" class="pl-2" alt="">
+            @endif
+          </div>
+          <div class="col-9">
+            <p class="pl-2" style="margin: 1px 0 2px 10px;
+              font-family: RoundedMplus1cBold;
+              font-weight: bold;
+              text-align: left;
+              color: #ffffff;">北陸３県ゆったり満喫旅</p>
+          </div>
+        </div>
+        <div class="row" style=" padding: 5px 1px 10px;
+          background-color: #2b63c6;">
+          <div class="col-1 text-right">
+            <img src="{{ asset('storage/mypage/ico_foot.svg') }}" class="pl-3" alt="">
+          </div>
+          <div class="col-9">
+            <p class="pl-2" style="margin: 0 0 0 12px;
+              object-fit: contain;
+              font-family: RoundedMplus1c;
+              font-size: 16px;
+              font-weight: normal;
+              font-stretch: normal;
+              font-style: normal;
+              line-height: 1.56;
+              letter-spacing: normal;
+              text-align: left;
+              color: #ffd00d;;">{{ number_format($steps*$get_m_user_stride/100000,1,'.','') }}km / {{ $total }}km</p>
+          </div>
+        </div>
     </div>
-    <div class="row" style=" padding: 5px 1px 10px;
-background-color: #2b63c6;">
-      <div class="col-1 text-right">
-        <img src="{{ asset('storage/mypage/ico_foot.svg') }}" class="pl-3" alt="">
-      </div>
-      <div class="col-9">
-        <p class="pl-2" style="margin: 0 0 0 12px;
-object-fit: contain;
-font-family: RoundedMplus1c;
-font-size: 16px;
-font-weight: normal;
-font-stretch: normal;
-font-style: normal;
-line-height: 1.56;
-letter-spacing: normal;
-text-align: left;
-color: #ffd00d;;">{{ number_format($steps*$get_m_user_stride/100000,1,'.','') }}km / {{ $total }}km</p>
-      </div>
+    @if(! empty($checkpoints))
+    <div class="container-fluid pt-3" id="progress_bar">
     </div>
-  </div>
-  @if(! empty($checkpoints))
-  <div class="container-fluid pt-3" id="progress_bar">
-
-  </div>
-  @else
-  <h4> 申し訳ありませんが、チェックポイントはありません。ツアーを選択してください。</h4>
-  @endif
-  <div class="container pt-3 pb-3">
+    @else
+    <h4> 申し訳ありませんが、チェックポイントはありません。ツアーを選択してください。</h4>
+    @endif
+    <div class="container pt-3 pb-3">
       <div class="row justify-content-between w-75 mx-auto p-0" style="border-radius: 20px; border: solid 1px #2b63c6;">
         <div class="col-10">
           <a href="/createtour"><p class="p-1 my-auto" style="font-size: 12px; color: #2b63c6">ツアーの一覧や変更はこちら</p></a>
@@ -622,7 +618,6 @@ color: #ffd00d;;">{{ number_format($steps*$get_m_user_stride/100000,1,'.','') }}
     </div>
     @if($today_data >= $get_m_user_daily_goal)
     <div class="container" style="background: url({{asset('storage/padometerscreen/complete01.png')}}); background-size: cover; background-position: center; background-repeat: no-repeat">
-
       <div class="container-fluid w-75 pb-3">
         <div class="speech-bubble-yel text-center">
           <p class="mb-0 font-weight-bold" style="font-size:90%; color:white;">今日の目標達成！</p>
@@ -642,29 +637,28 @@ color: #ffd00d;;">{{ number_format($steps*$get_m_user_stride/100000,1,'.','') }}
         <p class="mb-0" style="font-size:70%; color: #113A83">{{ $get_m_user_daily_goal*$get_m_user_stride/100000 }} (km)</p>
       </div>
     </div>
-    </div>
-    </div>
+  </div>
+</div>
     @else
     <div class="container">
-
       <div class="container-fluid w-75 pb-3">
         <div class="speech-bubble2 text-center">
           <p class="mb-0 font-weight-bold" style="font-size:90%; color:#113A83;">あと {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} で目標達成！</p>
         </div>
       </div>
-    <!-- <div id="bg_season2" class="container-fluid pt-3 pb-3" style="background-size: 100% 80%; background-position: right 100%;; background-repeat: no-repeat"> -->
-    <div class="relative w-100 h-50" style="background: url({{asset('storage/padometerscreen/graph.png')}}); background-size: 52% 104%; background-position: center; background-repeat: no-repeat">
-      <canvas id="myChart"></canvas>
-      <div class="absolute-center text-center">
-        <p class="mb-0 p-0" style="font-size:70%; color:#2b63c6;"> {{ ($today_data)*$get_m_user_stride/100000 }} km</p>
-        <p class="font-weight-bold mb-0 p-0 text-wrap" style="color:#2b63c6;">{{ $today_data }}歩</p>
-        <p class="mb-0 mt-0 p-0" style="font-size:70%;">---------------</p>
-        <p class="font-weight-bold mb-0 mt-0" style="color:#113A83;">{{ $get_m_user_daily_goal }}歩</p>
-        <p class="mb-0" style="font-size:70%; color:#113A83;">{{ $get_m_user_daily_goal*$get_m_user_stride/100000 }} (km)</p>
+      <!-- <div id="bg_season2" class="container-fluid pt-3 pb-3" style="background-size: 100% 80%; background-position: right 100%;; background-repeat: no-repeat"> -->
+      <div class="relative w-100 h-50" style="background: url({{asset('storage/padometerscreen/graph.png')}}); background-size: 52% 104%; background-position: center; background-repeat: no-repeat">
+        <canvas id="myChart"></canvas>
+        <div class="absolute-center text-center">
+          <p class="mb-0 p-0" style="font-size:70%; color:#2b63c6;"> {{ ($today_data)*$get_m_user_stride/100000 }} km</p>
+          <p class="font-weight-bold mb-0 p-0 text-wrap" style="color:#2b63c6;">{{ $today_data }}歩</p>
+          <p class="mb-0 mt-0 p-0" style="font-size:70%;">---------------</p>
+          <p class="font-weight-bold mb-0 mt-0" style="color:#113A83;">{{ $get_m_user_daily_goal }}歩</p>
+          <p class="mb-0" style="font-size:70%; color:#113A83;">{{ $get_m_user_daily_goal*$get_m_user_stride/100000 }} (km)</p>
+        </div>
       </div>
     </div>
-    </div>
-    </div>
+  </div>
     @endif
     <div class="container pt-3" >
       <p class="w-100 text-center mb-0 pb-0 overlay-text1" style="font-weight: bold; color: #2b63c6;">最近の歩数</p>
@@ -679,7 +673,6 @@ color: #ffd00d;;">{{ number_format($steps*$get_m_user_stride/100000,1,'.','') }}
     </div>
     @if( $current_month_steps  >=  $get_m_user_monthly_goal )
     <div class="container pt-3" style="background: url({{asset('storage/padometerscreen/complete01.png')}}); background-size: cover; background-position: center; background-repeat: no-repeat">
-
       <div id="compStar" class="">
         <div class="container-fluid w-75 d-md-none">
           <br>
@@ -733,8 +726,8 @@ color: #ffd00d;;">{{ number_format($steps*$get_m_user_stride/100000,1,'.','') }}
                   <img src="{{asset('storage/mypage/bg@3x.png')}}" alt="" style="width: 100%;">
                 </div>
               </div>
-              </div>
-    </div>
+            </div>
+          </div>
     @else
     <div class="container">
       <!-- <div class="container-fluid d-lg-none">

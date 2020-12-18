@@ -341,42 +341,33 @@
 </head>
 
 <body style='background-color: #f2f2f2'>
-<div class="fixed-top">
-  <div class="container-fluid bg-white  py-0 my-0 px-3" style="height:28px !important;">
-    <div class="d-flex flex-row justify-content-between">
-      <div class="p-0">
-        <img src="{{ asset('storage/mypage/ico_back.png') }}" alt="" onclick="goBack()" style="cursor: pointer;">
-      </div>
-      <div class="p-0">
-        <p class="text-center" style="font-size: 120%">ウォーキング</p>
-      </div>
-      <div class="p-0">
-        <a href="/padometerscreen"><img src="{{ asset('storage/mypage/close.png') }}" alt=""></a>
+  <div class="fixed-top">
+    <div class="container-fluid bg-white  py-0 my-0 px-3" style="height:28px !important;">
+      <div class="d-flex flex-row justify-content-between">
+        <div class="p-0">
+          <img src="{{ asset('storage/mypage/ico_back.png') }}" alt="" onclick="goBack()" style="cursor: pointer;">
+        </div>
+        <div class="p-0">
+          <p class="text-center" style="font-size: 120%">ウォーキング</p>
+        </div>
+        <div class="p-0">
+          <a href="/padometerscreen"><img src="{{ asset('storage/mypage/close.png') }}" alt=""></a>
+        </div>
       </div>
     </div>
-  </div>
-  <script>
-  function goBack() {
-    window.history.back();
-  }
-  </script>
-  <div class=" row flex-row" style=" z-index:0; background-color: #2b63c6;">
-
-     <div class='col-10 p-2 mx-3' style="color:white;">{{ $tours->tour_title }} </div>
-
-       <div class='col-12 '> <img class='mx-2 mb-2' src='/storage/img/ico.png'> <font style='color:#ffcc00;'>{{ $total }} Km </font></div>
-
-
+    <script>
+      function goBack() {
+      window.history.back();
+      }
+    </script>
+    <div class=" row flex-row" style=" z-index:0; background-color: #2b63c6;">
+      <div class='col-10 p-2 mx-3' style="color:white;">{{ $tours->tour_title }} </div>
+        <div class='col-12 '> <img class='mx-2 mb-2' src='/storage/img/ico.png'> <font style='color:#ffcc00;'>{{ $total }} Km </font></div>
     <div>
-
 </div>
-
- </div>
+</div>
 </div>
 <div class='container-fluid'>
-
-
-
 
 </div>
 <!-- @if (session('successMsg'))
@@ -386,31 +377,29 @@
 @endif -->
 <div class='container-fluid' style='background-color: #f2f2f2; margin-top: 28px'>
            <img src='/storage/img/line@3x.png' class='wid' style='margin-top: 6rem;'>
-            <b>  <text class='hr my-1'>{{ $tours->tour_comment }}</text></b>
-           <img src='/storage/img/lineDown.png' class='wid mt-4'>
+              <b>  <text class='hr my-1'>{{ $tours->tour_comment }}</text></b>
+            <img src='/storage/img/lineDown.png' class='wid mt-4'>
 
+            @if(! empty($checkpoints))
+              <div class="container-fluid pt-3" id="progress_bar">
+              </div>
+            @else
+              <h4> 申し訳ありませんが、チェックポイントはありません。ツアーを選択してください。</h4>
+            @endif
+            @if(! empty($current_tour))
+              @if($current_tour->status == 'Done')
+                <h5> おめでとうございます！ツアーが完了しました。</h5>
+              @else
+                <h3>あなたがカバーした {{ $user_stride/100000 * $steps }} (Km) </h3>
+              @endif
+            @else
+              <h4> ツアーを選択していません。ツアーを選択してください </h4>
+            @endif
 
-@if(! empty($checkpoints))
-<div class="container-fluid pt-3" id="progress_bar">
-
-</div>
-@else
-<h4> 申し訳ありませんが、チェックポイントはありません。ツアーを選択してください。</h4>
-@endif
-@if(! empty($current_tour))
-  @if($current_tour->status == 'Done')
-    <h5> おめでとうございます！ツアーが完了しました。</h5>
-  @else
-    <h3>あなたがカバーした {{ $user_stride/100000 * $steps }} (Km) </h3>
-  @endif
-  @else
-    <h4> ツアーを選択していません。ツアーを選択してください </h4>
-@endif
-
-<div class='row'>
-                      <div class='col-12 text-center my-3' style='margin-bottom:25% !important;'><a href='/createtour'> <p class="mb-4  text-center" style="border: solid 1px #2b63c6; border-radius: 15px;"><  リストに戻る</p> </a></div>
-                        <div class='col-12 text-center'>
-                          <form action="{{ route('tourstore', $tours->id) }}" method="POST" >
+            <div class='row'>
+              <div class='col-12 text-center my-3' style='margin-bottom:25% !important;'><a href='/createtour'> <p class="mb-4  text-center" style="border: solid 1px #2b63c6; border-radius: 15px;"><  リストに戻る</p> </a></div>
+                <div class='col-12 text-center'>
+                  <form action="{{ route('tourstore', $tours->id) }}" method="POST" >
                             {{ csrf_field() }}
                             {{ method_field('post') }}
                             <!-- Button trigger modal -->
@@ -429,98 +418,86 @@
                                       <span aria-hidden="true">&times;</span>
                                     </button>
                                   </div>
-                                  <div class="modal-body">
+                                <div class="modal-body">
                                   <div class="container">
 
                                     <div class="row justify-content-center px-3">
                                       <div class="col">
                                         <div class="form-check form-check-inline">
-                                        <?php $value = Session::get('reverse','false'); ?>
+                                          <?php $value = Session::get('reverse','false'); ?>
                                           @if($value == 'false')
-                                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="3" checked>
+                                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="3" checked>
                                           @else
-                                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="3">
+                                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="3">
                                           @endif
-
-                                        <label class="form-check-label" style='color:#2b63c6;' for="inlineRadio1">通常の踏破</label>
-                                      </div>
-                                      <!-- </div> -->
-                                      <br>
-                                      <!-- <div class="col"> -->
+                                          <label class="form-check-label" style='color:#2b63c6;' for="inlineRadio1">通常の踏破</label>
+                                        </div>
+                                          <!-- </div> -->
+                                          <br>
+                                          <!-- <div class="col"> -->
                                         <div class="form-check form-check-inline">
                                           @if($value == 'true')
-                                          <input class="form-check-input ml-3" type="radio" name="gridRadios" id="gridRadios2" value="4" checked>
+                                            <input class="form-check-input ml-3" type="radio" name="gridRadios" id="gridRadios2" value="4" checked>
                                           @else
                                             <input class="form-check-input ml-3" type="radio" name="gridRadios" id="gridRadios2" value="4">
                                           @endif
                                           <label class="form-check-label" style='color:#2b63c6;' for="inlineRadio2">逆方向に踏破</label>
                                         </div>
                                       </div>
-
-                                  </div>
-                                  <hr/>
-                                  <img class='mr-1' style='width:100%; height:auto;' src='/storage/img/tour-change.png'>
-                                  <div class='container mt-5'>
-
-
-                                      @foreach($constant_data as $c)
-                                      <div class='row py-2' style='background-color: #fdf2e3;' >
-                                      <div class='col-1'> <img class='mr-2' src='/storage/img/point.png'></div><div class='col-10'> {{ $c }}
-                                      </div>
-                                      </div>
-                                      @endforeach
-
-
-                                      </div>
-                                  </div>
-                                  <div class="modal-footer">
-
-
-                                    <div class='row'>
-                                    <div class='col-12 text-center mr-2'><button type="submit" class="button" style='background-color:#2b63c6 ; color:white'>ツアーの変更</button></div>
-
-                                    <div class='col-12 text-center mr-2'><button type="button" class='button mt-2' style='background-color:white;' data-dismiss="modal">閉じる</button></div>
                                     </div>
-                                  </div>
+                                    <hr/>
+                                    <img class='mr-1' style='width:100%; height:auto;' src='/storage/img/tour-change.png'>
+                                    <div class='container mt-5'>
+                                      @foreach($constant_data as $c)
+                                        <div class='row py-2' style='background-color: #fdf2e3;' >
+                                          <div class='col-1'> <img class='mr-2' src='/storage/img/point.png'></div><div class='col-10'> {{ $c }}
+                                          </div>
+                                        </div>
+                                      @endforeach
+                                    </div>
                                 </div>
+                                  <div class="modal-footer">
+                                    <div class='row'>
+                                      <div class='col-12 text-center mr-2'><button type="submit" class="button" style='background-color:#2b63c6 ; color:white'>ツアーの変更</button></div>
+                                    <div class='col-12 text-center mr-2'><button type="button" class='button mt-2' style='background-color:white;' data-dismiss="modal">閉じる</button></div>
+                                  </div>
                               </div>
-                            </div>
-
-                          </form>
                           </div>
-                    </div>
+                        </div>
+                      </div>
+                    </form>
+                </div>
+              </div>
+          </div>
 
-
-</div>
-
-<div class="container-fluid navfix" style="background-color: #2b63c6;">
-  <div class="row d-flex text-center">
-    <div class="col-3 padding-0 pt-2 navItem" style="border-right: 2px solid #113a83;" id="box1" onclick="navItemClick(this.id);">
-      <a href='/mypage'>
-        <img id="box1_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box1.png')}}" alt="">
-        <p id="box1_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: normal;text-align: center;color: #fff;">マイページ</p>
-    </a>
-    </div>
-    <div class="col-3 padding-0 pt-2 navItem" style="border-right: 2px solid #113a83;" id="box2" onclick="navItemClick(this.id);">
-      <a href='/mycollection'>
-        <img id="box2_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box2.png')}}" alt="">
-        <p id="box2_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: normal;text-align: center;color: #fff;">コレクション</p>
-      </a>
-    </div>
-    <div class="col-3 padding-0 pt-2 navItem" style="border-right: 2px solid #113a83;" id="box3" onclick="navItemClick(this.id);">
-      <a href="{{ route('userhistory', [now()->year,now()->month]) }}" >
-        <img id="box3_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box3.png')}}" alt="">
-        <p id="box3_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: normal;text-align: center;color: #ffffff;">マイヒストリ</p>
-      </a>
-    </div>
-    <div class="col-3 padding-0 pt-2 navItem" id="box4" onclick="navItemClick(this.id);">
-      <a href="/showprofiledetails">
-        <img id="box4_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box4.png')}}" alt="">
-        <p id="box4_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: normal;text-align: center;color: #ffffff;">設定</p>
-      </a>
+  <div class="container-fluid navfix" style="background-color: #2b63c6;">
+    <div class="row d-flex text-center">
+      <div class="col-3 padding-0 pt-2 navItem" style="border-right: 2px solid #113a83;" id="box1" onclick="navItemClick(this.id);">
+        <a href='/mypage'>
+          <img id="box1_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box1.png')}}" alt="">
+          <p id="box1_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: normal;text-align: center;color: #fff;">マイページ</p>
+        </a>
+      </div>
+      <div class="col-3 padding-0 pt-2 navItem" style="border-right: 2px solid #113a83;" id="box2" onclick="navItemClick(this.id);">
+        <a href='/mycollection'>
+          <img id="box2_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box2.png')}}" alt="">
+          <p id="box2_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: normal;text-align: center;color: #fff;">コレクション</p>
+        </a>
+      </div>
+      <div class="col-3 padding-0 pt-2 navItem" style="border-right: 2px solid #113a83;" id="box3" onclick="navItemClick(this.id);">
+        <a href="{{ route('userhistory', [now()->year,now()->month]) }}" >
+          <img id="box3_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box3.png')}}" alt="">
+          <p id="box3_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: normal;text-align: center;color: #ffffff;">マイヒストリ</p>
+        </a>
+      </div>
+      <div class="col-3 padding-0 pt-2 navItem" id="box4" onclick="navItemClick(this.id);">
+        <a href="/showprofiledetails">
+          <img id="box4_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box4.png')}}" alt="">
+          <p id="box4_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: normal;text-align: center;color: #ffffff;">設定</p>
+        </a>
+      </div>
     </div>
   </div>
-</div>
 </body>
 
 <script type="text/javascript">
