@@ -18,7 +18,7 @@
     <body>
 
         <div class='container'>
-            <div class='row'>
+            <div class='row mt-5'>
                 <div class='col-lg-offset-3 col-lg-6'>
                     @if (count($errors) > 0)
                         @foreach ($errors->all() as $error)

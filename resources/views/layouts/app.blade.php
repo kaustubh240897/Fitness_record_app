@@ -27,7 +27,7 @@
 <body>
     <div id="app">
     @guest
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style='top:28px;'>
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/padometerscreen') }}">
                     WalkingApp
