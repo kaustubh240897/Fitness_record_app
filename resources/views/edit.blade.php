@@ -1132,6 +1132,8 @@ var dailygoal_7 = "";
     estimateMonthlyDist();
   </script> -->
 @else
-  <h3> Sorry! You are not authorized to see this page. </h3>
+<div class='text-center'>
+  <h3 class='mt-5'> ごめんなさい！このページを表示する権限がありません。</h3>
+</div>
 @endif
 @endsection

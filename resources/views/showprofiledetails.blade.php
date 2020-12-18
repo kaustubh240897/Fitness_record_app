@@ -344,6 +344,8 @@
     </div>
     	</body>
 @else
-  <h3> ごめんなさい！このページにアクセスする権限がありません。 </h3>
+<div class='text-center'>
+  <h3 class='mt-5'> ごめんなさい！このページにアクセスする権限がありません。 </h3>
+</div>
 @endif
 @endsection
