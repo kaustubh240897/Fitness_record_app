@@ -226,27 +226,28 @@
   </div>
 
   <script type="text/javascript">
-      if ({{$index}} == 0) {
-        document.getElementById("group_by_tour_radio").checked = true;
-      } else if ({{$index}} == 1) {
-        document.getElementById("sort_oldest_radio").checked = true;
-      } else if ({{$index}} == 2) {
-        document.getElementById("sort_newest_radio").checked = true;
-      }
-      function sortHistory(id) {
-        console.log("yes");
-        var url = "";
-        if (id == "sort_newest") {
-          url = "/reversemycollection";
-          location.reload();location.href=url;
-        } else if (id == "sort_oldest") {
-          url = "/mycollection";
-          location.reload();location.href=url;
-        } else {
-          url = "/bytourcollection";
-          location.reload();location.href=url;
-        }
-      }
+  if ({{$index}} == 0) {
+		document.getElementById("group_by_tour_radio").checked = true;
+	} else if ({{$index}} == 1) {
+		document.getElementById("sort_oldest_radio").checked = true;
+	} else if ({{$index}} == 2) {
+		document.getElementById("sort_newest_radio").checked = true;
+	}
+  function sortHistory(id) {
+    console.log("yes");
+    var url = "";
+    if (id == "sort_newest") {
+      url = "http://3.114.126.114/reversemycollection";
+      location.reload();location.href=url;
+    } else if (id == "sort_oldest") {
+      url = "http://3.114.126.114/mycollection";
+      location.reload();location.href=url;
+    } else {
+      url = "http://3.114.126.114/bytourcollection";
+      location.reload();location.href=url;
+    }
+  }
+  </script>
   </script>
   
 </body>
