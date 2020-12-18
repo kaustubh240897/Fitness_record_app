@@ -193,6 +193,7 @@
   font-weight: normal;
 }
 </style>
+@if(! empty($dates))
 <div class="container-fluid sticky-top" style="top:28px;" >
   			    <div class="row d-flex justify-content-between pb-0 mb-0" style="background-color: #2B63C6; height:30px;">
   				        <div class='col-4 shadow-lg mb-0 pb-0 mt-1 pt-1' > <p class="shadow-lg mb-0 pb-0" style="color:white; font-size: 80%">マイヒストリ</p> </div>
@@ -329,6 +330,11 @@ box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 background-color: #113a83; color: #fff">
       1日の目標 {{$get_m_user_daily_goal}}歩 ({{ $get_m_user_daily_goal*$get_m_user_stride/100000 }} km)
     </div>
+  @else
+    <div class='text-center'>
+    <h4 class='mt-5'> 申し訳ありませんが、今まで歴史がありません！ </h4>
+    </div>
+  @endif
     <div style="padding-top:0;">
       <div class='d-flex flex-row' style='background-color: #eef4f6; position: relative; z-index: 5;'>
         <div class='col-12'>
@@ -384,26 +390,9 @@ background-color: #113a83; color: #fff">
       </div>
     </div> -->
 
-@if(! empty($dates))
-    @foreach($dates as $date => $steps)
-    @php($total = 0)
-    @foreach($steps as $step)
-       @php($total += $step->steps)
-    @endforeach
-    <!-- <tr class="collectionsRow">
-      <td style="font-size:70%">{{ date("d ", strtotime($step->step_actual_datetime))  }} ({{ date("l", strtotime($step->step_actual_datetime))  }})</td>
-      <td style="font-size:70%">{{ $total }} steps ( {{ $total*$get_m_user_stride/100000 }} km ) </td>
-      <td style="font-size:70%">  @if($total > $get_m_user_daily_goal ) Completed (goal {{ $get_m_user_daily_goal }} steps) @else Incomplete(goal {{ $get_m_user_daily_goal }} steps)  @endif </td>
-      @php($perct =  $total/$get_m_user_daily_goal *100)
-      {{ $perct }} %
-    </tr>
-    <br> -->
-    @endforeach
-    @else
-    <div class='text-center'>
-    <h4 class='mt-5'> 申し訳ありませんが、今まで歴史がありません！ </h4>
-    </div>
-    @endif
+
+    
+    
     <script type="text/javascript">
     var is_rev = {{$reverse}};
     if (is_rev == 1) {
