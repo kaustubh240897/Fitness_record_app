@@ -614,7 +614,7 @@ padding-top: 0
     </div>
     <div class="container" >
       <p class="w-100 text-center mb-0 pb-0 overlay-text1" style="font-weight: bold; color: #2b63c6;">今日の歩数</p>
-      <p class="w-100 text-center pt-0 mt-0"><img class="mt-0 pt-0" src="{{ asset('storage/mypage/lineUp.png') }}" alt=""></p>
+      <p class="w-100 text-center pt-0 mt-0"><img class="mt-0 pt-0" style="width:100%; height:auto;" src="{{ asset('storage/mypage/lineUp.png') }}" alt=""></p>
     </div>
     @if($today_data >= $get_m_user_daily_goal)
     <div class="container" style="background: url({{asset('storage/padometerscreen/complete01.png')}}); background-size: cover; background-position: center; background-repeat: no-repeat">
@@ -662,14 +662,14 @@ padding-top: 0
     @endif
     <div class="container pt-3" >
       <p class="w-100 text-center mb-0 pb-0 overlay-text1" style="font-weight: bold; color: #2b63c6;">最近の歩数</p>
-      <p class="w-100 text-center pt-0 mt-0"><img class="mt-0 pt-0" src="{{ asset('storage/mypage/lineUp.png') }}" alt=""></p>
+      <p class="w-100 text-center pt-0 mt-0"><img class="mt-0 pt-0" style="width:100%; height:auto;" src="{{ asset('storage/mypage/lineUp.png') }}" alt=""></p>
     </div>
     <div class="container-fluid pt-3 mt-3">
       <canvas id="ctx" class="pt-3"></canvas>
     </div>
     <div class="container pt-3" >
       <p class="w-100 text-center mb-0 pb-0 overlay-text1" style="font-weight: bold; color: #2b63c6;">今日の歩数</p>
-      <p class="w-100 text-center pt-0 mt-0"><img class="mt-0 pt-0" src="{{ asset('storage/mypage/lineUp.png') }}" alt=""></p>
+      <p class="w-100 text-center pt-0 mt-0"><img class="mt-0 pt-0" style="width:100%; height:auto;" src="{{ asset('storage/mypage/lineUp.png') }}" alt=""></p>
     </div>
     @if( $current_month_steps  >=  $get_m_user_monthly_goal )
     <div class="container pt-3" style="background: url({{asset('storage/padometerscreen/complete01.png')}}); background-size: cover; background-position: center; background-repeat: no-repeat">
