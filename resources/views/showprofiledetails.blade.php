@@ -279,7 +279,7 @@
 								<div class='mt-4'> <img style='width:100%; height: auto;' src='/storage/img/error@3x.png'></div>
 								@else
 								<h6><div class='row' ><div class='col-7' style='color: #2b63c6;'> {{ $t_tour->m_tours->tour_title }} </div> <div class='col-4 c' style='color:grey;'>@foreach($t_tour->m_tours->checkpoints as $checkpoint) @if($checkpoint->checkpoint_category =='endpoint') {{ $checkpoint->distance }} km @endif @endforeach </div> </div></h6>
-								<div class='col-12 text-center'> <b class='color'>{{ $m_users->stride*$steps/100000 }} km/@foreach($t_tour->m_tours->checkpoints as $checkpoint) @if($checkpoint->checkpoint_category =='endpoint') {{ $checkpoint->distance }} km  @endif @endforeach</b></div>
+								<div class='col-12 text-center'> <b class='color'>{{ number_format($m_users->stride*$steps/100000, 2, '.',',') }} km /@foreach($t_tour->m_tours->checkpoints as $checkpoint) @if($checkpoint->checkpoint_category =='endpoint') {{ $checkpoint->distance }} km  @endif @endforeach</b></div>
 								@endif
 							@else
 								<div class='mt-4'> <img style='width:100%; height: auto;' src='/storage/img/error-1@3x.png'></div>
