@@ -16,6 +16,7 @@
     </head>
 
     <body>
+    @if (!empty(Auth::id()) || !empty(Auth::user()->name))
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style='top:28px;'>
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/padometerscreen') }}">
@@ -67,7 +68,7 @@
                 </div>
             </div>
         </nav>
-
+    @endif
         <div class='container mt-5'>
             <div class='row'>
                 <div class='col-lg-offset-3 col-lg-6'>

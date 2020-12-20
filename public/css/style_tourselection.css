@@ -1,0 +1,43 @@
+.text-color{
+    color: #2b63c6;
+}
+.top{
+    margin-top: 5rem;
+}
+.wid{
+  width:100%;
+  height: 100%;
+}
+i.fa{
+
+  font-size: 1.5rem;
+  color: #2b63c6;
+
+}
+div.c {
+text-align: right;
+color: grey;
+}
+.color{
+      color:#ffcc00;
+  }
+.border{
+  border: solid 1px grey ;
+}
+.navfix {
+position: fixed;
+bottom: 0;
+left: 0;
+z-index: 10;
+}
+.navItem {
+height: 66px;
+}
+
+.navItem.is-active {
+margin-top: -10px;
+/* margin-bottom: -10px; */
+height: 76px;
+background-color: #174493;
+border-radius: 5px
+}
