@@ -487,7 +487,7 @@ class m_UsersWebController extends Controller
             $m_users->users_id = Auth::id();
             $m_users->serial_number = Auth::user()->name;
             $m_users->height = $request->inputheight;
-            //$m_users->gender = $request->gender; 
+            $m_users->gender = $request->gender_input; 
            
             // $m_users->stride= $request->inputheight/2.5;
             $m_users->stride= $request->stridelength;
@@ -604,7 +604,7 @@ class m_UsersWebController extends Controller
             $m_users->users_id = Auth::id();
             $m_users->serial_number = Auth::user()->name;
             $m_users->height = $request->inputheight;
-            //$m_users->gender = $request->gender; 
+            $m_users->gender = $request->gender_input; 
            
             // $m_users->stride= $request->inputheight/2.5;
             $m_users->stride= $request->stridelength;
