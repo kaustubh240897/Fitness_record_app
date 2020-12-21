@@ -398,9 +398,9 @@
     </div> -->
 
 
-    
-    
-    
+
+
+
 
     <script type="text/javascript">
     var is_rev = {{$reverse}};
@@ -416,11 +416,11 @@
       if (id == "sort_newest") {
         url = "{{ url('/reverseusermonthlyhistory', ['year']) }}";
         url = url.replace('year',{{$y}});
-        location.reload();location.href=url;
+        document.location = url;
       } else {
         url = "{{ route('usermonthlyhistory', ['year']) }}";
         url = url.replace('year',{{$y}});
-        location.reload();location.href=url;
+        document.location = url;
       }
     }
     </script>
