@@ -391,8 +391,8 @@ background-color: #113a83; color: #fff">
     </div> -->
 
 
-    
-    
+
+
     <script type="text/javascript">
     var is_rev = {{$reverse}};
     if (is_rev == 1) {
@@ -408,12 +408,12 @@ background-color: #113a83; color: #fff">
         url = "{{ url('/reverseuserdailyhistory',['year','month']) }}";
         url = url.replace('year',{{$y}});
         url = url.replace('month',{{$m}});
-        location.reload();location.href=url;
+        document.location = url;
       } else {
         url = "{{ route('userhistory', ['year','month']) }}";
         url = url.replace('year',{{$y}});
         url = url.replace('month',{{$m}});
-        location.reload();location.href=url;
+        document.location = url;
       }
     }
     </script>
