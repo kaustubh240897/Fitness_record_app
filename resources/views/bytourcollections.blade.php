@@ -17,31 +17,37 @@
 	<body>
 		<div class='container-fluid'>
 			<div class="row d-flex fixed-top" style="border-bottom: 1px solid white; z-index: 10; background-color: #2b63c6; position: fixed; top:28px;">
-				<div class=' p-2' style="color:white;"><div class="ml-1" style='color: white;'>私のコレクション</div> 
+				<div class=' p-2' style="color:white;"><div class="ml-1" style='color: white;'>私のコレクション</div>
 			</div>
 				<div class=' ml-auto  p-2 '>
         <!-- <button class='button mr-1' style="color:white;">ツアーで並べ替え ↑↓ </button> -->
-       				<div class="dropdown p-1">
-  						<button class="text-center dropdown-toggle" type="" style="color: white; font-size: 80%; border-radius: 12px;
-   							border: solid 1px #ffffff;background-color: #2b63c6;" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   								ツアーで並べ替え ↑↓
-   						</button>
-   							<div class="dropdown-menu speech-bubble dropdown-menu-right" aria-labelledby="dropdownMenu2">
-   								<a id="group_by_tour" onclick="sortHistory(this.id);" >  <label class="radio-inline pl-2 pb-2">
-   									<input id="group_by_tour_radio" class="pt-3" type="radio" name="optradio"><span id="sort_newest_span" class="not_selected_sort pl-2 pb-2" style="font-size: 100%">実績の新しい順</span>
-									   </label>
+					<div class="dropdown p-1">
+						<button class="text-center dropdown-toggle" type="" style="color: white; font-size: 80%; border-radius: 12px;
+							border: solid 1px #ffffff;background-color: #2b63c6;" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							ツアーで並べ替え ↑↓
+						</button>
+						<div class="dropdown-menu speech-bubble dropdown-menu-right" aria-labelledby="dropdownMenu2">
+							<label class="radio-inline pl-2 pb-2" for="group_by_tour_radio">
+								<a id="group_by_tour" href="/bytourcollection" >
+									<input id="group_by_tour_radio" class="pt-3" type="radio" name="optradio" onclick="location.href='/bytourcollection'">
+									<span id="sort_newest_span" class="not_selected_sort pl-2 pb-2" style="font-size: 100%">実績の新しい順</span>
 								</a>
-   								<a id="sort_oldest" onclick="sortHistory(this.id);">   <label class="radio-inline pl-2 pb-2">
-   									<input id="sort_oldest_radio" class="pt-3" type="radio" name="optradio"><span id="sort_oldest_span" class="not_selected_sort pl-2 pb-1" style="font-size: 100%">実績の古い順</span>
-										   </label> 
+							</label>
+							<label class="radio-inline pl-2 pb-2" for="sort_oldest_radio">
+								<a id="sort_oldest" href="/mycollection">
+									<input id="sort_oldest_radio" class="pt-3" type="radio" name="optradio" onclick="location.href='/mycollection'">
+									<span id="sort_oldest_span" class="not_selected_sort pl-2 pb-1" style="font-size: 100%">実績の古い順</span>
 								</a>
-   								<a id="sort_newest" onclick="sortHistory(this.id);">   <label class="radio-inline pl-2 pb-2">
-   									<input id="sort_newest_radio" class="pt-3" type="radio" name="optradio"><span id="sort_oldest_span" class="not_selected_sort pl-2 pb-1" style="font-size: 100%">実績の古い順2</span>
-										   </label> 
+							</label>
+							<label class="radio-inline pl-2 pb-2" for="sort_newest_radio">
+								<a id="sort_newest" href="/reversemycollection">
+									<input id="sort_newest_radio" class="pt-3" type="radio" name="optradio" onclick="location.href='/reversemycollection'">
+									<span id="sort_oldest_span" class="not_selected_sort pl-2 pb-1" style="font-size: 100%">実績の古い順</span>
 								</a>
-   							</div>
-  					</div>
-     			</div>
+							</label>
+						</div>
+					</div>
+     		</div>
 
 	    </div>
 
@@ -65,7 +71,7 @@
 										break;
 									@endphp
 						@elseif($loop->iteration == $tour->checkpoints->count())
-							<div class="accordion-item" style='background-color:white !important; z-index:9; position:relative;'> 
+							<div class="accordion-item" style='background-color:white !important; z-index:9; position:relative;'>
 								<h3 class="title" style=' margin-bottom: 1rem; padding: 0.5rem 0rem 0rem 0.5rem;'>
 								<div>
 
@@ -134,20 +140,6 @@
 		} else if ({{$index}} == 2) {
 			document.getElementById("sort_newest_radio").checked = true;
 		}
-	function sortHistory(id) {
-		console.log("yes");
-		var url = "";
-		if (id == "sort_newest") {
-		url = "/reversemycollection";
-		location.reload();location.href=url;
-		} else if (id == "sort_oldest") {
-		url = "/mycollection";
-		location.reload();location.href=url;
-		} else {
-		url = "/bytourcollection";
-		location.reload();location.href=url;
-		}
-	}
 	</script>
 </body>
 @else
