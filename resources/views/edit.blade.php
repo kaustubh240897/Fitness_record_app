@@ -263,7 +263,7 @@ input[type=number] {
   <div class="d-flex flex-row pb-2" style="border-bottom: 3px solid rgb(248,252,253);">
     <div class="col-4 pl-2">
       <div class="d-flex flex-row">
-        <input id="heightinput" class="w-100" type="number" step="any" name='inputheight' value="{{ $m_users->height }}" onchange="heightChange()" required"><span class=" pl-1  " style="background-color: #f2f4f6; z-index: -1;">cm</span>
+        <input id="heightinput" class="w-100" type="number" step="any" name='inputheight' value="{{ $m_users->height }}" onchange="heightChange()" required><span class=" pl-1  " style="background-color: #f2f4f6; z-index: -1;">cm</span>
       </div>
     </div>
     <!-- <p class="pl-2" style="font-size: 110%;"> <span id="h_show" class="px-3 py-1" style="background-color: #f2f4f6; border: 1px solid #f2f4f6; border-radius: 5px;">175.5 cm</span> </p> -->
@@ -530,12 +530,6 @@ input[type=number] {
 
 </script>
 <script type="text/javascript">
-  var inp_gender = {{ $m_users->gender }};
-  if (inp_gender == 1) {
-    setGender("btn_female");
-  } else {
-    setGender("btn_male");
-  }
   var h_input = document.getElementById("heightinput");
   var s_input = document.getElementById("strideinput");
   var ds_input = document.getElementById("daily_stepsInput");
@@ -665,7 +659,13 @@ input[type=number] {
         gender = "female";
         document.getElementById("input_gender").value = 1;
       }
-      console.log(gender);
+      console.log(document.getElementById("input_gender").value);
+    }
+    var inp_gender = {{ $m_users->gender }};
+    if (inp_gender == 1) {
+      setGender("btn_female");
+    } else {
+      setGender("btn_male");
     }
     function calculateStride() {
       var x = document.getElementById("heightinput").value;

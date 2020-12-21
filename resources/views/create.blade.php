@@ -264,7 +264,7 @@ input[type=number] {
     <div class="container-fluid pt-3">
       <p class="pl-2" style="font-weight: bold; color: #2b63c6;">性別</p>
       <div class="d-flex flex-row pb-3 justify-content-between" style="border-bottom: 3px solid rgb(248,252,253);">
-        <input id="input_gender" type="number" name="gender_input" value="0" class="d-none" required>
+        <input id="input_gender" type="number" name="gender_input" class="d-none" required>
         <div class="col pl-2">
           <button id="btn_male" type="button" name="button" class="text-center w-100 gender" style="height: 34px; border-color: transparent; border-radius: 5px;"
           onclick="setGender(this.id)">男性</button>
@@ -658,7 +658,7 @@ input[type=number] {
             gender = "female";
             document.getElementById("input_gender").value = 1;
           }
-          console.log(gender);
+          console.log(document.getElementById("input_gender").value);
         }
         function calculateStride() {
           var x = document.getElementById("heightinput").value;
