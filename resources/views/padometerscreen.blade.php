@@ -861,6 +861,7 @@ Object.keys(current_week_datas1).forEach((single_day_data, i) => {
 var maxSteps = Math.max(...stepsData);
 var maxY = maxSteps + 1000 - maxSteps%1000;
 console.log(maxY);
+var weekGoals = {!! json_encode($steps_week) !!};
 const img = new Image();
 img.src = "{{ asset('storage/padometerscreen/star.png') }}";
 Chart.plugins.register({
@@ -897,7 +898,7 @@ Chart.plugins.register({
                });
                var   text2 = barLabels.second[index];
                var   textWidth = ctx.measureText(text1).width + padding;
-               if (stepsData[index]>={{$get_m_user_daily_goal}}) {
+               if (stepsData[index]>=weekGoals[index]) {
                  //ctx.fillText(text1, x-5, y-10);
                  ctx.drawImage(img, x-15, y-35, 30, 30);
                }
@@ -1001,7 +1002,7 @@ var chart = new Chart(ctx, {
 var colorChangeValue = {{$get_m_user_daily_goal}}; //set this to whatever is the deciding color change value
 var dataset = chart.data.datasets[0];
 for (var i = 0; i < dataset.data.length; i++) {
-  if (dataset.data[i] >= colorChangeValue) {
+  if (dataset.data[i] >= weekGoals[i]) {
     dataset.backgroundColor[i] = '#FFD00D';
   }
 }

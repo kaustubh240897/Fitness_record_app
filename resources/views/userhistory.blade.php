@@ -423,6 +423,7 @@ background-color: #113a83; color: #fff">
     var table_body = document.getElementById("monthly_table");
     var goal = {{$get_m_user_daily_goal}};
     console.log(goal);
+    var weekGoals = {!! json_encode($steps_week) !!};
     var dates = {!! json_encode($dates) !!};
     if (is_rev == 1) {
       var totalDays = daysInThisMonth();
@@ -452,32 +453,39 @@ background-color: #113a83; color: #fff">
         console.log(totalSteps);
         switch (d.getDay()) {
           case 0:
-            day_symbol = " (月)";
-            console.log(day_symbol);
-            break;
-          case 1:
-            day_symbol = " (火)";
-            console.log(day_symbol);
-            break;
-          case 2:
-            day_symbol = " (水)";
-            console.log(day_symbol);
-            break;
-          case 3:
-            day_symbol = " (木)";
-            console.log(day_symbol);
-            break;
-          case 4:
-            day_symbol = " (金)";
-            console.log(day_symbol);
-            break;
-          case 5:
-            day_symbol = " (土)";
-            console.log(day_symbol);
-            break;
-          case 6:
             day_symbol = " (日)";
             console.log(day_symbol);
+            goal = weekGoals[6];
+            break;
+          case 1:
+            day_symbol = " (月)";
+            console.log(day_symbol);
+            goal = weekGoals[0];
+            break;
+          case 2:
+            day_symbol = " (火)";
+            console.log(day_symbol);
+            goal = weekGoals[1];
+            break;
+          case 3:
+            day_symbol = " (水)";
+            console.log(day_symbol);
+            goal = weekGoals[2];
+            break;
+          case 4:
+            day_symbol = " (木)";
+            console.log(day_symbol);
+            goal = weekGoals[3];
+            break;
+          case 5:
+            day_symbol = " (金)";
+            console.log(day_symbol);
+            goal = weekGoals[4];
+            break;
+          case 6:
+            day_symbol = " (土)";
+            console.log(day_symbol);
+            goal = weekGoals[5];
             break;
           default:
 
@@ -526,32 +534,39 @@ background-color: #113a83; color: #fff">
         console.log(totalSteps);
         switch (d.getDay()) {
           case 0:
-            day_symbol = " (月)";
-            console.log(day_symbol);
-            break;
-          case 1:
-            day_symbol = " (火)";
-            console.log(day_symbol);
-            break;
-          case 2:
-            day_symbol = " (水)";
-            console.log(day_symbol);
-            break;
-          case 3:
-            day_symbol = " (木)";
-            console.log(day_symbol);
-            break;
-          case 4:
-            day_symbol = " (金)";
-            console.log(day_symbol);
-            break;
-          case 5:
-            day_symbol = " (土)";
-            console.log(day_symbol);
-            break;
-          case 6:
             day_symbol = " (日)";
             console.log(day_symbol);
+            goal = weekGoals[6];
+            break;
+          case 1:
+            day_symbol = " (月)";
+            console.log(day_symbol);
+            goal = weekGoals[0];
+            break;
+          case 2:
+            day_symbol = " (火)";
+            console.log(day_symbol);
+            goal = weekGoals[1];
+            break;
+          case 3:
+            day_symbol = " (水)";
+            console.log(day_symbol);
+            goal = weekGoals[2];
+            break;
+          case 4:
+            day_symbol = " (木)";
+            console.log(day_symbol);
+            goal = weekGoals[3];
+            break;
+          case 5:
+            day_symbol = " (金)";
+            console.log(day_symbol);
+            goal = weekGoals[4];
+            break;
+          case 6:
+            day_symbol = " (土)";
+            console.log(day_symbol);
+            goal = weekGoals[5];
             break;
           default:
 
