@@ -536,7 +536,7 @@ padding-top: 0
    <h4> 申し訳ありませんが、チェックポイントはありません。ツアーを選択してください。</h4>
    @endif
   </div> -->
-  
+
   @if ( empty($m__users_id))
   <div class='text-center'>
     <h2 class='mt-5'> 最初にプロファイルを作成してください <a href="/" style="color:blue !important; margin-top: 28px !important"> ここをクリック </a> </h2>
@@ -1893,6 +1893,7 @@ var def_path = "{{URL::asset('storage/mypage/box1_sel.png')}}";
   weekDates.forEach((item, i) => {
   if (formatDate(item) == single_day_data) {
   stepsData[i] = parseInt(total);
+  console.log(i);
   }
   });
 
@@ -1900,6 +1901,7 @@ var def_path = "{{URL::asset('storage/mypage/box1_sel.png')}}";
   var maxSteps = Math.max(...stepsData);
   var maxY = maxSteps + 1000 - maxSteps%1000;
   console.log(maxY);
+  var weekGoals = {!! json_encode($steps_week) !!};
   const img = new Image();
   img.src = "{{ asset('storage/padometerscreen/star.png') }}";
   Chart.plugins.register({
@@ -1936,7 +1938,7 @@ var def_path = "{{URL::asset('storage/mypage/box1_sel.png')}}";
        });
        var   text2 = barLabels.second[index];
        var   textWidth = ctx.measureText(text1).width + padding;
-       if (stepsData[index]>={{$get_m_user_daily_goal}}) {
+       if (stepsData[index]>=weekGoals[index]) {
          //ctx.fillText(text1, x-5, y-10);
          ctx.drawImage(img, x-15, y-35, 30, 30);
        }
@@ -2040,7 +2042,7 @@ var def_path = "{{URL::asset('storage/mypage/box1_sel.png')}}";
   var colorChangeValue = {{$get_m_user_daily_goal}}; //set this to whatever is the deciding color change value
   var dataset = chart.data.datasets[0];
   for (var i = 0; i < dataset.data.length; i++) {
-  if (dataset.data[i] >= colorChangeValue) {
+  if (dataset.data[i] >= weekGoals[i]) {
   dataset.backgroundColor[i] = '#FFD00D';
   }
   }
