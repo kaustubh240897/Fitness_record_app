@@ -42,7 +42,7 @@ class m_UsersWebController extends Controller
             $y = $year;
             $m  =$month;
             
-            $steps_week = [$m__users->step_monday,$m__users->step_tuesday,$m__users->step_wednesday,$m__users->step_thursday,$m__users->step_friday,$m__users->step_saturday,$m__users->step_sunday];
+            $steps_week = [$m__users->step_sunday,$m__users->step_monday,$m__users->step_tuesday,$m__users->step_wednesday,$m__users->step_thursday,$m__users->step_friday,$m__users->step_saturday];
         
             
             return view('userhistory', compact('get_m_user_stride','get_m_user_daily_goal','dates','steps_week','reverse','y','m'));
@@ -78,7 +78,7 @@ class m_UsersWebController extends Controller
             // });
             $get_m_user_stride = $m__users->stride;
             $get_m_user_daily_goal = $m__users->step_goal_per_day;
-            $steps_week = [$m__users->step_monday,$m__users->step_tuesday,$m__users->step_wednesday,$m__users->step_thursday,$m__users->step_friday,$m__users->step_saturday,$m__users->step_sunday];
+            $steps_week = [$m__users->step_sunday,$m__users->step_monday,$m__users->step_tuesday,$m__users->step_wednesday,$m__users->step_thursday,$m__users->step_friday,$m__users->step_saturday];
 
             return view('userhistory', compact('get_m_user_stride','get_m_user_daily_goal','dates','steps_week','reverse','y','m'));
             }
@@ -225,7 +225,7 @@ class m_UsersWebController extends Controller
             elseif($today_day == 'Sunday'){
                 $get_m_user_daily_goal = $m__users->step_sunday;
             }
-            $steps_week = [$m__users->step_monday,$m__users->step_tuesday,$m__users->step_wednesday,$m__users->step_thursday,$m__users->step_friday,$m__users->step_saturday,$m__users->step_sunday];
+            $steps_week = [$m__users->step_sunday,$m__users->step_monday,$m__users->step_tuesday,$m__users->step_wednesday,$m__users->step_thursday,$m__users->step_friday,$m__users->step_saturday];
         
             $get_m_user_monthly_goal = $m__users->step_goals_per_month;
             $get_t_tour = t_Tour::where('m__users_id', $m__users_id)->orderBy('start_datetime', 'DESC')->first();
@@ -342,7 +342,7 @@ class m_UsersWebController extends Controller
             elseif($today_day == 'Sunday'){
                 $get_m_user_daily_goal = $m__users->step_sunday;
             }
-            $steps_week = [$m__users->step_monday,$m__users->step_tuesday,$m__users->step_wednesday,$m__users->step_thursday,$m__users->step_friday,$m__users->step_saturday,$m__users->step_sunday];
+            $steps_week = [$m__users->step_sunday,$m__users->step_monday,$m__users->step_tuesday,$m__users->step_wednesday,$m__users->step_thursday,$m__users->step_friday,$m__users->step_saturday];
         
             $get_m_user_monthly_goal = $m__users->step_goals_per_month;
             $get_t_tour = t_Tour::where('m__users_id', $m__users_id)->orderBy('start_datetime', 'DESC')->first();
