@@ -5,6 +5,7 @@ use App\t_Tour;
 use App\m_Checkpoint;
 use App\m_Tour;
 use App\m_Users;
+use App\t_Steps;
 use App\t_Collection;
 use App\m_Collection;
 use Illuminate\Support\Facades\Auth;
@@ -137,6 +138,8 @@ class t_CollectionWebController extends Controller
         if(m_Users::where('users_id',Auth::id())->count() >0){
             $m__user_id = m_Users::where('users_id',Auth::id())->first()->id;
             $index = 2;
+            $s = t_Steps::where('m__users_id', $m__user_id)->get();
+            dd($s);
             $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->orderBy('created_at', 'DESC')->get()->unique('m__collection_id');
             $count_t_collections = t_Collection::where('m__users_id', $m__user_id)->orderBy('created_at', 'DESC')->get()->groupBy('m__collection_id');
             $counter = [];
