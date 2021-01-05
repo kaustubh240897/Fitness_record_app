@@ -425,172 +425,192 @@ background-color: #113a83; color: #fff">
     console.log(goal);
     var weekGoals = {!! json_encode($steps_week) !!};
     var dates = {!! json_encode($dates) !!};
-    if (is_rev == 1) {
-      var totalDays = daysInThisMonth();
-      console.log(totalDays);
-      Object.keys(dates).reverse().forEach((date, i) => {
-        console.log("ddd",date);
-        var day_symbol = "(曜)";
-        var td1 = document.createElement("td");
-        td1.className = "incomp_td w-25";
-        var td2 = document.createElement("td");
-        td2.className = "w-50";
-        td2.style.color = "#2b63c6";
-        var td3 = document.createElement("td");
-        td3.className = "w-25";
-        td3.style.color = "#2b63c6";
-        var tr = document.createElement("tr");
-        var totalSteps = 0;
-        var d = new Date();
-        dates[date].forEach((item, i) => {
-          totalSteps += item["steps"];
-          var datee = item["step_actual_datetime"];
-          d = new Date(datee);
-        });
-        console.log("date",d);
-        console.log("day",d.getDate());
-        console.log("day_name",d.getDay());
-        console.log(totalSteps);
-        switch (d.getDay()) {
-          case 0:
-            day_symbol = " (日)";
-            console.log(day_symbol);
-            goal = weekGoals[6];
-            break;
-          case 1:
-            day_symbol = " (月)";
-            console.log(day_symbol);
-            goal = weekGoals[0];
-            break;
-          case 2:
-            day_symbol = " (火)";
-            console.log(day_symbol);
-            goal = weekGoals[1];
-            break;
-          case 3:
-            day_symbol = " (水)";
-            console.log(day_symbol);
-            goal = weekGoals[2];
-            break;
-          case 4:
-            day_symbol = " (木)";
-            console.log(day_symbol);
-            goal = weekGoals[3];
-            break;
-          case 5:
-            day_symbol = " (金)";
-            console.log(day_symbol);
-            goal = weekGoals[4];
-            break;
-          case 6:
-            day_symbol = " (土)";
-            console.log(day_symbol);
-            goal = weekGoals[5];
-            break;
-          default:
+    if (Object.keys(dates).length > 0) {
+      if (is_rev == 1) {
+        var totalDays = daysInThisMonth();
+        console.log(totalDays);
+        Object.keys(dates).reverse().forEach((date, i) => {
+          console.log("ddd",date);
+          var day_symbol = "(曜)";
+          var td1 = document.createElement("td");
+          td1.className = "incomp_td w-25";
+          var td2 = document.createElement("td");
+          td2.className = "w-50";
+          td2.style.color = "#2b63c6";
+          var td3 = document.createElement("td");
+          td3.className = "w-25";
+          td3.style.color = "#2b63c6";
+          var tr = document.createElement("tr");
+          var totalSteps = 0;
+          var d = new Date();
+          dates[date].forEach((item, i) => {
+            totalSteps += item["steps"];
+            var datee = item["step_actual_datetime"];
+            d = new Date(datee);
+          });
+          console.log("date",d);
+          console.log("day",d.getDate());
+          console.log("day_name",d.getDay());
+          console.log(totalSteps);
+          switch (d.getDay()) {
+            case 0:
+              day_symbol = " (日)";
+              console.log(day_symbol);
+              goal = weekGoals[6];
+              break;
+            case 1:
+              day_symbol = " (月)";
+              console.log(day_symbol);
+              goal = weekGoals[0];
+              break;
+            case 2:
+              day_symbol = " (火)";
+              console.log(day_symbol);
+              goal = weekGoals[1];
+              break;
+            case 3:
+              day_symbol = " (水)";
+              console.log(day_symbol);
+              goal = weekGoals[2];
+              break;
+            case 4:
+              day_symbol = " (木)";
+              console.log(day_symbol);
+              goal = weekGoals[3];
+              break;
+            case 5:
+              day_symbol = " (金)";
+              console.log(day_symbol);
+              goal = weekGoals[4];
+              break;
+            case 6:
+              day_symbol = " (土)";
+              console.log(day_symbol);
+              goal = weekGoals[5];
+              break;
+            default:
 
-        }
-        if (totalSteps > goal) {
-          tr.className = "comp";
-          td1.className = "comp_td w-25";
-          td1.innerHTML = d.getDate() + day_symbol;
-          dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
-          td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
-          td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="{{URL::asset('storage/history/co.svg')}}" alt="">';
-        } else {
-          td1.innerHTML = d.getDate() + day_symbol;
-          dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
-          td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
-          td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span>';
-        }
-        tr.appendChild(td1);
-        tr.appendChild(td2);
-        tr.appendChild(td3);
-        table_body.appendChild(tr);
-      });
+          }
+          if (totalSteps > goal) {
+            tr.className = "comp";
+            td1.className = "comp_td w-25";
+            td1.innerHTML = d.getDate() + day_symbol;
+            dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
+            td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
+            td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="{{URL::asset('storage/history/co.svg')}}" alt="">';
+          } else {
+            td1.innerHTML = d.getDate() + day_symbol;
+            dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
+            td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
+            td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span>';
+          }
+          tr.appendChild(td1);
+          tr.appendChild(td2);
+          tr.appendChild(td3);
+          table_body.appendChild(tr);
+        });
+      } else {
+        Object.keys(dates).forEach((date, i) => {
+          console.log("ddd",date);
+          var day_symbol = "(曜)";
+          var td1 = document.createElement("td");
+          td1.className = "incomp_td w-25";
+          var td2 = document.createElement("td");
+          td2.className = "w-50";
+          td2.style.color = "#2b63c6";
+          var td3 = document.createElement("td");
+          td3.className = "w-25";
+          td3.style.color = "#2b63c6";
+          var tr = document.createElement("tr");
+          var totalSteps = 0;
+          var d = new Date();
+          dates[date].forEach((item, i) => {
+            totalSteps += item["steps"];
+            var datee = item["step_actual_datetime"];
+            d = new Date(datee);
+          });
+          console.log("date",d);
+          console.log("day",d.getDate());
+          console.log("day_name",d.getDay());
+          console.log(totalSteps);
+          switch (d.getDay()) {
+            case 0:
+              day_symbol = " (日)";
+              console.log(day_symbol);
+              goal = weekGoals[6];
+              break;
+            case 1:
+              day_symbol = " (月)";
+              console.log(day_symbol);
+              goal = weekGoals[0];
+              break;
+            case 2:
+              day_symbol = " (火)";
+              console.log(day_symbol);
+              goal = weekGoals[1];
+              break;
+            case 3:
+              day_symbol = " (水)";
+              console.log(day_symbol);
+              goal = weekGoals[2];
+              break;
+            case 4:
+              day_symbol = " (木)";
+              console.log(day_symbol);
+              goal = weekGoals[3];
+              break;
+            case 5:
+              day_symbol = " (金)";
+              console.log(day_symbol);
+              goal = weekGoals[4];
+              break;
+            case 6:
+              day_symbol = " (土)";
+              console.log(day_symbol);
+              goal = weekGoals[5];
+              break;
+            default:
+
+          }
+          if (totalSteps > goal) {
+            tr.className = "comp";
+            td1.className = "comp_td w-25";
+            td1.innerHTML = d.getDate() + day_symbol;
+            dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
+            td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
+            td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="{{URL::asset('storage/history/co.svg')}}" alt="">';
+          } else {
+            td1.innerHTML = d.getDate() + day_symbol;
+            dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
+            td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
+            td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span>';
+          }
+          tr.appendChild(td1);
+          tr.appendChild(td2);
+          tr.appendChild(td3);
+          table_body.appendChild(tr);
+        });
+      }
     } else {
-      Object.keys(dates).forEach((date, i) => {
-        console.log("ddd",date);
-        var day_symbol = "(曜)";
-        var td1 = document.createElement("td");
-        td1.className = "incomp_td w-25";
-        var td2 = document.createElement("td");
-        td2.className = "w-50";
-        td2.style.color = "#2b63c6";
-        var td3 = document.createElement("td");
-        td3.className = "w-25";
-        td3.style.color = "#2b63c6";
-        var tr = document.createElement("tr");
-        var totalSteps = 0;
-        var d = new Date();
-        dates[date].forEach((item, i) => {
-          totalSteps += item["steps"];
-          var datee = item["step_actual_datetime"];
-          d = new Date(datee);
-        });
-        console.log("date",d);
-        console.log("day",d.getDate());
-        console.log("day_name",d.getDay());
-        console.log(totalSteps);
-        switch (d.getDay()) {
-          case 0:
-            day_symbol = " (日)";
-            console.log(day_symbol);
-            goal = weekGoals[6];
-            break;
-          case 1:
-            day_symbol = " (月)";
-            console.log(day_symbol);
-            goal = weekGoals[0];
-            break;
-          case 2:
-            day_symbol = " (火)";
-            console.log(day_symbol);
-            goal = weekGoals[1];
-            break;
-          case 3:
-            day_symbol = " (水)";
-            console.log(day_symbol);
-            goal = weekGoals[2];
-            break;
-          case 4:
-            day_symbol = " (木)";
-            console.log(day_symbol);
-            goal = weekGoals[3];
-            break;
-          case 5:
-            day_symbol = " (金)";
-            console.log(day_symbol);
-            goal = weekGoals[4];
-            break;
-          case 6:
-            day_symbol = " (土)";
-            console.log(day_symbol);
-            goal = weekGoals[5];
-            break;
-          default:
-
-        }
-        if (totalSteps > goal) {
-          tr.className = "comp";
-          td1.className = "comp_td w-25";
-          td1.innerHTML = d.getDate() + day_symbol;
-          dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
-          td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
-          td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="{{URL::asset('storage/history/co.svg')}}" alt="">';
-        } else {
-          td1.innerHTML = d.getDate() + day_symbol;
-          dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
-          td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
-          td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span>';
-        }
-        tr.appendChild(td1);
-        tr.appendChild(td2);
-        tr.appendChild(td3);
-        table_body.appendChild(tr);
-      });
+      console.log("dates is null");
+      var td1 = document.createElement("td");
+      td1.className = "incomp_td w-25";
+      var td2 = document.createElement("td");
+      td2.className = "w-50";
+      td2.style.color = "#2b63c6";
+      td2.innerHTML = "No Data Exists for this date";
+      var td3 = document.createElement("td");
+      td3.className = "w-25";
+      td3.style.color = "#2b63c6";
+      var tr = document.createElement("tr");
+      tr.appendChild(td1);
+      tr.appendChild(td2);
+      tr.appendChild(td3);
+      table_body.appendChild(tr);
     }
     console.log(dates);
+    console.log("normal", Object.keys(dates));
+    console.log("reverse", Object.keys(dates).reverse());
     function daysInThisMonth() {
       var now = new Date();
       return new Date(now.getFullYear(), now.getMonth()+1, 0).getDate();
