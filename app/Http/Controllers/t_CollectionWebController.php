@@ -108,8 +108,6 @@ class t_CollectionWebController extends Controller
     { 
     if(m_Users::where('users_id',Auth::id())->count() >0){
         $m__user_id = m_Users::where('users_id',Auth::id())->first()->id;
-        $t = t_Collection::where('m__users_id', $m__user_id)->get();
-        dd($t);
         $index = 1;
         $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->get()->unique('m__collection_id');
         $count_t_collections = t_Collection::where('m__users_id', $m__user_id)->get()->groupBy('m__collection_id');
@@ -138,8 +136,6 @@ class t_CollectionWebController extends Controller
         if(m_Users::where('users_id',Auth::id())->count() >0){
             $m__user_id = m_Users::where('users_id',Auth::id())->first()->id;
             $index = 2;
-            $s = t_Steps::where('m__users_id', $m__user_id)->get();
-            dd($s);
             $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->orderBy('created_at', 'DESC')->get()->unique('m__collection_id');
             $count_t_collections = t_Collection::where('m__users_id', $m__user_id)->orderBy('created_at', 'DESC')->get()->groupBy('m__collection_id');
             $counter = [];
