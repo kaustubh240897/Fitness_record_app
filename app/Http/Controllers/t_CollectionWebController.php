@@ -104,9 +104,11 @@ class t_CollectionWebController extends Controller
 }
     
     public function index()
-    {  
+    { 
     if(m_Users::where('users_id',Auth::id())->count() >0){
         $m__user_id = m_Users::where('users_id',Auth::id())->first()->id;
+        $t = t_Collection::where('m__users_id', $m__user_id)->get();
+        dd($t);
         $index = 1;
         $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->get()->unique('m__collection_id');
         $count_t_collections = t_Collection::where('m__users_id', $m__user_id)->get()->groupBy('m__collection_id');
