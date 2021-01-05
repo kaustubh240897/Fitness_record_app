@@ -51,15 +51,14 @@ class t_StepObserver
 
         $get_latest_t_tour = t_Tour::where('m__users_id', $m__user_id)->orderBy('start_datetime','DESC')->first();
         $latest_t_tour_datetime = $get_latest_t_tour->start_datetime;
-        $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->where('created_at', '>=', $latest_t_tour_datetime)->get();
-        $collection_memory = [];
-        foreach($get_t_collections as $get_t_collection){
-            $collection_memory[]= $get_t_collection->m__collection_id;
-        }
         $t_collection = new t_Collection;
-        
-           
+               
             if($get_latest_t_tour->status == 'Done'){
+                $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->where('created_at', '>=', $latest_t_tour_datetime)->get();
+                $collection_memory = [];
+                foreach($get_t_collections as $get_t_collection){
+                    $collection_memory[]= $get_t_collection->m__collection_id;
+                }
                 if($distanceCovered >= $total ){
                     $t_collection = new t_Collection;
                     $t_collection->m__users_id = $m__user_id;
@@ -74,6 +73,11 @@ class t_StepObserver
             }
             else{
                 foreach($get_latest_t_tour->m_tours->checkpoints as $checkpoint){
+                    $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->where('created_at', '>=', $latest_t_tour_datetime)->get();
+                    $collection_memory = [];
+                    foreach($get_t_collections as $get_t_collection){
+                        $collection_memory[]= $get_t_collection->m__collection_id;
+                    }
                     
                     if($distanceCovered >= $checkpoint->distance && !(in_array($checkpoint->m__collection_id, $collection_memory)) ){
                         $t_collection = new t_Collection;
