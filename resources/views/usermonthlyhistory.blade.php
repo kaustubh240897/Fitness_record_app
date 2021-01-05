@@ -288,10 +288,10 @@
                   <button id="2020" onclick="myFunc2(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">2020</button>
                 </div>
                 <div class="col">
-                  <button id="2019" onclick="myFunc2(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">2019</button>
+                  <button id="2021" onclick="myFunc2(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">2021</button>
                 </div>
                 <div class="col">
-                  <button id="2018" onclick="myFunc2(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">2018</button>
+                  <button id="2022" onclick="myFunc2(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">2022</button>
                 </div>
               </div>
             </div>
@@ -432,157 +432,175 @@
     console.log(goal);
     var dist_km = 0;
     var dates = {!! json_encode($months) !!};
-    if (is_rev == 1) {
-      var totalDays = daysInThisMonth();
-      console.log(totalDays);
-      Object.keys(dates).reverse().forEach((date, i) => {
-        console.log("ddd",date);
-        var day_symbol = "(曜)";
-        var td1 = document.createElement("td");
-        td1.className = "incomp_td text-left";
-        var td2 = document.createElement("td");
-        td2.className = "text-center";
-        td2.style.color = "#2b63c6";
-        var td3 = document.createElement("td");
-        td3.className = "text-center";
-        td3.style.color = "#2b63c6";
-        var tr = document.createElement("tr");
-        var totalSteps = 0;
-        var d = new Date();
-        dates[date].forEach((item, i) => {
-          totalSteps += item["steps"];
-          var datee = item["step_actual_datetime"];
-          d = new Date(datee);
+    if (Object.keys(dates).length > 0) {
+      if (is_rev == 1) {
+        var totalDays = daysInThisMonth();
+        console.log(totalDays);
+        Object.keys(dates).reverse().forEach((date, i) => {
+          console.log("ddd",date);
+          var day_symbol = "(曜)";
+          var td1 = document.createElement("td");
+          td1.className = "incomp_td text-left";
+          var td2 = document.createElement("td");
+          td2.className = "text-center";
+          td2.style.color = "#2b63c6";
+          var td3 = document.createElement("td");
+          td3.className = "text-center";
+          td3.style.color = "#2b63c6";
+          var tr = document.createElement("tr");
+          var totalSteps = 0;
+          var d = new Date();
+          dates[date].forEach((item, i) => {
+            totalSteps += item["steps"];
+            var datee = item["step_actual_datetime"];
+            d = new Date(datee);
+          });
+          console.log("date",d);
+          console.log("day",d.getDate());
+          console.log("day_name",d.getDay());
+          console.log(totalSteps);
+          // switch (d.getDay()) {
+          //   case 0:
+          //     day_symbol = " (月)";
+          //     console.log(day_symbol);
+          //     break;
+          //   case 1:
+          //     day_symbol = " (火)";
+          //     console.log(day_symbol);
+          //     break;
+          //   case 2:
+          //     day_symbol = " (水)";
+          //     console.log(day_symbol);
+          //     break;
+          //   case 3:
+          //     day_symbol = " (木)";
+          //     console.log(day_symbol);
+          //     break;
+          //   case 4:
+          //     day_symbol = " (金)";
+          //     console.log(day_symbol);
+          //     break;
+          //   case 5:
+          //     day_symbol = " (土)";
+          //     console.log(day_symbol);
+          //     break;
+          //   case 6:
+          //     day_symbol = " (日)";
+          //     console.log(day_symbol);
+          //     break;
+          //   default:
+          //
+          // }
+          if (totalSteps > goal) {
+            tr.className = "comp";
+            td1.className = "comp_td text-left";
+            td1.innerHTML = d.getMonth() + 1;
+            dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
+            td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
+            td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="{{URL::asset('storage/history/co.svg')}}" alt="">';
+          } else {
+            td1.innerHTML = d.getMonth() + 1;
+            dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
+            td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
+            td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span>';
+          }
+          tr.appendChild(td1);
+          tr.appendChild(td2);
+          tr.appendChild(td3);
+          table_body.appendChild(tr);
         });
-        console.log("date",d);
-        console.log("day",d.getDate());
-        console.log("day_name",d.getDay());
-        console.log(totalSteps);
-        // switch (d.getDay()) {
-        //   case 0:
-        //     day_symbol = " (月)";
-        //     console.log(day_symbol);
-        //     break;
-        //   case 1:
-        //     day_symbol = " (火)";
-        //     console.log(day_symbol);
-        //     break;
-        //   case 2:
-        //     day_symbol = " (水)";
-        //     console.log(day_symbol);
-        //     break;
-        //   case 3:
-        //     day_symbol = " (木)";
-        //     console.log(day_symbol);
-        //     break;
-        //   case 4:
-        //     day_symbol = " (金)";
-        //     console.log(day_symbol);
-        //     break;
-        //   case 5:
-        //     day_symbol = " (土)";
-        //     console.log(day_symbol);
-        //     break;
-        //   case 6:
-        //     day_symbol = " (日)";
-        //     console.log(day_symbol);
-        //     break;
-        //   default:
-        //
-        // }
-        if (totalSteps > goal) {
-          tr.className = "comp";
-          td1.className = "comp_td text-left";
-          td1.innerHTML = d.getMonth() + 1;
-          dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
-          td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
-          td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="{{URL::asset('storage/history/co.svg')}}" alt="">';
-        } else {
-          td1.innerHTML = d.getMonth() + 1;
-          dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
-          td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
-          td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span>';
-        }
-        tr.appendChild(td1);
-        tr.appendChild(td2);
-        tr.appendChild(td3);
-        table_body.appendChild(tr);
-      });
+      } else {
+        Object.keys(dates).forEach((date, i) => {
+          console.log("ddd",date);
+          var day_symbol = "(曜)";
+          var td1 = document.createElement("td");
+          td1.className = "incomp_td text-left";
+          var td2 = document.createElement("td");
+          td2.className = "text-center";
+          td2.style.color = "#2b63c6";
+          var td3 = document.createElement("td");
+          td3.className = "text-center";
+          td3.style.color = "#2b63c6";
+          var tr = document.createElement("tr");
+          var totalSteps = 0;
+          var d = new Date();
+          dates[date].forEach((item, i) => {
+            totalSteps += item["steps"];
+            var datee = item["step_actual_datetime"];
+            d = new Date(datee);
+          });
+          console.log("date",d);
+          console.log("day",d.getDate());
+          console.log("day_name",d.getDay());
+          console.log("mon", d.getMonth());
+          console.log(totalSteps);
+          // switch (d.getDay()) {
+          //   case 0:
+          //     day_symbol = " (月)";
+          //     console.log(day_symbol);
+          //     break;
+          //   case 1:
+          //     day_symbol = " (火)";
+          //     console.log(day_symbol);
+          //     break;
+          //   case 2:
+          //     day_symbol = " (水)";
+          //     console.log(day_symbol);
+          //     break;
+          //   case 3:
+          //     day_symbol = " (木)";
+          //     console.log(day_symbol);
+          //     break;
+          //   case 4:
+          //     day_symbol = " (金)";
+          //     console.log(day_symbol);
+          //     break;
+          //   case 5:
+          //     day_symbol = " (土)";
+          //     console.log(day_symbol);
+          //     break;
+          //   case 6:
+          //     day_symbol = " (日)";
+          //     console.log(day_symbol);
+          //     break;
+          //   default:
+          //
+          // }
+          if (totalSteps > goal) {
+            tr.className = "comp";
+            td1.className = "comp_td text-left";
+            td1.innerHTML = d.getMonth() + 1;
+            dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
+            td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
+            td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="{{URL::asset('storage/history/co.svg')}}" alt="">';
+          } else {
+            td1.innerHTML = d.getMonth() + 1;
+            dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
+            td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
+            td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span>';
+          }
+          tr.appendChild(td1);
+          tr.appendChild(td2);
+          tr.appendChild(td3);
+          table_body.appendChild(tr);
+        });
+      }
     } else {
-      Object.keys(dates).forEach((date, i) => {
-        console.log("ddd",date);
-        var day_symbol = "(曜)";
-        var td1 = document.createElement("td");
-        td1.className = "incomp_td text-left";
-        var td2 = document.createElement("td");
-        td2.className = "text-center";
-        td2.style.color = "#2b63c6";
-        var td3 = document.createElement("td");
-        td3.className = "text-center";
-        td3.style.color = "#2b63c6";
-        var tr = document.createElement("tr");
-        var totalSteps = 0;
-        var d = new Date();
-        dates[date].forEach((item, i) => {
-          totalSteps += item["steps"];
-          var datee = item["step_actual_datetime"];
-          d = new Date(datee);
-        });
-        console.log("date",d);
-        console.log("day",d.getDate());
-        console.log("day_name",d.getDay());
-        console.log("mon", d.getMonth());
-        console.log(totalSteps);
-        // switch (d.getDay()) {
-        //   case 0:
-        //     day_symbol = " (月)";
-        //     console.log(day_symbol);
-        //     break;
-        //   case 1:
-        //     day_symbol = " (火)";
-        //     console.log(day_symbol);
-        //     break;
-        //   case 2:
-        //     day_symbol = " (水)";
-        //     console.log(day_symbol);
-        //     break;
-        //   case 3:
-        //     day_symbol = " (木)";
-        //     console.log(day_symbol);
-        //     break;
-        //   case 4:
-        //     day_symbol = " (金)";
-        //     console.log(day_symbol);
-        //     break;
-        //   case 5:
-        //     day_symbol = " (土)";
-        //     console.log(day_symbol);
-        //     break;
-        //   case 6:
-        //     day_symbol = " (日)";
-        //     console.log(day_symbol);
-        //     break;
-        //   default:
-        //
-        // }
-        if (totalSteps > goal) {
-          tr.className = "comp";
-          td1.className = "comp_td text-left";
-          td1.innerHTML = d.getMonth() + 1;
-          dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
-          td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
-          td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="{{URL::asset('storage/history/co.svg')}}" alt="">';
-        } else {
-          td1.innerHTML = d.getMonth() + 1;
-          dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
-          td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
-          td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span>';
-        }
-        tr.appendChild(td1);
-        tr.appendChild(td2);
-        tr.appendChild(td3);
-        table_body.appendChild(tr);
-      });
+      console.log("dates is null");
+      var td1 = document.createElement("td");
+      td1.className = "incomp_td w-25";
+      var td2 = document.createElement("td");
+      td2.className = "w-50";
+      td2.style.color = "#2b63c6";
+      td2.innerHTML = "No Data Exists for this date";
+      var td3 = document.createElement("td");
+      td3.className = "w-25";
+      td3.style.color = "#2b63c6";
+      var tr = document.createElement("tr");
+      tr.appendChild(td1);
+      tr.appendChild(td2);
+      tr.appendChild(td3);
+      table_body.appendChild(tr);
     }
     console.log(dates);
     function daysInThisMonth() {
@@ -632,11 +650,25 @@
   //var tab_year = 2020;
   var selectedyear = 2020;
   var tab_yearly_selectedyear = {{$y}};
-  document.getElementById(tab_yearly_selectedyear).className = "px-1 selected_month";
-  document.getElementById(tab_yearly_selectedyear).scrollIntoView();
   var monthsContainer = document.getElementById('monthsContainer');
   var yearsContainer = document.getElementById('yearsContainer');
   var yearnumber = document.getElementById('yearnumber');
+  // if ({{$y}} > 2020) {
+  //   var dif = {{$y}} - 2020;
+  //   for (var i = 1; i <= dif; i++) {
+  //     var col = document.createElement("col");
+  //     var btn = document.createElement("button");
+  //     btn.id = 2020+i;
+  //     btn.className = "px-1 not_selected_month";
+  //     btn.backgroundColor = "#fff";
+  //     btn.onclick = "myFunc2(this.id);";
+  //     btn.innerHTML = 2020+i;
+  //     col.appendChild(btn);
+  //     yearsContainer.appendChild(col);
+  //   }
+  // }
+  document.getElementById(tab_yearly_selectedyear).className = "px-1 selected_month";
+  document.getElementById(tab_yearly_selectedyear).scrollIntoView();
   function myFunc(id)
         {
 
@@ -675,12 +707,12 @@
                 console.log("inmyfun2", selected);
                 console.log("funId2",id);
                   //alert(id);
-                  if (id>2020) {
-                    id = 2018;
+                  if (id>2022) {
+                    id = 2022;
                     //selectedyear+=1;
                     //console.log(selectedyear);
                   }
-                  if (id<2018) {
+                  if (id<2020) {
                     id = 2020;
                     //selectedyear-=1;
                     //console.log(selectedyear);
@@ -739,12 +771,12 @@
   if (touchendX2 - touchstartX2 < -50 && (touchendY2 - touchstartY2 < 25 && touchendY2 - touchstartY2 > -25)) {
   //alert('swiped left!');
   console.log("inswipeleft", tab_yearly_selectedyear);
-  myFunc2(tab_yearly_selectedyear-1);
+  myFunc2(tab_yearly_selectedyear+1);
   }
   if (touchendX2 - touchstartX2 > 50 && (touchendY2 - touchstartY2 < 25 && touchendY2 - touchstartY2 > -25)) {
   //alert('swiped right!');
   console.log("inswiperight", tab_yearly_selectedyear);
-  myFunc2(tab_yearly_selectedyear+1);
+  myFunc2(tab_yearly_selectedyear-1);
   }
   }
 
