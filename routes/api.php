@@ -60,6 +60,8 @@ Route::get('logs/', 't_LogController@index');
 Route::post('logs/', 't_LogController@store');
 Route::put('logs/{log}/','t_LogController@update');
 Route::get('checkserialnumber/{serial_number}','CheckSerialNumberController@show');
+Route::get('calender/{date}','CalenderController@show');
+Route::get('calender/','CalenderController@index');
 
 Route::group([
 
