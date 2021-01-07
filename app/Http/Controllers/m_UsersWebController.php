@@ -9,7 +9,10 @@ use App\User;
 use App\t_Tour;
 use App\m_Tour;
 use App\m_Checkpoint;
+use App\m_Calender;
 Use \Carbon\Carbon;
+use App\Imports\CalenderImport;
+use Excel;
 use Illuminate\Http\Request;
 
 class m_UsersWebController extends Controller
@@ -686,5 +689,21 @@ class m_UsersWebController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function importForm(){
+        return view('import-form');
+    }
+
+    public function import(Request $request){
+        try{
+            if(m_Calender::all()->count() < 820){
+                Excel::import(new CalenderImport, $request->file);
+            }
+            return redirect(route('padometerscreen'));
+        }
+        catch(\Exception $error){
+            return $error->getMessage();
+        }
     }
 }

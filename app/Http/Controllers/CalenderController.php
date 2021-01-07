@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\m_Calender;
-use App\Imports\CalenderImport;
-use Excel;
 use Illuminate\Http\Request;
 
 class CalenderController extends Controller
@@ -121,14 +119,6 @@ class CalenderController extends Controller
     }
 
 
-    public function importForm(){
-        return view('import-form');
-    }
-
-    public function import(Request $request){
-        Excel::import(new CalenderImport, $request->file);
-        return redirect(route('padometerscreen'));
-    }
 
     /**
      * Show the form for editing the specified resource.
