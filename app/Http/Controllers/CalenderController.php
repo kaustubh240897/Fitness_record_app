@@ -100,10 +100,10 @@ class CalenderController extends Controller
                 }
                 else{
                     $calender_category = $calender_data->category;
-                    $yesterday_id = $calender_data->m_calender_id - 1;
+                    $yesterday_id = $calender_data->id - 1;
                 }
                 
-                $yesterday_data = m_Calender::where('m_calender_id', $yesterday_id)->first();
+                $yesterday_data = m_Calender::where('id', $yesterday_id)->first();
                 if($yesterday_data == null){
                     $yesterday_category = null;
                 }
@@ -120,10 +120,6 @@ class CalenderController extends Controller
         }
     }
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     public function importForm(){
         return view('import-form');
