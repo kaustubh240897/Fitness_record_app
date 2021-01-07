@@ -14,10 +14,9 @@ class CreateMCalendersTable extends Migration
     public function up()
     {
         Schema::create('m__calenders', function (Blueprint $table) {
-            $table->increments('m_calender_id');
-            $table->string('calender_date', 255);
-            $table->enum('category', ['0', '1', '2']);
-            $table->timestamps();
+            $table->id();
+            $table->string('calender_date', 255)->unique();
+            $table->String('category');
         });
     }
 
