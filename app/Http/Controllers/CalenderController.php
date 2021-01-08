@@ -115,7 +115,7 @@ class CalenderController extends Controller
                     else{
                         $yesterday_category = $yesterday_data->category;
                     } 
-                    return response()->json(["in"=>$date, "out" => $date,"Category_today" => $calender_category, "category_yesterday" => $yesterday_category,"error" => $error  ], 201);
+                    return response()->json(["in"=>$date, "out" => $date,"category_today" => $calender_category, "category_yesterday" => $yesterday_category,"error" => $error  ], 201);
                 
                 } 
                 else{
