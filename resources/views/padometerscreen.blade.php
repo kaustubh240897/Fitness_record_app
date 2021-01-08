@@ -83,13 +83,13 @@ margin-bottom: -10px;
 
 .overlay-text2 {
 align-self: flex-start;
-transform: translateY(50%);
+transform: translateY(60%);
 z-index: 50;
 margin-bottom: -500px;
 }
 .overlay-text3 {
 align-self: flex-start;
-transform: translateY(-300%);
+transform: translateY(50%);
 z-index: 50
 }
 .overlay-text4 {
@@ -329,25 +329,18 @@ padding-right: -8px;
  <h2 class='mt-5'> 最初にプロファイルを作成してください <a href="/" style="color: blue !important">ここをクリック </a> </h2>
 </div>
 @else
-<div class="container-fluid pt-3" style="color:#FFFFFF; border-radius: 15px;">
+<!-- <div class="container-fluid pt-3" style="color:#FFFFFF; border-radius: 15px;">
       <div class="row justify-content-center">
         <div class="col pt-1 text-center">
           <p class="font-weight-bold pr-3 py-2" style="background: white; color:#2b63c6; border: 2px solid white; border-radius: 15px;">{{ $year }}年 {{ $month }}月 {{ $day }}日 火曜日</p>
         </div>
-        <!-- <div class="col-xs-1 overlay-btn1">
-          <i class="fa fa-refresh fa-3x blackiconcolor overlay-btn1 shadow sticky-top" aria-hidden="true"></i>
-          <p class="nopadding overlay-text3 text-center" style="font-size: 60%;color:#2b63c6">データ</p>
-          <p class="nopadding overlay-text3 text-center" style="font-size: 60%;color:#2b63c6">更新</p>
-        </div> -->
       </div>
-    </div>
-    @if(empty($get_t_tour))
-    <!-- <a href="{{ url('/mypage') }}"><img style="border-radius: 50%" class="myPageBtn mr-2" src="{{ asset('storage/padometerscreen/comp_mypgtn.png') }}" alt=""></a> -->
+    </div> -->
+    <!-- @if(empty($get_t_tour))
     <a href="{{ url('/createtour') }}"> <p id="btnMyPage" value="" onclick="mypage.performClick(this.value)" class="myPageBtn my-0 mr-2 mb-3 text-center pt-3 text-break px-2" style="color: #fff; font-size: 11px; font-weight: bold;width: 90px;height: 90px;border: solid 2px #ffffff; border-radius: 50% !important;
     background: url({{asset('storage/padometerscreen/yellow.png')}}); background-size: fill; background-position: center; background-repeat: no-repeat">
     ウォーキング <br> ツアーに <br> 参加しよう！ </p> </a>
     @else
-    <!-- <a href="{{ url('/mypage') }}"><img style="border-radius: 50%" class="myPageBtn mr-2" src="{{ asset('storage/padometerscreen/mypgbtn.png') }}" alt=""></a> -->
     <a href="{{ url('/mypage') }}"> <p id="btnMyPage2" value="" onclick="mypage.performClick(this.value)" class="myPageBtn my-0 mr-2 mb-3 text-center pt-3 text-break px-2" style="color: #fff; font-size: 11px; font-weight: bold;width: 90px;height: 90px;border: solid 2px #ffffff; border-radius: 50% !important;
     background: url({{asset('storage/padometerscreen/blue.png')}}); background-size: fill; background-position: center; background-repeat: no-repeat">
     {{$get_t_tour->m_tours->tour_title}}<br> 参加中！ </p> </a>
@@ -370,7 +363,7 @@ padding-right: -8px;
         </div>
       </div>
       </div>
-    </div>
+    </div> -->
     <div class="d-flex flex-row justify-content-around">
       <!-- <p><img src="{{ asset('storage/padometerscreen/rec.png') }}" alt=""></p>
       <p><img src="{{ asset('storage/padometerscreen/rec.png') }}" alt=""></p> -->
@@ -492,7 +485,7 @@ padding-right: -8px;
               <div class="container-fluid pt-3 d-md-none">
                 <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $current_month_steps }}歩 ({{ $current_month_steps*$get_m_user_stride/100000 }} Km)</p>
               </div>
-              @if(!empty($get_t_tour))
+              <!-- @if(!empty($get_t_tour))
                 <div class="container-fluid botCont bg-white" >
                   <div class="row  p-0 m-0 pl-2" style=" ">
                     <div class="col text-left p-0 m-0">
@@ -529,7 +522,7 @@ padding-right: -8px;
                   </div>
                 </div>
               </div>
-              @endif
+              @endif -->
               </div>
     </div>
     @else
@@ -554,9 +547,9 @@ padding-right: -8px;
 
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="d-flex flex-row pr-3">
+               </div>
+             </div>
+            <div class="d-flex flex-row pr-3 overlay-text3">
               <div class="text-center">
                 <p class="mb-0 mt-0 pt-0 font-weight-bold px-1 pl-sm-2 pl-md-3" style="background: white; font-size:70%; color:#2b63c6;; border: 1px solid #2b63c6;; border-radius: 15px;">あと {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
                 <div class="row justify-content-center">
@@ -594,7 +587,7 @@ padding-right: -8px;
                 </div>
               </div>
             </div>
-            <div class="d-flex flex-row pl-3">
+            <div class="d-flex flex-row pl-3 overlay-text3">
               <div class="text-center">
                 <p class="mb-0 mt-0 pt-0 font-weight-bold pl-sm-2 pl-md-3 pl-3 pl-lg-3 pr-3" style="background: white; font-size:70%; color:#2b63c6; border: 1px solid #2b63c6;; border-radius: 15px;">あと {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
                 <div class="row justify-content-center">
@@ -619,13 +612,13 @@ padding-right: -8px;
                   <div id="triangle_graph" class=""></div>
               </div>
               <div class="container-fluid pt-3 w-25 d-none d-lg-block">
-                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $get_m_user_monthly_goal }}歩 ({{ $get_m_user_monthly_goal*$get_m_user_stride/100000 }} Km)</p>
+                <p class="text-center" style="margin-bottom: 0px; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $get_m_user_monthly_goal }}歩 ({{ $get_m_user_monthly_goal*$get_m_user_stride/100000 }} Km)</p>
               </div>
               <div class="container-fluid pt-3 w-50 d-none d-md-block d-lg-none">
-                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $get_m_user_monthly_goal }}歩 ({{ $get_m_user_monthly_goal*$get_m_user_stride/100000 }} Km)</p>
+                <p class="text-center" style="margin-bottom: 0px; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $get_m_user_monthly_goal }}歩 ({{ $get_m_user_monthly_goal*$get_m_user_stride/100000 }} Km)</p>
               </div>
               <div class="container-fluid pt-3 d-md-none">
-                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $get_m_user_monthly_goal }}歩 ({{ $get_m_user_monthly_goal*$get_m_user_stride/100000 }} Km)</p>
+                <p class="text-center" style="margin-bottom: 0px; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $get_m_user_monthly_goal }}歩 ({{ $get_m_user_monthly_goal*$get_m_user_stride/100000 }} Km)</p>
               </div>
 
               <!-- <div class="row" style="margin: 0 !important;">
@@ -633,7 +626,7 @@ padding-right: -8px;
                   <img class="" style="margin-left: -15px !important;" src="{{ asset('storage/padometerscreen/blue_bottom.png') }}" alt="" >
                 </div>
               </div> -->
-              @if(!empty($get_t_tour))
+              <!-- @if(!empty($get_t_tour))
                 <div class="container-fluid botCont bg-white" >
                   <div class="row  p-0 m-0 pl-2" style=" ">
                     <div class="col text-left p-0 m-0">
@@ -670,7 +663,7 @@ padding-right: -8px;
                   </div>
                 </div>
               </div>
-              @endif
+              @endif -->
               </div>
     </div>
     @endif
