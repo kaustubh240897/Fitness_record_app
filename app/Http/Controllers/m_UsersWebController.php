@@ -699,8 +699,12 @@ class m_UsersWebController extends Controller
         try{
             if(m_Calender::all()->count() < 820){
                 Excel::import(new CalenderImport, $request->file);
+                return redirect(route('import-form'))->with('successMsg','your csv file Successfully added.');
             }
-            return redirect(route('padometerscreen'));
+            else{
+                return redirect(route('import-form'))->with('warningMsg','your csv file already added.');
+            }
+            
         }
         catch(\Exception $error){
             return $error->getMessage();

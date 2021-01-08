@@ -54,5 +54,5 @@ Route::post('/custom-login', 'CustomAuthController@manualLogin')->name('custom.m
 
 Route::get('/logout', 'CustomAuthController@showlogout')->name('custom.logout');
 Route::post('/logout', 'CustomAuthController@logout')->name('logout');
-Route::get('/import-calender', 'm_UsersWebController@importForm');
+Route::get('/import-calender', 'm_UsersWebController@importForm')->name('import-form');
 Route::post('/import-calender','m_UsersWebController@import')->name('import');
