@@ -137,7 +137,9 @@ class t_TourWebController extends Controller
         }
         
         $t_tour->save();
-        return redirect( route('tourdetails', $id))->with('successMsg','your tour Successfully selected');
+        return redirect( route('tourdetails', $id))->with('successMsg','your tour Successfully selected')->withCookie(
+            'tourname', 
+            $t_tour->m_tours->tour_title, 5340000, '/');
     }
 
     // public function createtoursession(Request $request){
