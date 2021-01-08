@@ -87,34 +87,46 @@ class CalenderController extends Controller
         else{
             
             $date1 = substr($date, 0, -4);
-            $error = 0;
-            if(strlen((string)$date) == 12){
+            //$lastfour = substr((string)$date, -4);
+            // $m = substr((string) $date,4,-6);
+            // $d = substr((string) $date,6,-4);
+            // $y = substr((string) $date,0,-8);
+            $hh = substr((string) $date,8,-2);
+            $mm = substr((string) $date,10);
+            if((int)$hh < 24 && (int)$mm < 60){
+                $error = 0;
+                if(strlen((string)$date) == 12){
+                    
+                    $calender_data = m_Calender::where('calender_date', $date1)->first();
+                    if($calender_data == null ){
+                        $calender_category = null;
+                        $yesterday_id = null;
+                        $error = 1;
+                    }
+                    else{
+                        $calender_category = $calender_data->category;
+                        $yesterday_id = $calender_data->id - 1;
+                    }
+                    
+                    $yesterday_data = m_Calender::where('id', $yesterday_id)->first();
+                    if($yesterday_data == null){
+                        $yesterday_category = null;
+                    }
+                    else{
+                        $yesterday_category = $yesterday_data->category;
+                    } 
+                    return response()->json(["in"=>$date, "out" => $date,"Category_today" => $calender_category, "category_yesterday" => $yesterday_category,"error" => $error  ], 201);
                 
-                $calender_data = m_Calender::where('calender_date', $date1)->first();
-                if($calender_data == null ){
-                    $calender_category = null;
-                    $yesterday_id = null;
-                    $error = 1;
-                }
-                else{
-                    $calender_category = $calender_data->category;
-                    $yesterday_id = $calender_data->id - 1;
-                }
-                
-                $yesterday_data = m_Calender::where('id', $yesterday_id)->first();
-                if($yesterday_data == null){
-                    $yesterday_category = null;
-                }
-                else{
-                    $yesterday_category = $yesterday_data->category;
                 } 
-                return response()->json(["in"=>$date, "out" => $date,"Category_today" => $calender_category, "category_yesterday" => $yesterday_category,"error" => $error  ], 201);
-            
-            } 
+                else{
+                    return response()->json(["in"=>$date, "out"=> null, "category_today"=>null,"category_yesterday"=>null, "error"=>1], 201);
+                }
+            }
             else{
                 return response()->json(["in"=>$date, "out"=> null, "category_today"=>null,"category_yesterday"=>null, "error"=>1], 201);
             }
-           
+            
+            
         }
     }
 
