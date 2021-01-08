@@ -697,12 +697,17 @@ class m_UsersWebController extends Controller
 
     public function import(Request $request){
         try{
-            if(m_Calender::all()->count() < 820){
+            if(m_Calender::all()->count() == 0){
                 Excel::import(new CalenderImport, $request->file);
                 return redirect(route('import-form'))->with('successMsg','your csv file Successfully added.');
             }
             else{
-                return redirect(route('import-form'))->with('warningMsg','your csv file already added.');
+                $calenders = m_Calender::all();
+                foreach($calenders as $calender){
+                    $calender->delete();
+                }
+                Excel::import(new CalenderImport, $request->file);
+                return redirect(route('import-form'))->with('warningMsg','your csv file successfully updated.');
             }
             
         }
