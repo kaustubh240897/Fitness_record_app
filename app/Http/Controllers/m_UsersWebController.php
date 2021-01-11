@@ -10,6 +10,7 @@ use App\t_Tour;
 use App\m_Tour;
 use App\m_Checkpoint;
 use App\m_Calender;
+use App\t_Collection;
 Use \Carbon\Carbon;
 use App\Imports\CalenderImport;
 use Excel;
@@ -46,9 +47,9 @@ class m_UsersWebController extends Controller
             $m  =$month;
 
             $steps_week = [$m__users->step_monday,$m__users->step_tuesday,$m__users->step_wednesday,$m__users->step_thursday,$m__users->step_friday,$m__users->step_saturday,$m__users->step_sunday];
+            $unseen_collection = t_Collection::where('m__users_id', $m__users_id)->where('new_display_flag', 0)->count();
 
-
-            return view('userhistory', compact('get_m_user_stride','get_m_user_daily_goal','dates','steps_week','reverse','y','m'));
+            return view('userhistory', compact('get_m_user_stride','get_m_user_daily_goal','dates','steps_week','reverse','y','m','unseen_collection'));
             }
         else{
 
@@ -59,7 +60,8 @@ class m_UsersWebController extends Controller
             $reverse = 0;
             $y = null;
             $m = null;
-            return view('userhistory', compact('get_m_user_stride','get_m_user_daily_goal','dates','steps_week','reverse','y','m'));
+            $unseen_collection = 0;
+            return view('userhistory', compact('get_m_user_stride','get_m_user_daily_goal','dates','steps_week','reverse','y','m','unseen_collection'));
         }
     }
 
@@ -82,8 +84,9 @@ class m_UsersWebController extends Controller
             $get_m_user_stride = $m__users->stride;
             $get_m_user_daily_goal = $m__users->step_goal_per_day;
             $steps_week = [$m__users->step_monday,$m__users->step_tuesday,$m__users->step_wednesday,$m__users->step_thursday,$m__users->step_friday,$m__users->step_saturday,$m__users->step_sunday];
+            $unseen_collection = t_Collection::where('m__users_id', $m__users_id)->where('new_display_flag', 0)->count();
 
-            return view('userhistory', compact('get_m_user_stride','get_m_user_daily_goal','dates','steps_week','reverse','y','m'));
+            return view('userhistory', compact('get_m_user_stride','get_m_user_daily_goal','dates','steps_week','reverse','y','m','unseen_collection'));
             }
         else{
 
@@ -94,8 +97,9 @@ class m_UsersWebController extends Controller
             $reverse = 1;
             $y = null;
             $m = null;
+            $unseen_collection = 0;
 
-            return view('userhistory', compact('get_m_user_stride','get_m_user_daily_goal','dates','steps_week','reverse','y','m'));
+            return view('userhistory', compact('get_m_user_stride','get_m_user_daily_goal','dates','steps_week','reverse','y','m','unseen_collection'));
         }
     }
 
@@ -114,9 +118,10 @@ class m_UsersWebController extends Controller
             $y = $year;
             $get_m_user_stride = $m__users->stride;
             $get_m_user_monthly_goal = $m__users->step_goals_per_month;
+            $unseen_collection = t_Collection::where('m__users_id', $m__users_id)->where('new_display_flag', 0)->count();
 
 
-            return view('usermonthlyhistory', compact('get_m_user_stride','get_m_user_monthly_goal','months','reverse','y'));
+            return view('usermonthlyhistory', compact('get_m_user_stride','get_m_user_monthly_goal','months','reverse','y','unseen_collection'));
         }
         else{
             $months = null;
@@ -124,7 +129,8 @@ class m_UsersWebController extends Controller
             $get_m_user_monthly_goal  = null;
             $reverse  = 0;
             $y = null;
-            return view('usermonthlyhistory', compact('get_m_user_stride','get_m_user_monthly_goal','months','reverse','y'));
+            $unseen_collection = 0;
+            return view('usermonthlyhistory', compact('get_m_user_stride','get_m_user_monthly_goal','months','reverse','y','unseen_collection'));
 
         }
 
@@ -145,9 +151,10 @@ class m_UsersWebController extends Controller
             // });
             $get_m_user_stride = $m__users->stride;
             $get_m_user_monthly_goal = $m__users->step_goals_per_month;
+            $unseen_collection = t_Collection::where('m__users_id', $m__users_id)->where('new_display_flag', 0)->count();
 
 
-            return view('usermonthlyhistory', compact('get_m_user_stride','get_m_user_monthly_goal','months','reverse','y'));
+            return view('usermonthlyhistory', compact('get_m_user_stride','get_m_user_monthly_goal','months','reverse','y','unseen_collection'));
          }
          else{
             $current_month_datas = null;
@@ -156,7 +163,8 @@ class m_UsersWebController extends Controller
             $months = null;
             $reverse = 1;
             $y = null;
-            return view('usermonthlyhistory', compact('current_month_datas','get_m_user_stride','get_m_user_monthly_goal','months','reverse','y'));
+            $unseen_collection = 0;
+            return view('usermonthlyhistory', compact('current_month_datas','get_m_user_stride','get_m_user_monthly_goal','months','reverse','y','unseen_collection'));
 
          }
 
@@ -173,14 +181,16 @@ class m_UsersWebController extends Controller
             $search_data = t_Steps::where('m__users_id', $m__users_id)->whereDate('step_actual_datetime', $search)->get()->sum('steps');
             $get_m_user_stride = $m_users->stride;
             $get_m_user_daily_goal = $m_users->step_goal_per_day;
-            return view('search', compact('search_data', 'search','get_m_user_stride','get_m_user_daily_goal'));
+            $unseen_collection = t_Collection::where('m__users_id', $m__users_id)->where('new_display_flag', 0)->count();
+            return view('search', compact('search_data', 'search','get_m_user_stride','get_m_user_daily_goal','unseen_collection'));
         }
         else{
             $search = null;
             $search_data = null;
             $get_m_user_stride = null;
             $get_m_user_daily_goal = null;
-            return view('search', compact('search_data', 'search','get_m_user_stride','get_m_user_daily_goal'));
+            $unseen_collection = 0;
+            return view('search', compact('search_data', 'search','get_m_user_stride','get_m_user_daily_goal','unseen_collection'));
 
         }
     }
@@ -190,6 +200,7 @@ class m_UsersWebController extends Controller
 
             $m__users = m_Users::where('users_id',Auth::id())->first();
             $m__users_id = $m__users->id;
+            $unseen_collection = t_Collection::where('m__users_id', $m__users_id)->where('new_display_flag', 0)->count();
             $today_data = t_Steps::where('m__users_id', $m__users_id)->whereDate('step_actual_datetime', Carbon::now()->toDateString())->get()->sum('steps');
             $current_month_steps = t_Steps::where('m__users_id', $m__users_id)->whereBetween('step_actual_datetime', [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])->orderBy('step_actual_datetime')->get()->sum('steps');
             $current_week_datas = t_Steps::where('m__users_id', $m__users_id)->whereBetween('step_actual_datetime', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->get()->groupBy(function ($val) {
@@ -267,7 +278,7 @@ class m_UsersWebController extends Controller
 
             }
 
-            return view('myPage', compact('device','today_data','m__users_id','m__users','get_m_user_monthly_goal','current_month_steps','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','session_value','checkpoints','checkpointsr','total','current_week_datas','steps_week'));
+            return view('myPage', compact('device','today_data','m__users_id','m__users','get_m_user_monthly_goal','current_month_steps','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','session_value','checkpoints','checkpointsr','total','current_week_datas','steps_week','unseen_collection'));
         }
         else{
             $today_data = null;
@@ -275,6 +286,7 @@ class m_UsersWebController extends Controller
             $get_m_user_daily_goal = null;
             $get_m_user_monthly_goal = null;
             $m__users = null;
+            $unseen_collection = 0;
             $get_t_tour = null;
             if (Browser::isMobile()) {
                 $device = 111;
@@ -295,7 +307,7 @@ class m_UsersWebController extends Controller
             $m__users_id = null;
             $steps_week = null;
 
-            return view('myPage', compact('device','today_data','m__users','m__users_id','get_m_user_monthly_goal','current_month_steps','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','session_value','checkpoints','checkpointsr','total','current_week_datas','steps_week'));
+            return view('myPage', compact('device','today_data','m__users','m__users_id','get_m_user_monthly_goal','current_month_steps','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','session_value','checkpoints','checkpointsr','total','current_week_datas','steps_week','unseen_collection'));
         }
 
     }
@@ -317,6 +329,7 @@ class m_UsersWebController extends Controller
             }
             $m__users = m_Users::where('users_id',Auth::id())->first();
             $m__users_id = $m__users->id;
+            $unseen_collection = t_Collection::where('m__users_id', $m__users_id)->where('new_display_flag', 0)->count();
             $today_data = t_Steps::where('m__users_id', $m__users_id)->whereDate('step_actual_datetime', Carbon::now()->toDateString())->get()->sum('steps');
             $current_month_steps = t_Steps::where('m__users_id', $m__users_id)->whereBetween('step_actual_datetime', [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])->orderBy('step_actual_datetime')->get()->sum('steps');
             $current_week_datas = t_Steps::where('m__users_id', $m__users_id)->whereBetween('step_actual_datetime', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->get()->groupBy(function ($val) {
@@ -380,7 +393,7 @@ class m_UsersWebController extends Controller
             }
 
 
-            return view('padometerscreen', compact('year', 'day', 'month','device','m__users','today_data','m__users_id','current_month_steps','get_m_user_monthly_goal','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','total','current_week_datas','steps_week'));
+            return view('padometerscreen', compact('year', 'day', 'month','device','m__users','today_data','m__users_id','current_month_steps','get_m_user_monthly_goal','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','total','current_week_datas','steps_week','unseen_collection'));
         }
         else{
             $today_data = null;
@@ -408,8 +421,9 @@ class m_UsersWebController extends Controller
             $current_week_datas = null;
             $current_month_steps = 0;
             $steps_week = null;
+            $unseen_collection = 0;
 
-            return view('padometerscreen', compact('year', 'day', 'month','m__users','device','today_data','m__users_id','current_month_steps','get_m_user_monthly_goal','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','total','current_week_datas','steps_week'));
+            return view('padometerscreen', compact('year', 'day', 'month','m__users','device','today_data','m__users_id','current_month_steps','get_m_user_monthly_goal','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','total','current_week_datas','steps_week','unseen_collection'));
         }
 
     }
@@ -428,11 +442,13 @@ class m_UsersWebController extends Controller
         if($m_user !=null){
         $m__user_id = $m_user->id;
         $t_tour = t_Tour::where('m__users_id', $m__user_id)->orderBy('created_at','DESC')->first();
+        $unseen_collection = t_Collection::where('m__users_id', $m__user_id)->where('new_display_flag', 0)->count();
         }
         else{
             $t_tour = null;
+            $unseen_collection = 0;
         }
-        return view('create', compact('m_user','t_tour'));
+        return view('create', compact('m_user','t_tour','unseen_collection'));
     }
 
     /**
@@ -545,12 +561,14 @@ class m_UsersWebController extends Controller
         $m_users = m_Users::where('id', $id)->get()->first();
         if(! empty($m_users) && $m_users->users_id == Auth::id()){
             $t_tour = t_Tour::where('m__users_id', $m_users->id)->orderBy('created_at','DESC')->first();
-            return view('edit', compact('m_users','t_tour'));
+            $unseen_collection = t_Collection::where('m__users_id', $m_users->id)->where('new_display_flag', 0)->count();
+            return view('edit', compact('m_users','t_tour','unseen_collection'));
         }
         else{
             $m_users = null;
             $t_tour = null;
-            return view('edit', compact('m_users','t_tour'));
+            $unseen_collection = 0;
+            return view('edit', compact('m_users','t_tour','unseen_collection'));
         }
     }
 
@@ -645,12 +663,13 @@ class m_UsersWebController extends Controller
     public function showProfileDetails()
     {
         $m_users = m_Users::where('users_id', Auth::id())->first();
+        $unseen_collection = t_Collection::where('m__users_id', $m_users->id)->where('new_display_flag', 0)->count();
         if(! empty($m_users) && $m_users->users_id == Auth::id()){
             $t_tour = t_Tour::where('m__users_id', $m_users->id)->orderBy('created_at','DESC')->first();
             $m_tours = m_Tour::all();
             $min = 10000;
             foreach($m_tours as $m_tour){
-            $count = t_Tour::where('m__users_id', $m_users->id)->where('m__tours_id', $m_tour->id)->count();
+            $count = t_Tour::where('m__users_id', $m_users->id)->where('status', 'Done')->where('m__tours_id', $m_tour->id)->count();
                 if($count < $min){
                     $min = $count;
                 }
@@ -670,13 +689,14 @@ class m_UsersWebController extends Controller
             else{
                 $steps = 0;
             }
-            return view('showprofiledetails', compact('m_users','t_tour','steps'));
+            return view('showprofiledetails', compact('m_users','t_tour','steps','unseen_collection'));
         }
         else{
             $m_users = null;
             $t_tour = null;
             $steps = 0;
-            return view('showprofiledetails', compact('m_users','t_tour','steps'));
+            $unseen_collection = 0;
+            return view('showprofiledetails', compact('m_users','t_tour','steps','unseen_collection'));
         }
     }
 

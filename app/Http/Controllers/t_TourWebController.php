@@ -29,6 +29,7 @@ class t_TourWebController extends Controller
             $tours = m_Tour::all();
             $constant_data = Config::get('constants.myData');
             $m__users_id = m_Users::where('users_id',Auth::id())->first()->id;
+            $unseen_collection = t_Collection::where('m__users_id', $m__users_id)->where('new_display_flag', 0)->count();
             $current_tour = t_Tour::where('m__users_id', $m__users_id)->orderBy('start_datetime','DESC')->get()->first();
             $all_t_Tours = t_Tour::where('m__users_id', $m__users_id)->get();
             
@@ -71,7 +72,7 @@ class t_TourWebController extends Controller
 
             //dd($current_tour->m_tours['tour_title']);
             if($tours != null){
-            return view('tourselection', compact('tours','m__users_id','current_tour','all_t_Tours','get_m_user_daily_goal','get_m_user_stride','get_t_tour','steps','checkpoints','total','constant_data'));
+            return view('tourselection', compact('tours','m__users_id','current_tour','all_t_Tours','get_m_user_daily_goal','get_m_user_stride','get_t_tour','steps','checkpoints','total','constant_data','unseen_collection'));
             }
             else{
                 return view('emptycheckpoints', compact('tours'));
@@ -90,8 +91,9 @@ class t_TourWebController extends Controller
             $total = 0;
             $m__users_id = null;
             $constant_data = null;
+            $unseen_collection = 0;
             if($tours != null){
-            return view('tourselection', compact('tours','m__users_id','current_tour','all_t_Tours','get_m_user_daily_goal','get_m_user_stride','get_t_tour','steps','checkpoints','total','constant_data'));
+            return view('tourselection', compact('tours','m__users_id','current_tour','all_t_Tours','get_m_user_daily_goal','get_m_user_stride','get_t_tour','steps','checkpoints','total','constant_data','unseen_collection'));
             }
             else{
                 return view('emptycheckpoints', compact('tours'));
@@ -179,6 +181,7 @@ class t_TourWebController extends Controller
             if($tours){
                 $m__tours_id = $id;
                 $m__users_id = m_Users::where('users_id',Auth::id())->first()->id;
+                $unseen_collection = t_Collection::where('m__users_id', $m__users_id)->where('new_display_flag', 0)->count();
                 $constant_data = Config::get('constants.myData');
                 //dd($m__users_id);
                 $get_t_tour = t_Tour::where('m__tours_id', $m__tours_id)->where('m__users_id', $m__users_id)->where('status', 'Inprogress')->orderBy('start_datetime','DESC')->first();
@@ -217,7 +220,7 @@ class t_TourWebController extends Controller
                     return view('emptycheckpoints', compact('tours'));
                     }
                 else{
-                    return view('tourdetails', compact('tours','current_tour','value','checkpoints','checkpointsr','total','steps','user_stride','constant_data'));
+                    return view('tourdetails', compact('tours','current_tour','value','checkpoints','checkpointsr','total','steps','user_stride','constant_data','unseen_collection'));
                 }
             }
             else{
@@ -236,6 +239,7 @@ class t_TourWebController extends Controller
     {
         if(m_Users::where('users_id',Auth::id())->count() >0){
             $m__user_id = m_Users::where('users_id',Auth::id())->first()->id;
+            $unseen_collection = t_Collection::where('m__users_id', $m__user_id)->where('new_display_flag', 0)->count();
             
             $my_checkpoint = m_Checkpoint::where('id',$id)->get()->first();
             $session_value = $request->session()->get('reverse','false');
@@ -264,7 +268,7 @@ class t_TourWebController extends Controller
                 $total = 0;
             }
             
-            return view('checkpointsdetails', compact('my_checkpoint','total','checkpoints','checkpointsr','session_value'));
+            return view('checkpointsdetails', compact('my_checkpoint','total','checkpoints','checkpointsr','session_value','unseen_collection'));
         }
         else{
             $my_checkpoint = null;
@@ -272,7 +276,8 @@ class t_TourWebController extends Controller
             $checkpointsr = null;
             $total = null;
             $session_value = false;
-            return view('checkpointsdetails', compact('my_checkpoint','total','checkpoints','checkpointsr','session_value'));
+            $unseen_collection = 0;
+            return view('checkpointsdetails', compact('my_checkpoint','total','checkpoints','checkpointsr','session_value','unseen_collection'));
         }
     }
 
