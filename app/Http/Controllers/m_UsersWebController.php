@@ -32,7 +32,7 @@ class m_UsersWebController extends Controller
             $m__users = m_Users::where('users_id',Auth::id())->first();
             $m__users_id = $m__users->id;
             $reverse = 0;
-            $dates = t_Steps::where('m__users_id', $m__users_id)->whereYear('step_actual_datetime', '=', $year)
+            $dates = t_Steps::where('m__users_id', $m__users_id)->orderBy('step_actual_datetime', 'ASC')->whereYear('step_actual_datetime', '=', $year)
             ->whereMonth('step_actual_datetime', '=', $month)
             ->get()->groupBy(function ($val) {
                 return Carbon::parse($val->step_actual_datetime)->format('d');
