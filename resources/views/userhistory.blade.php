@@ -425,11 +425,12 @@ background-color: #113a83; color: #fff">
     console.log(goal);
     var weekGoals = {!! json_encode($steps_week) !!};
     var dates = {!! json_encode($dates) !!};
+    console.log("sort_normal", Object.keys(dates).sort());
     if (Object.keys(dates).length > 0) {
       if (is_rev == 1) {
         var totalDays = daysInThisMonth();
         console.log(totalDays);
-        Object.keys(dates).reverse().forEach((date, i) => {
+        Object.keys(dates).sort().reverse().forEach((date, i) => {
           console.log("ddd",date);
           var day_symbol = "(曜)";
           var td1 = document.createElement("td");
@@ -510,7 +511,7 @@ background-color: #113a83; color: #fff">
           table_body.appendChild(tr);
         });
       } else {
-        Object.keys(dates).forEach((date, i) => {
+        Object.keys(dates).sort().forEach((date, i) => {
           console.log("ddd",date);
           var day_symbol = "(曜)";
           var td1 = document.createElement("td");
