@@ -147,9 +147,7 @@ border: 1px solid white;
 padding: 10px;
 }
 
-body {
-background-color: #f0f6f8;
-}
+
 .blackiconcolor {color:#dce0e3;}
 .fa { transform: scale(1.3,1.2);
 padding: 4px;
@@ -314,56 +312,61 @@ margin-bottom: -30px;
 .fixpixel {
   margin-left: -32px;
 }
-.fixpixel img{
-height: auto;
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-padding-left: -8px;
-padding-right: -8px;
+.fixpixel img {
+  height: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-left: -8px;
+  padding-right: -8px;
+ }
+ .body {
+   background-color: transparent;
  }
 </style>
 
 @if ( empty($m__users_id))
-<div class='text-center'>
- <h2 class='mt-5'> 最初にプロファイルを作成してください <a href="/" style="color: blue !important">ここをクリック </a> </h2>
-</div>
+  <div class='text-center'>
+   <h2 class='mt-5'> 最初にプロファイルを作成してください <a href="/" style="color: blue !important">ここをクリック </a> </h2>
+  </div>
 @else
-<!-- <div class="container-fluid pt-3" style="color:#FFFFFF; border-radius: 15px;">
+  <div id="div_native" class="">
+    <div id="tv_date" class="container-fluid pt-3" style="color:#FFFFFF; border-radius: 15px;">
       <div class="row justify-content-center">
         <div class="col pt-1 text-center">
           <p class="font-weight-bold pr-3 py-2" style="background: white; color:#2b63c6; border: 2px solid white; border-radius: 15px;">{{ $year }}年 {{ $month }}月 {{ $day }}日 火曜日</p>
         </div>
       </div>
-    </div> -->
-    <!-- @if(empty($get_t_tour))
-    <a href="{{ url('/createtour') }}"> <p id="btnMyPage" value="" onclick="mypage.performClick(this.value)" class="myPageBtn my-0 mr-2 mb-3 text-center pt-3 text-break px-2" style="color: #fff; font-size: 11px; font-weight: bold;width: 90px;height: 90px;border: solid 2px #ffffff; border-radius: 50% !important;
-    background: url({{asset('storage/padometerscreen/yellow.png')}}); background-size: fill; background-position: center; background-repeat: no-repeat">
-    ウォーキング <br> ツアーに <br> 参加しよう！ </p> </a>
-    @else
-    <a href="{{ url('/mypage') }}"> <p id="btnMyPage2" value="" onclick="mypage.performClick(this.value)" class="myPageBtn my-0 mr-2 mb-3 text-center pt-3 text-break px-2" style="color: #fff; font-size: 11px; font-weight: bold;width: 90px;height: 90px;border: solid 2px #ffffff; border-radius: 50% !important;
-    background: url({{asset('storage/padometerscreen/blue.png')}}); background-size: fill; background-position: center; background-repeat: no-repeat">
-    {{$get_t_tour->m_tours->tour_title}}<br> 参加中！ </p> </a>
-    @endif
-    <a href="{{ url('/padometerscreen') }}"><img style="border-radius: 50%" class="refBtn d-block d-sm-none mt-2 mr-2" src="{{ asset('storage/padometerscreen/ref.png') }}" alt=""></a>
-    <a href="{{ url('/padometerscreen') }}"><img style="border-radius: 50%" class="refBtn d-none d-sm-block d-md-none mt-2 mr-2" src="{{ asset('storage/padometerscreen/ref.png') }}" alt=""></a>
-    <a href="{{ url('/padometerscreen') }}"><img style="border-radius: 50%" class="refBtn d-none d-md-block d-lg-none mt-2 mr-2" src="{{ asset('storage/padometerscreen/ref.png') }}" alt=""></a>
-    <a href="{{ url('/padometerscreen') }}"><img style="border-radius: 50%" class="refBtn d-none d-lg-block d-xl-none mt-2 mr-2" src="{{ asset('storage/padometerscreen/ref.png') }}" alt=""></a>
-    <a href="{{ url('/padometerscreen') }}"><img style="border-radius: 50%" class="refBtn d-none d-xl-block mt-2 mr-2" src="{{ asset('storage/padometerscreen/ref.png') }}" alt=""></a>
-    <div class="container-fluid pt-3">
-      <div class="row">
-      <div class="col-6">
-      <div class="card">
-        <a href="http://3.114.126.114:8012/recipe/serial_number"><img class="card-img-top" src="{{ asset('storage/padometerscreen/rec.png') }}" alt="Card image cap"></a>
-      </div>
-      </div>
-      <div class="col-6">
+    </div>
+      @if(empty($get_t_tour))
+      <a href="{{ url('/createtour') }}"> <p id="btnMyPage" value="" onclick="mypage.performClick(this.value)" class="myPageBtn my-0 mr-2 mb-3 text-center pt-3 text-break px-2" style="color: #fff; font-size: 11px; font-weight: bold;width: 90px;height: 90px;border: solid 2px #ffffff; border-radius: 50% !important;
+      background: url({{asset('storage/padometerscreen/yellow.png')}}); background-size: fill; background-position: center; background-repeat: no-repeat">
+      ウォーキング <br> ツアーに <br> 参加しよう！ </p> </a>
+      @else
+      <a href="{{ url('/mypage') }}"> <p id="btnMyPage2" value="" onclick="mypage.performClick(this.value)" class="myPageBtn my-0 mr-2 mb-3 text-center pt-3 text-break px-2" style="color: #fff; font-size: 11px; font-weight: bold;width: 90px;height: 90px;border: solid 2px #ffffff; border-radius: 50% !important;
+      background: url({{asset('storage/padometerscreen/blue.png')}}); background-size: fill; background-position: center; background-repeat: no-repeat">
+      {{$get_t_tour->m_tours->tour_title}}<br> 参加中！ </p> </a>
+      @endif
+      <a href="{{ url('/padometerscreen') }}"><img style="border-radius: 50%" class="refBtn d-block d-sm-none mt-2 mr-2" src="{{ asset('storage/padometerscreen/ref.png') }}" alt=""></a>
+      <a href="{{ url('/padometerscreen') }}"><img style="border-radius: 50%" class="refBtn d-none d-sm-block d-md-none mt-2 mr-2" src="{{ asset('storage/padometerscreen/ref.png') }}" alt=""></a>
+      <a href="{{ url('/padometerscreen') }}"><img style="border-radius: 50%" class="refBtn d-none d-md-block d-lg-none mt-2 mr-2" src="{{ asset('storage/padometerscreen/ref.png') }}" alt=""></a>
+      <a href="{{ url('/padometerscreen') }}"><img style="border-radius: 50%" class="refBtn d-none d-lg-block d-xl-none mt-2 mr-2" src="{{ asset('storage/padometerscreen/ref.png') }}" alt=""></a>
+      <a href="{{ url('/padometerscreen') }}"><img style="border-radius: 50%" class="refBtn d-none d-xl-block mt-2 mr-2" src="{{ asset('storage/padometerscreen/ref.png') }}" alt=""></a>
+      <div class="container-fluid pt-3">
+        <div class="row">
+        <div class="col-6">
         <div class="card">
-          <a href="http://3.114.126.114:8012/himekuri/specified_date/{serial_number}"><img class="card-img-top" src="{{ asset('storage/padometerscreen/cal.png') }}" alt="Card image cap"></a>
+          <a href="http://3.114.126.114:8012/recipe/serial_number"><img class="card-img-top" src="{{ asset('storage/padometerscreen/rec.png') }}" alt="Card image cap"></a>
+        </div>
+        </div>
+        <div class="col-6">
+          <div class="card">
+            <a href="http://3.114.126.114:8012/himekuri/specified_date/{serial_number}"><img class="card-img-top" src="{{ asset('storage/padometerscreen/cal.png') }}" alt="Card image cap"></a>
+          </div>
+        </div>
         </div>
       </div>
-      </div>
-    </div> -->
+  </div>
     <div class="d-flex flex-row justify-content-around">
       <!-- <p><img src="{{ asset('storage/padometerscreen/rec.png') }}" alt=""></p>
       <p><img src="{{ asset('storage/padometerscreen/rec.png') }}" alt=""></p> -->
@@ -392,7 +395,7 @@ padding-right: -8px;
         <img src="{{asset('storage/padometerscreen/star.png')}}" alt="">
       </div>
     <div id="bg_season1" class="container-fluid pt-3" style="background-size: 100% 80%; background-position: right 100%;; background-repeat: no-repeat">
-    <div class="relative w-100 h-50" style="background: url({{asset('storage/padometerscreen/graphcomp.png')}}); background-position: center; background-repeat: no-repeat">
+    <div class="relative w-100 h-50" style="background: url({{asset('storage/padometerscreen/graphcomp.png')}}); background-size: 52% 104%; background-position: center; background-repeat: no-repeat">
       <canvas id="myChart"></canvas>
       <div class="absolute-center text-center">
         <p class="mb-0 p-0" style="font-size:70%; color:#ff9327;"> {{ ($today_data)*$get_m_user_stride/100000 }} km</p>
@@ -732,6 +735,13 @@ padding-right: -8px;
   console.log(motion_app);
   console.log(motion_web);
   var animation_time = 0;
+  if (dev == 111) {
+    var native_div = document.getElementById("div_native");
+    native_div.className = "d-none";
+  } else {
+    var native_div = document.getElementById("div_native");
+    native_div.className = "";
+  }
   if (dev == 111 && motion_app == 1) {
     animation_time = 3000;
   } else if (dev == 222 && motion_web == 1) {
