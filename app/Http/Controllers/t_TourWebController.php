@@ -10,6 +10,7 @@ use App\t_Tour;
 use App\m_Tour;
 use App\m_Users;
 use App\t_Steps;
+use App\t_Collection;
 use App\m_Checkpoint;
 Use \Carbon\Carbon;
 class t_TourWebController extends Controller
