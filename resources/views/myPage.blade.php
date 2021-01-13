@@ -525,7 +525,7 @@ padding-top: 0
   @else
 
   <a href="{{ url('/mypage') }}"><img style="border-radius: 50%" class="refBtn mr-2" src="{{ asset('storage/mypage/ref-blue.png') }}" alt=""></a>
-  <div class="container-fluid" style="margin-top: 28px !important">
+  <div id="div_notification" class="container-fluid" style="margin-top: 28px !important">
         <div class="row" style="padding: 0 16px 0 0;
                                 box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
                                 background-color: #ffdd80;">
@@ -537,11 +537,11 @@ padding-top: 0
               font-family: RoundedMplus1c;
               font-size: 90%;
               text-align: left;
-              color: #5f2f00;">コレクションに99件のアイテムが追加されました！</p>
+              color: #5f2f00;">コレクションに{{$unseen_collection}}件のアイテムが追加されました！</p>
           </div>
         </div>
   </div>
-      <div class="container-fluid">
+      <div id="div_notification_below" class="container-fluid pt-3">
         <div class="row" style=" padding: 14px 1px 1px;
           background-color: #2b63c6;">
           <div class="col-1 text-right">
@@ -877,13 +877,19 @@ padding-top: 0
   }
 </script>
   <script type="text/javascript">
+    var div_notification = document.getElementById("div_notification");
+    var div_notification_below = document.getElementById("div_notification_below");
     var nav_box2 = document.getElementById("box2");
     var unseen_collection = {{$unseen_collection}};
     console.log("$unseen_collection",unseen_collection);
     if (unseen_collection > 0) {
       nav_box2.style = "border-right: 2px solid #113a83; background: url({{asset('storage/mypage/notify.png')}});  background-position: 70% 20%; background-repeat: no-repeat";
+      div_notification.className = "container-fluid";
+      div_notification_below.className = "container-fluid";
     } else {
       nav_box2.style = "border-right: 2px solid #113a83";
+      div_notification.className = "container-fluid d-none";
+      div_notification_below.className = "container-fluid pt-3";
     }
   </script>
 
