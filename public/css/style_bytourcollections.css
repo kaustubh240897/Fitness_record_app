@@ -250,6 +250,6 @@ height: 66px;
 margin-top: -10px;
 /* margin-bottom: -10px; */
 height: 76px;
-background-color: #174493;
+background-color: #174493 !important;
 border-radius: 5px
 }

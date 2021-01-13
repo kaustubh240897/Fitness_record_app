@@ -517,25 +517,6 @@ padding-top: 0
 </head>
 
 <body>
-  <!-- <div class="container-fluid">
-   @if(! empty($checkpoints))
-    <div class="row">
-      <div class="col" id="checkPoint_name">
-
-      </div>
-      <div class="col pt-2 pl-3">
-        <ul class="StepProgress" id="progress_bar">
-
-        </ul>
-      </div>
-      <div class="col" id="checkPoint_name2">
-
-      </div>
-    </div>
-   @else
-   <h4> 申し訳ありませんが、チェックポイントはありません。ツアーを選択してください。</h4>
-   @endif
-  </div> -->
 
   @if ( empty($m__users_id))
   <div class='text-center'>
@@ -855,7 +836,8 @@ padding-top: 0
             <p id="box1_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: bold;text-align: center;color: #fddb66;">マイページ</p>
         </a>
         </div>
-        <div class="col-3 padding-0 pt-2 navItem" style="border-right: 2px solid #113a83;" id="box2" onclick="navItemClick(this.id);">
+        <div class="col-3 padding-0 pt-2 navItem" style="border-right: 2px solid #113a83; background: url({{asset('storage/mypage/notify.png')}});  background-position: 70% 20%; background-repeat: no-repeat"
+        id="box2" onclick="navItemClick(this.id);">
           <a href='/mycollection'>
             <img id="box2_img" class="pb-0 mb-0" src="{{asset('storage/mypage/box2.png')}}" alt="">
             <p id="box2_title" class="pt-0 mt-0" style="font-size: 60%; font-weight: normal;text-align: center;color: #ffffff;">コレクション</p>
@@ -879,263 +861,31 @@ padding-top: 0
 
 
 <script type="text/javascript">
-var currentNav = "box1";
-var clickedNav = "";
-var cur_imgid = "box1_img";
-var cur_imgName = "box1_sel.png";
-var clicked_imgid = "";
-var clicked_imgName = "";
-var cur_title = "box1_title";
-var clicked_title = "";
+// var currentNav = "box1";
+// var clickedNav = "";
+// var cur_imgid = "box1_img";
+// var cur_imgName = "box1_sel.png";
+// var clicked_imgid = "";
+// var clicked_imgName = "";
+// var cur_title = "box1_title";
+// var clicked_title = "";
 // var comPath1 = "{{URL::asset('storage/mypage/";
 // var comPath2 = "')}}";
-var def_path = "{{URL::asset('storage/mypage/box1_sel.png')}}";
+// var def_path = "{{URL::asset('storage/mypage/box1_sel.png')}}";
   function navItemClick(id) {
     console.log(id);
-    if (id != currentNav) {
-      console.log("if",id);
-      clicked_imgid = id + "_img";
-      clicked_imgName = id + "_sel.png";
-      cur_imgid = currentNav + "_img";
-      cur_imgName = currentNav + ".png";
-      cur_title = currentNav + "_title";
-      clicked_title = id + "_title";
-      clicked_imgName = def_path.replace("box1_sel.png",clicked_imgName);
-      cur_imgName = def_path.replace("box1_sel.png",cur_imgName);
-      document.getElementById(currentNav).className = "col-3 padding-0 pt-2 navItem";
-        document.getElementById(cur_imgid).src = cur_imgName;
-        document.getElementById(id).className = "col-3 padding-0 pt-2 navItem is-active";
-        document.getElementById(clicked_imgid).src = clicked_imgName;
-        document.getElementById(cur_title).style.color = "#fff";
-        document.getElementById(cur_title).style.fontWeight = "normal";
-        document.getElementById(clicked_title).style.color = "#fddb66";
-        document.getElementById(clicked_title).style.fontWeight = "bold";
-      currentNav = id;
-    }
   }
 </script>
-  <!-- <div class="container pt-3">
-        <div class="relative w-100 h-50">
-      <canvas id="myChart"></canvas>
-      <div class="absolute-center text-center">
-        <p class="mb-0 p-0" style="font-size:70%; color:#3476ea;">3.5 km</p>
-        <p class="font-weight-bold mb-0 p-0 text-wrap" style="color:#3476ea;">5,432 ##</p>
-        <p class="mb-0 mt-0 p-0" style="font-size:70%;">________________</p>
-        <p class="font-weight-bold mb-0 mt-0">8,000 ##</p>
-        <p class="mb-0" style="font-size:70%;">5.2 km</p>
-      </div>
-    </div>
-      </div>
-      <div class="container pt-3 mt-3">
-        <canvas id="ctx"></canvas>
-      </div> -->
-  <!-- <script src="https://www.gstatic.com/charts/loader.js"></script>
-  <script>
-  google.load("visualization", "1", {
-    packages: ["corechart"]
-  });
-
-  google.setOnLoadCallback(init);
-
-  function drawChart(id, title, comp, rem) {
-    var data = new google.visualization.DataTable();
-    data.addColumn('string', 'Volume');
-    data.addColumn('number', 'Mortgage Volume');
-    data.addRows([
-        ['Completed', comp],
-        ['Remaining', rem]
-        ]);
-    var options = {
-        title:title,
-        width: 120,
-        height: 120,
-        colors: ['#7acdc4', '#ccece8'],
-        pieSliceText:'none',
-        pieHole: 0.70,
-        legend: 'none',
-        tooltip: {
-          text: 'percentage'
-        },
-        tooltip: {
-          textStyle: {
-            fontSize: 6
-          }
-        }
-        //legend: { position: 'labeled' },
-    };
-    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-    chart.draw(data, options);
-
-    var comp_percent = (comp/(comp+rem))*100;
-    var percent = 0;
-      // start the animation loop
-      var handler = setInterval(function(){
-          // apply new values
-          data.setValue(0, 1, percent);
-          data.setValue(1, 1, 100 - percent);
-          // update the pie
-          chart.draw(data, options);
-          // check if we have reached the desired value
-          if (percent >= comp_percent) {
-            // stop the loop
-            clearInterval(handler);
-              centerText('#chart_div', 0, 40, 60);
-          }
-          // values increment
-          percent += 1;
-
-      }, 15);
-
-  }
-
-  function centerText(chart, idx, X, Y) {
-  var cht = document.querySelector(chart);
-  var txt = document.querySelectorAll(chart + " text");
-  //var chW = cht.width/2;
-  //var chH = cht.height/2;
-  //var txW = txt[idx].width/2;
-  //var txH = txt[idx].height/2;
-  //var W = chW - txW;
-  //var H = chH - txH;
-  txt[idx].setAttribute('x', X);
-  txt[idx].setAttribute('y', Y);
-  }
-
-  function init() {
-
-  if({{ $today_data }} > 0){
-      comp = {{ $today_data*$get_m_user_stride/100000 }};
-      if({{ $today_data*$get_m_user_stride/100000 }} > {{ $get_m_user_daily_goal*$get_m_user_stride/100000 }})
-      { rem = 0;
-      }
-      else{
-      rem =  {{ ($get_m_user_daily_goal*$get_m_user_stride/100000)-($today_data*$get_m_user_stride/100000) }};
-      }
-  }
-  else{
-      comp = 0;
-      rem = 2000;
-  }
-
-  drawChart('chart_div', 'Step Count', comp, rem);
-  }
+  <script type="text/javascript">
+    var nav_box2 = document.getElementById("box2");
+    var unseen_collection = {{$unseen_collection}};
+    console.log("$unseen_collection",unseen_collection);
+    if (unseen_collection > 0) {
+      nav_box2.style = "border-right: 2px solid #113a83; background: url({{asset('storage/mypage/notify.png')}});  background-position: 70% 20%; background-repeat: no-repeat";
+    } else {
+      nav_box2.style = "border-right: 2px solid #113a83";
+    }
   </script>
-
-
-  <script>
-  google.charts.load('current', {packages: ['corechart', 'bar']});
-  google.charts.setOnLoadCallback(drawBasic);
-
-  function drawBasic() {
-
-  var weekDates = datesofWeek();
-  console.log(weekDates[1].getMonth());
-
-  var dataLabel = ['Days', 'Steps', { role: 'style' }, { role: 'annotation' } ];
-  var steps = 0;
-  var row1 = ['Mon', steps, '#7acdc4', weekDates[0].getDate() ];
-  var row2 = ['Tue', steps, '#7acdc4', weekDates[1].getDate() ];
-  var row3 = ['Wed', steps, '#7acdc4', weekDates[2].getDate() ];
-  var row4 = ['Thu', steps, '#7acdc4', weekDates[3].getDate() ];
-  var row5 = ['Fri', steps, '#7acdc4', weekDates[4].getDate() ];
-  var row6 = ['Sat', steps, '#7acdc4', weekDates[5].getDate() ];
-  var row7 = ['Sun', steps, '#7acdc4', weekDates[6].getDate() ];
-  //console.log(formatDate(weekDates[0]));
-  var current_week_datas1 = {!! json_encode($current_week_datas) !!}
-
-
-  Object.keys(current_week_datas1).forEach((single_day_data, i) => {
-    //console.log(current_week_datas[single_day_data]);
-    var total = 0;
-    current_week_datas1[single_day_data].forEach((item, i) => {
-      total += parseInt(item["steps"]);
-    });
-    weekDates.forEach((item, i) => {
-      if (formatDate(item) == single_day_data) {
-        if (i==0) {
-          row1[1] = parseInt(total);
-        }
-        if (i==1) {
-          row2[1] = parseInt(total);
-        }
-        if (i==2) {
-          row3[1] = parseInt(total);
-        }
-        if (i==3) {
-          row4[1] = parseInt(total);
-        }
-        if (i==4) {
-          row5[1] = parseInt(total);
-        }
-        if (i==5) {
-          row6[1] = parseInt(total);
-        }
-        if (i==6) {
-          row7[1] = parseInt(total);
-        }
-      }
-    });
-
-  });
-
-  var data = google.visualization.arrayToDataTable([
-       ['Days', 'Steps', { role: 'style' }, { role: 'annotation' } ],
-       row1,
-       row2,
-       row3,
-       row4,
-       row5,
-       row6,
-       row7
-    ]);
-    var view = new google.visualization.DataView(data);
-     view.setColumns([0, 1,
-                      { calc: "stringify",
-                        sourceColumn: 1,
-                        type: "string",
-                        role: "annotation" },
-                      2]);
-    var options = {
-      title: 'Last 7 days record',
-      legend: {
-      position: 'none'
-      },
-      annotations: {
-        alwaysOutside: true
-      },
-      animation:
-           {
-               "startup": true,
-               duration: 2000,
-               easing: 'out'
-           }
-    };
-
-    var chart = new google.visualization.ColumnChart(
-      document.getElementById('barchart_div'));
-
-    // var chartLarge = new google.visualization.ColumnChart(
-    //   document.getElementById('barchartLarge_div');
-    // )
-    //
-    // chartLarge.draw(view, options);
-
-    chart.draw(view, options);
-  }
-  function formatDate(d) {
-    //var d = new Date(date),
-        //month = '' + (d.getMonth() + 1),
-        day = d.getDate();
-        //year = d.getFullYear();
-
-    // if (month.length < 2)
-    //     month = '0' + month;
-    if (day.length < 2)
-        day = '0' + day;
-
-    return day;
-  }
-  </script> -->
 
 
   <script type="text/javascript">

@@ -113,6 +113,9 @@
   </div>
 
   <script type="text/javascript">
+  function navItemClick(id) {
+    console.log(id);
+  }
   if ({{$index}} == 0) {
 		document.getElementById("group_by_tour_radio").checked = true;
 	} else if ({{$index}} == 1) {
@@ -135,6 +138,17 @@
     }
   }
   </script>
+  </script>
+
+  <script type="text/javascript">
+    var nav_box2 = document.getElementById("box2");
+    var unseen_collection = {{$unseen_collection}};
+    console.log("$unseen_collection",unseen_collection);
+    if (unseen_collection > 0) {
+      nav_box2.style = "border-right: 2px solid #113a83; background: url({{asset('storage/mypage/notify.png')}});  background-position: 70% 20%; background-repeat: no-repeat";
+    } else {
+      nav_box2.style = "border-right: 2px solid #113a83";
+    }
   </script>
 
 </body>

@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="/css/style_showprofiledetails.css">
 <style>
 
-	  	
+
 </style>
 
 </head>
@@ -32,7 +32,7 @@
 <body style='background-color: white;'>
 	    	<div class='container-fluid' style="margin-top: 28px">
 			    <div class="row d-flex fixed-top" style="border-bottom: 1px white; z-index: 10; background-color: #2b63c6; position: fixed; top:28px; box-shadow: 5px 2px #003366;">
-				   <div class='col-12 p-2' style="color:white;"><div class="ml-4" style='color: white;'>構成 </div> 
+				   <div class='col-12 p-2' style="color:white;"><div class="ml-4" style='color: white;'>構成 </div>
 				</div>
 			</div>
 
@@ -185,6 +185,19 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+function navItemClick(id) {
+  console.log(id);
+}
+  var nav_box2 = document.getElementById("box2");
+  var unseen_collection = {{$unseen_collection}};
+  console.log("$unseen_collection",unseen_collection);
+  if (unseen_collection > 0) {
+    nav_box2.style = "border-right: 2px solid #113a83; background: url({{asset('storage/mypage/notify.png')}});  background-position: 70% 20%; background-repeat: no-repeat";
+  } else {
+    nav_box2.style = "border-right: 2px solid #113a83";
+  }
+</script>
 </body>
 @else
 	<div class='text-center'>
