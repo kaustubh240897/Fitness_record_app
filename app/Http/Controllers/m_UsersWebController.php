@@ -663,8 +663,9 @@ class m_UsersWebController extends Controller
     public function showProfileDetails()
     {
         $m_users = m_Users::where('users_id', Auth::id())->first();
-        $unseen_collection = t_Collection::where('m__users_id', $m_users->id)->where('new_display_flag', 0)->count();
+        
         if(! empty($m_users) && $m_users->users_id == Auth::id()){
+            $unseen_collection = t_Collection::where('m__users_id', $m_users->id)->where('new_display_flag', 0)->count();
             $t_tour = t_Tour::where('m__users_id', $m_users->id)->orderBy('created_at','DESC')->first();
             $m_tours = m_Tour::all();
             $min = 10000;
