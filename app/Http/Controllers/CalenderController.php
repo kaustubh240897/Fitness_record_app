@@ -16,6 +16,7 @@ class CalenderController extends Controller
     {
         //
         $date1 = Carbon::now()->format('Ymd');
+        $date2 = Carbon::now()->format('YmdHi');
         $calender_today = m_Calender::where('calender_date', $date1)->first();
         $calender_yesterday = m_Calender::where('calender_date', Carbon::yesterday()->format('Ymd'))->first();
         if(is_null($calender_yesterday)){
@@ -30,7 +31,7 @@ class CalenderController extends Controller
             }
         else{
             
-            return response()->json(["in" => $date1,"out" => $date1,"category_today" => $calender_today->category,"category_yesterday" => $calender_yesterday_category,"error" => 0 ], 201);
+            return response()->json(["in" => "","out" => $date2,"category_today" => $calender_today->category,"category_yesterday" => $calender_yesterday_category,"error" => 0 ], 201);
         } 
     }
 
@@ -114,16 +115,20 @@ class CalenderController extends Controller
                     }
                     else{
                         $yesterday_category = $yesterday_data->category;
-                    } 
-                    return response()->json(["in"=>$date, "out" => $date,"category_today" => $calender_category, "category_yesterday" => $yesterday_category,"error" => $error  ], 201);
-                
+                    }
+                    if($error == 0){ 
+                        return response()->json(["in"=>$date, "out" => $date,"category_today" => $calender_category, "category_yesterday" => $yesterday_category,"error" => $error  ], 201);
+                    }
+                    else{
+                    return response()->json(["error"=>"Sorry invalid date format."], 201);
+                    }
                 } 
                 else{
-                    return response()->json(["in"=>$date, "out"=> null, "category_today"=>null,"category_yesterday"=>null, "error"=>1], 201);
+                    return response()->json(["error"=>"Sorry invalid date format."], 201);
                 }
             }
             else{
-                return response()->json(["in"=>$date, "out"=> null, "category_today"=>null,"category_yesterday"=>null, "error"=>1], 201);
+                return response()->json(["error"=> "Sorry invalid date format."], 201);
             }
             
             
