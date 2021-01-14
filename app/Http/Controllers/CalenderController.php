@@ -27,7 +27,7 @@ class CalenderController extends Controller
         }
 
         if(is_null($calender_today)){
-            return response()->json(["in" => null,"out"=> null,"category_today"=> null,"category_yesterday"=> null,"error"=>1 ], 201);
+            return response()->json(["error"=>"Sorry invalid date format."], 201);
             }
         else{
             
@@ -77,13 +77,13 @@ class CalenderController extends Controller
                 $calender_yesterday_category = $calender_yesterday->category;
             }
 
-            if(is_null($calender_today)){
-                return response()->json(["in" => null,"out"=> null,"category_today"=> null,"category_yesterday"=> null,"error"=>1 ], 201);
-                }
-            else{
+            // if(is_null($calender_today)){
+            //     return response()->json(["in" => null,"out"=> null,"category_today"=> null,"category_yesterday"=> null,"error"=>1 ], 201);
+            //     }
+            // else{
                 
-                return response()->json(["in" => $date1,"out" => $date1,"category_today" => $calender_today->category,"category_yesterday" => $calender_yesterday_category,"error" => 0 ], 201);
-            } 
+            //     return response()->json(["in" => $date1,"out" => $date1,"category_today" => $calender_today->category,"category_yesterday" => $calender_yesterday_category,"error" => 0 ], 201);
+            // } 
         }
         else{
             
