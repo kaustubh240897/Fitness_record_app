@@ -3,7 +3,8 @@
 @section('content')
 
  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js" integrity="sha512-WIklPM6qPCIp6d3fSSr90j+1unQHUOoWDS4sdTiR8gxUTnyZ8S2Mr8e10sKKJ/bhJgpAa/qG068RDkg6fIlNFA==" crossorigin="anonymous"></script>
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
@@ -321,10 +322,22 @@ margin-bottom: -30px;
   padding-right: -8px;
  }
 
+ .no-js #loader { display: none;  }
+ .js #loader { display: block; position: absolute; left: 100px; top: 0; }
+ .se-pre-con {
+ 	position: fixed;
+ 	left: 0px;
+ 	top: 0px;
+ 	width: 100%;
+ 	height: 100%;
+ 	z-index: 9999;
+ 	background: url(https://smallenvelop.com/wp-content/uploads/2014/08/Preloader_11.gif) center no-repeat #fff;
+ }
 
 </style>
 
 <body style="background-color: rgb(240,246,248, 0.1);">
+  <div class="se-pre-con"></div>
   @if ( empty($m__users_id))
     <div class='text-center'>
      <h2 class='mt-5'> 最初にプロファイルを作成してください <a href="/" style="color: blue !important">ここをクリック </a> </h2>
@@ -671,6 +684,12 @@ margin-bottom: -30px;
       </div>
       @endif
 
+<script>
+$(window).load(function() {
+  // Animate loader off screen
+  $(".se-pre-con").fadeOut("slow");;
+});
+</script>
             <script id="tri" type="text/javascript">
             var cnv;
               function setup() {
@@ -711,20 +730,23 @@ margin-bottom: -30px;
             </script>
             <script type="text/javascript">
               var mon = {{ $month }};
+              var dev = {{ $device }};
               if({{$today_data}} >= {{$get_m_user_daily_goal}}) {
                 var bg_season = document.getElementById("bg_season1");
               } else {
                 var bg_season = document.getElementById("bg_season2");
               }
-              if (mon == 12 || mon == 1 || mon == 2) {
-                bg_season.style.backgroundImage = "url({{asset('storage/padometerscreen/bg01_winter01@2x.png')}})";
-              } else if (mon>=3 && mon<=5) {
-                bg_season.style.backgroundImage= "url({{asset('storage/padometerscreen/bg01_spring01@2x.png')}})";
-              } else if (mon>=6 && mon<=8) {
-                console.log("yes88");
-                bg_season.style.backgroundImage = "url({{asset('storage/padometerscreen/bg01_summer01@2x.png')}})";
-              } else if (mon>=9 && mon<=11) {
-                bg_season.style.backgroundImage = "url({{asset('storage/padometerscreen/bg01_autumn01@2x.png')}})";
+              if (dev != 111) {
+                if (mon == 12 || mon == 1 || mon == 2) {
+                  bg_season.style.backgroundImage = "url({{asset('storage/padometerscreen/bg01_winter01@2x.png')}})";
+                } else if (mon>=3 && mon<=5) {
+                  bg_season.style.backgroundImage= "url({{asset('storage/padometerscreen/bg01_spring01@2x.png')}})";
+                } else if (mon>=6 && mon<=8) {
+                  console.log("yes88");
+                  bg_season.style.backgroundImage = "url({{asset('storage/padometerscreen/bg01_summer01@2x.png')}})";
+                } else if (mon>=9 && mon<=11) {
+                  bg_season.style.backgroundImage = "url({{asset('storage/padometerscreen/bg01_autumn01@2x.png')}})";
+                }
               }
             </script>
 
