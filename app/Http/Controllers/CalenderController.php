@@ -27,7 +27,7 @@ class CalenderController extends Controller
         }
 
         if(is_null($calender_today)){
-            return response()->json(["error"=>"Sorry invalid date format."], 201);
+            return response()->json(["in" => "$date2","out" => "","category_today" => "","category_yesterday" => "","error" => 1 ], 201);
             }
         else{
             
@@ -120,15 +120,15 @@ class CalenderController extends Controller
                         return response()->json(["in"=>$date, "out" => $date,"category_today" => $calender_category, "category_yesterday" => $yesterday_category,"error" => $error  ], 201);
                     }
                     else{
-                    return response()->json(["error"=>"Sorry invalid date format."], 201);
+                    return response()->json(["in" => $date,"out" => "","category_today" => "","category_yesterday" => "","error" => 1 ], 201);
                     }
                 } 
                 else{
-                    return response()->json(["error"=>"Sorry invalid date format."], 201);
+                    return response()->json(["in" => $date,"out" => "","category_today" => "","category_yesterday" => "","error" => 1 ], 201);
                 }
             }
             else{
-                return response()->json(["error"=> "Sorry invalid date format."], 201);
+                return response()->json(["in" => $date,"out" => "","category_today" => "","category_yesterday" => "","error" => 1 ], 201);
             }
             
             
