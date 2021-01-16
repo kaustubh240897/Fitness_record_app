@@ -124,6 +124,64 @@ class m_CollectionsTableSeeder extends Seeder
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
+
+          11 => 
+          array (
+                 'id' => 12,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => 'Tour3 checkpoint1 collection',
+                 'path' => 'rr',
+                 'filename' => 'gdhgfjh',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          12 => 
+          array (
+                 'id' => 13,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => 'Tour3 checkpoint2 collection',
+                 'path' => 'rrr',
+                 'filename' => 'gcfxfxf',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          13 => 
+          array (
+                 'id' => 14,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => 'Tour3 checkpoint3 collection',
+                 'path' => 'rrrr',
+                 'filename' => 'gfgffdddd',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          14 => 
+          array (
+                 'id' => 15,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => 'Tour3 checkpoint4 collection',
+                 'path' => 'kkkkk',
+                 'filename' => 'z',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          15 => 
+          array (
+                 'id' => 16,
+                 'collection_category' => 'tour',
+                 'collection_title' => 'Tour3 collection',
+                 'path' => 'zzzzz',
+                 'filename' => 'zz',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+        
+        
+        
         
 
       ));   

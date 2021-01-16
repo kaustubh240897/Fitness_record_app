@@ -140,6 +140,62 @@ class m_CheckpointsTableSeeder extends Seeder
                 'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
+          9 => 
+          array (
+                 'id' => 10,
+                 'm__tour_id' => '3',
+                 'checkpoint_title' => 'tour 3 checkpoint 1',
+                 'checkpoint_category' => 'start',
+                 'distance' => '0',
+                 'comments' => 'Checkpoint1 here tour3 starts.',
+                 'prefectures' => 'prefecture 10',
+                 'm__collection_id' => '12',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          10 => 
+          array (
+                 'id' => 11,
+                 'm__tour_id' => '3',
+                 'checkpoint_title' => 'tour 3 checkpoint 2',
+                 'checkpoint_category' => 'spot',
+                 'distance' => '0.5',
+                 'comments' => 'Checkpoint2 here tour3 is going on.',
+                 'prefectures' => 'prefecture 11',
+                 'm__collection_id' => '13',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          11 => 
+          array (
+                 'id' => 12,
+                 'm__tour_id' => '3',
+                 'checkpoint_title' => 'tour 3 checkpoint 3',
+                 'checkpoint_category' => 'intermediate',
+                 'distance' => '1',
+                 'comments' => 'Checkpoint3 here tour3 comes in intermediate.',
+                 'prefectures' => 'prefecture 12',
+                 'm__collection_id' => '14',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          12 => 
+          array (
+                 'id' => 13,
+                 'm__tour_id' => '3',
+                 'checkpoint_title' => 'tour 3 checkpoint 4',
+                 'checkpoint_category' => 'endpoint',
+                 'distance' => '2',
+                 'comments' => 'Checkpoint4 here tour3 ends.',
+                 'prefectures' => 'prefecture 13',
+                 'm__collection_id' => '15',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
 
        
      ));

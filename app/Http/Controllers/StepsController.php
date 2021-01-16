@@ -36,7 +36,7 @@ class StepsController extends Controller
         elseif($m_user->users_id != Auth::id()){
             return response()->json(["message" => "Unauthorized request"], 401);
         }
-        
+
         return t_StepsCollection::collection($m_user->t_steps);
     }
 
@@ -66,6 +66,7 @@ class StepsController extends Controller
      */
     public function store(t_StepsRequest $request)
     {
+        \DB::transaction(function() use ($request){ 
         $m_user = m_Users::where('users_id', Auth::id())->first();
         $lastSteps = t_Steps::where('m__users_id', $m_user->id)->orderBy('step_actual_datetime', 'DESC')->first();
         
@@ -122,18 +123,17 @@ class StepsController extends Controller
                 $get_t_tour->save();
                 
             }
-
-
         $get_latest_t_tour = t_Tour::where('m__users_id', $m__user_id)->orderBy('start_datetime','DESC')->first();
         $latest_t_tour_datetime = $get_latest_t_tour->start_datetime;
-        $t_collection = new t_Collection;
+        //$t_collection = new t_Collection;
+        $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->where('created_at', '>=', $latest_t_tour_datetime)->get();
+        $collection_memory = [];
+        foreach($get_t_collections as $get_t_collection){
+            $collection_memory[]= $get_t_collection->m__collection_id;
+            }
                
             if($get_latest_t_tour->status == 'Done'){
-                $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->where('created_at', '>=', $latest_t_tour_datetime)->get();
-                $collection_memory = [];
-                foreach($get_t_collections as $get_t_collection){
-                    $collection_memory[]= $get_t_collection->m__collection_id;
-                }
+                
                 if($distanceCovered >= $total ){
                     $t_collection = new t_Collection;
                     $t_collection->m__users_id = $m__user_id;
@@ -148,11 +148,6 @@ class StepsController extends Controller
             }
             else{
                 foreach($get_latest_t_tour->m_tours->checkpoints as $checkpoint){
-                    $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->where('created_at', '>=', $latest_t_tour_datetime)->get();
-                    $collection_memory = [];
-                    foreach($get_t_collections as $get_t_collection){
-                        $collection_memory[]= $get_t_collection->m__collection_id;
-                    }
                     
                     if($distanceCovered >= $checkpoint->distance && !(in_array($checkpoint->m__collection_id, $collection_memory)) ){
                         $t_collection = new t_Collection;
@@ -166,10 +161,12 @@ class StepsController extends Controller
             }
         }
 
-        return response([
-            'data' => new t_StepsResource($t_steps)
+        // return response([
+        //     'data' => new t_StepsResource($t_steps)
 
-        ],Response::HTTP_CREATED);
+        // ],Response::HTTP_CREATED);
+    });
+    return response([ 'data' => ['step_actual_datetime'=> $request->step_actual_datetime, 'step_calc_datetime'=> $request->step_calc_datetime, 'steps' => $request->steps]], 201);
 
 
     }

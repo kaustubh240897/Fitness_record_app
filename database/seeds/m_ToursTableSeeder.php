@@ -37,6 +37,17 @@ class m_ToursTableSeeder extends Seeder
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
+
+          2 => 
+          array (
+                 'id' => 3,
+                 'tour_title' => 'Tour 3',
+                 'tour_comment' => 'This is for testing tour3.',
+                 'm__collection_id' => '16',
+                 'tour_level' => '0',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
         
         
         
