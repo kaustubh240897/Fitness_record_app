@@ -123,42 +123,77 @@ class StepsController extends Controller
                 $get_t_tour->save();
                 
             }
-        $get_latest_t_tour = t_Tour::where('m__users_id', $m__user_id)->orderBy('start_datetime','DESC')->first();
-        $latest_t_tour_datetime = $get_latest_t_tour->start_datetime;
-        //$t_collection = new t_Collection;
-        $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->where('created_at', '>=', $latest_t_tour_datetime)->get();
-        $collection_memory = [];
-        foreach($get_t_collections as $get_t_collection){
-            $collection_memory[]= $get_t_collection->m__collection_id;
-            }
-               
-            if($get_latest_t_tour->status == 'Done'){
+            $get_latest_t_tour = t_Tour::where('m__users_id', $m__user_id)->orderBy('start_datetime','DESC')->first();
+            $latest_t_tour_datetime = $get_latest_t_tour->start_datetime;
+            //$t_collection = new t_Collection;
+            $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->where('created_at', '>=', $latest_t_tour_datetime)->get();
+            $collection_memory = [];
+            foreach($get_t_collections as $get_t_collection){
+                $collection_memory[]= $get_t_collection->m__collection_id;
+                }
+            if($get_latest_t_tour->direction == 0){
                 
-                if($distanceCovered >= $total ){
+                if($get_latest_t_tour->status == 'Done'){
+                    foreach($get_latest_t_tour->m_tours->checkpoints as $checkpoint){    
+                        if($distanceCovered >= $total && !(in_array($checkpoint->m__collection_id, $collection_memory)) ){ 
+                                $t_collection = new t_Collection;
+                                $t_collection->m__users_id = $m__user_id;
+                                $t_collection->m__collection_id = $checkpoint->m__collection_id;
+                                $t_collection->save();
+                        }
+                    }
                     $t_collection = new t_Collection;
                     $t_collection->m__users_id = $m__user_id;
-                    $t_collection->m__collection_id = $checkpoint->m__collection_id;
+                    $t_collection->m__collection_id = $get_latest_t_tour->m_tours->m__collection_id;
                     $t_collection->save();
-                    
                 }
-                $t_collection = new t_Collection;
-                $t_collection->m__users_id = $m__user_id;
-                $t_collection->m__collection_id = $get_latest_t_tour->m_tours->m__collection_id;
-                $t_collection->save();
+                else{
+                    foreach($get_latest_t_tour->m_tours->checkpoints as $checkpoint){
+                        
+                        if($distanceCovered >= $checkpoint->distance && !(in_array($checkpoint->m__collection_id, $collection_memory)) ){
+                            $t_collection = new t_Collection;
+                            $t_collection->m__users_id = $m__user_id;
+                            $t_collection->m__collection_id = $checkpoint->m__collection_id;
+                            $t_collection->save();
+                        
+                        }
+                    
+                    } 
+                }
             }
             else{
-                foreach($get_latest_t_tour->m_tours->checkpoints as $checkpoint){
-                    
-                    if($distanceCovered >= $checkpoint->distance && !(in_array($checkpoint->m__collection_id, $collection_memory)) ){
-                        $t_collection = new t_Collection;
-                        $t_collection->m__users_id = $m__user_id;
-                        $t_collection->m__collection_id = $checkpoint->m__collection_id;
-                        $t_collection->save();
-                    
+
+                if($get_latest_t_tour->status == 'Done'){
+                    foreach($get_latest_t_tour->m_tours->checkpoints->sortByDesc('distance') as $checkpoint){    
+                        if($distanceCovered >= $total && !(in_array($checkpoint->m__collection_id, $collection_memory)) ){    
+                                $t_collection = new t_Collection;
+                                $t_collection->m__users_id = $m__user_id;
+                                $t_collection->m__collection_id = $checkpoint->m__collection_id;
+                                $t_collection->save();            
+                        }
                     }
-                 
-                } 
+                    $t_collection = new t_Collection;
+                    $t_collection->m__users_id = $m__user_id;
+                    $t_collection->m__collection_id = $get_latest_t_tour->m_tours->m__collection_id;
+                    $t_collection->save();
+                }
+                else{
+                    foreach($get_latest_t_tour->m_tours->checkpoints->sortByDesc('distance') as $checkpoint){
+                        
+                        if($distanceCovered >= $total - $checkpoint->distance && !(in_array($checkpoint->m__collection_id, $collection_memory)) ){
+                            $t_collection = new t_Collection;
+                            $t_collection->m__users_id = $m__user_id;
+                            $t_collection->m__collection_id = $checkpoint->m__collection_id;
+                            $t_collection->save();
+                        
+                        }
+                    
+                    } 
+                }
+
             }
+
+            
         }
 
         // return response([
