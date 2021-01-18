@@ -164,6 +164,7 @@
 }
 .gender_sel {
   background-color: #2b63c6;
+  color: #fff;
 }
 
 .navfix {
@@ -242,7 +243,7 @@ input[type=number] {
         <p class="p-2 w-100" style="color: #fff; font-size: 80%; font-weight: bold"> <span class="pl-2">設定</span> <span class="pl-2">></span>  <span class="pl-2">個人設定の変更</span> </p>
       </div>
     </div>
-<form action="{{ route('update',$m_users->id) }}" method="POST" >
+<form action="{{ route('update',$m_users->id) }}" method="POST">
 {{ csrf_field() }}
 
 <div class="container-fluid pt-0 mt-0" style="margin-top: 70px !important">
@@ -263,7 +264,7 @@ input[type=number] {
   <div class="d-flex flex-row pb-2" style="border-bottom: 3px solid rgb(248,252,253);">
     <div class="col-4 pl-2">
       <div class="d-flex flex-row">
-        <input id="heightinput" class="w-100" type="number" step="any" name='inputheight' value="{{ $m_users->height }}" onchange="heightChange()" required><span class=" pl-1  " style="background-color: #f2f4f6; z-index: -1;">cm</span>
+        <input id="heightinput" class="w-100" type="number" step="any" name='inputheight' value="{{ $m_users->height }}" onchange="heightChange()" required><span class=" pl-1  " style="margin-left:-20px;background-color: #f2f4f6;">cm</span>
       </div>
     </div>
     <!-- <p class="pl-2" style="font-size: 110%;"> <span id="h_show" class="px-3 py-1" style="background-color: #f2f4f6; border: 1px solid #f2f4f6; border-radius: 5px;">175.5 cm</span> </p> -->
@@ -295,7 +296,7 @@ input[type=number] {
     <!-- <input id="strideinput" type="number"  name='stridelength' value="" class="d-none"> -->
     <div class="col-4 pl-2">
       <div class="d-flex flex-row">
-        <input id="strideinput" class="w-100" type="number" step="any" name='stridelength' value="{{ $m_users->stride }}" min="45" max="85" onchange="strideChange()" required><span class=" pl-1  " style="background-color: #f2f4f6; z-index: -1;">cm</span>
+        <input id="strideinput" class="w-100" type="number" step="any" name='stridelength' value="{{ $m_users->stride }}" min="45" max="85" onchange="strideChange()" required><span class=" pl-1  " style="background-color: #f2f4f6; margin-left:-20px;">cm</span>
       </div>
     </div>
     <!-- <p class="text-center" style="width: 22px; height: 22px;border-radius: 20px; border: 1px solid #2b63c6;"> <span class="pb-3">+</span> </p> -->
@@ -319,12 +320,12 @@ input[type=number] {
 </div>
 <div class="container-fluid pt-3 pb-3">
   <div class="d-flex flex-row pb-2 justify-content-between">
-    <div class="col w-100 ml-0 pl-2" style="">
+    <div class="col w-100 ml-0 pl-1" style="">
       <div class="d-flex flex-row">
         <!-- <input id="daily_stepsInput" type="number"  name='dailygoal' value="" class="d-none"> -->
-        <div class="col-4 pl-2">
+        <div class="col-6 pl-2">
           <div class="d-flex flex-row">
-            <input id="daily_stepsInput" class="w-100" type="number"  name='dailygoal' value="{{ $m_users->step_goal_per_day }}" min="100" max="100000" onchange="dailyStepsChange()" required><span class="pt-1" class=" pl-1  " style="background-color: #f2f4f6; z-index: -1;">歩</span>
+            <input id="daily_stepsInput" class="w-100" type="number"  name='dailygoal' value="{{ $m_users->step_goal_per_day }}" min="0" max="100000" onchange="dailyStepsChange()" required><span class="pt-1" class=" pl-1  " style="background-color: #f2f4f6; margin-left:-20px;">歩</span>
           </div>
         </div>
         <!-- <p class="text-center" style="width: 22px; height: 22px;border-radius: 20px; border: 1px solid #2b63c6;"> <span class="pb-3">+</span> </p> -->
@@ -365,7 +366,7 @@ input[type=number] {
     <p class="pl-2 pt-1" style="color: #2b63c6; font-weight: bold; font-size: 80%;">月</p>
     <div class="col-4">
       <div class="d-flex flex-row">
-        <input id="daily_stepsInput_1" class="w-100" type="number" step="any" max="85" min="0" onchange="daily_difStepsChange()" required name='dailygoal_1' value="{{ number_format($m_users->step_monday*$m_users->stride/100000, 2 ,'.',',') }}"><span class=" pl-1  " style="background-color: #f2f4f6; z-index: -1;">km</span>
+        <input id="daily_stepsInput_1" class="w-100" type="number" step="any" max="85" min="0" onchange="daily_difStepsChange()" required name='dailygoal_1' value="{{ number_format($m_users->step_monday*$m_users->stride/100000, 2 ,'.',',') }}"><span class=" pl-1  " style="background-color: #f2f4f6; margin-left:-20px;">km</span>
       </div>
     </div>
     <p class="pl-3"><img id="dailygoal_1_add" onclick="getDailygoal1(this.id)" src="{{ asset('storage/settings/btn_add@3x.png') }}" style="height: 22px; width: 22px;" class="" alt=""></p>
@@ -376,7 +377,7 @@ input[type=number] {
     <p class="pl-2 pt-1" style="color: #2b63c6; font-weight: bold; font-size: 80%;">火</p>
     <div class="col-4">
       <div class="d-flex flex-row">
-        <input id="daily_stepsInput_2" class="w-100" type="number" step="any" max="85" min="0" onchange="daily_difStepsChange()" required name='dailygoal_2' value="{{ number_format($m_users->step_tuesday*$m_users->stride/100000, 2 ,'.',',') }}"><span class=" pl-1  " style="background-color: #f2f4f6; z-index: -1;">km</span>
+        <input id="daily_stepsInput_2" class="w-100" type="number" step="any" max="85" min="0" onchange="daily_difStepsChange()" required name='dailygoal_2' value="{{ number_format($m_users->step_tuesday*$m_users->stride/100000, 2 ,'.',',') }}"><span class=" pl-1  " style="background-color: #f2f4f6; margin-left:-20px;">km</span>
       </div>
     </div>
     <p class="pl-3"><img id="dailygoal_2_add" onclick="getDailygoal2(this.id)" src="{{ asset('storage/settings/btn_add@3x.png') }}" style="height: 22px; width: 22px;" class="" alt=""></p>
@@ -387,7 +388,7 @@ input[type=number] {
     <p class="pl-2 pt-1" style="color: #2b63c6; font-weight: bold; font-size: 80%;">水</p>
     <div class="col-4">
       <div class="d-flex flex-row">
-        <input id="daily_stepsInput_3" class="w-100" type="number" step="any" max="85" min="0" onchange="daily_difStepsChange()" required name='dailygoal_3' value="{{ number_format($m_users->step_wednesday*$m_users->stride/100000, 2 ,'.',',') }}"><span class=" pl-1  " style="background-color: #f2f4f6; z-index: -1;">km</span>
+        <input id="daily_stepsInput_3" class="w-100" type="number" step="any" max="85" min="0" onchange="daily_difStepsChange()" required name='dailygoal_3' value="{{ number_format($m_users->step_wednesday*$m_users->stride/100000, 2 ,'.',',') }}"><span class=" pl-1  " style="background-color: #f2f4f6; margin-left:-20px;">km</span>
       </div>
     </div>
     <p class="pl-3"><img id="dailygoal_3_add" onclick="getDailygoal3(this.id)" src="{{ asset('storage/settings/btn_add@3x.png') }}" style="height: 22px; width: 22px;" class="" alt=""></p>
@@ -398,7 +399,7 @@ input[type=number] {
     <p class="pl-2 pt-1" style="color: #2b63c6; font-weight: bold; font-size: 80%;">木</p>
     <div class="col-4">
       <div class="d-flex flex-row">
-        <input id="daily_stepsInput_4" class="w-100" type="number" step="any" max="85" min="0" onchange="daily_difStepsChange()" required name='dailygoal_4' value="{{ number_format($m_users->step_thursday*$m_users->stride/100000, 2 ,'.',',') }}"><span class=" pl-1  " style="background-color: #f2f4f6; z-index: -1;">km</span>
+        <input id="daily_stepsInput_4" class="w-100" type="number" step="any" max="85" min="0" onchange="daily_difStepsChange()" required name='dailygoal_4' value="{{ number_format($m_users->step_thursday*$m_users->stride/100000, 2 ,'.',',') }}"><span class=" pl-1  " style="background-color: #f2f4f6; margin-left:-20px;">km</span>
       </div>
     </div>
     <p class="pl-3"><img id="dailygoal_4_add" onclick="getDailygoal4(this.id)" src="{{ asset('storage/settings/btn_add@3x.png') }}" style="height: 22px; width: 22px;" class="" alt=""></p>
@@ -409,7 +410,7 @@ input[type=number] {
     <p class="pl-2 pt-1" style="color: #2b63c6; font-weight: bold; font-size: 80%;">金</p>
     <div class="col-4">
       <div class="d-flex flex-row">
-        <input id="daily_stepsInput_5" class="w-100" type="number" step="any" max="85" min="0" onchange="daily_difStepsChange()" required  name='dailygoal_5' value="{{ number_format($m_users->step_friday*$m_users->stride/100000, 2 ,'.',',') }}"><span class=" pl-1  " style="background-color: #f2f4f6; z-index: -1;">km</span>
+        <input id="daily_stepsInput_5" class="w-100" type="number" step="any" max="85" min="0" onchange="daily_difStepsChange()" required  name='dailygoal_5' value="{{ number_format($m_users->step_friday*$m_users->stride/100000, 2 ,'.',',') }}"><span class=" pl-1  " style="background-color: #f2f4f6; margin-left:-20px;">km</span>
       </div>
     </div>
     <p class="pl-3"><img id="dailygoal_5_add" onclick="getDailygoal5(this.id)" src="{{ asset('storage/settings/btn_add@3x.png') }}" style="height: 22px; width: 22px;" class="" alt=""></p>
@@ -420,7 +421,7 @@ input[type=number] {
     <p class="pl-2 pt-1" style="color: #2b63c6; font-weight: bold; font-size: 80%;">土</p>
     <div class="col-4">
       <div class="d-flex flex-row">
-        <input id="daily_stepsInput_6" class="w-100" type="number" step="any" max="85" min="0" onchange="daily_difStepsChange()" required name='dailygoal_6' value="{{ number_format($m_users->step_saturday*$m_users->stride/100000, 2 ,'.',',') }}"><span class=" pl-1  " style="background-color: #f2f4f6; z-index: -1;">km</span>
+        <input id="daily_stepsInput_6" class="w-100" type="number" step="any" max="85" min="0" onchange="daily_difStepsChange()" required name='dailygoal_6' value="{{ number_format($m_users->step_saturday*$m_users->stride/100000, 2 ,'.',',') }}"><span class=" pl-1  " style="background-color: #f2f4f6; margin-left:-20px;">km</span>
       </div>
     </div>
     <p class="pl-3"><img id="dailygoal_6_add" onclick="getDailygoal6(this.id)" src="{{ asset('storage/settings/btn_add@3x.png') }}" style="height: 22px; width: 22px;" class="" alt=""></p>
@@ -431,7 +432,7 @@ input[type=number] {
     <p class="pl-2 pt-1" style="color: #e28c8c; font-weight: bold; font-size: 80%;">日</p>
     <div class="col-4">
       <div class="d-flex flex-row">
-        <input id="daily_stepsInput_7" class="w-100" type="number" step="any" max="85" min="0" onchange="daily_difStepsChange()" required name='dailygoal_7' value="{{ number_format($m_users->step_sunday*$m_users->stride/100000, 2 ,'.',',') }}"><span class=" pl-1  " style="background-color: #f2f4f6; z-index: -1;">km</span>
+        <input id="daily_stepsInput_7" class="w-100" type="number" step="any" max="85" min="0" onchange="daily_difStepsChange()" required name='dailygoal_7' value="{{ number_format($m_users->step_sunday*$m_users->stride/100000, 2 ,'.',',') }}"><span class=" pl-1  " style="background-color: #f2f4f6; margin-left:-20px;">km</span>
       </div>
     </div>
     <p class="pl-3"><img id="dailygoal_7_add" onclick="getDailygoal7(this.id)" src="{{ asset('storage/settings/btn_add@3x.png') }}" style="height: 22px; width: 22px;" class="" alt=""></p>
@@ -448,7 +449,7 @@ input[type=number] {
       <img src="{{ asset('storage/settings/ico_ caution_b@3x.png') }}" alt="">
     </div>
     <div class="col-11">
-      <p class="" style="color: #707070;">1ヵ月あたりの目標指定は1,000kmを超えない範囲である必要があります。</p>
+      <p class="" style="color: #707070;">1ヵ月あたりの目標指定は2,500kmを超えない範囲である必要があります。</p>
     </div>
   </div>
 </div>
@@ -525,9 +526,6 @@ input[type=number] {
   </div>
 </div>
 <script type="text/javascript">
-function navItemClick(id) {
-  console.log(id);
-}
   var nav_box2 = document.getElementById("box2");
   var unseen_collection = {{$unseen_collection}};
   console.log("$unseen_collection",unseen_collection);
@@ -553,29 +551,95 @@ function navItemClick(id) {
   var cb1 = document.getElementById("customSwitch1");
   var cb2 = document.getElementById("customSwitch2");
 
+  function fixStride() {
+      if (s_input.value < 45) {
+        s_input.value = 45;
+      } else if (s_input.value > 85) {
+        s_input.value = 85;
+      }
+      strideChange();
+  }
+
   function strideChange() {
-    if (s_input.value < 45 || s_input.value >85 ) {
+    if (s_input.value < 45 || s_input.value > 85 ) {
       console.log("invalidStride");
+      s_input.setCustomValidity(" ");
       document.getElementById("stride_error").className = "box2 sb10 pl-2  flex-row justify-content-center d-flex";
+      fixStride();
     } else {
+      s_input.setCustomValidity("");
       document.getElementById("stride_error").className = "box2 sb10 pl-2  flex-row justify-content-center d-none";
     }
     console.log("sc");
   }
   function dailyStepsChange() {
-    if (ds_input.value < 100 || ds_input.value > 100000 ) {
+    if (ds_input.value < 0 || ds_input.value > 100000 ) {
       console.log("invalidStride");
+      ds_input.setCustomValidity(" ");
       document.getElementById("dailySteps_error").className = "box2 sb11 pl-2  flex-row justify-content-center d-flex";
     } else {
+      ds_input.setCustomValidity("");
       document.getElementById("dailySteps_error").className = "box2 sb11 pl-2  flex-row justify-content-center d-none";
     }
     console.log("sc");
   }
+  function removeDefError() {
+    if (ds_7.value < 0 || ds_7.value > 85) {
+      ds_7.setCustomValidity(" ");
+      console.log("inval");
+    } else {
+      ds_7.setCustomValidity("");
+      console.log("val");
+    }
+    if (ds_6.value < 0 || ds_6.value > 85) {
+      ds_6.setCustomValidity(" ");
+      console.log("inval");
+    } else {
+      ds_6.setCustomValidity("");
+      console.log("val");
+    }
+    if (ds_5.value < 0 || ds_5.value > 85) {
+      ds_5.setCustomValidity(" ");
+      console.log("inval");
+    } else {
+      ds_5.setCustomValidity("");
+      console.log("val");
+    }
+    if (ds_4.value < 0 || ds_4.value > 85) {
+      ds_4.setCustomValidity(" ");
+      console.log("inval");
+    } else {
+      ds_4.setCustomValidity("");
+      console.log("val");
+    }
+    if (ds_3.value < 0 || ds_3.value > 85) {
+      ds_3.setCustomValidity(" ");
+      console.log("inval");
+    } else {
+      ds_3.setCustomValidity("");
+      console.log("val");
+    }
+    if (ds_2.value < 0 || ds_2.value > 85) {
+      ds_2.setCustomValidity(" ");
+      console.log("inval");
+    } else {
+      ds_2.setCustomValidity("");
+      console.log("val");
+    }
+    if (ds_1.value < 0 || ds_1.value > 85) {
+      ds_1.setCustomValidity(" ");
+      console.log("inval");
+    } else {
+      ds_1.setCustomValidity("");
+      console.log("val");
+    }
+  }
   function daily_difStepsChange() {
+    removeDefError();
     var total_dist = parseFloat(ds_1.value)  + parseFloat(ds_2.value)  + parseFloat(ds_3.value)  + parseFloat(ds_4.value)
     + parseFloat(ds_5.value)  + parseFloat(ds_6.value)  + parseFloat(ds_7.value) ;
     document.getElementById("est_monthly_dist").innerHTML = parseFloat(total_dist*4).toFixed(2) + " km";
-    if ((parseInt(total_dist*4)) > 1000) {
+    if ((parseInt(total_dist*4)) > 2500) {
       document.getElementById("error_monthDist").className = "box2 sb12 pl-2 d-flex flex-row justify-content-center"
     } else {
       document.getElementById("error_monthDist").className = "box2 sb12 pl-2 d-none flex-row justify-content-center"
