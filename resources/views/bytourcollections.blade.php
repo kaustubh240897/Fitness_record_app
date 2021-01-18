@@ -30,19 +30,19 @@
 							<label class="radio-inline pl-2 pb-2" for="group_by_tour_radio">
 								<a id="group_by_tour" href="/bytourcollection" >
 									<input id="group_by_tour_radio" class="pt-3" type="radio" name="optradio" onclick="location.href='/bytourcollection'">
-									<span id="sort_newest_span" class="not_selected_sort pl-2 pb-2" style="font-size: 100%">実績の新しい順</span>
+									<span id="sort_newest_span" class="not_selected_sort pl-2 pb-2" style="font-size: 100%">コース別</span>
 								</a>
 							</label>
 							<label class="radio-inline pl-2 pb-2" for="sort_oldest_radio">
 								<a id="sort_oldest" href="/mycollection">
 									<input id="sort_oldest_radio" class="pt-3" type="radio" name="optradio" onclick="location.href='/mycollection'">
-									<span id="sort_oldest_span" class="not_selected_sort pl-2 pb-1" style="font-size: 100%">実績の古い順</span>
+									<span id="sort_oldest_span" class="not_selected_sort pl-2 pb-1" style="font-size: 100%">取得の新しい順</span>
 								</a>
 							</label>
 							<label class="radio-inline pl-2 pb-2" for="sort_newest_radio">
 								<a id="sort_newest" href="/reversemycollection">
 									<input id="sort_newest_radio" class="pt-3" type="radio" name="optradio" onclick="location.href='/reversemycollection'">
-									<span id="sort_oldest_span" class="not_selected_sort pl-2 pb-1" style="font-size: 100%">実績の古い順</span>
+									<span id="sort_oldest_span" class="not_selected_sort pl-2 pb-1" style="font-size: 100%">取得の古い順	</span>
 								</a>
 							</label>
 						</div>
