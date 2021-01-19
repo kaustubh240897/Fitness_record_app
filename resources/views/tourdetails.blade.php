@@ -119,7 +119,7 @@
                                       </div>
                                     </div>
                                     <hr/>
-                                    <img class='mr-1' style='width:100%; height:auto;' src='/storage/img/tour-change.png'>
+                                    <img class='mr-1' style='width:100%; height:auto;' src='/storage/img/tour-change1.png'>
                                     <div class='container mt-5'>
                                       @foreach($constant_data as $c)
                                         <div class='row py-2' style='background-color: #fdf2e3;' >

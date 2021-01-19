@@ -39,7 +39,7 @@
             <div>
 			    <div class="row wrapper1 fixed-top" style='z-index: 0;'>
 				    <div class='col-12 center'>  <img src='/storage/img/ico.png'> <b class='color'>Lv.{{ $m_users->tour_level }} </b> </div>
-				    	<div class='col-12 center1'><img class='wid1' src='/storage/img/text@3x.png'> </div>
+				    	<div class='col-12 center1'><img class='wid1' src='/storage/img/text1@3x.png'> </div>
 			    </div>
 			    <div class='row'>
 			    	<div class='col-12 top'> <div class='text-center mt-2'> <b>個人設定 </b> </div>

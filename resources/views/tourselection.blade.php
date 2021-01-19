@@ -82,7 +82,7 @@
             @endforeach
 			    </div>
 			    <div class='mt-5 text-center'>
-			        <img src='/storage/img/tour-change.png' style='width:55%;'>
+			        <img src='/storage/img/tour-change1.png' style='width:55%;'>
 			    </div>
 			    <div>
 			        <img src='/storage/img/line@3x.png' class='wid'>
