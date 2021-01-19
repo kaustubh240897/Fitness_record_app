@@ -34,13 +34,13 @@
       }
       </script>
       <div class="row d-flex " style="border-bottom: 1px white; z-index: 10; background-color: #2b63c6;  box-shadow: 5px 2px white;">
-        <div class='col-12 p-2' style="color:white;"><div class="ml-4" style='color: white;'>設定 &nbsp <i style='color:white !important;' class="fa fa-angle-right"></i> &nbsp ツアーの変更 </div>
+        <div class='col-12 p-2' style="color:white;"><div class="ml-4" style='color: white;'>設定 &nbsp <i style='color:white !important;' class="fa fa-angle-right"></i> &nbsp コースの変更 </div>
       </div>
     </div>
   </div>
   	<div class='container-fluid'>
 			<div class='row'>
-			  <div class='col-12 text-center text-color top'><h5><b>現在選択されているツアー</b></h5></div>
+			  <div class='col-12 text-center text-color top'><h5><b>現在選択されているコース</b></h5></div>
 			</div>
 			<div>
 			  <img src='/storage/img/line@3x.png' class='wid'>
@@ -65,7 +65,7 @@
         	  <div class='mt-4'> <img style='width:100%; height: auto;' src='/storage/img/error-1@3x.png'></div>
           @endif
 			    <div class='row'>
-			    	<div class='col-12 text-center text-color mt-5'><h5><b>選択可能なツアー</b></h5></div>
+			    	<div class='col-12 text-center text-color mt-5'><h5><b>選択可能なコース</b></h5></div>
 			    </div>
 			  </div>
 			  <div>

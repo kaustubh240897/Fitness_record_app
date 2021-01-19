@@ -77,7 +77,7 @@
                             {{ method_field('post') }}
                             <!-- Button trigger modal -->
                             <div class="d-flex flex-row justify-content-center my-2">
-                              <button type='button' class="button1 w-100 refBtn text-center " data-toggle="modal" data-target="#exampleModalCenter"> < このツアーを選択してください  </button>
+                              <button type='button' class="button1 w-100 refBtn text-center " data-toggle="modal" data-target="#exampleModalCenter"> このコースを選択する  </button>
                             </div>
 
 
@@ -86,7 +86,7 @@
                               <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                   <div class="modal-header">
-                                    <h5 class="modal-title" style='color:#2b63c6;' id="exampleModalLongTitle">ツアーの方向を選択してください</h5>
+                                    <h5 class="modal-title" style='color:#2b63c6;' id="exampleModalLongTitle">コースの方向を選択してください</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                       <span aria-hidden="true">&times;</span>
                                     </button>
@@ -131,7 +131,7 @@
                                 </div>
                                   <div class="modal-footer">
                                     <div class='row'>
-                                      <div class='col-12 text-center mr-2'><button type="submit" class="button" style='background-color:#2b63c6 ; color:white'>ツアーの変更</button></div>
+                                      <div class='col-12 text-center mr-2'><button type="submit" class="button" style='background-color:#2b63c6 ; color:white'>コースの変更</button></div>
                                     <div class='col-12 text-center mr-2'><button type="button" class='button mt-2' style='background-color:white;' data-dismiss="modal">閉じる</button></div>
                                   </div>
                               </div>
