@@ -97,8 +97,8 @@
                                     <div class="row justify-content-center px-3">
                                       <div class="col">
                                         <div class="form-check form-check-inline">
-                                          <?php $value = Session::get('reverse','false'); ?>
-                                          @if($value == 'false')
+    
+                                          @if($value == 0)
                                             <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="3" checked>
                                           @else
                                             <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="3">
@@ -109,7 +109,7 @@
                                           <br>
                                           <!-- <div class="col"> -->
                                         <div class="form-check form-check-inline">
-                                          @if($value == 'true')
+                                          @if($value == 1)
                                             <input class="form-check-input ml-3" type="radio" name="gridRadios" id="gridRadios2" value="4" checked>
                                           @else
                                             <input class="form-check-input ml-3" type="radio" name="gridRadios" id="gridRadios2" value="4">

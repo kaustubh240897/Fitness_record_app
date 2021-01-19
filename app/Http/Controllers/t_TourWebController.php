@@ -216,7 +216,12 @@ class t_TourWebController extends Controller
                 }
                 $user_stride = m_Users::where('users_id',Auth::id())->first()->stride;
                 $current_tour = t_Tour::where('m__users_id', $m__users_id)->orderBy('start_datetime','DESC')->get()->first();
-                $value = $current_tour->direction;
+                if($current_tour == null){
+                    $value = 0;
+                }
+                else{ 
+                    $value = $current_tour->direction;
+                }
             
                 if($checkpoints == null || $checkpointsr == null){
                     return view('emptycheckpoints', compact('tours'));
@@ -246,7 +251,12 @@ class t_TourWebController extends Controller
             $my_checkpoint = m_Checkpoint::where('id',$id)->get()->first();
             //$session_value = $request->session()->get('reverse','false');
             $current_tour = t_Tour::where('m__users_id', $m__user_id)->orderBy('start_datetime','DESC')->get()->first();
-            $session_value = $current_tour->direction;
+            if($current_tour == null){
+                $session_value = 0;
+            }
+            else{ 
+                $session_value = $current_tour->direction;
+            }
 
            
            if(! empty($my_checkpoint)){

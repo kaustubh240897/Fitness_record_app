@@ -245,7 +245,12 @@ class m_UsersWebController extends Controller
             $get_t_tour = t_Tour::where('m__users_id', $m__users_id)->orderBy('start_datetime', 'DESC')->first();
             // for identifying tour is forward or reverse
             //$session_value = $request->session()->get('reverse','false');
-            $session_value = $get_t_tour->direction;
+            if($get_t_tour == null){
+                $session_value = 0;
+            }
+            else{ 
+                $session_value = $get_t_tour->direction;
+            }
 
             if($get_t_tour != null){
                 $get_m_tour_id = $get_t_tour->m__tours_id;

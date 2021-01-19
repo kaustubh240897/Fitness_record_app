@@ -227,7 +227,12 @@ class t_CollectionWebController extends Controller
             }
             $get_t_tour = t_Tour::where('m__users_id', $m__user_id)->orderBy('start_datetime', 'DESC')->first();
             //$session_value = $request->session()->get('reverse','false');
-            $session_value = $get_t_tour->direction;
+            if($get_t_tour == null){
+                $session_value = 0;
+            }
+            else{ 
+                $session_value = $get_t_tour->direction;
+            }
            // $count = t_Collection::where('m__users_id', $m__user_id)->where('m__collection_id', $id)->count();
             
             if(! empty($my_collections)){
