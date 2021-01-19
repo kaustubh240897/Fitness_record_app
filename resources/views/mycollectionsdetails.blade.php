@@ -5,7 +5,7 @@
   <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/domarrow.css') }}" />
   <script type="text/javascript" src="{{ URL::asset('js/domarrow.js') }}"></script>
   <link rel="stylesheet" href="/css/style_mycollectionsdetails.css">
- <style>   
+ <style>
  </style>
 </head>
 <body>
@@ -63,7 +63,7 @@
 	              <b>  <text class='hr my-1'> @if($my_collections->m_collections->collection_category == 'tour') {{ $my_collections->m_collections->m__tours->tour_comment }} @else {{ $my_collections->m_collections->m__checkpoints->comments }}  @endif</text></b>
 	               <img src='/storage/img/lineDown.png' class='wid mt-2'>
 
-	               
+
                  @if($my_collections->m_collections->collection_category == 'tour')
                  <div id="progress_bar_tour" class="">
 
@@ -73,7 +73,7 @@
                    var dist_walked = {{$total}};
                    var checkpoints;
                    var value = {{$session_value}};
-                   if (!value) {
+                   if (value == 0) {
                      checkpoints = {!! json_encode($checkpoints) !!};
                    }
                    if ( {!! json_encode($my_collections->m_collections->collection_category) !!} == 'checkpoint') {
@@ -81,7 +81,7 @@
                      console.log("checkpoint");
                      var title = {!! json_encode($my_collections->m_collections->m__tours->tour_title) !!};
                      console.log(title);
-                     if (!value) {
+                     if (value == 0) {
                        checkpoints = {!! json_encode($checkpoints) !!};
                        checkpoints.forEach((item, i) => {
                          console.log(item["checkpoint_title"]);
@@ -107,7 +107,7 @@
 
                    var tr_count_id = 1;
 
-                   if (!value) {
+                   if (value == 0) {
                      var checkpoints = {!! json_encode($checkpoints) !!};
 
                      checkpoints.forEach((item, i) => {
@@ -448,7 +448,7 @@
                    var dist_walked = {{$total}};
                    var checkpoints;
                    var value = {{$session_value}};
-                   if (!value) {
+                   if (value == 0) {
                      checkpoints = {!! json_encode($checkpoints) !!};
                    }
                    if ( {!! json_encode($my_collections->m_collections->collection_category) !!} == 'checkpoint') {
@@ -456,7 +456,7 @@
                      console.log("checkpoint");
                      var title = {!! json_encode($my_collections->m_collections->m__checkpoints->checkpoint_title) !!};
                      console.log(title);
-                     if (!value) {
+                     if (value == 0) {
                        checkpoints = {!! json_encode($checkpoints) !!};
                        checkpoints.forEach((item, i) => {
                          console.log(item["checkpoint_title"]);
@@ -482,7 +482,7 @@
 
                    var tr_count_id = 1;
 
-                   if (!value) {
+                   if (value == 0) {
                      var checkpoints = {!! json_encode($checkpoints) !!};
 
                      checkpoints.forEach((item, i) => {

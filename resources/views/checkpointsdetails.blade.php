@@ -61,7 +61,7 @@
   var value = {{$session_value}};
   var tr_count_id = 1;
 
-  if (!value) {
+  if (value == 0) {
     var checkpoints = {!! json_encode($checkpoints) !!};
     if ( {!! json_encode($my_checkpoint->m_collections->collection_category) !!} == 'checkpoint') {
       prog_id = "progress_bar_col";
