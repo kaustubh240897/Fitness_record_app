@@ -408,7 +408,7 @@ margin-bottom: -30px;
           <img src="{{asset('storage/padometerscreen/star.png')}}" alt="">
         </div>
       <div id="bg_season1" class="container-fluid pt-3" style="background-size: 100% 80%; background-position: right 100%;; background-repeat: no-repeat">
-      <div class="relative w-100 h-50" style="background: url({{asset('storage/padometerscreen/graphcomp.png')}}); background-size: 52% 104%; background-position: center; background-repeat: no-repeat">
+      <div class="relative w-100 h-50" style="background: url({{asset('storage/padometerscreen/graphcomp.png')}}); background-size: 102% 102%; background-position: center; background-repeat: no-repeat">
         <canvas id="myChart"></canvas>
         <div class="absolute-center text-center">
           <p class="mb-0 p-0" style="font-size:70%; color:#ff9327;"> {{ ($today_data)*$get_m_user_stride/100000 }} km</p>
@@ -427,11 +427,11 @@ margin-bottom: -30px;
         </div>
         <div class="container-fluid w-75 pb-3">
           <div class="speech-bubble2 text-center">
-            <p class="mb-0 font-weight-bold" style="font-size:90%; color:#113A83;">あと {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} で目標達成！</p>
+            <p class="mb-0 font-weight-bold" style="font-size:90%; color:#113A83;">あと {{ $get_m_user_daily_goal - $today_data }}歩 {{ $get_m_user_daily_goal*$get_m_user_stride/100000 - $today_data*$get_m_user_stride/100000 }} で目標達成！</p>
           </div>
         </div>
       <div id="bg_season2" class="container-fluid pt-3 pb-3" style="background-size: 100% 80%; background-position: right 100%;; background-repeat: no-repeat">
-      <div class="relative w-100 h-50" style="background: url({{asset('storage/padometerscreen/graph.png')}}); background-size: 52% 104%; background-position: center; background-repeat: no-repeat">
+      <div class="relative w-100 h-50" style="background: url({{asset('storage/padometerscreen/graph.png')}}); background-size: 100% 100%; background-position: center; background-repeat: no-repeat">
         <canvas id="myChart"></canvas>
         <div class="absolute-center text-center">
           <p class="mb-0 p-0" style="font-size:70%; color:#2b63c6;"> {{ ($today_data)*$get_m_user_stride/100000 }} km</p>
@@ -803,6 +803,7 @@ $(window).load(function() {
   type: 'doughnut',
   data: data,
   options: {
+    aspectRatio: 1,
     responsive: true,
     legend: {
       display: false
