@@ -225,7 +225,9 @@ class t_CollectionWebController extends Controller
                 $total = 0;
 
             }
-            $session_value = $request->session()->get('reverse','false');
+            $get_t_tour = t_Tour::where('m__users_id', $m__user_id)->orderBy('start_datetime', 'DESC')->first();
+            //$session_value = $request->session()->get('reverse','false');
+            $session_value = $get_t_tour->direction;
            // $count = t_Collection::where('m__users_id', $m__user_id)->where('m__collection_id', $id)->count();
             
             if(! empty($my_collections)){
@@ -246,7 +248,7 @@ class t_CollectionWebController extends Controller
             $checkpoints = null;
             $checkpointsr = null;
             $total = 0;
-            $session_value = false;
+            $session_value = 0;
             $unseen_collection = 0;
 
             return view('mycollectionsdetails', compact('my_collections','m__users','total','checkpoints','checkpointsr','session_value','unseen_collection'));

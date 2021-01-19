@@ -244,7 +244,9 @@ class m_UsersWebController extends Controller
             $get_m_user_monthly_goal = $m__users->step_goals_per_month;
             $get_t_tour = t_Tour::where('m__users_id', $m__users_id)->orderBy('start_datetime', 'DESC')->first();
             // for identifying tour is forward or reverse
-            $session_value = $request->session()->get('reverse','false');
+            //$session_value = $request->session()->get('reverse','false');
+            $session_value = $get_t_tour->direction;
+
             if($get_t_tour != null){
                 $get_m_tour_id = $get_t_tour->m__tours_id;
                 //$get_t_tour_status = $get_t_tour->status;
@@ -298,7 +300,7 @@ class m_UsersWebController extends Controller
                 $device = 222;
             }
             $steps = null;
-            $session_value = false;
+            $session_value = 0;
             $checkpoints = null;
             $checkpointsr = null;
             $total = 0;

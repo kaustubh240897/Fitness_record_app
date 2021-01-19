@@ -131,11 +131,11 @@ class t_TourWebController extends Controller
         $t_tour->start_datetime = $mytime->toDateTimeString();
         $t_tour->status = 'Inprogress';
         if($request->gridRadios == '4'){
-            $request->session()->put('reverse', 'true');
+            //$request->session()->put('reverse', 'true');
             $t_tour->direction = 1;
         }
         elseif($request->gridRadios == '3'){
-            $request->session()->put('reverse', 'false');
+            //$request->session()->put('reverse', 'false');
             $t_tour->direction = 0;
         }
         
@@ -207,7 +207,7 @@ class t_TourWebController extends Controller
                     $checkpoints = null;
                     $checkpointsr = null;
                 }
-                $value = $request->session()->get('reverse','false');
+                //$value = $request->session()->get('reverse','false');
                 if($get_t_tour !=null){
                     $steps = t_Steps::where('m__users_id',$m__users_id)->where('step_actual_datetime', '>=', $tour_datetime)->get()->sum('steps');
                 }
@@ -216,6 +216,7 @@ class t_TourWebController extends Controller
                 }
                 $user_stride = m_Users::where('users_id',Auth::id())->first()->stride;
                 $current_tour = t_Tour::where('m__users_id', $m__users_id)->orderBy('start_datetime','DESC')->get()->first();
+                $value = $current_tour->direction;
             
                 if($checkpoints == null || $checkpointsr == null){
                     return view('emptycheckpoints', compact('tours'));
@@ -243,7 +244,10 @@ class t_TourWebController extends Controller
             $unseen_collection = t_Collection::where('m__users_id', $m__user_id)->where('new_display_flag', 0)->count();
             
             $my_checkpoint = m_Checkpoint::where('id',$id)->get()->first();
-            $session_value = $request->session()->get('reverse','false');
+            //$session_value = $request->session()->get('reverse','false');
+            $current_tour = t_Tour::where('m__users_id', $m__user_id)->orderBy('start_datetime','DESC')->get()->first();
+            $session_value = $current_tour->direction;
+
            
            if(! empty($my_checkpoint)){
                     $get_tour_id =  $my_checkpoint->tours->id;             
@@ -276,7 +280,7 @@ class t_TourWebController extends Controller
             $checkpoints = null;
             $checkpointsr = null;
             $total = null;
-            $session_value = false;
+            $session_value = 0;
             $unseen_collection = 0;
             return view('checkpointsdetails', compact('my_checkpoint','total','checkpoints','checkpointsr','session_value','unseen_collection'));
         }
