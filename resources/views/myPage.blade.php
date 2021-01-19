@@ -899,7 +899,7 @@ padding-top: 0
     var steplist = document.getElementById("progress_bar");
     var tr_count_id = 1;
 
-  if({{ $session_value }} === false){
+  if({{ $session_value }} === 0){
     var get_m_user_stride = {{ $get_m_user_stride }};
     var steps = {{ $steps }};
     var dist_walked = (get_m_user_stride * steps)/100000;
