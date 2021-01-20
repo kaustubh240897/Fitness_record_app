@@ -200,12 +200,12 @@
                     <!-- <p class="text-center" style="color:white; font-size: 80%">マイヒストリ</p> -->
                     <div class="col-2 mb-0 pb-0 mt-1 shadow-lg padding-0">
                       <a href="{{ route('userhistory', [now()->year,now()->month]) }}"><button id="tab_monthly" class="text-center selected_tab mb-0 pb-0" style="color: white; font-size: 80%;
-                        background-color: #2b63c6;" onclick="changeTab(this.id);">月間</button></a>
+                        background-color: #2b63c6;" >月間</button></a>
                     </div>
                     <div class="col-2 mb-0 pb-0 mt-1 shadow-lg padding-0">
 
                         <a href="{{ route('usermonthlyhistory', [now()->year]) }}"><button id="tab_yearly" class="text-center not_selected_tab mb-0 pb-0" style="color: white; font-size: 80%;
-                          background-color: #2b63c6;" onclick="changeTab(this.id);">年間</button></a>
+                          background-color: #2b63c6;" >年間</button></a>
                     </div>
   				        <div class='col-4 pb-0 mb-0 shadow-lg'>
                      <!-- <button class="text-center" style="color: white; font-size: 80%; border-radius: 12px;
@@ -730,14 +730,14 @@ function myFunc(id)
             //     //
             //     console.log("fail");
             // });
-            location.reload();location.href=url;
+            document.location=url;
           }
           $('html, body').animate({ scrollTop: 0 }, 'fast');
       }
       function myFunc2(id)
             {
 
-              console.log("inmyfun2", selected);
+              console.log("inmyfun2", selectedyear);
               console.log("funId2",id);
                 //alert(id);
                 if (id>2020) {

@@ -408,7 +408,7 @@ margin-bottom: -30px;
           <img src="{{asset('storage/padometerscreen/star.png')}}" alt="">
         </div>
       <div id="bg_season1" class="container-fluid pt-3" style="background-size: 100% 80%; background-position: right 100%;; background-repeat: no-repeat">
-      <div class="relative w-100 h-50" style="background: url({{asset('storage/padometerscreen/graphcomp.png')}}); background-size: 102% 102%; background-position: center; background-repeat: no-repeat">
+      <div class="relative w-100 h-50" style="background: url({{asset('storage/padometerscreen/graphcomp.png')}}); background-size: 95% 104%; background-position: center; background-repeat: no-repeat">
         <canvas id="myChart"></canvas>
         <div class="absolute-center text-center">
           <p class="mb-0 p-0" style="font-size:70%; color:#ff9327;"> {{ ($today_data)*$get_m_user_stride/100000 }} km</p>
@@ -427,11 +427,11 @@ margin-bottom: -30px;
         </div>
         <div class="container-fluid w-75 pb-3">
           <div class="speech-bubble2 text-center">
-            <p class="mb-0 font-weight-bold" style="font-size:90%; color:#113A83;">あと {{ $get_m_user_daily_goal - $today_data }}歩 {{ $get_m_user_daily_goal*$get_m_user_stride/100000 - $today_data*$get_m_user_stride/100000 }} で目標達成！</p>
+            <p class="mb-0 font-weight-bold" style="font-size:90%; color:#113A83;">あと {{ $get_m_user_daily_goal - $today_data }}歩 ({{ $get_m_user_daily_goal*$get_m_user_stride/100000 - $today_data*$get_m_user_stride/100000 }}km) で目標達成！</p>
           </div>
         </div>
       <div id="bg_season2" class="container-fluid pt-3 pb-3" style="background-size: 100% 80%; background-position: right 100%;; background-repeat: no-repeat">
-      <div class="relative w-100 h-50" style="background: url({{asset('storage/padometerscreen/graph.png')}}); background-size: 100% 100%; background-position: center; background-repeat: no-repeat">
+      <div class="relative w-100 h-50" style="background: url({{asset('storage/padometerscreen/graph.png')}}); background-size: 95% 104%; background-position: center; background-repeat: no-repeat">
         <canvas id="myChart"></canvas>
         <div class="absolute-center text-center">
           <p class="mb-0 p-0" style="font-size:70%; color:#2b63c6;"> {{ ($today_data)*$get_m_user_stride/100000 }} km</p>
@@ -554,7 +554,7 @@ margin-bottom: -30px;
              <div class="col col-sm-5 text-center">
               <div class="d-flex flex-row-reverse pl-3 pb-3 mb-3 overlay-text2">
                 <div class="text-center">
-                  <p class="mb-0 pb-0 font-weight-bold pr-sm-3" style="background: #dce0e3; font-size:70%; color:#113A83; border: 2px solid #dce0e3; border-radius: 15px;">残ります @if($get_m_user_monthly_goal <= $current_month_steps) 0 @else {{ $get_m_user_monthly_goal-$current_month_steps }}歩 {{ round(($get_m_user_monthly_goal-$current_month_steps)*$get_m_user_stride/100000,2) }} @endif Km!</p>
+                  <p class="mb-0 pb-0 font-weight-bold pr-sm-3" style="background: #dce0e3; font-size:70%; color:#113A83; border: 2px solid #dce0e3; border-radius: 15px;">あと@if($get_m_user_monthly_goal <= $current_month_steps) 0 @else {{ $get_m_user_monthly_goal-$current_month_steps }}歩({{ round(($get_m_user_monthly_goal-$current_month_steps)*$get_m_user_stride/100000,2) }}km)で目標達成 @endif</p>
                   <div class="d-flex flex-row-reverse">
                     <div class="col text-right border-left border-primary">
                       <p style="font-size:100%"><br><br><br><br></p>
@@ -567,7 +567,7 @@ margin-bottom: -30px;
                </div>
               <div class="d-flex flex-row pr-3 overlay-text3">
                 <div class="text-center">
-                  <p class="mb-0 mt-0 pt-0 font-weight-bold px-1 pl-sm-2 pl-md-3" style="background: white; font-size:70%; color:#2b63c6;; border: 1px solid #2b63c6;; border-radius: 15px;">あと {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
+                  <p class="mb-0 mt-0 pt-0 font-weight-bold px-1 pl-sm-2 pl-md-3" style="background: white; font-size:70%; color:#2b63c6;; border: 1px solid #2b63c6;; border-radius: 15px;">今日までの累計{{ $current_month_steps }}歩({{ $current_month_steps*$get_m_user_stride/100000 }}km)</p>
                   <div class="row justify-content-center">
                     <div class="col border-right border-primary">
                       <p style="font-size:100%;"><br><br><br></p>
@@ -592,7 +592,7 @@ margin-bottom: -30px;
              <div class="col col-sm-5 text-center">
               <div class="d-flex flex-row-reverse pl-3 pb-3 mb-3 overlay-text2">
                 <div class="text-center">
-                  <p class="mb-0 pb-0 font-weight-bold pr-sm-3" style="background: #dce0e3; font-size:70%; color:#113A83; border: 2px solid #dce0e3; border-radius: 15px;">残ります @if($get_m_user_monthly_goal <= $current_month_steps) 0 @else {{ $get_m_user_monthly_goal-$current_month_steps }}歩 {{ round(($get_m_user_monthly_goal-$current_month_steps)*$get_m_user_stride/100000,2) }} @endif Km!</p>
+                  <p class="mb-0 pb-0 font-weight-bold pr-sm-3" style="background: #dce0e3; font-size:70%; color:#113A83; border: 2px solid #dce0e3; border-radius: 15px;">あと@if($get_m_user_monthly_goal <= $current_month_steps) 0 @else {{ $get_m_user_monthly_goal-$current_month_steps }}歩({{ round(($get_m_user_monthly_goal-$current_month_steps)*$get_m_user_stride/100000,2) }}km)で目標達成 @endif</p>
                   <div class="d-flex flex-row-reverse">
                     <div class="col text-right border-left border-primary">
                       <p style="font-size:100%"><br><br><br><br></p>
@@ -605,7 +605,7 @@ margin-bottom: -30px;
               </div>
               <div class="d-flex flex-row pl-3 overlay-text3">
                 <div class="text-center">
-                  <p class="mb-0 mt-0 pt-0 font-weight-bold pl-sm-2 pl-md-3 pl-3 pl-lg-3 pr-3" style="background: white; font-size:70%; color:#2b63c6; border: 1px solid #2b63c6;; border-radius: 15px;">あと {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
+                  <p class="mb-0 mt-0 pt-0 font-weight-bold pl-sm-2 pl-md-3 pl-3 pl-lg-3 pr-3" style="background: white; font-size:70%; color:#2b63c6; border: 1px solid #2b63c6;; border-radius: 15px;">今日までの累計{{ $current_month_steps }}歩({{ $current_month_steps*$get_m_user_stride/100000 }}km)</p>
                   <div class="row justify-content-center">
                     <div class="col border-right border-primary">
                       <p style="font-size:100%"><br><br><br></p>
@@ -628,13 +628,13 @@ margin-bottom: -30px;
                     <div id="triangle_graph" class=""></div>
                 </div>
                 <div class="container-fluid pt-3 w-25 d-none d-lg-block">
-                  <p class="text-center" style="margin-bottom: 0px; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $get_m_user_monthly_goal }}歩 ({{ $get_m_user_monthly_goal*$get_m_user_stride/100000 }} Km)</p>
+                  <p class="text-center" style="font-size:75%; margin-bottom: 0px; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $get_m_user_monthly_goal }}歩 ({{ $get_m_user_monthly_goal*$get_m_user_stride/100000 }} Km)</p>
                 </div>
                 <div class="container-fluid pt-3 w-50 d-none d-md-block d-lg-none">
-                  <p class="text-center" style="margin-bottom: 0px; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $get_m_user_monthly_goal }}歩 ({{ $get_m_user_monthly_goal*$get_m_user_stride/100000 }} Km)</p>
+                  <p class="text-center" style="font-size:75%; margin-bottom: 0px; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $get_m_user_monthly_goal }}歩 ({{ $get_m_user_monthly_goal*$get_m_user_stride/100000 }} Km)</p>
                 </div>
                 <div class="container-fluid pt-3 d-md-none">
-                  <p class="text-center" style="margin-bottom: 0px; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $get_m_user_monthly_goal }}歩 ({{ $get_m_user_monthly_goal*$get_m_user_stride/100000 }} Km)</p>
+                  <p class="text-center" style="font-size:75%; margin-bottom: 0px; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $get_m_user_monthly_goal }}歩 ({{ $get_m_user_monthly_goal*$get_m_user_stride/100000 }} Km)</p>
                 </div>
 
                 <!-- <div class="row" style="margin: 0 !important;">
@@ -803,7 +803,7 @@ $(window).load(function() {
   type: 'doughnut',
   data: data,
   options: {
-    aspectRatio: 1,
+    aspectRatio: 1.1,
     responsive: true,
     legend: {
       display: false
