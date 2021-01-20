@@ -739,7 +739,7 @@
                     clicked.scrollIntoView();
                     console.log("inmyfun2", tab_yearly_selectedyear);
                     url = url.replace('year',tab_yearly_selectedyear);
-                    location.reload();location.href=url;
+                    document.location = url;
                   }
               }
         let touchstartX = 0;

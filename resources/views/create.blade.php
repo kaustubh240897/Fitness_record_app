@@ -167,7 +167,7 @@
    background-color: #f5f5f5;
 }
 .gender_sel {
-  background-color: #fff;
+  background-color: #2b63c6;
   color: #fff;
 }
 
