@@ -94,10 +94,11 @@ class t_CollectionWebController extends Controller
        $tours = null;
        $counter = null;
        $latest_date = null;
-       $tour_distance = null;
+       $tours_distance = null;
        $tour_status = null;
        $unseen_checkpoint_array = null;
-       $get_t_collections = null;
+       $m__user_id = null;
+       $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->get()->unique('m__collection_id');
        $index = null;
        $unseen_collection = 0;
     return view('bytourcollections', compact('get_t_collections','tour_id', 'tours','counter','latest_date','tours_distance','tour_status','unseen_checkpoint_array','index','unseen_collection'));
@@ -124,7 +125,8 @@ class t_CollectionWebController extends Controller
     }
     else{
         $counter = null;
-        $get_t_collections = null;
+        $m__user_id = null;
+        $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->get()->unique('m__collection_id');
         $count_t_collections = null;
         $index = null;
         $unseen_collection = 0;
