@@ -54,7 +54,7 @@
         <div class='col-12'><img class='center' src='/storage/img/star_mycol.png'> </div>
       </div>
 
-    @if(! empty($get_t_collections))
+    @if(! empty($get_t_collections->count()))
       <div class='row py-2' style='margin-top:15rem; z-index: 9; position: relative; background-color: white; padding-bottom: 0%;'>
         @foreach($get_t_collections as $get_t_collection)
           @if($get_t_collection->new_display_flag == 0)
@@ -80,9 +80,11 @@
 				  <img style='width: 100%; height: auto;' src='/storage/img/bg@3x.png'>
 	      </div>
     </div>
-  @else
-    <h1> まだコレクションはありません！ </h1>
-  @endif
+@else
+	<div class='text-center' style='margin-top:15rem; z-index:10;'>
+		<h1 style='color:black !important;'> まだコレクションはありません！ </h1>
+	</div>
+@endif
   <div class="container-fluid navfix" style="background-color: #2b63c6;">
     <div class="row d-flex text-center">
       <div class="col-3 padding-0 pt-2 navItem" style="border-right: 2px solid #113a83;" id="box1" onclick="navItemClick(this.id);">

@@ -13,7 +13,7 @@
 <style>
 </style>
 </head>
-@if(! empty($get_t_collections))
+
 	<body>
 		<div class='container-fluid'>
 			<div class="row d-flex fixed-top" style="border-bottom: 1px solid white; z-index: 10; background-color: #2b63c6; position: fixed; top:28px;">
@@ -56,7 +56,7 @@
         	<div class='col-12'><img class='center' src='storage/img/star_mycol.png'> </div>
 	    </div>
 
-
+@if(! empty($get_t_collections->count()))
 	<div class='row'>
 		<div class='col-12'>
 			<main class="main row-full" >
@@ -117,6 +117,11 @@
 
 	</div>
     </div>
+@else
+	<div class='text-center' style='margin-top:15rem; z-index:10;'>
+		<h1 style='color:black !important;'> まだコレクションはありません！ </h1>
+	</div>
+@endif
 
 		<script>
 			const accordionItem = document.querySelectorAll(".accordion-item");
@@ -142,11 +147,7 @@
 		}
 	</script>
 </body>
-@else
-	<div style='margin-top:10rem; z-index:10;'>
-		<h1 style='color:black !important;'> まだコレクションはありません！ </h1>
-	</div>
-@endif
+
 	<div class="container-fluid navfix" style="background-color: #2b63c6;">
 		<div class="row d-flex text-center">
 			<div class="col-3 padding-0 pt-2 navItem" style="border-right: 2px solid #113a83;" id="box1" onclick="navItemClick(this.id);">
