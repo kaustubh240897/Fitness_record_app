@@ -17,7 +17,7 @@
 	<body>
 		<div class='container-fluid'>
 			<div class="row d-flex fixed-top" style="border-bottom: 1px solid white; z-index: 10; background-color: #2b63c6; position: fixed; top:28px;">
-				<div class=' p-2' style="color:white;"><div class="ml-1" style='color: white;'>私のコレクション</div>
+				<div class=' p-2' style="color:white;"><div class="mt-1" style='color: white;'>私のコレクション</div>
 			</div>
 				<div class=' ml-auto  p-2 '>
         <!-- <button class='button mr-1' style="color:white;">ツアーで並べ替え ↑↓ </button> -->

@@ -18,7 +18,7 @@
 <body style='background-color: white;'>
   <div class='container-fluid' style="margin-top: 28px">
     <div class="row d-flex fixed-top" style="border-bottom: 1px solid white; z-index: 10; background-color: #2b63c6; position: fixed; top:28px;">
-      <div class=' p-2' style="color:white;"><div class="ml-4" style='color: white;'>私のコレクション</div> </div>
+      <div class=' p-2' style="color:white;"><div class="ml-3 mt-1" style='color: white;'>私のコレクション</div> </div>
         <div class='ml-auto p-2 c'>
      <!-- <button class='button mr-4' style="color:white;">ツアーで並べ替え ↑↓ </button> -->
           <div class="dropdown p-1">
