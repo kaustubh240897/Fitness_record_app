@@ -284,7 +284,7 @@
           <div id="year_list" class="row d-flex pt-1" style="background-color:#fff; z-index: 0">
             <div class="col-12 w-100">
               <div id="yearsContainer" class=" scrolling-wrapper row flex-row flex-nowrap">
-                <div class="col">
+                <!-- <div class="col">
                   <button id="2020" onclick="myFunc2(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">2020</button>
                 </div>
                 <div class="col">
@@ -292,7 +292,7 @@
                 </div>
                 <div class="col">
                   <button id="2022" onclick="myFunc2(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">2022</button>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -438,6 +438,7 @@
     }
     </script>
     <script type="text/javascript">
+
     var is_rev = {{$reverse}};
     console.log(is_rev);
     var table_body = document.getElementById("yearly_table");
@@ -680,6 +681,32 @@
   //     yearsContainer.appendChild(col);
   //   }
   // }
+  var yyy = {!! json_encode($years) !!};
+  var mmm = {!! json_encode($months) !!};
+  var array_years = Object.keys(yyy).map(Number);
+  var array_months = Object.keys(mmm).map(Number);
+  var month_index = array_months.indexOf(selected);
+  var year_index = array_years.indexOf(tab_yearly_selectedyear);
+  console.log("month_index", month_index);
+  console.log("year_index", year_index);
+  for (var i = 0; i < array_years.length ; i++) {
+    var div_col = document.createElement("div");
+    div_col.className = "col";
+    var div_btn = document.createElement("button");
+    // <button id="12" onclick="myFunc(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">12</button>
+    div_btn.id = array_years[i];
+    div_btn.setAttribute('onclick', "getId(this.id)");
+    div_btn.className = "px-1 not_selected_month";
+    div_btn.style = "background-color:#fff;";
+    div_btn.innerHTML = array_years[i];
+    div_col.appendChild(div_btn);
+    yearsContainer.appendChild(div_col);
+  }
+  function getId(value) {
+      var id = array_years.indexOf(parseInt(value));
+      year_index = id;
+      myFunc2(id);
+  }
   document.getElementById(tab_yearly_selectedyear).className = "px-1 selected_month";
   document.getElementById(tab_yearly_selectedyear).scrollIntoView();
   function myFunc(id)
@@ -720,27 +747,26 @@
                 console.log("inmyfun2", selected);
                 console.log("funId2",id);
                   //alert(id);
-                  if (id>2022) {
-                    id = 2022;
+                  if (id >= array_years.length) {
+                    year_index = array_years.indexOf(tab_yearly_selectedyear);
+                    return;
                     //selectedyear+=1;
                     //console.log(selectedyear);
-                  }
-                  if (id<2020) {
-                    id = 2020;
+                  } else if (id < 0) {
+                    year_index = array_years.indexOf(tab_yearly_selectedyear);
+                    return;
                     //selectedyear-=1;
                     //console.log(selectedyear);
                   }
-                  if (id!=tab_yearly_selectedyear) {
-                    var sel = document.getElementById(tab_yearly_selectedyear);
-                    var clicked = document.getElementById(id);
+                    //var sel = document.getElementById(tab_yearly_selectedyear);
+                    //var clicked = document.getElementById(id);
                     // sel.className = "px-1 not_selected_month";
                     // clicked.className = "px-1 selected_month";
-                    tab_yearly_selectedyear = parseInt(id);
-                    clicked.scrollIntoView();
-                    console.log("inmyfun2", tab_yearly_selectedyear);
-                    url = url.replace('year',tab_yearly_selectedyear);
+                    //tab_yearly_selectedyear = parseInt(id);
+                    //clicked.scrollIntoView();
+                    //console.log("inmyfun2", tab_yearly_selectedyear);
+                    url = url.replace('year',array_years[year_index]);
                     document.location = url;
-                  }
               }
         let touchstartX = 0;
         let touchendX = 0;
@@ -784,12 +810,14 @@
   if (touchendX2 - touchstartX2 < -50 && (touchendY2 - touchstartY2 < 25 && touchendY2 - touchstartY2 > -25)) {
   //alert('swiped left!');
   console.log("inswipeleft", tab_yearly_selectedyear);
-  myFunc2(tab_yearly_selectedyear+1);
+  year_index+=1;
+  myFunc2(year_index);
   }
   if (touchendX2 - touchstartX2 > 50 && (touchendY2 - touchstartY2 < 25 && touchendY2 - touchstartY2 > -25)) {
   //alert('swiped right!');
   console.log("inswiperight", tab_yearly_selectedyear);
-  myFunc2(tab_yearly_selectedyear-1);
+  year_index-=1;
+  myFunc2(year_index);
   }
   }
 

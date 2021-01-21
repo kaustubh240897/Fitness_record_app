@@ -45,7 +45,7 @@ text-align: center;
 .speech-bubble2 {
 position: relative;
 background: #dce0e3;
-border-radius: .4em;
+border-radius: 1.0em;
 }
 
 .speech-bubble2:after {
@@ -425,8 +425,8 @@ margin-bottom: -30px;
         <div class="container-fluid text-center pt-3">
           <p class="font-weight-bold" style="color:#2b63c6">今日の歩数</p>
         </div>
-        <div class="container-fluid w-75 pb-3">
-          <div class="speech-bubble2 text-center">
+        <div class="container-fluid w-100 pb-3">
+          <div class="speech-bubble2 text-center pt-1 pb-1">
             <p class="mb-0 font-weight-bold" style="font-size:90%; color:#113A83;">あと {{ $get_m_user_daily_goal - $today_data }}歩 ({{ $get_m_user_daily_goal*$get_m_user_stride/100000 - $today_data*$get_m_user_stride/100000 }}km) で目標達成！</p>
           </div>
         </div>
@@ -493,13 +493,13 @@ margin-bottom: -30px;
                     <div style="z-index: -1000 !important;" id="triangle_graph" class=""></div>
                 </div>
                 <div class="container-fluid pt-3 w-25 d-none d-lg-block">
-                  <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $current_month_steps }}歩 ({{ $current_month_steps*$get_m_user_stride/100000 }} Km)</p>
+                  <p class="text-center" style="font-size:75%; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $current_month_steps }}歩 ({{ $current_month_steps*$get_m_user_stride/100000 }} Km)</p>
                 </div>
                 <div class="container-fluid pt-3 w-50 d-none d-md-block d-lg-none">
-                  <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $current_month_steps }}歩 ({{ $current_month_steps*$get_m_user_stride/100000 }} Km)</p>
+                  <p class="text-center" style="font-size:75%; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $current_month_steps }}歩 ({{ $current_month_steps*$get_m_user_stride/100000 }} Km)</p>
                 </div>
                 <div class="container-fluid pt-3 d-md-none">
-                  <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $current_month_steps }}歩 ({{ $current_month_steps*$get_m_user_stride/100000 }} Km)</p>
+                  <p class="text-center" style="font-size:75%; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $current_month_steps }}歩 ({{ $current_month_steps*$get_m_user_stride/100000 }} Km)</p>
                 </div>
                 <!-- @if(!empty($get_t_tour))
                   <div class="container-fluid botCont bg-white" >
