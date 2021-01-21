@@ -55,7 +55,6 @@ Route::get('steps/{step}','StepsController@show');
 Route::post('steps/','StepsController@store');
 Route::put('steps/{step}/', 'StepsController@update');
 Route::delete('steps/{step}/','StepsController@destroy');
-Route::get('latesttour/', 'StepsController@latestTour');
 
 Route::get('logs/', 't_LogController@index');
 Route::post('logs/', 't_LogController@store');
