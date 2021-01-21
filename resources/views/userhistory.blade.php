@@ -234,8 +234,8 @@
             <p id="yearnumber" class="w-100 pl-3" style="font-weight: bold; color: #2b63c6;background-color: #fff; height: 27px;">2020</p>
           </div>
           <div class="col-10 mb-0">
-            <div id="monthsContainer" class="pl-3 mb-0 scrolling-wrapper row  flex-nowrap ">
-              <div class="col">
+            <div id="monthsContainer" class="pl-3 mb-0 scrolling-wrapper row flex-nowrap">
+              <!-- <div class="col">
                 <button id="12" onclick="myFunc(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">12</button>
               </div>
               <div class="col">
@@ -270,7 +270,7 @@
               </div>
               <div class="col">
                 <button id="1" onclick="myFunc(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">1</button>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -389,8 +389,6 @@ background-color: #113a83; color: #fff">
         </div>
       </div>
     </div> -->
-
-
 
     <script type="text/javascript">
     function navItemClick(id) {
@@ -680,45 +678,98 @@ background-color: #113a83; color: #fff">
 var selected = {{$m}};
 //var tab_year = 2020;
 var selectedyear = {{$y}};
-var tab_yearly_selectedyear = 2020;
+var tab_yearly_selectedyear = 2021;
 var monthsContainer = document.getElementById('monthsContainer');
 var yearsContainer = document.getElementById('yearsContainer');
 var yearnumber = document.getElementById('yearnumber');
 yearnumber.innerHTML = selectedyear;
+
+var url = "{{ route('userhistory', ['year','month']) }}";
+var yyy = {!! json_encode($years) !!};
+var mmm = {!! json_encode($months) !!};
+var array_years = Object.keys(yyy).map(Number);
+// var array_months = Object.keys(mmm).map(Number);
+var array_months = [1,2,3,4,5,6,7,8,9,10,11,12];
+var month_index = array_months.indexOf(selected);
+var year_index = array_years.indexOf(selectedyear);
+console.log("index",month_index);
+console.log("ind_year",year_index);
+// var array_months = [01,02,03,04,05,06,07,08,09,10,11,12];
+console.log("yyy", array_years);
+console.log("mmm", array_months);
+function getId(value) {
+  console.log("get_id_val", value);
+    var id = array_months.indexOf(parseInt(value));
+    console.log("getid",id);
+    month_index = id;
+    myFunc(id);
+}
+for (var i = array_months.length; i > 0; i--) {
+  var div_col = document.createElement("div");
+  div_col.className = "col";
+  var div_btn = document.createElement("button");
+  // <button id="12" onclick="myFunc(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">12</button>
+  div_btn.id = array_months[i-1];
+  div_btn.setAttribute('onclick', "getId(this.id)");
+  div_btn.className = "px-1 not_selected_month";
+  div_btn.style = "background-color:#fff;";
+  div_btn.innerHTML = array_months[i-1];
+  div_col.appendChild(div_btn);
+  monthsContainer.appendChild(div_col);
+}
 var sel_mon = document.getElementById(selected);
 sel_mon.className = "px-1 selected_month";
 sel_mon.scrollIntoView();
-var url = "{{ route('userhistory', ['year','month']) }}";
 function myFunc(id)
       {
 
         console.log("inmyfun1", selected);
         console.log("funId",id);
           //alert(id);
-          if (id>12) {
+          if (id >= array_months.length) {
+            if (array_months.length > 1) {
+              id = 1;
+            } else {
+              id = 12;
+            }
             id = 1;
-            selectedyear+=1;
-            yearnumber.innerHTML = selectedyear;
-            console.log(selectedyear);
-          }
-          if (id<1) {
+            month_index = 0;
+            year_index += 1;
+            if (year_index < array_years.length) {
+              yearnumber.innerHTML = array_years[year_index];
+            } else {
+              month_index = array_months.indexOf(selected);
+              year_index = array_years.indexOf(selectedyear);
+              id = month_index;
+              return;
+            }
+          } else if (id<0) {
             id = 12;
-            selectedyear-=1;
-            yearnumber.innerHTML = selectedyear;
-            console.log(selectedyear);
+            month_index = array_months.length-1;
+            year_index-=1;
+            if (year_index >= 0) {
+              yearnumber.innerHTML = array_years[year_index];
+            } else {
+              month_index = array_months.indexOf(selected);
+              year_index = array_years.indexOf(selectedyear);
+              id = month_index;
+              return;
+            }
+          } else {
+            id = array_months[month_index];
           }
-          if (id!=selected) {
-            var sel = document.getElementById(selected);
-            var clicked = document.getElementById(id);
+            // var sel = document.getElementById(selected);
+            // var clicked = document.getElementById(id);
             // sel.className = "px-1 not_selected_month";
             // clicked.className = "px-1 selected_month";
-            selected = parseInt(id);
-            clicked.scrollIntoView();
+            //selected = parseInt(id);
+            // clicked.scrollIntoView();
             //row_top.scrollIntoView();
-            $('html, body').animate({ scrollTop: 0 }, 'fast');
+            // $('html, body').animate({ scrollTop: 0 }, 'fast');
             console.log("inmyfun2", selected);
-            url = url.replace('year',selectedyear);
-            url = url.replace('month',selected);
+            console.log("url-ind",month_index);
+            url = url.replace('year',array_years[year_index]);
+            url = url.replace('month',id);
             console.log("url",url);
             // $.ajax({
             //     method: 'get',
@@ -731,7 +782,6 @@ function myFunc(id)
             //     console.log("fail");
             // });
             document.location=url;
-          }
           $('html, body').animate({ scrollTop: 0 }, 'fast');
       }
       function myFunc2(id)
@@ -771,12 +821,14 @@ function handleGesure() {
 if (touchendX - touchstartX < -50 && (touchendY - touchstartY < 25 && touchendY - touchstartY > -25)) {
 //alert('swiped left!');
 console.log("inswipeleft", selected);
-myFunc(selected-1);
+month_index-=1;
+myFunc(month_index);
 }
 if (touchendX - touchstartX > 50 && (touchendY - touchstartY < 25 && touchendY - touchstartY > -25)) {
 //alert('swiped right!');
 console.log("inswiperight", selected);
-myFunc(selected+1);
+month_index+=1;
+myFunc(month_index);
 }
 }
 

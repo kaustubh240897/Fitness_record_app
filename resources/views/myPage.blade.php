@@ -283,7 +283,7 @@ text-align: center;
 .speech-bubble2 {
 position: relative;
 background: #dce0e3;
-border-radius: .4em;
+border-radius: 1.0em;
 }
 
 .speech-bubble2:after {
@@ -608,7 +608,7 @@ padding-top: 0
         <img src="{{asset('storage/padometerscreen/star.png')}}" alt="">
       </div>
     <!-- <div id="bg_season1" class="container-fluid pt-3" style="background-size: 100% 80%; background-position: right 100%;; background-repeat: no-repeat"> -->
-    <div class="relative w-100 h-50" style="background: url({{asset('storage/padometerscreen/graphcomp.png')}}); background-size: 52% 104%; background-position: center; background-repeat: no-repeat">
+    <div class="relative w-100 h-50" style="background: url({{asset('storage/padometerscreen/graphcomp.png')}}); background-size: 95% 104%; background-position: center; background-repeat: no-repeat">
       <canvas id="myChart"></canvas>
       <div class="absolute-center text-center">
         <p class="mb-0 p-0" style="font-size:70%; color:#ff9327;"> {{ ($today_data)*$get_m_user_stride/100000 }} km</p>
@@ -622,13 +622,13 @@ padding-top: 0
 </div>
     @else
     <div class="container">
-      <div class="container-fluid w-75 pb-3">
-        <div class="speech-bubble2 text-center">
-          <p class="mb-0 font-weight-bold" style="font-size:90%; color:#113A83;">あと {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} で目標達成！</p>
+      <div class="container-fluid w-100 pb-3">
+        <div class="speech-bubble2 text-center pb-1 pt-1">
+          <p class="mb-0 font-weight-bold" style="font-size:90%; color:#113A83;">あと {{ $get_m_user_daily_goal - $today_data }}歩 ({{ round(($get_m_user_daily_goal*$get_m_user_stride/100000 - $today_data*$get_m_user_stride/100000),2) }}km) で目標達成！</p>
         </div>
       </div>
       <!-- <div id="bg_season2" class="container-fluid pt-3 pb-3" style="background-size: 100% 80%; background-position: right 100%;; background-repeat: no-repeat"> -->
-      <div class="relative w-100 h-50" style="background: url({{asset('storage/padometerscreen/graph.png')}}); background-size: 52% 104%; background-position: center; background-repeat: no-repeat">
+      <div class="relative w-100 h-50" style="background: url({{asset('storage/padometerscreen/graph.png')}}); background-size: 95% 104%; background-position: center; background-repeat: no-repeat">
         <canvas id="myChart"></canvas>
         <div class="absolute-center text-center">
           <p class="mb-0 p-0" style="font-size:70%; color:#2b63c6;"> {{ ($today_data)*$get_m_user_stride/100000 }} km</p>
@@ -694,13 +694,13 @@ padding-top: 0
                   <div style="z-index: -1000 !important;" id="triangle_graph" class=""></div>
               </div>
               <div class="container-fluid pt-3 w-25 d-none d-lg-block">
-                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $current_month_steps }}歩 ({{ $current_month_steps*$get_m_user_stride/100000 }} Km)</p>
+                <p class="text-center" style="font-size:75%; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $current_month_steps }}歩 ({{ $current_month_steps*$get_m_user_stride/100000 }} Km)</p>
               </div>
               <div class="container-fluid pt-3 w-50 d-none d-md-block d-lg-none">
-                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $current_month_steps }}歩 ({{ $current_month_steps*$get_m_user_stride/100000 }} Km)</p>
+                <p class="text-center" style="font-size:75%; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $current_month_steps }}歩 ({{ $current_month_steps*$get_m_user_stride/100000 }} Km)</p>
               </div>
               <div class="container-fluid pt-3 d-md-none">
-                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $current_month_steps }}歩 ({{ $current_month_steps*$get_m_user_stride/100000 }} Km)</p>
+                <p class="text-center" style="font-size:75%; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $current_month_steps }}歩 ({{ $current_month_steps*$get_m_user_stride/100000 }} Km)</p>
               </div>
               <div class="row" >
                 <div class="col text-center">
@@ -789,12 +789,11 @@ padding-top: 0
       </div> -->
       <div id="paraCont" class="">
         <div id="paraRight" class="d-flex flex-row justify-content-end pr-3">
-          <p class="font-weight-bold p-1" style="background: #dce0e3; font-size:70%; color:#113A83; border: 2px solid #dce0e3; border-radius: 15px;">残ります @if($get_m_user_monthly_goal <= $current_month_steps) 0
-            @else {{ $get_m_user_monthly_goal-$current_month_steps }}歩 {{ round(($get_m_user_monthly_goal-$current_month_steps)*$get_m_user_stride/100000,2) }} @endif Km!</p>
+          <p class="font-weight-bold p-1" style="background: #dce0e3; font-size:70%; color:#113A83; border: 2px solid #dce0e3; border-radius: 15px;">あと@if($get_m_user_monthly_goal <= $current_month_steps) 0 @else {{ $get_m_user_monthly_goal-$current_month_steps }}歩({{ round(($get_m_user_monthly_goal-$current_month_steps)*$get_m_user_stride/100000,2) }}km)で目標達成 @endif</p>
         </div>
         <div id="paraLeft" class="d-flex flex-row justify-content-start mt-3">
           <p class="font-weight-bold p-1" style="background: white; font-size:70%; color:#2b63c6;; border: 1px solid #2b63c6;; border-radius: 15px;">
-            あと {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
+            今日までの累計{{ $current_month_steps }}歩({{ round($current_month_steps*$get_m_user_stride/100000,2) }}km)</p>
         </div>
       </div>
 
@@ -804,13 +803,13 @@ padding-top: 0
                   <div id="triangle_graph" class="mt-3"></div>
               </div>
               <div class="container-fluid pt-3 w-25 d-none d-lg-block">
-                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $get_m_user_monthly_goal }}歩 ({{ $get_m_user_monthly_goal*$get_m_user_stride/100000 }} Km)</p>
+                <p class="text-center" style="font-size:75%; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $get_m_user_monthly_goal }}歩 ({{ $get_m_user_monthly_goal*$get_m_user_stride/100000 }} Km)</p>
               </div>
               <div class="container-fluid pt-3 w-50 d-none d-md-block d-lg-none">
-                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $get_m_user_monthly_goal }}歩 ({{ $get_m_user_monthly_goal*$get_m_user_stride/100000 }} Km)</p>
+                <p class="text-center" style="font-size:75%; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $get_m_user_monthly_goal }}歩 ({{ $get_m_user_monthly_goal*$get_m_user_stride/100000 }} Km)</p>
               </div>
               <div class="container-fluid pt-3 d-md-none">
-                <p class="text-center" style="background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $get_m_user_monthly_goal }}歩 ({{ $get_m_user_monthly_goal*$get_m_user_stride/100000 }} Km)</p>
+                <p class="text-center" style="font-size:75%; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $get_m_user_monthly_goal }}歩 ({{ $get_m_user_monthly_goal*$get_m_user_stride/100000 }} Km)</p>
               </div>
 
               <!-- <div class="row" style="margin: 0 !important;">
@@ -824,8 +823,10 @@ padding-top: 0
                 </div>
               </div>
               </div>
-              <connection from="#paraLeft" to="#triCont" color="#2b63c6" fromX="0.5" fromY="0" toX="0.16" toY="0.41"></connection>
-              <connection from="#paraRight" to="#triCont" color="#cecece" fromX="0.4" fromY="0" toX="0.725" toY="0.15"></connection>
+              <div class="d-md-none">
+                <connection from="#paraLeft" to="#triCont" color="#2b63c6" fromX="0.5" fromY="0" toX="0.16" toY="0.41"></connection>
+                <connection from="#paraRight" to="#triCont" color="#cecece" fromX="0.4" fromY="0" toX="0.725" toY="0.15"></connection>
+              </div>
     </div>
     @endif
     <div class="container-fluid navfix" style="background-color: #2b63c6;">
@@ -1573,6 +1574,7 @@ padding-top: 0
   type: 'doughnut',
   data: data,
   options: {
+    aspectRatio: 1.1,
   responsive: true,
   legend: {
   display: false
