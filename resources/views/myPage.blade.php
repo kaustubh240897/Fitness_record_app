@@ -554,7 +554,7 @@ padding-top: 0
               font-family: RoundedMplus1cBold;
               font-weight: bold;
               text-align: left;
-              color: #ffffff;">北陸３県ゆったり満喫旅</p>
+              color: #ffffff;">{{$get_t_tour->m_tours->tour_title}}</p>
           </div>
         </div>
         <div class="row" style=" padding: 5px 1px 10px;
@@ -611,11 +611,11 @@ padding-top: 0
     <div class="relative w-100 h-50" style="background: url({{asset('storage/padometerscreen/graphcomp.png')}}); background-size: 95% 104%; background-position: center; background-repeat: no-repeat">
       <canvas id="myChart"></canvas>
       <div class="absolute-center text-center">
-        <p class="mb-0 p-0" style="font-size:70%; color:#ff9327;"> {{ ($today_data)*$get_m_user_stride/100000 }} km</p>
-        <p class="font-weight-bold mb-0 p-0 text-wrap" style="color:#ff9327;">{{ $today_data }}歩</p>
+        <p class="mb-0 p-0" style="font-size:70%; color:#ff9327;"> {{ number_format(($today_data)*$get_m_user_stride/100000, 2 ,'.',',') }}km</p>
+        <p class="font-weight-bold mb-0 p-0 text-wrap" style="color:#ff9327;">{{ number_format($today_data, 0 ,'.',',') }}歩</p>
         <p class="mb-0 mt-0 p-0" style="font-size:70%;">----------------</p>
-        <p class="font-weight-bold mb-0 mt-0" style="color: #113A83">{{ $get_m_user_daily_goal }}歩</p>
-        <p class="mb-0" style="font-size:70%; color: #113A83">{{ $get_m_user_daily_goal*$get_m_user_stride/100000 }} (km)</p>
+        <p class="font-weight-bold mb-0 mt-0" style="color: #113A83">{{ number_format($get_m_user_daily_goal, 0 ,'.',',') }}歩</p>
+        <p class="mb-0" style="font-size:70%; color: #113A83">{{ number_format($get_m_user_daily_goal*$get_m_user_stride/100000, 2 ,'.',',') }}km</p>
       </div>
     </div>
   </div>
@@ -631,11 +631,11 @@ padding-top: 0
       <div class="relative w-100 h-50" style="background: url({{asset('storage/padometerscreen/graph.png')}}); background-size: 95% 104%; background-position: center; background-repeat: no-repeat">
         <canvas id="myChart"></canvas>
         <div class="absolute-center text-center">
-          <p class="mb-0 p-0" style="font-size:70%; color:#2b63c6;"> {{ ($today_data)*$get_m_user_stride/100000 }} km</p>
-          <p class="font-weight-bold mb-0 p-0 text-wrap" style="color:#2b63c6;">{{ $today_data }}歩</p>
+          <p class="mb-0 p-0" style="font-size:70%; color:#2b63c6;">{{ number_format(($today_data)*$get_m_user_stride/100000, 2 ,'.',',') }}km</p>
+          <p class="font-weight-bold mb-0 p-0 text-wrap" style="color:#2b63c6;">{{ number_format($today_data, 0 ,'.',',') }}歩</p>
           <p class="mb-0 mt-0 p-0" style="font-size:70%;">---------------</p>
-          <p class="font-weight-bold mb-0 mt-0" style="color:#113A83;">{{ $get_m_user_daily_goal }}歩</p>
-          <p class="mb-0" style="font-size:70%; color:#113A83;">{{ $get_m_user_daily_goal*$get_m_user_stride/100000 }} (km)</p>
+          <p class="font-weight-bold mb-0 mt-0" style="color:#113A83;">{{ number_format($get_m_user_daily_goal, 0 ,'.',',') }}歩</p>
+          <p class="mb-0" style="font-size:70%; color:#113A83;">{{ number_format($get_m_user_daily_goal*$get_m_user_stride/100000, 2 ,'.',',') }}km</p>
         </div>
       </div>
     </div>
@@ -662,27 +662,27 @@ padding-top: 0
           </div>
         </div>
         <div class="container-fluid pt-3 w-75 d-md-none">
-          <p class="text-center" style="background: white; color:#ff9327; border: 2px solid #ff9327; border-radius: 15px;">今日までの累計 {{ $current_month_steps }}歩 ({{ $current_month_steps*$get_m_user_stride/100000 }} Km)</p>
+          <p class="text-center" style="background: white; color:#ff9327; border: 2px solid #ff9327; border-radius: 15px;">今日までの累計 {{ $current_month_steps }}歩 ({{ round($current_month_steps*$get_m_user_stride/100000,2) }} Km)</p>
         </div>
 
         <div class="container-fluid w-50 d-none d-md-block d-lg-none">
           <br>
           <div class="speech-bubble2 text-center" style="background: #ff9327">
-            <p class="mb-0 font-weight-bold" style="font-size:90%; color:#113A83;">あと {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
+            <p class="mb-0 font-weight-bold" style="font-size:90%; color:#113A83;">あと {{ $current_month_steps }}歩 {{ round($current_month_steps*$get_m_user_stride/100000,2) }} Km!</p>
           </div>
         </div>
         <div class="container-fluid pt-3 w-50 d-none d-md-block d-lg-none">
-          <p class="text-center" style="background: white; color:#ff9327; border: 2px solid #ff9327; border-radius: 15px;">今日までの累計 {{ $current_month_steps }}歩 ({{ $current_month_steps*$get_m_user_stride/100000 }} Km)</p>
+          <p class="text-center" style="background: white; color:#ff9327; border: 2px solid #ff9327; border-radius: 15px;">今日までの累計 {{ $current_month_steps }}歩 ({{ round($current_month_steps*$get_m_user_stride/100000,2) }} Km)</p>
         </div>
 
         <div class="container-fluid w-25 d-none d-lg-block">
           <br>
           <div class="speech-bubble2 text-center" style="background: #ff9327">
-            <p class="mb-0 font-weight-bold" style="font-size:90%; color:#113A83;">あと {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
+            <p class="mb-0 font-weight-bold" style="font-size:90%; color:#113A83;">あと {{ $current_month_steps }}歩 {{ round($current_month_steps*$get_m_user_stride/100000,2) }} Km!</p>
           </div>
         </div>
         <div class="container-fluid pt-3 w-25 d-none d-lg-block">
-          <p class="text-center" style="background: white; color:#ff9327; border: 2px solid #ff9327; border-radius: 15px;">今日までの累計 {{ $current_month_steps }}歩 ({{ $current_month_steps*$get_m_user_stride/100000 }} Km)</p>
+          <p class="text-center" style="background: white; color:#ff9327; border: 2px solid #ff9327; border-radius: 15px;">今日までの累計 {{ $current_month_steps }}歩 ({{ round($current_month_steps*$get_m_user_stride/100000,2) }} Km)</p>
         </div>
         <div class="container-fluid" style="z-index: 2000 !important;">
           <p style="z-index: 2000 !important;" class="text-center" > <img style="z-index: 2000 !important;" src="{{asset('storage/padometerscreen/star.png')}}" alt=""> </p>
@@ -694,13 +694,13 @@ padding-top: 0
                   <div style="z-index: -1000 !important;" id="triangle_graph" class=""></div>
               </div>
               <div class="container-fluid pt-3 w-25 d-none d-lg-block">
-                <p class="text-center" style="font-size:75%; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $current_month_steps }}歩 ({{ $current_month_steps*$get_m_user_stride/100000 }} Km)</p>
+                <p class="text-center" style="font-size:75%; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $current_month_steps }}歩 ({{ round($current_month_steps*$get_m_user_stride/100000,2) }} Km)</p>
               </div>
               <div class="container-fluid pt-3 w-50 d-none d-md-block d-lg-none">
-                <p class="text-center" style="font-size:75%; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $current_month_steps }}歩 ({{ $current_month_steps*$get_m_user_stride/100000 }} Km)</p>
+                <p class="text-center" style="font-size:75%; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $current_month_steps }}歩 ({{ round($current_month_steps*$get_m_user_stride/100000,2) }} Km)</p>
               </div>
               <div class="container-fluid pt-3 d-md-none">
-                <p class="text-center" style="font-size:75%; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $current_month_steps }}歩 ({{ $current_month_steps*$get_m_user_stride/100000 }} Km)</p>
+                <p class="text-center" style="font-size:75%; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $current_month_steps }}歩 ({{ round($current_month_steps*$get_m_user_stride/100000,2) }} Km)</p>
               </div>
               <div class="row" >
                 <div class="col text-center">
@@ -803,13 +803,13 @@ padding-top: 0
                   <div id="triangle_graph" class="mt-3"></div>
               </div>
               <div class="container-fluid pt-3 w-25 d-none d-lg-block">
-                <p class="text-center" style="font-size:75%; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $get_m_user_monthly_goal }}歩 ({{ $get_m_user_monthly_goal*$get_m_user_stride/100000 }} Km)</p>
+                <p class="text-center" style="font-size:75%; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $get_m_user_monthly_goal }}歩 ({{ round($get_m_user_monthly_goal*$get_m_user_stride/100000,2) }} Km)</p>
               </div>
               <div class="container-fluid pt-3 w-50 d-none d-md-block d-lg-none">
-                <p class="text-center" style="font-size:75%; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $get_m_user_monthly_goal }}歩 ({{ $get_m_user_monthly_goal*$get_m_user_stride/100000 }} Km)</p>
+                <p class="text-center" style="font-size:75%; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $get_m_user_monthly_goal }}歩 ({{ round($get_m_user_monthly_goal*$get_m_user_stride/100000,2) }} Km)</p>
               </div>
               <div class="container-fluid pt-3 d-md-none">
-                <p class="text-center" style="font-size:75%; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $get_m_user_monthly_goal }}歩 ({{ $get_m_user_monthly_goal*$get_m_user_stride/100000 }} Km)</p>
+                <p class="text-center" style="font-size:75%; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ $get_m_user_monthly_goal }}歩 ({{ round($get_m_user_monthly_goal*$get_m_user_stride/100000,2) }} Km)</p>
               </div>
 
               <!-- <div class="row" style="margin: 0 !important;">
@@ -902,6 +902,11 @@ padding-top: 0
     document.location=url;
   }
 
+  function goToCheckpointPage(id) {
+    var url = "/checkpointdetails/" + id.toString();
+    document.location=url;
+  }
+
     var steplist = document.getElementById("progress_bar");
     var tr_count_id = 1;
 
@@ -910,7 +915,8 @@ padding-top: 0
     var steps = {{ $steps }};
     var dist_walked = (get_m_user_stride * steps)/100000;
     var flag1 = 0;
-
+    var col_id = {!! json_encode($checkpoint_collection_id) !!};
+    console.log("name_check", col_id);
     var checkpoints = {!! json_encode($checkpoints) !!};
     checkpoints.forEach((item, i) => {
       var div_flex = document.createElement("div");
@@ -929,7 +935,7 @@ padding-top: 0
       div_dist_p.innerHTML = item["distance"].toString() + "km";
       div_dist.appendChild(div_dist_p);
       if (i == 0) {
-        if (item["distance"] < dist_walked) {
+        if (item["distance"] <= dist_walked) {
             // tag.className = "StepProgress-item is-done";
             var div_sp_li = document.createElement("li");
             div_sp_li.className = "StepProgress-itemStart is-done";
@@ -937,7 +943,7 @@ padding-top: 0
             div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
             div_sp_li_p.style.fontSize = "80%";
             div_sp_li_p.innerHTML = item["checkpoint_title"];
-            div_sp_li_p.id = item["id"];
+            div_sp_li_p.id = col_id[i];
             div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
             div_sp_li.appendChild(div_sp_li_p);
             div_sp.appendChild(div_sp_li);
@@ -952,7 +958,7 @@ padding-top: 0
               div_sp_li_p.style.fontSize = "80%";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
               div_sp_li_p.id = item["id"];
-              div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
+              div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
               div_sp_li.appendChild(div_sp_li_p);
               div_sp.appendChild(div_sp_li);
             } else {
@@ -964,7 +970,7 @@ padding-top: 0
               div_sp_li_p.style.fontSize = "80%";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
               div_sp_li_p.id = item["id"];
-              div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
+              div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
               div_sp_li.appendChild(div_sp_li_p);
               div_sp.appendChild(div_sp_li);
             }
@@ -978,7 +984,7 @@ padding-top: 0
             div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
             div_sp_li_p.style.fontSize = "80%";
             div_sp_li_p.innerHTML = item["checkpoint_title"];
-            div_sp_li_p.id = item["id"];
+            div_sp_li_p.id = col_id[i];
             div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
             div_sp_li.appendChild(div_sp_li_p);
             div_sp.appendChild(div_sp_li);
@@ -993,7 +999,7 @@ padding-top: 0
               div_sp_li_p.style.fontSize = "80%";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
               div_sp_li_p.id = item["id"];
-              div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
+              div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
               div_sp_li.appendChild(div_sp_li_p);
               div_sp.appendChild(div_sp_li);
             } else {
@@ -1005,7 +1011,7 @@ padding-top: 0
               div_sp_li_p.style.fontSize = "80%";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
               div_sp_li_p.id = item["id"];
-              div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
+              div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
               div_sp_li.appendChild(div_sp_li_p);
               div_sp.appendChild(div_sp_li);
             }
@@ -1019,7 +1025,7 @@ padding-top: 0
             div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
             div_sp_li_p.style.fontSize = "80%";
             div_sp_li_p.innerHTML = item["checkpoint_title"];
-            div_sp_li_p.id = item["id"];
+            div_sp_li_p.id = col_id[i];
             div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
             div_sp_li.appendChild(div_sp_li_p);
             div_sp.appendChild(div_sp_li);
@@ -1034,7 +1040,7 @@ padding-top: 0
               div_sp_li_p.style.fontSize = "80%";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
               div_sp_li_p.id = item["id"];
-              div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
+              div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
               div_sp_li.appendChild(div_sp_li_p);
               div_sp.appendChild(div_sp_li);
             } else {
@@ -1046,7 +1052,7 @@ padding-top: 0
               div_sp_li_p.style.fontSize = "80%";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
               div_sp_li_p.id = item["id"];
-              div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
+              div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
               div_sp_li.appendChild(div_sp_li_p);
               div_sp.appendChild(div_sp_li);
             }
@@ -1100,6 +1106,9 @@ padding-top: 0
     });
   }
   else{
+    var col_id_r = {!! json_encode($checkpoint_collection_id) !!};
+    var col_id = col_id_r.reverse()
+    console.log("name_check_2", col_id);
     console.log("inelse");
      var get_m_user_stride = {{ $get_m_user_stride }};
     var steps = {{ $steps }};
@@ -1123,14 +1132,14 @@ padding-top: 0
       div_dist_p.innerHTML = ({{ $total }}-item["distance"]).toString() + "km";
       div_dist.appendChild(div_dist_p);
       if (i == 0) {
-        if (({{ $total }}-item["distance"]) < dist_walked) {
+        if (({{ $total }}-item["distance"]) <= dist_walked) {
             // tag.className = "StepProgress-item is-done";
             var div_sp_li = document.createElement("li");
             div_sp_li.className = "StepProgress-itemStart is-done";
             var div_sp_li_p = document.createElement("p");
             div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
             div_sp_li_p.innerHTML = item["checkpoint_title"];
-            div_sp_li_p.id = item["id"];
+            div_sp_li_p.id = col_id[i];
             div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
             div_sp_li.appendChild(div_sp_li_p);
             div_sp.appendChild(div_sp_li);
@@ -1144,7 +1153,7 @@ padding-top: 0
               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
               div_sp_li_p.id = item["id"];
-              div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
+              div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
               div_sp_li.appendChild(div_sp_li_p);
               div_sp.appendChild(div_sp_li);
             } else {
@@ -1155,7 +1164,7 @@ padding-top: 0
               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
               div_sp_li_p.id = item["id"];
-              div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
+              div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
               div_sp_li.appendChild(div_sp_li_p);
               div_sp.appendChild(div_sp_li);
             }
@@ -1168,7 +1177,7 @@ padding-top: 0
             var div_sp_li_p = document.createElement("p");
             div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
             div_sp_li_p.innerHTML = item["checkpoint_title"];
-            div_sp_li_p.id = item["id"];
+            div_sp_li_p.id = col_id[i];
             div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
             div_sp_li.appendChild(div_sp_li_p);
             div_sp.appendChild(div_sp_li);
@@ -1182,7 +1191,7 @@ padding-top: 0
               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
               div_sp_li_p.id = item["id"];
-              div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
+              div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
               div_sp_li.appendChild(div_sp_li_p);
               div_sp.appendChild(div_sp_li);
             } else {
@@ -1193,7 +1202,7 @@ padding-top: 0
               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
               div_sp_li_p.id = item["id"];
-              div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
+              div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
               div_sp_li.appendChild(div_sp_li_p);
               div_sp.appendChild(div_sp_li);
             }
@@ -1206,7 +1215,7 @@ padding-top: 0
             var div_sp_li_p = document.createElement("p");
             div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
             div_sp_li_p.innerHTML = item["checkpoint_title"];
-            div_sp_li_p.id = item["id"];
+            div_sp_li_p.id = col_id[i];
             div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
             div_sp_li.appendChild(div_sp_li_p);
             div_sp.appendChild(div_sp_li);
@@ -1220,7 +1229,7 @@ padding-top: 0
               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
               div_sp_li_p.id = item["id"];
-              div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
+              div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
               div_sp_li.appendChild(div_sp_li_p);
               div_sp.appendChild(div_sp_li);
             } else {
@@ -1231,7 +1240,7 @@ padding-top: 0
               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
               div_sp_li_p.id = item["id"];
-              div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
+              div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
               div_sp_li.appendChild(div_sp_li_p);
               div_sp.appendChild(div_sp_li);
             }

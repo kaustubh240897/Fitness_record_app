@@ -508,12 +508,12 @@ background-color: #113a83; color: #fff">
             td1.className = "comp_td w-25";
             td1.innerHTML = d.getDate() + day_symbol;
             dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
-            td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
+            td2.innerHTML = totalSteps + " (" + dist_km.toFixed(2) +  " km)";
             td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="{{URL::asset('storage/history/co.svg')}}" alt="">';
           } else {
             td1.innerHTML = d.getDate() + day_symbol;
             dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
-            td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
+            td2.innerHTML = totalSteps + " (" + dist_km.toFixed(2) +  " km)";
             td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span>';
           }
           tr.appendChild(td1);
@@ -589,12 +589,12 @@ background-color: #113a83; color: #fff">
             td1.className = "comp_td w-25";
             td1.innerHTML = d.getDate() + day_symbol;
             dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
-            td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
+            td2.innerHTML = totalSteps + " (" + dist_km.toFixed(2) +  " km)";
             td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="{{URL::asset('storage/history/co.svg')}}" alt="">';
           } else {
             td1.innerHTML = d.getDate() + day_symbol;
             dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
-            td2.innerHTML = totalSteps + " (" + dist_km +  " km)";
+            td2.innerHTML = totalSteps + " (" + dist_km.toFixed(2) +  " km)";
             td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span>';
           }
           tr.appendChild(td1);
