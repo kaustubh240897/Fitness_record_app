@@ -321,9 +321,6 @@ margin-bottom: -30px;
   padding-left: -8px;
   padding-right: -8px;
  }
-
-
-
 </style>
 
 <body style="background-color: rgb(240,246,248, 0.1);">
@@ -400,11 +397,11 @@ margin-bottom: -30px;
       <div class="relative w-100 h-50" style="background: url({{asset('storage/padometerscreen/graphcomp.png')}}); background-size: 95% 104%; background-position: center; background-repeat: no-repeat">
         <canvas id="myChart"></canvas>
         <div class="absolute-center text-center">
-          <p class="mb-0 p-0" style="font-size:70%; color:#ff9327;"> {{ ($today_data)*$get_m_user_stride/100000 }} km</p>
-          <p class="font-weight-bold mb-0 p-0 text-wrap" style="color:#ff9327;">{{ $today_data }}歩</p>
+          <p class="mb-0 p-0" style="font-size:70%; color:#ff9327;"> {{ number_format(($today_data)*$get_m_user_stride/100000, 2 ,'.',',') }}km</p>
+          <p class="font-weight-bold mb-0 p-0 text-wrap" style="color:#ff9327;">{{ number_format($today_data, 0 ,'.',',') }}歩</p>
           <p class="mb-0 mt-0 p-0" style="font-size:70%;">----------------</p>
-          <p class="font-weight-bold mb-0 mt-0" style="color: #113A83">{{ $get_m_user_daily_goal }}歩</p>
-          <p class="mb-0" style="font-size:70%; color: #113A83">{{ $get_m_user_daily_goal*$get_m_user_stride/100000 }} (km)</p>
+          <p class="font-weight-bold mb-0 mt-0" style="color: #113A83">{{ number_format($get_m_user_daily_goal, 0 ,'.',',') }}歩</p>
+          <p class="mb-0" style="font-size:70%; color: #113A83">{{ number_format($get_m_user_daily_goal*$get_m_user_stride/100000, 2 ,'.',',') }}km</p>
         </div>
       </div>
       </div>
@@ -423,11 +420,11 @@ margin-bottom: -30px;
       <div class="relative w-100 h-50" style="background: url({{asset('storage/padometerscreen/graph.png')}}); background-size: 95% 104%; background-position: center; background-repeat: no-repeat">
         <canvas id="myChart"></canvas>
         <div class="absolute-center text-center">
-          <p class="mb-0 p-0" style="font-size:70%; color:#2b63c6;"> {{ ($today_data)*$get_m_user_stride/100000 }} km</p>
-          <p class="font-weight-bold mb-0 p-0 text-wrap" style="color:#2b63c6;">{{ $today_data }}歩</p>
+          <p class="mb-0 p-0" style="font-size:70%; color:#2b63c6;"> {{ number_format(($today_data)*$get_m_user_stride/100000, 2 ,'.',',') }}km</p>
+          <p class="font-weight-bold mb-0 p-0 text-wrap" style="color:#2b63c6;">{{ number_format($today_data, 0 ,'.',',') }}歩</p>
           <p class="mb-0 mt-0 p-0" style="font-size:70%;">---------------</p>
-          <p class="font-weight-bold mb-0 mt-0" style="color:#113A83;">{{ $get_m_user_daily_goal }}歩</p>
-          <p class="mb-0" style="font-size:70%; color:#113A83;">{{ $get_m_user_daily_goal*$get_m_user_stride/100000 }} (km)</p>
+          <p class="font-weight-bold mb-0 mt-0" style="color:#113A83;">{{ number_format($get_m_user_daily_goal, 0 ,'.',',') }}歩</p>
+          <p class="mb-0" style="font-size:70%; color:#113A83;">{{ number_format($get_m_user_daily_goal*$get_m_user_stride/100000, 2 ,'.',',') }}km</p>
         </div>
       </div>
       </div>
@@ -451,27 +448,27 @@ margin-bottom: -30px;
           </div>
         </div>
         <div class="container-fluid pt-3 w-75 d-md-none">
-          <p class="text-center" style="background: white; color:#ff9327; border: 2px solid #ff9327; border-radius: 15px;">今日までの累計 {{ $current_month_steps }}歩 ({{ $current_month_steps*$get_m_user_stride/100000 }} Km)</p>
+          <p class="text-center" style="background: white; color:#ff9327; border: 2px solid #ff9327; border-radius: 15px;">今日までの累計 {{ $current_month_steps }}歩 ({{ round($current_month_steps*$get_m_user_stride/100000,2) }} Km)</p>
         </div>
 
         <div class="container-fluid w-50 d-none d-md-block d-lg-none">
           <br>
           <div class="speech-bubble2 text-center" style="background: #ff9327">
-            <p class="mb-0 font-weight-bold" style="font-size:90%; color:#113A83;">あと {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
+            <p class="mb-0 font-weight-bold" style="font-size:90%; color:#113A83;">あと {{ $current_month_steps }}歩 {{ round($current_month_steps*$get_m_user_stride/100000,2) }} Km!</p>
           </div>
         </div>
         <div class="container-fluid pt-3 w-50 d-none d-md-block d-lg-none">
-          <p class="text-center" style="background: white; color:#ff9327; border: 2px solid #ff9327; border-radius: 15px;">今日までの累計 {{ $current_month_steps }}歩 ({{ $current_month_steps*$get_m_user_stride/100000 }} Km)</p>
+          <p class="text-center" style="background: white; color:#ff9327; border: 2px solid #ff9327; border-radius: 15px;">今日までの累計 {{ $current_month_steps }}歩 ({{ round($current_month_steps*$get_m_user_stride/100000,2) }} Km)</p>
         </div>
 
         <div class="container-fluid w-25 d-none d-lg-block">
           <br>
           <div class="speech-bubble2 text-center" style="background: #ff9327">
-            <p class="mb-0 font-weight-bold" style="font-size:90%; color:#113A83;">あと {{ $current_month_steps }}歩 {{ $current_month_steps*$get_m_user_stride/100000 }} Km!</p>
+            <p class="mb-0 font-weight-bold" style="font-size:90%; color:#113A83;">あと {{ $current_month_steps }}歩 {{ round($current_month_steps*$get_m_user_stride/100000,2) }} Km!</p>
           </div>
         </div>
         <div class="container-fluid pt-3 w-25 d-none d-lg-block">
-          <p class="text-center" style="background: white; color:#ff9327; border: 2px solid #ff9327; border-radius: 15px;">今日までの累計 {{ $current_month_steps }}歩 ({{ $current_month_steps*$get_m_user_stride/100000 }} Km)</p>
+          <p class="text-center" style="background: white; color:#ff9327; border: 2px solid #ff9327; border-radius: 15px;">今日までの累計 {{ $current_month_steps }}歩 ({{ round($current_month_steps*$get_m_user_stride/100000,2) }} Km)</p>
         </div>
         <div class="container-fluid" style="z-index: 2000 !important;">
           <p style="z-index: 2000 !important;" class="text-center" > <img style="z-index: 2000 !important;" src="{{asset('storage/padometerscreen/star.png')}}" alt=""> </p>

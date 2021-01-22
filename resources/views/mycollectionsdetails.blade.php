@@ -69,6 +69,10 @@
 
                  </div>
                  <script type="text/javascript">
+                 function goToCheckpointPage(id) {
+                   var url = "/checkpointdetails/" + id.toString();
+                   document.location=url;
+                 }
                    var prog_id = "progress_bar_tour";
                    var dist_walked = {{$total}};
                    var checkpoints;
@@ -78,25 +82,25 @@
                    }
                    if ( {!! json_encode($my_collections->m_collections->collection_category) !!} == 'checkpoint') {
                      prog_id = "progress_bar_col";
-                     console.log("checkpoint");
+                     console.log("81","checkpoint");
                      var title = {!! json_encode($my_collections->m_collections->m__tours->tour_title) !!};
-                     console.log(title);
+                     console.log("83",title);
                      if (value == 0) {
                        checkpoints = {!! json_encode($checkpoints) !!};
                        checkpoints.forEach((item, i) => {
-                         console.log(item["checkpoint_title"]);
+                         console.log("val_0_87",item["checkpoint_title"]);
                          if (item["checkpoint_title"] == title) {
                            dist_walked = item["distance"];
-                           console.log(dist_walked);
+                           console.log("dw1_90",dist_walked);
                          }
                        });
                      } else {
                        checkpoints = {!! json_encode($checkpointsr) !!};
                        checkpoints.forEach((item, i) => {
-                         console.log(item["checkpoint_title"]);
+                         console.log("96",item["checkpoint_title"]);
                          if (item["checkpoint_title"] == title) {
                            dist_walked = {{$total}} - item["distance"];
-                           console.log(dist_walked);
+                           console.log("dw2_99",dist_walked);
                          }
                        });
                      }
@@ -127,7 +131,7 @@
                        div_dist_p.innerHTML = item["distance"].toString() + "km";
                        div_dist.appendChild(div_dist_p);
                        if (i == 0) {
-                         if (item["distance"] < dist_walked) {
+                         if (item["distance"] <= dist_walked) {
                              // tag.className = "StepProgress-item is-done";
                              var div_sp_li = document.createElement("li");
                              div_sp_li.className = "StepProgress-itemStart is-done";
@@ -135,6 +139,8 @@
                              div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
                              div_sp_li_p.style.fontSize = "80%";
                              div_sp_li_p.innerHTML = item["checkpoint_title"];
+                             div_sp_li_p.id = item["id"];
+                             div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                              div_sp_li.appendChild(div_sp_li_p);
                              div_sp.appendChild(div_sp_li);
                            } else {
@@ -147,6 +153,8 @@
                                div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
                                div_sp_li_p.style.fontSize = "80%";
                                div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li_p.id = item["id"];
+                               div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                                div_sp_li.appendChild(div_sp_li_p);
                                div_sp.appendChild(div_sp_li);
                              } else {
@@ -157,6 +165,8 @@
                                div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
                                div_sp_li_p.style.fontSize = "80%";
                                div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li_p.id = item["id"];
+                               div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                                div_sp_li.appendChild(div_sp_li_p);
                                div_sp.appendChild(div_sp_li);
                              }
@@ -170,6 +180,8 @@
                              div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
                              div_sp_li_p.style.fontSize = "80%";
                              div_sp_li_p.innerHTML = item["checkpoint_title"];
+                             div_sp_li_p.id = item["id"];
+                             div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                              div_sp_li.appendChild(div_sp_li_p);
                              div_sp.appendChild(div_sp_li);
                            } else {
@@ -182,6 +194,8 @@
                                div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
                                div_sp_li_p.style.fontSize = "80%";
                                div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li_p.id = item["id"];
+                               div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                                div_sp_li.appendChild(div_sp_li_p);
                                div_sp.appendChild(div_sp_li);
                              } else {
@@ -192,6 +206,8 @@
                                div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
                                div_sp_li_p.style.fontSize = "80%";
                                div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li_p.id = item["id"];
+                               div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                                div_sp_li.appendChild(div_sp_li_p);
                                div_sp.appendChild(div_sp_li);
                              }
@@ -205,6 +221,8 @@
                              div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
                              div_sp_li_p.style.fontSize = "80%";
                              div_sp_li_p.innerHTML = item["checkpoint_title"];
+                             div_sp_li_p.id = item["id"];
+                             div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                              div_sp_li.appendChild(div_sp_li_p);
                              div_sp.appendChild(div_sp_li);
                            } else {
@@ -217,6 +235,8 @@
                                div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
                                div_sp_li_p.style.fontSize = "80%";
                                div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li_p.id = item["id"];
+                               div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                                div_sp_li.appendChild(div_sp_li_p);
                                div_sp.appendChild(div_sp_li);
                              } else {
@@ -227,6 +247,8 @@
                                div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
                                div_sp_li_p.style.fontSize = "80%";
                                div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li_p.id = item["id"];
+                               div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                                div_sp_li.appendChild(div_sp_li_p);
                                div_sp.appendChild(div_sp_li);
                              }
@@ -296,13 +318,15 @@
                        div_dist_p.innerHTML = item["distance"].toString() + "km";
                        div_dist.appendChild(div_dist_p);
                        if (i == 0) {
-                         if ({{ $total }}-item["distance"] < dist_walked) {
+                         if ({{ $total }}-item["distance"] <= dist_walked) {
                              // tag.className = "StepProgress-item is-done";
                              var div_sp_li = document.createElement("li");
                              div_sp_li.className = "StepProgress-itemStart is-done";
                              var div_sp_li_p = document.createElement("p");
                              div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
                              div_sp_li_p.innerHTML = item["checkpoint_title"];
+                             div_sp_li_p.id = item["id"];
+                             div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                              div_sp_li.appendChild(div_sp_li_p);
                              div_sp.appendChild(div_sp_li);
                            } else {
@@ -314,6 +338,8 @@
                                var div_sp_li_p = document.createElement("p");
                                div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
                                div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li_p.id = item["id"];
+                               div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                                div_sp_li.appendChild(div_sp_li_p);
                                div_sp.appendChild(div_sp_li);
                              } else {
@@ -323,6 +349,8 @@
                                var div_sp_li_p = document.createElement("p");
                                div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
                                div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li_p.id = item["id"];
+                               div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                                div_sp_li.appendChild(div_sp_li_p);
                                div_sp.appendChild(div_sp_li);
                              }
@@ -335,6 +363,8 @@
                              var div_sp_li_p = document.createElement("p");
                              div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
                              div_sp_li_p.innerHTML = item["checkpoint_title"];
+                             div_sp_li_p.id = item["id"];
+                             div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                              div_sp_li.appendChild(div_sp_li_p);
                              div_sp.appendChild(div_sp_li);
                            } else {
@@ -346,6 +376,8 @@
                                var div_sp_li_p = document.createElement("p");
                                div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
                                div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li_p.id = item["id"];
+                               div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                                div_sp_li.appendChild(div_sp_li_p);
                                div_sp.appendChild(div_sp_li);
                              } else {
@@ -355,6 +387,8 @@
                                var div_sp_li_p = document.createElement("p");
                                div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
                                div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li_p.id = item["id"];
+                               div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                                div_sp_li.appendChild(div_sp_li_p);
                                div_sp.appendChild(div_sp_li);
                              }
@@ -367,6 +401,8 @@
                              var div_sp_li_p = document.createElement("p");
                              div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
                              div_sp_li_p.innerHTML = item["checkpoint_title"];
+                             div_sp_li_p.id = item["id"];
+                             div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                              div_sp_li.appendChild(div_sp_li_p);
                              div_sp.appendChild(div_sp_li);
                            } else {
@@ -378,6 +414,8 @@
                                var div_sp_li_p = document.createElement("p");
                                div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
                                div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li_p.id = item["id"];
+                               div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                                div_sp_li.appendChild(div_sp_li_p);
                                div_sp.appendChild(div_sp_li);
                              } else {
@@ -387,6 +425,8 @@
                                var div_sp_li_p = document.createElement("p");
                                div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
                                div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li_p.id = item["id"];
+                               div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                                div_sp_li.appendChild(div_sp_li_p);
                                div_sp.appendChild(div_sp_li);
                              }
@@ -444,6 +484,10 @@
 
                  </div>
                  <script type="text/javascript">
+                 function goToCheckpointPage(id) {
+                   var url = "/checkpointdetails/" + id.toString();
+                   document.location=url;
+                 }
                    var prog_id = "progress_bar_tour";
                    var dist_walked = {{$total}};
                    var checkpoints;
@@ -502,7 +546,7 @@
                        div_dist_p.innerHTML = item["distance"].toString() + "km";
                        div_dist.appendChild(div_dist_p);
                        if (i == 0) {
-                         if (item["distance"] < dist_walked) {
+                         if (item["distance"] <= dist_walked) {
                              // tag.className = "StepProgress-item is-done";
                              var div_sp_li = document.createElement("li");
                              div_sp_li.className = "StepProgress-itemStart is-done";
@@ -510,6 +554,8 @@
                              div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
                              div_sp_li_p.style.fontSize = "80%";
                              div_sp_li_p.innerHTML = item["checkpoint_title"];
+                             div_sp_li_p.id = item["id"];
+                             div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                              div_sp_li.appendChild(div_sp_li_p);
                              div_sp.appendChild(div_sp_li);
                            } else {
@@ -522,6 +568,8 @@
                                div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
                                div_sp_li_p.style.fontSize = "80%";
                                div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li_p.id = item["id"];
+                               div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                                div_sp_li.appendChild(div_sp_li_p);
                                div_sp.appendChild(div_sp_li);
                              } else {
@@ -532,6 +580,8 @@
                                div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
                                div_sp_li_p.style.fontSize = "80%";
                                div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li_p.id = item["id"];
+                               div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                                div_sp_li.appendChild(div_sp_li_p);
                                div_sp.appendChild(div_sp_li);
                              }
@@ -545,6 +595,8 @@
                              div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
                              div_sp_li_p.style.fontSize = "80%";
                              div_sp_li_p.innerHTML = item["checkpoint_title"];
+                             div_sp_li_p.id = item["id"];
+                             div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                              div_sp_li.appendChild(div_sp_li_p);
                              div_sp.appendChild(div_sp_li);
                            } else {
@@ -557,6 +609,8 @@
                                div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
                                div_sp_li_p.style.fontSize = "80%";
                                div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li_p.id = item["id"];
+                               div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                                div_sp_li.appendChild(div_sp_li_p);
                                div_sp.appendChild(div_sp_li);
                              } else {
@@ -567,6 +621,8 @@
                                div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
                                div_sp_li_p.style.fontSize = "80%";
                                div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li_p.id = item["id"];
+                               div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                                div_sp_li.appendChild(div_sp_li_p);
                                div_sp.appendChild(div_sp_li);
                              }
@@ -580,6 +636,8 @@
                              div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
                              div_sp_li_p.style.fontSize = "80%";
                              div_sp_li_p.innerHTML = item["checkpoint_title"];
+                             div_sp_li_p.id = item["id"];
+                             div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                              div_sp_li.appendChild(div_sp_li_p);
                              div_sp.appendChild(div_sp_li);
                            } else {
@@ -592,6 +650,8 @@
                                div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
                                div_sp_li_p.style.fontSize = "80%";
                                div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li_p.id = item["id"];
+                               div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                                div_sp_li.appendChild(div_sp_li_p);
                                div_sp.appendChild(div_sp_li);
                              } else {
@@ -602,6 +662,8 @@
                                div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
                                div_sp_li_p.style.fontSize = "80%";
                                div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li_p.id = item["id"];
+                               div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                                div_sp_li.appendChild(div_sp_li_p);
                                div_sp.appendChild(div_sp_li);
                              }
@@ -678,6 +740,8 @@
                              var div_sp_li_p = document.createElement("p");
                              div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
                              div_sp_li_p.innerHTML = item["checkpoint_title"];
+                             div_sp_li_p.id = item["id"];
+                             div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                              div_sp_li.appendChild(div_sp_li_p);
                              div_sp.appendChild(div_sp_li);
                            } else {
@@ -689,6 +753,8 @@
                                var div_sp_li_p = document.createElement("p");
                                div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
                                div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li_p.id = item["id"];
+                               div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                                div_sp_li.appendChild(div_sp_li_p);
                                div_sp.appendChild(div_sp_li);
                              } else {
@@ -698,6 +764,8 @@
                                var div_sp_li_p = document.createElement("p");
                                div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
                                div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li_p.id = item["id"];
+                               div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                                div_sp_li.appendChild(div_sp_li_p);
                                div_sp.appendChild(div_sp_li);
                              }
@@ -710,6 +778,8 @@
                              var div_sp_li_p = document.createElement("p");
                              div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
                              div_sp_li_p.innerHTML = item["checkpoint_title"];
+                             div_sp_li_p.id = item["id"];
+                             div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                              div_sp_li.appendChild(div_sp_li_p);
                              div_sp.appendChild(div_sp_li);
                            } else {
@@ -721,6 +791,8 @@
                                var div_sp_li_p = document.createElement("p");
                                div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
                                div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li_p.id = item["id"];
+                               div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                                div_sp_li.appendChild(div_sp_li_p);
                                div_sp.appendChild(div_sp_li);
                              } else {
@@ -730,6 +802,8 @@
                                var div_sp_li_p = document.createElement("p");
                                div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
                                div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li_p.id = item["id"];
+                               div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                                div_sp_li.appendChild(div_sp_li_p);
                                div_sp.appendChild(div_sp_li);
                              }
@@ -742,6 +816,8 @@
                              var div_sp_li_p = document.createElement("p");
                              div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
                              div_sp_li_p.innerHTML = item["checkpoint_title"];
+                             div_sp_li_p.id = item["id"];
+                             div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                              div_sp_li.appendChild(div_sp_li_p);
                              div_sp.appendChild(div_sp_li);
                            } else {
@@ -753,6 +829,8 @@
                                var div_sp_li_p = document.createElement("p");
                                div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
                                div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li_p.id = item["id"];
+                               div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                                div_sp_li.appendChild(div_sp_li_p);
                                div_sp.appendChild(div_sp_li);
                              } else {
@@ -762,6 +840,8 @@
                                var div_sp_li_p = document.createElement("p");
                                div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
                                div_sp_li_p.innerHTML = item["checkpoint_title"];
+                               div_sp_li_p.id = item["id"];
+                               div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
                                div_sp_li.appendChild(div_sp_li_p);
                                div_sp.appendChild(div_sp_li);
                              }
