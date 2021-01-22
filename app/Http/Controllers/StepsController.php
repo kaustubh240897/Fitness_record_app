@@ -58,6 +58,23 @@ class StepsController extends Controller
         //
     }
 
+    public function latestTour(){
+        $m__user = m_Users::where('users_id', Auth::id())->first();
+        if($m__user == null){
+            return response()->json(["tourname" => "0"], 201);
+        }
+        else{
+            $latest_tour = t_Tour::where('m__users_id', $m__user->id)->orderBy('start_datetime','DESC')->get()->first();
+            if($latest_tour == null){
+                return response()->json(["tourname" => "0"], 201);
+            }
+            else{
+                $tour_name = $latest_tour->m_tours->tour_title;
+                return response()->json(["tourname" => $tour_name], 201);
+            }
+        }
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -288,4 +305,6 @@ class StepsController extends Controller
         $steps->delete();
         return response()->json(["message" => "Successfully deleted"], 200);
     }
+
+    
 }
