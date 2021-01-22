@@ -322,22 +322,11 @@ margin-bottom: -30px;
   padding-right: -8px;
  }
 
- .no-js #loader { display: none;  }
- .js #loader { display: block; position: absolute; left: 100px; top: 0; }
- .se-pre-con {
- 	position: fixed;
- 	left: 0px;
- 	top: 0px;
- 	width: 100%;
- 	height: 100%;
- 	z-index: 9999;
- 	background: url(https://smallenvelop.com/wp-content/uploads/2014/08/Preloader_11.gif) center no-repeat #fff;
- }
+
 
 </style>
 
 <body style="background-color: rgb(240,246,248, 0.1);">
-  <div class="se-pre-con"></div>
   @if ( empty($m__users_id))
     <div class='text-center'>
      <h2 class='mt-5'> 最初にプロファイルを作成してください <a href="/" style="color: blue !important">ここをクリック </a> </h2>
@@ -685,10 +674,7 @@ margin-bottom: -30px;
       @endif
 
 <script>
-$(window).load(function() {
-  // Animate loader off screen
-  $(".se-pre-con").fadeOut("slow");;
-});
+
 </script>
             <script id="tri" type="text/javascript">
             var cnv;

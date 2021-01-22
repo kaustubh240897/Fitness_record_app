@@ -898,8 +898,7 @@ padding-top: 0
   <script type="text/javascript">
 
   function goToCollectionPage(id) {
-    var url = "{{ route('mycollection', ['id']) }}";
-    url = url.replace('id',id);
+    var url = "/mycollection/" + id.toString();
     document.location=url;
   }
 
@@ -938,7 +937,8 @@ padding-top: 0
             div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
             div_sp_li_p.style.fontSize = "80%";
             div_sp_li_p.innerHTML = item["checkpoint_title"];
-            console.log("c_id", item["id"]);
+            div_sp_li_p.id = item["id"];
+            div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
             div_sp_li.appendChild(div_sp_li_p);
             div_sp.appendChild(div_sp_li);
           } else {
@@ -951,6 +951,8 @@ padding-top: 0
               div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
               div_sp_li_p.style.fontSize = "80%";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
+              div_sp_li_p.id = item["id"];
+              div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
               div_sp_li.appendChild(div_sp_li_p);
               div_sp.appendChild(div_sp_li);
             } else {
@@ -961,6 +963,8 @@ padding-top: 0
               div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
               div_sp_li_p.style.fontSize = "80%";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
+              div_sp_li_p.id = item["id"];
+              div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
               div_sp_li.appendChild(div_sp_li_p);
               div_sp.appendChild(div_sp_li);
             }
@@ -974,6 +978,8 @@ padding-top: 0
             div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
             div_sp_li_p.style.fontSize = "80%";
             div_sp_li_p.innerHTML = item["checkpoint_title"];
+            div_sp_li_p.id = item["id"];
+            div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
             div_sp_li.appendChild(div_sp_li_p);
             div_sp.appendChild(div_sp_li);
           } else {
@@ -986,6 +992,8 @@ padding-top: 0
               div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
               div_sp_li_p.style.fontSize = "80%";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
+              div_sp_li_p.id = item["id"];
+              div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
               div_sp_li.appendChild(div_sp_li_p);
               div_sp.appendChild(div_sp_li);
             } else {
@@ -996,6 +1004,8 @@ padding-top: 0
               div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
               div_sp_li_p.style.fontSize = "80%";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
+              div_sp_li_p.id = item["id"];
+              div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
               div_sp_li.appendChild(div_sp_li_p);
               div_sp.appendChild(div_sp_li);
             }
@@ -1009,6 +1019,8 @@ padding-top: 0
             div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
             div_sp_li_p.style.fontSize = "80%";
             div_sp_li_p.innerHTML = item["checkpoint_title"];
+            div_sp_li_p.id = item["id"];
+            div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
             div_sp_li.appendChild(div_sp_li_p);
             div_sp.appendChild(div_sp_li);
           } else {
@@ -1021,6 +1033,8 @@ padding-top: 0
               div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
               div_sp_li_p.style.fontSize = "80%";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
+              div_sp_li_p.id = item["id"];
+              div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
               div_sp_li.appendChild(div_sp_li_p);
               div_sp.appendChild(div_sp_li);
             } else {
@@ -1031,6 +1045,8 @@ padding-top: 0
               div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
               div_sp_li_p.style.fontSize = "80%";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
+              div_sp_li_p.id = item["id"];
+              div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
               div_sp_li.appendChild(div_sp_li_p);
               div_sp.appendChild(div_sp_li);
             }
@@ -1114,6 +1130,8 @@ padding-top: 0
             var div_sp_li_p = document.createElement("p");
             div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
             div_sp_li_p.innerHTML = item["checkpoint_title"];
+            div_sp_li_p.id = item["id"];
+            div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
             div_sp_li.appendChild(div_sp_li_p);
             div_sp.appendChild(div_sp_li);
           } else {
@@ -1125,6 +1143,8 @@ padding-top: 0
               var div_sp_li_p = document.createElement("p");
               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
+              div_sp_li_p.id = item["id"];
+              div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
               div_sp_li.appendChild(div_sp_li_p);
               div_sp.appendChild(div_sp_li);
             } else {
@@ -1134,6 +1154,8 @@ padding-top: 0
               var div_sp_li_p = document.createElement("p");
               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
+              div_sp_li_p.id = item["id"];
+              div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
               div_sp_li.appendChild(div_sp_li_p);
               div_sp.appendChild(div_sp_li);
             }
@@ -1146,6 +1168,8 @@ padding-top: 0
             var div_sp_li_p = document.createElement("p");
             div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
             div_sp_li_p.innerHTML = item["checkpoint_title"];
+            div_sp_li_p.id = item["id"];
+            div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
             div_sp_li.appendChild(div_sp_li_p);
             div_sp.appendChild(div_sp_li);
           } else {
@@ -1157,6 +1181,8 @@ padding-top: 0
               var div_sp_li_p = document.createElement("p");
               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
+              div_sp_li_p.id = item["id"];
+              div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
               div_sp_li.appendChild(div_sp_li_p);
               div_sp.appendChild(div_sp_li);
             } else {
@@ -1166,6 +1192,8 @@ padding-top: 0
               var div_sp_li_p = document.createElement("p");
               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
+              div_sp_li_p.id = item["id"];
+              div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
               div_sp_li.appendChild(div_sp_li_p);
               div_sp.appendChild(div_sp_li);
             }
@@ -1178,6 +1206,8 @@ padding-top: 0
             var div_sp_li_p = document.createElement("p");
             div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
             div_sp_li_p.innerHTML = item["checkpoint_title"];
+            div_sp_li_p.id = item["id"];
+            div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
             div_sp_li.appendChild(div_sp_li_p);
             div_sp.appendChild(div_sp_li);
           } else {
@@ -1189,6 +1219,8 @@ padding-top: 0
               var div_sp_li_p = document.createElement("p");
               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
+              div_sp_li_p.id = item["id"];
+              div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
               div_sp_li.appendChild(div_sp_li_p);
               div_sp.appendChild(div_sp_li);
             } else {
@@ -1198,6 +1230,8 @@ padding-top: 0
               var div_sp_li_p = document.createElement("p");
               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
+              div_sp_li_p.id = item["id"];
+              div_sp_li_p.setAttribute('onclick', "goToCollectionPage(this.id)");
               div_sp_li.appendChild(div_sp_li_p);
               div_sp.appendChild(div_sp_li);
             }
