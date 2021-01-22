@@ -119,3 +119,15 @@ outline: none !important
  margin-top: 0px;
    margin-bottom: 20px;
 }
+
+.container-fluid {
+  padding-right:1px;
+  padding-left:1px;
+  margin-right:0px;
+  margin-left:0px;
+}
+.row
+{
+margin-right: 0px;
+margin-left: 0px;
+}
