@@ -17,14 +17,16 @@
 </head>
 <body style='background-color: white;'>
   <div class='container-fluid' style="margin-top: 28px">
-    <div class="row d-flex fixed-top" style="border-bottom: 1px solid white; z-index: 10; background-color: #2b63c6; position: fixed; top:28px;">
-      <div class=' p-2' style="color:white;"><div class="ml-3 mt-1" style='color: white;'>私のコレクション</div> </div>
-        <div class='ml-auto p-2 c'>
+    <div class="row d-flex fixed-top justify-content-between" style="border-bottom: 1px solid white; z-index: 10; background-color: #2b63c6; position: fixed; top:28px;">
+      <div class=' p-2' style="color:white;">
+        <div class="" style='color: white;'>私のコレクション</div>
+      </div>
+        <div class=' p-1 '>
      <!-- <button class='button mr-4' style="color:white;">ツアーで並べ替え ↑↓ </button> -->
           <div class="dropdown p-1">
-            <button class="text-center dropdown-toggle" type="" style="color: white; font-size: 80%; border-radius: 12px;
+            <button class="text-center dropdown-toggle" type="" style="width: 150px;color: white; font-size: 80%; border-radius: 12px;
               border: solid 1px #ffffff;background-color: #2b63c6;" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              ツアーで並べ替え ↑↓
+              並べ替え　新着順 ↑↓
             </button>
             <div class="dropdown-menu speech-bubble dropdown-menu-right" aria-labelledby="dropdownMenu2">
               <label class="radio-inline pl-2 pb-2" for="group_by_tour_radio">
@@ -115,15 +117,26 @@
   </div>
 
   <script type="text/javascript">
+  // if (window.location.href.contains("bytourcollection")) {
+  //
+  // } else if (window.location.href.contains("mycollection")) {
+  //
+  // } else if (window.location.href.contains("reversemycollection")) {
+  //
+  // }
   function navItemClick(id) {
     console.log(id);
   }
+  console.log("index", {{$index}});
   if ({{$index}} == 0) {
 		document.getElementById("group_by_tour_radio").checked = true;
+    document.getElementById("dropdownMenu2").innerHTML = "並べ替え　コース ↑↓";
 	} else if ({{$index}} == 1) {
 		document.getElementById("sort_oldest_radio").checked = true;
+    document.getElementById("dropdownMenu2").innerHTML = "並べ替え　新着順 ↑↓";
 	} else if ({{$index}} == 2) {
 		document.getElementById("sort_newest_radio").checked = true;
+    document.getElementById("dropdownMenu2").innerHTML = "並べ替え　取得順 ↑↓";
 	}
   function sortHistory(id) {
     console.log("yes");
