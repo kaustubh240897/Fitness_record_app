@@ -245,17 +245,21 @@ class t_TourWebController extends Controller
     public function checkpointdetails(Request $request, $id)
     {
         if(m_Users::where('users_id',Auth::id())->count() >0){
-            $m__user_id = m_Users::where('users_id',Auth::id())->first()->id;
-            $unseen_collection = t_Collection::where('m__users_id', $m__user_id)->where('new_display_flag', 0)->count();
+            $m__user = m_Users::where('users_id',Auth::id())->first();
+            $unseen_collection = t_Collection::where('m__users_id', $m__user->id)->where('new_display_flag', 0)->count();
             
             $my_checkpoint = m_Checkpoint::where('id',$id)->get()->first();
             //$session_value = $request->session()->get('reverse','false');
-            $current_tour = t_Tour::where('m__users_id', $m__user_id)->orderBy('start_datetime','DESC')->get()->first();
+            $current_tour = t_Tour::where('m__users_id', $m__user->id)->orderBy('start_datetime','DESC')->get()->first();
             if($current_tour == null){
                 $session_value = 0;
+                $user_tour_steps = 0;
             }
             else{ 
                 $session_value = $current_tour->direction;
+                $step_start_datetime = $current_tour->start_datetime;
+                $user_tour_steps = t_Steps::where('m__users_id',$m__users_id)->where('step_actual_datetime', '>=', $step_start_datetime)->get()->sum('steps');
+                $user_stride = $m__user->stride;
             }
 
            
@@ -283,7 +287,7 @@ class t_TourWebController extends Controller
                 $total = 0;
             }
             
-            return view('checkpointsdetails', compact('my_checkpoint','total','checkpoints','checkpointsr','session_value','unseen_collection'));
+            return view('checkpointsdetails', compact('my_checkpoint','total','checkpoints','checkpointsr','session_value','unseen_collection','user_tour_steps','user_stride'));
         }
         else{
             $my_checkpoint = null;
@@ -292,7 +296,9 @@ class t_TourWebController extends Controller
             $total = null;
             $session_value = 0;
             $unseen_collection = 0;
-            return view('checkpointsdetails', compact('my_checkpoint','total','checkpoints','checkpointsr','session_value','unseen_collection'));
+            $user_tour_steps = 0;
+            $user_stride = 0;
+            return view('checkpointsdetails', compact('my_checkpoint','total','checkpoints','checkpointsr','session_value','unseen_collection','user_tour_steps','user_stride'));
         }
     }
 
