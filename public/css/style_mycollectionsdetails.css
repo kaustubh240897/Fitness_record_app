@@ -252,6 +252,7 @@ display: block;
 position: relative;
 background: #cadcf6;
 border-radius: .2em;
+color: #2b63c6;
 }
 
 .speech-bubble:after {
@@ -272,6 +273,34 @@ margin-right: 0px;
 margin-top: 0px;
 margin-bottom: 10px;
 }
+
+.speech-bubbleSelected {
+position: relative;
+background: #2b63c6;
+border-radius: .2em;
+color: #fff;
+font-weight: bold;
+}
+
+.speech-bubbleSelected:after {
+content: '';
+position: absolute;
+top: 10px;
+left: 0;
+width: 0;
+height: 0;
+border: 3px solid transparent;
+border-top-color: #2b63c6;
+border-top: 4px solid transparent;
+border-bottom: 4px solid transparent;
+
+border-right:10px solid #2b63c6;
+margin-left: -12px;
+margin-right: 0px;
+margin-top: 0px;
+margin-bottom: 10px;
+}
+
 .dd {
 position: absolute;
 }
