@@ -97,7 +97,7 @@
                                     <div class="row justify-content-center px-3">
                                       <div class="col">
                                         <div class="form-check form-check-inline">
-    
+
                                           @if($value == 0)
                                             <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="3" checked>
                                           @else
@@ -283,7 +283,7 @@ if({{ $value }} == 0){
     div_dist_p.innerHTML = item["distance"].toString() + "km";
     div_dist.appendChild(div_dist_p);
     if (i == 0) {
-      if (item["distance"] < dist_walked) {
+      if (item["distance"] <= dist_walked) {
           // tag.className = "StepProgress-item is-done";
           var div_sp_li = document.createElement("li");
           div_sp_li.className = "StepProgress-itemStart is-done";
@@ -456,7 +456,7 @@ else{
     div_dist_p.innerHTML = item["distance"].toString() + "km";
     div_dist.appendChild(div_dist_p);
     if (i == 0) {
-      if ({{ $total }}-item["distance"] < dist_walked) {
+      if ({{ $total }}-item["distance"] <= dist_walked) {
           // tag.className = "StepProgress-item is-done";
           var div_sp_li = document.createElement("li");
           div_sp_li.className = "StepProgress-itemStart is-done";
