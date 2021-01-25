@@ -214,6 +214,7 @@ display: block;
 position: relative;
 background: #cadcf6;
 border-radius: .2em;
+color: #2b63c6;
 }
 
 .speech-bubble:after {

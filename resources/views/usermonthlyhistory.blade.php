@@ -219,7 +219,7 @@
                       border: solid 1px #ffffff;
                       background-color: #2b63c6;">並び替え ↑↓</button> -->
                       <div class="dropdown p-1">
-            <button class="text-center dropdown-toggle" type="" style="color: white; font-size: 80%; border-radius: 12px;
+            <button class="text-center dropdown-toggle" type="" style="height: 22px; color: white; font-size: 80%; border-radius: 12px;
            border: solid 1px #ffffff;
            background-color: #2b63c6;" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               並び替え ↑↓
