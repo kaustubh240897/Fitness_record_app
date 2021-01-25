@@ -258,7 +258,7 @@ class t_TourWebController extends Controller
             else{ 
                 $session_value = $current_tour->direction;
                 $step_start_datetime = $current_tour->start_datetime;
-                $user_tour_steps = t_Steps::where('m__users_id',$m__users_id)->where('step_actual_datetime', '>=', $step_start_datetime)->get()->sum('steps');
+                $user_tour_steps = t_Steps::where('m__users_id',$m__user->id)->where('step_actual_datetime', '>=', $step_start_datetime)->get()->sum('steps');
                 $user_stride = $m__user->stride;
             }
 
