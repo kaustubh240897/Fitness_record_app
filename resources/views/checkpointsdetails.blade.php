@@ -7,6 +7,8 @@
     {{ session('successMsg') }}
   </div>
 @endif -->
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/domarrow.css') }}" />
+<script type="text/javascript" src="{{ URL::asset('js/domarrow.js') }}"></script>
 <link rel="stylesheet" href="/css/style_checkpointdetails.css">
 <style>
 
