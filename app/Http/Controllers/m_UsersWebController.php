@@ -568,10 +568,10 @@ class m_UsersWebController extends Controller
             $m_users->motion_web = $request->input('motionweb')? 1: 0;
             $m_users->motion_app = $request->input('motionapp')? 1: 0;
             $m_users->save();
-            return redirect(route('index'))->with('successMsg','your info Successfully added');
+            return redirect(route('padometerscreen'));
         }
         else{
-            return redirect(route('create'))->with('dangerMsg','your info already Successfully added, If you want to edit the details please click on edit.');
+            return redirect(route('padometerscreen'));
 
         }
 }

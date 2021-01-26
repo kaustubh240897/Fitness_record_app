@@ -291,7 +291,7 @@
       </div>
     </div>
     <div class="container-fluid text-center pt-3">
-      <button class="w-100 py-1" type="submit" name="button" style="border: solid 1px #2b63c6; background-color: #2b63c6; border-radius: 25px;
+      <button class="w-100 py-1" type="submit"  id="myBtn" name="button" style="border: solid 1px #2b63c6; background-color: #2b63c6; border-radius: 25px;
       font-size: 120%; font-weight: bold; color: #fff">変更内容を登録   &nbsp; <span style="font-size: 100%; font-weight: normal;">  ></span> </button>
       <a href="/padometerscreen"><button class="w-100 py-1 mt-3" type="button" name="button" style="border: solid 1px #2b63c6; background-color: rgba(255, 255, 255, 0); border-radius: 25px;
       font-size: 100%; font-weight: normal; color: #2b63c6;">キャンセル </button></a>
@@ -737,4 +737,7 @@
   </form>
 
 </body>
+<script>
+      document.getElementById("myBtn").click();
+</script>
 @endsection
