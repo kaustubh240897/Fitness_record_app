@@ -185,7 +185,7 @@ class t_TourWebController extends Controller
                 $unseen_collection = t_Collection::where('m__users_id', $m__users_id)->where('new_display_flag', 0)->count();
                 $constant_data = Config::get('constants.myData');
                 //dd($m__users_id);
-                $get_t_tour = t_Tour::where('m__tours_id', $m__tours_id)->where('m__users_id', $m__users_id)->orderBy('start_datetime','DESC')->first();
+                $get_t_tour = t_Tour::where('m__tours_id', $m__tours_id)->where('m__users_id', $m__users_id)->where('status', 'Inprogress')->orderBy('start_datetime','DESC')->first();
                 if($get_t_tour !=null){
                     $tour_datetime = $get_t_tour->created_at->toDateTimeString();
                 }
