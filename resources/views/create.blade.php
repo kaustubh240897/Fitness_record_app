@@ -30,7 +30,7 @@
   @endforeach
 @endif
 
-<body>
+<body class="d-none">
 
   <div class="fixed-top">
     <div class="container-fluid bg-white  py-0 my-0 px-3" style="height:28px !important;">
@@ -279,7 +279,7 @@
         <p style="font-size: 80%; font-weight: bold; color: #2b63c6;">アプリでのモーション表示</p>
         <div class="custom-control custom-switch">
           <input name="motionapp" type="checkbox" class="custom-control-input" id="customSwitch1" onchange="motionAppChange(this.id)">
-          <label class="custom-control-label" for="customSwitch1"> <span id="motion_app_text" style="color: #2b63c6;">なし</span> </label>
+          <label class="custom-control-label" for="customSwitch1"> <span id="motion_app_text" style="color: #2b63c6;">あり</span> </label>
         </div>
       </div>
       <div class="d-flex flex-row justify-content-between px-2 pt-3">
@@ -348,7 +348,7 @@
 
       var cb1 = document.getElementById("customSwitch1");
       var cb2 = document.getElementById("customSwitch2");
-      cb1.checked = false;
+      cb1.checked = true;
       cb2.checked = false;
 
       h_input.value = 170;
@@ -727,12 +727,12 @@
       }
     </script>
     <script type="text/javascript">
-      setStride("x");
-      calculateStride("x");
-      setDailySteps("x");
-      daily_difStepsChange();
-      motionAppChange("x");
-      motionWebChange("x");
+      //setStride("x");
+      //calculateStride("x");
+      //setDailySteps("x");
+      //daily_difStepsChange();
+      //motionAppChange("x");
+      //motionWebChange("x");
     </script>
   </form>
 
