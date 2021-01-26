@@ -187,18 +187,20 @@ class t_TourWebController extends Controller
                 $current_tour = t_Tour::where('m__users_id', $m__users_id)->orderBy('start_datetime','DESC')->get()->first();
                 if($current_tour == null){
                     $value = 0;
+                    $get_t_tour = null;
                 }
                 else{ 
                     $value = $current_tour->direction;
+                    if($current_tour->m__tours_id != $id){
+                        $get_t_tour = t_Tour::where('m__tours_id', $m__tours_id)->where('m__users_id', $m__users_id)->where('status', 'Inprogress')->orderBy('start_datetime','DESC')->first();
+                    }
+                    else{
+                        $get_t_tour = t_Tour::where('m__users_id', $m__users_id)->orderBy('start_datetime','DESC')->first();
+    
+                    }
                 } 
                 //dd($m__users_id);
-                if($current_tour->m__tours_id != $id){
-                    $get_t_tour = t_Tour::where('m__tours_id', $m__tours_id)->where('m__users_id', $m__users_id)->where('status', 'Inprogress')->orderBy('start_datetime','DESC')->first();
-                }
-                else{
-                    $get_t_tour = t_Tour::where('m__users_id', $m__users_id)->orderBy('start_datetime','DESC')->first();
-
-                }
+                
                 if($get_t_tour !=null){
                     $tour_datetime = $get_t_tour->created_at->toDateTimeString();
                 }
