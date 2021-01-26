@@ -59,15 +59,7 @@
             @else
               <h4> 申し訳ありませんが、チェックポイントはありません。ツアーを選択してください。</h4>
             @endif
-            @if(! empty($current_tour))
-              @if($current_tour->status == 'Done')
-                <h5> おめでとうございます！ツアーが完了しました。</h5>
-              @else
-                <h3>あなたがカバーした {{ $user_stride/100000 * $steps }} (Km) </h3>
-              @endif
-            @else
-              <h4> ツアーを選択していません。ツアーを選択してください </h4>
-            @endif
+            
 
             <div class='row'>
               <div class='col-12 text-center my-3' style='margin-bottom:25% !important;'><a href='/createtour'> <p class="mb-4  text-center" style="border: solid 1px #2b63c6; border-radius: 15px;"><  リストに戻る</p> </a></div>
