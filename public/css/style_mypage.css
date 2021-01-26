@@ -1,0 +1,500 @@
+.StepProgress {
+position: relative;
+padding-left: 40px;
+list-style: none;
+}
+.StepProgress::before {
+display: inline-block;
+content: '';
+position: absolute;
+left: 15px;
+width: 10px;
+height: 0;
+border-left: 2px solid #CCC;
+}
+.StepProgress-item {
+position: relative;
+counter-increment: list;
+}
+.StepProgress-itemStart {
+position: relative;
+counter-increment: list;
+left: 4px;
+}
+.StepProgress-item2 {
+position: relative;
+counter-increment: list;
+left: -3px;
+}
+.StepProgress-item:not(:last-child) {
+padding-bottom: 12px;
+}
+.StepProgress-itemStart:not(:last-child) {
+padding-bottom: 12px;
+}
+.StepProgress-item2:not(:last-child) {
+padding-bottom: 10px;
+}
+.StepProgress-item::before {
+display: inline-block;
+content: '';
+position: absolute;
+top: 19px;
+left: -31px;
+height: 100%;
+width: 10px;
+border-left: 3px solid #cadcf6;
+}
+.StepProgress-item2::before {
+display: inline-block;
+content: '';
+position: absolute;
+top: 8px;
+left: -32px;
+height: 100%;
+width: 10px;
+}
+.StepProgress-itemStart::before {
+display: inline-block;
+content: '';
+position: absolute;
+left: -35px;
+height: 100%;
+width: 10px;
+border-left: 3px solid #cadcf6;
+top: 20px;
+z-index: 2
+}
+.StepProgress-itemStart.is-done::before {
+display: inline-block;
+content: '';
+position: absolute;
+left: -35px;
+height: 100%;
+width: 10px;
+border-left: 3px solid #e68f00;
+top: 20px;
+z-index: 2;
+padding-top: 0px;
+}
+.StepProgress-item::after {
+content: '';
+display: inline-block;
+position: absolute;
+top: 4px;
+left: -37px;
+width: 15px;
+height: 15px;
+border: 1px solid #cadcf6;
+border-radius: 50%;
+background-color: #cadcf6;
+z-index: 3
+}
+.StepProgress-item2::after {
+background-image: url('/storage/padometerscreen/star_blue.png');
+content: '';
+background-size: 20px 20px;
+display: inline-block;
+position: absolute;
+top: 4px;
+left: -37px;
+width: 20px;
+height: 20px;
+/* width: 12px;
+height: 12px;
+border: 2px solid #CCC; */
+/* border-radius: 50%; */
+background-color: transparent;
+}
+.StepProgress-item2.is-done::after {
+background-image: url('/storage/padometerscreen/star_yellow.png');
+content: '';
+background-size: 20px 20px;
+display: inline-block;
+position: absolute;
+top: 2px;
+left: -37px;
+width: 20px;
+height: 20px;
+/* width: 12px;
+height: 12px;
+border: 2px solid #CCC; */
+/* border-radius: 50%; */
+background-color: transparent;
+}
+.StepProgress-itemStart::after {
+background-image: url('/storage/padometerscreen/star_blue.png');
+content: '';
+background-size: 20px 20px;
+display: inline-block;
+position: absolute;
+top: 2px;
+left: -44px;
+width: 20px;
+height: 20px;
+/* width: 12px;
+height: 12px;
+border: 2px solid #CCC;
+border-radius: 50%; */
+background-color: transparent;
+}
+.StepProgress-itemStart.is-done::after {
+background-image: url('/storage/padometerscreen/star_yellow.png');
+content: '';
+background-size: 20px 20px;
+display: inline-block;
+position: absolute;
+top: 2px;
+left: -44px;
+width: 20px;
+height: 20px;
+/* width: 12px;
+height: 12px;
+border: 2px solid #CCC;
+border-radius: 50%; */
+background-color: transparent;
+}
+.StepProgress-item.is-done::before {
+display: inline-block;
+content: '';
+position: absolute;
+top: 19px;
+left: -31px;
+height: 100%;
+width: 10px;
+border-left: 3px solid #e68f00;
+}
+.StepProgress-item.is-done::after {
+content: '';
+display: inline-block;
+position: absolute;
+top: 4px;
+left: -37px;
+width: 15px;
+height: 15px;
+border: 1px solid #e68f00;
+border-radius: 50%;
+background-color: #ffd00d;
+z-index: 3
+}
+.StepProgress-item.current::before {
+border-left: 3px solid #7ea8ef;
+top: 19px;
+}
+.StepProgress-item.current::after {
+content: "";
+font-size: 10px;
+color: #FFF;
+text-align: center;
+border: 1px solid #7ea8ef;
+background-color: #7ea8ef;
+top: 4px;
+}
+.StepProgress strong {
+display: block;
+}
+
+.speech-bubble {
+position: relative;
+background: #cadcf6;
+border-radius: .2em;
+color: #2b63c6;
+}
+
+.speech-bubble:after {
+content: '';
+position: absolute;
+top: 10px;
+left: 0;
+width: 0;
+height: 0;
+border: 3px solid transparent;
+border-top-color: #cadcf6;
+border-top: 4px solid transparent;
+border-bottom: 4px solid transparent;
+
+border-right:10px solid #cadcf6;
+margin-left: -12px;
+margin-right: 0px;
+margin-top: 0px;
+margin-bottom: 10px;
+}
+
+
+
+/* PB */
+.dd {
+position: absolute;
+}
+.dist_t {
+text-align: center !important;
+}
+.dist_t_p {
+  width: 30px;
+}
+.right_t {
+line-height: 0.8;
+}
+.chartcenter{
+position: absolute;
+top: -100px;
+left: -200px;
+
+text-align: center;
+
+color: red;
+
+}
+
+
+.a {
+color: #000000 !important;
+text-decoration: none !important;
+}
+.relative {
+position: relative;
+}
+
+.absolute-center {
+position:absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+.text-center{
+text-align: center;
+}
+.speech-bubble2 {
+position: relative;
+background: #dce0e3;
+border-radius: 1.0em;
+}
+
+.speech-bubble2:after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 50%;
+width: 0;
+height: 0;
+border: 10px solid transparent;
+border-top-color: #dce0e3;
+border-bottom: 0;
+margin-left: -12px;
+margin-bottom: -10px;
+}
+
+.speech-bubble-yel {
+position: relative;
+background: #ff9327;
+border-radius: .4em;
+}
+
+.speech-bubble-yel:after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 50%;
+width: 0;
+height: 0;
+border: 10px solid transparent;
+border-top-color: #ff9327;
+border-bottom: 0;
+margin-left: -12px;
+margin-bottom: -10px;
+}
+
+.overlay-text2 {
+align-self: flex-start;
+transform: translateY(50%);
+z-index: 50;
+margin-bottom: -500px;
+}
+.overlay-text22 {
+align-self: flex-start;
+transform: translateY(-40%);
+z-index: 50;
+}
+.overlay-text3 {
+align-self: flex-start;
+transform: translateY(-300%);
+z-index: 50
+}
+.overlay-text4 {
+align-self: flex-start;
+transform: translate(-49%, -70%);
+z-index: 50;
+}
+.overlay-btn2 {
+align-self: flex-start;
+transform: translate(0%,-50%);
+z-index: 50;
+}
+.overlay-btn4 {
+align-self: flex-start;
+transform: translate(-17%,-60%);
+z-index: 50;
+}
+.overlay-btn3 {
+align-self: flex-start;
+transform: translateX(30%);
+z-index: 50
+}
+.overlay-tri {
+/* align-self: flex-start;
+transform: translateY(0);
+z-index: 0;
+margin-bottom: -2000px; */
+position:relative;
+  bottom: 0px;
+}
+.overlay-tri2 {
+  position: static;
+align-self: flex-start;
+/* transform: translateY(-20%); */
+}
+#compStar {
+  position: relative;
+  z-index: 2 !important;
+}
+#triangle_graph {
+  z-index: -5 !important;
+}
+.overlay-pado {
+align-self: flex-start;
+transform: translateY(30%);
+z-index: 100
+}
+.overlay-btn1 {
+align-self: flex-start;
+transform: translatex(-80%);
+z-index: 50
+}
+.dot {
+height: 5vh;
+width: 5vh;
+background-color: #fff;
+border-radius: 50%;
+display: inline-block;
+}
+i {
+background-color: white;
+border-radius: 50%;
+border: 1px solid white;
+padding: 10px;
+}
+
+.body {
+background-color:#fffdfa;
+}
+.blackiconcolor {color:#dce0e3;}
+.fa { transform: scale(1.3,1.2);
+padding: 4px;
+font-weight: normal;}
+.nopadding {
+padding-top: 0 !important;
+padding-bottom: 0 !important;
+margin: 0 !important;
+}
+.vl {
+border-left: 6px solid green;
+}
+.containerImg {
+position: relative;
+text-align: center;
+color: white;
+}
+.centeredTxt {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+.overlay-textImg {
+align-self: flex-start;
+transform: translateY(-230%);
+z-index: 50
+}
+.overlay-textImgXS {
+align-self: flex-start;
+transform: translateY(-150%);
+z-index: 50
+}
+.overlay-textImgMD {
+align-self: flex-start;
+transform: translateY(-200%);
+z-index: 50
+}
+.overlay-text5 {
+align-self: flex-start;
+transform: translateY(0%);
+z-index: 50;
+margin-bottom: -30px;
+}
+.myPageBtn {
+position: fixed;
+bottom: 0;
+right: 0;
+z-index: 10;
+}
+.card {
+border: none !important;
+padding: none !important;
+margin: 0 auto !important;
+background-color: #f0f6f8;
+}
+.card.card-img-top {
+padding: none !important;
+margin: none !important;
+}
+
+.top_0 {
+top: 10%;
+padding-top: 0
+}
+.overlay-text1 {
+  align-self: flex-start;
+  transform: translateY(60%);
+}
+.remMar {
+}
+#paraCont {
+  position: relative;
+}
+#paraRight{
+  position: absolute;
+  right: 0%;
+  z-index: 5;
+}
+#paraLeft {
+  position: absolute;
+  left: 3%;
+  top: 0;
+  z-index: 5;
+  transform: translateY(100%);
+}
+.refBtn {
+  position: fixed;
+  bottom: 70px;
+  right: 2%;
+  z-index: 10;
+  height: 55px;
+  width: 55px;
+}
+.navfix {
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+}
+.navItem {
+    height: 66px;
+}
+
+.navItem.is-active {
+    margin-top: -10px;
+    /* margin-bottom: -10px; */
+    height: 76px;
+    background-color: #174493;
+     border-radius: 5px
+}
