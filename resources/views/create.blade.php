@@ -19,7 +19,9 @@
     {{ session('dangerMsg') }}
   </div>
 @endif -->
-
+<head>
+  <link rel="stylesheet" href="/css/style_create.css">
+</head>
 @if ($errors->any())
   @foreach ($errors->all() as $error)
     <div class='alert alert-danger' role='alert'>
@@ -28,185 +30,6 @@
   @endforeach
 @endif
 
-
-
-<style media="screen">
-    /* .btn.btn-lg {
-        background-color: #ccece8 !important;
-     }
-    .btn.blue {
-    background-color: #ccece8 !important;
-    }
-    .btn.blue.cal {
-       background-color: #ccece8 !important;
-       margin: 0 auto !important;
-       padding: 0 !important;
-       display: table-cell !important;
-       vertical-align: middle !important;
-    }
-    .p {
-      font-size: 70% !important;
-    } */
-
-    .overlay-line1 {
-      align-self: flex-start;
-      transform: translateY(-30px);
-    }
-    .speech-bubble {
-    	position: relative;
-    	background: #fffae3;
-    	border-radius: .4em;
-      padding-left: 10px;
-    }
-
-    .speech-bubble:after {
-    	content: '';
-    	position: absolute;
-    	bottom: 80%;
-    	right: 20%;
-    	width: 0;
-    	height: 0;
-    	border: 1px solid #ffd100;
-      border-bottom:20px solid #fff;
-    	margin-left: 0px;
-      margin-right: 10px;
-      margin-top: 0px;
-    	margin-bottom: 10px;
-    }
-    .box2 {
-  border: 1px solid #ffd100;
-  border-radius: 5px;
-  background-color: #fffae3;
-  padding: 2px;
-  text-align: left;
-  font-weight: 100;
-  color: #00bfb6;
-  font-family: arial;
-  position: relative;
-}
-.sb10:before {
-  content: "";
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  border-left: 9px solid transparent;
-  border-right: 9px solid transparent;
-  border-top: 9px solid transparent;
-  border-bottom: 9px solid #fff;
-  left: 40.2%;
-  top: -18px;
-  z-index: 2;
-}
-
-.sb10:after {
-  content: "";
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid #ffd100;
-  left: 40%;
-  top: -20.5px;
-}
-.sb11:before {
-  content: "";
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  border-left: 9px solid transparent;
-  border-right: 9px solid transparent;
-  border-top: 9px solid transparent;
-  border-bottom: 9px solid #fff;
-  left: 7.2%;
-  top: -18px;
-  z-index: 2;
-}
-
-.sb11:after {
-  content: "";
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid #ffd100;
-  left: 7%;
-  top: -20.5px;
-}
-
-.sb12:before {
-  content: "";
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  border-left: 9px solid transparent;
-  border-right: 9px solid transparent;
-  border-top: 9px solid transparent;
-  border-bottom: 9px solid #fff;
-  right: 7.2%;
-  top: -18px;
-  z-index: 2;
-}
-
-.sb12:after {
-  content: "";
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid #ffd100;
-  right: 7%;
-  top: -20.5px;
-}
-.gender {
-   background-color: #f5f5f5;
-}
-.gender_sel {
-  background-color: #2b63c6;
-  color: #fff;
-}
-
-.navfix {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 10;
-}
-.navItem {
-    height: 66px;
-}
-
-.navItem.is-active {
-    margin-top: -10px;
-    /* margin-bottom: -10px; */
-    height: 76px;
-    background-color: #174493;
-     border-radius: 5px
-}
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-  outline: none;
-  text-decoration: none;
-}
-
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-  border-color: transparent;
-  background-color: #f2f4f6;
-  border-radius: 5px;
-  outline: none;
-  text-decoration: none;
-}
-  </style>
 <body>
 
   <div class="fixed-top">
@@ -513,6 +336,7 @@ input[type=number] {
       var h_input = document.getElementById("heightinput");
       var s_input = document.getElementById("strideinput");
       var ds_input = document.getElementById("daily_stepsInput");
+      var gender = "male";
 
       var ds_1 = document.getElementById("daily_stepsInput_1");
       var ds_2 = document.getElementById("daily_stepsInput_2");
@@ -713,7 +537,6 @@ input[type=number] {
           console.log(document.getElementById("strideinput").value);
           strideChange();
         }
-        var gender = "";
         function setGender(id) {
           if (id == "btn_male") {
             document.getElementById(id).className = "text-center w-100 gender_sel";

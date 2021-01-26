@@ -59,7 +59,7 @@
             @else
               <h4> 申し訳ありませんが、チェックポイントはありません。ツアーを選択してください。</h4>
             @endif
-            
+
 
             <div class='row'>
               <div class='col-12 text-center my-3' style='margin-bottom:25% !important;'><a href='/createtour'> <p class="mb-4  text-center" style="border: solid 1px #2b63c6; border-radius: 15px;"><  リストに戻る</p> </a></div>
@@ -256,6 +256,8 @@ if({{ $value }} == 0){
   var dist_walked = (get_m_user_stride * steps)/100000;
   var flag1 = 0;
 
+  console.log("steps",{{ $steps }});
+  console.log("dist_walked",{{$user_stride}});
 
   var checkpoints = {!! json_encode($checkpoints) !!};
   checkpoints.forEach((item, i) => {
@@ -275,7 +277,7 @@ if({{ $value }} == 0){
     div_dist_p.innerHTML = item["distance"].toString() + "km";
     div_dist.appendChild(div_dist_p);
     if (i == 0) {
-      if (item["distance"] <= dist_walked) {
+      if (item["distance"] < dist_walked) {
           // tag.className = "StepProgress-item is-done";
           var div_sp_li = document.createElement("li");
           div_sp_li.className = "StepProgress-itemStart is-done";
@@ -448,7 +450,7 @@ else{
     div_dist_p.innerHTML = item["distance"].toString() + "km";
     div_dist.appendChild(div_dist_p);
     if (i == 0) {
-      if ({{ $total }}-item["distance"] <= dist_walked) {
+      if ({{ $total }}-item["distance"] < dist_walked) {
           // tag.className = "StepProgress-item is-done";
           var div_sp_li = document.createElement("li");
           div_sp_li.className = "StepProgress-itemStart is-done";
