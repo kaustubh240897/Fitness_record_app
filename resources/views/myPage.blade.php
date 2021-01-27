@@ -452,7 +452,7 @@
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-itemStart";
               var div_sp_li_p = document.createElement("p");
-              div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
+              div_sp_li_p.className = "py-0 speech-bubbleSelected2 pl-2 pr-1 w-100 pb-1 text-break";
               div_sp_li_p.style.fontSize = "80%";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
               div_sp_li_p.id = item["id"];
@@ -493,7 +493,7 @@
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-item2";
               var div_sp_li_p = document.createElement("p");
-              div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
+              div_sp_li_p.className = "py-0 speech-bubbleSelected2 pl-2 pr-1 w-100 pb-1 text-break";
               div_sp_li_p.style.fontSize = "80%";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
               div_sp_li_p.id = item["id"];
@@ -534,7 +534,7 @@
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-item current";
               var div_sp_li_p = document.createElement("p");
-              div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
+              div_sp_li_p.className = "py-0 speech-bubbleSelected2 pl-2 pr-1 w-100 pb-1 text-break";
               div_sp_li_p.style.fontSize = "80%";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
               div_sp_li_p.id = item["id"];
@@ -648,7 +648,7 @@
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-itemStart";
               var div_sp_li_p = document.createElement("p");
-              div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+              div_sp_li_p.className = "py-0 speech-bubbleSelected2 pl-2 w-100 pb-1 text-break";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
               div_sp_li_p.id = item["id"];
               div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
@@ -686,7 +686,7 @@
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-item2";
               var div_sp_li_p = document.createElement("p");
-              div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+              div_sp_li_p.className = "py-0 speech-bubbleSelected2 pl-2 w-100 pb-1 text-break";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
               div_sp_li_p.id = item["id"];
               div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
@@ -724,7 +724,7 @@
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-item current";
               var div_sp_li_p = document.createElement("p");
-              div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
+              div_sp_li_p.className = "py-0 speech-bubbleSelected2 pl-2 w-100 pb-1 text-break";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
               div_sp_li_p.id = item["id"];
               div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
