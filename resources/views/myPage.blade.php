@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/domarrow.css') }}" />
   <script type="text/javascript" src="{{ URL::asset('js/domarrow.js') }}"></script>
-  <link rel="stylesheet" href="/css/style_mypage.css">
+  <link rel="stylesheet" href="/css/style_mypage_v1.css">
 </head>
 
 <body>
