@@ -433,7 +433,7 @@
       div_dist_p.innerHTML = item["distance"].toString() + "km";
       div_dist.appendChild(div_dist_p);
       if (i == 0) {
-        if (item["distance"] <= dist_walked) {
+        if (item["distance"] < dist_walked) {
             // tag.className = "StepProgress-item is-done";
             var div_sp_li = document.createElement("li");
             div_sp_li.className = "StepProgress-itemStart is-done";
@@ -452,7 +452,7 @@
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-itemStart";
               var div_sp_li_p = document.createElement("p");
-              div_sp_li_p.className = "py-0 speech-bubbleSelected2 pl-2 pr-1 w-100 pb-1 text-break";
+              div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
               div_sp_li_p.style.fontSize = "80%";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
               div_sp_li_p.id = item["id"];
@@ -493,7 +493,7 @@
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-item2";
               var div_sp_li_p = document.createElement("p");
-              div_sp_li_p.className = "py-0 speech-bubbleSelected2 pl-2 pr-1 w-100 pb-1 text-break";
+              div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
               div_sp_li_p.style.fontSize = "80%";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
               div_sp_li_p.id = item["id"];
@@ -534,7 +534,7 @@
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-item current";
               var div_sp_li_p = document.createElement("p");
-              div_sp_li_p.className = "py-0 speech-bubbleSelected2 pl-2 pr-1 w-100 pb-1 text-break";
+              div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
               div_sp_li_p.style.fontSize = "80%";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
               div_sp_li_p.id = item["id"];
@@ -630,7 +630,7 @@
       div_dist_p.innerHTML = ({{ $total }}-item["distance"]).toString() + "km";
       div_dist.appendChild(div_dist_p);
       if (i == 0) {
-        if (({{ $total }}-item["distance"]) <= dist_walked) {
+        if (({{ $total }}-item["distance"]) < dist_walked) {
             // tag.className = "StepProgress-item is-done";
             var div_sp_li = document.createElement("li");
             div_sp_li.className = "StepProgress-itemStart is-done";
@@ -648,7 +648,7 @@
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-itemStart";
               var div_sp_li_p = document.createElement("p");
-              div_sp_li_p.className = "py-0 speech-bubbleSelected2 pl-2 w-100 pb-1 text-break";
+              div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
               div_sp_li_p.id = item["id"];
               div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
@@ -686,7 +686,7 @@
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-item2";
               var div_sp_li_p = document.createElement("p");
-              div_sp_li_p.className = "py-0 speech-bubbleSelected2 pl-2 w-100 pb-1 text-break";
+              div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
               div_sp_li_p.id = item["id"];
               div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
@@ -724,7 +724,7 @@
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-item current";
               var div_sp_li_p = document.createElement("p");
-              div_sp_li_p.className = "py-0 speech-bubbleSelected2 pl-2 w-100 pb-1 text-break";
+              div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
               div_sp_li_p.id = item["id"];
               div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
@@ -1189,7 +1189,8 @@
   var stepsData = [0,0,0,0,0,0,0];
   var barBgColor = ['#3476ea', '#3476ea', '#3476ea', '#3476ea', '#3476ea', '#3476ea', '#3476ea'];
   var weekDates = datesofWeek();
-
+  var xLabel = [];
+  console.log("wkd", weekDates);
   Object.keys(current_week_datas1).forEach((single_day_data, i) => {
   //console.log(current_week_datas[single_day_data]);
   var total = 0;
@@ -1197,6 +1198,9 @@
   total += parseInt(item["steps"]);
   });
   weekDates.forEach((item, i) => {
+    console.log("wkd_item_d",item.getDate());
+    console.log("wkd_item_m",item.getMonth());
+    console.log("wkd_item_y",item.getFullYear());
   if (formatDate(item) == single_day_data) {
   stepsData[i] = parseInt(total);
   console.log(i);
@@ -1204,6 +1208,7 @@
   });
 
   });
+  console.log("xl",xLabel);
   var maxSteps = Math.max(...stepsData);
   var maxY = maxSteps + 1000 - maxSteps%1000;
   console.log(maxY);
@@ -1291,7 +1296,7 @@
   var chart = new Chart(ctx, {
   type: 'bar',
   data: {
-  labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+  labels: ['月', '火', '水', '木', '金', '土', '日'],
   datasets: [{
   barThickness: 15,
   maxBarThickness: 100,
@@ -1308,7 +1313,7 @@
      beginAtZero: true,
      stepSize: 1000,
      min: 0,
-     max: maxY + 2000
+     max: maxY + 6000
   },
   }],
   xAxes: [{
