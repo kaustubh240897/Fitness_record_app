@@ -630,7 +630,7 @@
               if(yAxe.min != 0) return;
 
               ctxPlugin.strokeStyle = "blue";
-          	ctxPlugin.beginPath();
+          	   ctxPlugin.beginPath();
               lineAt = (lineAt - yAxe.min) * (100 / yAxe.max);
               lineAt = (100 - lineAt) / 100 * (yAxe.height) + yAxe.top;
               ctxPlugin.moveTo(xAxe.left, lineAt);
@@ -642,7 +642,7 @@
   var chart = new Chart(ctx, {
    type: 'bar',
    data: {
-      labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      labels: ['月', '火', '水', '木', '金', '土', '日'],
       datasets: [{
          barThickness: 15,
          maxBarThickness: 100,
@@ -659,7 +659,7 @@
                beginAtZero: true,
                stepSize: 1000,
                min: 0,
-               max: maxY + 2000
+               max: maxY + 6000
             },
          }],
          xAxes: [{
