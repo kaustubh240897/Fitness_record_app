@@ -30,12 +30,12 @@
                <p class='color'> <span class="badge badge-pill badge-warning ml-2 mr-1">ツアー</span>  {{ $my_collections->m_collections->collection_title }} </p>
                <div class='row d-flex wrapper1'>
 						 		 <div class='col p-2 ml-5'> <img class='mr-2 mb-2' src='/storage/img/ico.png'> <font style='color:#ffcc00;'>{{ $total }}  Km </font></div>
-						 		 <div class='col p-2 c' style='color:white;'><span class="fa fa-star checked mx-1 "></span> {{ $my_collections->m_collections->updated_at->format('Y/m/d') }}  </div>
+						 		 <div class='col p-2 c' style='color:white;'><span class="fa fa-star checked mx-1 "></span> {{ $my_collections->created_at->format('Y/m/d') }}  </div>
 					 		</div>
             @else
             <p class='ml-3 mt-3 color'>{{ $my_collections->m_collections->m__checkpoints->tours->tour_title }} </p>
             <p class='color'> <img class='ml-3' src='/storage/img/label-1.png'> {{ $my_collections->m_collections->collection_title }} </p>
-            <div class='c' style='color:white;'><span class="fa fa-star checked mx-1"></span>{{ $my_collections->m_collections->updated_at->format('Y/m/d') }} </div>
+            <div class='c' style='color:white;'><span class="fa fa-star checked mx-1"></span>{{ $my_collections->created_at->format('Y/m/d') }} </div>
             @endif
 
 
