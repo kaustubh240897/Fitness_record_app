@@ -91,7 +91,7 @@
 											@else
 												<div class='col-4 circle'><span> <a href="{{ route('collectiondetails', $checkpoint->m_collections->id) }}"> <img src="{{ asset($checkpoint->m_collections->path . $checkpoint->m_collections->filename) }}" class="rounded-circle" alt="image" width="80" height="80"> </a> </span> </div>
 											@endif
-												<div class='col-6'> <img src='storage/img/label-1.png'><br><a href="{{ route('collectiondetails', $checkpoint->m_collections->id) }}">{{ $checkpoint->checkpoint_title }}  </a></div>
+												<div class='col-6'> <img src='storage/img/label-1.png'><br><a href="{{ route('collectiondetails', $checkpoint->m_collections->id) }}">{{ $checkpoint->m_collections->collection_title }}  </a></div>
 													<div class='col-4'> </div>
 														<div class='col-8 c checked'> @if($counter[$checkpoint->m__collection_id] >5)+@endif @for($i=0; $i<$counter[$checkpoint->m__collection_id]; $i++) @if($i <=5)<img src='storage/img/star.png'>@endif @endfor<font style='color:#cbaca3;'> {{ $latest_date[$checkpoint->m__collection_id] }} </font>
 														</div>
