@@ -58,7 +58,7 @@ class t_CollectionWebController extends Controller
             //dd($get_t_collections->keys());
             $j=0;
             foreach($get_t_collections as $get_t_collection){
-                $latest_date[$count_t_collections->keys()[$j]] = $get_t_collection->updated_at->format('Y/m/d');
+                $latest_date[$count_t_collections->keys()[$j]] = $get_t_collection->created_at->format('Y/m/d');
                 $j++;
             }
             //dd($latest_date);
