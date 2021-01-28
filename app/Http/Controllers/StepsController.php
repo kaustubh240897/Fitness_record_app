@@ -167,7 +167,7 @@ class StepsController extends Controller
                 else{
                     foreach($get_latest_t_tour->m_tours->checkpoints as $checkpoint){
                         
-                        if($distanceCovered >= $checkpoint->distance && !(in_array($checkpoint->m__collection_id, $collection_memory)) ){
+                        if($distanceCovered > $checkpoint->distance && !(in_array($checkpoint->m__collection_id, $collection_memory)) ){
                             $t_collection = new t_Collection;
                             $t_collection->m__users_id = $m__user_id;
                             $t_collection->m__collection_id = $checkpoint->m__collection_id;
@@ -197,7 +197,7 @@ class StepsController extends Controller
                 else{
                     foreach($get_latest_t_tour->m_tours->checkpoints->sortByDesc('distance') as $checkpoint){
                         
-                        if($distanceCovered >= $total - $checkpoint->distance && !(in_array($checkpoint->m__collection_id, $collection_memory)) ){
+                        if($distanceCovered > $total - $checkpoint->distance && !(in_array($checkpoint->m__collection_id, $collection_memory)) ){
                             $t_collection = new t_Collection;
                             $t_collection->m__users_id = $m__user_id;
                             $t_collection->m__collection_id = $checkpoint->m__collection_id;
