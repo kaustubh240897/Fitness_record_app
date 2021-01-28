@@ -26,10 +26,10 @@ class t_CollectionWebController extends Controller
             $m__user_id = m_Users::where('users_id',Auth::id())->first()->id;
             $unseen_collection = t_Collection::where('m__users_id', $m__user_id)->where('new_display_flag', 0)->count();
             $index = 0;
-            $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->get()->unique('m__collection_id');
-            $count_t_collections = t_Collection::where('m__users_id', $m__user_id)->get()->groupBy('m__collection_id');
+            $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->orderBy('created_at', 'DESC')->get()->unique('m__collection_id');
+            $count_t_collections = t_Collection::where('m__users_id', $m__user_id)->orderBy('created_at', 'DESC')->get()->groupBy('m__collection_id');
             $count_m_collection = m_collection::all()->count();
-            $unseen_t_collections = t_Collection::where('m__users_id', $m__user_id)->where('new_display_flag', 0)->get()->unique('m__collection_id');
+            $unseen_t_collections = t_Collection::where('m__users_id', $m__user_id)->where('new_display_flag', 0)->orderBy('created_at', 'DESC')->get()->unique('m__collection_id');
             $unseen_checkpoint_array = [];
             foreach($unseen_t_collections as $unseen_t_collection){
                 if($unseen_t_collection->m_collections->collection_category == 'checkpoint'){
@@ -113,8 +113,8 @@ class t_CollectionWebController extends Controller
         $m__user_id = m_Users::where('users_id',Auth::id())->first()->id;
         $unseen_collection = t_Collection::where('m__users_id', $m__user_id)->where('new_display_flag', 0)->count();
         $index = 1;
-        $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->get()->unique('m__collection_id');
-        $count_t_collections = t_Collection::where('m__users_id', $m__user_id)->get()->groupBy('m__collection_id');
+        $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->orderBy('created_at', 'DESC')->get()->unique('m__collection_id');
+        $count_t_collections = t_Collection::where('m__users_id', $m__user_id)->orderBy('created_at', 'DESC')->get()->groupBy('m__collection_id');
         $counter = [];
         foreach($count_t_collections as $count){
             $counter[] = $count->count();

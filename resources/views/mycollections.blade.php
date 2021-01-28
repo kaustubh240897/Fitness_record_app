@@ -56,9 +56,10 @@
         <div class='col-12'><img class='center' src='/storage/img/star_mycol.png'> </div>
       </div>
 
-    @if(! empty($get_t_collections->count()))
+@if(! empty($get_t_collections->count()))
+  @if($index == 1)
       <div class='row py-2' style='margin-top:15rem; z-index: 9; position: relative; background-color: white; padding-bottom: 0%;'>
-        @foreach($get_t_collections as $get_t_collection)
+        @foreach($get_t_collections->sortBy('created_at') as $get_t_collection)
           @if($get_t_collection->new_display_flag == 0)
             <div class='col-4 circle'>
               <span class="badge badge-pill badge-warning">New</span>
@@ -82,6 +83,33 @@
 				  <img style='width: 100%; height: auto;' src='/storage/img/bg@3x.png'>
 	      </div>
     </div>
+  @elseif($index == 2)
+    <div class='row py-2' style='margin-top:15rem; z-index: 9; position: relative; background-color: white; padding-bottom: 0%;'>
+          @foreach($get_t_collections as $get_t_collection)
+            @if($get_t_collection->new_display_flag == 0)
+              <div class='col-4 circle'>
+                <span class="badge badge-pill badge-warning">New</span>
+                  <span> <img style='border: solid  #ffcc00;' src="{{ asset($get_t_collection->m_collections->path . $get_t_collection->m_collections->filename) }}" class="rounded-circle" alt="Cinque Terre" width="80" height="80"> </span>
+              </div>
+            @else
+              <div class='col-4'>
+                <img src="{{ asset($get_t_collection->m_collections->path . $get_t_collection->m_collections->filename) }}"  class=" rounded-circle" alt="Img" width="80" height="80">
+              </div>
+            @endif
+                <div class='col-8'> <img src='/storage/img/label-1.png'><br><a href="{{ route('collectiondetails', $get_t_collection->m_collections->id) }}">{{ $get_t_collection->m_collections->collection_title }} </a></div>
+                  <div class='col-4'> </div>
+                    <div class='col-8 c checked'> @if($counter[$loop->iteration-1] >5)+@endif  @for($i=0; $i<$counter[$loop->iteration-1]; $i++) @if($i <=5)<img src='storage/img/star.png'>@endif @endfor
+                        <font style='color:#cbaca3;'> {{ $get_t_collection->created_at->format('Y-m-d') }} </font>
+                    </div>
+                  <br/>
+          @endforeach
+      </div>
+      <div class='row' style='background-color: #eef4f6; position: relative; z-index: 10;'>
+          <div class='col-12'>
+            <img style='width: 100%; height: auto;' src='/storage/img/bg@3x.png'>
+          </div>
+      </div>
+  @endif
 @else
 	<div class='text-center' style='margin-top:15rem; z-index:10;'>
 		<h1 style='color:black !important;'> まだコレクションはありません！ </h1>
