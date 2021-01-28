@@ -113,7 +113,7 @@ class t_CollectionWebController extends Controller
         $m__user_id = m_Users::where('users_id',Auth::id())->first()->id;
         $unseen_collection = t_Collection::where('m__users_id', $m__user_id)->where('new_display_flag', 0)->count();
         $index = 1;
-        $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->orderBy('created_at', 'DESC')->get()->unique('m__collection_id');
+        $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->get()->unique('m__collection_id');
         $count_t_collections = t_Collection::where('m__users_id', $m__user_id)->get()->groupBy('m__collection_id');
         $counter = [];
         foreach($count_t_collections as $count){

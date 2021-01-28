@@ -59,7 +59,7 @@
 @if(! empty($get_t_collections->count()))
   @if($index == 1)
       <div class='row py-2' style='margin-top:15rem; z-index: 9; position: relative; background-color: white; padding-bottom: 0%;'>
-        @foreach($get_t_collections->sortBy('created_at') as $get_t_collection)
+        @foreach($get_t_collections as $get_t_collection)
           @if($get_t_collection->new_display_flag == 0)
             <div class='col-4 circle'>
               <span class="badge badge-pill badge-warning">New</span>
