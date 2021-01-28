@@ -23,7 +23,7 @@
 				<div class='   p-1 '>
         <!-- <button class='button mr-1' style="color:white;">ツアーで並べ替え ↑↓ </button> -->
 					<div class="dropdown p-1 ">
-						<button class="text-center dropdown-toggle" type="" style="width: 150px; height: 22px; color: white; font-size: 80%; border-radius: 12px;
+						<button class="text-center dropdown-toggle" type="" style="outline: none; width: 150px; height: 22px; color: white; font-size: 80%; border-radius: 12px;
 							border: solid 1px #ffffff;background-color: #2b63c6;" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							並べ替え　コース ↑↓
 						</button>
