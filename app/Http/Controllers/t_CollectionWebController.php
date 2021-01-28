@@ -83,7 +83,7 @@ class t_CollectionWebController extends Controller
         $tour_seen = [];
         for($i=0; $i<$count; $i++){
             $tours[] = m_Tour::where('id', $tour_id[$i])->get()->first();
-            $tour_status[] = t_Tour::where('m__tours_id', $tour_id[$i])->get()->first()->status;
+            $tour_status[] = t_Tour::where('m__users_id', $m__user_id)->where('m__tours_id', $tour_id[$i])->get()->first()->status;
             $tours_distance[] = m_Checkpoint::where('m__tour_id', $tour_id[$i])->where('checkpoint_category', 'endpoint')->get()->first()->distance;
         }   
         
@@ -114,7 +114,7 @@ class t_CollectionWebController extends Controller
         $unseen_collection = t_Collection::where('m__users_id', $m__user_id)->where('new_display_flag', 0)->count();
         $index = 1;
         $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->orderBy('created_at', 'DESC')->get()->unique('m__collection_id');
-        $count_t_collections = t_Collection::where('m__users_id', $m__user_id)->orderBy('created_at', 'DESC')->get()->groupBy('m__collection_id');
+        $count_t_collections = t_Collection::where('m__users_id', $m__user_id)->get()->groupBy('m__collection_id');
         $counter = [];
         foreach($count_t_collections as $count){
             $counter[] = $count->count();
