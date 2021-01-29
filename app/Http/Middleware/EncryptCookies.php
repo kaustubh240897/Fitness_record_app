@@ -14,6 +14,5 @@ class EncryptCookies extends Middleware
     protected $except = [
         //
         'serialnumber',
-        'tourname',
     ];
 }
