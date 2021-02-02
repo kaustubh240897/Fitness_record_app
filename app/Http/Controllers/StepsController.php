@@ -105,6 +105,7 @@ class StepsController extends Controller
                 }
             }
         }
+        $request['step_calc_datetime'] = Carbon::now()->toDateTimeString();
         $t_steps = new t_Steps($request->all());
         $m_user->t_steps()->save($t_steps);
         

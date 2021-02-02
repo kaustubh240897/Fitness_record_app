@@ -27,7 +27,7 @@ class t_StepsRequest extends FormRequest
             //
             
             'step_actual_datetime' => 'required',
-            'step_calc_datetime' => 'required',
+            //'step_calc_datetime' => 'required',
             'steps' => 'required|integer',
 
         ];
