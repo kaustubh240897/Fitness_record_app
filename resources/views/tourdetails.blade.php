@@ -447,7 +447,7 @@ else{
     div_textRight.className = "pl-3 w-25 text-left text-break";
     var div_dist_p = document.createElement("p");
     div_dist_p.className = "text-right dist_t_p";
-    div_dist_p.innerHTML = item["distance"].toString() + "km";
+    div_dist_p.innerHTML = ({{ $total }}-item["distance"]).toString() + "km";
     div_dist.appendChild(div_dist_p);
     if (i == 0) {
       if ({{ $total }}-item["distance"] < dist_walked) {
@@ -547,7 +547,7 @@ else{
         }
     }
     var div_textRight_p = document.createElement("p");
-    div_textRight_p.className = "py-0 my-0 pl-3 text-center dd";
+    div_textRight_p.className = "py-0 my-0 pl-3 text-center dd right_t";
     div_textRight_p.style.width = '20%';
     div_textRight_p.style.color = "#2b63c6";
     div_textRight_p.style.fontWeight = "bold";

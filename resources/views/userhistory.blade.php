@@ -502,6 +502,11 @@ var month_index = array_months.indexOf(selected);
 var year_index = array_years.indexOf(selectedyear);
 console.log("index",month_index);
 console.log("ind_year",year_index);
+if (month_index == -1) {
+  url = url.replace('year',selectedyear);
+  url = url.replace('month',array_months[array_months.length-1]);
+  document.location = url;
+}
 // var array_months = [01,02,03,04,05,06,07,08,09,10,11,12];
 console.log("yyy", array_years);
 console.log("mmm", array_months);
