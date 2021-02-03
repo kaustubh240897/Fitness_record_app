@@ -108,7 +108,7 @@
         <!-- <input id="strideinput" type="number"  name='stridelength' value="" class="d-none"> -->
         <div class="col-4 pl-2">
           <div class="d-flex flex-row">
-            <input id="strideinput" class="w-100" type="number" step="any" name='stridelength' value="76.5" min="45" max="85" onchange="strideChange()" required><span class=" pl-1  " style="background-color: #f2f4f6; margin-left:-20px;;">cm</span>
+            <input id="strideinput" class="w-100" type="number" step="any" name='stridelength' value="76.47" min="45" max="85" onchange="strideChange()" required><span class=" pl-1  " style="background-color: #f2f4f6; margin-left:-20px;;">cm</span>
           </div>
         </div>
         <!-- <p class="text-center" style="width: 22px; height: 22px;border-radius: 20px; border: 1px solid #2b63c6;"> <span class="pb-3">+</span> </p> -->
@@ -137,7 +137,7 @@
             <!-- <input id="daily_stepsInput" type="number"  name='dailygoal' value="" class="d-none"> -->
             <div class="col-4 pl-2">
               <div class="d-flex flex-row">
-                <input id="daily_stepsInput" class="w-100" type="number"  name='dailygoal' value="" min="0" max="100000" onchange="dailyStepsChange()" required><span class=" pl-1  " style="background-color: #f2f4f6; margin-left:-20px;;">歩</span>
+                <input id="daily_stepsInput" class="w-100" type="number"  name='dailygoal' value="8500" min="0" max="100000" onchange="dailyStepsChange()" required><span class=" pl-1  " style="background-color: #f2f4f6; margin-left:-20px;;">歩</span>
               </div>
             </div>
             <!-- <p class="text-center" style="width: 22px; height: 22px;border-radius: 20px; border: 1px solid #2b63c6;"> <span class="pb-3">+</span> </p> -->
@@ -146,7 +146,7 @@
           </div>
         </div>
         <div class="col-2 px-0 mx-0">
-          <p id="est_daily_dist" class="text-center" style="font-weight: bold; color: #2b63c6;">4.5 km</p>
+          <p id="est_daily_dist" class="text-center" style="font-weight: bold; color: #2b63c6;">6.5 km</p>
         </div>
       </div>
       <div id="dailySteps_error" class="box2 sb11 pl-2  flex-row justify-content-center d-none">
@@ -352,15 +352,15 @@
       cb2.checked = false;
 
       h_input.value = 170;
-      s_input.value = 76.5;
-      ds_input.value = 6000;
-      ds_1.value = 3.6;
-      ds_2.value = 3.6;
-      ds_3.value = 3.6;
-      ds_4.value = 3.6;
-      ds_5.value = 3.6;
-      ds_6.value = 3.6;
-      ds_7.value = 3.6;
+      s_input.value = 76.47;
+      ds_input.value = 8500;
+      ds_1.value = 6.5;
+      ds_2.value = 6.5;
+      ds_3.value = 6.5;
+      ds_4.value = 6.5;
+      ds_5.value = 6.5;
+      ds_6.value = 6.5;
+      ds_7.value = 6.5;
 
 
       function heightChange() {
