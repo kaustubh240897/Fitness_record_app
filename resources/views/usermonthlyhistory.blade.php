@@ -273,7 +273,9 @@
           dates[date].forEach((item, i) => {
             totalSteps += item["steps"];
             var datee = item["step_actual_datetime"];
-            d = new Date(datee);
+            var t = datee.split(/[- :]/);
+            var dt = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
+            d = new Date(dt);
           });
           console.log("date",d);
           console.log("day",d.getDate());
@@ -314,12 +316,12 @@
           if (totalSteps > goal) {
             tr.className = "comp";
             td1.className = "comp_td text-left";
-            td1.innerHTML = d.getMonth() + 1;
+            td1.innerHTML = (d.getMonth() + 1).toString();
             dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
             td2.innerHTML = totalSteps + " (" + dist_km.toFixed(2) +  " km)";
             td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="{{URL::asset('storage/history/co.svg')}}" alt="">';
           } else {
-            td1.innerHTML = d.getMonth() + 1;
+            td1.innerHTML = (d.getMonth() + 1).toString();
             dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
             td2.innerHTML = totalSteps + " (" + dist_km.toFixed(2) +  " km)";
             td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span>';
@@ -347,7 +349,9 @@
           dates[date].forEach((item, i) => {
             totalSteps += item["steps"];
             var datee = item["step_actual_datetime"];
-            d = new Date(datee);
+            var t = datee.split(/[- :]/);
+            var dt = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
+            d = new Date(dt);
           });
           console.log("date",d);
           console.log("day",d.getDate());
@@ -389,12 +393,12 @@
           if (totalSteps > goal) {
             tr.className = "comp";
             td1.className = "comp_td text-left";
-            td1.innerHTML = d.getMonth() + 1;
+            td1.innerHTML =(d.getMonth() + 1).toString();
             dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
             td2.innerHTML = totalSteps + " (" + dist_km.toFixed(2) +  " km)";
             td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="{{URL::asset('storage/history/co.svg')}}" alt="">';
           } else {
-            td1.innerHTML = d.getMonth() + 1;
+            td1.innerHTML = (d.getMonth() + 1).toString();
             dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
             td2.innerHTML = totalSteps + " (" + dist_km.toFixed(2) +  " km)";
             td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span>';
