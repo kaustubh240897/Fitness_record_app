@@ -192,6 +192,10 @@
     } else {
       nav_box2.style = "border-right: 2px solid #113a83";
     }
+
+    $(document).ready(function(){
+		  $('img').lazyload();
+	  });
   </script>
 
 </body>

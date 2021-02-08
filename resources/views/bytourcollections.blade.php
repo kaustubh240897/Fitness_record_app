@@ -182,7 +182,7 @@
 		</div>
 	</div>
 
-	<script type="text/javascript">
+<script type="text/javascript">
 	function navItemClick(id) {
     console.log(id);
   }
@@ -194,5 +194,8 @@
     } else {
       nav_box2.style = "border-right: 2px solid #113a83";
     }
-  </script>
+	$(document).ready(function(){
+		$('img').lazyload();
+	});
+</script>
 @endsection
