@@ -58,7 +58,7 @@
 						  <div class='row border py-2'>
 						    <div class='col-5' style='color: #2b63c6;'>{{ $current_tour->m_tours->tour_title }} </div><div class='col-6 c' style='color:grey;'>{{ $total }}Km &nbsp <i class="fa fa-angle-right" aria-hidden="true"></i> </div>
 						  </div>
-						  <div class='col-12 text-center mt-4'> <b class='color'>{{ $steps * $get_m_user_stride/100000 }}km/{{ $total }}km</b></div>
+						  <div class='col-12 text-center mt-4'> <b class='color'>{{ number_format($steps * $get_m_user_stride/100000,2,'.','') }}km/{{ $total }}km</b></div>
           	@endif
 				    </a>
           @else
