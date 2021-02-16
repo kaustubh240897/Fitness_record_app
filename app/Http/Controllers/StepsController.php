@@ -85,7 +85,7 @@ class StepsController extends Controller
     {
         \DB::transaction(function() use ($request){ 
         $m_user = m_Users::where('users_id', Auth::id())->first();
-        $lastSteps = t_Steps::where('m__users_id', $m_user->id)->orderBy('step_actual_datetime', 'DESC')->first();
+        $lastSteps = t_Steps::where('m__users_id', $m_user->id)->whereDate('step_actual_datetime', Carbon::parse($request->step_actual_datetime)->format('Y-m-d'))->orderBy('step_actual_datetime', 'DESC')->first();
         
 
         if($m_user->users_id != Auth::id()){
