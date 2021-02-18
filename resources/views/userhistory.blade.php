@@ -489,6 +489,7 @@ background-color: #113a83; color: #fff">
 
 
 var selected = {{$m}};
+console.log("m_m",{{$m}});
 //var tab_year = 2020;
 var selectedyear = {{$y}};
 var tab_yearly_selectedyear = 2021;
@@ -506,9 +507,22 @@ var month_index = array_months.indexOf(selected);
 var year_index = array_years.indexOf(selectedyear);
 console.log("index",month_index);
 console.log("ind_year",year_index);
-if (month_index == -1) {
+if (array_years.length == 0 || array_months.length == 0) {
+  var div_col = document.createElement("div");
+  div_col.className = "col";
+  var div_btn = document.createElement("button");
+  // <button id="12" onclick="myFunc(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">12</button>
+  div_btn.id = {{$m}};
+  div_btn.setAttribute('onclick', "getId(this.id)");
+  div_btn.className = "px-1 not_selected_month";
+  div_btn.style = "background-color:#fff;";
+  div_btn.innerHTML = {{$m}};
+  div_col.appendChild(div_btn);
+  monthsContainer.appendChild(div_col);
+  //document.location = url;
+} else if (month_index == -1) {
   url = url.replace('year',selectedyear);
-  url = url.replace('month',array_months[array_months.length-1]);
+  url = url.replace('month',array_months[array_months.length - 1]);
   document.location = url;
 }
 // var array_months = [01,02,03,04,05,06,07,08,09,10,11,12];
