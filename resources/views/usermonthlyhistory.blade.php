@@ -499,6 +499,19 @@
   var year_index = array_years.indexOf(tab_yearly_selectedyear);
   console.log("month_index", month_index);
   console.log("year_index", year_index);
+  if (array_years.length == 0) {
+    var div_col = document.createElement("div");
+    div_col.className = "col";
+    var div_btn = document.createElement("button");
+    // <button id="12" onclick="myFunc(this.id);" class="px-1 not_selected_month" style="background-color:#fff;">12</button>
+    div_btn.id = {{$y}};
+    div_btn.setAttribute('onclick', "getId(this.id)");
+    div_btn.className = "px-1 not_selected_month";
+    div_btn.style = "background-color:#fff;";
+    div_btn.innerHTML = {{$y}};
+    div_col.appendChild(div_btn);
+    yearsContainer.appendChild(div_col);
+  }
   for (var i = 0; i < array_years.length ; i++) {
     var div_col = document.createElement("div");
     div_col.className = "col";
