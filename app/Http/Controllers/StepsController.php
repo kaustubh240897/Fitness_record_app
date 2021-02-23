@@ -97,20 +97,23 @@ class StepsController extends Controller
         if(! empty($lastSteps)){
             $todayTotalSteps = t_Steps::where('m__users_id', $m_user->id)->whereDate('step_actual_datetime', Carbon::parse($lastSteps->step_actual_datetime)->format('Y-m-d'))->get()->sum('steps');
             if(Carbon::parse($request->step_actual_datetime)->format('Y-m-d') == Carbon::parse($lastSteps->step_actual_datetime)->format('Y-m-d')){
-                if($request->steps >= $todayTotalSteps){
+                if($request->steps > $todayTotalSteps){
                     $request['steps'] =  $request->steps - $todayTotalSteps;
+                    $request['step_calc_datetime'] = Carbon::now()->toDateTimeString();
+                    $t_steps = new t_Steps($request->all());
+                    $m_user->t_steps()->save($t_steps);
                 }
                 else{
                     $request['steps'] = 0;
                 }
             }
         }
-        $request['step_calc_datetime'] = Carbon::now()->toDateTimeString();
-        $t_steps = new t_Steps($request->all());
-        $m_user->t_steps()->save($t_steps);
-        
-       
-         
+        else{
+            $request['step_calc_datetime'] = Carbon::now()->toDateTimeString();
+            $t_steps = new t_Steps($request->all());
+            $m_user->t_steps()->save($t_steps);
+
+        }
     
         
         $currentTime = Carbon::now();
