@@ -115,6 +115,10 @@ class StepsController extends Controller
                 $m_user->t_steps()->save($t_steps);
 
             //}
+            return response([
+                'data' => new t_StepsResource($t_steps)
+
+            ],Response::HTTP_CREATED);
         
             
             $currentTime = Carbon::now();
@@ -219,10 +223,7 @@ class StepsController extends Controller
             }
             \DB::commit();
 
-            return response([
-                'data' => new t_StepsResource($t_steps)
-
-            ],Response::HTTP_CREATED);
+            
         }
         catch(\Exception $e) { 
 
