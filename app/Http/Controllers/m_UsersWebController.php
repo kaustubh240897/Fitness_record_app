@@ -359,7 +359,7 @@ class m_UsersWebController extends Controller
             return view('myPage', compact('device','today_data','m__users_id','m__users','get_m_user_monthly_goal','current_month_steps','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','session_value','checkpoints','checkpointsr','total','current_week_datas','steps_week','unseen_collection','checkpoint_collection_id'));
         }
         else{
-            $today_data = null;
+            $today_data = 0;
             $get_m_user_stride = null;
             $get_m_user_daily_goal = null;
             $get_m_user_monthly_goal = null;
@@ -507,7 +507,7 @@ class m_UsersWebController extends Controller
             return view('padometerscreen', compact('year', 'day', 'month','device','m__users','today_data','m__users_id','current_month_steps','get_m_user_monthly_goal','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','total','current_week_datas','steps_week','unseen_collection'));
         }
         else{
-            $today_data = null;
+            $today_data = 0;
             $day = date('d');
             $month = date('m');
             $year = date('Y');
