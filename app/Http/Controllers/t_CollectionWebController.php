@@ -8,6 +8,7 @@ use App\m_Users;
 use App\t_Steps;
 use App\t_Collection;
 use App\m_Collection;
+Use \Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -255,7 +256,7 @@ class t_CollectionWebController extends Controller
                 foreach($totalsteps_alldates_list as $totalstep_alldate_list){
                   $user_tour_steps += $totalstep_alldate_list;
                 }
-                
+
                 $user_stride = $m__users->stride;
 
             }
