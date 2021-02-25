@@ -237,7 +237,25 @@ class t_CollectionWebController extends Controller
             else{ 
                 $session_value = $get_t_tour->direction;
                 $step_start_datetime = $get_t_tour->start_datetime;
-                $user_tour_steps = t_Steps::where('m__users_id',$m__user_id)->where('step_actual_datetime', '>=', $step_start_datetime)->get()->sum('steps');
+                //$user_tour_steps = t_Steps::where('m__users_id',$m__user_id)->where('step_actual_datetime', '>=', $step_start_datetime)->get()->sum('steps');
+                $user_tour_all_steps = t_Steps::where('m__users_id',$m__user_id)->where('step_actual_datetime', '>=', $step_start_datetime)->get()->groupBy(function($date) {
+                    return Carbon::parse($date->step_actual_datetime)->toDateString(); // grouping by dates
+                });
+                
+                $totalsteps_alldates_list = [];
+                foreach($user_tour_all_steps as $user_tour_step){
+                    $total_step_ondate = [];
+                    $ss = $user_tour_step;
+                    foreach($ss as $s){
+                        $total_step_ondate[] = $s->steps;
+                    }
+                    $totalsteps_alldates_list[] = max($total_step_ondate);
+                }
+                $user_tour_steps = 0;
+                foreach($totalsteps_alldates_list as $totalstep_alldate_list){
+                  $user_tour_steps += $totalstep_alldate_list;
+                }
+                
                 $user_stride = $m__users->stride;
 
             }

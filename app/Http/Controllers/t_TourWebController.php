@@ -58,7 +58,25 @@ class t_TourWebController extends Controller
                     }
                 
                 if($get_t_tour !=null){
-                    $steps = t_Steps::where('m__users_id',$m__users_id)->where('step_actual_datetime', '>=', $step_start_datetime)->get()->sum('steps');
+                    //$steps = t_Steps::where('m__users_id',$m__users_id)->where('step_actual_datetime', '>=', $step_start_datetime)->get()->sum('steps');
+                    $user_tour_all_steps = t_Steps::where('m__users_id',$m__users_id)->where('step_actual_datetime', '>=', $step_start_datetime)->get()->groupBy(function($date) {
+                        return Carbon::parse($date->step_actual_datetime)->toDateString(); // grouping by dates
+                    });
+                    
+                    $totalsteps_alldates_list = [];
+                    foreach($user_tour_all_steps as $user_tour_step){
+                        $total_step_ondate = [];
+                        $qq = $user_tour_step;
+                        foreach($qq as $q){
+                            $total_step_ondate[] = $q->steps;
+                        }
+                        $totalsteps_alldates_list[] = max($total_step_ondate);
+                    }
+                    $steps = 0;
+                    foreach($totalsteps_alldates_list as $totalstep_alldate_list){
+                      $steps += $totalstep_alldate_list;
+                    }
+
                 }
                 else{
                     $steps = 0;
@@ -222,7 +240,25 @@ class t_TourWebController extends Controller
                 }
                 //$value = $request->session()->get('reverse','false');
                 if($get_t_tour !=null){
-                    $steps = t_Steps::where('m__users_id',$m__users_id)->where('step_actual_datetime', '>=', $tour_datetime)->get()->sum('steps');
+                    //$steps = t_Steps::where('m__users_id',$m__users_id)->where('step_actual_datetime', '>=', $tour_datetime)->get()->sum('steps');
+                    $user_tour_all_steps = t_Steps::where('m__users_id',$m__users_id)->where('step_actual_datetime', '>=', $tour_datetime)->get()->groupBy(function($date) {
+                        return Carbon::parse($date->step_actual_datetime)->toDateString(); // grouping by dates
+                    });
+                    
+                    $totalsteps_alldates_list = [];
+                    foreach($user_tour_all_steps as $user_tour_step){
+                        $total_step_ondate = [];
+                        $qq = $user_tour_step;
+                        foreach($qq as $q){
+                            $total_step_ondate[] = $q->steps;
+                        }
+                        $totalsteps_alldates_list[] = max($total_step_ondate);
+                    }
+                    $steps = 0;
+                    foreach($totalsteps_alldates_list as $totalstep_alldate_list){
+                      $steps += $totalstep_alldate_list;
+                    }
+
                 }
                 else{
                     $steps = 0;
@@ -265,7 +301,25 @@ class t_TourWebController extends Controller
             else{ 
                 $session_value = $current_tour->direction;
                 $step_start_datetime = $current_tour->start_datetime;
-                $user_tour_steps = t_Steps::where('m__users_id',$m__user->id)->where('step_actual_datetime', '>=', $step_start_datetime)->get()->sum('steps');
+                //$user_tour_steps = t_Steps::where('m__users_id',$m__user->id)->where('step_actual_datetime', '>=', $step_start_datetime)->get()->sum('steps');
+                $user_tour_all_steps = t_Steps::where('m__users_id',$m__user->id)->where('step_actual_datetime', '>=', $step_start_datetime)->get()->groupBy(function($date) {
+                    return Carbon::parse($date->step_actual_datetime)->toDateString(); // grouping by dates
+                });
+                
+                $totalsteps_alldates_list = [];
+                foreach($user_tour_all_steps as $user_tour_step){
+                    $total_step_ondate = [];
+                    $ss = $user_tour_step;
+                    foreach($ss as $s){
+                        $total_step_ondate[] = $s->steps;
+                    }
+                    $totalsteps_alldates_list[] = max($total_step_ondate);
+                }
+                $user_tour_steps = 0;
+                foreach($totalsteps_alldates_list as $totalstep_alldate_list){
+                  $user_tour_steps += $totalstep_alldate_list;
+                }
+                
                 $user_stride = $m__user->stride;
             }
 

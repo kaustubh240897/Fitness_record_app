@@ -96,18 +96,17 @@ class StepsController extends Controller
                 return response()->json(["message" => "Record not found"], 404);
             }
             if(! empty($lastSteps)){
-                $todayTotalSteps = t_Steps::where('m__users_id', $m_user->id)->whereDate('step_actual_datetime', Carbon::parse($lastSteps->step_actual_datetime)->format('Y-m-d'))->get()->sum('steps');
-                if(Carbon::parse($request->step_actual_datetime)->format('Y-m-d') == Carbon::parse($lastSteps->step_actual_datetime)->format('Y-m-d')){
-                    if($request->steps > $todayTotalSteps){
-                        $request['steps'] =  $request->steps - $todayTotalSteps;
-                        $request['step_calc_datetime'] = Carbon::now()->toDateTimeString();
-                        $t_steps = new t_Steps($request->all());
-                        $m_user->t_steps()->save($t_steps);
-                    }
-                    else{
-                        $request['steps'] = 0;
-                    }
+                $todayTotalSteps = t_Steps::where('m__users_id', $m_user->id)->whereDate('step_actual_datetime', Carbon::parse($lastSteps->step_actual_datetime)->format('Y-m-d'))->get()->max('steps');
+                if($request->steps > $todayTotalSteps){
+                    $request['steps'] =  $request->steps;
+                    $request['step_calc_datetime'] = Carbon::now()->toDateTimeString();
+                    $t_steps = new t_Steps($request->all());
+                    $m_user->t_steps()->save($t_steps);
                 }
+                else{
+                    $request['steps'] = 0;
+                }
+            
             }
             else{
                 $request['step_calc_datetime'] = Carbon::now()->toDateTimeString();
@@ -136,7 +135,25 @@ class StepsController extends Controller
                         $total = $checkpoint->distance;
                         }
                     }
-                $allsteps = t_Steps::where('m__users_id', $m__user_id)->where('step_actual_datetime', '>=', $tour_datetime)->get()->sum('steps');
+                //$allsteps = t_Steps::where('m__users_id', $m__user_id)->where('step_actual_datetime', '>=', $tour_datetime)->get()->sum('steps');
+                $user_tour_all_steps = t_Steps::where('m__users_id',$m__user_id)->where('step_actual_datetime', '>=', $tour_datetime)->get()->groupBy(function($date) {
+                    return Carbon::parse($date->step_actual_datetime)->toDateString(); // grouping by dates
+                });
+                
+                $totalsteps_alldates_list = [];
+                foreach($user_tour_all_steps as $user_tour_step){
+                    $total_step_ondate = [];
+                    $ss = $user_tour_step;
+                    foreach($ss as $s){
+                        $total_step_ondate[] = $s->steps;
+                    }
+                    $totalsteps_alldates_list[] = max($total_step_ondate);
+                }
+                $allsteps = 0;
+                foreach($totalsteps_alldates_list as $totalstep_alldate_list){
+                  $allsteps += $totalstep_alldate_list;
+                }
+
 
                 $distanceCovered = $allsteps * $user_stride/100000 ;
                 if($distanceCovered >= $total){

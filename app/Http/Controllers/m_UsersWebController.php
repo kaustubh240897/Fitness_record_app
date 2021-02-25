@@ -210,7 +210,7 @@ class m_UsersWebController extends Controller
             $day = $request->get('day');
             $month = $request->get('month');
             $search = $year."-".$month."-".$day;
-            $search_data = t_Steps::where('m__users_id', $m__users_id)->whereDate('step_actual_datetime', $search)->get()->sum('steps');
+            $search_data = t_Steps::where('m__users_id', $m__users_id)->whereDate('step_actual_datetime', $search)->get()->max('steps');
             $get_m_user_stride = $m_users->stride;
             $get_m_user_daily_goal = $m_users->step_goal_per_day;
             $unseen_collection = t_Collection::where('m__users_id', $m__users_id)->where('new_display_flag', 0)->count();
@@ -233,8 +233,25 @@ class m_UsersWebController extends Controller
             $m__users = m_Users::where('users_id',Auth::id())->first();
             $m__users_id = $m__users->id;
             $unseen_collection = t_Collection::where('m__users_id', $m__users_id)->where('new_display_flag', 0)->count();
-            $today_data = t_Steps::where('m__users_id', $m__users_id)->whereDate('step_actual_datetime', Carbon::now()->toDateString())->get()->sum('steps');
-            $current_month_steps = t_Steps::where('m__users_id', $m__users_id)->whereBetween('step_actual_datetime', [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])->orderBy('step_actual_datetime')->get()->sum('steps');
+            $today_data = t_Steps::where('m__users_id', $m__users_id)->whereDate('step_actual_datetime', Carbon::now()->toDateString())->get()->max('steps');
+            $current_month_steps_list = t_Steps::where('m__users_id', $m__users_id)->whereBetween('step_actual_datetime', [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])->orderBy('step_actual_datetime')->get()->groupBy(function($date) {
+                return Carbon::parse($date->step_actual_datetime)->toDateString(); // grouping by dates
+            });
+
+            $totalmonthsteps_alldates_list = [];
+            foreach($current_month_steps_list as $user_currentmonth_step){
+                $total_step_ondate = [];
+                $ss = $user_currentmonth_step;
+                foreach($ss as $s){
+                    $total_step_ondate[] = $s->steps;
+                }
+                $totalmonthsteps_alldates_list[] = max($total_step_ondate);
+            }
+            $current_month_steps = 0;
+            foreach($totalmonthsteps_alldates_list as $totalmonthstep_alldate_list){
+                $current_month_steps += $totalmonthstep_alldate_list;
+            }
+
             $current_week_datas = t_Steps::where('m__users_id', $m__users_id)->whereBetween('step_actual_datetime', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->get()->groupBy(function ($val) {
                 return Carbon::parse($val->step_actual_datetime)->format('d');
             });
@@ -308,7 +325,25 @@ class m_UsersWebController extends Controller
                     }
 
 
-                $steps = t_Steps::where('m__users_id',$m__users_id)->where('step_actual_datetime', '>=', $step_start_datetime)->get()->sum('steps');
+                //$steps = t_Steps::where('m__users_id',$m__users_id)->where('step_actual_datetime', '>=', $step_start_datetime)->get()->sum('steps');
+                $user_tour_all_steps = t_Steps::where('m__users_id',$m__users_id)->where('step_actual_datetime', '>=', $step_start_datetime)->get()->groupBy(function($date) {
+                    return Carbon::parse($date->step_actual_datetime)->toDateString(); // grouping by dates
+                });
+                
+                $totalsteps_alldates_list = [];
+                foreach($user_tour_all_steps as $user_tour_step){
+                    $total_step_ondate = [];
+                    $qq = $user_tour_step;
+                    foreach($qq as $q){
+                        $total_step_ondate[] = $q->steps;
+                    }
+                    $totalsteps_alldates_list[] = max($total_step_ondate);
+                }
+                $steps = 0;
+                foreach($totalsteps_alldates_list as $totalstep_alldate_list){
+                  $steps += $totalstep_alldate_list;
+                }
+
 
             }
             else{
@@ -374,8 +409,29 @@ class m_UsersWebController extends Controller
             $m__users = m_Users::where('users_id',Auth::id())->first();
             $m__users_id = $m__users->id;
             $unseen_collection = t_Collection::where('m__users_id', $m__users_id)->where('new_display_flag', 0)->count();
-            $today_data = t_Steps::where('m__users_id', $m__users_id)->whereDate('step_actual_datetime', Carbon::now()->toDateString())->get()->sum('steps');
-            $current_month_steps = t_Steps::where('m__users_id', $m__users_id)->whereBetween('step_actual_datetime', [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])->orderBy('step_actual_datetime')->get()->sum('steps');
+            $today_data = t_Steps::where('m__users_id', $m__users_id)->whereDate('step_actual_datetime', Carbon::now()->toDateString())->get()->max('steps');
+            //$current_month_steps = t_Steps::where('m__users_id', $m__users_id)->whereBetween('step_actual_datetime', [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])->orderBy('step_actual_datetime')->get()->sum('steps');
+            $current_month_steps_list = t_Steps::where('m__users_id', $m__users_id)->whereBetween('step_actual_datetime', [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])->orderBy('step_actual_datetime')->get()->groupBy(function($date) {
+                return Carbon::parse($date->step_actual_datetime)->toDateString(); // grouping by dates
+            });
+
+            $totalmonthsteps_alldates_list = [];
+            foreach($current_month_steps_list as $user_currentmonth_step){
+                $total_step_ondate = [];
+                $ss = $user_currentmonth_step;
+                foreach($ss as $s){
+                    $total_step_ondate[] = $s->steps;
+                }
+                $totalmonthsteps_alldates_list[] = max($total_step_ondate);
+            }
+            $current_month_steps = 0;
+            foreach($totalmonthsteps_alldates_list as $totalmonthstep_alldate_list){
+                $current_month_steps += $totalmonthstep_alldate_list;
+            }
+
+
+
+
             $current_week_datas = t_Steps::where('m__users_id', $m__users_id)->whereBetween('step_actual_datetime', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->get()->groupBy(function ($val) {
                 return Carbon::parse($val->step_actual_datetime)->format('d');
             });
@@ -421,7 +477,25 @@ class m_UsersWebController extends Controller
                             }
                     }
                 }
-                $steps = t_Steps::where('m__users_id',$m__users_id)->where('step_actual_datetime', '>=', $step_start_datetime)->get()->sum('steps');
+                //$steps = t_Steps::where('m__users_id',$m__users_id)->where('step_actual_datetime', '>=', $step_start_datetime)->get()->sum('steps');
+                $user_tour_all_steps = t_Steps::where('m__users_id',$m__users_id)->where('step_actual_datetime', '>=', $step_start_datetime)->get()->groupBy(function($date) {
+                    return Carbon::parse($date->step_actual_datetime)->toDateString(); // grouping by dates
+                });
+                
+                $totalsteps_alldates_list = [];
+                foreach($user_tour_all_steps as $user_tour_step){
+                    $total_step_ondate = [];
+                    $qq = $user_tour_step;
+                    foreach($qq as $q){
+                        $total_step_ondate[] = $q->steps;
+                    }
+                    $totalsteps_alldates_list[] = max($total_step_ondate);
+                }
+                $steps = 0;
+                foreach($totalsteps_alldates_list as $totalstep_alldate_list){
+                  $steps += $totalstep_alldate_list;
+                }
+
             }
             else{
                 $steps = 0;
@@ -722,7 +796,25 @@ class m_UsersWebController extends Controller
                 $tour_datetime = $t_tour->created_at->toDateTimeString();
             }
             if($t_tour !=null){
-                $steps = t_Steps::where('m__users_id',$m_users->id)->where('step_actual_datetime', '>=', $tour_datetime)->get()->sum('steps');
+                //$steps = t_Steps::where('m__users_id',$m_users->id)->where('step_actual_datetime', '>=', $tour_datetime)->get()->sum('steps');
+                $user_tour_all_steps = t_Steps::where('m__users_id',$m_users->id)->where('step_actual_datetime', '>=', $tour_datetime)->get()->groupBy(function($date) {
+                    return Carbon::parse($date->step_actual_datetime)->toDateString(); // grouping by dates
+                });
+                
+                $totalsteps_alldates_list = [];
+                foreach($user_tour_all_steps as $user_tour_step){
+                    $total_step_ondate = [];
+                    $qq = $user_tour_step;
+                    foreach($qq as $q){
+                        $total_step_ondate[] = $q->steps;
+                    }
+                    $totalsteps_alldates_list[] = max($total_step_ondate);
+                }
+                $steps = 0;
+                foreach($totalsteps_alldates_list as $totalstep_alldate_list){
+                  $steps += $totalstep_alldate_list;
+                }
+
             }
             else{
                 $steps = 0;
