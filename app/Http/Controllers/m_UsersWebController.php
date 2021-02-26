@@ -133,6 +133,14 @@ class m_UsersWebController extends Controller
             ->get()->groupBy(function ($val) {
                 return Carbon::parse($val->step_actual_datetime)->format('m');
             });
+            $datewise_monthdata = [];
+            foreach($months as $month){
+                $month_data = $month->groupBy(function ($val) {
+                return Carbon::parse($val->step_actual_datetime)->toDateString();
+            });
+            $datewise_monthdata[] = $month_data;
+
+            }
 
             $years = t_Steps::where('m__users_id', $m__users_id)->get()->groupBy(function ($val) {
                 return Carbon::parse($val->step_actual_datetime)->format('Y');
@@ -147,17 +155,18 @@ class m_UsersWebController extends Controller
             $unseen_collection = t_Collection::where('m__users_id', $m__users_id)->where('new_display_flag', 0)->count();
 
 
-            return view('usermonthlyhistory', compact('get_m_user_stride','get_m_user_monthly_goal','months','reverse','y','unseen_collection','years'));
+            return view('usermonthlyhistory', compact('get_m_user_stride','get_m_user_monthly_goal','months','reverse','y','unseen_collection','years','datewise_monthdata'));
         }
         else{
             $months = null;
+            $datewise_monthdata = null;
             $get_m_user_stride  = null;
             $get_m_user_monthly_goal  = null;
             $reverse  = 0;
             $y = null;
             $years = null;
             $unseen_collection = 0;
-            return view('usermonthlyhistory', compact('get_m_user_stride','get_m_user_monthly_goal','months','reverse','y','unseen_collection','years'));
+            return view('usermonthlyhistory', compact('get_m_user_stride','get_m_user_monthly_goal','months','reverse','y','unseen_collection','years','datewise_monthdata'));
 
         }
 
@@ -171,6 +180,14 @@ class m_UsersWebController extends Controller
             ->get()->groupBy(function ($val) {
                 return Carbon::parse($val->step_actual_datetime)->format('m');
             });
+            $datewise_monthdata = [];
+            foreach($months as $month){
+                $month_data = $month->groupBy(function ($val) {
+                return Carbon::parse($val->step_actual_datetime)->toDateString();
+            });
+            $datewise_monthdata[] = $month_data;
+
+            }
 
             $years = t_Steps::where('m__users_id', $m__users_id)->get()->groupBy(function ($val) {
                 return Carbon::parse($val->step_actual_datetime)->format('Y');
@@ -185,18 +202,19 @@ class m_UsersWebController extends Controller
             $unseen_collection = t_Collection::where('m__users_id', $m__users_id)->where('new_display_flag', 0)->count();
 
 
-            return view('usermonthlyhistory', compact('get_m_user_stride','get_m_user_monthly_goal','months','reverse','y','unseen_collection','years'));
+            return view('usermonthlyhistory', compact('get_m_user_stride','get_m_user_monthly_goal','months','reverse','y','unseen_collection','years','datewise_monthdata'));
          }
          else{
             $current_month_datas = null;
             $get_m_user_stride  = null;
+            $datewise_monthdata = null;
             $get_m_user_monthly_goal  = null;
             $months = null;
             $reverse = 1;
             $y = null;
             $years = null;
             $unseen_collection = 0;
-            return view('usermonthlyhistory', compact('current_month_datas','get_m_user_stride','get_m_user_monthly_goal','months','reverse','y','unseen_collection','years'));
+            return view('usermonthlyhistory', compact('current_month_datas','get_m_user_stride','get_m_user_monthly_goal','months','reverse','y','unseen_collection','years','datewise_monthdata'));
 
          }
 
