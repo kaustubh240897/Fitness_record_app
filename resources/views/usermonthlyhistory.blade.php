@@ -244,21 +244,20 @@
     }
     </script>
     <script type="text/javascript">
-
+    console.log("new_md", {!! json_encode($datewise_monthdata) !!});
     var is_rev = {{$reverse}};
     console.log(is_rev);
     var table_body = document.getElementById("yearly_table");
     var goal = {{$get_m_user_monthly_goal}};
     console.log(goal);
     var dist_km = 0;
-    var dates = {!! json_encode($months) !!};
+    //var dates = {!! json_encode($months) !!};
+    var dates = {!! json_encode($datewise_monthdata) !!};
+    console.log("key_len",dates.length);
     if (Object.keys(dates).length > 0) {
-      if (is_rev == 1) {
-        var totalDays = daysInThisMonth();
-        console.log(totalDays);
-        Object.keys(dates).reverse().forEach((date, i) => {
-          console.log("ddd",date);
-          var day_symbol = "(曜)";
+      if (is_rev == 0) {
+        dates.reverse().forEach((item1, i) => {
+          console.log("it1",item1);
           var td1 = document.createElement("td");
           td1.className = "incomp_td text-left";
           var td2 = document.createElement("td");
@@ -270,71 +269,120 @@
           var tr = document.createElement("tr");
           var totalSteps = 0;
           var d = new Date();
-          dates[date].forEach((item, i) => {
-            totalSteps += item["steps"];
-            var datee = item["step_actual_datetime"];
-            var t = datee.split(/[- :]/);
-            var dt = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
-            d = new Date(dt);
+          Object.keys(item1).forEach((item2, i) => {
+            console.log("it2", item2);
+            //console.log("it3",item1[item2]);
+            var maxSteps = 0;
+            item1[item2].forEach((item3, i) => {
+              console.log("it4",item3["steps"]);
+              var datee = item3["step_actual_datetime"];
+              var t = datee.split(/[- :]/);
+              var dt = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
+              d = new Date(dt);
+              if (item3["steps"] >= maxSteps) {
+                maxSteps = item3["steps"];
+              }
+            });
+            totalSteps += maxSteps;
+            if (totalSteps > goal) {
+              tr.className = "comp";
+              td1.className = "comp_td text-left";
+              td1.innerHTML =(d.getMonth() + 1).toString();
+              dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
+              td2.innerHTML = totalSteps + " (" + dist_km.toFixed(2) +  " km)";
+              td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="{{URL::asset('storage/history/co.svg')}}" alt="">';
+            } else {
+              td1.innerHTML = (d.getMonth() + 1).toString();
+              dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
+              td2.innerHTML = totalSteps + " (" + dist_km.toFixed(2) +  " km)";
+              td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span>';
+            }
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            table_body.appendChild(tr);
           });
-          console.log("date",d);
-          console.log("day",d.getDate());
-          console.log("day_name",d.getDay());
-          console.log(totalSteps);
-          // switch (d.getDay()) {
-          //   case 0:
-          //     day_symbol = " (月)";
-          //     console.log(day_symbol);
-          //     break;
-          //   case 1:
-          //     day_symbol = " (火)";
-          //     console.log(day_symbol);
-          //     break;
-          //   case 2:
-          //     day_symbol = " (水)";
-          //     console.log(day_symbol);
-          //     break;
-          //   case 3:
-          //     day_symbol = " (木)";
-          //     console.log(day_symbol);
-          //     break;
-          //   case 4:
-          //     day_symbol = " (金)";
-          //     console.log(day_symbol);
-          //     break;
-          //   case 5:
-          //     day_symbol = " (土)";
-          //     console.log(day_symbol);
-          //     break;
-          //   case 6:
-          //     day_symbol = " (日)";
-          //     console.log(day_symbol);
-          //     break;
-          //   default:
-          //
-          // }
-          if (totalSteps > goal) {
-            tr.className = "comp";
-            td1.className = "comp_td text-left";
-            td1.innerHTML = (d.getMonth() + 1).toString();
-            dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
-            td2.innerHTML = totalSteps + " (" + dist_km.toFixed(2) +  " km)";
-            td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="{{URL::asset('storage/history/co.svg')}}" alt="">';
-          } else {
-            td1.innerHTML = (d.getMonth() + 1).toString();
-            dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
-            td2.innerHTML = totalSteps + " (" + dist_km.toFixed(2) +  " km)";
-            td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span>';
-          }
-          tr.appendChild(td1);
-          tr.appendChild(td2);
-          tr.appendChild(td3);
-          table_body.appendChild(tr);
         });
+        // var totalDays = daysInThisMonth();
+        // console.log(totalDays);
+        // Object.keys(dates).reverse().forEach((date, i) => {
+        //   console.log("ddd",date);
+        //   var day_symbol = "(曜)";
+        //   var td1 = document.createElement("td");
+        //   td1.className = "incomp_td text-left";
+        //   var td2 = document.createElement("td");
+        //   td2.className = "text-center";
+        //   td2.style.color = "#2b63c6";
+        //   var td3 = document.createElement("td");
+        //   td3.className = "text-center";
+        //   td3.style.color = "#2b63c6";
+        //   var tr = document.createElement("tr");
+        //   var totalSteps = 0;
+        //   var d = new Date();
+        //   // dates[date].forEach((item, i) => {
+        //   //   totalSteps += item["steps"];
+        //   //   var datee = item["step_actual_datetime"];
+        //   //   var t = datee.split(/[- :]/);
+        //   //   var dt = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
+        //   //   d = new Date(dt);
+        //   // });
+        //   console.log("date",d);
+        //   console.log("day",d.getDate());
+        //   console.log("day_name",d.getDay());
+        //   console.log(totalSteps);
+        //   // switch (d.getDay()) {
+        //   //   case 0:
+        //   //     day_symbol = " (月)";
+        //   //     console.log(day_symbol);
+        //   //     break;
+        //   //   case 1:
+        //   //     day_symbol = " (火)";
+        //   //     console.log(day_symbol);
+        //   //     break;
+        //   //   case 2:
+        //   //     day_symbol = " (水)";
+        //   //     console.log(day_symbol);
+        //   //     break;
+        //   //   case 3:
+        //   //     day_symbol = " (木)";
+        //   //     console.log(day_symbol);
+        //   //     break;
+        //   //   case 4:
+        //   //     day_symbol = " (金)";
+        //   //     console.log(day_symbol);
+        //   //     break;
+        //   //   case 5:
+        //   //     day_symbol = " (土)";
+        //   //     console.log(day_symbol);
+        //   //     break;
+        //   //   case 6:
+        //   //     day_symbol = " (日)";
+        //   //     console.log(day_symbol);
+        //   //     break;
+        //   //   default:
+        //   //
+        //   // }
+        //   if (totalSteps > goal) {
+        //     tr.className = "comp";
+        //     td1.className = "comp_td text-left";
+        //     td1.innerHTML = (d.getMonth() + 1).toString();
+        //     dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
+        //     td2.innerHTML = totalSteps + " (" + dist_km.toFixed(2) +  " km)";
+        //     td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="{{URL::asset('storage/history/co.svg')}}" alt="">';
+        //   } else {
+        //     td1.innerHTML = (d.getMonth() + 1).toString();
+        //     dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
+        //     td2.innerHTML = totalSteps + " (" + dist_km.toFixed(2) +  " km)";
+        //     td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span>';
+        //   }
+        //   tr.appendChild(td1);
+        //   tr.appendChild(td2);
+        //   tr.appendChild(td3);
+        //   table_body.appendChild(tr);
+        // });
       } else {
-        Object.keys(dates).forEach((date, i) => {
-          console.log("ddd",date);
-          var day_symbol = "(曜)";
+        dates.forEach((item1, i) => {
+          console.log("it1",item1);
           var td1 = document.createElement("td");
           td1.className = "incomp_td text-left";
           var td2 = document.createElement("td");
@@ -346,68 +394,118 @@
           var tr = document.createElement("tr");
           var totalSteps = 0;
           var d = new Date();
-          dates[date].forEach((item, i) => {
-            totalSteps += item["steps"];
-            var datee = item["step_actual_datetime"];
-            var t = datee.split(/[- :]/);
-            var dt = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
-            d = new Date(dt);
+          Object.keys(item1).forEach((item2, i) => {
+            console.log("it2", item2);
+            //console.log("it3",item1[item2]);
+            var maxSteps = 0;
+            item1[item2].forEach((item3, i) => {
+              console.log("it4",item3["steps"]);
+              var datee = item3["step_actual_datetime"];
+              var t = datee.split(/[- :]/);
+              var dt = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
+              d = new Date(dt);
+              if (item3["steps"] >= maxSteps) {
+                maxSteps = item3["steps"];
+              }
+            });
+            totalSteps += maxSteps;
+            if (totalSteps > goal) {
+              tr.className = "comp";
+              td1.className = "comp_td text-left";
+              td1.innerHTML =(d.getMonth() + 1).toString();
+              dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
+              td2.innerHTML = totalSteps + " (" + dist_km.toFixed(2) +  " km)";
+              td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="{{URL::asset('storage/history/co.svg')}}" alt="">';
+            } else {
+              td1.innerHTML = (d.getMonth() + 1).toString();
+              dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
+              td2.innerHTML = totalSteps + " (" + dist_km.toFixed(2) +  " km)";
+              td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span>';
+            }
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            table_body.appendChild(tr);
           });
-          console.log("date",d);
-          console.log("day",d.getDate());
-          console.log("day_name",d.getDay());
-          console.log("mon", d.getMonth());
-          console.log(totalSteps);
-          // switch (d.getDay()) {
-          //   case 0:
-          //     day_symbol = " (月)";
-          //     console.log(day_symbol);
-          //     break;
-          //   case 1:
-          //     day_symbol = " (火)";
-          //     console.log(day_symbol);
-          //     break;
-          //   case 2:
-          //     day_symbol = " (水)";
-          //     console.log(day_symbol);
-          //     break;
-          //   case 3:
-          //     day_symbol = " (木)";
-          //     console.log(day_symbol);
-          //     break;
-          //   case 4:
-          //     day_symbol = " (金)";
-          //     console.log(day_symbol);
-          //     break;
-          //   case 5:
-          //     day_symbol = " (土)";
-          //     console.log(day_symbol);
-          //     break;
-          //   case 6:
-          //     day_symbol = " (日)";
-          //     console.log(day_symbol);
-          //     break;
-          //   default:
-          //
-          // }
-          if (totalSteps > goal) {
-            tr.className = "comp";
-            td1.className = "comp_td text-left";
-            td1.innerHTML =(d.getMonth() + 1).toString();
-            dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
-            td2.innerHTML = totalSteps + " (" + dist_km.toFixed(2) +  " km)";
-            td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="{{URL::asset('storage/history/co.svg')}}" alt="">';
-          } else {
-            td1.innerHTML = (d.getMonth() + 1).toString();
-            dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
-            td2.innerHTML = totalSteps + " (" + dist_km.toFixed(2) +  " km)";
-            td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span>';
-          }
-          tr.appendChild(td1);
-          tr.appendChild(td2);
-          tr.appendChild(td3);
-          table_body.appendChild(tr);
+
         });
+
+        // Object.keys(dates).forEach((date, i) => {
+        //   console.log("ddd",date);
+        //   var day_symbol = "(曜)";
+        //   var td1 = document.createElement("td");
+        //   td1.className = "incomp_td text-left";
+        //   var td2 = document.createElement("td");
+        //   td2.className = "text-center";
+        //   td2.style.color = "#2b63c6";
+        //   var td3 = document.createElement("td");
+        //   td3.className = "text-center";
+        //   td3.style.color = "#2b63c6";
+        //   var tr = document.createElement("tr");
+        //   var totalSteps = 0;
+        //   var d = new Date();
+        //   // dates[date].forEach((item, i) => {
+        //   //   totalSteps += item["steps"];
+        //   //   var datee = item["step_actual_datetime"];
+        //   //   var t = datee.split(/[- :]/);
+        //   //   var dt = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
+        //   //   d = new Date(dt);
+        //   // });
+        //   console.log("date",d);
+        //   console.log("day",d.getDate());
+        //   console.log("day_name",d.getDay());
+        //   console.log("mon", d.getMonth());
+        //   console.log(totalSteps);
+        //   // switch (d.getDay()) {
+        //   //   case 0:
+        //   //     day_symbol = " (月)";
+        //   //     console.log(day_symbol);
+        //   //     break;
+        //   //   case 1:
+        //   //     day_symbol = " (火)";
+        //   //     console.log(day_symbol);
+        //   //     break;
+        //   //   case 2:
+        //   //     day_symbol = " (水)";
+        //   //     console.log(day_symbol);
+        //   //     break;
+        //   //   case 3:
+        //   //     day_symbol = " (木)";
+        //   //     console.log(day_symbol);
+        //   //     break;
+        //   //   case 4:
+        //   //     day_symbol = " (金)";
+        //   //     console.log(day_symbol);
+        //   //     break;
+        //   //   case 5:
+        //   //     day_symbol = " (土)";
+        //   //     console.log(day_symbol);
+        //   //     break;
+        //   //   case 6:
+        //   //     day_symbol = " (日)";
+        //   //     console.log(day_symbol);
+        //   //     break;
+        //   //   default:
+        //   //
+        //   // }
+        //   if (totalSteps > goal) {
+        //     tr.className = "comp";
+        //     td1.className = "comp_td text-left";
+        //     td1.innerHTML =(d.getMonth() + 1).toString();
+        //     dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
+        //     td2.innerHTML = totalSteps + " (" + dist_km.toFixed(2) +  " km)";
+        //     td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="{{URL::asset('storage/history/co.svg')}}" alt="">';
+        //   } else {
+        //     td1.innerHTML = (d.getMonth() + 1).toString();
+        //     dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
+        //     td2.innerHTML = totalSteps + " (" + dist_km.toFixed(2) +  " km)";
+        //     td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span>';
+        //   }
+        //   tr.appendChild(td1);
+        //   tr.appendChild(td2);
+        //   tr.appendChild(td3);
+        //   table_body.appendChild(tr);
+        // });
       }
     } else {
       console.log("dates is null");

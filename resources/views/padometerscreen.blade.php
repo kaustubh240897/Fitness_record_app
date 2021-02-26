@@ -546,7 +546,10 @@
     //console.log(current_week_datas[single_day_data]);
     var total = 0;
     current_week_datas1[single_day_data].forEach((item, i) => {
-      total += parseInt(item["steps"]);
+      //total += parseInt(item["steps"]);
+      if (parseInt(item["steps"]) >= total) {
+        total = parseInt(item["steps"]);
+      }
     });
     weekDates.forEach((item, i) => {
       if (formatDate(item) == single_day_data) {

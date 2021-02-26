@@ -265,7 +265,10 @@ background-color: #113a83; color: #fff">
           var totalSteps = 0;
           var d = new Date();
           dates[date].forEach((item, i) => {
-            totalSteps += item["steps"];
+            //totalSteps += item["steps"];
+            if (item["steps"] >= totalSteps) {
+              totalSteps = item["steps"];
+            }
             var datee = item["step_actual_datetime"];
             var t = datee.split(/[- :]/);
             var dt = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
@@ -348,7 +351,10 @@ background-color: #113a83; color: #fff">
           var totalSteps = 0;
           var d = new Date();
           dates[date].forEach((item, i) => {
-            totalSteps += item["steps"];
+            //totalSteps += item["steps"];
+            if (item["steps"] >= totalSteps) {
+              totalSteps = item["steps"];
+            }
             var datee = item["step_actual_datetime"];
             var t = datee.split(/[- :]/);
             var dt = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
