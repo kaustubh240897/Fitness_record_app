@@ -252,6 +252,9 @@ class m_UsersWebController extends Controller
             $m__users_id = $m__users->id;
             $unseen_collection = t_Collection::where('m__users_id', $m__users_id)->where('new_display_flag', 0)->count();
             $today_data = t_Steps::where('m__users_id', $m__users_id)->whereDate('step_actual_datetime', Carbon::now()->toDateString())->get()->max('steps');
+            if($today_data == null){
+                $today_data = 0;
+            }
             $current_month_steps_list = t_Steps::where('m__users_id', $m__users_id)->whereBetween('step_actual_datetime', [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])->orderBy('step_actual_datetime')->get()->groupBy(function($date) {
                 return Carbon::parse($date->step_actual_datetime)->toDateString(); // grouping by dates
             });
@@ -428,6 +431,9 @@ class m_UsersWebController extends Controller
             $m__users_id = $m__users->id;
             $unseen_collection = t_Collection::where('m__users_id', $m__users_id)->where('new_display_flag', 0)->count();
             $today_data = t_Steps::where('m__users_id', $m__users_id)->whereDate('step_actual_datetime', Carbon::now()->toDateString())->get()->max('steps');
+            if($today_data == null){
+                $today_data = 0;
+            }
             //$current_month_steps = t_Steps::where('m__users_id', $m__users_id)->whereBetween('step_actual_datetime', [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])->orderBy('step_actual_datetime')->get()->sum('steps');
             $current_month_steps_list = t_Steps::where('m__users_id', $m__users_id)->whereBetween('step_actual_datetime', [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])->orderBy('step_actual_datetime')->get()->groupBy(function($date) {
                 return Carbon::parse($date->step_actual_datetime)->toDateString(); // grouping by dates
