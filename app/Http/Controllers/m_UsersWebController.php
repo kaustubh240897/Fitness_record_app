@@ -176,7 +176,7 @@ class m_UsersWebController extends Controller
          if(m_Users::where('users_id',Auth::id())->count() >0){
             $m__users = m_Users::where('users_id',Auth::id())->first();
             $m__users_id = $m__users->id;
-            $months = t_Steps::where('m__users_id', $m__users_id)->orderBy('step_actual_datetime', 'DESC')->whereYear('step_actual_datetime', '=', $year)
+            $months = t_Steps::where('m__users_id', $m__users_id)->whereYear('step_actual_datetime', '=', $year)
             ->get()->groupBy(function ($val) {
                 return Carbon::parse($val->step_actual_datetime)->format('m');
             });
