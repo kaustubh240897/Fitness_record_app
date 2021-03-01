@@ -122,7 +122,7 @@
         <canvas id="ctx" class="pt-3"></canvas>
       </div>
       @if(empty($get_t_tour))
-      <h6> まだツアーを始めていません！ </h6>
+      <h6></h6>
       @endif
       @if( $current_month_steps  >=  $get_m_user_monthly_goal )
       <div class="container pt-3" style="background: url({{asset('storage/padometerscreen/complete01.png')}}); background-size: cover; background-position: center; background-repeat: no-repeat">
