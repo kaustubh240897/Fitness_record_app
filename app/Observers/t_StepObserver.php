@@ -6,6 +6,7 @@ use App\t_Steps;
 use App\m_Users;
 use App\m_Checkpoint;
 use App\t_Tour;
+use App\t_Log;
 use App\t_Collection;
 Use \Carbon\Carbon;
 class t_StepObserver
@@ -18,8 +19,14 @@ class t_StepObserver
      * @return void
      */
     public function created(t_Steps $tSteps){
-                
+        $m__users_id = m_Users::where('users_id', Auth::id())->first()->id;
+        $thistime = Carbon::now();
+        $t_log = new t_Log;
+        $t_log->m__users_id = $m__users_id;
+        $t_log->access_datetime = $thistime->toDateTimeString();
+        $t_log->save();
 
+                
     }
 
     /**

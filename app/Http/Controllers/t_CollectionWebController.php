@@ -115,6 +115,10 @@ class t_CollectionWebController extends Controller
         $unseen_collection = t_Collection::where('m__users_id', $m__user_id)->where('new_display_flag', 0)->count();
         $index = 1;
         $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->get()->unique('m__collection_id');
+        // foreach($get_t_collections as $get_t_collection){
+        //     $s = t_Collection::where('m__users_id', $m__user_id)->where('m__collection_id',$get_t_collection->m__collection_id)->where('created_at', $get_t_collection->created_at)->get();
+        //     dd($s);
+        // }
         $count_t_collections = t_Collection::where('m__users_id', $m__user_id)->get()->groupBy('m__collection_id');
         $counter = [];
         foreach($count_t_collections as $count){
