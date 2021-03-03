@@ -12,7 +12,7 @@ $factory->define(m_Checkpoint::class, function (Faker $faker) {
     return [
         'm__tour_id' => factory(m_Tour::class)->create(),
         'checkpoint_title' => $faker->sentence(5),
-        'checkpoint_category' => $faker->randomElement(['start' ,'intermediate', 'spot', 'endpoint']),
+        'checkpoint_category' => $faker->randomElement(['start' ,'intermediate', 'spot', '終了']),
         'distance' => $distance+20,
         'comments' => $faker->sentence(20),
         'prefectures' => $faker->country,

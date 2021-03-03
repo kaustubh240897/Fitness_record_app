@@ -47,7 +47,7 @@ class t_TourWebController extends Controller
                 if($query_checkpoints != null){
                     $checkpoints = $query_checkpoints->orderBy('distance')->get();
                     foreach ($checkpoints as $checkpoint) {
-                        if($checkpoint->checkpoint_category == 'endpoint'){
+                        if($checkpoint->checkpoint_category == '終了'){
                             $total = $checkpoint->distance;
                             }
                     }
@@ -228,7 +228,7 @@ class t_TourWebController extends Controller
                     $checkpoints = $query_checkpoints->orderBy('distance')->get();
                     $checkpointsr = m_Checkpoint::where('m__tour_id',$m__tours_id)->orderBy('distance', 'DESC')->get();
                 foreach ($checkpoints as $checkpoint) {
-                    if($checkpoint->checkpoint_category == 'endpoint'){
+                    if($checkpoint->checkpoint_category == '終了'){
                         $total = $checkpoint->distance;
                         }
                     }
@@ -332,7 +332,7 @@ class t_TourWebController extends Controller
                             $checkpoints = $query_checkpoints->orderBy('distance')->get();
                             $checkpointsr = m_Checkpoint::where('m__tour_id',$get_tour_id)->orderBy('distance', 'DESC')->get();
                             foreach ($checkpoints as $checkpoint) {
-                                if($checkpoint->checkpoint_category == 'endpoint'){
+                                if($checkpoint->checkpoint_category == '終了'){
                                     $total = $checkpoint->distance;
                                     }
                             }

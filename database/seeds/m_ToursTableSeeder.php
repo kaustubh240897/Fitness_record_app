@@ -106,6 +106,18 @@ class m_ToursTableSeeder extends Seeder
               'created_at'=>date('Y-m-d H:i:s'),
               'updated_at'=>date('Y-m-d H:i:s'),
        ),
+
+       8 => 
+       array (
+              'id' => 9,
+              'tour_title' => '瀬戸内海おすすめ観光コース',
+              'tour_comment' => '瀬戸内海に面した本州や四国のさまざまな観光地をめぐるコースです。',
+              'm__collection_id' => '182',
+              'tour_level' => '1',
+              'created_at'=>date('Y-m-d H:i:s'),
+              'updated_at'=>date('Y-m-d H:i:s'),
+       ),
+     
      
            
      

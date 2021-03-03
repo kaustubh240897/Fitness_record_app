@@ -131,7 +131,7 @@ class StepsController extends Controller
                 $total = 0;
                 $steps = 0;
                 foreach ($allCheckpoints as $checkpoint) {
-                    if($checkpoint->checkpoint_category == 'endpoint'){
+                    if($checkpoint->checkpoint_category == '終了'){
                         $total = $checkpoint->distance;
                         }
                     }

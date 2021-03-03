@@ -19,9 +19,9 @@ class CreateMCheckpointsTable extends Migration
             ->constrained('m__tours')
             ->onDelete('cascade');
             $table->string('checkpoint_title', 255);
-            $table->enum('checkpoint_category', ['start', 'intermediate', 'spot', 'endpoint']);
+            $table->enum('checkpoint_category', ['開始', '中間', 'ポイント', '終了']);
             $table->integer('distance');
-            $table->string('comments', 255);
+            $table->string('comments', 512);
             $table->string('prefectures', 255);
             $table->foreignId('m__collection_id')
             ->constrained('m__collections')

@@ -1802,6 +1802,226 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
+          162 => 
+          array (
+                 'id' => 163,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => 'tour10 collection1',
+                 'path' => 'storage/tour10 collection1/',
+                 'filename' => 'P10-01.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          163 => 
+          array (
+                 'id' => 164,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => 'tour10 collection2',
+                 'path' => 'storage/tour10 collection2/',
+                 'filename' => 'P10-02.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          164 => 
+          array (
+                 'id' => 165,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => 'tour10 collection3',
+                 'path' => 'storage/tour10 collection3/',
+                 'filename' => 'P10-03.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          165 => 
+          array (
+                 'id' => 166,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => 'tour10 collection4',
+                 'path' => 'storage/tour10 collection4/',
+                 'filename' => 'P10-04.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          166 => 
+          array (
+                 'id' => 167,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => 'tour10 collection5',
+                 'path' => 'storage/tour10 collection5/',
+                 'filename' => 'P10-05.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          167 => 
+          array (
+                 'id' => 168,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => 'tour10 collection6',
+                 'path' => 'storage/tour10 collection6/',
+                 'filename' => 'P10-06.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          168 => 
+          array (
+                 'id' => 169,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => 'tour10 collection7',
+                 'path' => 'storage/tour10 collection7/',
+                 'filename' => 'P10-07.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          169 => 
+          array (
+                 'id' => 170,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => 'tour10 collection8',
+                 'path' => 'storage/tour10 collection8/',
+                 'filename' => 'P10-08.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          170 => 
+          array (
+                 'id' => 171,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => 'tour10 collection9',
+                 'path' => 'storage/tour10 collection9/',
+                 'filename' => 'P10-09.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          171 => 
+          array (
+                 'id' => 172,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => 'tour10 collection10',
+                 'path' => 'storage/tour10 collection10/',
+                 'filename' => 'P10-10.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          172 => 
+          array (
+                 'id' => 173,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => 'tour10 collection11',
+                 'path' => 'storage/tour10 collection11/',
+                 'filename' => 'P10-11.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          173 => 
+          array (
+                 'id' => 174,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => 'tour10 collection12',
+                 'path' => 'storage/tour10 collection12/',
+                 'filename' => 'P10-12.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          174 => 
+          array (
+                 'id' => 175,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => 'tour10 collection13',
+                 'path' => 'storage/tour10 collection13/',
+                 'filename' => 'P10-13.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          175 => 
+          array (
+                 'id' => 176,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => 'tour10 collection14',
+                 'path' => 'storage/tour10 collection14/',
+                 'filename' => 'P10-14.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          176 => 
+          array (
+                 'id' => 177,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => 'tour10 collection15',
+                 'path' => 'storage/tour10 collection15/',
+                 'filename' => 'P10-15.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          177 => 
+          array (
+                 'id' => 178,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => 'tour10 collection16',
+                 'path' => 'storage/tour10 collection16/',
+                 'filename' => 'P10-16.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          178 => 
+          array (
+                 'id' => 179,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => 'tour10 collection17',
+                 'path' => 'storage/tour10 collection17/',
+                 'filename' => 'P10-17.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          179 => 
+          array (
+                 'id' => 180,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => 'tour10 collection18',
+                 'path' => 'storage/tour10 collection18/',
+                 'filename' => 'P10-18.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          180 => 
+          array (
+                 'id' => 181,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => 'tour10 collection19',
+                 'path' => 'storage/tour10 collection19/',
+                 'filename' => 'P10-19.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          181 => 
+          array (
+                 'id' => 182,
+                 'collection_category' => 'tour',
+                 'collection_title' => 'tour10',
+                 'path' => 'storage/tour10/',
+                 'filename' => 'C10-00.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
                   
 
       ));   

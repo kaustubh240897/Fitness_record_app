@@ -334,7 +334,7 @@ class m_UsersWebController extends Controller
                     $checkpointsr = m_Checkpoint::where('m__tour_id',$get_m_tour_id)->orderBy('distance', 'DESC')->get();
                     foreach ($checkpoints as $checkpoint) {
                         $checkpoint_collection_id[] = $checkpoint->m_collections->id;
-                        if($checkpoint->checkpoint_category == 'endpoint'){
+                        if($checkpoint->checkpoint_category == '終了'){
                             $total = $checkpoint->distance;
                             }
                     }
@@ -496,7 +496,7 @@ class m_UsersWebController extends Controller
                 if($query_checkpoints != null){
                     $checkpoints = $query_checkpoints->orderBy('distance')->get();
                     foreach ($checkpoints as $checkpoint) {
-                        if($checkpoint->checkpoint_category == 'endpoint'){
+                        if($checkpoint->checkpoint_category == '終了'){
                             $total = $checkpoint->distance;
                             }
                     }

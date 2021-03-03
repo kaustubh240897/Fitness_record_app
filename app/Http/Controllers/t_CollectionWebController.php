@@ -85,7 +85,7 @@ class t_CollectionWebController extends Controller
         for($i=0; $i<$count; $i++){
             $tours[] = m_Tour::where('id', $tour_id[$i])->get()->first();
             $tour_status[] = t_Tour::where('m__users_id', $m__user_id)->where('m__tours_id', $tour_id[$i])->get()->first()->status;
-            $tours_distance[] = m_Checkpoint::where('m__tour_id', $tour_id[$i])->where('checkpoint_category', 'endpoint')->get()->first()->distance;
+            $tours_distance[] = m_Checkpoint::where('m__tour_id', $tour_id[$i])->where('checkpoint_category', '終了')->get()->first()->distance;
         }   
         
     return view('bytourcollections', compact('get_t_collections','tour_id', 'tours','counter','latest_date','tours_distance','tour_status','unseen_checkpoint_array','index','unseen_collection'));
@@ -216,7 +216,7 @@ class t_CollectionWebController extends Controller
                         $checkpoints = $query_checkpoints->orderBy('distance')->get();
                         $checkpointsr = m_Checkpoint::where('m__tour_id',$get_tour_id)->orderBy('distance', 'DESC')->get();
                         foreach ($checkpoints as $checkpoint) {
-                            if($checkpoint->checkpoint_category == 'endpoint'){
+                            if($checkpoint->checkpoint_category == '終了'){
                                 $total = $checkpoint->distance;
                                 }
                         }
