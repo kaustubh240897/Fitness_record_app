@@ -250,6 +250,21 @@ class m_UsersWebController extends Controller
 
             $m__users = m_Users::where('users_id',Auth::id())->first();
             $m__users_id = $m__users->id;
+
+            $get_t_collections = t_Collection::where('m__users_id', $m__users_id)->get()->unique('m__collection_id');
+            foreach($get_t_collections as $get_t_collection){
+                $duplicate_collections = t_Collection::where('m__users_id', $m__users_id)->where('m__collection_id',$get_t_collection->m__collection_id)->where('created_at', $get_t_collection->created_at)->orderBy('created_at', 'DESC')->get();
+                $p = $duplicate_collections->count();
+                if($duplicate_collections->count() > 1){
+                    foreach($duplicate_collections as $duplicate_collection){
+                        $p -= 1;
+                        if($p > 0){
+                            $duplicate_collection->delete();
+                        }
+                    }
+                }
+            }
+            
             $unseen_collection = t_Collection::where('m__users_id', $m__users_id)->where('new_display_flag', 0)->count();
             $today_data = t_Steps::where('m__users_id', $m__users_id)->whereDate('step_actual_datetime', Carbon::now()->toDateString())->get()->max('steps');
             if($today_data == null){

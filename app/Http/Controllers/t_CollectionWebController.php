@@ -115,10 +115,18 @@ class t_CollectionWebController extends Controller
         $unseen_collection = t_Collection::where('m__users_id', $m__user_id)->where('new_display_flag', 0)->count();
         $index = 1;
         $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->get()->unique('m__collection_id');
-        // foreach($get_t_collections as $get_t_collection){
-        //     $s = t_Collection::where('m__users_id', $m__user_id)->where('m__collection_id',$get_t_collection->m__collection_id)->where('created_at', $get_t_collection->created_at)->get();
-        //     dd($s);
-        // }
+        foreach($get_t_collections as $get_t_collection){
+            $duplicate_collections = t_Collection::where('m__users_id', $m__user_id)->where('m__collection_id',$get_t_collection->m__collection_id)->where('created_at', $get_t_collection->created_at)->orderBy('created_at', 'DESC')->get();
+            $p = $duplicate_collections->count();
+            if($duplicate_collections->count() > 1){
+                foreach($duplicate_collections as $duplicate_collection){
+                    $p -= 1;
+                    if($p > 0){
+                        $duplicate_collection->delete();
+                    }
+                }
+            }
+        }
         $count_t_collections = t_Collection::where('m__users_id', $m__user_id)->get()->groupBy('m__collection_id');
         $counter = [];
         foreach($count_t_collections as $count){
