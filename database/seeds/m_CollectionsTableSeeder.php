@@ -1790,6 +1790,7 @@ class m_CollectionsTableSeeder extends Seeder
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
+          
 
           161 => 
           array (
@@ -1801,6 +1802,84 @@ class m_CollectionsTableSeeder extends Seeder
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
+
+          162 => 
+          array (
+                 'id' => 163,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => 'tour9 collection1',
+                 'path' => 'storage/tour9 collection1/',
+                 'filename' => 'P09-01.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          163 => 
+          array (
+                 'id' => 164,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => 'tour9 collection2',
+                 'path' => 'storage/tour9 collection2/',
+                 'filename' => 'P09-02.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          164 => 
+          array (
+                 'id' => 165,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => 'tour9 collection3',
+                 'path' => 'storage/tour9 collection3/',
+                 'filename' => 'P09-03.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          165 => 
+          array (
+                 'id' => 166,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => 'tour9 collection4',
+                 'path' => 'storage/tour9 collection4/',
+                 'filename' => 'P09-04.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          166 => 
+          array (
+                 'id' => 167,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => 'tour9 collection5',
+                 'path' => 'storage/tour9 collection5/',
+                 'filename' => 'P09-05.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          167 => 
+          array (
+                 'id' => 168,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => 'tour9 collection6',
+                 'path' => 'storage/tour9 collection6/',
+                 'filename' => 'P09-06.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          168 => 
+          array (
+                 'id' => 169,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => 'tour9 collection7',
+                 'path' => 'storage/tour9 collection7/',
+                 'filename' => 'P09-07.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
 
           162 => 
           array (

@@ -110,16 +110,82 @@ class m_ToursTableSeeder extends Seeder
        8 => 
        array (
               'id' => 9,
+              'tour_title' => '東海ご当地グルメとおなじみの観光コース',
+              'tour_comment' => '東海地区のご当地グルメと定番観光地を巡るコースです。',
+              'm__collection_id' => '',
+              'tour_level' => '1',
+              'created_at'=>date('Y-m-d H:i:s'),
+              'updated_at'=>date('Y-m-d H:i:s'),
+       ),
+
+
+
+       9 => 
+       array (
+              'id' => 10,
               'tour_title' => '瀬戸内海おすすめ観光コース',
               'tour_comment' => '瀬戸内海に面した本州や四国のさまざまな観光地をめぐるコースです。',
-              'm__collection_id' => '182',
+              'm__collection_id' => '',
+              'tour_level' => '1',
+              'created_at'=>date('Y-m-d H:i:s'),
+              'updated_at'=>date('Y-m-d H:i:s'),
+       ),
+
+       10 => 
+       array (
+              'id' => 11,
+              'tour_title' => '北東北名物巡りコース',
+              'tour_comment' => '北東北3県の伝統や名物などが盛りだくさんのコースです。',
+              'm__collection_id' => '',
+              'tour_level' => '1',
+              'created_at'=>date('Y-m-d H:i:s'),
+              'updated_at'=>date('Y-m-d H:i:s'),
+       ),
+
+       11 => 
+       array (
+              'id' => 12,
+              'tour_title' => '山陰の魅力満載コース',
+              'tour_comment' => '山陰地方のすばらしい景色とご当地のB級グルメを満喫するコースです。',
+              'm__collection_id' => '',
+              'tour_level' => '1',
+              'created_at'=>date('Y-m-d H:i:s'),
+              'updated_at'=>date('Y-m-d H:i:s'),
+       ),
+
+       12 => 
+       array (
+              'id' => 13,
+              'tour_title' => '日本のルーツをさがすコース(関西)',
+              'tour_comment' => '大阪府・和歌山県・奈良県・京都府の歴史や文化がたっぷり楽しめます。',
+              'm__collection_id' => '',
+              'tour_level' => '1',
+              'created_at'=>date('Y-m-d H:i:s'),
+              'updated_at'=>date('Y-m-d H:i:s'),
+       ),
+
+       13 => 
+       array (
+              'id' => 14,
+              'tour_title' => '琉球文化にふれるコース',
+              'tour_comment' => '沖縄県独自で発展してきた文化と、南国の大自然の美しさが感じられるコースです。',
+              'm__collection_id' => '',
+              'tour_level' => '1',
+              'created_at'=>date('Y-m-d H:i:s'),
+              'updated_at'=>date('Y-m-d H:i:s'),
+       ),
+
+       14 => 
+       array (
+              'id' => 15,
+              'tour_title' => '魅惑の北海道満喫コース',
+              'tour_comment' => '北の大地、北海道の魅力をたくさん詰め込んだコースです。',
+              'm__collection_id' => '',
               'tour_level' => '1',
               'created_at'=>date('Y-m-d H:i:s'),
               'updated_at'=>date('Y-m-d H:i:s'),
        ),
      
-     
-           
      
      
 
