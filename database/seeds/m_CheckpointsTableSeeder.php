@@ -2182,11 +2182,11 @@ class m_CheckpointsTableSeeder extends Seeder
           array (
                  'id' => 155,
                  'm__tour_id' => '9',
-                 'checkpoint_title' => '六甲山',
+                 'checkpoint_title' => '白川郷',
                  'checkpoint_category' => '開始',
                  'distance' => '0',
-                 'comments' => '神戸市の西から北へ連なる六甲山は、ケーブルカーやロープウェーを利用し、簡単に登ることができます。山頂には牧場やオルゴールミュージアム、植物園といったの観光スポットが多くあり、中でも日本三大夜景の一つである摩耶山からの夜景は、神戸から関空まで一望できる、人気絶景スポットです。',
-                 'prefectures' => '兵庫',
+                 'comments' => '岐阜県の白川郷合掌造り集落は、1995年に世界文化遺産に登録されました。ミシュランで3つ星としても掲載されており、田んぼに囲まれた中に茅葺の合掌造りの家が点在する山村の景色は、まさに日本の原風景です。',
+                 'prefectures' => '岐阜',
                  'm__collection_id' => '163',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
@@ -2196,13 +2196,11 @@ class m_CheckpointsTableSeeder extends Seeder
           array (
                  'id' => 156,
                  'm__tour_id' => '9',
-                 'checkpoint_title' => '神戸北野異人館街',
+                 'checkpoint_title' => '五平餅',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '35',
-                 'comments' => '"現在でも日本の主要な国際貿易港のひとつである神戸港は、1868(慶応3)年、函館・長崎・横浜についで開港された港です。古くからたくさんの外国人関係者を迎え入れていました。
-                 神戸市中央区北野町の一帯は、外国人の居留地として日本が家や土地を貸し出したエリアで、明治から大正時代に建てられた洋館が、21も残っており、見学ができる施設も多くあります。
-                 "',
-                 'prefectures' => '兵庫',
+                 'comments' => '岐阜県や長野県などの山間部に伝わる郷土料理で、近年テレビドラマで注目を浴びました。山仕事をする人たちが、仕事の合間に、ご飯をつぶして板切れに握りつけて焼き、味噌をつけて食べたのが始まりともいわれています。味は味噌だれ、醤油だれ、くるみやえごまを混ぜたたれなど、形はわらじ型、丸型など地域によって違いが楽しめます。',
+                 'prefectures' => '岐阜',
                  'm__collection_id' => '164',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
@@ -2212,11 +2210,11 @@ class m_CheckpointsTableSeeder extends Seeder
           array (
                  'id' => 157,
                  'm__tour_id' => '9',
-                 'checkpoint_title' => '明石焼き',
+                 'checkpoint_title' => '下呂温泉',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '65',
-                 'comments' => '明石市は新鮮なたこが水揚げされることでも有名ですが、そのたこを使用したたこの石焼きは、だし汁に浸して食べる郷土料理として全国的にも有名です。だし汁の風味と、卵たっぷりの生地はとてもやさしい味わいです。主な材料は小麦粉、卵、たことシンプルのため「卵焼き」と呼ばれることもあります。',
-                 'prefectures' => '兵庫',
+                 'comments' => '1000年以上の歴史があり、江戸時代より湯治場として栄えてきた下呂温泉は草津、有馬と並ぶ日本三名泉のひとつ。泉質はアルカリ性単純泉で、ルスベスベした肌触りから別名「美人の湯」とも呼ばれています。また、温泉街には様々な足湯や岐阜のお土産では定番のさるぼぼを祀る珍しい神社もあり、観光も楽しめます。',
+                 'prefectures' => '岐阜',
                  'm__collection_id' => '165',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
@@ -2226,11 +2224,11 @@ class m_CheckpointsTableSeeder extends Seeder
           array (
                  'id' => 158,
                  'm__tour_id' => '9',
-                 'checkpoint_title' => '姫路城',
+                 'checkpoint_title' => '郡上踊り',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '100',
-                 'comments' => '日本100名城にも選定されている兵庫県姫路市の国宝「姫路城」。慶長14(1609)年に赤松貞範により建築された大天守は白漆喰の城壁が特徴で、白鷺のように見える姫路城は、別名白鷺城(はくろじょう・しらさぎじょう)とも呼ばれます。黒田重隆が城郭やのちに豊臣秀吉となる羽柴秀吉など、さまざまな武将や大名によって治められ、建て替えや拡張が行われてきました。',
-                 'prefectures' => '兵庫',
+                 'comments' => '城下町郡上八幡で毎年7月中旬から9月上旬にかけて30夜以上にわたり行われる日本一長い盆踊りです。中でも、毎年8月13から16日の4日間、夜の8時から明け方まで夜通し踊りつづける『徹夜おどり』は最も盛り上がります。400以上の歴史があり、「見るおどり」ではなく「踊るおどり」といわれ、地元の人も観光客もひとつの輪になって踊るという楽しさが人気となっています。',
+                 'prefectures' => '岐阜',
                  'm__collection_id' => '166',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
@@ -2240,11 +2238,12 @@ class m_CheckpointsTableSeeder extends Seeder
           array (
                  'id' => 159,
                  'm__tour_id' => '9',
-                 'checkpoint_title' => '赤穂',
+                 'checkpoint_title' => 'モネの池',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '135',
-                 'comments' => '赤穂市は歌舞伎の演目や時代でも有名な「忠臣蔵」の題材となる、四十七名の赤穂浪士の故郷です。市内には赤穂浪士を祀る「大石神社」や、「赤穂城跡」、毎年開催れている「赤穂義士祭」など、ゆかりの地ならではの観光スポットがたくさんあります。',
-                 'prefectures' => '兵庫',
+                 'comments' => '関市にある「名もなき池」は、通称「モネの池」と呼ばれ美しい池として近年人気の観光地となりました。
+                 透明度の高い湧水に睡蓮の花が咲き、その中を泳ぐ錦鯉の姿が、まるでモネの代表作「睡蓮」のように映え、新たなフォトスポットとしてSNSで話題となりました。',
+                 'prefectures' => '岐阜',
                  'm__collection_id' => '167',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
@@ -2254,11 +2253,12 @@ class m_CheckpointsTableSeeder extends Seeder
           array (
                  'id' => 160,
                  'm__tour_id' => '9',
-                 'checkpoint_title' => '備前焼',
+                 'checkpoint_title' => '犬山城下町',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '155',
-                 'comments' => '備前焼は、一点ずつ成形し、乾燥させたのち、絵付けもせず釉薬も使わずそのまま焼いたもので、茶褐色の粘土の鉄分がよく表れている焼き物です。土の性質や、窯への詰め方や窯の温度の変化、焼成時の灰や炭などによって生み出される備前焼は、一つとして同じ色、同じ模様にはなりません。火は、1200〜1300度の高温で最低でも7日間、長い場合は10～12日間もの間炊き続けられます。',
-                 'prefectures' => '岡山',
+                 'comments' => '"日本最古の木造建築の国宝犬山城から南に延びる城下町は、戦火にあっていないことから現在も江戸時代と変わらない町割りがそのまま残ります。当時は商人や職人の同業者を近くに住まわせて、町の発展を促したとされ、鍛冶屋町・魚屋町などの町名に名残が見られます。
+                 現在城下町には食べ歩きグルメが充実しており、お城観光がてらに色々なお店を回るのもおすすめです。',
+                 'prefectures' => '愛知',
                  'm__collection_id' => '168',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
@@ -2268,11 +2268,11 @@ class m_CheckpointsTableSeeder extends Seeder
           array (
                  'id' => 161,
                  'm__tour_id' => '9',
-                 'checkpoint_title' => '桃太郎',
+                 'checkpoint_title' => '名古屋城',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '180',
-                 'comments' => 'むかしばなしで有名な桃太郎のお話は、岡山に伝わる桃太郎伝説「吉備津彦命(きびつひこのみこと)の温羅(うら)退治です」がルーツとなっています。岡山市内にある「吉備津神社」はまさに「桃太郎」発祥の地としても有名な場所。その他にも鬼城山や矢喰宮など伝説にまつわる観光スポットが点在しています。',
-                 'prefectures' => '岡山',
+                 'comments' => '慶長14年(1609)、徳川家康が天下統一の最後の布石として建てたのがこの名古屋城で、以来尾張徳川家の居城とされました。戦災で焼失しました1959年(昭和34年)、五層の大天守閣(約48m)と小天守閣(約24m)が再建されました。金シャチホコが乗った天守閣は国内最大級です。',
+                 'prefectures' => '愛知',
                  'm__collection_id' => '169',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
@@ -2282,11 +2282,12 @@ class m_CheckpointsTableSeeder extends Seeder
           array (
                  'id' => 162,
                  'm__tour_id' => '9',
-                 'checkpoint_title' => '国産ジーンズ',
+                 'checkpoint_title' => '龍城神社',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '215',
-                 'comments' => '倉敷市にある児島地区は、瀬戸内海に面した港町です。そのため塩分を含む土が稲作には向かず、綿花栽培が盛んに行われたことで、繊維産業の町として独自に発展しました。元々大正以降は学生服の製造で全国トップシェアでしたが、時代が合繊に代わり窮地に追い込まれたところで、ジーンズ製造に打って出たことが始まりです。ここ児島は言わずと知れた国産ジーンズ発祥の地。一つ一つ手作業で作ること、日本の伝統的な「藍染め」技術が高く評価され国内外から愛されています。現在児島地区には「児島ジーンズストリート」があり、国産ジーンズショップが集まる人気スポットとなっています。',
-                 'prefectures' => '岡山',
+                 'comments' => '龍城神社(たつきじんじゃ)」は、徳川家康公の誕生の地でもある岡崎城の隣に鎮座しています。
+                 岡崎城を築城した時に、龍が現われ城の井戸から水を噴出させて昇天したという昇龍伝説が残ります。岡崎城の隣にあり、出世、安産、厄除、開運を祈願するパワースポットとして人気を呼んでおり、この井戸は現在も「龍の井」とされ、出世、開運などのご加護あるといわれております。',
+                 'prefectures' => '愛知',
                  'm__collection_id' => '170',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
@@ -2296,11 +2297,12 @@ class m_CheckpointsTableSeeder extends Seeder
           array (
                  'id' => 163,
                  'm__tour_id' => '9',
-                 'checkpoint_title' => 'カブトガニ',
+                 'checkpoint_title' => '豊川稲荷',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '245',
-                 'comments' => '笠岡市は生きた化石といわれる国指定天然記念物「カブトガニ」の繁殖地です。世界で唯一のカブトガニ博物館が建ち、展示はもちろん、その研究も行われています。',
-                 'prefectures' => '岡山',
+                 'comments' => '日本三大稲荷として有名な愛知の豊川稲荷。商売繫盛のご利益があると古くから多くの参拝者が訪れますが、実は1441年開創の曹洞宗のお寺で、正式名称は「豊川閣妙厳寺」といい、約580年前の室町時代(1441年)に創建されました。
+                 中でも境内にある霊狐塚は、参拝者が奉納した大小1000点以上の狐の石像が並び不思議なパワーを感じます。',
+                 'prefectures' => '愛知',
                  'm__collection_id' => '171',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
@@ -2310,11 +2312,11 @@ class m_CheckpointsTableSeeder extends Seeder
           array (
                  'id' => 164,
                  'm__tour_id' => '9',
-                 'checkpoint_title' => '鞆の浦',
+                 'checkpoint_title' => '手筒花火',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '255',
-                 'comments' => '福山市の中心部から南に14kmの海岸沿いに位置する鞆の浦。今も白壁土蔵や町家が残る江戸時代の古い町並みが残ります。瀬戸内海航路の要所として発展した鞆の浦は、豪商の屋敷や船番所、古刹などが狭い範囲に立ち並び、気軽に散策が楽しめます。港先端に立つ常夜燈は、鞆の浦のシンボルです。また、鞆の浦は人気アニメ映画のモデルとなった街でもあります。',
-                 'prefectures' => '広島',
+                 'comments' => '豊橋が発祥の地と言われる手筒花火は、直径10cm、長さ約80cmの節を抜いた孟宗竹(もうそうちく)の中に火薬を詰めたもので、噴出する花火を脇や腹に抱えて打上げます。天に向かって火の粉を噴射させ、最後には「バン！」と大きな音を立てて底が破裂するスリリングな花火です。無病息災や五穀豊穣、家運隆盛を祈る神事として伝えられてきました。',
+                 'prefectures' => '愛知',
                  'm__collection_id' => '172',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
@@ -2324,14 +2326,13 @@ class m_CheckpointsTableSeeder extends Seeder
           array (
                  'id' => 165,
                  'm__tour_id' => '9',
-                 'checkpoint_title' => '尾道と猫の細道',
+                 'checkpoint_title' => '浜名湖',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '265',
-                 'comments' => '"瀬戸内海に面した街「尾道」は、坂道に古寺や民家が並び昭和レトロな港町の景色が今も残り、映画やドラマなど数々の映像作品の舞台としても有名です。
-                 また、「猫の細道」は尾道市を拠点に活動する絵師の園山春二氏が作る「福石猫」を、1998年から置き始めたのがきっかけです。現在は道のあちこちに「福石猫」が置いてあり、尾道の名物となっています。
-                 さらに街中を散策すると住み着いている猫と遭遇することもあります。
-                 「猫の細道」を中心に、尾道は猫好きにはたまらない猫に関するスポットが満載の街です。"',
-                 'prefectures' => '広島',
+                 'comments' => 'うなぎ養殖発祥の地とも言われる浜名湖。
+                 出荷量や生産量、そして一世帯あたりの消費量も非常に多く、その美味しさも抜群です。
+                 近隣の浜松市にはうなぎ屋が点在し、フワフワ・トロトロのうなぎ堪能することができます。',
+                 'prefectures' => '静岡',
                  'm__collection_id' => '173',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
@@ -2341,12 +2342,11 @@ class m_CheckpointsTableSeeder extends Seeder
           array (
                  'id' => 166,
                  'm__tour_id' => '9',
-                 'checkpoint_title' => '大久野島',
+                 'checkpoint_title' => '静岡茶',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '295',
-                 'comments' => '"竹原市の忠海港から船で約15分の大久野島は、むかし毒ガス工場があったことから「地図から消された島」と呼ばれていました。
-                 現在、周囲4キロメートルほどの島には約900羽もの野生のうさぎが棲息し、多くの観光客が訪れます。人懐っこく、間近で一緒に写真を撮ることができる、癒しのスポットです。"',
-                 'prefectures' => '広島',
+                 'comments' => '静岡県で栽培されているお茶で代表的なのが「やぶきた」というチャノキの品種です。牧之原台地、富士山麓、安倍川、天竜川、大井川などお茶の栽培に適した自然環境を活かした銘産地が並びます。主にやぶきたなどの煎茶や深蒸し茶の産地が主流ですが、岡部町は玉露の産地としても有名です。明治維新のころ、徳川藩士などによる牧之原台地の開墾により、日本一のお茶生産地となりました。現在では全国の約4割は静岡で生産されています。',
+                 'prefectures' => '静岡',
                  'm__collection_id' => '174',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
@@ -2356,11 +2356,11 @@ class m_CheckpointsTableSeeder extends Seeder
           array (
                  'id' => 167,
                  'm__tour_id' => '9',
-                 'checkpoint_title' => '西条酒蔵通り',
+                 'checkpoint_title' => '逢菜橋',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '325',
-                 'comments' => '広島市の西条は酒造りに適した気候や地下水の恵みから「日本三代銘醸地」と呼ばれる酒どころです。西条駅南側に広がる西条酒蔵通りには７軒もの歴史ある酒蔵が並んでいます。オリジナルグッズやSNS映えするここだけのフォトスポット、美味しいグルメやスイーツなども楽しめ、街ブラもおすすめです。',
-                 'prefectures' => '広島',
+                 'comments' => '島田市・大井川にかかる蓬莱橋(ほうらいばし)は、全長897.4メートル、通行幅2.4メートルの木造歩道橋です。現在も農道として利用されており、国内でも数少ない賃取橋(ちんとりばし)として有名で、平成9年12月30日には「世界一の長さを誇る木造歩道橋」としてギネス記録に認定されました。また、長い木＝長生きの橋、全長897.4(やくなし＝厄無し」として厄払いや長寿のご利益スポットでも人気です。',
+                 'prefectures' => '静岡',
                  'm__collection_id' => '175',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
@@ -2370,11 +2370,13 @@ class m_CheckpointsTableSeeder extends Seeder
           array (
                  'id' => 168,
                  'm__tour_id' => '9',
-                 'checkpoint_title' => '原爆ドーム',
+                 'checkpoint_title' => '三保の松原',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '360',
-                 'comments' => '1945年8月6日、午前8時15分に、人類史上初めての原子爆弾が投下されました。原爆投下のほぼ真下に位置しながら、奇跡的にも倒壊せず鉄骨部分がむき出しの状態で残りました。被爆の惨状を今に伝え、核兵器廃絶と恒久平和の大切さを伝えるシンボルとして、1996年世界遺産に登録されました。',
-                 'prefectures' => '広島',
+                 'comments' => '富士山頂から南西に約45km離れた静岡市清水区にある三保半島は、沿岸の約5kmにわたり松林が続いています。
+                 この松林が「三保松原」と呼ばれ、海岸の松原越しに富士山を望むことができる場所として、大正11年(1922)に日本初の名勝に指定されました。
+                 なお、松原の中央付近にある「羽衣の松」は天女と地元の漁師の出会いを描いた「羽衣伝説」の舞台としても有名です。',
+                 'prefectures' => '静岡',
                  'm__collection_id' => '176',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
@@ -2384,14 +2386,12 @@ class m_CheckpointsTableSeeder extends Seeder
           array (
                  'id' => 169,
                  'm__tour_id' => '9',
-                 'checkpoint_title' => '厳島神社',
+                 'checkpoint_title' => '富士宮やきそば',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '395',
-                 'comments' => '"嚴島神社は日本三景のひとつ「安芸の宮島」として毎年多くの観光客が訪れます。
-                 創建は推古天皇元年。その後の1168年、平清盛により現在のような寝殿造りの社殿が造られました。廻廊部分は海辺に位置し、潮が満ちると海に浮かぶように見えます。
-                 その全建造物は国宝および国の重要文化財であり、平成8(1996)年には周囲の原生林を含め世界遺産に登録されました。
-                 参道の宮島表参道商店街は、名物の牡蠣やあなごなど様々なグルメが楽しめます。"',
-                 'prefectures' => '広島',
+                 'comments' => '富士宮やきそばの特徴は、水分が少なくコシのある麺、ラードを絞った後に出る「かす」を油であげた「肉かす」を具材に加えてあること、仕上げにイワシの削り粉をかかっていること、富士山の湧き水を使っていること。
+                 通常のやきそばと異なり、蒸してから冷やすことで弾力がある麺となり、その食感と味にやみつきになる人が多数出るローカルフードです。',
+                 'prefectures' => '静岡',
                  'm__collection_id' => '177',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
@@ -2401,13 +2401,13 @@ class m_CheckpointsTableSeeder extends Seeder
           array (
                  'id' => 170,
                  'm__tour_id' => '9',
-                 'checkpoint_title' => '錦帯橋',
+                 'checkpoint_title' => '韮山反射炉',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '435',
-                 'comments' => '"山口県岩国市にある5連のアーチが美しい国内屈指の木造橋の「錦帯橋」は、奇跡の名橋ともいわれ日本三名橋の一つです。寛文13年(1673)、両岸に広がる城下町を繋ぐ橋として、岩国藩主・吉川氏によって建造されました。
-                 それまでの橋は洪水の度に流されており、何度も研究を重ね完成されました。
-                 橋の周辺は、春は桜、秋は紅葉の名所でもあり、美しい橋と自然のコントラストが楽しめます。"',
-                 'prefectures' => '山口',
+                 'comments' => '江戸時代末期、欧米諸国から日本(江戸)を守るため、韮山代官・江川太郎左衛門英龍が幕府に進言して安政4年(1857)に築いた大砲鋳造炉です。
+                 元治元年(1864)の使用中止まで、品川沖に作られたお台場(砲台)のものを含む大小の大砲数百門を鋳造しました。
+                 現存するのは３基で、その中でも最も保存状態が良く、平成27年7月に世界文化遺産に登録されました。',
+                 'prefectures' => '静岡',
                  'm__collection_id' => '178',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
@@ -2417,12 +2417,12 @@ class m_CheckpointsTableSeeder extends Seeder
           array (
                  'id' => 171,
                  'm__tour_id' => '9',
-                 'checkpoint_title' => '周南コンビナート',
+                 'checkpoint_title' => '河津桜',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '470',
-                 'comments' => '"周南市の海沿いは化学工場が多く、様々な場所や角度から工場夜景を楽しめます。
-                 晴海親水公園から眺める工場夜景は日本夜景遺産に認定されるおすすめスポットです。"',
-                 'prefectures' => '山口',
+                 'comments' => '河津町はこの河津桜発祥の地で、河津川沿いの約３キロの堤防には約800本ほど、町全体では約8000本の河津桜が咲きます。例年2月上旬頃から開花し、約１ヶ月ほど楽しむことができます
+                 開花に合わせ河津桜まつりも開催され、屋台や催し物、夜間には桜のライトアップも行われ夜桜見物も楽しめます。',
+                 'prefectures' => '静岡',
                  'm__collection_id' => '179',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
@@ -2432,11 +2432,12 @@ class m_CheckpointsTableSeeder extends Seeder
           array (
                  'id' => 172,
                  'm__tour_id' => '9',
-                 'checkpoint_title' => '山口ちょうちん祭り',
+                 'checkpoint_title' => '熱海梅園',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '505',
-                 'comments' => '毎年8月6日、7日に山口市内で開催される約600年前から続く盆行事です。室町時代に山口を治めていた大名が父母の冥福を祈るために盆の夜に笹竹の灯ろうをともしたのを起源とし、やがて町民の間に盆行事として広がったといわれています。数千本の竹につけたおよそ10万個ものちょうちんが揺れながら夜の街を彩り赤く染めます。山口の夏の風物詩です。',
-                 'prefectures' => '山口',
+                 'comments' => '明治19(1886年)開設の梅園。4.4ヘクタールの敷地内には、樹齢100年を超える古木を含め60品種・469本の梅の木が植えられています。早咲きの品種が最も多く、1月中旬～3月上旬に開催される「熱海梅園梅まつり」は日本一早い梅まつりとして毎年多くの観光客が訪れます。
+                 また、紅葉樹は約380本もあり、11月中旬～12月上旬にはもみじまつりも開催されています。',
+                 'prefectures' => '静岡',
                  'm__collection_id' => '180',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
@@ -2446,15 +2447,1629 @@ class m_CheckpointsTableSeeder extends Seeder
           array (
                  'id' => 173,
                  'm__tour_id' => '9',
+                 'checkpoint_title' => '箱根',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '535',
+                 'comments' => '箱根町は都心から一番近い観光地として時期を問わず多くの観光客が訪れます。
+                 温泉のほか、箱根登山鉄道沿線に咲くあじさい、仙石原のススキ、いまだに火山活動が続く爆裂火口跡の大涌谷、箱根火山のカルデラ湖を遊覧できる芦ノ湖、パワースポットとして有名な箱根神社など、四季折々に楽しめるスポットがたくさんあります。',
+                 'prefectures' => '神奈川',
+                 'm__collection_id' => '181',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          173 => 
+          array (
+                 'id' => 174,
+                 'm__tour_id' => '9',
+                 'checkpoint_title' => '江ノ島',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '570',
+                 'comments' => '江の島は、 藤沢市湘南エリアも位置する島で、日本百景にも選ばれている景勝地です。江戸時代の浮世にも描かれた長い歴史を持つ場所でもあります。
+                 映画やドラマなどでもデートシーンで使われることも多いことや、島内の「江島神社」は縁結びのご利益があるとデートスポットとしても人気があります。
+                 夏には湘南エリアにたくさんの海水浴客が訪れ、夏の定番スポットとしても有名です。',
+                 'prefectures' => '神奈川',
+                 'm__collection_id' => '182',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          174 => 
+          array (
+                 'id' => 175,
+                 'm__tour_id' => '9',
+                 'checkpoint_title' => '鎌倉',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '580',
+                 'comments' => '山に囲まれ、目の前には海が広がる自然豊かな鎌倉は、鎌倉時代に政治の中心地として栄えた場所で、現在は数多くのお寺と神社が点在する観光地です。鎌倉大仏・パワースポット・絶景・四季折々の草花・グルメなど、見どころがたくさんあり、時期を問わず様々な楽しみ方ができます。',
+                 'prefectures' => '神奈川',
+                 'm__collection_id' => '183',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          175 => 
+          array (
+                 'id' => 176,
+                 'm__tour_id' => '9',
+                 'checkpoint_title' => 'よこすか海軍カレー',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '595',
+                 'comments' => '港町である横須賀は、昔から海軍の港として発展してきました。明治時代、栄養不足により病気にかかる日本人兵士が多く、体格の良いイギリス海軍の食事だった「カレーシチュー」を参考に日本人好みにアレンジされたのが、現在の形のカレーライスとなりました。
+                 なお、日本の明治時代後期(1900年頃)の書物「海軍割烹術参考書」という海軍食のレシピ本をもとに復元されたものを「よこすか海軍カレー」と呼びます。',
+                 'prefectures' => '神奈川',
+                 'm__collection_id' => '184',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          176 => 
+          array (
+                 'id' => 177,
+                 'm__tour_id' => '9',
+                 'checkpoint_title' => '横浜中華街',
+                 'checkpoint_category' => '終了',
+                 'distance' => '620',
+                 'comments' => '横浜市中区にある横浜中華街は、現在では、600軒以上の店がひしめいおり、世界最大級の規模を誇ります。中華街で見かける個性的な門は、風水思想に基づいて建てられた「牌楼(パイロウ)」。中華街のパワースポットで人気の商売繁盛の神様を祀った「関帝廟」など見どころもたくさんあります。',
+                 'prefectures' => '神奈川',
+                 'm__collection_id' => '185',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+
+
+          177 => 
+          array (
+                 'id' => 178,
+                 'm__tour_id' => '10',
+                 'checkpoint_title' => '六甲山',
+                 'checkpoint_category' => '開始',
+                 'distance' => '0',
+                 'comments' => '神戸市の西から北へ連なる六甲山は、ケーブルカーやロープウェーを利用し、簡単に登ることができます。山頂には牧場やオルゴールミュージアム、植物園といったの観光スポットが多くあり、中でも日本三大夜景の一つである摩耶山からの夜景は、神戸から関空まで一望できる、人気絶景スポットです。',
+                 'prefectures' => '兵庫',
+                 'm__collection_id' => '187',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          178 => 
+          array (
+                 'id' => 179,
+                 'm__tour_id' => '10',
+                 'checkpoint_title' => '神戸北野異人館街',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '35',
+                 'comments' => '"現在でも日本の主要な国際貿易港のひとつである神戸港は、1868(慶応3)年、函館・長崎・横浜についで開港された港です。古くからたくさんの外国人関係者を迎え入れていました。
+                 神戸市中央区北野町の一帯は、外国人の居留地として日本が家や土地を貸し出したエリアで、明治から大正時代に建てられた洋館が、21も残っており、見学ができる施設も多くあります。
+                 "',
+                 'prefectures' => '兵庫',
+                 'm__collection_id' => '188',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          179 => 
+          array (
+                 'id' => 180,
+                 'm__tour_id' => '10',
+                 'checkpoint_title' => '明石焼き',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '65',
+                 'comments' => '明石市は新鮮なたこが水揚げされることでも有名ですが、そのたこを使用したたこの石焼きは、だし汁に浸して食べる郷土料理として全国的にも有名です。だし汁の風味と、卵たっぷりの生地はとてもやさしい味わいです。主な材料は小麦粉、卵、たことシンプルのため「卵焼き」と呼ばれることもあります。',
+                 'prefectures' => '兵庫',
+                 'm__collection_id' => '189',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          180 => 
+          array (
+                 'id' => 181,
+                 'm__tour_id' => '10',
+                 'checkpoint_title' => '姫路城',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '100',
+                 'comments' => '日本100名城にも選定されている兵庫県姫路市の国宝「姫路城」。慶長14(1609)年に赤松貞範により建築された大天守は白漆喰の城壁が特徴で、白鷺のように見える姫路城は、別名白鷺城(はくろじょう・しらさぎじょう)とも呼ばれます。黒田重隆が城郭やのちに豊臣秀吉となる羽柴秀吉など、さまざまな武将や大名によって治められ、建て替えや拡張が行われてきました。',
+                 'prefectures' => '兵庫',
+                 'm__collection_id' => '190',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          181 => 
+          array (
+                 'id' => 182,
+                 'm__tour_id' => '10',
+                 'checkpoint_title' => '赤穂',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '135',
+                 'comments' => '赤穂市は歌舞伎の演目や時代でも有名な「忠臣蔵」の題材となる、四十七名の赤穂浪士の故郷です。市内には赤穂浪士を祀る「大石神社」や、「赤穂城跡」、毎年開催れている「赤穂義士祭」など、ゆかりの地ならではの観光スポットがたくさんあります。',
+                 'prefectures' => '兵庫',
+                 'm__collection_id' => '191',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          182 => 
+          array (
+                 'id' => 183,
+                 'm__tour_id' => '10',
+                 'checkpoint_title' => '備前焼',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '155',
+                 'comments' => '備前焼は、一点ずつ成形し、乾燥させたのち、絵付けもせず釉薬も使わずそのまま焼いたもので、茶褐色の粘土の鉄分がよく表れている焼き物です。土の性質や、窯への詰め方や窯の温度の変化、焼成時の灰や炭などによって生み出される備前焼は、一つとして同じ色、同じ模様にはなりません。火は、1200〜1300度の高温で最低でも7日間、長い場合は10～12日間もの間炊き続けられます。',
+                 'prefectures' => '岡山',
+                 'm__collection_id' => '192',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          183 => 
+          array (
+                 'id' => 184,
+                 'm__tour_id' => '10',
+                 'checkpoint_title' => '桃太郎',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '180',
+                 'comments' => 'むかしばなしで有名な桃太郎のお話は、岡山に伝わる桃太郎伝説「吉備津彦命(きびつひこのみこと)の温羅(うら)退治です」がルーツとなっています。岡山市内にある「吉備津神社」はまさに「桃太郎」発祥の地としても有名な場所。その他にも鬼城山や矢喰宮など伝説にまつわる観光スポットが点在しています。',
+                 'prefectures' => '岡山',
+                 'm__collection_id' => '193',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          184 => 
+          array (
+                 'id' => 185,
+                 'm__tour_id' => '10',
+                 'checkpoint_title' => '国産ジーンズ',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '215',
+                 'comments' => '倉敷市にある児島地区は、瀬戸内海に面した港町です。そのため塩分を含む土が稲作には向かず、綿花栽培が盛んに行われたことで、繊維産業の町として独自に発展しました。元々大正以降は学生服の製造で全国トップシェアでしたが、時代が合繊に代わり窮地に追い込まれたところで、ジーンズ製造に打って出たことが始まりです。ここ児島は言わずと知れた国産ジーンズ発祥の地。一つ一つ手作業で作ること、日本の伝統的な「藍染め」技術が高く評価され国内外から愛されています。現在児島地区には「児島ジーンズストリート」があり、国産ジーンズショップが集まる人気スポットとなっています。',
+                 'prefectures' => '岡山',
+                 'm__collection_id' => '194',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          185 => 
+          array (
+                 'id' => 186,
+                 'm__tour_id' => '10',
+                 'checkpoint_title' => 'カブトガニ',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '245',
+                 'comments' => '笠岡市は生きた化石といわれる国指定天然記念物「カブトガニ」の繁殖地です。世界で唯一のカブトガニ博物館が建ち、展示はもちろん、その研究も行われています。',
+                 'prefectures' => '岡山',
+                 'm__collection_id' => '195',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          186 => 
+          array (
+                 'id' => 187,
+                 'm__tour_id' => '10',
+                 'checkpoint_title' => '鞆の浦',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '255',
+                 'comments' => '福山市の中心部から南に14kmの海岸沿いに位置する鞆の浦。今も白壁土蔵や町家が残る江戸時代の古い町並みが残ります。瀬戸内海航路の要所として発展した鞆の浦は、豪商の屋敷や船番所、古刹などが狭い範囲に立ち並び、気軽に散策が楽しめます。港先端に立つ常夜燈は、鞆の浦のシンボルです。また、鞆の浦は人気アニメ映画のモデルとなった街でもあります。',
+                 'prefectures' => '広島',
+                 'm__collection_id' => '196',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          187 => 
+          array (
+                 'id' => 188,
+                 'm__tour_id' => '10',
+                 'checkpoint_title' => '尾道と猫の細道',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '265',
+                 'comments' => '瀬戸内海に面した街「尾道」は、坂道に古寺や民家が並び昭和レトロな港町の景色が今も残り、映画やドラマなど数々の映像作品の舞台としても有名です。
+                 また、「猫の細道」は尾道市を拠点に活動する絵師の園山春二氏が作る「福石猫」を、1998年から置き始めたのがきっかけです。現在は道のあちこちに「福石猫」が置いてあり、尾道の名物となっています。
+                 さらに街中を散策すると住み着いている猫と遭遇することもあります。
+                 「猫の細道」を中心に、尾道は猫好きにはたまらない猫に関するスポットが満載の街です。',
+                 'prefectures' => '広島',
+                 'm__collection_id' => '197',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          188 => 
+          array (
+                 'id' => 189,
+                 'm__tour_id' => '10',
+                 'checkpoint_title' => '大久野島',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '295',
+                 'comments' => '"竹原市の忠海港から船で約15分の大久野島は、むかし毒ガス工場があったことから「地図から消された島」と呼ばれていました。
+                 現在、周囲4キロメートルほどの島には約900羽もの野生のうさぎが棲息し、多くの観光客が訪れます。人懐っこく、間近で一緒に写真を撮ることができる、癒しのスポットです。"',
+                 'prefectures' => '広島',
+                 'm__collection_id' => '198',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          189 => 
+          array (
+                 'id' => 190,
+                 'm__tour_id' => '10',
+                 'checkpoint_title' => '西条酒蔵通り',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '325',
+                 'comments' => '広島市の西条は酒造りに適した気候や地下水の恵みから「日本三代銘醸地」と呼ばれる酒どころです。西条駅南側に広がる西条酒蔵通りには７軒もの歴史ある酒蔵が並んでいます。オリジナルグッズやSNS映えするここだけのフォトスポット、美味しいグルメやスイーツなども楽しめ、街ブラもおすすめです。',
+                 'prefectures' => '広島',
+                 'm__collection_id' => '199',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          190 => 
+          array (
+                 'id' => 191,
+                 'm__tour_id' => '10',
+                 'checkpoint_title' => '原爆ドーム',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '360',
+                 'comments' => '1945年8月6日、午前8時15分に、人類史上初めての原子爆弾が投下されました。原爆投下のほぼ真下に位置しながら、奇跡的にも倒壊せず鉄骨部分がむき出しの状態で残りました。被爆の惨状を今に伝え、核兵器廃絶と恒久平和の大切さを伝えるシンボルとして、1996年世界遺産に登録されました。',
+                 'prefectures' => '広島',
+                 'm__collection_id' => '200',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          191 => 
+          array (
+                 'id' => 192,
+                 'm__tour_id' => '10',
+                 'checkpoint_title' => '厳島神社',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '395',
+                 'comments' => '"嚴島神社は日本三景のひとつ「安芸の宮島」として毎年多くの観光客が訪れます。
+                 創建は推古天皇元年。その後の1168年、平清盛により現在のような寝殿造りの社殿が造られました。廻廊部分は海辺に位置し、潮が満ちると海に浮かぶように見えます。
+                 その全建造物は国宝および国の重要文化財であり、平成8(1996)年には周囲の原生林を含め世界遺産に登録されました。
+                 参道の宮島表参道商店街は、名物の牡蠣やあなごなど様々なグルメが楽しめます。"',
+                 'prefectures' => '広島',
+                 'm__collection_id' => '201',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          192 => 
+          array (
+                 'id' => 193,
+                 'm__tour_id' => '10',
+                 'checkpoint_title' => '錦帯橋',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '435',
+                 'comments' => '"山口県岩国市にある5連のアーチが美しい国内屈指の木造橋の「錦帯橋」は、奇跡の名橋ともいわれ日本三名橋の一つです。寛文13年(1673)、両岸に広がる城下町を繋ぐ橋として、岩国藩主・吉川氏によって建造されました。
+                 それまでの橋は洪水の度に流されており、何度も研究を重ね完成されました。
+                 橋の周辺は、春は桜、秋は紅葉の名所でもあり、美しい橋と自然のコントラストが楽しめます。"',
+                 'prefectures' => '山口',
+                 'm__collection_id' => '202',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          193 => 
+          array (
+                 'id' => 194,
+                 'm__tour_id' => '10',
+                 'checkpoint_title' => '周南コンビナート',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '470',
+                 'comments' => '"周南市の海沿いは化学工場が多く、様々な場所や角度から工場夜景を楽しめます。
+                 晴海親水公園から眺める工場夜景は日本夜景遺産に認定されるおすすめスポットです。"',
+                 'prefectures' => '山口',
+                 'm__collection_id' => '203',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          194 => 
+          array (
+                 'id' => 195,
+                 'm__tour_id' => '10',
+                 'checkpoint_title' => '山口ちょうちん祭り',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '505',
+                 'comments' => '毎年8月6日、7日に山口市内で開催される約600年前から続く盆行事です。室町時代に山口を治めていた大名が父母の冥福を祈るために盆の夜に笹竹の灯ろうをともしたのを起源とし、やがて町民の間に盆行事として広がったといわれています。数千本の竹につけたおよそ10万個ものちょうちんが揺れながら夜の街を彩り赤く染めます。山口の夏の風物詩です。',
+                 'prefectures' => '山口',
+                 'm__collection_id' => '204',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          195 => 
+          array (
+                 'id' => 196,
+                 'm__tour_id' => '10',
                  'checkpoint_title' => '秋吉台',
                  'checkpoint_category' => '終了',
                  'distance' => '535',
                  'comments' => '美祢市の中・東部に広がる日本最大級のカルスト台地です。1955年に国定公園に、1964年に特別天然記念物に指定されました。この雄大な大地の景観を作り出した石灰石は、今からおよそ3億5千万年前に南方の海でサンゴ礁として誕生したもので、約8千万年もの長い年月をかけて海底を移動しながら大陸の上に隆起し、現在のようなカルスト台地が形成されたといわれています。',
                  'prefectures' => '山口',
-                 'm__collection_id' => '181',
+                 'm__collection_id' => '205',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
+
+          196 => 
+          array (
+                 'id' => 197,
+                 'm__tour_id' => '11',
+                 'checkpoint_title' => '大間まぐろ',
+                 'checkpoint_category' => '開始',
+                 'distance' => '0',
+                 'comments' => '本州の北端、下北半島の最北の地にある大間町は、天然の本マグロが水揚げされることで有名です。
+                 津軽海峡の荒波に揉まれ、引き締まった身にたっぷりと脂がのった「大間のマグロ」は黒いダイヤとも呼ばれています。',
+                 'prefectures' => '青森',
+                 'm__collection_id' => '207',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          197 => 
+          array (
+                 'id' => 198,
+                 'm__tour_id' => '11',
+                 'checkpoint_title' => '恐山',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '35',
+                 'comments' => '下北半島の中心に位置する標高800m以上の活火山で、山全体が霊場になっています。その正式な呼び名は「恐山菩提寺」です。
+                 別名「宇曽利山」とも呼ばれている恐山は、日本三大霊山に数えられています。
+                 風車がカラカラと回り、荒々しい岩場の合間から硫黄の臭いが立ちこめる様子は、地獄に、宇曽利山湖の白浜は極楽に見立てられています。',
+                 'prefectures' => '青森',
+                 'm__collection_id' => '208',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          198 => 
+          array (
+                 'id' => 199,
+                 'm__tour_id' => '11',
+                 'checkpoint_title' => 'ニホンザル北限地',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '70',
+                 'comments' => '下北半島には野生のニホンザルが生息しており、日本国内の分布の北限地です。
+                 さらに世界的に見ても霊長類の自然分布の北限地でもあります。',
+                 'prefectures' => '青森',
+                 'm__collection_id' => '209',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          199 => 
+          array (
+                 'id' => 200,
+                 'm__tour_id' => '11',
+                 'checkpoint_title' => 'りんご',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '105',
+                 'comments' => '青森県は全国のりんご生産量の約60％を占める日本一のりんご王国です。　明治の初め、青森県に初めて西洋りんごの苗木が移植され栽培が始まりました。',
+                 'prefectures' => '青森',
+                 'm__collection_id' => '210',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          200 => 
+          array (
+                 'id' => 201,
+                 'm__tour_id' => '11',
+                 'checkpoint_title' => '青森ねぶた祭り',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '135',
+                 'comments' => '毎年8月2～7日に開催される東北三大祭りの一つです。
+                 青森市中心部を歌舞伎や神話を題材にした「人形ねぶた」と呼ばれる山車が運行し、「跳人(ハネト)」と呼ばれる踊り子たちが踊り歩きます。',
+                 'prefectures' => '青森',
+                 'm__collection_id' => '211',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          201 => 
+          array (
+                 'id' => 202,
+                 'm__tour_id' => '11',
+                 'checkpoint_title' => '弘前のさくら',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '170',
+                 'comments' => '弘前市の弘前公園は毎年桜の季節になると多くの桜が咲き乱れます。
+                 見どころは濠の水面に桜の花びらが埋め尽くす「花筏」。ピンクに染まる水面がとても美しく、まるで桜のじゅうたんのようです。
+                 桜の期間中は「弘前さくらまつり」が開催されています。',
+                 'prefectures' => '青森',
+                 'm__collection_id' => '212',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          202 => 
+          array (
+                 'id' => 203,
+                 'm__tour_id' => '11',
+                 'checkpoint_title' => '十和田湖と奥入瀬渓流',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '205',
+                 'comments' => '青森県と秋田県にまたがる「十和田湖」には、コバルトブルーの美しい湖から流れ出る奥入瀬渓流があります。約14キロメートルの渓流沿いには散策路が設けられ、豊かな樹木や十数か所の滝、川の流れなど写真に収めたくなる景色が満載です。',
+                 'prefectures' => '青森',
+                 'm__collection_id' => '213',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          203 => 
+          array (
+                 'id' => 204,
+                 'm__tour_id' => '11',
+                 'checkpoint_title' => 'きりたんぽ',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '240',
+                 'comments' => '「きりたんぽ」は、ぶしたうるち米のご飯を杉の棒を先端から包むように巻き付けてこんがり焼いたものです。
+                 中でも秋田県の郷土料理として有名なのが、「きりたんぽ鍋」。棒を外して食べやすく切ったものを、季節の野菜や比内地鶏でとった出汁と共に鍋で煮詰めます。',
+                 'prefectures' => '秋田',
+                 'm__collection_id' => '214',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          204 => 
+          array (
+                 'id' => 205,
+                 'm__tour_id' => '11',
+                 'checkpoint_title' => '秋田犬',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '275',
+                 'comments' => '「忠犬　ハチ公」でも有名な秋田犬は、奥羽山脈一帯で狩猟犬として飼育されていました。現在ではペットとして世界的に人気がある日本犬です。丸まった尻尾と三角の耳が特徴で、天然記念物に指定されています。',
+                 'prefectures' => '秋田',
+                 'm__collection_id' => '215',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          205 => 
+          array (
+                 'id' => 206,
+                 'm__tour_id' => '11',
+                 'checkpoint_title' => 'なまはげ',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '310',
+                 'comments' => '晦日の晩に男鹿半島のほぼ全域で行われる行事で、なまはげに扮した集落の男性が、年に一度地域の家々を巡り、怠け心を戒め、無病息災・田畑の実り・山の幸・海の幸をもたらす来訪神として「泣く子はいねがー、親の言うこど聞がね子はいねがー」と家々を練り歩きます。',
+                 'prefectures' => '秋田',
+                 'm__collection_id' => '216',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          206 => 
+          array (
+                 'id' => 207,
+                 'm__tour_id' => '11',
+                 'checkpoint_title' => '秋田竿灯まつり',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '345',
+                 'comments' => '毎年8月3日〜6日に秋田市で行われる東北三大祭りのひとつ。
+                 長い竹竿にたくさんの提灯を吊り下げた「竿燈」を、男性が支えながら歩くというダイナミックなお祭りです。竿燈全体を稲穂に、吊るされた提灯を米俵に見立て、五穀豊穣を祈願します。
+                 約280本の竿燈と約10,000個の提灯が夜空を彩ります。',
+                 'prefectures' => '秋田',
+                 'm__collection_id' => '217',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          207 => 
+          array (
+                 'id' => 208,
+                 'm__tour_id' => '11',
+                 'checkpoint_title' => '稲庭うどん',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '365',
+                 'comments' => '約350年の歴史を誇る「稲庭うどん」は、江戸時代の初期に地元産の小麦粉を使って干しうどんを製造したのが始まりとされています。
+                 なめらかな舌ざわりと、つるつるとしたのどごしが特徴で、日本三大うどんの1つとして高い評価を得ています。',
+                 'prefectures' => '秋田',
+                 'm__collection_id' => '218',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          208 => 
+          array (
+                 'id' => 209,
+                 'm__tour_id' => '11',
+                 'checkpoint_title' => '花火の街・大曲',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '385',
+                 'comments' => '大仙市の大曲は三代花火競技大会のひとつの夏の大曲の花火で有名ですが、四季により異なるテーマの花火を楽しめるよう「四季の花火」として、先を通じて開催されます。さらに毎月何らかの花火大会が催される花火の街です。',
+                 'prefectures' => '秋田',
+                 'm__collection_id' => '219',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          209 => 
+          array (
+                 'id' => 210,
+                 'm__tour_id' => '11',
+                 'checkpoint_title' => '角館',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '405',
+                 'comments' => '江戸時代に栄えた城下町で、「みちのくの小京都」と呼ばれる角館は、武家屋敷をはじめとした古くからの建造物が数多く現存しています。桜、新緑、紅葉、雪景色と四季折々に楽しめますが、特に桜の名所として有名です。武家屋敷の黒塀に映える、シダレザクラは美しく、約400本のシダレザクラが並びます。',
+                 'prefectures' => '秋田',
+                 'm__collection_id' => '220',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          210 => 
+          array (
+                 'id' => 211,
+                 'm__tour_id' => '11',
+                 'checkpoint_title' => '田沢湖',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '425',
+                 'comments' => '秋田県中東部に位置する「田沢湖」は、水深は最大で423.4mもあり、日本で最も深い湖です。また、金色に輝く田沢湖のシンボル「たつこ像」のモチーフとなった「辰子姫の伝説」も有名です。辰子姫は永遠の美を願ったために龍の姿になったと伝えられており、神秘的なスポットして人気の観光地です。',
+                 'prefectures' => '秋田',
+                 'm__collection_id' => '221',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          211 =>
+          array (
+                 'id' => 212,
+                 'm__tour_id' => '11',
+                 'checkpoint_title' => 'チャグチャグ馬コ',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '460',
+                 'comments' => '毎年6月の第2土曜日に色鮮やかな装束で着飾った100頭程の馬と馬主が、滝沢市鬼越蒼前(おにこしそうぜん)神社から盛岡八幡宮までの約13キロの道のりを約4時間かけて行進します。馬が歩くたびにチャグチャグと鳴る鈴の音が名称の由来といわれています。',
+                 'prefectures' => '岩手',
+                 'm__collection_id' => '222',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          212 =>
+          array (
+                 'id' => 213,
+                 'm__tour_id' => '11',
+                 'checkpoint_title' => '盛岡冷麺',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '480',
+                 'comments' => '本場・朝鮮半島出身者が昭和29年頃に盛岡で冷麺を作ってみたのが盛岡冷麺の始まりです。最大の特徴は、ジャガイモのでんぷんを使って固めた腰の強い麺。噛めば噛むほど味が出る麺は、牛の旨味が凝縮された牛骨スープとの相性がばっちりで、やみつきになります。',
+                 'prefectures' => '岩手',
+                 'm__collection_id' => '223',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          213 =>
+          array (
+                 'id' => 214,
+                 'm__tour_id' => '11',
+                 'checkpoint_title' => 'わんこそば',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '515',
+                 'comments' => '1口分のそばを給仕さんがリズミカルにお椀の中へ投げ入れることで知られる「わんこそば」ですが、食べ方などは各地域で異なります。もともと盛岡や花巻などの地域では客人をもてなすのに、そばを振舞う風習がありました。一度に大勢の客にゆでたてを振舞うため、少量ずつお椀に盛って出すしたことが始まりとされています。',
+                 'prefectures' => '岩手',
+                 'm__collection_id' => '224',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          214 =>
+          array (
+                 'id' => 215,
+                 'm__tour_id' => '11',
+                 'checkpoint_title' => '河童',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '550',
+                 'comments' => '遠野市には河童伝説や座敷童などの多くの民話が残ります。
+                 中でも、今もまだ河童が現れるといわれている「かっぱ淵」と呼ばれる小川が有名です。
+                 釣り竿のレンタルもあり、「カッパ捕獲許可証」があれば誰でも河童釣りに挑戦できます。',
+                 'prefectures' => '岩手',
+                 'm__collection_id' => '225',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          215 =>
+          array (
+                 'id' => 216,
+                 'm__tour_id' => '11',
+                 'checkpoint_title' => '三陸・リアス式海岸',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '585',
+                 'comments' => '東北太平洋岸の北部は、面上昇や地盤沈下を繰り返して出来上がったリアス式海岸です。海と山が隣り合う非常に入り組んだ地形が絶景を生み出し、その入江は良質な漁港や帆立・カキ・ホヤ等の養殖場となっています。',
+                 'prefectures' => '岩手',
+                 'm__collection_id' => '226',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          216 =>
+          array (
+                 'id' => 217,
+                 'm__tour_id' => '11',
+                 'checkpoint_title' => '瓶ドン',
+                 'checkpoint_category' => '終了',
+                 'distance' => '620',
+                 'comments' => '宮古のご当地グルメとして注目されている「瓶ドン」は、
+                 いくらやウニなどの三陸の海の幸が牛乳瓶にぎゅうぎゅうに詰まっており、それをごはんへかけて食べる、見た目も味もインパクトのあるご当地丼です。
+                 岩手県沿岸では獲れたてのウニを牛乳瓶に詰めて保存するスタイルが一般的ですが、そこからヒントを得て作られました。',
+                 'prefectures' => '岩手',
+                 'm__collection_id' => '227',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          217 =>
+          array (
+                 'id' => 218,
+                 'm__tour_id' => '12',
+                 'checkpoint_title' => '下関ふぐ',
+                 'checkpoint_category' => '開始',
+                 'distance' => '0',
+                 'comments' => '漁場が充実していたこともあり、古くよりふぐの集積地となっていた下関。それにより加工や調理の技術にも磨きがかかり、下関ではふぐ食の文化が身近なものとして定着しました。下関ではふぐのことを「ふく」と呼び、これは「福」にあやかり縁起が良いとも言われています。',
+                 'prefectures' => '山口',
+                 'm__collection_id' => '229',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          218 =>
+          array (
+                 'id' => 219,
+                 'm__tour_id' => '12',
+                 'checkpoint_title' => '瓦そば',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '25',
+                 'comments' => '山口県下関市豊浦町川棚のソウルフード。
+                 茶そばやお肉を熱した瓦の上で焼き、温かいつゆにつけて食べる少し変わったスタイルが特徴です。
+                 しっとりとした麺とカリカリっとした麺のおこげがやみつきになります。舌はもちろん目や耳でも楽しめる大人気の料理です。',
+                 'prefectures' => '山口',
+                 'm__collection_id' => '230',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          219 =>
+          array (
+                 'id' => 220,
+                 'm__tour_id' => '12',
+                 'checkpoint_title' => '角島',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '55',
+                 'comments' => '下関市豊北町の「角島」と本土を結ぶために架かる「角島大橋」は、通行料無料の橋としては日本屈指の長さ1,780mを誇り、さらに絶景が楽しめる橋としてメディアでも多く取り上げられています。
+                 エメラルドグリーンの海に真っ直ぐ延びていく橋が美しいとSNSでも話題となりました。',
+                 'prefectures' => '山口',
+                 'm__collection_id' => '231',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+         
+
+          220 =>
+          array (
+                 'id' => 221,
+                 'm__tour_id' => '12',
+                 'checkpoint_title' => '元乃隅神社',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '90',
+                 'comments' => '長門市にある「元乃隅神社」は、昭和30年地域の網元であった岡村斉(おかむらひとし)さんの枕元に現れた白狐のお告げにより建立されました。商売繁盛、大漁、海上安全、さらに良縁、子宝、開運厄除、福徳円満、交通安全、学業成就などのご利益があるといわれてます。昭和62年から10年間かけて奉納された123基の鳥居が、天然記念物の龍宮の潮吹側から100ｍ以上にわたって並ぶ景色は圧巻です。',
+                 'prefectures' => '山口',
+                 'm__collection_id' => '232',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          221 =>
+          array (
+                 'id' => 222,
+                 'm__tour_id' => '12',
+                 'checkpoint_title' => '別府弁天池',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '125',
+                 'comments' => '美祢市・別府厳島神社の境内に湧き出る、透き通ったコバルトブルーの池。秋吉台のカルスト地形で長い時間かけられて濾過された水は、カルシウムやミネラル成分を多く含み、「名水百選」に選定されています。湧き出ている隣にはこの水を利用した養鱒場があり、マス釣りやマス料理が楽しめます。',
+                 'prefectures' => '山口',
+                 'm__collection_id' => '233',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+
+          222 =>
+          array (
+                 'id' => 223,
+                 'm__tour_id' => '12',
+                 'checkpoint_title' => '明治維新胎動の地・萩',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '160',
+                 'comments' => '白壁となまこ壁や黒板塀の江戸時代の美しい城下町が続き、吉田松陰・高杉晋作など維新の志士ゆかりの地が点在する歴史のまちです。
+                 世界遺産に登録されたスポットも点在しています。',
+                 'prefectures' => '山口',
+                 'm__collection_id' => '234',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          223 =>
+          array (
+                 'id' => 224,
+                 'm__tour_id' => '12',
+                 'checkpoint_title' => '鷺舞神事(さぎまいじんじ)',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '195',
+                 'comments' => '津和野の弥栄神社に伝わる古典芸能神事で、京都発祥でありながら、現在まで廃絶することなく奉納され続けている唯一の鷺舞であり、国の重要無形民俗文化財に指定されています。
+                 毎年7月20日と27日に町内の定められた場所で行われており、唄や囃子にあわせて真っ白い羽を広げて舞う姿は優雅で美しく観光客を魅了します。',
+                 'prefectures' => '島根',
+                 'm__collection_id' => '235',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          224 =>
+          array (
+                 'id' => 225,
+                 'm__tour_id' => '12',
+                 'checkpoint_title' => '松葉ガニ',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '230',
+                 'comments' => 'ズワイガニのうち、成長した雄を山陰地方では「松葉がに」と呼び、水揚げされる地方によってその呼称が違います。ぎっしりと詰まった身と上品な旨味が味わえます。',
+                 'prefectures' => '島根',
+                 'm__collection_id' => '236',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          225 =>
+          array (
+                 'id' => 226,
+                 'm__tour_id' => '12',
+                 'checkpoint_title' => '浜田の赤天',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '265',
+                 'comments' => '魚のすり身に赤とうがらしを練り込んだ、ピリ辛が絶品のB級グルメ。
+                 パン粉をつけて揚げてあるので、サクサクとした食感も特徴です。',
+                 'prefectures' => '島根',
+                 'm__collection_id' => '237',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          226 =>
+          array (
+                 'id' => 227,
+                 'm__tour_id' => '12',
+                 'checkpoint_title' => '石見銀山',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '300',
+                 'comments' => '世界遺産にも登録されている大田市の「石見銀山」は、戦国時代後期から江戸時代前期にかけて大量の銀を産出し、アジアはもちろんヨーロッパ諸国とも交流をもたらしました。かつて銀を採掘していた坑道跡、坑道跡の龍源寺間歩につながる大森の町並みは当時の面影を残し、現在も人々が生活をしています。',
+                 'prefectures' => '島根',
+                 'm__collection_id' => '238',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          227 =>
+          array (
+                 'id' => 228,
+                 'm__tour_id' => '12',
+                 'checkpoint_title' => '神話の国・出雲',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '335',
+                 'comments' => '多くの神話が残る出雲地方は、縁結びの神様として有名な「出雲大社」をはじめ、パワースポットが多く存在し、歴史ある街です。
+                 旧暦10月は、出雲の国に全国の八百万(やおよろず)の神々が会議のために集まるといわれており「神在月」と呼ばれます。また、他の土地では神様が留守になるので「神無月」といいます。
+                 この期間は様々なご縁が結ばれるといわれ、多くの人が出雲へ訪れます。',
+                 'prefectures' => '島根',
+                 'm__collection_id' => '239',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          228 =>
+          array (
+                 'id' => 229,
+                 'm__tour_id' => '12',
+                 'checkpoint_title' => '宍道湖しじみ',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '360',
+                 'comments' => '水と淡水が入り混じる宍道湖は、日本で一番おいしいとされるヤマトシジミが多く生息します。宍道湖のヤマトシジミは粒が大きく肉厚、食べて美味、そして体に良い栄養分を多く含みます。約300名のシジミ漁業者が、漁をする風景は宍道湖の風物詩となっています。',
+                 'prefectures' => '島根',
+                 'm__collection_id' => '240',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          229 =>
+          array (
+                 'id' => 230,
+                 'm__tour_id' => '12',
+                 'checkpoint_title' => 'ベタ踏み坂',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '385',
+                 'comments' => '通称「ベタ踏み坂」とは、鳥取と島根の県境を結ぶ「江島大橋」の島根県側の坂の部分のこと。テレビCMで登場し有名となりました。
+                 大根島北西岸沿いから望遠レンズを使って撮ると、自動車が空に向かって駆け上がっていくような急勾配の江島大橋の写真になります。',
+                 'prefectures' => '島根',
+                 'm__collection_id' => '241',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          230 =>
+          array (
+                 'id' => 231,
+                 'm__tour_id' => '12',
+                 'checkpoint_title' => '皆生温泉',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '400',
+                 'comments' => '米子市の日本海に面した海辺の温泉地。皆生温泉のお湯は、海中から湧き出る別名を｢塩の湯｣と呼ばれ、塩分濃度が濃く、保湿効果が高いことから美容効果も期待されています。
+                 海水浴場としても人気があり、幾つものお椀が連なったような、独特な地形をした砂浜が特徴です。毎年トライアスロンの大会も行われます。',
+                 'prefectures' => '島根',
+                 'm__collection_id' => '242',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          231 =>
+          array (
+                 'id' => 232,
+                 'm__tour_id' => '12',
+                 'checkpoint_title' => '満正寺(まんしょうじ)',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '440',
+                 'comments' => '元禄12年(1699年)、池田藩城代の荒尾志摩の菩提寺として創建されました。満正寺に古来より伝わる秘伝星占術を現代風にアレンジした直径8メートルもの巨大星占盤「九曜星占盤」を使って、性格・恋愛・対人関係などを占うことができます。生年月日から星を算出し、性格・恋愛・相性・対人関係を占います。',
+                 'prefectures' => '島根',
+                 'm__collection_id' => '243',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          232 =>
+          array (
+                 'id' => 233,
+                 'm__tour_id' => '12',
+                 'checkpoint_title' => '二十一世紀梨',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '470',
+                 'comments' => '青梨の代表品種の1つで、鳥取県が全国一の生産量を誇る産地として有名です。大きさは300gくらいで果皮は黄緑色。甘みの中にさわやかな酸味を持ち、やわらかな果肉は果汁を多く含んでいるのが特徴です。',
+                 'prefectures' => '島根',
+                 'm__collection_id' => '244',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          233 =>
+          array (
+                 'id' => 234,
+                 'm__tour_id' => '12',
+                 'checkpoint_title' => '鳥取砂丘',
+                 'checkpoint_category' => '終了',
+                 'distance' => '490',
+                 'comments' => '東西16km、南北2.4kmに広がり、最大高低差は約90mという日本最大級の砂丘です。自然の創り出す「風紋」・「砂簾」・「砂柱」も見どころのひとつで、美しい砂丘を堪能するためのアクティビティもたくさんあります。',
+                 'prefectures' => '鳥取',
+                 'm__collection_id' => '245',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          234 =>
+          array (
+                 'id' => 235,
+                 'm__tour_id' => '13',
+                 'checkpoint_title' => '万博記念公園',
+                 'checkpoint_category' => '開始',
+                 'distance' => '0',
+                 'comments' => '1970年に大阪府吹田市で開催された日本万国博覧会(大阪万博)の跡地を整備した公園です。
+                 公園のシンボルでもある「太陽の塔」を中心に自然文化園や、日本庭園、国立民族学博物館、大阪日本民芸館など様々な施設があります。',
+                 'prefectures' => '大阪',
+                 'm__collection_id' => '247',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          235 =>
+          array (
+                 'id' => 236,
+                 'm__tour_id' => '13',
+                 'checkpoint_title' => '大阪城',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '20',
+                 'comments' => '大坂城は全国統一の本拠地を大阪とした豊臣秀吉によって天正11年(1583)に築造が開始され、15年の歳月をかけ完成されました。その後再建と消失を繰り返し、平成9年に行われた「平成の大改修」により今の姿となりました。
+                 大坂城の遺跡のうち、国の重要文化財に指定されているのは13棟で、すべて江戸時代に建てられた物です。',
+                 'prefectures' => '大阪',
+                 'm__collection_id' => '248',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          236 =>
+          array (
+                 'id' => 237,
+                 'm__tour_id' => '13',
+                 'checkpoint_title' => '粉もん',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '40',
+                 'comments' => '関西圏では小麦粉料理を親しみを込め「粉もん」と呼んでいます。
+                 中でもくいだおれの街としても有名な大阪は「粉もん」料理の宝庫です。
+                 お好み焼き、たこ焼き、うどんなどなど、老若男女を問わず愛される粉もん料理のお店がたくさんあります。',
+                 'prefectures' => '大阪',
+                 'm__collection_id' => '249',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          237 =>
+          array (
+                 'id' => 238,
+                 'm__tour_id' => '13',
+                 'checkpoint_title' => '岸和田だんじり祭り',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '60',
+                 'comments' => '日本各地で行われるだんじり祭りの中でも有名なのが岸和田市で行われる「岸和田だんじり祭」です。江戸時代中期にはじまり、およそ300年の歴史と伝統を誇ります。一番の見どころはダイナミックな引き回しです。街中を何周も何周も駆け巡り、曲がり角で「やりまわし」を行う勇敢な姿に魅了されます。
+                 だんじりとは、山車(だし)を意味する西日本の方言です。',
+                 'prefectures' => '大阪',
+                 'm__collection_id' => '250',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          238 =>
+          array (
+                 'id' => 239,
+                 'm__tour_id' => '13',
+                 'checkpoint_title' => '泉州水なす',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '80',
+                 'comments' => '大阪南部の泉州地域の特産品で、生でも食べられるほどみずみずしいのが特徴です。栽培が難しく選別基準も厳しいため最高級品は夏の間のみほとんど市場に出回りません。全国的には漬物が有名です。',
+                 'prefectures' => '大阪',
+                 'm__collection_id' => '251',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          239 =>
+          array (
+                 'id' => 240,
+                 'm__tour_id' => '13',
+                 'checkpoint_title' => '紀州梅',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '105',
+                 'comments' => '和歌山県は、江戸時代に本格的な梅栽培の始まったとされ、明治に入り梅干しの生産も始まりました。昭和に入ると優良品質の梅が栽培され始め、紀州産の南高梅は梅干で一番美味しいとも言われるようになりました。',
+                 'prefectures' => '和歌山',
+                 'm__collection_id' => '252',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          240 =>
+          array (
+                 'id' => 241,
+                 'm__tour_id' => '13',
+                 'checkpoint_title' => '醤油発祥の地',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '140',
+                 'comments' => '熊野古道の宿場町として、古くから栄えた和歌山県の湯浅町は、醤油発祥の地としても有名な町です。
+                 醤油の醸造業で発展した町並みには、醸造業に関連する町家や土蔵が建ち並び、老舗の醤油醸造家から醤油の香りが漂います。',
+                 'prefectures' => '和歌山',
+                 'm__collection_id' => '253',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          241 =>
+          array (
+                 'id' => 242,
+                 'm__tour_id' => '13',
+                 'checkpoint_title' => 'なれ寿司',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '170',
+                 'comments' => '「なれずし」いわゆる一般的な寿司とは違って、主に魚と塩と米飯を長期間漬け込んで乳酸発酵させた食品です。日本各地に郷土料理としてありますが、和歌山県のなれ寿司の特徴は数時間～数日間発酵させた「早なれ」といい、飯の上に塩漬けにしたサバをのせ、イネ科の植物の葉アセで巻き、重石で押して発酵させます。
+                 発酵期間が短いため、発酵食品独特のにおいや、酸味が少なくなれ寿司の中でも食べやすいとされています。',
+                 'prefectures' => '和歌山',
+                 'm__collection_id' => '254',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          242 =>
+          array (
+                 'id' => 243,
+                 'm__tour_id' => '13',
+                 'checkpoint_title' => '熊野古道',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '200',
+                 'comments' => '「熊野古道」は、和歌山県紀伊半島にある熊野三山と伊勢や大阪、高野及び吉野とを結ぶ古い街道の総称です。世界遺産「紀伊山地の霊場と参詣道」に登録されています。熊野詣は日本人の巡礼の起源ともいわれ、古くより多くの人が訪れました。現在でも大樹などの自然や江戸時代の石畳などの史跡を見られ、パワースポットとしても注目されています。',
+                 'prefectures' => '和歌山',
+                 'm__collection_id' => '255',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          243 =>
+          array (
+                 'id' => 244,
+                 'm__tour_id' => '13',
+                 'checkpoint_title' => '龍神温泉',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '230',
+                 'comments' => '田辺市龍神村の日高川の渓流沿いに位置し、古くから熊野信仰の名湯として知られ、江戸時代には歴代の紀州徳川藩主の別荘地として栄えた歴史ある名湯です。「日本三美人の湯」としても知られています。',
+                 'prefectures' => '和歌山',
+                 'm__collection_id' => '256',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          244 =>
+          array (
+                 'id' => 245,
+                 'm__tour_id' => '13',
+                 'checkpoint_title' => '高野山',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '260',
+                 'comments' => '「紀伊山地の霊場と参詣道」の一部でもある高野山は、高野山全体を「総本山金剛峯寺」とし、「一山境内地」と考えに基づいて、弘法大師「空海」が高野山を切り開き創られた、真言密教発祥の地として有名です。山内は「奥之院」と「壇上伽藍」を二大聖地とし、今も人々の信仰を集めています。現在、高野山には117もの寺院があり、約4,000人が居住しており、そのうち1,000人ほどが真言密教のお坊さんで、修行をしながら生活をしています。',
+                 'prefectures' => '和歌山',
+                 'm__collection_id' => '257',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          245 =>
+          array (
+                 'id' => 246,
+                 'm__tour_id' => '13',
+                 'checkpoint_title' => '柿の葉寿司',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '290',
+                 'comments' => '奈良を代表する郷土料理の柿の葉寿司は、江戸時代中期ごろの柿が産地だった五條や吉野川流域の家々で親しまれていたのが始まりといわれています。
+                 当時は保存のきくよう柿の葉で包んで重石をのせ3日ほど醗酵させていたため、一晩寝かせるだけの現在の押し寿司とは違い、なれ寿司だったそう。
+                 現在の「柿の葉寿司」の一番の食べ頃は、一晩寝かせた翌日とおすすめしています。寝かせることで塩角が取れ、すし飯に鯖の旨味と柿の葉の香りがしみ込み、熟成した深い味わいになるのです。',
+                 'prefectures' => '奈良',
+                 'm__collection_id' => '258',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          246 =>
+          array (
+                 'id' => 247,
+                 'm__tour_id' => '13',
+                 'checkpoint_title' => '吉野山',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '320',
+                 'comments' => '吉野山は、古来より桜の名所として有名です。尾根を埋める桜は3万本ともいわれ、
+                 下千本から奥千本まで千本桜が徐々に開花をしていく様は圧巻です。見ごろは4月上旬から下旬。
+                 世界遺産「紀伊山地の霊場と参詣道」の霊場の一つでもあります。',
+                 'prefectures' => '奈良',
+                 'm__collection_id' => '259',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          247 =>
+          array (
+                 'id' => 248,
+                 'm__tour_id' => '13',
+                 'checkpoint_title' => '茶粥',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '340',
+                 'comments' => '茶がゆは、お茶で炊いたおかゆのことです。西日本に広く伝わる家庭料理ですが、奈良では聖武天皇の時代に食べられていたという記録が残っており、奈良の郷土料理のひとつです。使われるお茶は地域やお店によって異なります。',
+                 'prefectures' => '奈良',
+                 'm__collection_id' => '260',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          248 =>
+          array (
+                 'id' => 249,
+                 'm__tour_id' => '13',
+                 'checkpoint_title' => '奈良公園',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '360',
+                 'comments' => '自由に歩き回る鹿が目を引く「奈良公園」は、約600ヘクタールもの園内には山林や川などの自然だけでなく、東大寺や興福寺など日本を代表する重要文化財が隣接しており、歴史公園とも言われています。',
+                 'prefectures' => '奈良',
+                 'm__collection_id' => '261',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          249 =>
+          array (
+                 'id' => 250,
+                 'm__tour_id' => '13',
+                 'checkpoint_title' => '宇治の抹茶',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '390',
+                 'comments' => '抹茶のブランドといえば京都宇治。
+                 宇治は室町時代に、足利義満によっていくつもの指定茶園が作られたことで、お茶の栽培が盛んとなり、さらに鎌倉時代に今の中国にあたる宋より抹茶のルーツが伝わったとされています。
+                 現在では、碾茶（抹茶の茶葉）の産地として全国茶品評会で上位に選ばれるほどであり、全国的に有名となりました。',
+                 'prefectures' => '京都',
+                 'm__collection_id' => '262',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          250 =>
+          array (
+                 'id' => 251,
+                 'm__tour_id' => '13',
+                 'checkpoint_title' => '京都四大行事',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '410',
+                 'comments' => '京都ではたくさんのお祭り行事が行われていますが、中でも春の「葵祭(あおいまつり)」、夏の「祇園祭(ぎおんまつり)」、秋の「時代祭(じだいまつり)」の3つのお祭りは「京都三大祭り」は古くから親しまれる京都を代表するお祭りです。それぞれ祭りの歴史や意味合いも全く異なります。これに「五山送り火」を加えて「京都四大行事」と呼ばれています。',
+                 'prefectures' => '京都',
+                 'm__collection_id' => '263',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          251 =>
+          array (
+                 'id' => 252,
+                 'm__tour_id' => '13',
+                 'checkpoint_title' => '嵐山',
+                 'checkpoint_category' => '終了',
+                 'distance' => '430',
+                 'comments' => '京都市の西部に位置する嵯峨嵐山。平安時代は貴族の別荘地として愛され、嵯峨嵐山に因んだ和歌も数多く残されています。現在は四季折々の美しい景色や歴史ある神社仏閣などの見どころが数多くあり、京都を代表する観光スポットとして人気のエリアです。',
+                 'prefectures' => '京都',
+                 'm__collection_id' => '264',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          252 =>
+          array (
+                 'id' => 253,
+                 'm__tour_id' => '14',
+                 'checkpoint_title' => '金城町石畳道',
+                 'checkpoint_category' => '開始',
+                 'distance' => '0',
+                 'comments' => '那覇市の首里城から続く長さ300メートルの琉球石灰岩が敷かれた石畳道です。1522(尚真王46)年ごろは造られたと推定され、戦争により現在の長さしか残っていませんが、首里城から南部へ行く道として造られました。両脇に沖縄の古民家があり、風情あふれる場所です。',
+                 'prefectures' => '沖縄',
+                 'm__collection_id' => '266',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          253 =>
+          array (
+                 'id' => 254,
+                 'm__tour_id' => '14',
+                 'checkpoint_title' => '糸満ハーレー',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '20',
+                 'comments' => '糸満では、毎年旧暦の5月4日に糸満漁港内で海の恵みに感謝し、「大漁」と「航海安全」を祈願して、勇壮なハーレー競漕が行われます。当日は、山巓毛(サンティンモー)という高台でウガン(御願)をすることから始まります。その後のハーレー行事では、西村・中村・新島の３つの古い時代の集落に分かれ、伝統衣装を身にまとう現役海人(うみんちゅ)が熱戦を繰り広げます。',
+                 'prefectures' => '沖縄',
+                 'm__collection_id' => '267',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          254 =>
+          array (
+                 'id' => 255,
+                 'm__tour_id' => '14',
+                 'checkpoint_title' => 'シーサー',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '50',
+                 'comments' => '沖縄に古くから伝わる守り神です。紀元前にシルクロードを経て13～15世紀頃に中国から伝来しました。主に家の守り神・魔除けとして、沖縄県民の多くの家屋に設置されています。2体のうち、口を開けているものがオス・口を閉じているものがメスで、右側にオス、左側にメスを置くことが正しいとされています。',
+                 'prefectures' => '沖縄',
+                 'm__collection_id' => '268',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          255 =>
+          array (
+                 'id' => 256,
+                 'm__tour_id' => '14',
+                 'checkpoint_title' => '斎場御嶽',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '70',
+                 'comments' => '南城市にある斎場御嶽(せいふぁうたき)は、琉球王朝時代に国家的な祭事が行われてきた沖縄最高の聖地です。球の始祖「アマミキヨ」が造ったとされ、琉球の最高神女であった「キコエオオキミ」の就任の儀式が執り行われました。国の催事も行われていたため首里城と関わりの深い場所でもあります。
+                 多くの先人たちが祈りを捧げてきた場所であるため強いエネルギーを感じられるパワースポットです。2000年12月に「琉球王国のグスク及び関連遺産群」の1つとして世界遺産に登録されています。',
+                 'prefectures' => '沖縄',
+                 'm__collection_id' => '269',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          256 =>
+          array (
+                 'id' => 257,
+                 'm__tour_id' => '14',
+                 'checkpoint_title' => 'ガジュマルの木',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '95',
+                 'comments' => '日本では、沖縄や屋久島などに分布しており、大きいものでは20メートルにも成長します。
+                 大きなガジュマルはヒゲのような気根を無数に垂らし、それが太くなると時間をかけ太い幹となり、何本もの幹で自分を支えるようになります。
+                 また、精霊が宿る神秘的な木として知られ、沖縄諸島で言い伝えられてきた伝説上の生物「キジムナー」が宿っているともいわれています。「キジムナー」は、家のガジュマルに住み着くと裕福になれるという言い伝えもあり、沖縄の人に古くから愛されています。',
+                 'prefectures' => '沖縄',
+                 'm__collection_id' => '270',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+
+          257 =>
+          array (
+                 'id' => 258,
+                 'm__tour_id' => '14',
+                 'checkpoint_title' => '港川外人住宅',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '125',
+                 'comments' => '浦添市にある「港川外人住宅街」は、戦後駐留米軍向けの住宅として建てられた場所です。
+                 今では65棟ほど残っている外人住居の6割が、レトロな外観や造りを生かして、おしゃれでセンスのよいショップやオフィスとして利用されています。それぞれの通りの入口にもアメリカの州の名前がついた看板が立ち、外国風の作りの建物が並ぶこのエリアはフォトスポットとしても人気を集めています。',
+                 'prefectures' => '沖縄',
+                 'm__collection_id' => '271',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          258 =>
+          array (
+                 'id' => 259,
+                 'm__tour_id' => '14',
+                 'checkpoint_title' => '海中道路',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '155',
+                 'comments' => 'うるま市内の車で行ける離島4島をつなぐ全長5キロメートルの海中道路は、見渡す限り沖縄の青い海が広がるドライブに人気の道路です。
+                 道路の高さが通常の橋よりも低いので、より間近に海を感じられます。',
+                 'prefectures' => '沖縄',
+                 'm__collection_id' => '272',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          259 =>
+          array (
+                 'id' => 260,
+                 'm__tour_id' => '14',
+                 'checkpoint_title' => '青の洞窟',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '180',
+                 'comments' => '沖縄のシュノーケリング＆ダイビングで人気スポットの読谷村真栄田岬にある「青の洞窟」は、海中に半分沈む洞窟内に、外から太陽光が差し込み、海底に反射した光が洞窟全体を青く照らします。あたり一面が光に包まれる中、魚たちが優雅に泳ぐ姿が見られます。とても神秘的な心が洗われるスポットです！',
+                 'prefectures' => '沖縄',
+                 'm__collection_id' => '273',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          260 =>
+          array (
+                 'id' => 261,
+                 'm__tour_id' => '14',
+                 'checkpoint_title' => '万座毛',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '205',
+                 'comments' => '「万座毛」は琉球石灰岩でできた断崖で、岩が象の鼻ににていることでも有名です。
+                 18世紀前半に琉球国王の尚敬王が「万人を座するに足る」と賞賛したことから万座毛と名付けられたと伝えられています。',
+                 'prefectures' => '沖縄',
+                 'm__collection_id' => '274',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          261 =>
+          array (
+                 'id' => 262,
+                 'm__tour_id' => '14',
+                 'checkpoint_title' => '沖縄そば',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '235',
+                 'comments' => '琉球王朝時代に中国から伝わったものとされていますが宮廷料理としてであり、庶民が口にするようになったのは大正時代からといわれています。
+                 それぞれの地域でアレンジされており、「宮古そば」・「八重山そば」・「大東そば」など様々です。麺の形状や具のトッピングなど、地域によって主な特徴があります。',
+                 'prefectures' => '沖縄',
+                 'm__collection_id' => '275',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          262 =>
+          array (
+                 'id' => 263,
+                 'm__tour_id' => '14',
+                 'checkpoint_title' => '古宇利島',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '265',
+                 'comments' => '沖縄県今帰仁村の橋で渡れる直径約2キロメートルの離島です。エメラルドグリーンの海の上に造られた古宇利大橋やティーヌ浜から見えるハート型の岩など島内には絶景を楽しめるスポットがたくさんあります。
+                 また、古宇利島には「アダムとイヴ」を連想させるような話が伝説として語り継がれており、恋・結婚・子孫繁栄のご利益があるパワースポットとしても有名です。',
+                 'prefectures' => '沖縄',
+                 'm__collection_id' => '276',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          263 =>
+          array (
+                 'id' => 264,
+                 'm__tour_id' => '14',
+                 'checkpoint_title' => 'マンローブ',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '290',
+                 'comments' => '熱帯、亜熱帯の河口など、潮の満ち干の影響を受ける場所に生育する植物をまとめてマングローブと呼びます。マングローブの特徴は、その形状です。泥の中は酸素が不足するため、「呼吸根」と呼ばれる根を泥から出し、酸素を取り込んでいます。マングローブの林には、カニやハゼの仲間など多くの生物が生息し、それを求め様々な水鳥も集まります。
+                 日本では種子島以南の場所で自然分や布しており、マングローブ林の中をカヤックに乗って探索するコースも人気があります。',
+                 'prefectures' => '沖縄',
+                 'm__collection_id' => '277',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          264 =>
+          array (
+                 'id' => 265,
+                 'm__tour_id' => '14',
+                 'checkpoint_title' => 'やんばる',
+                 'checkpoint_category' => '終了',
+                 'distance' => '320',
+                 'comments' => '沖縄北部の大宜味村、東村、国頭村には「やんばる」と呼ばれる大自然が存在します。
+                 このエリアは国立公園に指定されており、雄大なカルスト地形がみられる「大石林山」やマングローブ林などたくさんの自然の景観を楽しめます。
+                 また、ヤンバルクイナやオキナワトゲネズミなどここでしか見られない動植物がたくさん生息しており、現在も自然環境が比較的良い状態で残っています。',
+                 'prefectures' => '沖縄',
+                 'm__collection_id' => '278',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          265 =>
+          array (
+                 'id' => 266,
+                 'm__tour_id' => '15',
+                 'checkpoint_title' => '函館山',
+                 'checkpoint_category' => '開始',
+                 'distance' => '0',
+                 'comments' => '日本三大夜景、さらに世界三大夜景でもある「函館山」は、
+                 両側を海に挟まれた独特の地形が街の明かりを美しく引き立てます。
+                 ゴールデンタイムは日没後30分で、夕暮れの中街の明かりが美しく映え、写真撮影には最高の時間帯です。',
+                 'prefectures' => '北海道',
+                 'm__collection_id' => '280',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          266 =>
+          array (
+                 'id' => 267,
+                 'm__tour_id' => '15',
+                 'checkpoint_title' => '大沼国定公園',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '35',
+                 'comments' => '昭和33年7月に、南北海道の唯一の国定公園となった「大沼国定公園」は、駒ケ岳や大沼、小沼などの大小の沼やその周辺地域を含み、総面積は9083ヘクタールに及びます。公園内にはたくさんの動植物が生息しており、バードウォッチングやトレッキングが楽しめます。',
+                 'prefectures' => '北海道',
+                 'm__collection_id' => '281',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          267 =>
+          array (
+                 'id' => 268,
+                 'm__tour_id' => '15',
+                 'checkpoint_title' => '木彫り熊',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '70',
+                 'comments' => '北海道土産の定番でもある「木彫り熊」は、明治維新後の八雲町で徳川農場を経営していた、尾張徳川家の当主徳川義親が、ヨーロッパへ視察旅行へ行った際に、スイス土産として木彫りの熊を購入したことから始まりました。
+                 スイスでは、農民が観光客のためにペザントアート(農民美術)を副業として作っており、その技術を八雲町で取り入れたことで今の形の土産物として根付いていきました。',
+                 'prefectures' => '北海道',
+                 'm__collection_id' => '282',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          268 =>
+          array (
+                 'id' => 269,
+                 'm__tour_id' => '15',
+                 'checkpoint_title' => 'かにめし',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '100',
+                 'comments' => '「かにめし」は長万部町の名物グルメとして、駅弁でも有名です。火で炙ったカニを塩こしょうで味付けし、ごはんの上に盛付てあるシンプルながらもカニの風味を存分に感じられる一品です。',
+                 'prefectures' => '北海道',
+                 'm__collection_id' => '283',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          269 =>
+          array (
+                 'id' => 270,
+                 'm__tour_id' => '15',
+                 'checkpoint_title' => 'るいべ漬け',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '135',
+                 'comments' => '「るいべ」とは、お刺身用の鮭を凍らせた状態のことをいいます。天然秋鮭を使って作られ、特製醤油に鮭といくらをあえたものが「るいべ漬け」です。
+                 北海道の郷土料理として絶大な人気を誇ります。',
+                 'prefectures' => '北海道',
+                 'm__collection_id' => '284',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          270 =>
+          array (
+                 'id' => 271,
+                 'm__tour_id' => '15',
+                 'checkpoint_title' => '登別温泉',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '165',
+                 'comments' => '登別温泉は9種類の多彩な泉質と湧出量が1日1万トンの豊富な湯量から、「温泉デパート」と称され、日本全国から湯治客が訪れます。泉源のある地獄谷や日和山は今でも活発に活動し、高温の水蒸気や火山ガスが激しく噴き出しています。また、温泉街は鬼がシンボルとしてあちこちに潜んでおり、散策も楽しめます。',
+                 'prefectures' => '北海道',
+                 'm__collection_id' => '285',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          271 =>
+          array (
+                 'id' => 272,
+                 'm__tour_id' => '15',
+                 'checkpoint_title' => 'ほっき貝',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '195',
+                 'comments' => '苫小牧市は「ほっき貝」の水揚量日本一を誇り、一年中いつ食べても高品質です。苫小牧で水揚げされる「ほっき貝」は9㎝以上の大型の貝のみを出荷し、肉厚で甘みが強いのが特徴です。',
+                 'prefectures' => '北海道',
+                 'm__collection_id' => '286',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          272 =>
+          array (
+                 'id' => 273,
+                 'm__tour_id' => '15',
+                 'checkpoint_title' => 'アイヌ民族',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '225',
+                 'comments' => 'アイヌ民族は、おおよそ17世紀から19世紀において東北地方北部から北海道、サハリン、千島列島に及ぶ広い範囲を暮らしてきた人達です。 独自の言葉や文化を持ち、北東アジアなどの周辺民族とも関わりながら暮らしていました。アイヌとは人間を意味します。',
+                 'prefectures' => '北海道',
+                 'm__collection_id' => '287',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          273 =>
+          array (
+                 'id' => 274,
+                 'm__tour_id' => '15',
+                 'checkpoint_title' => '夕張メロン',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '255',
+                 'comments' => '北海道を代表する名物の「夕張メロン」は、大玉でとても柔らかい果肉とジューシーな食感が特徴です。
+                 夕張市では、このメロンを使った地元でしか味わえないスイーツなども生産されています。',
+                 'prefectures' => '北海道',
+                 'm__collection_id' => '288',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          274 =>
+          array (
+                 'id' => 275,
+                 'm__tour_id' => '15',
+                 'checkpoint_title' => 'キタキツネ',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '290',
+                 'comments' => '北海道のほぼ全域に多く生息しており、北海道での遭遇率はNO1の野生動物です。近年観光客の餌やりが問題になっており、食べ物欲しさに道路に飛び出て事故にあったり、病気をするキツネも増えているとのこと。
+                 ドライブ中に野生のキツネに遭遇しても、決して近づかないよう注意をしましょう！',
+                 'prefectures' => '北海道',
+                 'm__collection_id' => '289',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          275 =>
+          array (
+                 'id' => 276,
+                 'm__tour_id' => '15',
+                 'checkpoint_title' => 'ラベンダー',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '325',
+                 'comments' => '7月中旬から7月下旬頃、富良野市では市内のあちこちのラベンダー畑が見ごろを迎えます。
+                 中でも「花人街道」と呼ばれる国道237号線沿いには、集中してファームがあるため、それぞれのファームのラベンダー畑が楽しめます。',
+                 'prefectures' => '北海道',
+                 'm__collection_id' => '290',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          276 =>
+          array (
+                 'id' => 277,
+                 'm__tour_id' => '15',
+                 'checkpoint_title' => '丘のまち',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '355',
+                 'comments' => '十勝岳連峰の裾野に広がる美瑛町は、なだらかな波状丘陵が続く地形が特徴の丘のまちとして多くの観光客が訪れます。
+                 北西側の丘陵には碁盤の目のように種類の違う農産物が植えられ、その風景がパッチワークに見えることから「パッチワークの路」と呼ばれています。
+                 また、南東側に広がる「パノラマロード」は、360度を見渡せる高台のエリアで、雄大な風景が楽しめます。',
+                 'prefectures' => '北海道',
+                 'm__collection_id' => '291',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          277 =>
+          array (
+                 'id' => 278,
+                 'm__tour_id' => '15',
+                 'checkpoint_title' => 'ジンギスカン',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '390',
+                 'comments' => '北海道を代表する郷土料理のひとつですが、焼いた肉をタレにつけて食べる札幌式と、たれに付け込んだ肉を焼いて食べる滝川式があり、北海道の中でも地域によって食べ方に違いがあります。
+                 滝川市のジンギスカンは、リンゴや玉ねぎ、生姜、醤油などのタレに付け込むことで、羊の臭みがなく食べやすい一品です。',
+                 'prefectures' => '北海道',
+                 'm__collection_id' => '292',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          278 =>
+          array (
+                 'id' => 279,
+                 'm__tour_id' => '15',
+                 'checkpoint_title' => 'ハスカップ',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '425',
+                 'comments' => 'ハスカップは寒冷地に自生しており、非常に傷みが早く流通に適さないため、本州にはほとんど出回ることがない北海道の特産物です。
+                 見た目はブルーベリーのようですが、ブルーベリーより酸味があり、円錐状の形をしています。近年は豊富な栄養素が注目され、「不老長寿の果実」として全国から注目されています。',
+                 'prefectures' => '北海道',
+                 'm__collection_id' => '293',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          279 =>
+          array (
+                 'id' => 280,
+                 'm__tour_id' => '15',
+                 'checkpoint_title' => '札幌ラーメン',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '460',
+                 'comments' => '「札幌ラーメン」といえば味噌ラーメンのイメージが強いですが、ほとんどの店で正油・塩・味噌という３種類の味があることが特徴です。 また、「札幌ラーメン」には炒めた野菜を入れることが多く、味が濃く量が多いことも特徴です。',
+                 'prefectures' => '北海道',
+                 'm__collection_id' => '294',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          280 =>
+          array (
+                 'id' => 281,
+                 'm__tour_id' => '15',
+                 'checkpoint_title' => '雪まつり',
+                 'checkpoint_category' => 'ポイント',
+                 'distance' => '480',
+                 'comments' => '毎年2月上旬に札幌市内の大通公園を含めた3つの会場では「さっぽろ雪まつり」が開催され、多くの観光客が訪れます。昭和25年に始まった雪まつりは、大小様々な雪像や氷の彫刻の展示や、雪上アクティビティが楽しめたりと、冬の北海道を満喫できるイベントです。',
+                 'prefectures' => '北海道',
+                 'm__collection_id' => '295',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          281 =>
+          array (
+                 'id' => 282,
+                 'm__tour_id' => '15',
+                 'checkpoint_title' => '小樽運河',
+                 'checkpoint_category' => '終了',
+                 'distance' => '510',
+                 'comments' => '小樽は、北海道への上陸地のひとつとして、また物資の運搬や交易の拠点として機能していました。当時は荷物を積んだたくさんの艀(はしけ※船幅が広く平底の小舟)が運河を出入りしており、小樽港は北海道開拓の玄関口として発展してきました。現在は63基のガス灯が設置され、運河沿いの石造倉庫群は当時の姿のままレストランなどに再利用されています。',
+                 'prefectures' => '北海道',
+                 'm__collection_id' => '296',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+
+
+
+
+
+
 
 
 
