@@ -23,7 +23,7 @@
   @else
 
   <a href="{{ url('/mypage') }}"><img style="border-radius: 50%" class="refBtn mr-2" src="{{ asset('storage/mypage/ref-blue.png') }}" alt=""></a>
-  <div id="div_notification" class="container-fluid" style="margin-top: 28px !important">
+  <div id="div_notification" class="container-fluid" style="margin-top: 0px !important">
         <div class="row" style="padding: 0 16px 0 0;
                                 box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
                                 background-color: #ffdd80;">
@@ -388,7 +388,7 @@
     } else {
       nav_box2.style = "border-right: 2px solid #113a83";
       div_notification.className = "container-fluid d-none";
-      div_notification_below.className = "container-fluid pt-3";
+      div_notification_below.className = "container-fluid ";
     }
   </script>
 
