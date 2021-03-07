@@ -16,7 +16,7 @@
 
 	<body>
 		<div class='container-fluid'>
-			<div class="row d-flex fixed-top justify-content-between" style="border-bottom: 1px solid white; z-index: 10; background-color: #2b63c6; position: fixed; top:28px;">
+			<div class="row d-flex fixed-top justify-content-between" style="border-bottom: 1px solid white; z-index: 10; background-color: #2b63c6; position: fixed; top:0px;">
 				<div class=' p-2' style="color:white;">
 					<div class="" style='color: white;'>私のコレクション</div>
 				</div>

@@ -3,7 +3,7 @@
 @section('content')
 <link rel="stylesheet" href="/css/style_userhistory.css">
 @if(! empty($dates))
-<div class="container-fluid sticky-top" style="top:28px;" >
+<div class="container-fluid sticky-top" style="top:0px;" >
   			    <div class="row d-flex justify-content-between pb-0 mb-0" style="background-color: #2B63C6; height:30px;">
   				        <div class='col-4 shadow-lg mb-0 pb-0 mt-1 pt-1' > <p class="shadow-lg mb-0 pb-0" style="color:white; font-size: 80%">マイヒストリ</p> </div>
                     <!-- <p class="text-center" style="color:white; font-size: 80%">マイヒストリ</p> -->

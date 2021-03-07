@@ -15,7 +15,7 @@
 </style>
   <body style='background-color:#fffdfa;'>
     <div class="fixed-top">
-      <div class="container-fluid bg-white  py-0 my-0 px-3" style="height:28px !important;">
+      <!-- <div class="container-fluid bg-white  py-0 my-0 px-3" style="height:28px !important;">
         <div class="d-flex flex-row justify-content-between">
           <div class="p-0">
             <img src="{{ asset('storage/mypage/ico_back.png') }}" alt="" onclick="goBack()" style="cursor: pointer;">
@@ -32,7 +32,7 @@
       function goBack() {
         window.history.back();
       }
-      </script>
+      </script> -->
       <div class="row d-flex " style="border-bottom: 1px white; z-index: 10; background-color: #2b63c6;  box-shadow: 5px 2px white;">
         <div class='col-12 p-2' style="color:white;"><div class="ml-4" style='color: white;'>設定 &nbsp <i style='color:white !important;' class="fa fa-angle-right"></i> &nbsp コースの変更 </div>
       </div>
