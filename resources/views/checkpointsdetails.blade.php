@@ -17,8 +17,8 @@
 
 <body>
 @if(! empty($my_checkpoint))
-  		<div class='container-fluid' style="margin-top: 28px;">
-		    <div class="row d-flex fixed-top" style=" z-index:1; background-color: #2b63c6; position: fixed; top:28px;">
+  		<div class='container-fluid' style="margin-top: 0px;">
+		    <div class="row d-flex fixed-top" style=" z-index:1; background-color: #2b63c6; position: fixed; top: 0px;">
           <div class='col-10 p-2 mx-3' style="color:white;"><img class='mx-2' src='/storage/img/label-1.png'>{{ $my_checkpoint->m_collections->collection_title }}
           </div>
 			  </div>

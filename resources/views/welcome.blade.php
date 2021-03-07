@@ -65,7 +65,7 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height" style="margin-top:28px">
-            @if (Route::has('login'))
+            @if (Route::has('login'))z
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">ホーム</a>

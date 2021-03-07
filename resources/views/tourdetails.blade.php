@@ -15,7 +15,7 @@
 
 <body style='background-color: #f2f2f2'>
   <div class="fixed-top">
-    <div class="container-fluid bg-white  py-0 my-0 px-3" style="height:28px !important;">
+    <!-- <div class="container-fluid bg-white  py-0 my-0 px-3" style="height:28px !important;">
       <div class="d-flex flex-row justify-content-between">
         <div class="p-0">
           <img src="{{ asset('storage/mypage/ico_back.png') }}" alt="" onclick="goBack()" style="cursor: pointer;">
@@ -32,7 +32,7 @@
       function goBack() {
       window.history.back();
       }
-    </script>
+    </script> -->
     <div class=" row flex-row" style=" z-index:0; background-color: #2b63c6;">
       <div class='col-10 p-2 mx-3' style="color:white;">{{ $tours->tour_title }} </div>
         <div class='col-12 '> <img class='mx-2 mb-2' src='/storage/img/ico.png'> <font style='color:#ffcc00;'>{{ $total }} Km </font></div>
