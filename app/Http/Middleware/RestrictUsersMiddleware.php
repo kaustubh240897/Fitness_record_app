@@ -37,7 +37,8 @@ class RestrictUsersMiddleware
         // Acquisition example [0] => "Access source IP", [1] => "IP after passing through"
         
         // So if you want to use the access source IP, you can get it by entering a subscript 
-        dd($ipaddress);  
+        
+        //dd($ipaddress);  
 
         return $next($request);
     }
