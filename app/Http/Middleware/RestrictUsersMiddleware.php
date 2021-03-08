@@ -16,6 +16,7 @@ class RestrictUsersMiddleware
     public function handle($request, Closure $next)
     {
         $ipUsersList = ['103.251.222.17', '127.0.0.1'];
+        dd($_SERVER);
         $Variable =  $_SERVER ['HTTP_USER_AGENT'];
         $super_string = substr($Variable, -88);
         
