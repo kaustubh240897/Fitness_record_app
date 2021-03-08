@@ -87,9 +87,9 @@
 									<div class='paragraph'>
 										<div class='row'>
 											@if(in_array($checkpoint->id, $unseen_checkpoint_array))
-												<div class='col-4 circle'> <span class="badge badge-pill badge-warning">New</span> <span> <a href="{{ route('collectiondetails', $checkpoint->m_collections->id) }}"><img style='border: solid  #ffcc00;' src="{{ asset($checkpoint->m_collections->path . $checkpoint->m_collections->filename) }}" class="rounded-circle" alt="image" width="80" height="80"></a> </span> </div>
+												<div class='col-4 circle'> <span class="badge badge-pill badge-warning">New</span> <span> <a href="{{ route('collectiondetails', $checkpoint->m_collections->id) }}"><img style='border: solid  #ffcc00;' src="{{ asset($checkpoint->m_collections->path .'icon/'. $checkpoint->m_collections->filename) }}" class="rounded-circle" alt="image" width="80" height="80"></a> </span> </div>
 											@else
-												<div class='col-4 circle'><span> <a href="{{ route('collectiondetails', $checkpoint->m_collections->id) }}"> <img src="{{ asset($checkpoint->m_collections->path . $checkpoint->m_collections->filename) }}" class="rounded-circle" alt="image" width="80" height="80"> </a> </span> </div>
+												<div class='col-4 circle'><span> <a href="{{ route('collectiondetails', $checkpoint->m_collections->id) }}"> <img src="{{ asset($checkpoint->m_collections->path .'icon/'. $checkpoint->m_collections->filename) }}" class="rounded-circle" alt="image" width="80" height="80"> </a> </span> </div>
 											@endif
 												<div class='col-6'> <img src='storage/img/label-1.png'><br><a href="{{ route('collectiondetails', $checkpoint->m_collections->id) }}">{{ $checkpoint->m_collections->collection_title }}  </a></div>
 													<div class='col-4'> </div>

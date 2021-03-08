@@ -19,7 +19,7 @@
 
 					 </div>
 
-					 <div class='c mx-2 my-2 fixed-top' style='z-index:0; margin-top:0px'><img  style='border: solid  #2b63c6;' src="{{ asset($my_collections->m_collections->path . $my_collections->m_collections->filename) }}" class= "rounded-circle mt-3" alt="Cinque Terre" width="
+					 <div class='c mx-2 my-2 fixed-top' style='z-index:0; margin-top:0px'><img  style='border: solid  #2b63c6;' src="{{ asset($my_collections->m_collections->path .'icon/'. $my_collections->m_collections->filename) }}" class= "rounded-circle mt-3" alt="Cinque Terre" width="
 					 	80" height="80">
 					 </div>
 
