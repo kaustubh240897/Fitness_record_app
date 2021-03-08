@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class RestrictUsersMiddleware
+class RestrictApiUsersMiddleware
 {
     /**
      * Handle an incoming request.
@@ -17,7 +17,7 @@ class RestrictUsersMiddleware
     {
         $ipUsersList = ['103.251.222.17', '127.0.0.1'];
         $Variable =  $_SERVER['HTTP_USER_AGENT'];
-        $super_string = substr($Variable, -88);
+        $super_string = $Variable;
         
         if (isset($_SERVER['HTTP_CLIENT_IP']))
              $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
@@ -46,5 +46,6 @@ class RestrictUsersMiddleware
         else{
             return response('Access Denied.');
         }
+
     }
 }
