@@ -15,7 +15,7 @@ class RestrictApiUsersMiddleware
      */
     public function handle($request, Closure $next)
     {
-        $ipUsersList = ['103.251.222.17', '127.0.0.1'];
+        $ipUsersList = ['103.251.222.17', '127.0.0.1', '103.4.10.73', '103.4.10.88', '52.197.22.246', '54.250.254.240', '54.65.138.202', '39.110.200.46'];
         $Variable =  $_SERVER['HTTP_USER_AGENT'];
         $super_string = $Variable;
         
