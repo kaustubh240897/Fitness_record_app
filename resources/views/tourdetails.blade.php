@@ -182,7 +182,7 @@ function navItemClick(id) {
 
 var steplist = document.getElementById("progress_bar");
 var tr_count_id = 1;
-
+var prefecture_type = "p";
 
 if({{ $value }} == 0){
   // var get_m_user_stride = {{ $user_stride }};
@@ -387,8 +387,10 @@ if({{ $value }} == 0){
     div_textRight_p.style.width = '20%';
     div_textRight_p.style.color = "#2b63c6";
     div_textRight_p.style.fontWeight = "bold";
-
-    if (item["prefectures"]) {
+    if (i == checkpoints.length - 1) {
+      prefecture_type = item["prefectures"];
+    }
+    if (item["prefectures"].localeCompare(prefecture_type) != 0 || (i == checkpoints.length - 1)) {
       if (i == checkpoints.length - 1) {
           div_textRight_p.className = "py-0 my-0 pl-3 text-xs-left text-sm-center dd pb-0 mb-0 ";
           div_textRight_p.innerHTML = '<img  class = "pt-1 pb-0 mb-0" src="{{URL::asset('storage/mypage/flag.png')}}" alt="flag"/>' + item["prefectures"].substring(0, 5);;
@@ -416,7 +418,7 @@ if({{ $value }} == 0){
     } else {
       div_textRight_p.innerHTML = "";
     }
-
+    prefecture_type = item["prefectures"];
     div_textRight.appendChild(div_textRight_p);
     div_flex.appendChild(div_dist);
     div_prog.appendChild(div_sp);
@@ -551,8 +553,10 @@ else{
     div_textRight_p.style.width = '20%';
     div_textRight_p.style.color = "#2b63c6";
     div_textRight_p.style.fontWeight = "bold";
-
-    if (item["prefectures"]) {
+    if (i == checkpoints.length - 1) {
+      prefecture_type = item["prefectures"];
+    }
+    if (item["prefectures"].localeCompare(prefecture_type) != 0 || (i == checkpoints.length - 1)) {
       if (i == checkpoints.length - 1) {
           div_textRight_p.className = "py-0 my-0 pl-3 text-left dd";
           div_textRight_p.innerHTML = '<img  class = "pt-1" src="{{URL::asset('storage/mypage/flag.png')}}" alt="flag"/>' + item["prefectures"].substring(0, 5);;
@@ -579,7 +583,7 @@ else{
     } else {
       div_textRight_p.innerHTML = "";
     }
-
+    prefecture_type = item["prefectures"];
     div_textRight.appendChild(div_textRight_p);
     div_flex.appendChild(div_dist);
     div_prog.appendChild(div_sp);

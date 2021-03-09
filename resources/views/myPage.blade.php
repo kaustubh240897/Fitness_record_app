@@ -407,6 +407,7 @@
 
     var steplist = document.getElementById("progress_bar");
     var tr_count_id = 1;
+    var prefecture_type = "p";
 
   if({{ $session_value }} === 0){
     var get_m_user_stride = {{ $get_m_user_stride }};
@@ -561,8 +562,12 @@
       div_textRight_p.style.width = '20%';
       div_textRight_p.style.color = "#2b63c6";
       div_textRight_p.style.fontWeight = "bold";
-
-      if (item["prefectures"]) {
+      if (i == checkpoints.length - 1) {
+        prefecture_type = item["prefectures"];
+      }
+      console.log("p_type", prefecture_type);
+      console.log("lc", item["prefectures"].localeCompare(prefecture_type));
+      if (item["prefectures"].localeCompare(prefecture_type) != 0 || (i == checkpoints.length - 1)) {
         if (i == checkpoints.length - 1) {
             div_textRight_p.className = "py-0 my-0 pl-3 text-xs-left text-sm-center dd pb-0 mb-0 ";
             div_textRight_p.innerHTML = '<img  class = "pt-1 pb-0 mb-0" src="{{URL::asset('storage/mypage/flag.png')}}" alt="flag"/>' + item["prefectures"].substring(0, 5);
@@ -583,9 +588,9 @@
             var motion_web = {{ $m__users->motion_web}};
             console.log(motion_app);
             console.log(motion_web);
-            var con_html = '<connection from="'+id_from+'" to="'+id_to+'" color="#cadcf6" fromX="0.6" fromY="1.2" toX="0.6" toY="0.1"></connection>';
+            var con_html = '<connection from="'+id_from+'" to="'+id_to+'" color="#cadcf6" fromX="0.6" fromY="1.8" toX="0.6" toY="-0.5"></connection>';
           } else {
-            var con_html = '<connection from="'+id_from+'" to="'+id_to+'" color="#cadcf6" fromX="0.6" fromY="1.2" toX="0.6" toY="0.1" tail></connection>';
+            var con_html = '<connection from="'+id_from+'" to="'+id_to+'" color="#cadcf6" fromX="0.6" fromY="1.8" toX="0.6" toY="-0.5" tail></connection>';
           }
           document.write(con_html);
         }
@@ -593,7 +598,7 @@
       } else {
         div_textRight_p.innerHTML = "";
       }
-
+      prefecture_type = item["prefectures"];
       div_textRight.appendChild(div_textRight_p);
       div_flex.appendChild(div_dist);
       div_prog.appendChild(div_sp);
@@ -749,8 +754,12 @@
       div_textRight_p.style.width = '20%';
       div_textRight_p.style.color = "#2b63c6";
       div_textRight_p.style.fontWeight = "bold";
-
-      if (item["prefectures"]) {
+      if (i == checkpoints.length - 1) {
+        prefecture_type = item["prefectures"];
+      }
+      console.log("p_type", prefecture_type);
+      console.log("lc_else", item["prefectures"].localeCompare(prefecture_type));
+      if (item["prefectures"].localeCompare(prefecture_type) != 0 || (i == checkpoints.length - 1)) {
         if (i == checkpoints.length - 1) {
           console.log("cp", "last");
             div_textRight_p.className = "py-0 my-0 pl-3 text-xs-left text-sm-center dd pb-0 mb-0 ";
@@ -782,7 +791,7 @@
       } else {
         div_textRight_p.innerHTML = "";
       }
-
+      prefecture_type = item["prefectures"];
       div_textRight.appendChild(div_textRight_p);
       div_flex.appendChild(div_dist);
       div_prog.appendChild(div_sp);
