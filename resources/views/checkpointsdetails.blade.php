@@ -18,12 +18,12 @@
 <body>
 @if(! empty($my_checkpoint))
   		<div class='container-fluid' style="margin-top: 0px;">
-		    <div class="row d-flex fixed-top" style=" z-index:1; background-color: #2b63c6; position: fixed; top: 0px;">
+		    <div class="row d-flex fixed-top" style=" z-index:100 !important; background-color: #2b63c6; position: fixed; top: 0px;">
           <div class='col-10 p-2 mx-3' style="color:white;"><img class='mx-2' src='/storage/img/label-1.png'>{{ $my_checkpoint->m_collections->collection_title }}
           </div>
 			  </div>
 
-			  <div class='row fixed-top' style='position: relative; z-index: 3;'>
+			  <div class='row fixed-top' style='position: relative; z-index: 300 !important;'>
 				  <div class='col-12 wrapper'>
 					  <p class='ml-3 mt-3 color'>{{ $my_checkpoint->tours->tour_title }} </p>
 					  <p class='color'> <img class='ml-3' src='/storage/img/label-1.png'> {{ $my_checkpoint->m_collections->collection_title }} </p>
@@ -108,6 +108,7 @@ function goToCheckpointPage(id) {
   var flag1 = 0;
   var value = {{$session_value}};
   var tr_count_id = 1;
+	var prefecture_type = "p";
 
   if (value == 0) {
     var checkpoints = {!! json_encode($checkpoints) !!};
@@ -297,7 +298,10 @@ function goToCheckpointPage(id) {
       div_textRight_p.style.color = "#2b63c6";
       div_textRight_p.style.fontWeight = "bold";
 
-      if (item["prefectures"]) {
+			if (i == checkpoints.length - 1) {
+        prefecture_type = item["prefectures"];
+      }
+      if (item["prefectures"].localeCompare(prefecture_type) != 0 || (i == checkpoints.length - 1)) {
         if (i == checkpoints.length - 1) {
             div_textRight_p.className = "py-0 my-0 pl-3 text-xs-left text-sm-center dd pb-0 mb-0 ";
             div_textRight_p.innerHTML = '<img  class = "pt-1 pb-0 mb-0" src="{{URL::asset('storage/mypage/flag.png')}}" alt="flag"/>' + item["prefectures"].substring(0, 5);;
@@ -325,7 +329,7 @@ function goToCheckpointPage(id) {
       } else {
         div_textRight_p.innerHTML = "";
       }
-
+			prefecture_type = item["prefectures"];
       div_textRight.appendChild(div_textRight_p);
       div_flex.appendChild(div_dist);
       div_prog.appendChild(div_sp);
@@ -513,8 +517,10 @@ function goToCheckpointPage(id) {
       div_textRight_p.style.width = '20%';
       div_textRight_p.style.color = "#2b63c6";
       div_textRight_p.style.fontWeight = "bold";
-
-      if (item["prefectures"]) {
+			if (i == checkpoints.length - 1) {
+        prefecture_type = item["prefectures"];
+      }
+      if (item["prefectures"].localeCompare(prefecture_type) != 0 || (i == checkpoints.length - 1)) {
         if (i == checkpoints.length - 1) {
             div_textRight_p.className = "py-0 my-0 pl-3 text-left dd";
             div_textRight_p.innerHTML = '<img  class = "pt-1" src="{{URL::asset('storage/mypage/flag.png')}}" alt="flag"/>' + item["prefectures"].substring(0, 5);;
@@ -541,7 +547,7 @@ function goToCheckpointPage(id) {
       } else {
         div_textRight_p.innerHTML = "";
       }
-
+			prefecture_type = item["prefectures"];
       div_textRight.appendChild(div_textRight_p);
       div_flex.appendChild(div_dist);
       div_prog.appendChild(div_sp);
