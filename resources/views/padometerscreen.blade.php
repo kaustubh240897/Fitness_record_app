@@ -43,12 +43,12 @@
           <div class="row">
           <div class="col-6">
           <div class="card">
-            <a href="http://3.114.126.114:8012/recipe/serial_number"><img class="card-img-top" src="{{ asset('storage/padometerscreen/rec.png') }}" alt="Card image cap"></a>
+            <a href="http://3.114.126.114:8012/recipe/{{ $serial_number }}"><img class="card-img-top" src="{{ asset('storage/padometerscreen/rec.png') }}" alt="Card image cap"></a>
           </div>
           </div>
           <div class="col-6">
             <div class="card">
-              <a href="http://3.114.126.114:8012/himekuri/specified_date/{serial_number}"><img class="card-img-top" src="{{ asset('storage/padometerscreen/cal.png') }}" alt="Card image cap"></a>
+              <a href="http://3.114.126.114:8012/himekuri/specified_date/{{ $serial_number}}"><img class="card-img-top" src="{{ asset('storage/padometerscreen/cal.png') }}" alt="Card image cap"></a>
             </div>
           </div>
           </div>

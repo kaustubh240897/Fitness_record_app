@@ -444,6 +444,7 @@ class m_UsersWebController extends Controller
             }
             $m__users = m_Users::where('users_id',Auth::id())->first();
             $m__users_id = $m__users->id;
+            $serial_number = $m__users->serial_number;
             $unseen_collection = t_Collection::where('m__users_id', $m__users_id)->where('new_display_flag', 0)->count();
             $today_data = t_Steps::where('m__users_id', $m__users_id)->whereDate('step_actual_datetime', Carbon::now()->toDateString())->get()->max('steps');
             if($today_data == null){
@@ -543,7 +544,7 @@ class m_UsersWebController extends Controller
             }
 
 
-            return view('padometerscreen', compact('year', 'day', 'month','device','m__users','today_data','m__users_id','current_month_steps','get_m_user_monthly_goal','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','total','current_week_datas','steps_week','unseen_collection'));
+            return view('padometerscreen', compact('year', 'day', 'month','device','m__users','today_data','m__users_id','current_month_steps','get_m_user_monthly_goal','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','total','current_week_datas','steps_week','unseen_collection','serial_number'));
         }
         else{
             $today_data = 0;
@@ -572,8 +573,9 @@ class m_UsersWebController extends Controller
             $current_month_steps = 0;
             $steps_week = null;
             $unseen_collection = 0;
+            $serial_number = null;
 
-            return view('padometerscreen', compact('year', 'day', 'month','m__users','device','today_data','m__users_id','current_month_steps','get_m_user_monthly_goal','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','total','current_week_datas','steps_week','unseen_collection'));
+            return view('padometerscreen', compact('year', 'day', 'month','m__users','device','today_data','m__users_id','current_month_steps','get_m_user_monthly_goal','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','total','current_week_datas','steps_week','unseen_collection','serial_number'));
         }
 
     }
