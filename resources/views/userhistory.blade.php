@@ -137,7 +137,7 @@
     <div class="goalTxt text-center" style="border-radius: 18px;
 box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 background-color: #113a83; color: #fff">
-      1日の目標 {{$get_m_user_daily_goal}}歩 ({{ $get_m_user_daily_goal*$get_m_user_stride/100000 }} km)
+      1日の目標 {{ number_format($get_m_user_daily_goal) }}歩 ({{ number_format($get_m_user_daily_goal*$get_m_user_stride/100000,2,'.',',') }} km)
     </div>
   @else
     <div class='text-center'>
