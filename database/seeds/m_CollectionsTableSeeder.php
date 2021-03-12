@@ -1803,269 +1803,269 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          162 => 
-          array (
-                 'id' => 163,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '雪が積もる合掌造り集落',
-                 'path' => 'storage/tour9 collection1/',
-                 'filename' => 'P09-01.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
+       //    162 => 
+       //    array (
+       //           'id' => 163,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '雪が積もる合掌造り集落',
+       //           'path' => 'storage/tour9 collection1/',
+       //           'filename' => 'P09-01.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
 
-          163 => 
-          array (
-                 'id' => 164,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '楕円形の五平餅が焼かれているところ',
-                 'path' => 'storage/tour9 collection2/',
-                 'filename' => 'P09-02.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
+       //    163 => 
+       //    array (
+       //           'id' => 164,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '楕円形の五平餅が焼かれているところ',
+       //           'path' => 'storage/tour9 collection2/',
+       //           'filename' => 'P09-02.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
 
-          164 => 
-          array (
-                 'id' => 165,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'さるぼぼ',
-                 'path' => 'storage/tour9 collection3/',
-                 'filename' => 'P09-03.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
+       //    164 => 
+       //    array (
+       //           'id' => 165,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'さるぼぼ',
+       //           'path' => 'storage/tour9 collection3/',
+       //           'filename' => 'P09-03.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
 
-          165 => 
-          array (
-                 'id' => 166,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '盆踊りをする人たち',
-                 'path' => 'storage/tour9 collection4/',
-                 'filename' => 'P09-04.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
+       //    165 => 
+       //    array (
+       //           'id' => 166,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '盆踊りをする人たち',
+       //           'path' => 'storage/tour9 collection4/',
+       //           'filename' => 'P09-04.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
 
-          166 => 
-          array (
-                 'id' => 167,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '睡蓮と鯉が泳ぐところ',
-                 'path' => 'storage/tour9 collection5/',
-                 'filename' => 'P09-05.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
+       //    166 => 
+       //    array (
+       //           'id' => 167,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '睡蓮と鯉が泳ぐところ',
+       //           'path' => 'storage/tour9 collection5/',
+       //           'filename' => 'P09-05.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
 
-          167 => 
-          array (
-                 'id' => 168,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '城下町(古い街並)で着物散策しながらお団子たべている様子',
-                 'path' => 'storage/tour9 collection6/',
-                 'filename' => 'P09-06.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
+       //    167 => 
+       //    array (
+       //           'id' => 168,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '城下町(古い街並)で着物散策しながらお団子たべている様子',
+       //           'path' => 'storage/tour9 collection6/',
+       //           'filename' => 'P09-06.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
 
-          168 => 
-          array (
-                 'id' => 169,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '金のしゃちほこと家康',
-                 'path' => 'storage/tour9 collection7/',
-                 'filename' => 'P09-07.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
+       //    168 => 
+       //    array (
+       //           'id' => 169,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '金のしゃちほこと家康',
+       //           'path' => 'storage/tour9 collection7/',
+       //           'filename' => 'P09-07.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
 
-          169 => 
-          array (
-                 'id' => 170,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '龍が登るところ',
-                 'path' => 'storage/tour9 collection8/',
-                 'filename' => 'P09-08.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
+       //    169 => 
+       //    array (
+       //           'id' => 170,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '龍が登るところ',
+       //           'path' => 'storage/tour9 collection8/',
+       //           'filename' => 'P09-08.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
 
-          170 => 
-          array (
-                 'id' => 171,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '稲荷の石像が並ぶところ',
-                 'path' => 'storage/tour9 collection9/',
-                 'filename' => 'P09-09.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
+       //    170 => 
+       //    array (
+       //           'id' => 171,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '稲荷の石像が並ぶところ',
+       //           'path' => 'storage/tour9 collection9/',
+       //           'filename' => 'P09-09.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
 
-          171 => 
-          array (
-                 'id' => 172,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '手筒花火をかかえて花火が吹き上がっている姿',
-                 'path' => 'storage/tour9 collection10/',
-                 'filename' => 'P09-10.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
+       //    171 => 
+       //    array (
+       //           'id' => 172,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '手筒花火をかかえて花火が吹き上がっている姿',
+       //           'path' => 'storage/tour9 collection10/',
+       //           'filename' => 'P09-10.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
 
-          172 => 
-          array (
-                 'id' => 173,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'うなぎ',
-                 'path' => 'storage/tour9 collection11/',
-                 'filename' => 'P09-11.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
+       //    172 => 
+       //    array (
+       //           'id' => 173,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'うなぎ',
+       //           'path' => 'storage/tour9 collection11/',
+       //           'filename' => 'P09-11.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
 
-          173 => 
-          array (
-                 'id' => 174,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'お茶摘みと富士山',
-                 'path' => 'storage/tour9 collection12/',
-                 'filename' => 'P09-12.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
+       //    173 => 
+       //    array (
+       //           'id' => 174,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'お茶摘みと富士山',
+       //           'path' => 'storage/tour9 collection12/',
+       //           'filename' => 'P09-12.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
 
-          174 => 
-          array (
-                 'id' => 175,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '蓬莱橋と渡る人',
-                 'path' => 'storage/tour9 collection13/',
-                 'filename' => 'P09-13.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
+       //    174 => 
+       //    array (
+       //           'id' => 175,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '蓬莱橋と渡る人',
+       //           'path' => 'storage/tour9 collection13/',
+       //           'filename' => 'P09-13.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
 
-          175 => 
-          array (
-                 'id' => 176,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '三保の海岸と富士山',
-                 'path' => 'storage/tour9 collection14/',
-                 'filename' => 'P09-14.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
+       //    175 => 
+       //    array (
+       //           'id' => 176,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '三保の海岸と富士山',
+       //           'path' => 'storage/tour9 collection14/',
+       //           'filename' => 'P09-14.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
 
-          176 => 
-          array (
-                 'id' => 177,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '富士宮やきそば',
-                 'path' => 'storage/tour9 collection15/',
-                 'filename' => 'P09-15.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
+       //    176 => 
+       //    array (
+       //           'id' => 177,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '富士宮やきそば',
+       //           'path' => 'storage/tour9 collection15/',
+       //           'filename' => 'P09-15.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
 
-          177 => 
-          array (
-                 'id' => 178,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '反射炉',
-                 'path' => 'storage/tour9 collection16/',
-                 'filename' => 'P09-16.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
+       //    177 => 
+       //    array (
+       //           'id' => 178,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '反射炉',
+       //           'path' => 'storage/tour9 collection16/',
+       //           'filename' => 'P09-16.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
 
-          178 => 
-          array (
-                 'id' => 179,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '河津桜が先並ぶ姿と観光客',
-                 'path' => 'storage/tour9 collection17/',
-                 'filename' => 'P09-17.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
+       //    178 => 
+       //    array (
+       //           'id' => 179,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '河津桜が先並ぶ姿と観光客',
+       //           'path' => 'storage/tour9 collection17/',
+       //           'filename' => 'P09-17.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
 
-          179 => 
-          array (
-                 'id' => 180,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'いろとろどりの梅の花が咲くところ',
-                 'path' => 'storage/tour9 collection18/',
-                 'filename' => 'P09-18.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
+       //    179 => 
+       //    array (
+       //           'id' => 180,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'いろとろどりの梅の花が咲くところ',
+       //           'path' => 'storage/tour9 collection18/',
+       //           'filename' => 'P09-18.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
 
-          180 => 
-          array (
-                 'id' => 181,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '芦ノ湖と赤い鳥居',
-                 'path' => 'storage/tour9 collection19/',
-                 'filename' => 'P09-19.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
+       //    180 => 
+       //    array (
+       //           'id' => 181,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '芦ノ湖と赤い鳥居',
+       //           'path' => 'storage/tour9 collection19/',
+       //           'filename' => 'P09-19.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
 
-          181 => 
-          array (
-                 'id' => 182,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '湘南の海岸から見た江の島',
-                 'path' => 'storage/tour9 collection20/',
-                 'filename' => 'P09-20.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
+       //    181 => 
+       //    array (
+       //           'id' => 182,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '湘南の海岸から見た江の島',
+       //           'path' => 'storage/tour9 collection20/',
+       //           'filename' => 'P09-20.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
 
-          182 => 
-          array (
-                 'id' => 183,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '有名な鎌倉高校前の踏切',
-                 'path' => 'storage/tour9 collection21/',
-                 'filename' => 'P09-21.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
+       //    182 => 
+       //    array (
+       //           'id' => 183,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '有名な鎌倉高校前の踏切',
+       //           'path' => 'storage/tour9 collection21/',
+       //           'filename' => 'P09-21.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
 
-          183 => 
-          array (
-                 'id' => 184,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'カレーライス',
-                 'path' => 'storage/tour9 collection22/',
-                 'filename' => 'P09-22.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
+       //    183 => 
+       //    array (
+       //           'id' => 184,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'カレーライス',
+       //           'path' => 'storage/tour9 collection22/',
+       //           'filename' => 'P09-22.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
 
-          184 => 
-          array (
-                 'id' => 185,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '北京ダックなどの中華料理と円卓',
-                 'path' => 'storage/tour9 collection23/',
-                 'filename' => 'P09-23.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
+       //    184 => 
+       //    array (
+       //           'id' => 185,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '北京ダックなどの中華料理と円卓',
+       //           'path' => 'storage/tour9 collection23/',
+       //           'filename' => 'P09-23.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
 
-          185 => 
-          array (
-                 'id' => 186,
-                 'collection_category' => 'tour',
-                 'collection_title' => '富士山と家康と中国っぽい人(チャイナ服など)',
-                 'path' => 'storage/tour9/',
-                 'filename' => 'C09-00.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
+       //    185 => 
+       //    array (
+       //           'id' => 186,
+       //           'collection_category' => 'tour',
+       //           'collection_title' => '富士山と家康と中国っぽい人(チャイナ服など)',
+       //           'path' => 'storage/tour9/',
+       //           'filename' => 'C09-00.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
 
 
           186 => 
@@ -2288,1018 +2288,1018 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          206 => 
-          array (
-                 'id' => 207,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'まぐろの一本釣りの様子',
-                 'path' => 'storage/tour11 collection1/',
-                 'filename' => 'P11-01.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          207 => 
-          array (
-                 'id' => 208,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'イタコ',
-                 'path' => 'storage/tour11 collection2/',
-                 'filename' => 'P11-02.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          208 => 
-          array (
-                 'id' => 209,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '木上にニホンザル',
-                 'path' => 'storage/tour11 collection3/',
-                 'filename' => 'P11-03.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          209 => 
-          array (
-                 'id' => 210,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'りんご',
-                 'path' => 'storage/tour11 collection4/',
-                 'filename' => 'P11-04.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          210 => 
-          array (
-                 'id' => 211,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'ねぶたの山車(難しいようであればハネト)',
-                 'path' => 'storage/tour11 collection5/',
-                 'filename' => 'P11-05.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          211 => 
-          array (
-                 'id' => 212,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'お堀に桜の花びらが敷き詰められている様子',
-                 'path' => 'storage/tour11 collection6/',
-                 'filename' => 'P11-06.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          212 => 
-          array (
-                 'id' => 213,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '奥入瀬渓流をトレッキングする様子。滝もしくはコケが生える川の流れを見ている',
-                 'path' => 'storage/tour11 collection7/',
-                 'filename' => 'P11-07.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          213 => 
-          array (
-                 'id' => 214,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'きりたんぽ鍋',
-                 'path' => 'storage/tour11 collection8/',
-                 'filename' => 'P11-08.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          214 => 
-          array (
-                 'id' => 215,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '秋田犬',
-                 'path' => 'storage/tour11 collection9/',
-                 'filename' => 'P11-09.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          215 => 
-          array (
-                 'id' => 216,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'なまはげ',
-                 'path' => 'storage/tour11 collection10/',
-                 'filename' => 'P11-10.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          216 => 
-          array (
-                 'id' => 217,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '竿燈まつりの竿燈が連なる様子(夜)',
-                 'path' => 'storage/tour11 collection11/',
-                 'filename' => 'P11-11.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          217 => 
-          array (
-                 'id' => 218,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '稲庭うどんを食べるところ',
-                 'path' => 'storage/tour11 collection12/',
-                 'filename' => 'P11-12.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          218 => 
-          array (
-                 'id' => 219,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '花火大会',
-                 'path' => 'storage/tour11 collection13/',
-                 'filename' => 'P11-13.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          219 => 
-          array (
-                 'id' => 220,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'しだれ桜と黒塀と人力車 参考：https://www.jalan.net/news/article/321070/',
-                 'path' => 'storage/tour11 collection14/',
-                 'filename' => 'P11-14.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          220 => 
-          array (
-                 'id' => 221,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '田沢湖と白く雪が積もる山々(湖畔に金色のたつこ像)',
-                 'path' => 'storage/tour11 collection15/',
-                 'filename' => 'P11-15.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          221 => 
-          array (
-                 'id' => 222,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'チャグチャグ馬コの馬の列 参考：http://www.city.takizawa.iwate.jp/01chag',
-                 'path' => 'storage/tour11 collection16/',
-                 'filename' => 'P11-16.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          222 => 
-          array (
-                 'id' => 223,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '盛岡冷麺',
-                 'path' => 'storage/tour11 collection17/',
-                 'filename' => 'P11-17.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          223 => 
-          array (
-                 'id' => 224,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'わんこそばを食べてる人(お椀山になっている)',
-                 'path' => 'storage/tour11 collection18/',
-                 'filename' => 'P11-18.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          224 => 
-          array (
-                 'id' => 225,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '河童',
-                 'path' => 'storage/tour11 collection19/',
-                 'filename' => 'P11-19.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          225 => 
-          array (
-                 'id' => 226,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '岩が多い海岸とウミネコが飛び回る',
-                 'path' => 'storage/tour11 collection20/',
-                 'filename' => 'P11-20.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          226 => 
-          array (
-                 'id' => 227,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '瓶ドン',
-                 'path' => 'storage/tour11 collection21/',
-                 'filename' => 'P11-21.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          227 => 
-          array (
-                 'id' => 228,
-                 'collection_category' => 'tour',
-                 'collection_title' => '河童と秋田犬がねぶた祭のハネトをしている',
-                 'path' => 'storage/tour11/',
-                 'filename' => 'C11-00.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          228 => 
-          array (
-                 'id' => 229,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'てっさ',
-                 'path' => 'storage/tour12 collection1/',
-                 'filename' => 'P12-01.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          229 => 
-          array (
-                 'id' => 230,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'かわらそば',
-                 'path' => 'storage/tour12 collection2/',
-                 'filename' => 'P12-02.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          230 => 
-          array (
-                 'id' => 231,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '角島大橋を渡る前のまっすぐ道路が続く姿と橋の上に車が通る',
-                 'path' => 'storage/tour12 collection3/',
-                 'filename' => 'P12-03.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          231 => 
-          array (
-                 'id' => 232,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '赤い鳥居が並ぶところ',
-                 'path' => 'storage/tour12 collection4/',
-                 'filename' => 'P12-04.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          232 => 
-          array (
-                 'id' => 233,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'コバルトブルーの池',
-                 'path' => 'storage/tour12 collection5/',
-                 'filename' => 'P12-05.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          233 => 
-          array (
-                 'id' => 234,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '菊屋横町の白いなまこ壁',
-                 'path' => 'storage/tour12 collection6/',
-                 'filename' => 'P12-06.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          234 => 
-          array (
-                 'id' => 235,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '鷺舞',
-                 'path' => 'storage/tour12 collection7/',
-                 'filename' => 'P12-07.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          235 => 
-          array (
-                 'id' => 236,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'ズワイガニ',
-                 'path' => 'storage/tour12 collection8/',
-                 'filename' => 'P12-08.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          236 => 
-          array (
-                 'id' => 237,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '赤天',
-                 'path' => 'storage/tour12 collection9/',
-                 'filename' => 'P12-09.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          237 => 
-          array (
-                 'id' => 238,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'つるはしで採掘する昔の人',
-                 'path' => 'storage/tour12 collection10/',
-                 'filename' => 'P12-10.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          238 => 
-          array (
-                 'id' => 239,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '会議をする神様達 参考：http://oeste.jp/blog/izumotaisha_kamiariduki/',
-                 'path' => 'storage/tour12 collection11/',
-                 'filename' => 'P12-11.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          239 => 
-          array (
-                 'id' => 240,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '船数隻がしじみ漁をしているところ。参考：https://www.pref.shimane.lg.jp/industry/suisan/shinkou/kawa_mizuumi/yutakana/sijimi_gyogyou.html',
-                 'path' => 'storage/tour12 collection12/',
-                 'filename' => 'P12-12.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          240 => 
-          array (
-                 'id' => 241,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'べたぶみばし',
-                 'path' => 'storage/tour12 collection13/',
-                 'filename' => 'P12-13.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          241 => 
-          array (
-                 'id' => 242,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '皆生温泉の砂浜を上から見た図(ゆみのような形が続く)',
-                 'path' => 'storage/tour12 collection14/',
-                 'filename' => 'P12-14.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          242 => 
-          array (
-                 'id' => 243,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '女性が巨大星占盤「九曜星占盤」で占っているところ',
-                 'path' => 'storage/tour12 collection15/',
-                 'filename' => 'P12-15.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          243 => 
-          array (
-                 'id' => 244,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '梨と梨を食べているところ',
-                 'path' => 'storage/tour12 collection16/',
-                 'filename' => 'P12-16.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          244 => 
-          array (
-                 'id' => 245,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '鳥取砂丘とらくだ',
-                 'path' => 'storage/tour12 collection17/',
-                 'filename' => 'P12-17.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-          245 => 
-          array (
-                 'id' => 246,
-                 'collection_category' => 'tour',
-                 'collection_title' => 'ふぐ・かに・梨を食べるらくだ',
-                 'path' => 'storage/tour12/',
-                 'filename' => 'C12-00.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          246 => 
-          array (
-                 'id' => 247,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '万博をイメージしたイラスト (旗がたくさん出ている感じ、でも昭和風)',
-                 'path' => 'storage/tour13 collection1/',
-                 'filename' => 'P13-01.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          247 => 
-          array (
-                 'id' => 248,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '大阪城天守閣お豊臣秀吉',
-                 'path' => 'storage/tour13 collection2/',
-                 'filename' => 'P13-02.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          248 => 
-          array (
-                 'id' => 249,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'お好み焼き、たこ焼き、うどん',
-                 'path' => 'storage/tour13 collection3/',
-                 'filename' => 'P13-03.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          249 => 
-          array (
-                 'id' => 250,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '曲がり角の迫力がある引き回しのところ',
-                 'path' => 'storage/tour13 collection4/',
-                 'filename' => 'P13-04.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          250 => 
-          array (
-                 'id' => 251,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '水なすが実っているところ',
-                 'path' => 'storage/tour13 collection5/',
-                 'filename' => 'P13-05.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          251 => 
-          array (
-                 'id' => 252,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '梅干しと酸っぱい顔してる人',
-                 'path' => 'storage/tour13 collection6/',
-                 'filename' => 'P13-06.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          252 => 
-          array (
-                 'id' => 253,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '大きい樽で醤油を作る姿 イメージhttp://www.kadocho.co.jp/kodawari.html',
-                 'path' => 'storage/tour13 collection7/',
-                 'filename' => 'P13-07.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          253 => 
-          array (
-                 'id' => 254,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'なれ寿司　切った断面　参考：https://macaro-ni.jp/33162',
-                 'path' => 'storage/tour13 collection8/',
-                 'filename' => 'P13-08.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          254 => 
-          array (
-                 'id' => 255,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '森林の中のと石畳と地蔵と散策する人',
-                 'path' => 'storage/tour13 collection9/',
-                 'filename' => 'P13-09.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          255 => 
-          array (
-                 'id' => 256,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '温泉に入ってる女性がピカピカにきれいになっているところ',
-                 'path' => 'storage/tour13 collection10/',
-                 'filename' => 'P13-10.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          256 => 
-          array (
-                 'id' => 257,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '修行をするお坊さん(掃き掃除やお経を唱えるなどなんでもOKです)',
-                 'path' => 'storage/tour13 collection11/',
-                 'filename' => 'P13-11.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          257 => 
-          array (
-                 'id' => 258,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '柿の葉に包まれてる寿司(サーモンやまぐろなどいろんな種類)、なれずしと似てますが、柿の葉寿司は一つ一つ包まれています',
-                 'path' => 'storage/tour13 collection12/',
-                 'filename' => 'P13-12.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          258 => 
-          array (
-                 'id' => 259,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '斜面一面に桜が咲いている尾根とロープウェイ',
-                 'path' => 'storage/tour13 collection13/',
-                 'filename' => 'P13-13.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          259 => 
-          array (
-                 'id' => 260,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '茶粥',
-                 'path' => 'storage/tour13 collection14/',
-                 'filename' => 'P13-14.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          260 => 
-          array (
-                 'id' => 261,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '鹿',
-                 'path' => 'storage/tour13 collection15/',
-                 'filename' => 'P13-15.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          261 => 
-          array (
-                 'id' => 262,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '抹茶を立てる人',
-                 'path' => 'storage/tour13 collection16/',
-                 'filename' => 'P13-16.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          262 => 
-          array (
-                 'id' => 263,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '京都五山送り火の山に火が映る様子',
-                 'path' => 'storage/tour13 collection17/',
-                 'filename' => 'P13-17.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          263 => 
-          array (
-                 'id' => 264,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '渡月橋と観光客',
-                 'path' => 'storage/tour13 collection18/',
-                 'filename' => 'P13-18.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          264 => 
-          array (
-                 'id' => 265,
-                 'collection_category' => 'tour',
-                 'collection_title' => 'お好み焼き・たこ焼き・ナスの漬物・柿の葉寿司・なれずしを食べてる人。(醤油は瓶で置いてる)',
-                 'path' => 'storage/tour13/',
-                 'filename' => 'C13-00.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          265 => 
-          array (
-                 'id' => 266,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '石畳道と石畳の塀から見えるハイビスカス',
-                 'path' => 'storage/tour14 collection1/',
-                 'filename' => 'P14-01.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          266 => 
-          array (
-                 'id' => 267,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'ハーレー
-                 参考：https://www.okinawastory.jp/event/600008994',
-                 'path' => 'storage/tour14 collection2/',
-                 'filename' => 'P14-02.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-
-          267 => 
-          array (
-                 'id' => 268,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'シーサー',
-                 'path' => 'storage/tour14 collection3/',
-                 'filename' => 'P14-03.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-
-          268 => 
-          array (
-                 'id' => 269,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'きこえおおきみ(琉球王国の神女)
-                 参考：https://www.city.nanjo.okinawa.jp/sp/shisei/kouho/tokushu/1601342272/
-                 https://www.tabirai.net/sightseeing/news/0001940.aspx
-                 https://ameblo.jp/wahinehelela/entry-12607291149.html',
-                 'path' => 'storage/tour14 collection4/',
-                 'filename' => 'P14-04.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-
-          269 => 
-          array (
-                 'id' => 270,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'ガジュマルの木ときじむなー(赤い髪の男の子という目撃情報があるようです)',
-                 'path' => 'storage/tour14 collection5/',
-                 'filename' => 'P14-01.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-
-          270 => 
-          array (
-                 'id' => 271,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'おしゃれなカフェでコーヒーを飲む女子',
-                 'path' => 'storage/tour14 collection6/',
-                 'filename' => 'P14-06.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-
-          271 => 
-          array (
-                 'id' => 272,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'オープンカーで海中の道路を走る',
-                 'path' => 'storage/tour14 collection7/',
-                 'filename' => 'P14-07.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          272 => 
-          array (
-                 'id' => 273,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '青い海の中をシュノーケルする人と下に泳ぐ南国の魚',
-                 'path' => 'storage/tour14 collection8/',
-                 'filename' => 'P14-08.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          273 => 
-          array (
-                 'id' => 274,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '万座毛の象の形の岩とそれを見る観光客',
-                 'path' => 'storage/tour14 collection9/',
-                 'filename' => 'P14-09.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          274 => 
-          array (
-                 'id' => 275,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '沖縄そば',
-                 'path' => 'storage/tour14 collection10/',
-                 'filename' => 'P14-10.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          275 => 
-          array (
-                 'id' => 276,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'ハートの形の岩と観光客',
-                 'path' => 'storage/tour14 collection11/',
-                 'filename' => 'P14-11.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          276 => 
-          array (
-                 'id' => 277,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'マングローブ林でカヤックをこぐ人',
-                 'path' => 'storage/tour14 collection12/',
-                 'filename' => 'P14-12.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          277 => 
-          array (
-                 'id' => 278,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'ヤンバルクイナ',
-                 'path' => 'storage/tour14 collection13/',
-                 'filename' => 'P14-13.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          278 => 
-          array (
-                 'id' => 279,
-                 'collection_category' => 'tour',
-                 'collection_title' => 'シーサーと古民家とハイビスカス',
-                 'path' => 'storage/tour14/',
-                 'filename' => 'C14-00.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          279 => 
-          array (
-                 'id' => 280,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '函館山の夜景',
-                 'path' => 'storage/tour15 collection1/',
-                 'filename' => 'P15-01.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          280 => 
-          array (
-                 'id' => 281,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '小鳥と大きな沼',
-                 'path' => 'storage/tour15 collection2/',
-                 'filename' => 'P15-02.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          281 => 
-          array (
-                 'id' => 282,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '木彫りの熊',
-                 'path' => 'storage/tour15 collection3/',
-                 'filename' => 'P15-03.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          282 => 
-          array (
-                 'id' => 283,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'カニとカニ飯',
-                 'path' => 'storage/tour15 collection4/',
-                 'filename' => 'P15-04.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          283 => 
-          array (
-                 'id' => 284,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '鮭とルイべ漬け',
-                 'path' => 'storage/tour15 collection5/',
-                 'filename' => 'P15-05.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          284 => 
-          array (
-                 'id' => 285,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '鬼と地獄谷の蒸気',
-                 'path' => 'storage/tour15 collection6/',
-                 'filename' => 'P15-06.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          285 => 
-          array (
-                 'id' => 286,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '北寄貝と漁師',
-                 'path' => 'storage/tour15 collection7/',
-                 'filename' => 'P15-07.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          286 => 
-          array (
-                 'id' => 287,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'アイヌの人とチセと呼ばれる樹皮でできた家
-                 参考：https://intojapanwaraku.com/culture/2277/
-                 https://www.ff-ainu.or.jp/web/learn/culture/together/details/post_2.html',
-                 'path' => 'storage/tour15 collection8/',
-                 'filename' => 'P15-08.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          287 => 
-          array (
-                 'id' => 288,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '網目のメロン',
-                 'path' => 'storage/tour15 collection9/',
-                 'filename' => 'P15-09.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          288 => 
-          array (
-                 'id' => 289,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'キタキツネ',
-                 'path' => 'storage/tour15 collection10/',
-                 'filename' => 'P15-10.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          289 => 
-          array (
-                 'id' => 290,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'ラベンダー畑',
-                 'path' => 'storage/tour15 collection11/',
-                 'filename' => 'P15-11.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          290 => 
-          array (
-                 'id' => 291,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'パッチワークのように植物が育つ丘
-                 参考：https://lavendertown.com/patchwork.html',
-                 'path' => 'storage/tour15 collection12/',
-                 'filename' => 'P15-12.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          291 => 
-          array (
-                 'id' => 292,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'ジンギスカンを焼いているところ',
-                 'path' => 'storage/tour15 collection13/',
-                 'filename' => 'P15-13.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          292 => 
-          array (
-                 'id' => 293,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '木に実っているところ
-                 参考：https://hokkaido-labo.com/area/all/haskap',
-                 'path' => 'storage/tour15 collection14/',
-                 'filename' => 'P15-14.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          293 => 
-          array (
-                 'id' => 294,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => 'ラーメン屋店員とラーメン(コーンとバターのってる)',
-                 'path' => 'storage/tour15 collection15/',
-                 'filename' => 'P15-15.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          294 => 
-          array (
-                 'id' => 295,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '雪像(北海道らしいもの　熊など)',
-                 'path' => 'storage/tour15 collection16/',
-                 'filename' => 'P15-16.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          295 => 
-          array (
-                 'id' => 296,
-                 'collection_category' => 'checkpoint',
-                 'collection_title' => '石造倉庫とガス灯と運河',
-                 'path' => 'storage/tour15 collection17/',
-                 'filename' => 'P15-17.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
-
-          296 => 
-          array (
-                 'id' => 297,
-                 'collection_category' => 'tour',
-                 'collection_title' => 'タラバガニ、鮭、いくら、イカ、とうもろこしなど北海道の名産の食べ物',
-                 'path' => 'storage/tour15/',
-                 'filename' => 'C15-00.png',
-                 'created_at'=>date('Y-m-d H:i:s'),
-                 'updated_at'=>date('Y-m-d H:i:s'),
-          ),
+       //    206 => 
+       //    array (
+       //           'id' => 207,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'まぐろの一本釣りの様子',
+       //           'path' => 'storage/tour11 collection1/',
+       //           'filename' => 'P11-01.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    207 => 
+       //    array (
+       //           'id' => 208,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'イタコ',
+       //           'path' => 'storage/tour11 collection2/',
+       //           'filename' => 'P11-02.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    208 => 
+       //    array (
+       //           'id' => 209,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '木上にニホンザル',
+       //           'path' => 'storage/tour11 collection3/',
+       //           'filename' => 'P11-03.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    209 => 
+       //    array (
+       //           'id' => 210,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'りんご',
+       //           'path' => 'storage/tour11 collection4/',
+       //           'filename' => 'P11-04.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    210 => 
+       //    array (
+       //           'id' => 211,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'ねぶたの山車(難しいようであればハネト)',
+       //           'path' => 'storage/tour11 collection5/',
+       //           'filename' => 'P11-05.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    211 => 
+       //    array (
+       //           'id' => 212,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'お堀に桜の花びらが敷き詰められている様子',
+       //           'path' => 'storage/tour11 collection6/',
+       //           'filename' => 'P11-06.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    212 => 
+       //    array (
+       //           'id' => 213,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '奥入瀬渓流をトレッキングする様子。滝もしくはコケが生える川の流れを見ている',
+       //           'path' => 'storage/tour11 collection7/',
+       //           'filename' => 'P11-07.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    213 => 
+       //    array (
+       //           'id' => 214,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'きりたんぽ鍋',
+       //           'path' => 'storage/tour11 collection8/',
+       //           'filename' => 'P11-08.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    214 => 
+       //    array (
+       //           'id' => 215,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '秋田犬',
+       //           'path' => 'storage/tour11 collection9/',
+       //           'filename' => 'P11-09.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    215 => 
+       //    array (
+       //           'id' => 216,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'なまはげ',
+       //           'path' => 'storage/tour11 collection10/',
+       //           'filename' => 'P11-10.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    216 => 
+       //    array (
+       //           'id' => 217,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '竿燈まつりの竿燈が連なる様子(夜)',
+       //           'path' => 'storage/tour11 collection11/',
+       //           'filename' => 'P11-11.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    217 => 
+       //    array (
+       //           'id' => 218,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '稲庭うどんを食べるところ',
+       //           'path' => 'storage/tour11 collection12/',
+       //           'filename' => 'P11-12.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    218 => 
+       //    array (
+       //           'id' => 219,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '花火大会',
+       //           'path' => 'storage/tour11 collection13/',
+       //           'filename' => 'P11-13.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    219 => 
+       //    array (
+       //           'id' => 220,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'しだれ桜と黒塀と人力車 参考：https://www.jalan.net/news/article/321070/',
+       //           'path' => 'storage/tour11 collection14/',
+       //           'filename' => 'P11-14.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    220 => 
+       //    array (
+       //           'id' => 221,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '田沢湖と白く雪が積もる山々(湖畔に金色のたつこ像)',
+       //           'path' => 'storage/tour11 collection15/',
+       //           'filename' => 'P11-15.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    221 => 
+       //    array (
+       //           'id' => 222,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'チャグチャグ馬コの馬の列 参考：http://www.city.takizawa.iwate.jp/01chag',
+       //           'path' => 'storage/tour11 collection16/',
+       //           'filename' => 'P11-16.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    222 => 
+       //    array (
+       //           'id' => 223,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '盛岡冷麺',
+       //           'path' => 'storage/tour11 collection17/',
+       //           'filename' => 'P11-17.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    223 => 
+       //    array (
+       //           'id' => 224,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'わんこそばを食べてる人(お椀山になっている)',
+       //           'path' => 'storage/tour11 collection18/',
+       //           'filename' => 'P11-18.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    224 => 
+       //    array (
+       //           'id' => 225,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '河童',
+       //           'path' => 'storage/tour11 collection19/',
+       //           'filename' => 'P11-19.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    225 => 
+       //    array (
+       //           'id' => 226,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '岩が多い海岸とウミネコが飛び回る',
+       //           'path' => 'storage/tour11 collection20/',
+       //           'filename' => 'P11-20.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    226 => 
+       //    array (
+       //           'id' => 227,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '瓶ドン',
+       //           'path' => 'storage/tour11 collection21/',
+       //           'filename' => 'P11-21.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    227 => 
+       //    array (
+       //           'id' => 228,
+       //           'collection_category' => 'tour',
+       //           'collection_title' => '河童と秋田犬がねぶた祭のハネトをしている',
+       //           'path' => 'storage/tour11/',
+       //           'filename' => 'C11-00.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    228 => 
+       //    array (
+       //           'id' => 229,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'てっさ',
+       //           'path' => 'storage/tour12 collection1/',
+       //           'filename' => 'P12-01.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    229 => 
+       //    array (
+       //           'id' => 230,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'かわらそば',
+       //           'path' => 'storage/tour12 collection2/',
+       //           'filename' => 'P12-02.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    230 => 
+       //    array (
+       //           'id' => 231,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '角島大橋を渡る前のまっすぐ道路が続く姿と橋の上に車が通る',
+       //           'path' => 'storage/tour12 collection3/',
+       //           'filename' => 'P12-03.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    231 => 
+       //    array (
+       //           'id' => 232,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '赤い鳥居が並ぶところ',
+       //           'path' => 'storage/tour12 collection4/',
+       //           'filename' => 'P12-04.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    232 => 
+       //    array (
+       //           'id' => 233,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'コバルトブルーの池',
+       //           'path' => 'storage/tour12 collection5/',
+       //           'filename' => 'P12-05.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    233 => 
+       //    array (
+       //           'id' => 234,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '菊屋横町の白いなまこ壁',
+       //           'path' => 'storage/tour12 collection6/',
+       //           'filename' => 'P12-06.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    234 => 
+       //    array (
+       //           'id' => 235,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '鷺舞',
+       //           'path' => 'storage/tour12 collection7/',
+       //           'filename' => 'P12-07.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    235 => 
+       //    array (
+       //           'id' => 236,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'ズワイガニ',
+       //           'path' => 'storage/tour12 collection8/',
+       //           'filename' => 'P12-08.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    236 => 
+       //    array (
+       //           'id' => 237,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '赤天',
+       //           'path' => 'storage/tour12 collection9/',
+       //           'filename' => 'P12-09.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    237 => 
+       //    array (
+       //           'id' => 238,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'つるはしで採掘する昔の人',
+       //           'path' => 'storage/tour12 collection10/',
+       //           'filename' => 'P12-10.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    238 => 
+       //    array (
+       //           'id' => 239,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '会議をする神様達 参考：http://oeste.jp/blog/izumotaisha_kamiariduki/',
+       //           'path' => 'storage/tour12 collection11/',
+       //           'filename' => 'P12-11.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    239 => 
+       //    array (
+       //           'id' => 240,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '船数隻がしじみ漁をしているところ。参考：https://www.pref.shimane.lg.jp/industry/suisan/shinkou/kawa_mizuumi/yutakana/sijimi_gyogyou.html',
+       //           'path' => 'storage/tour12 collection12/',
+       //           'filename' => 'P12-12.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    240 => 
+       //    array (
+       //           'id' => 241,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'べたぶみばし',
+       //           'path' => 'storage/tour12 collection13/',
+       //           'filename' => 'P12-13.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    241 => 
+       //    array (
+       //           'id' => 242,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '皆生温泉の砂浜を上から見た図(ゆみのような形が続く)',
+       //           'path' => 'storage/tour12 collection14/',
+       //           'filename' => 'P12-14.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    242 => 
+       //    array (
+       //           'id' => 243,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '女性が巨大星占盤「九曜星占盤」で占っているところ',
+       //           'path' => 'storage/tour12 collection15/',
+       //           'filename' => 'P12-15.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    243 => 
+       //    array (
+       //           'id' => 244,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '梨と梨を食べているところ',
+       //           'path' => 'storage/tour12 collection16/',
+       //           'filename' => 'P12-16.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    244 => 
+       //    array (
+       //           'id' => 245,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '鳥取砂丘とらくだ',
+       //           'path' => 'storage/tour12 collection17/',
+       //           'filename' => 'P12-17.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+       //    245 => 
+       //    array (
+       //           'id' => 246,
+       //           'collection_category' => 'tour',
+       //           'collection_title' => 'ふぐ・かに・梨を食べるらくだ',
+       //           'path' => 'storage/tour12/',
+       //           'filename' => 'C12-00.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    246 => 
+       //    array (
+       //           'id' => 247,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '万博をイメージしたイラスト (旗がたくさん出ている感じ、でも昭和風)',
+       //           'path' => 'storage/tour13 collection1/',
+       //           'filename' => 'P13-01.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    247 => 
+       //    array (
+       //           'id' => 248,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '大阪城天守閣お豊臣秀吉',
+       //           'path' => 'storage/tour13 collection2/',
+       //           'filename' => 'P13-02.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    248 => 
+       //    array (
+       //           'id' => 249,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'お好み焼き、たこ焼き、うどん',
+       //           'path' => 'storage/tour13 collection3/',
+       //           'filename' => 'P13-03.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    249 => 
+       //    array (
+       //           'id' => 250,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '曲がり角の迫力がある引き回しのところ',
+       //           'path' => 'storage/tour13 collection4/',
+       //           'filename' => 'P13-04.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    250 => 
+       //    array (
+       //           'id' => 251,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '水なすが実っているところ',
+       //           'path' => 'storage/tour13 collection5/',
+       //           'filename' => 'P13-05.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    251 => 
+       //    array (
+       //           'id' => 252,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '梅干しと酸っぱい顔してる人',
+       //           'path' => 'storage/tour13 collection6/',
+       //           'filename' => 'P13-06.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    252 => 
+       //    array (
+       //           'id' => 253,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '大きい樽で醤油を作る姿 イメージhttp://www.kadocho.co.jp/kodawari.html',
+       //           'path' => 'storage/tour13 collection7/',
+       //           'filename' => 'P13-07.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    253 => 
+       //    array (
+       //           'id' => 254,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'なれ寿司　切った断面　参考：https://macaro-ni.jp/33162',
+       //           'path' => 'storage/tour13 collection8/',
+       //           'filename' => 'P13-08.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    254 => 
+       //    array (
+       //           'id' => 255,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '森林の中のと石畳と地蔵と散策する人',
+       //           'path' => 'storage/tour13 collection9/',
+       //           'filename' => 'P13-09.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    255 => 
+       //    array (
+       //           'id' => 256,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '温泉に入ってる女性がピカピカにきれいになっているところ',
+       //           'path' => 'storage/tour13 collection10/',
+       //           'filename' => 'P13-10.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    256 => 
+       //    array (
+       //           'id' => 257,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '修行をするお坊さん(掃き掃除やお経を唱えるなどなんでもOKです)',
+       //           'path' => 'storage/tour13 collection11/',
+       //           'filename' => 'P13-11.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    257 => 
+       //    array (
+       //           'id' => 258,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '柿の葉に包まれてる寿司(サーモンやまぐろなどいろんな種類)、なれずしと似てますが、柿の葉寿司は一つ一つ包まれています',
+       //           'path' => 'storage/tour13 collection12/',
+       //           'filename' => 'P13-12.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    258 => 
+       //    array (
+       //           'id' => 259,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '斜面一面に桜が咲いている尾根とロープウェイ',
+       //           'path' => 'storage/tour13 collection13/',
+       //           'filename' => 'P13-13.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    259 => 
+       //    array (
+       //           'id' => 260,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '茶粥',
+       //           'path' => 'storage/tour13 collection14/',
+       //           'filename' => 'P13-14.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    260 => 
+       //    array (
+       //           'id' => 261,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '鹿',
+       //           'path' => 'storage/tour13 collection15/',
+       //           'filename' => 'P13-15.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    261 => 
+       //    array (
+       //           'id' => 262,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '抹茶を立てる人',
+       //           'path' => 'storage/tour13 collection16/',
+       //           'filename' => 'P13-16.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    262 => 
+       //    array (
+       //           'id' => 263,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '京都五山送り火の山に火が映る様子',
+       //           'path' => 'storage/tour13 collection17/',
+       //           'filename' => 'P13-17.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    263 => 
+       //    array (
+       //           'id' => 264,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '渡月橋と観光客',
+       //           'path' => 'storage/tour13 collection18/',
+       //           'filename' => 'P13-18.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    264 => 
+       //    array (
+       //           'id' => 265,
+       //           'collection_category' => 'tour',
+       //           'collection_title' => 'お好み焼き・たこ焼き・ナスの漬物・柿の葉寿司・なれずしを食べてる人。(醤油は瓶で置いてる)',
+       //           'path' => 'storage/tour13/',
+       //           'filename' => 'C13-00.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    265 => 
+       //    array (
+       //           'id' => 266,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '石畳道と石畳の塀から見えるハイビスカス',
+       //           'path' => 'storage/tour14 collection1/',
+       //           'filename' => 'P14-01.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    266 => 
+       //    array (
+       //           'id' => 267,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'ハーレー
+       //           参考：https://www.okinawastory.jp/event/600008994',
+       //           'path' => 'storage/tour14 collection2/',
+       //           'filename' => 'P14-02.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+
+       //    267 => 
+       //    array (
+       //           'id' => 268,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'シーサー',
+       //           'path' => 'storage/tour14 collection3/',
+       //           'filename' => 'P14-03.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+
+       //    268 => 
+       //    array (
+       //           'id' => 269,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'きこえおおきみ(琉球王国の神女)
+       //           参考：https://www.city.nanjo.okinawa.jp/sp/shisei/kouho/tokushu/1601342272/
+       //           https://www.tabirai.net/sightseeing/news/0001940.aspx
+       //           https://ameblo.jp/wahinehelela/entry-12607291149.html',
+       //           'path' => 'storage/tour14 collection4/',
+       //           'filename' => 'P14-04.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+
+       //    269 => 
+       //    array (
+       //           'id' => 270,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'ガジュマルの木ときじむなー(赤い髪の男の子という目撃情報があるようです)',
+       //           'path' => 'storage/tour14 collection5/',
+       //           'filename' => 'P14-01.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+
+       //    270 => 
+       //    array (
+       //           'id' => 271,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'おしゃれなカフェでコーヒーを飲む女子',
+       //           'path' => 'storage/tour14 collection6/',
+       //           'filename' => 'P14-06.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+
+       //    271 => 
+       //    array (
+       //           'id' => 272,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'オープンカーで海中の道路を走る',
+       //           'path' => 'storage/tour14 collection7/',
+       //           'filename' => 'P14-07.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    272 => 
+       //    array (
+       //           'id' => 273,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '青い海の中をシュノーケルする人と下に泳ぐ南国の魚',
+       //           'path' => 'storage/tour14 collection8/',
+       //           'filename' => 'P14-08.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    273 => 
+       //    array (
+       //           'id' => 274,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '万座毛の象の形の岩とそれを見る観光客',
+       //           'path' => 'storage/tour14 collection9/',
+       //           'filename' => 'P14-09.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    274 => 
+       //    array (
+       //           'id' => 275,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '沖縄そば',
+       //           'path' => 'storage/tour14 collection10/',
+       //           'filename' => 'P14-10.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    275 => 
+       //    array (
+       //           'id' => 276,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'ハートの形の岩と観光客',
+       //           'path' => 'storage/tour14 collection11/',
+       //           'filename' => 'P14-11.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    276 => 
+       //    array (
+       //           'id' => 277,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'マングローブ林でカヤックをこぐ人',
+       //           'path' => 'storage/tour14 collection12/',
+       //           'filename' => 'P14-12.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    277 => 
+       //    array (
+       //           'id' => 278,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'ヤンバルクイナ',
+       //           'path' => 'storage/tour14 collection13/',
+       //           'filename' => 'P14-13.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    278 => 
+       //    array (
+       //           'id' => 279,
+       //           'collection_category' => 'tour',
+       //           'collection_title' => 'シーサーと古民家とハイビスカス',
+       //           'path' => 'storage/tour14/',
+       //           'filename' => 'C14-00.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    279 => 
+       //    array (
+       //           'id' => 280,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '函館山の夜景',
+       //           'path' => 'storage/tour15 collection1/',
+       //           'filename' => 'P15-01.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    280 => 
+       //    array (
+       //           'id' => 281,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '小鳥と大きな沼',
+       //           'path' => 'storage/tour15 collection2/',
+       //           'filename' => 'P15-02.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    281 => 
+       //    array (
+       //           'id' => 282,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '木彫りの熊',
+       //           'path' => 'storage/tour15 collection3/',
+       //           'filename' => 'P15-03.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    282 => 
+       //    array (
+       //           'id' => 283,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'カニとカニ飯',
+       //           'path' => 'storage/tour15 collection4/',
+       //           'filename' => 'P15-04.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    283 => 
+       //    array (
+       //           'id' => 284,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '鮭とルイべ漬け',
+       //           'path' => 'storage/tour15 collection5/',
+       //           'filename' => 'P15-05.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    284 => 
+       //    array (
+       //           'id' => 285,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '鬼と地獄谷の蒸気',
+       //           'path' => 'storage/tour15 collection6/',
+       //           'filename' => 'P15-06.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    285 => 
+       //    array (
+       //           'id' => 286,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '北寄貝と漁師',
+       //           'path' => 'storage/tour15 collection7/',
+       //           'filename' => 'P15-07.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    286 => 
+       //    array (
+       //           'id' => 287,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'アイヌの人とチセと呼ばれる樹皮でできた家
+       //           参考：https://intojapanwaraku.com/culture/2277/
+       //           https://www.ff-ainu.or.jp/web/learn/culture/together/details/post_2.html',
+       //           'path' => 'storage/tour15 collection8/',
+       //           'filename' => 'P15-08.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    287 => 
+       //    array (
+       //           'id' => 288,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '網目のメロン',
+       //           'path' => 'storage/tour15 collection9/',
+       //           'filename' => 'P15-09.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    288 => 
+       //    array (
+       //           'id' => 289,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'キタキツネ',
+       //           'path' => 'storage/tour15 collection10/',
+       //           'filename' => 'P15-10.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    289 => 
+       //    array (
+       //           'id' => 290,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'ラベンダー畑',
+       //           'path' => 'storage/tour15 collection11/',
+       //           'filename' => 'P15-11.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    290 => 
+       //    array (
+       //           'id' => 291,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'パッチワークのように植物が育つ丘
+       //           参考：https://lavendertown.com/patchwork.html',
+       //           'path' => 'storage/tour15 collection12/',
+       //           'filename' => 'P15-12.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    291 => 
+       //    array (
+       //           'id' => 292,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'ジンギスカンを焼いているところ',
+       //           'path' => 'storage/tour15 collection13/',
+       //           'filename' => 'P15-13.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    292 => 
+       //    array (
+       //           'id' => 293,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '木に実っているところ
+       //           参考：https://hokkaido-labo.com/area/all/haskap',
+       //           'path' => 'storage/tour15 collection14/',
+       //           'filename' => 'P15-14.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    293 => 
+       //    array (
+       //           'id' => 294,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => 'ラーメン屋店員とラーメン(コーンとバターのってる)',
+       //           'path' => 'storage/tour15 collection15/',
+       //           'filename' => 'P15-15.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    294 => 
+       //    array (
+       //           'id' => 295,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '雪像(北海道らしいもの　熊など)',
+       //           'path' => 'storage/tour15 collection16/',
+       //           'filename' => 'P15-16.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    295 => 
+       //    array (
+       //           'id' => 296,
+       //           'collection_category' => 'checkpoint',
+       //           'collection_title' => '石造倉庫とガス灯と運河',
+       //           'path' => 'storage/tour15 collection17/',
+       //           'filename' => 'P15-17.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
+
+       //    296 => 
+       //    array (
+       //           'id' => 297,
+       //           'collection_category' => 'tour',
+       //           'collection_title' => 'タラバガニ、鮭、いくら、イカ、とうもろこしなど北海道の名産の食べ物',
+       //           'path' => 'storage/tour15/',
+       //           'filename' => 'C15-00.png',
+       //           'created_at'=>date('Y-m-d H:i:s'),
+       //           'updated_at'=>date('Y-m-d H:i:s'),
+       //    ),
 
 
                   
