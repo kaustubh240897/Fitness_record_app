@@ -2068,9 +2068,9 @@ class m_CollectionsTableSeeder extends Seeder
        //    ),
 
 
-          186 => 
+          162 => 
           array (
-                 'id' => 187,
+                 'id' => 163,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '夜景',
                  'path' => 'storage/tour10 collection1/',
@@ -2079,9 +2079,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          187 => 
+          163 => 
           array (
-                 'id' => 188,
+                 'id' => 164,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '昔の外国人が来日するところ',
                  'path' => 'storage/tour10 collection2/',
@@ -2090,9 +2090,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          188 => 
+          164 => 
           array (
-                 'id' => 189,
+                 'id' => 165,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '明石焼きとたこ',
                  'path' => 'storage/tour10 collection3/',
@@ -2101,9 +2101,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          189 => 
+          165 => 
           array (
-                 'id' => 190,
+                 'id' => 166,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '姫路城',
                  'path' => 'storage/tour10 collection4/',
@@ -2112,9 +2112,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          190 => 
+          166 => 
           array (
-                 'id' => 191,
+                 'id' => 167,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '赤穂浪士(討ち入りの服装)',
                  'path' => 'storage/tour10 collection5/',
@@ -2123,9 +2123,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          191 => 
+          167 => 
           array (
-                 'id' => 192,
+                 'id' => 168,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '備前焼の赤茶の壷',
                  'path' => 'storage/tour10 collection6/',
@@ -2134,9 +2134,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          192 => 
+          168 => 
           array (
-                 'id' => 193,
+                 'id' => 169,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '桃太郎',
                  'path' => 'storage/tour10 collection7/',
@@ -2145,9 +2145,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          193 => 
+          169 => 
           array (
-                 'id' => 194,
+                 'id' => 170,
                  'collection_category' => 'checkpoint',
                  'collection_title' => 'ジーンズ',
                  'path' => 'storage/tour10 collection8/',
@@ -2156,9 +2156,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          194 => 
+          170 => 
           array (
-                 'id' => 195,
+                 'id' => 171,
                  'collection_category' => 'checkpoint',
                  'collection_title' => 'カブトガニ',
                  'path' => 'storage/tour10 collection9/',
@@ -2167,9 +2167,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          195 => 
+          171 => 
           array (
-                 'id' => 196,
+                 'id' => 172,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '常夜灯',
                  'path' => 'storage/tour10 collection10/',
@@ -2178,9 +2178,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          196 => 
+          172 => 
           array (
-                 'id' => 197,
+                 'id' => 173,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '猫と坂道の街',
                  'path' => 'storage/tour10 collection11/',
@@ -2189,9 +2189,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          197 => 
+          173 => 
           array (
-                 'id' => 198,
+                 'id' => 174,
                  'collection_category' => 'checkpoint',
                  'collection_title' => 'うさぎ(複数)',
                  'path' => 'storage/tour10 collection12/',
@@ -2200,9 +2200,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          198 => 
+          174 => 
           array (
-                 'id' => 199,
+                 'id' => 175,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '酒樽とほろ酔いの人',
                  'path' => 'storage/tour10 collection13/',
@@ -2211,9 +2211,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          199 => 
+          175 => 
           array (
-                 'id' => 200,
+                 'id' => 176,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '原爆ドーム',
                  'path' => 'storage/tour10 collection14/',
@@ -2222,9 +2222,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          200 => 
+          176 => 
           array (
-                 'id' => 201,
+                 'id' => 177,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '海の中の鳥居と鹿',
                  'path' => 'storage/tour10 collection15/',
@@ -2233,9 +2233,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          201 => 
+          177 => 
           array (
-                 'id' => 202,
+                 'id' => 178,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '錦帯橋と桜',
                  'path' => 'storage/tour10 collection16/',
@@ -2244,9 +2244,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          202 => 
+          178 => 
           array (
-                 'id' => 203,
+                 'id' => 179,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '工場夜景(煙が出ている、海にあかりが映るところなど)',
                  'path' => 'storage/tour10 collection17/',
@@ -2255,9 +2255,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          203 => 
+          179 => 
           array (
-                 'id' => 204,
+                 'id' => 180,
                  'collection_category' => 'checkpoint',
                  'collection_title' => 'たくさんの赤提灯を下から見ているイメージ 参考http://y-chouchin.jp/history/',
                  'path' => 'storage/tour10 collection18/',
@@ -2266,9 +2266,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          204 => 
+          180 => 
           array (
-                 'id' => 205,
+                 'id' => 181,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '緑に石灰石がぼこぼこ出ている様子',
                  'path' => 'storage/tour10 collection19/',
@@ -2277,9 +2277,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          205 => 
+          181 => 
           array (
-                 'id' => 206,
+                 'id' => 182,
                  'collection_category' => 'tour',
                  'collection_title' => '港町と海に浮かぶ船(瀬戸内海のイメージでお願いします)',
                  'path' => 'storage/tour10/',

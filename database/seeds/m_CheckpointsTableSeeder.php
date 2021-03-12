@@ -2519,24 +2519,24 @@ class m_CheckpointsTableSeeder extends Seeder
 
 
 
-          177 => 
+          154 => 
           array (
-                 'id' => 178,
-                 'm__tour_id' => '10',
+                 'id' => 155,
+                 'm__tour_id' => '9',
                  'checkpoint_title' => '六甲山',
                  'checkpoint_category' => '開始',
                  'distance' => '0',
                  'comments' => '神戸市の西から北へ連なる六甲山は、ケーブルカーやロープウェーを利用し、簡単に登ることができます。山頂には牧場やオルゴールミュージアム、植物園といったの観光スポットが多くあり、中でも日本三大夜景の一つである摩耶山からの夜景は、神戸から関空まで一望できる、人気絶景スポットです。',
                  'prefectures' => '兵庫',
-                 'm__collection_id' => '187',
+                 'm__collection_id' => '163',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          178 => 
+          155 => 
           array (
-                 'id' => 179,
-                 'm__tour_id' => '10',
+                 'id' => 156,
+                 'm__tour_id' => '9',
                  'checkpoint_title' => '神戸北野異人館街',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '35',
@@ -2544,127 +2544,127 @@ class m_CheckpointsTableSeeder extends Seeder
                  神戸市中央区北野町の一帯は、外国人の居留地として日本が家や土地を貸し出したエリアで、明治から大正時代に建てられた洋館が、21も残っており、見学ができる施設も多くあります。
                  "',
                  'prefectures' => '兵庫',
-                 'm__collection_id' => '188',
+                 'm__collection_id' => '164',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          179 => 
+          156 => 
           array (
-                 'id' => 180,
-                 'm__tour_id' => '10',
+                 'id' => 157,
+                 'm__tour_id' => '9',
                  'checkpoint_title' => '明石焼き',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '65',
                  'comments' => '明石市は新鮮なたこが水揚げされることでも有名ですが、そのたこを使用したたこの石焼きは、だし汁に浸して食べる郷土料理として全国的にも有名です。だし汁の風味と、卵たっぷりの生地はとてもやさしい味わいです。主な材料は小麦粉、卵、たことシンプルのため「卵焼き」と呼ばれることもあります。',
                  'prefectures' => '兵庫',
-                 'm__collection_id' => '189',
+                 'm__collection_id' => '165',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          180 => 
+          157 => 
           array (
-                 'id' => 181,
-                 'm__tour_id' => '10',
+                 'id' => 158,
+                 'm__tour_id' => '9',
                  'checkpoint_title' => '姫路城',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '100',
                  'comments' => '日本100名城にも選定されている兵庫県姫路市の国宝「姫路城」。慶長14(1609)年に赤松貞範により建築された大天守は白漆喰の城壁が特徴で、白鷺のように見える姫路城は、別名白鷺城(はくろじょう・しらさぎじょう)とも呼ばれます。黒田重隆が城郭やのちに豊臣秀吉となる羽柴秀吉など、さまざまな武将や大名によって治められ、建て替えや拡張が行われてきました。',
                  'prefectures' => '兵庫',
-                 'm__collection_id' => '190',
+                 'm__collection_id' => '166',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          181 => 
+          158 => 
           array (
-                 'id' => 182,
-                 'm__tour_id' => '10',
+                 'id' => 159,
+                 'm__tour_id' => '9',
                  'checkpoint_title' => '赤穂',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '135',
                  'comments' => '赤穂市は歌舞伎の演目や時代でも有名な「忠臣蔵」の題材となる、四十七名の赤穂浪士の故郷です。市内には赤穂浪士を祀る「大石神社」や、「赤穂城跡」、毎年開催れている「赤穂義士祭」など、ゆかりの地ならではの観光スポットがたくさんあります。',
                  'prefectures' => '兵庫',
-                 'm__collection_id' => '191',
+                 'm__collection_id' => '167',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          182 => 
+          159 => 
           array (
-                 'id' => 183,
-                 'm__tour_id' => '10',
+                 'id' => 160,
+                 'm__tour_id' => '9',
                  'checkpoint_title' => '備前焼',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '155',
                  'comments' => '備前焼は、一点ずつ成形し、乾燥させたのち、絵付けもせず釉薬も使わずそのまま焼いたもので、茶褐色の粘土の鉄分がよく表れている焼き物です。土の性質や、窯への詰め方や窯の温度の変化、焼成時の灰や炭などによって生み出される備前焼は、一つとして同じ色、同じ模様にはなりません。火は、1200〜1300度の高温で最低でも7日間、長い場合は10～12日間もの間炊き続けられます。',
                  'prefectures' => '岡山',
-                 'm__collection_id' => '192',
+                 'm__collection_id' => '168',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          183 => 
+          160 => 
           array (
-                 'id' => 184,
-                 'm__tour_id' => '10',
+                 'id' => 161,
+                 'm__tour_id' => '9',
                  'checkpoint_title' => '桃太郎',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '180',
                  'comments' => 'むかしばなしで有名な桃太郎のお話は、岡山に伝わる桃太郎伝説「吉備津彦命(きびつひこのみこと)の温羅(うら)退治です」がルーツとなっています。岡山市内にある「吉備津神社」はまさに「桃太郎」発祥の地としても有名な場所。その他にも鬼城山や矢喰宮など伝説にまつわる観光スポットが点在しています。',
                  'prefectures' => '岡山',
-                 'm__collection_id' => '193',
+                 'm__collection_id' => '169',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          184 => 
+          161 => 
           array (
-                 'id' => 185,
-                 'm__tour_id' => '10',
+                 'id' => 162,
+                 'm__tour_id' => '9',
                  'checkpoint_title' => '国産ジーンズ',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '215',
                  'comments' => '倉敷市にある児島地区は、瀬戸内海に面した港町です。そのため塩分を含む土が稲作には向かず、綿花栽培が盛んに行われたことで、繊維産業の町として独自に発展しました。元々大正以降は学生服の製造で全国トップシェアでしたが、時代が合繊に代わり窮地に追い込まれたところで、ジーンズ製造に打って出たことが始まりです。ここ児島は言わずと知れた国産ジーンズ発祥の地。一つ一つ手作業で作ること、日本の伝統的な「藍染め」技術が高く評価され国内外から愛されています。現在児島地区には「児島ジーンズストリート」があり、国産ジーンズショップが集まる人気スポットとなっています。',
                  'prefectures' => '岡山',
-                 'm__collection_id' => '194',
+                 'm__collection_id' => '170',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          185 => 
+          162 => 
           array (
-                 'id' => 186,
-                 'm__tour_id' => '10',
+                 'id' => 163,
+                 'm__tour_id' => '9',
                  'checkpoint_title' => 'カブトガニ',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '245',
                  'comments' => '笠岡市は生きた化石といわれる国指定天然記念物「カブトガニ」の繁殖地です。世界で唯一のカブトガニ博物館が建ち、展示はもちろん、その研究も行われています。',
                  'prefectures' => '岡山',
-                 'm__collection_id' => '195',
+                 'm__collection_id' => '171',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          186 => 
+          163 => 
           array (
-                 'id' => 187,
-                 'm__tour_id' => '10',
+                 'id' => 164,
+                 'm__tour_id' => '9',
                  'checkpoint_title' => '鞆の浦',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '255',
                  'comments' => '福山市の中心部から南に14kmの海岸沿いに位置する鞆の浦。今も白壁土蔵や町家が残る江戸時代の古い町並みが残ります。瀬戸内海航路の要所として発展した鞆の浦は、豪商の屋敷や船番所、古刹などが狭い範囲に立ち並び、気軽に散策が楽しめます。港先端に立つ常夜燈は、鞆の浦のシンボルです。また、鞆の浦は人気アニメ映画のモデルとなった街でもあります。',
                  'prefectures' => '広島',
-                 'm__collection_id' => '196',
+                 'm__collection_id' => '172',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          187 => 
+          164 => 
           array (
-                 'id' => 188,
-                 'm__tour_id' => '10',
+                 'id' => 165,
+                 'm__tour_id' => '9',
                  'checkpoint_title' => '尾道と猫の細道',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '265',
@@ -2673,58 +2673,58 @@ class m_CheckpointsTableSeeder extends Seeder
                  さらに街中を散策すると住み着いている猫と遭遇することもあります。
                  「猫の細道」を中心に、尾道は猫好きにはたまらない猫に関するスポットが満載の街です。',
                  'prefectures' => '広島',
-                 'm__collection_id' => '197',
+                 'm__collection_id' => '173',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          188 => 
+          165 => 
           array (
-                 'id' => 189,
-                 'm__tour_id' => '10',
+                 'id' => 166,
+                 'm__tour_id' => '9',
                  'checkpoint_title' => '大久野島',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '295',
                  'comments' => '"竹原市の忠海港から船で約15分の大久野島は、むかし毒ガス工場があったことから「地図から消された島」と呼ばれていました。
                  現在、周囲4キロメートルほどの島には約900羽もの野生のうさぎが棲息し、多くの観光客が訪れます。人懐っこく、間近で一緒に写真を撮ることができる、癒しのスポットです。"',
                  'prefectures' => '広島',
-                 'm__collection_id' => '198',
+                 'm__collection_id' => '174',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          189 => 
+          166 => 
           array (
-                 'id' => 190,
-                 'm__tour_id' => '10',
+                 'id' => 167,
+                 'm__tour_id' => '9',
                  'checkpoint_title' => '西条酒蔵通り',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '325',
                  'comments' => '広島市の西条は酒造りに適した気候や地下水の恵みから「日本三代銘醸地」と呼ばれる酒どころです。西条駅南側に広がる西条酒蔵通りには７軒もの歴史ある酒蔵が並んでいます。オリジナルグッズやSNS映えするここだけのフォトスポット、美味しいグルメやスイーツなども楽しめ、街ブラもおすすめです。',
                  'prefectures' => '広島',
-                 'm__collection_id' => '199',
+                 'm__collection_id' => '175',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          190 => 
+          167 => 
           array (
-                 'id' => 191,
-                 'm__tour_id' => '10',
+                 'id' => 168,
+                 'm__tour_id' => '9',
                  'checkpoint_title' => '原爆ドーム',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '360',
                  'comments' => '1945年8月6日、午前8時15分に、人類史上初めての原子爆弾が投下されました。原爆投下のほぼ真下に位置しながら、奇跡的にも倒壊せず鉄骨部分がむき出しの状態で残りました。被爆の惨状を今に伝え、核兵器廃絶と恒久平和の大切さを伝えるシンボルとして、1996年世界遺産に登録されました。',
                  'prefectures' => '広島',
-                 'm__collection_id' => '200',
+                 'm__collection_id' => '176',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          191 => 
+          168 => 
           array (
-                 'id' => 192,
-                 'm__tour_id' => '10',
+                 'id' => 169,
+                 'm__tour_id' => '9',
                  'checkpoint_title' => '厳島神社',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '395',
@@ -2733,15 +2733,15 @@ class m_CheckpointsTableSeeder extends Seeder
                  その全建造物は国宝および国の重要文化財であり、平成8(1996)年には周囲の原生林を含め世界遺産に登録されました。
                  参道の宮島表参道商店街は、名物の牡蠣やあなごなど様々なグルメが楽しめます。"',
                  'prefectures' => '広島',
-                 'm__collection_id' => '201',
+                 'm__collection_id' => '177',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          192 => 
+          169 => 
           array (
-                 'id' => 193,
-                 'm__tour_id' => '10',
+                 'id' => 170,
+                 'm__tour_id' => '9',
                  'checkpoint_title' => '錦帯橋',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '435',
@@ -2749,50 +2749,50 @@ class m_CheckpointsTableSeeder extends Seeder
                  それまでの橋は洪水の度に流されており、何度も研究を重ね完成されました。
                  橋の周辺は、春は桜、秋は紅葉の名所でもあり、美しい橋と自然のコントラストが楽しめます。"',
                  'prefectures' => '山口',
-                 'm__collection_id' => '202',
+                 'm__collection_id' => '178',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          193 => 
+          170 => 
           array (
-                 'id' => 194,
-                 'm__tour_id' => '10',
+                 'id' => 171,
+                 'm__tour_id' => '9',
                  'checkpoint_title' => '周南コンビナート',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '470',
                  'comments' => '"周南市の海沿いは化学工場が多く、様々な場所や角度から工場夜景を楽しめます。
                  晴海親水公園から眺める工場夜景は日本夜景遺産に認定されるおすすめスポットです。"',
                  'prefectures' => '山口',
-                 'm__collection_id' => '203',
+                 'm__collection_id' => '179',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          194 => 
+          171 => 
           array (
-                 'id' => 195,
-                 'm__tour_id' => '10',
+                 'id' => 172,
+                 'm__tour_id' => '9',
                  'checkpoint_title' => '山口ちょうちん祭り',
                  'checkpoint_category' => 'ポイント',
                  'distance' => '505',
                  'comments' => '毎年8月6日、7日に山口市内で開催される約600年前から続く盆行事です。室町時代に山口を治めていた大名が父母の冥福を祈るために盆の夜に笹竹の灯ろうをともしたのを起源とし、やがて町民の間に盆行事として広がったといわれています。数千本の竹につけたおよそ10万個ものちょうちんが揺れながら夜の街を彩り赤く染めます。山口の夏の風物詩です。',
                  'prefectures' => '山口',
-                 'm__collection_id' => '204',
+                 'm__collection_id' => '180',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          195 => 
+          172 => 
           array (
-                 'id' => 196,
-                 'm__tour_id' => '10',
+                 'id' => 173,
+                 'm__tour_id' => '9',
                  'checkpoint_title' => '秋吉台',
                  'checkpoint_category' => '終了',
                  'distance' => '535',
                  'comments' => '美祢市の中・東部に広がる日本最大級のカルスト台地です。1955年に国定公園に、1964年に特別天然記念物に指定されました。この雄大な大地の景観を作り出した石灰石は、今からおよそ3億5千万年前に南方の海でサンゴ礁として誕生したもので、約8千万年もの長い年月をかけて海底を移動しながら大陸の上に隆起し、現在のようなカルスト台地が形成されたといわれています。',
                  'prefectures' => '山口',
-                 'm__collection_id' => '205',
+                 'm__collection_id' => '181',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
