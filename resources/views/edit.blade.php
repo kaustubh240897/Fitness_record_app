@@ -285,7 +285,7 @@
   </div>
 </div>
 <div class="container-fluid pt-3">
-  <p class="px-2" style="font-size: 80%;">モーション表示の説明文が入ります。モーション表示の説明文が入ります。</p>
+  <p class="px-2" style="font-size: 80%;">表示を行う際にモーションを行うかのON/OFF設定を行います。</p>
 </div>
 <div class="container-fluid pt-3">
   <div class="d-flex flex-row justify-content-between px-2" style="border-bottom: 3px solid rgb(248,252,253);">
