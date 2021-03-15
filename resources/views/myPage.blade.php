@@ -79,7 +79,9 @@
     <div class="container-fluid pt-3" id="progress_bar">
     </div>
     @else
-    <h4> 申し訳ありませんが、チェックポイントはありません。ツアーを選択してください。</h4>
+    <div class="container-fluid text-center">
+      <img class="mt-3" style="width: 100%;" src="{{ asset('storage/mypage/error_1.png') }}" alt="">
+    </div>
     @endif
     <div class="container pt-3 pb-3">
       <div class="row justify-content-between w-75 mx-auto p-0" style="border-radius: 20px; border: solid 1px #2b63c6;">

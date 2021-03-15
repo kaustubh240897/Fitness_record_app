@@ -510,8 +510,11 @@
       } else {
         height -= 0.5;
       }
+      if (height < 0) {
+        height = 0;
+      }
       //height_p.innerHTML = height;
-      h_input.value = height;
+      h_input.value = height.toFixed(0);
       console.log(document.getElementById("heightinput").value);
     }
 
@@ -531,7 +534,7 @@
       // stride_p.innerHTML = stride;
       console.log(stride);
       if (stride >= 45 && stride <= 85) {
-        s_input.value = stride;
+        s_input.value = stride.toFixed(2);
       } else {
         if (s_input.value < 45) {
           s_input.value = 45;
@@ -624,9 +627,14 @@ var dailygoal_1 = "";
     } else {
       dailygoal_1 -= 1;
     }
-    // dailygoal_1_show.innerHTML = dailygoal_1;
+    if (dailygoal_1 > 85) {
+      dailygoal_1 = 85;
+    }
+    if (dailygoal_1 < 0) {
+      dailygoal_1 = 0;
+    }
+    ds_1.value = dailygoal_1.toFixed(2);
     console.log(dailygoal_1);
-    ds_1.value = dailygoal_1;
     console.log(document.getElementById("daily_stepsInput_1").value);
     daily_difStepsChange();
   }
@@ -642,9 +650,14 @@ var dailygoal_2 = "";
     } else {
       dailygoal_2 -= 1;
     }
-    // dailygoal_1_show.innerHTML = dailygoal_1;
+    if (dailygoal_2 > 85) {
+      dailygoal_2 = 85;
+    }
+    if (dailygoal_2 < 0) {
+      dailygoal_2 = 0;
+    }
+    ds_2.value = dailygoal_2.toFixed(2);
     console.log(dailygoal_2);
-    ds_2.value = dailygoal_2;
     console.log(document.getElementById("daily_stepsInput_2").value);
     daily_difStepsChange();
   }
@@ -660,9 +673,14 @@ var dailygoal_3 = "";
     } else {
       dailygoal_3 -= 1;
     }
-    // dailygoal_1_show.innerHTML = dailygoal_1;
+    if (dailygoal_3 > 85) {
+      dailygoal_3 = 85;
+    }
+    if (dailygoal_3 < 0) {
+      dailygoal_3 = 0;
+    }
+    ds_3.value = dailygoal_3.toFixed(2);
     console.log(dailygoal_3);
-    ds_3.value = dailygoal_3;
     console.log(document.getElementById("daily_stepsInput_3").value);
     daily_difStepsChange();
   }
@@ -678,9 +696,14 @@ var dailygoal_4 = "";
     } else {
       dailygoal_4 -= 1;
     }
-    // dailygoal_1_show.innerHTML = dailygoal_1;
+    if (dailygoal_4 > 85) {
+      dailygoal_4 = 85;
+    }
+    if (dailygoal_4 < 0) {
+      dailygoal_4 = 0;
+    }
+    ds_4.value = dailygoal_4.toFixed(2);
     console.log(dailygoal_4);
-    ds_4.value = dailygoal_4;
     console.log(document.getElementById("daily_stepsInput_4").value);
     daily_difStepsChange();
   }
@@ -696,9 +719,14 @@ var dailygoal_5 = "";
     } else {
       dailygoal_5 -= 1;
     }
-    // dailygoal_1_show.innerHTML = dailygoal_1;
+    if (dailygoal_5 > 85) {
+      dailygoal_5 = 85;
+    }
+    if (dailygoal_5 < 0) {
+      dailygoal_5 = 0;
+    }
+    ds_5.value = dailygoal_5.toFixed(2);
     console.log(dailygoal_5);
-    ds_5.value = dailygoal_5;
     console.log(document.getElementById("daily_stepsInput_5").value);
     daily_difStepsChange();
   }
@@ -714,9 +742,14 @@ var dailygoal_6 = "";
     } else {
       dailygoal_6 -= 1;
     }
-    // dailygoal_1_show.innerHTML = dailygoal_1;
+    if (dailygoal_6 > 85) {
+      dailygoal_6 = 85;
+    }
+    if (dailygoal_6 < 0) {
+      dailygoal_6 = 0;
+    }
+    ds_6.value = dailygoal_6.toFixed(2);
     console.log(dailygoal_6);
-    ds_6.value = dailygoal_6;
     console.log(document.getElementById("daily_stepsInput_6").value);
     daily_difStepsChange();
   }
@@ -732,7 +765,14 @@ var dailygoal_7 = "";
     } else {
       dailygoal_7 -= 1;
     }
-    // dailygoal_1_show.innerHTML = dailygoal_1;
+    if (dailygoal_7 > 85) {
+      dailygoal_7 = 85;
+    }
+    if (dailygoal_7 < 0) {
+      dailygoal_7 = 0;
+    }
+    ds_7.value = dailygoal_7.toFixed(2);
+    console.log(dailygoal_7);
     console.log(dailygoal_7);
     ds_7.value = dailygoal_7;
     console.log(document.getElementById("daily_stepsInput_7").value);
