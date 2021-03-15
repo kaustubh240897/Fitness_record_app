@@ -253,6 +253,7 @@
     var dist_km = 0;
     //var dates = {!! json_encode($months) !!};
     var dates = {!! json_encode($datewise_monthdata) !!};
+    var nfObject = new Intl.NumberFormat('en-US');
     console.log("key_len",dates.length);
     if (Object.keys(dates).length > 0) {
       if (is_rev == 0) {
@@ -289,12 +290,12 @@
               td1.className = "comp_td text-left";
               td1.innerHTML =(d.getMonth() + 1).toString();
               dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
-              td2.innerHTML = totalSteps + " (" + dist_km.toFixed(2) +  " km)";
+              td2.innerHTML = nfObject.format(totalSteps) + " (" + dist_km.toFixed(2) +  " km)";
               td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="{{URL::asset('storage/history/co.svg')}}" alt="">';
             } else {
               td1.innerHTML = (d.getMonth() + 1).toString();
               dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
-              td2.innerHTML = totalSteps + " (" + dist_km.toFixed(2) +  " km)";
+              td2.innerHTML = nfObject.format(totalSteps) + " (" + dist_km.toFixed(2) +  " km)";
               td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span>';
             }
             tr.appendChild(td1);
@@ -414,12 +415,12 @@
               td1.className = "comp_td text-left";
               td1.innerHTML =(d.getMonth() + 1).toString();
               dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
-              td2.innerHTML = totalSteps + " (" + dist_km.toFixed(2) +  " km)";
+              td2.innerHTML = nfObject.format(totalSteps) + " (" + dist_km.toFixed(2) +  " km)";
               td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span> <img style="height: 15px; width: 15px;" class="pb-1" src="{{URL::asset('storage/history/co.svg')}}" alt="">';
             } else {
               td1.innerHTML = (d.getMonth() + 1).toString();
               dist_km = totalSteps * {{$get_m_user_stride}} / 100000;
-              td2.innerHTML = totalSteps + " (" + dist_km.toFixed(2) +  " km)";
+              td2.innerHTML = nfObject.format(totalSteps) + " (" + dist_km.toFixed(2) +  " km)";
               td3.innerHTML = parseInt((totalSteps/goal)*100) + '<span style="font-size:80%">%</span>';
             }
             tr.appendChild(td1);

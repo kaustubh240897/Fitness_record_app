@@ -17,7 +17,7 @@
      <h2 class='mt-5'> 最初にプロファイルを作成してください <a href="/" style="color: blue !important">ここをクリック </a> </h2>
     </div>
   @else
-    <div id="div_native" class="">
+    <!-- <div id="div_native" class="">
       <div id="tv_date" class="container-fluid pt-3" style="color:#FFFFFF; border-radius: 15px;">
         <div class="row justify-content-center">
           <div class="col pt-1 text-center">
@@ -53,7 +53,7 @@
           </div>
           </div>
         </div>
-    </div>
+    </div> -->
       <div class="d-flex flex-row justify-content-around">
         <!-- <p><img src="{{ asset('storage/padometerscreen/rec.png') }}" alt=""></p>
         <p><img src="{{ asset('storage/padometerscreen/rec.png') }}" alt=""></p> -->
@@ -81,7 +81,7 @@
         <div class="container-fluid text-center">
           <img src="{{asset('storage/padometerscreen/star.png')}}" alt="">
         </div>
-      <div id="bg_season1" class="container-fluid pt-3" style="background-size: 100% 80%; background-position: right 100%;; background-repeat: no-repeat">
+      <!-- <div id="bg_season1" class="container-fluid pt-3" style="background-size: 100% 80%; background-position: right 100%;; background-repeat: no-repeat"> -->
       <div class="relative w-100 h-50" style="background: url({{asset('storage/padometerscreen/graphcomp.png')}}); background-size: 95% 104%; background-position: center; background-repeat: no-repeat">
         <canvas id="myChart"></canvas>
         <div class="absolute-center text-center">
@@ -104,7 +104,7 @@
             <p class="mb-0 font-weight-bold" style="font-size:90%; color:#113A83;">あと {{ $get_m_user_daily_goal - $today_data }}歩 ({{ number_format($get_m_user_daily_goal*$get_m_user_stride/100000 - $today_data*$get_m_user_stride/100000,2,'.',',') }}km) で目標達成！</p>
           </div>
         </div>
-      <div id="bg_season2" class="container-fluid pt-3 pb-3" style="background-size: 100% 80%; background-position: right 100%;; background-repeat: no-repeat">
+      <!-- <div id="bg_season2" class="container-fluid pt-3 pb-3" style="background-size: 100% 80%; background-position: right 100%;; background-repeat: no-repeat"> -->
       <div class="relative w-100 h-50" style="background: url({{asset('storage/padometerscreen/graph.png')}}); background-size: 95% 104%; background-position: center; background-repeat: no-repeat">
         <canvas id="myChart"></canvas>
         <div class="absolute-center text-center">
@@ -399,7 +399,7 @@
                 }
               }
             </script>
-            <script type="text/javascript">
+            <!-- <script type="text/javascript">
               var mon = {{ $month }};
               var dev = {{ $device }};
               if({{$today_data}} >= {{$get_m_user_daily_goal}}) {
@@ -419,7 +419,7 @@
                   bg_season.style.backgroundImage = "url({{asset('storage/padometerscreen/bg01_autumn01@2x.png')}})";
                 }
               }
-            </script>
+            </script> -->
 
     <script type="text/javascript">
     var dev = {{ $device }};
@@ -428,13 +428,13 @@
     console.log(motion_app);
     console.log(motion_web);
     var animation_time = 0;
-    if (dev == 111) {
-      var native_div = document.getElementById("div_native");
-      native_div.className = "d-none";
-    } else {
-      var native_div = document.getElementById("div_native");
-      native_div.className = "";
-    }
+    // if (dev == 111) {
+    //   var native_div = document.getElementById("div_native");
+    //   native_div.className = "d-none";
+    // } else {
+    //   var native_div = document.getElementById("div_native");
+    //   native_div.className = "";
+    // }
     if (dev == 111 && motion_app == 1) {
       animation_time = 3000;
     } else if (dev == 222 && motion_web == 1) {
