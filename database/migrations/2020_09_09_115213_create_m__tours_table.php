@@ -16,6 +16,7 @@ class CreateMToursTable extends Migration
         Schema::create('m__tours', function (Blueprint $table) {
             $table->id();
             $table->string('tour_title', 255);
+            $table->string('title_abbreviation', 255);
             $table->string('tour_comment', 255);
             $table->foreignId('m__collection_id')
             ->constrained('m__collections')
