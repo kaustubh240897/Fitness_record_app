@@ -1227,9 +1227,9 @@
   });
   console.log("xl",xLabel);
   var maxSteps = Math.max(...stepsData);
-  var maxY = maxSteps + 1000 - maxSteps%1000;
-  console.log(maxY);
   var weekGoals = {!! json_encode($steps_week) !!};
+  var maxY = weekGoals[0] + 1000 - weekGoals[0]%1000;
+  console.log("maxy", maxY);
   const img = new Image();
   img.src = "{{ asset('storage/padometerscreen/star.png') }}";
   Chart.plugins.register({

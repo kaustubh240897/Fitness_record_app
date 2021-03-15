@@ -111,8 +111,17 @@
                                       </div>
                                     </div>
                                     <hr/>
-                                    <img class='mr-1' style='width:100%; height:auto;' src='/storage/img/tour-change1.png'>
-                                    <div class='container mt-5'>
+                                    <!-- <img class='mr-1' style='width:100%; height:auto;' src='/storage/img/tour-change1.png'> -->
+                                    <div class='d-flex flex-row justify-content-start'>
+                          			        <!-- <img src='/storage/img/tour-change1.png' style='width:55%;'> -->
+                                        <div class="col-1 text-right">
+                                          <img src={{ asset('storage/img/ico_caution.svg') }}>
+                                        </div>
+                                        <div class="col-8 text-left">
+                                          <p style="color: #2b63c6; font-weight: bold;">コース設定の注意点</p>
+                                        </div>
+                          			    </div>
+                                    <div class='container'>
                                       @foreach($constant_data as $c)
                                         <div class='row py-2' style='background-color: #fdf2e3;' >
                                           <div class='col-1'> <img class='mr-2' src='/storage/img/point.png'></div><div class='col-10'> {{ $c }}

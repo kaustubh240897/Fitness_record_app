@@ -472,13 +472,14 @@
   }
   function copyGoal() {
     var d_goal_dist = parseFloat(document.getElementById("est_daily_dist").innerHTML);
-    ds_1.value =  d_goal_dist;
-    ds_2.value =  d_goal_dist;
-    ds_3.value =  d_goal_dist;
-    ds_4.value =  d_goal_dist;
-    ds_5.value =  d_goal_dist;
-    ds_6.value =  d_goal_dist;
-    ds_7.value =  d_goal_dist;
+    ds_1.value =  d_goal_dist.toFixed(2);
+    ds_2.value =  d_goal_dist.toFixed(2);
+    ds_3.value =  d_goal_dist.toFixed(2);
+    ds_4.value =  d_goal_dist.toFixed(2);
+    ds_5.value =  d_goal_dist.toFixed(2);
+    ds_6.value =  d_goal_dist.toFixed(2);
+    ds_7.value =  d_goal_dist.toFixed(2);
+    daily_difStepsChange();
   }
   function motionAppChange(id) {
     if (cb1.checked) {
@@ -544,6 +545,7 @@
       }
       console.log(document.getElementById("strideinput").value);
       strideChange();
+      setDailySteps("r");
       console.log(document.getElementById("strideinput").value);
     }
     var gender = "";
@@ -582,6 +584,7 @@
         strideLength = 45;
       }
       s_input.value = strideLength;
+      setDailySteps("r");
     }
 </script>
 <script type="text/javascript">
@@ -590,15 +593,20 @@
     var steps = "";
     function setDailySteps(id) {
       steps = ds_input.value;
-      if (id == "daily_steps_add") {
-        steps = parseFloat(steps) + 1;
-      } else {
-        steps -= 1;
+      if (id != "r") {
+        if (id == "daily_steps_add") {
+          steps = parseFloat(steps) + 1;
+        } else {
+          steps -= 1;
+        }
       }
       // dailySteps_p.innerHTML = steps;
       console.log(steps);
       if (steps > 100000) {
         steps = 100000;
+      }
+      if (steps < 0) {
+        steps = 0;
       }
       ds_input.value = steps;
       console.log(document.getElementById("daily_stepsInput").value);
@@ -773,8 +781,6 @@ var dailygoal_7 = "";
     }
     ds_7.value = dailygoal_7.toFixed(2);
     console.log(dailygoal_7);
-    console.log(dailygoal_7);
-    ds_7.value = dailygoal_7;
     console.log(document.getElementById("daily_stepsInput_7").value);
     daily_difStepsChange();
   }

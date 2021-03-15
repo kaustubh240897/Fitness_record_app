@@ -81,9 +81,17 @@
               <br>
             @endforeach
 			    </div>
-			    <div class='mt-5 text-center'>
-			        <img src='/storage/img/tour-change1.png' style='width:55%;'>
-			    </div>
+			    <div class="container mt-5">
+            <div class='d-flex flex-row justify-content-center'>
+  			        <!-- <img src='/storage/img/tour-change1.png' style='width:55%;'> -->
+                <div class="col-1 text-right">
+                  <img src={{ asset('storage/img/ico_caution.svg') }}>
+                </div>
+                <div class="col-8 text-left">
+                  <p style="color: #2b63c6; font-weight: bold;">コース設定の注意点</p>
+                </div>
+  			    </div>
+          </div>
 			    <div>
 			        <img src='/storage/img/line@3x.png' class='wid'>
 			    </div>
