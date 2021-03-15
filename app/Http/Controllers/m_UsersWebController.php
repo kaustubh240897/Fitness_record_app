@@ -302,29 +302,28 @@ class m_UsersWebController extends Controller
             }
             $get_m_user_stride = $m__users->stride;
 
-            $today_day = Carbon::now()->format('l');
-            if($today_day == 'Monday'){
-                $get_m_user_daily_goal = $m__users->step_monday;
-            }
-            elseif($today_day == 'Tuesday'){
-                $get_m_user_daily_goal = $m__users->step_tuesday;
-            }
-            elseif($today_day == 'Wednesday'){
-                $get_m_user_daily_goal = $m__users->step_wednesday;
-            }
-            elseif($today_day == 'Thursday'){
-                $get_m_user_daily_goal = $m__users->step_thursday;
-            }
-            elseif($today_day == 'Friday'){
-                $get_m_user_daily_goal = $m__users->step_friday;
-            }
-            elseif($today_day == 'Saturday'){
-                $get_m_user_daily_goal = $m__users->step_saturday;
-            }
-            elseif($today_day == 'Sunday'){
-                $get_m_user_daily_goal = $m__users->step_sunday;
-            }
-            $steps_week = [$m__users->step_monday,$m__users->step_tuesday,$m__users->step_wednesday,$m__users->step_thursday,$m__users->step_friday,$m__users->step_saturday,$m__users->step_sunday];
+            //$today_day = Carbon::now()->format('l');
+            // if($today_day == 'Monday'){
+            //     $get_m_user_daily_goal = $m__users->step_monday;
+            // }
+            // elseif($today_day == 'Tuesday'){
+            //     $get_m_user_daily_goal = $m__users->step_tuesday;
+            // }
+            // elseif($today_day == 'Wednesday'){
+            //     $get_m_user_daily_goal = $m__users->step_wednesday;
+            // }
+            // elseif($today_day == 'Thursday'){
+            //     $get_m_user_daily_goal = $m__users->step_thursday;
+            // }
+            // elseif($today_day == 'Friday'){
+            //     $get_m_user_daily_goal = $m__users->step_friday;
+            // }
+            // elseif($today_day == 'Saturday'){
+            //     $get_m_user_daily_goal = $m__users->step_saturday;
+            // }
+            //elseif($today_day == 'Sunday'){
+            $get_m_user_daily_goal = $m__users->step_goal_per_day;
+            $steps_week = [$m__users->step_goal_per_day,$m__users->step_goal_per_day,$m__users->step_goal_per_day,$m__users->step_goal_per_day,$m__users->step_goal_per_day,$m__users->step_goal_per_day,$m__users->step_goal_per_day];
 
             $get_m_user_monthly_goal = $m__users->step_goals_per_month;
             $get_t_tour = t_Tour::where('m__users_id', $m__users_id)->orderBy('start_datetime', 'DESC')->first();
@@ -476,29 +475,28 @@ class m_UsersWebController extends Controller
                 return Carbon::parse($val->step_actual_datetime)->format('d');
             });
             $get_m_user_stride = $m__users->stride;
-            $today_day = Carbon::now()->format('l');
-            if($today_day == 'Monday'){
-                $get_m_user_daily_goal = $m__users->step_monday;
-            }
-            elseif($today_day == 'Tuesday'){
-                $get_m_user_daily_goal = $m__users->step_tuesday;
-            }
-            elseif($today_day == 'Wednesday'){
-                $get_m_user_daily_goal = $m__users->step_wednesday;
-            }
-            elseif($today_day == 'Thursday'){
-                $get_m_user_daily_goal = $m__users->step_thursday;
-            }
-            elseif($today_day == 'Friday'){
-                $get_m_user_daily_goal = $m__users->step_friday;
-            }
-            elseif($today_day == 'Saturday'){
-                $get_m_user_daily_goal = $m__users->step_saturday;
-            }
-            elseif($today_day == 'Sunday'){
-                $get_m_user_daily_goal = $m__users->step_sunday;
-            }
-            $steps_week = [$m__users->step_monday,$m__users->step_tuesday,$m__users->step_wednesday,$m__users->step_thursday,$m__users->step_friday,$m__users->step_saturday,$m__users->step_sunday];
+            // $today_day = Carbon::now()->format('l');
+            // if($today_day == 'Monday'){
+            //     $get_m_user_daily_goal = $m__users->step_monday;
+            // }
+            // elseif($today_day == 'Tuesday'){
+            //     $get_m_user_daily_goal = $m__users->step_tuesday;
+            // }
+            // elseif($today_day == 'Wednesday'){
+            //     $get_m_user_daily_goal = $m__users->step_wednesday;
+            // }
+            // elseif($today_day == 'Thursday'){
+            //     $get_m_user_daily_goal = $m__users->step_thursday;
+            // }
+            // elseif($today_day == 'Friday'){
+            //     $get_m_user_daily_goal = $m__users->step_friday;
+            // }
+            // elseif($today_day == 'Saturday'){
+            //     $get_m_user_daily_goal = $m__users->step_saturday;
+            // }
+            //elseif($today_day == 'Sunday'){
+            $get_m_user_daily_goal = $m__users->step_goal_per_day;
+            $steps_week = [$m__users->step_goal_per_day,$m__users->step_goal_per_day,$m__users->step_goal_per_day,$m__users->step_goal_per_day,$m__users->step_goal_per_day,$m__users->step_goal_per_day,$m__users->step_goal_per_day];
 
             $get_m_user_monthly_goal = $m__users->step_goals_per_month;
             $get_t_tour = t_Tour::where('m__users_id', $m__users_id)->orderBy('start_datetime', 'DESC')->first();
