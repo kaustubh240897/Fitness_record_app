@@ -50,13 +50,13 @@
 			      <a href="{{ route('tourdetails', $current_tour->m_tours->id) }}" style="text-decoration: none;">
 					  @if($current_tour->status == 'Done')
 			    	  <div class='row border py-2'>
-			    		  <div class='col-1'><img class='mr-1' src='/storage/img/complete.png'></div><div class='col-5 mx-1' style='color: #2b63c6;'>{{ $current_tour->m_tours->tour_title }} </div><div class='col-5 c' style='color:grey;'>{{ $total }} Km &nbsp <i class="fa fa-angle-right" aria-hidden="true"></i> </div>
+			    		  <div class='col-1'><img class='mr-1' src='/storage/img/complete.png'></div><div class='col-5 mx-1' style='color: #2b63c6;'>{{ $current_tour->m_tours->title_abbreviation }} </div><div class='col-5 c' style='color:grey;'>{{ $total }} Km &nbsp <i class="fa fa-angle-right" aria-hidden="true"></i> </div>
 			    	  </div>
             		<div class='mt-4'> <img style='width:100%; height: auto;' src='/storage/img/error@3x.png'></div>
 
 		        @else
 						  <div class='row border py-2'>
-						    <div class='col-5' style='color: #2b63c6;'>{{ $current_tour->m_tours->tour_title }} </div><div class='col-6 c' style='color:grey;'>{{ $total }}Km &nbsp <i class="fa fa-angle-right" aria-hidden="true"></i> </div>
+						    <div class='col-5' style='color: #2b63c6;'>{{ $current_tour->m_tours->title_abbreviation }} </div><div class='col-6 c' style='color:grey;'>{{ $total }}Km &nbsp <i class="fa fa-angle-right" aria-hidden="true"></i> </div>
 						  </div>
 						  <div class='col-12 text-center mt-4'> <b class='color'>{{ number_format($steps * $get_m_user_stride/100000,2,'.','') }}km/{{ $total }}km</b></div>
           	@endif
@@ -75,7 +75,7 @@
             @foreach($tours as $tour)
               <a href="{{ route('tourdetails', $tour->id) }}" style="text-decoration: none;">
                 <div class='row border py-2'>
-                  @foreach($all_t_Tours as $all_t_Tour) @if($tour->id == $all_t_Tour->m__tours_id)  @if($all_t_Tour->status == 'Done') <div class='col-1'> <img class='mr-1' src='/storage/img/complete.png'> </div> @break @else @continue  @endif @endif @endforeach<div class='col-5 mx-1' style='color: #2b63c6;'>{{ $tour->tour_title }}</div> <div class='col-5 c' style='color:grey;'>@if(! empty($tour->checkpoints)) @foreach($tour->checkpoints as $checkpoint) @if($checkpoint->checkpoint_category == '終了')  {{ $checkpoint->distance }}Km @endif  @endforeach @else 0Km @endif  &nbsp <i class="fa fa-angle-right" aria-hidden="true"></i> </div>
+                  @foreach($all_t_Tours as $all_t_Tour) @if($tour->id == $all_t_Tour->m__tours_id)  @if($all_t_Tour->status == 'Done') <div class='col-1'> <img class='mr-1' src='/storage/img/complete.png'> </div> @break @else @continue  @endif @endif @endforeach<div class='col-5 mx-1' style='color: #2b63c6;'>{{ $tour->title_abbreviation }}</div> <div class='col-5 c' style='color:grey;'>@if(! empty($tour->checkpoints)) @foreach($tour->checkpoints as $checkpoint) @if($checkpoint->checkpoint_category == '終了')  {{ $checkpoint->distance }}Km @endif  @endforeach @else 0Km @endif  &nbsp <i class="fa fa-angle-right" aria-hidden="true"></i> </div>
                 </div>
               </a>
               <br>

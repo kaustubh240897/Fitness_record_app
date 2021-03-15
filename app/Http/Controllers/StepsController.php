@@ -69,7 +69,7 @@ class StepsController extends Controller
                 return response()->json(["tourname" => "0"], 201);
             }
             else{
-                $tour_name = $latest_tour->m_tours->tour_title;
+                $tour_name = $latest_tour->m_tours->title_abbreviation;
                 return response()->json(["tourname" => $tour_name], 201);
             }
         }
