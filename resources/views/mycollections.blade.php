@@ -112,7 +112,7 @@
   @endif
 @else
 	<div class='text-center' style='margin-top:15rem; z-index:10;'>
-		<h1 style='color:black !important;'> まだコレクションはありません！ </h1>
+		<h1 style='color:black !important; font-size:1.3rem;'> まだコレクションはありません！ </h1>
 	</div>
 @endif
   <div class="container-fluid navfix" style="background-color: #2b63c6;">

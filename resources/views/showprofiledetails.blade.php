@@ -146,7 +146,7 @@
 								<div class='mt-4'> <img style='width:100%; height: auto;' src='/storage/img/error-1@3x.png'></div>
 							@endif
                             <div class='row'>
-	                          <div class='col-12 text-center my-3'><a href="/createtour"><button class="button mt-2">コースの変更 ></button></a></div>
+	                          <div class='col-12 text-center my-3'><a href="/createtour"><button class="button mt-2">コースの設定 ></button></a></div>
 	                        </div>
 			           </div>
 			        </div>

@@ -86,7 +86,7 @@
     <div class="container pt-3 pb-3">
       <div class="row justify-content-between w-75 mx-auto p-0" style="border-radius: 20px; border: solid 1px #2b63c6;">
         <div class="col-10">
-          <a href="/createtour"><p class="p-1 my-auto" style="font-size: 12px; color: #2b63c6">コースの一覧や変更はこちら</p></a>
+          <a href="/createtour"><p class="p-1 my-auto" style="font-size: 12px; color: #2b63c6">コースの一覧や設定はこちら</p></a>
         </div>
         <div class="col text-right">
           <p class="my-auto"><img src="{{ asset('storage/mypage/arrow-right-icon.svg') }}" alt=""></p>
