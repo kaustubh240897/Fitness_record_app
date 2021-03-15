@@ -1138,6 +1138,9 @@
   legend: {
   display: false
   },
+  tooltips: {
+    enabled: false
+  },
   cutoutPercentage: 85,
   animation: {
   duration: animation_time, // general animation time
