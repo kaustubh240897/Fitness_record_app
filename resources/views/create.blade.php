@@ -253,7 +253,7 @@
     </div>
     <div class="container-fluid pb-3">
       <div class="d-flex flex-row justify-content-between pt-3">
-        <p class="pl-2 pt-1" style="font-size: 80%; font-weight: bold; color: #2b63c6;">曜日ごとの目標距離</p>
+        <p class="pl-2 pt-1" style="font-size: 80%; font-weight: bold; color: #2b63c6;">１ヶ月あたりの目標距離</p>
         <p id="est_monthly_dist" class="pr-2 text-center" style="font-weight: bold; color: #2b63c6;">122.4 km</p>
       </div>
       <div id="error_monthDist" class="box2 sb12 pl-2 d-none flex-row justify-content-center">
