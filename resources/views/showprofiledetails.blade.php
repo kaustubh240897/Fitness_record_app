@@ -143,7 +143,7 @@
 								<div class='col-12 text-center'> <b class='color'>{{ number_format($m_users->stride*$steps/100000, 2, '.',',') }} km /@foreach($t_tour->m_tours->checkpoints as $checkpoint) @if($checkpoint->checkpoint_category =='終了') {{ $checkpoint->distance }} km  @endif @endforeach</b></div>
 								@endif
 							@else
-								<div class='mt-4'> <img style='width:100%; height: auto;' src='/storage/img/error-1@3x.png'></div>
+								<div class='mt-4'> <img style='width:100%; height: auto;' src='/storage/img/error.svg'></div>
 							@endif
                             <div class='row'>
 	                          <div class='col-12 text-center my-3'><a href="/createtour"><button class="button mt-2">コースの設定 ></button></a></div>
