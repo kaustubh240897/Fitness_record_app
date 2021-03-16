@@ -39,48 +39,48 @@
           </div>
         </div>
   </div>
-      <div id="div_notification_below" class="container-fluid pt-3">
-        <div class="row" style=" padding: 14px 1px 1px;
-          background-color: #2b63c6;">
-          <div class="col-1 text-right">
-            @if (($steps*$get_m_user_stride/100000) >  $total )
-              <img src="{{ asset('storage/mypage/ico_tours.svg') }}" class="pl-2" alt="">
-            @endif
-          </div>
-          <div class="col-9">
-            <p class="pl-2" style="margin: 1px 0 2px 10px;
-              font-family: RoundedMplus1cBold;
-              font-weight: bold;
-              text-align: left;
-              color: #ffffff;">@if($get_t_tour == null) コースが選択されていません！ @else {{ $get_t_tour->m_tours->title_abbreviation }} @endif</p>
-          </div>
-        </div>
-        <div class="row" style=" padding: 5px 1px 10px;
-          background-color: #2b63c6;">
-          <div class="col-1 text-right">
-            <img src="{{ asset('storage/mypage/ico_foot.svg') }}" class="pl-3" alt="">
-          </div>
-          <div class="col-9">
-            <p class="pl-2" style="margin: 0 0 0 12px;
-              object-fit: contain;
-              font-family: RoundedMplus1c;
-              font-size: 16px;
-              font-weight: normal;
-              font-stretch: normal;
-              font-style: normal;
-              line-height: 1.56;
-              letter-spacing: normal;
-              text-align: left;
-              color: #ffd00d;;">{{ number_format($steps*$get_m_user_stride/100000,2,'.','') }}km / {{ $total }}km</p>
-          </div>
-        </div>
-    </div>
     @if(! empty($checkpoints))
+    <div id="div_notification_below" class="container-fluid pt-3">
+      <div class="row" style=" padding: 14px 1px 1px;
+        background-color: #2b63c6;">
+        <div class="col-1 text-right">
+          @if (($steps*$get_m_user_stride/100000) >  $total )
+            <img src="{{ asset('storage/mypage/ico_tours.svg') }}" class="pl-2" alt="">
+          @endif
+        </div>
+        <div class="col-9">
+          <p class="pl-2" style="margin: 1px 0 2px 10px;
+            font-family: RoundedMplus1cBold;
+            font-weight: bold;
+            text-align: left;
+            color: #ffffff;">@if($get_t_tour == null) @else {{$get_t_tour->m_tours->title_abbreviation}} @endif</p>
+        </div>
+      </div>
+      <div class="row" style=" padding: 5px 1px 10px;
+        background-color: #2b63c6;">
+        <div class="col-1 text-right">
+          <img src="{{ asset('storage/mypage/ico_foot.svg') }}" class="pl-3" alt="">
+        </div>
+        <div class="col-9">
+          <p class="pl-2" style="margin: 0 0 0 12px;
+            object-fit: contain;
+            font-family: RoundedMplus1c;
+            font-size: 16px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.56;
+            letter-spacing: normal;
+            text-align: left;
+            color: #ffd00d;;">{{ number_format($steps*$get_m_user_stride/100000,2,'.','') }}km / {{ $total }}km</p>
+        </div>
+      </div>
+    </div>
     <div class="container-fluid pt-3" id="progress_bar">
     </div>
     @else
     <div class="container-fluid text-center">
-      <img class="mt-3" style="width: 100%;" src="{{ asset('storage/mypage/error_1.png') }}" alt="">
+      <img class="mt-3" style="width: 100%;" src="{{ asset('storage/mypage/error.svg') }}" alt="">
     </div>
     @endif
     <div class="container pt-3 pb-3">
