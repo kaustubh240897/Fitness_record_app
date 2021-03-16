@@ -84,7 +84,7 @@ class t_CollectionWebController extends Controller
         $tour_seen = [];
         for($i=0; $i<$count; $i++){
             $tours[] = m_Tour::where('id', $tour_id[$i])->get()->first();
-            $tour_status[] = t_Tour::where('m__users_id', $m__user_id)->where('m__tours_id', $tour_id[$i])->get()->first()->status;
+            $tour_status[] = t_Tour::withTrashed()->where('m__users_id', $m__user_id)->where('m__tours_id', $tour_id[$i])->get()->first()->status;
             $tours_distance[] = m_Checkpoint::where('m__tour_id', $tour_id[$i])->where('checkpoint_category', '終了')->get()->first()->distance;
         }   
         

@@ -21,15 +21,15 @@ class t_TourObserver
        $mytime = Carbon::now();
        $m__users_id = m_Users::where('users_id', Auth::id())->first()->id;
 
-       $get_t_tour = t_Tour::where('m__users_id', $m__users_id)->where('status', 'Inprogress')->orderBy('created_at', 'DESC')->first();
-       if($get_t_tour !=null){
-            $get_created_date = $get_t_tour->created_at;
+    //   $get_t_tour = t_Tour::where('m__users_id', $m__users_id)->where('status', 'Inprogress')->orderBy('created_at', 'DESC')->first();
+    //    if($get_t_tour !=null){
+    //         $get_created_date = $get_t_tour->created_at;
             
-            $get_t_collections = t_Collection::where('m__users_id', $m__users_id)->where('created_at', '>=', $get_created_date)->get();
-            foreach($get_t_collections as $get_t_collection ){
-                $get_t_collection->delete();
-            }
-        }
+    //         $get_t_collections = t_Collection::where('m__users_id', $m__users_id)->where('created_at', '>=', $get_created_date)->get();
+    //         foreach($get_t_collections as $get_t_collection ){
+    //             $get_t_collection->delete();
+    //         }
+    //     }
        $t_tours = t_Tour::where('m__users_id', $m__users_id)->get();
        foreach($t_tours as $t_tour){
            if($t_tour->status == 'Inprogress'){
