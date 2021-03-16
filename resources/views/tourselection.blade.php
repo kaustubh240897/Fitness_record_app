@@ -62,7 +62,7 @@
           	@endif
 				    </a>
           @else
-        	  <div class='mt-4'> <img style='width:100%; height: auto;' src='/storage/img/error-1@3x.png'></div>
+        	  <div class='mt-4'> <img style='width:100%; height: auto;' src='/storage/img/error.svg'></div>
           @endif
 			    <div class='row'>
 			    	<div class='col-12 text-center text-color mt-5'><h5><b>選択可能なコース</b></h5></div>
@@ -87,7 +87,7 @@
                 <div class="col-1 text-right">
                   <img src={{ asset('storage/img/ico_caution.svg') }}>
                 </div>
-                <div class="col-8 text-left">
+                <div class="col-xs-8 col-md-4 col-8 text-left">
                   <p style="color: #2b63c6; font-weight: bold;">コース設定の注意点</p>
                 </div>
   			    </div>

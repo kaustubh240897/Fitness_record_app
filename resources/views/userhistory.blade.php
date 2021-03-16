@@ -430,7 +430,7 @@ background-color: #113a83; color: #fff">
       var td2 = document.createElement("td");
       td2.className = "w-50";
       td2.style.color = "#2b63c6";
-      td2.innerHTML = "No Data Exists for this date";
+      td2.innerHTML = " <br>";
       var td3 = document.createElement("td");
       td3.className = "w-25";
       td3.style.color = "#2b63c6";
