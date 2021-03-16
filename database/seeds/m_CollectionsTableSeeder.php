@@ -427,7 +427,7 @@ class m_CollectionsTableSeeder extends Seeder
           array (
                  'id' => 38,
                  'collection_category' => 'tour',
-                 'collection_title' => '',
+                 'collection_title' => 'コース2',
                  'path' => 'storage/tour2/',
                  'filename' => 'C02-00.png',
                  'created_at'=>date('Y-m-d H:i:s'),

@@ -59,9 +59,17 @@ class t_TourWebController extends Controller
                 
                 if($get_t_tour !=null){
                     //$steps = t_Steps::where('m__users_id',$m__users_id)->where('step_actual_datetime', '>=', $step_start_datetime)->get()->sum('steps');
-                    $user_tour_all_steps = t_Steps::where('m__users_id',$m__users_id)->where('step_actual_datetime', '>=', $step_start_datetime)->get()->groupBy(function($date) {
-                        return Carbon::parse($date->step_actual_datetime)->toDateString(); // grouping by dates
-                    });
+                    $get_all_t_tour = t_Tour::withTrashed()->where('m__users_id', $m__users_id)->count();
+                    if($get_all_t_tour <= 1){
+                        $user_tour_all_steps = t_Steps::where('m__users_id',$m__users_id)->where('step_actual_datetime', '>=', $step_start_datetime)->get()->groupBy(function($date) {
+                            return Carbon::parse($date->step_actual_datetime)->toDateString(); // grouping by dates
+                        });
+                    }
+                    else{
+                        $user_tour_all_steps = t_Steps::where('m__users_id',$m__users_id)->whereDate('step_actual_datetime', '>', $step_start_datetime)->get()->groupBy(function($date) {
+                            return Carbon::parse($date->step_actual_datetime)->toDateString(); // grouping by dates
+                        });
+                    }
                     
                     $totalsteps_alldates_list = [];
                     foreach($user_tour_all_steps as $user_tour_step){
@@ -241,9 +249,17 @@ class t_TourWebController extends Controller
                 //$value = $request->session()->get('reverse','false');
                 if($get_t_tour !=null){
                     //$steps = t_Steps::where('m__users_id',$m__users_id)->where('step_actual_datetime', '>=', $tour_datetime)->get()->sum('steps');
-                    $user_tour_all_steps = t_Steps::where('m__users_id',$m__users_id)->where('step_actual_datetime', '>=', $tour_datetime)->get()->groupBy(function($date) {
-                        return Carbon::parse($date->step_actual_datetime)->toDateString(); // grouping by dates
-                    });
+                    $get_all_t_tour = t_Tour::withTrashed()->where('m__users_id', $m__users_id)->count();
+                    if($get_all_t_tour <= 1){
+                        $user_tour_all_steps = t_Steps::where('m__users_id',$m__users_id)->where('step_actual_datetime', '>=', $tour_datetime)->get()->groupBy(function($date) {
+                            return Carbon::parse($date->step_actual_datetime)->toDateString(); // grouping by dates
+                        });
+                    }
+                    else{
+                        $user_tour_all_steps = t_Steps::where('m__users_id',$m__users_id)->whereDate('step_actual_datetime', '>', $tour_datetime)->get()->groupBy(function($date) {
+                            return Carbon::parse($date->step_actual_datetime)->toDateString(); // grouping by dates
+                        });
+                    }
                     
                     $totalsteps_alldates_list = [];
                     foreach($user_tour_all_steps as $user_tour_step){
@@ -302,9 +318,17 @@ class t_TourWebController extends Controller
                 $session_value = $current_tour->direction;
                 $step_start_datetime = $current_tour->start_datetime;
                 //$user_tour_steps = t_Steps::where('m__users_id',$m__user->id)->where('step_actual_datetime', '>=', $step_start_datetime)->get()->sum('steps');
-                $user_tour_all_steps = t_Steps::where('m__users_id',$m__user->id)->where('step_actual_datetime', '>=', $step_start_datetime)->get()->groupBy(function($date) {
-                    return Carbon::parse($date->step_actual_datetime)->toDateString(); // grouping by dates
-                });
+                $get_all_t_tour = t_Tour::withTrashed()->where('m__users_id', $m__user->id)->count();
+                if($get_all_t_tour <= 1){
+                    $user_tour_all_steps = t_Steps::where('m__users_id',$m__user->id)->where('step_actual_datetime', '>=', $step_start_datetime)->get()->groupBy(function($date) {
+                        return Carbon::parse($date->step_actual_datetime)->toDateString(); // grouping by dates
+                    });
+                }
+                else{
+                    $user_tour_all_steps = t_Steps::where('m__users_id',$m__user->id)->whereDate('step_actual_datetime', '>', $step_start_datetime)->get()->groupBy(function($date) {
+                        return Carbon::parse($date->step_actual_datetime)->toDateString(); // grouping by dates
+                    });
+                }
                 
                 $totalsteps_alldates_list = [];
                 foreach($user_tour_all_steps as $user_tour_step){
