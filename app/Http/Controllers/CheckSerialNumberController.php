@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\User;
+use DB;
+Use \Carbon\Carbon;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 class CheckSerialNumberController extends Controller
@@ -24,6 +26,20 @@ class CheckSerialNumberController extends Controller
     public function create()
     {
         //
+    }
+
+    public function getTodayRecipe(){
+        $today_date = Carbon::now()->toDateString();
+        $todayRecipe = DB::connection('mysql2')->select("SELECT * FROM m_recipe_list WHERE publish_date = '$today_date' ");
+        if($todayRecipe == null){
+            return response()->json(["url" => "false"], 201);
+        }
+        else{
+            foreach($todayRecipe as $t){
+                $code = $t->recipe_code;
+            }
+            return response()->json(["url" => "https://mjdev01.com:450/images/recipe/thumbnail/$code.jpg"]);
+        }
     }
 
     /**
