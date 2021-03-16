@@ -167,13 +167,13 @@
                     <div style="z-index: -1000 !important;" id="triangle_graph" class=""></div>
                 </div>
                 <div class="container-fluid pt-3 w-25 d-none d-lg-block">
-                  <p class="text-center" style="font-size:75%; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ number_format($current_month_steps) }}歩 ({{ number_format($current_month_steps*$get_m_user_stride/100000,2,'.',',') }} Km)</p>
+                  <p class="text-center" style="font-size:75%; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ number_format($get_m_user_monthly_goal) }}歩 ({{ number_format($get_m_user_monthly_goal*$get_m_user_stride/100000,2,'.',',') }} Km)</p>
                 </div>
                 <div class="container-fluid pt-3 w-50 d-none d-md-block d-lg-none">
-                  <p class="text-center" style="font-size:75%; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ number_format($current_month_steps) }}歩 ({{ number_format($current_month_steps*$get_m_user_stride/100000,2,'.',',') }} Km)</p>
+                  <p class="text-center" style="font-size:75%; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ number_format($get_m_user_monthly_goal) }}歩 ({{ number_format($get_m_user_monthly_goal*$get_m_user_stride/100000,2,'.',',') }} Km)</p>
                 </div>
                 <div class="container-fluid pt-3 d-md-none">
-                  <p class="text-center" style="font-size:75%; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ number_format($current_month_steps) }}歩 ({{ number_format($current_month_steps*$get_m_user_stride/100000,2,'.',',') }} Km)</p>
+                  <p class="text-center" style="font-size:75%; background: #113A83; color:#FFFFFF; border: 2px solid #113A83; border-radius: 15px;">今月の累計目標 {{ number_format($get_m_user_monthly_goal) }}歩 ({{ number_format($get_m_user_monthly_goal*$get_m_user_stride/100000,2,'.',',') }} Km)</p>
                 </div>
                 <!-- @if(!empty($get_t_tour))
                   <div class="container-fluid botCont bg-white" >
