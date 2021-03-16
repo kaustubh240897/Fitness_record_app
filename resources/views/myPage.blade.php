@@ -52,7 +52,7 @@
               font-family: RoundedMplus1cBold;
               font-weight: bold;
               text-align: left;
-              color: #ffffff;">@if($get_t_tour == null) No tour selected! @else {{$get_t_tour->m_tours->tour_title}} @endif</p>
+              color: #ffffff;">@if($get_t_tour == null) コースが選択されていません！ @else {{ $get_t_tour->m_tours->title_abbreviation }} @endif</p>
           </div>
         </div>
         <div class="row" style=" padding: 5px 1px 10px;
