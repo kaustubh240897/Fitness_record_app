@@ -174,7 +174,7 @@ class t_TourWebController extends Controller
         
         $t_tour->save();
         //$tourTitle = str_replace(' ', '', $t_tour->m_tours->tour_title);
-        return redirect( route('tourdetails', $id))->with('successMsg','your tour Successfully selected');
+        return redirect( route('mypage'))->with('successMsg','your tour Successfully selected');
     }
 
     // public function createtoursession(Request $request){
