@@ -149,7 +149,7 @@
       <canvas id="ctx" class="pt-3"></canvas>
     </div>
     <div class="container pt-3" >
-      <p class="w-100 text-center mb-0 pb-0 overlay-text1" style="font-weight: bold; color: #2b63c6;">今日の歩数</p>
+      <p class="w-100 text-center mb-0 pb-0 overlay-text1" style="font-weight: bold; color: #2b63c6;">今月の歩数</p>
       <p class="w-100 text-center pt-0 mt-0"><img class="mt-0 pt-0" style="width:100%; height:auto;" src="{{ asset('storage/mypage/lineUp.png') }}" alt=""></p>
     </div>
     @if( $current_month_steps  >=  $get_m_user_monthly_goal )

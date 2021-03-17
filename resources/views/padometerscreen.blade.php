@@ -127,7 +127,7 @@
       @if( $current_month_steps  >=  $get_m_user_monthly_goal )
       <div class="container pt-3" style="background: url({{asset('storage/padometerscreen/complete01.png')}}); background-size: cover; background-position: center; background-repeat: no-repeat">
         <div class="container-fluid text-center overlay-text5">
-          <p class="font-weight-bold" style="color:#2b63c6;">今日の歩数</p>
+          <p class="font-weight-bold" style="color:#2b63c6;">今月の歩数</p>
         </div>
         <div class="container-fluid w-75 d-md-none">
           <br>
