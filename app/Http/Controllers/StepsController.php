@@ -137,6 +137,10 @@ class StepsController extends Controller
                     }
                 //$allsteps = t_Steps::where('m__users_id', $m__user_id)->where('step_actual_datetime', '>=', $tour_datetime)->get()->sum('steps');
                 $get_all_t_tour = t_Tour::withTrashed()->where('m__users_id', $m__user_id)->count();
+                $prev_steps = t_Steps::where('m__users_id',$m__user_id)->whereDate('step_actual_datetime', date("Y-m-d", strtotime($tour_datetime)))->where('step_actual_datetime', '<', $tour_datetime)->orderBy('step_actual_datetime','DESC')->get()->max('steps');
+                if($prev_steps == null){
+                    $prev_steps = 0;
+                }
                 if($get_all_t_tour <= 1){
                     $user_tour_all_steps = t_Steps::where('m__users_id',$m__user_id)->where('step_actual_datetime', '>=', $tour_datetime)->get()->groupBy(function($date) {
                         return Carbon::parse($date->step_actual_datetime)->toDateString(); // grouping by dates
@@ -160,6 +164,9 @@ class StepsController extends Controller
                 $allsteps = 0;
                 foreach($totalsteps_alldates_list as $totalstep_alldate_list){
                   $allsteps += $totalstep_alldate_list;
+                }
+                if($get_all_t_tour <= 1){
+                    $allsteps = $allsteps-$prev_steps;
                 }
 
 

@@ -252,6 +252,10 @@ class t_CollectionWebController extends Controller
                 $step_start_datetime = $get_t_tour->start_datetime;
                 //$user_tour_steps = t_Steps::where('m__users_id',$m__user_id)->where('step_actual_datetime', '>=', $step_start_datetime)->get()->sum('steps');
                 $get_all_t_tour = t_Tour::withTrashed()->where('m__users_id', $m__user_id)->count();
+                $prev_steps = t_Steps::where('m__users_id',$m__user_id)->whereDate('step_actual_datetime', date("Y-m-d", strtotime($step_start_datetime)))->where('step_actual_datetime', '<', $step_start_datetime)->orderBy('step_actual_datetime','DESC')->get()->max('steps');
+                if($prev_steps == null){
+                    $prev_steps = 0;
+                }
                 if($get_all_t_tour <= 1){
                     $user_tour_all_steps = t_Steps::where('m__users_id', $m__user_id)->where('step_actual_datetime', '>=', $step_start_datetime)->get()->groupBy(function($date) {
                         return Carbon::parse($date->step_actual_datetime)->toDateString(); // grouping by dates
@@ -275,6 +279,9 @@ class t_CollectionWebController extends Controller
                 $user_tour_steps = 0;
                 foreach($totalsteps_alldates_list as $totalstep_alldate_list){
                   $user_tour_steps += $totalstep_alldate_list;
+                }
+                if($get_all_t_tour <= 1){
+                    $user_tour_steps = $user_tour_steps-$prev_steps;
                 }
 
                 $user_stride = $m__users->stride;
