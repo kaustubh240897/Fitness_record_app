@@ -90,6 +90,9 @@ class t_TourWebController extends Controller
                     }
                     if($get_all_t_tour <= 1){
                         $steps = $steps-$prev_steps;
+                        if($steps < 0){
+                            $steps = 0;
+                        }
                     }
 
                 }
@@ -287,6 +290,9 @@ class t_TourWebController extends Controller
                     }
                     if($get_all_t_tour <= 1){
                         $steps = $steps-$prev_steps;
+                        if($steps < 0){
+                            $steps = 0;
+                        }
                     }
 
                 }
@@ -365,6 +371,9 @@ class t_TourWebController extends Controller
                 }
                 if($get_all_t_tour <= 1){
                     $user_tour_steps = $user_tour_steps-$prev_steps;
+                    if($user_tour_steps < 0){
+                        $user_tour_steps = 0;
+                    }
                 }
                 
                 $user_stride = $m__user->stride;

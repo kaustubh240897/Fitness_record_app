@@ -284,6 +284,9 @@ class t_CollectionWebController extends Controller
                 }
                 if($get_all_t_tour <= 1){
                     $user_tour_steps = $user_tour_steps-$prev_steps;
+                    if($user_tour_steps < 0){
+                        $user_tour_steps = 0;
+                    }
                 }
 
                 $user_stride = $m__users->stride;

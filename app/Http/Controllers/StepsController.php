@@ -167,6 +167,9 @@ class StepsController extends Controller
                 }
                 if($get_all_t_tour <= 1){
                     $allsteps = $allsteps-$prev_steps;
+                    if($allsteps < 0){
+                        $allsteps = 0;
+                    }
                 }
 
 
