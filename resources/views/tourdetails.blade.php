@@ -132,7 +132,7 @@
                                 </div>
                                   <div class="modal-footer">
                                     <div class='row'>
-                                      <div class='col-12 text-center mr-2'><button type="submit" class="button" style='background-color:#2b63c6 ; color:white'>コースの変更</button></div>
+                                      <div class='col-12 text-center mr-2'><button type="submit" class="button" style='background-color:#2b63c6 ; color:white'>コースの設定</button></div>
                                     <div class='col-12 text-center mr-2'><button type="button" class='button mt-2' style='background-color:white;' data-dismiss="modal">閉じる</button></div>
                                   </div>
                               </div>
