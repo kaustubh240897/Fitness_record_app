@@ -742,13 +742,31 @@ class m_UsersWebController extends Controller
         if(! empty($m_users) && $m_users->users_id == Auth::id()){
             $t_tour = t_Tour::where('m__users_id', $m_users->id)->orderBy('created_at','DESC')->first();
             $unseen_collection = t_Collection::where('m__users_id', $m_users->id)->where('new_display_flag', 0)->count();
-            return view('edit', compact('m_users','t_tour','unseen_collection'));
+            if (Browser::isMobile()) {
+                $device = 111;
+            }
+            elseif(Browser::isTablet()){
+                $device = 111;
+            }
+            else{
+                $device = 222;
+            }
+            return view('edit', compact('m_users','t_tour','unseen_collection','device'));
         }
         else{
             $m_users = null;
             $t_tour = null;
             $unseen_collection = 0;
-            return view('edit', compact('m_users','t_tour','unseen_collection'));
+            if (Browser::isMobile()) {
+                $device = 111;
+            }
+            elseif(Browser::isTablet()){
+                $device = 111;
+            }
+            else{
+                $device = 222;
+            }
+            return view('edit', compact('m_users','t_tour','unseen_collection','device'));
         }
     }
 
