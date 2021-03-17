@@ -246,10 +246,12 @@ class t_CollectionWebController extends Controller
             if($get_t_tour == null){
                 $session_value = 0;
                 $user_tour_steps = 0;
+                $current_tour_title = null;
             }
             else{ 
                 $session_value = $get_t_tour->direction;
                 $step_start_datetime = $get_t_tour->start_datetime;
+                $current_tour_title = $get_t_tour->m_tours->tour_title;
                 //$user_tour_steps = t_Steps::where('m__users_id',$m__user_id)->where('step_actual_datetime', '>=', $step_start_datetime)->get()->sum('steps');
                 $get_all_t_tour = t_Tour::withTrashed()->where('m__users_id', $m__user_id)->count();
                 $prev_steps = t_Steps::where('m__users_id',$m__user_id)->whereDate('step_actual_datetime', date("Y-m-d", strtotime($step_start_datetime)))->where('step_actual_datetime', '<', $step_start_datetime)->orderBy('step_actual_datetime','DESC')->get()->max('steps');
@@ -299,7 +301,7 @@ class t_CollectionWebController extends Controller
                     }
                 }
         }
-            return view('mycollectionsdetails', compact('my_collections','m__users','total','checkpoints','checkpointsr','session_value','unseen_collection','user_tour_steps','user_stride'));
+            return view('mycollectionsdetails', compact('my_collections','m__users','total','checkpoints','checkpointsr','session_value','unseen_collection','user_tour_steps','user_stride','current_tour_title'));
         }
         else{
             $my_collections = null;
@@ -311,8 +313,9 @@ class t_CollectionWebController extends Controller
             $unseen_collection = 0;
             $user_tour_steps = 0;
             $user_stride = 0;
+            $current_tour_title = null;
 
-            return view('mycollectionsdetails', compact('my_collections','m__users','total','checkpoints','checkpointsr','session_value','unseen_collection','user_tour_steps','user_stride'));
+            return view('mycollectionsdetails', compact('my_collections','m__users','total','checkpoints','checkpointsr','session_value','unseen_collection','user_tour_steps','user_stride','current_tour_title'));
         }
     }
 
