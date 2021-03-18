@@ -435,9 +435,7 @@
     //   var native_div = document.getElementById("div_native");
     //   native_div.className = "";
     // }
-    if (dev == 111 && motion_app == 1) {
-      animation_time = 3000;
-    } else if (dev == 222 && motion_web == 1) {
+    if (motion_app == 1) {
       animation_time = 3000;
     }
     console.log("todayData" + {{$today_data}});

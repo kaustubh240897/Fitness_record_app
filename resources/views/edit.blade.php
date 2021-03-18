@@ -299,7 +299,7 @@
       <label class="custom-control-label" for="customSwitch1"> <span id="motion_app_text" style="color: #2b63c6;">@if($m_users->motion_app == 0)なし @else あり @endif</span> </label>
     </div>
   </div>
-  <div id="div_web" class="d-none">
+  <div id="div_web" class="d-flex flex-row justify-content-between px-2 pt-3">
     <p style="font-size: 80%; font-weight: bold; color: #2b63c6;">Webでのモーション表示</p>
     <div class="custom-control custom-switch">
       @if($m_users->motion_web == 0)
@@ -350,7 +350,7 @@
     </div>
   </div>
 </div>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   var dev ={{$device}};
   var div_app = document.getElementById("div_app");
   var div_web = document.getElementById("div_web");
@@ -362,7 +362,7 @@
     div_web.className = "d-flex flex-row justify-content-between px-2";
     div_app.className = "d-none";
   }
-</script>
+</script> -->
 <script type="text/javascript">
   var nav_box2 = document.getElementById("box2");
   var unseen_collection = {{$unseen_collection}};
