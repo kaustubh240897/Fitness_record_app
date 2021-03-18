@@ -111,7 +111,7 @@
 	                       			<b>{{ number_format($m_users->step_goals_per_month*$m_users->stride/100000, 2 ,'.',',') }} km</b></div>
 	                       </div>
 	                       <br>
-	                    	<div class='mt-2'> <img src='/storage/img/ico-7.png'><b> ステップあたりの距離 </b> <img style='width:100%; height: 100%;' src='/storage/img/line1.png'></div>
+	                    	<div class='mt-2'> <img src='/storage/img/ico-7.png'><b> モーション表示 </b> <img style='width:100%; height: 100%;' src='/storage/img/line1.png'></div>
 	                       		<div class='row d-flex'>
 	                       			<div class='col-8'>
 	                       				<b>アプリでのモーション表示</b></div>

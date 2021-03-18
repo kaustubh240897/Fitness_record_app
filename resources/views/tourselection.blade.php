@@ -40,7 +40,7 @@
   </div>
   	<div class='container-fluid'>
 			<div class='row'>
-			  <div class='col-12 text-center text-color top'><h5><b>現在選択されているコース</b></h5></div>
+			  <div class='col-12 text-center text-color top'><h5><b>現在参加中のコース</b></h5></div>
 			</div>
 			<div>
 			  <img src='/storage/img/line@3x.png' class='wid'>
