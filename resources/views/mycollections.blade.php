@@ -19,7 +19,7 @@
   <div class='container-fluid' style="margin-top: 0px">
     <div class="row d-flex fixed-top justify-content-between" style="border-bottom: 1px solid white; z-index: 10; background-color: #2b63c6; position: fixed; top:0px;">
       <div class=' p-2' style="color:white;">
-        <div class="" style='color: white;'>私のコレクション</div>
+        <div class="" style='color: white;'>マイコレクション</div>
       </div>
         <div class=' p-1 '>
      <!-- <button class='button mr-4' style="color:white;">ツアーで並べ替え ↑↓ </button> -->
@@ -158,7 +158,7 @@
   console.log("index", {{$index}});
   if ({{$index}} == 0) {
 		document.getElementById("group_by_tour_radio").checked = true;
-    document.getElementById("dropdownMenu2").innerHTML = "並べ替え　コース ↑↓";
+    document.getElementById("dropdownMenu2").innerHTML = "並べ替え　コース別 ↑↓";
 	} else if ({{$index}} == 2) {
 		document.getElementById("sort_oldest_radio").checked = true;
     document.getElementById("dropdownMenu2").innerHTML = "並べ替え　新着順 ↑↓";
