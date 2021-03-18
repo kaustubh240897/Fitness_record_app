@@ -74,6 +74,12 @@ transform: translateY(75%);
 z-index: 50;
 margin-bottom: -500px;
 }
+.overlay-star {
+align-self: flex-start;
+transform: translateY(5%);
+z-index: 500 !important;
+margin-bottom: -50px;
+}
 .overlay-text3 {
 align-self: flex-start;
 transform: translateY(50%);

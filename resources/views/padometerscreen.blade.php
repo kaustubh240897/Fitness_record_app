@@ -78,15 +78,15 @@
             <p class="mb-0 font-weight-bold" style="font-size:90%; color:white;">今日の目標達成！</p>
           </div>
         </div>
-        <div class="container-fluid text-center">
+        <div class="container-fluid text-center overlay-star">
           <img src="{{asset('storage/padometerscreen/star.png')}}" alt="">
         </div>
       <!-- <div id="bg_season1" class="container-fluid pt-3" style="background-size: 100% 80%; background-position: right 100%;; background-repeat: no-repeat"> -->
-      <div class="relative w-100 h-50" style="background: url({{asset('storage/padometerscreen/graphcomp.png')}}); background-size: 95% 104%; background-position: center; background-repeat: no-repeat">
+      <div class="relative w-100 h-50" style="background: url({{asset('storage/padometerscreen/graphcomp.png')}}); background-size: 95% 104%; background-position: center; background-repeat: no-repeat; z-index: -10 !important">
         <canvas id="myChart"></canvas>
         <div class="absolute-center text-center">
-          <p class="mb-0 p-0" style="font-size:70%; color:#ff9327;"> {{ number_format(($today_data)*$get_m_user_stride/100000, 2 ,'.',',') }}km</p>
-          <p class="font-weight-bold mb-0 p-0 text-wrap" style="color:#ff9327;">{{ number_format($today_data) }}歩</p>
+          <p class="mb-0 p-0" style="font-size:100%; color:#ff9327; font-weight: bold"> {{ number_format(($today_data)*$get_m_user_stride/100000, 2 ,'.',',') }}km</p>
+          <p class="font-weight-bold mb-0 p-0 text-wrap" style="color:#ff9327; font-size:150%; font-weight: bold">{{ number_format($today_data) }}歩</p>
           <p class="mb-0 mt-0 p-0" style="font-size:70%;">----------------</p>
           <p class="font-weight-bold mb-0 mt-0" style="color: #113A83">{{ number_format($get_m_user_daily_goal) }}歩</p>
           <p class="mb-0" style="font-size:70%; color: #113A83">{{ number_format($get_m_user_daily_goal*$get_m_user_stride/100000, 2 ,'.',',') }}km</p>
