@@ -1094,9 +1094,7 @@
   console.log(motion_app);
   console.log(motion_web);
   var animation_time = 0;
-  if (dev == 111 && motion_app == 1) {
-  animation_time = 3000;
-  } else if (dev == 222 && motion_web == 1) {
+  if (motion_web == 1) {
   animation_time = 3000;
   }
   console.log("todayData" + {{$today_data}});
