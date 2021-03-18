@@ -34,7 +34,7 @@
       }
     </script> -->
     <div class=" row flex-row" style=" z-index:0; background-color: #2b63c6;">
-      <div class='col-10 p-2 mx-3' style="color:white;">{{ $tours->tour_title }} </div>
+      <div class='col-10 p-2 mx-3' style="color:white;">{{ $tours->title_abbreviation }} </div>
         <div class='col-12 '> <img class='mx-2 mb-2' src='/storage/img/ico.png'> <font style='color:#ffcc00;'>{{ $total }} Km </font></div>
     <div>
 </div>
