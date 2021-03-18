@@ -128,7 +128,7 @@
 	                       	 <!-- 	<div class='col-12 my-2'><img style='margin-left: 33%' class='wid1' src='img/btn@3x.png'> </div> -->
 								<div class='col-12 text-center'><a href="{{ route('edit', $m_users->id) }}"><button type='submit' class="button mt-2">登録内容の変更  ></button></a></div>
 								<div class='col-12 mt-4'> <img style='width:100%; height: 100%;' src='/storage/img/bg-8@2x.png'></div>
-								<div class='col-12 text-center mt-4'><b>現在選択されているコース</b></div>
+								<div class='col-12 text-center mt-4'><b>現在参加中のコース</b></div>
 								<div class='col-12'>
 									<img src='/storage/img/line@3x.png' class='wid'>
 								</div>
