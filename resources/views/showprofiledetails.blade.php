@@ -38,7 +38,7 @@
 
             <div>
 			    <div class="row wrapper1 fixed-top" style='z-index: 0;'>
-				    <div class='col-12 center'>  <img src='/storage/img/ico.png'> <b class='color'>Lv.{{ $m_users->tour_level }} </b> </div>
+				    <div class='col-12 center'>  <img src='/storage/img/smp_img.png'> <b class='color'>Lv.{{ $m_users->tour_level }} </b> </div>
 				    	<div class='col-12 center1'><img class='wid1' src='/storage/img/text1@3x.png'> </div>
 			    </div>
 			    <div class='row'>
@@ -46,7 +46,7 @@
 			    	   <div>
 			               <img src='/storage/img/line@3x.png' class='wid'>
 			            </div>
-			            <div class='mt-2'> <img src='/storage/img/ico-7.png'><b> ステップあたりの距離 </b> <img style='width:100%; height: 100%;' src='/storage/img/line1.png'></div>
+			            <div class='mt-2'> <img src='/storage/img/ico-7.png'><b> １歩あたりの距離 </b> <img style='width:100%; height: 100%;' src='/storage/img/line1.png'></div>
 	                       <div class='row d-flex'>
 	                       		<div class='col-6'>
 	                       			<b>高さ </b>
@@ -67,7 +67,7 @@
 	                       <hr/>
 	                    	<div class='row d-flex'>
 	                       		<div class='col-8'>
-	                       			<b>ステップあたりの距離</b>
+	                       			<b>１歩あたりの距離</b>
 								</div>
 	                       		<div class='col-4 c'>
 	                       			<b>{{ number_format($m_users->stride, 1, '.', ',') }} cm</b>
@@ -76,7 +76,7 @@
 	                       <div class='mt-4'> <img src='/storage/img/ico-7.png'><b> 1日あたりの目標 </b> <img style='width:100%; height: 100%;' src='/storage/img/line1.png'></div>
 	                       		<div class='row d-flex'>
 	                       			<div class='col-8'>
-	                       				<b>{{ number_format($m_users->step_goal_per_day) }} ステップ</b>
+	                       				<b>{{ number_format($m_users->step_goal_per_day) }} 歩</b>
 									</div>
 	                       			<div class='col-4 c'>
 	                       				<b>{{ number_format($m_users->step_goal_per_day*$m_users->stride/100000, 2, '.', ',') }}  km</b>
@@ -114,7 +114,7 @@
 	                    	<div class='mt-2'> <img src='/storage/img/ico-7.png'><b> ステップあたりの距離 </b> <img style='width:100%; height: 100%;' src='/storage/img/line1.png'></div>
 	                       		<div class='row d-flex'>
 	                       			<div class='col-8'>
-	                       				<b>アプリのモーション表示</b></div>
+	                       				<b>アプリでのモーション表示</b></div>
 	                       			<div class='col-4 c'>
 	                       				<p>@if($m_users->motion_app == '1' ) あり @else なし  @endif </p></div>
 	                       		</div>
