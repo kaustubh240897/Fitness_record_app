@@ -535,7 +535,7 @@
             if (flag1 == 1) {
               // tag.className = "StepProgress-item current";
               var div_sp_li = document.createElement("li");
-              div_sp_li.className = "StepProgress-item current";
+              div_sp_li.className = "StepProgress-item";
               var div_sp_li_p = document.createElement("p");
               div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
               div_sp_li_p.style.fontSize = "80%";
@@ -729,7 +729,7 @@
             if (flag1 == 1) {
               // tag.className = "StepProgress-item current";
               var div_sp_li = document.createElement("li");
-              div_sp_li.className = "StepProgress-item current";
+              div_sp_li.className = "StepProgress-item";
               var div_sp_li_p = document.createElement("p");
               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
