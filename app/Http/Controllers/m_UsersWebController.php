@@ -329,29 +329,31 @@ class m_UsersWebController extends Controller
             $get_m_user_monthly_goal = $m__users->step_goals_per_month;
             $get_t_tour = t_Tour::where('m__users_id', $m__users_id)->orderBy('start_datetime', 'DESC')->first();
 
-            $count_t_collections = t_Collection::where('m__users_id', $m__users_id)->orderBy('created_at', 'DESC')->get()->groupBy('m__collection_id');
-            $count_m_collection = m_Collection::all()->count();
-            $counter = [];
-            $current_tour_collection_count = [];
-            for($i=0; $i<=$count_m_collection;$i++){
-                $counter[$i] = 0;
-            }
-            $i=0;
-                foreach($count_t_collections as $count){
-
-                    $counter[$count_t_collections->keys()[$i]] = $count->count();
-                    $i++;
-                }
-            foreach($get_t_tour->m_tours->checkpoints as $checkpoint){
-                $current_tour_collection_count[]  = $counter[$checkpoint->m__collection_id];
-            }
+            
 
             // for identifying tour is forward or reverse
             //$session_value = $request->session()->get('reverse','false');
             if($get_t_tour == null){
                 $session_value = 0;
+                $current_tour_collection_count = null;
             }
-            else{ 
+            else{
+                $count_t_collections = t_Collection::where('m__users_id', $m__users_id)->orderBy('created_at', 'DESC')->get()->groupBy('m__collection_id');
+                $count_m_collection = m_Collection::all()->count();
+                $counter = [];
+                $current_tour_collection_count = [];
+                for($i=0; $i<=$count_m_collection;$i++){
+                    $counter[$i] = 0;
+                }
+                $i=0;
+                    foreach($count_t_collections as $count){
+
+                        $counter[$count_t_collections->keys()[$i]] = $count->count();
+                        $i++;
+                    }
+                foreach($get_t_tour->m_tours->checkpoints as $checkpoint){
+                    $current_tour_collection_count[]  = $counter[$checkpoint->m__collection_id];
+                } 
                 $session_value = $get_t_tour->direction;
             }
             $checkpoint_collection_id = [];
