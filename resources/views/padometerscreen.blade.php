@@ -697,7 +697,7 @@
             padding: {
                 left: 0,
                 right: 0,
-                top: 100,
+                top: 70,
                 bottom: 0
             }
         },
@@ -707,7 +707,8 @@
             ticks: {
                beginAtZero: true,
                stepSize: 2000,
-               max: bar_maxY
+               max: bar_maxY,
+               fontColor: "#113a83"
             },
             gridLines: {
                 borderDash: [8, 4],
@@ -720,6 +721,8 @@
               },
               ticks: {
                  stepSize: 1000,
+                 color: "#4c5264",
+                 fontStyle: "bold"
               }
          }]
       },
