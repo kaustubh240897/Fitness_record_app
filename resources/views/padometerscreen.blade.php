@@ -628,7 +628,7 @@
                  // ctx.translate(x, y);
                  ctx.rotate(-Math.PI / 2);
                  var textVertical = stepsData[index] + "歩" + distData[index];
-                 ctx.fillText(textVertical, -chart.height+5*Chart.defaults.global.defaultFontSize, x+15);
+                 ctx.fillText(textVertical, -chart.height+5.5*Chart.defaults.global.defaultFontSize, x+15);
                  // console.log("x: " + chart.width);
                  // console.log("y: " + chart.height);
                  ctx.restore();
