@@ -78,7 +78,7 @@
 
 						@endif
 					@endforeach
-							@if($tour_status[$loop->iteration-1] == 'Done' ) <img src='storage/img/complete.png'>  @endif<span style='color:#2b63c6;'>@if($tour_status[$loop->iteration-1] == 'Done' )<a href="{{ route('collectiondetails', $tour->m__collections->id) }}">{{ $tour->tour_title }} </a> @else {{ $tour->tour_title }}  @endif </span></div>
+							@if($tour_status[$loop->iteration-1] == 'Done' ) <img src='storage/img/complete.png'>  @endif<span style='color:#2b63c6;'>@if($tour_status[$loop->iteration-1] == 'Done' )<a href="{{ route('collectiondetails', $tour->m__collections->id) }}">{{ $tour->title_abbreviation }} </a> @else {{ $tour->title_abbreviation }}  @endif </span></div>
 								<div class='c col-5' style='color:grey;'>{{ $tours_distance[$loop->iteration-1] }} km &nbsp <i style='color:#2b63c6' class="fas fa-chevron-down"></i></div>
 								</h3>
 
