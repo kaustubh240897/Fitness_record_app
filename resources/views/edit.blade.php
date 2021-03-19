@@ -420,6 +420,7 @@
       document.getElementById("dailySteps_error").className = "box2 sb11 pl-2  flex-row justify-content-center d-none";
     }
     console.log("sc");
+    setDailySteps("s");
   }
   function removeDefError() {
     if (ds_7.value < 0 || ds_7.value > 85) {
@@ -519,10 +520,10 @@
       height = h_input.value;
       console.log(id);
       if (id == "h_add") {
-        height = parseFloat(height) + 0.5;
+        height = parseFloat(height) + 1;
         console.log(height);
       } else {
-        height -= 0.5;
+        height -= 1;
       }
       if (height < 0) {
         height = 0;
@@ -606,7 +607,7 @@
     var steps = "";
     function setDailySteps(id) {
       steps = ds_input.value;
-      if (id != "r") {
+      if (id != "r" || id != "s") {
         if (id == "daily_steps_add") {
           steps = parseFloat(steps) + 1;
         } else {
@@ -634,7 +635,9 @@
       if (daily_steps>=1) {
         p_dailyEstDist.innerHTML = ((daily_steps * stride_value)/100000).toFixed(2) + " km";
       }
-      dailyStepsChange();
+      if (id != "s") {
+        dailyStepsChange();
+      }
     }
 </script>
 <script type="text/javascript">
