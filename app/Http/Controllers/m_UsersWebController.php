@@ -9,6 +9,7 @@ use App\User;
 use App\t_Tour;
 use App\m_Tour;
 use App\m_Checkpoint;
+use App\m_Collection;
 use App\m_Calender;
 use App\t_Collection;
 Use \Carbon\Carbon;
@@ -327,6 +328,24 @@ class m_UsersWebController extends Controller
 
             $get_m_user_monthly_goal = $m__users->step_goals_per_month;
             $get_t_tour = t_Tour::where('m__users_id', $m__users_id)->orderBy('start_datetime', 'DESC')->first();
+
+            $count_t_collections = t_Collection::where('m__users_id', $m__users_id)->orderBy('created_at', 'DESC')->get()->groupBy('m__collection_id');
+            $count_m_collection = m_Collection::all()->count();
+            $counter = [];
+            $current_tour_collection_count = [];
+            for($i=0; $i<=$count_m_collection;$i++){
+                $counter[$i] = 0;
+            }
+            $i=0;
+                foreach($count_t_collections as $count){
+
+                    $counter[$count_t_collections->keys()[$i]] = $count->count();
+                    $i++;
+                }
+            foreach($get_t_tour->m_tours->checkpoints as $checkpoint){
+                $current_tour_collection_count[]  = $counter[$checkpoint->m__collection_id];
+            }
+
             // for identifying tour is forward or reverse
             //$session_value = $request->session()->get('reverse','false');
             if($get_t_tour == null){
@@ -409,7 +428,7 @@ class m_UsersWebController extends Controller
 
             }
 
-            return view('myPage', compact('device','today_data','m__users_id','m__users','get_m_user_monthly_goal','current_month_steps','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','session_value','checkpoints','checkpointsr','total','current_week_datas','steps_week','unseen_collection','checkpoint_collection_id'));
+            return view('myPage', compact('device','today_data','m__users_id','m__users','get_m_user_monthly_goal','current_month_steps','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','session_value','checkpoints','checkpointsr','total','current_week_datas','steps_week','unseen_collection','checkpoint_collection_id','current_tour_collection_count'));
         }
         else{
             $today_data = 0;
@@ -438,8 +457,9 @@ class m_UsersWebController extends Controller
             $m__users_id = null;
             $steps_week = null;
             $checkpoint_collection_id = null;
+            $current_tour_collection_count = null;
 
-            return view('myPage', compact('device','today_data','m__users','m__users_id','get_m_user_monthly_goal','current_month_steps','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','session_value','checkpoints','checkpointsr','total','current_week_datas','steps_week','unseen_collection','checkpoint_collection_id'));
+            return view('myPage', compact('device','today_data','m__users','m__users_id','get_m_user_monthly_goal','current_month_steps','get_m_user_stride','get_m_user_daily_goal','get_t_tour','steps','session_value','checkpoints','checkpointsr','total','current_week_datas','steps_week','unseen_collection','checkpoint_collection_id','current_tour_collection_count'));
         }
 
     }

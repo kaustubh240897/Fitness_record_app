@@ -29,7 +29,7 @@ class t_CollectionWebController extends Controller
             $index = 0;
             $get_t_collections = t_Collection::where('m__users_id', $m__user_id)->orderBy('created_at', 'DESC')->get()->unique('m__collection_id');
             $count_t_collections = t_Collection::where('m__users_id', $m__user_id)->orderBy('created_at', 'DESC')->get()->groupBy('m__collection_id');
-            $count_m_collection = m_collection::all()->count();
+            $count_m_collection = m_Collection::all()->count();
             $unseen_t_collections = t_Collection::where('m__users_id', $m__user_id)->where('new_display_flag', 0)->orderBy('created_at', 'DESC')->get()->unique('m__collection_id');
             $unseen_checkpoint_array = [];
             foreach($unseen_t_collections as $unseen_t_collection){
