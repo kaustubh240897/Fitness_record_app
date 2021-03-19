@@ -1311,7 +1311,13 @@
   var chart = new Chart(ctx, {
   type: 'bar',
   data: {
-  labels: ['月', '火', '水', '木', '金', '土', '日'],
+    labels: [[weekDates[0].getFullYear().toString(),(weekDates[0].getMonth()+1).toString()+"/"+weekDates[0].getDate(),"(月)"],
+              [weekDates[1].getFullYear().toString(),(weekDates[1].getMonth()+1).toString()+"/"+weekDates[1].getDate(),"(火)"],
+              [weekDates[2].getFullYear().toString(),(weekDates[2].getMonth()+1).toString()+"/"+weekDates[2].getDate(),"(水)"],
+              [weekDates[3].getFullYear().toString(),(weekDates[3].getMonth()+1).toString()+"/"+weekDates[3].getDate(),"(木)"],
+              [weekDates[4].getFullYear().toString(),(weekDates[4].getMonth()+1).toString()+"/"+weekDates[4].getDate(),"(金)"],
+              [weekDates[5].getFullYear().toString(),(weekDates[5].getMonth()+1).toString()+"/"+weekDates[5].getDate(),"(土)"],
+              [weekDates[6].getFullYear().toString(),(weekDates[6].getMonth()+1).toString()+"/"+weekDates[6].getDate(),"(日)"]],
   datasets: [{
   barThickness: 15,
   maxBarThickness: 100,
