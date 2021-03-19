@@ -607,7 +607,7 @@
     var steps = "";
     function setDailySteps(id) {
       steps = ds_input.value;
-      if (id != "r" || id != "s") {
+      if (id != "r" && id != "s") {
         if (id == "daily_steps_add") {
           steps = parseFloat(steps) + 1;
         } else {
