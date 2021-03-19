@@ -118,8 +118,11 @@
       </div>
       </div>
       @endif
+      <div class="container text-center pt-3 mt-2 overlay-text5">
+        <p class="font-weight-bold" style="color:#2b63c6;">最近の歩数</p>
+      </div>
       <div class="container-fluid pt-3 mt-3">
-        <canvas id="ctx" class="pt-3"></canvas>
+        <canvas id="ctx" class="pt-3" style="height: 350px !important"></canvas>
       </div>
       @if(empty($get_t_tour))
       <h6></h6>
@@ -538,11 +541,14 @@
     console.log(sun);
     return [mon, tue, wed, thu, fri, sat, sun];
   }
+  var bar_maxY = 15000;
   var current_week_datas1 = {!! json_encode($current_week_datas) !!}
   var stepsData = [0,0,0,0,0,0,0];
   var barBgColor = ['#3476ea', '#3476ea', '#3476ea', '#3476ea', '#3476ea', '#3476ea', '#3476ea'];
   var weekDates = datesofWeek();
-
+  console.log("wd",weekDates);
+  //console.log("check1",{{ (($today_data)*$get_m_user_stride/100000) }});
+  console.log("wd1", [weekDates[0].getFullYear().toString(),(weekDates[0].getMonth()+1).toString()+"/"+weekDates[0].getDate(),"s"]);
   Object.keys(current_week_datas1).forEach((single_day_data, i) => {
     //console.log(current_week_datas[single_day_data]);
     var total = 0;
@@ -559,13 +565,23 @@
     });
 
   });
+  var distData = [0,0,0,0,0,0,0];
+  stepsData.forEach((item, i) => {
+    distData[i] = "  (" + ((stepsData[i] * {{$get_m_user_stride}})/100000).toFixed(2) + "km" + ")";
+    console.log("ddi",distData[i]);
+  });
+
   var maxSteps = Math.max(...stepsData);
-  console.log(maxY);
-  var weekGoals = {!! json_encode($steps_week) !!};
+  //console.log(maxY);
+  //var weekGoals = {!! json_encode($steps_week) !!};
+  var dailyGoal_new = {{$get_m_user_daily_goal}};
+  var weekGoals = [dailyGoal_new,dailyGoal_new,dailyGoal_new,dailyGoal_new,dailyGoal_new,dailyGoal_new,dailyGoal_new];
   var maxY = weekGoals[0] + 1000 - weekGoals[0]%1000;
   console.log("maxy", maxY);
   const img = new Image();
   img.src = "{{ asset('storage/padometerscreen/star.png') }}";
+  const img_wave = new Image();
+  img_wave.src = "{{ asset('storage/padometerscreen/wave.svg') }}";
   Chart.plugins.register({
    afterDatasetsDraw: function(chart, ease) {
       var barLabels = chart.options.barLabels;
@@ -602,14 +618,17 @@
                  var   textWidth = ctx.measureText(text1).width + padding;
                  if (stepsData[index]>=weekGoals[index]) {
                    //ctx.fillText(text1, x-5, y-10);
-                   ctx.drawImage(img, x-15, y-35, 30, 30);
+                   ctx.drawImage(img, x-15, y-40, 30, 30);
+                   if (stepsData[index]>=bar_maxY) {
+                     ctx.drawImage(img_wave, x-13, y-5, 25, 25);
+                   }
                  }
                  ctx.font = 4*width/5 + 'px Arial';
                  ctx.fillStyle = '#3476ea'; //second label's font color
                  // ctx.translate(x, y);
                  ctx.rotate(-Math.PI / 2);
-                 var textVertical = stepsData[index] + "歩";
-                 ctx.fillText(textVertical, -chart.height+3*Chart.defaults.global.defaultFontSize, x+15);
+                 var textVertical = stepsData[index] + "歩" + distData[index];
+                 ctx.fillText(textVertical, -chart.height+5.5*Chart.defaults.global.defaultFontSize, x+15);
                  // console.log("x: " + chart.width);
                  // console.log("y: " + chart.height);
                  ctx.restore();
@@ -624,7 +643,7 @@
   Chart.pluginService.register({
       afterDraw: function(chart) {
           if (typeof chart.config.options.lineAt != 'undefined') {
-          	var lineAt = chart.config.options.lineAt;
+          	  var lineAt = chart.config.options.lineAt;
               var ctxPlugin = chart.chart.ctx;
               var xAxe = chart.scales[chart.config.options.scales.xAxes[0].id];
               var yAxe = chart.scales[chart.config.options.scales.yAxes[0].id];
@@ -635,7 +654,7 @@
               if(yAxe.min != 0) return;
 
               ctxPlugin.strokeStyle = "blue";
-          	   ctxPlugin.beginPath();
+          	  ctxPlugin.beginPath();
               lineAt = (lineAt - yAxe.min) * (100 / yAxe.max);
               lineAt = (100 - lineAt) / 100 * (yAxe.height) + yAxe.top;
               ctxPlugin.moveTo(xAxe.left, lineAt);
@@ -644,28 +663,57 @@
           }
       }
   });
+  var reducedSteps = [0,0,0,0,0,0,0];
+  stepsData.forEach((item, i) => {
+    if (item > bar_maxY) {
+      reducedSteps[i] = bar_maxY;
+    } else {
+      reducedSteps[i] = stepsData[i];
+    }
+  });
+
   var chart = new Chart(ctx, {
    type: 'bar',
    data: {
-      labels: ['月', '火', '水', '木', '金', '土', '日'],
+      labels: [[weekDates[0].getFullYear().toString(),(weekDates[0].getMonth()+1).toString()+"/"+weekDates[0].getDate(),"(月)"],
+                [weekDates[1].getFullYear().toString(),(weekDates[1].getMonth()+1).toString()+"/"+weekDates[1].getDate(),"(火)"],
+                [weekDates[2].getFullYear().toString(),(weekDates[2].getMonth()+1).toString()+"/"+weekDates[2].getDate(),"(水)"],
+                [weekDates[3].getFullYear().toString(),(weekDates[3].getMonth()+1).toString()+"/"+weekDates[3].getDate(),"(木)"],
+                [weekDates[4].getFullYear().toString(),(weekDates[4].getMonth()+1).toString()+"/"+weekDates[4].getDate(),"(金)"],
+                [weekDates[5].getFullYear().toString(),(weekDates[5].getMonth()+1).toString()+"/"+weekDates[5].getDate(),"(土)"],
+                [weekDates[6].getFullYear().toString(),(weekDates[6].getMonth()+1).toString()+"/"+weekDates[6].getDate(),"(日)"]],
       datasets: [{
          barThickness: 15,
          maxBarThickness: 100,
          label: '',
-         data: stepsData,
+         data: reducedSteps,
          backgroundColor: barBgColor,
       }]
    },
    options: {
+     responsive: true,
+     maintainAspectRatio: false,
+     layout: {
+            padding: {
+                left: 0,
+                right: 0,
+                top: 70,
+                bottom: 0
+            }
+        },
      lineAt: {{$get_m_user_daily_goal}},
       scales: {
          yAxes: [{
             ticks: {
                beginAtZero: true,
-               stepSize: 1000,
-               min: 0,
-               max: maxY + 6000
+               stepSize: 2000,
+               max: bar_maxY,
+               fontColor: "#113a83"
             },
+            gridLines: {
+                borderDash: [8, 4],
+                color: "#e6edf0"
+            }
          }],
          xAxes: [{
            gridLines: {
@@ -673,6 +721,8 @@
               },
               ticks: {
                  stepSize: 1000,
+                 color: "#4c5264",
+                 fontStyle: "bold"
               }
          }]
       },
@@ -682,6 +732,9 @@
       },
       legend: {
           display: false
+      },
+      tooltips: {
+        enabled: false
       },
       animation: {
         duration: animation_time, // general animation time
