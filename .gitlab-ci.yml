@@ -1,0 +1,35 @@
+
+test_cicd:
+  tags:
+    - ci
+  script:
+    - echo hey babe
+# before_script:
+#   - echo "Before script"
+#   - cd /var/www/meiji_walking #your project path
+# building:
+#   stage: build
+#   script:
+#     - git reset --hard
+#     - git pull origin develop
+#     - composer install
+#     - cp .env.example .env
+#     - php artisan key:generate
+#     - php artisan migrate --seed
+#     - php artisan cache:clear
+#     - php artisan config:clear
+#     - php artisan storage:link
+#     - sudo chown -R ec2-user:www-data /var/www/meiji_walking
+#     - find /var/www/meiji_walking -type f -exec chmod 664 {} \;
+#     - find /var/www/meiji_walking -type d -exec chmod 775 {} \;
+#     - chgrp -R www-data storage bootstrap/cache
+#     - chmod -R ug+rwx storage bootstrap/cache
+# testing:
+#   stage: test
+#   script:
+#     - php ./vendor/bin/phpunit
+# deploying:
+#   stage: deploy
+#   script:
+#     - echo "Deployed"
+#     - php artisan queue:restart #if you use queue
