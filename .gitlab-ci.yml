@@ -33,16 +33,16 @@ prepare_database:
   #   DB_USERNAME: root
   #   MYSQL_DATABASE: your database name
   script:
-    - cd /var/www/html/nfs/
-    - composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
-    - cp .env.production .env
-    - php artisan key:generate
-    - php artisan down --message="Updating Database"
-    - php artisan migrate
-    - composer dump-autoload
-    - php artisan config:cache
-    - php artisan route:cache
-    - php artisan up
+    - whoami
+    # - composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
+    # - cp .env.production .env
+    # - php artisan key:generate
+    # - php artisan down --message="Updating Database"
+    # - php artisan migrate
+    # - composer dump-autoload
+    # - php artisan config:cache
+    # - php artisan route:cache
+    # - php artisan up
   only:
   - master
 # deploy_production:
