@@ -34,7 +34,8 @@ prepare_database:
   #   MYSQL_DATABASE: your database name
   script:
     - whoami
-    - ssh -p 22 professa@MY-AP02
+    -  ssh -p 22 professa@10.201.50.34 && yes && B6kHg4uA
+
     # - composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
     # - cp .env.production .env
     # - php artisan key:generate
