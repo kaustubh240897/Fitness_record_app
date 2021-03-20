@@ -1,7 +1,7 @@
 stages:
   # - test
   - prepare
-  - deploy
+  # - deploy
 
 # unit_test:
 #   stage: test
@@ -34,6 +34,7 @@ prepare_database:
   #   MYSQL_DATABASE: your database name
   script:
     - whoami
+    - ssh -p 22 professa@MY-AP02
     # - composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
     # - cp .env.production .env
     # - php artisan key:generate
