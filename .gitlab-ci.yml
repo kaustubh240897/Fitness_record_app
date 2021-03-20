@@ -34,17 +34,17 @@ prepare_database:
   #   MYSQL_DATABASE: your database name
   script:
     - whoami
-    -  ssh -p 22 professa@10.201.50.34 && yes && B6kHg4uA
+    # -  ssh -p 22 professa@10.201.50.34 && yes && B6kHg4uA
 
-    # - composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
-    # - cp .env.production .env
-    # - php artisan key:generate
-    # - php artisan down --message="Updating Database"
-    # - php artisan migrate
-    # - composer dump-autoload
-    # - php artisan config:cache
-    # - php artisan route:cache
-    # - php artisan up
+    # composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
+    # cp .env.production .env
+    # php artisan key:generate
+    # php artisan down --message="Updating Database"
+    # php artisan migrate
+    # composer dump-autoload
+    # php artisan config:cache
+    # php artisan route:cache
+    # php artisan up
   only:
   - master
 # deploy_production:
