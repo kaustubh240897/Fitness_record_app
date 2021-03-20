@@ -1,35 +1,62 @@
+stages:
+  # - test
+  - prepare
+  - deploy
 
-test_cicd:
-  tags:
-    - ci
-  script:
-    - echo hey babe
-# before_script:
-#   - echo "Before script"
-#   - cd /var/www/meiji_walking #your project path
-# building:
-#   stage: build
-#   script:
-#     - git reset --hard
-#     - git pull origin develop
-#     - composer install
-#     - cp .env.example .env
-#     - php artisan key:generate
-#     - php artisan migrate --seed
-#     - php artisan cache:clear
-#     - php artisan config:clear
-#     - php artisan storage:link
-#     - sudo chown -R ec2-user:www-data /var/www/meiji_walking
-#     - find /var/www/meiji_walking -type f -exec chmod 664 {} \;
-#     - find /var/www/meiji_walking -type d -exec chmod 775 {} \;
-#     - chgrp -R www-data storage bootstrap/cache
-#     - chmod -R ug+rwx storage bootstrap/cache
-# testing:
+# unit_test:
 #   stage: test
+#   image: registry.gitlab.com....(Your own repository)
+#   services:
+#     - mysql:5.7
+#   variables:
+#     MYSQL_ROOT_PASSWORD: (your own password)
+#     DB_HOST: mysql
+#     DB_USERNAME: root
+#     MYSQL_DATABASE: (your database testing name)
 #   script:
-#     - php ./vendor/bin/phpunit
-# deploying:
+#     - composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
+#     - cp .env.testing .env
+#     - php artisan key:generate
+#     - php artisan migrate:refresh
+#     - php artisan db:seed --class=TestDatabaseSeeder
+#     - composer dump-autoload
+#     - php vendor/bin/phpunit
+
+prepare_database:
+  stage: prepare
+  # image: registry.gitlab.com/(your own repository)
+  # services:
+  #   - mysql:5.7
+  # variables:
+  #   MYSQL_ROOT_PASSWORD: your database password
+  #   DB_HOST: mysql
+  #   DB_USERNAME: root
+  #   MYSQL_DATABASE: your database name
+  script:
+    - composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
+    - cp .env.production .env
+    - php artisan key:generate
+    - php artisan down --message="Updating Database"
+    - php artisan migrate
+    - composer dump-autoload
+    - php artisan config:cache
+    - php artisan route:cache
+    - php artisan up
+  only:
+  - master
+# deploy_production:
+#   # image: registry.gitlab.com(your own repository)
 #   stage: deploy
 #   script:
-#     - echo "Deployed"
-#     - php artisan queue:restart #if you use queue
+#     - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+#     - eval $(ssh-agent -s)
+#     - echo "$SSH_PRIVATE_KEY_DEV"
+#     - ssh-add <(echo "$SSH_PRIVATE_KEY_DEV")
+#     - mkdir -p ~/.ssh
+#     - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+#     - ~/.composer/vendor/bin/envoy run deploy
+#   environment:
+#     name: production
+#     url: https://(your server url)
+#   only:
+#     - master
