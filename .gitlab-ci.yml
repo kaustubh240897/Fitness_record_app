@@ -33,6 +33,7 @@ prepare_database:
   #   DB_USERNAME: root
   #   MYSQL_DATABASE: your database name
   script:
+    - cd /var/www/html/nfs/
     - composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
     - cp .env.production .env
     - php artisan key:generate
