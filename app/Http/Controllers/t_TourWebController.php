@@ -219,6 +219,25 @@ class t_TourWebController extends Controller
                 $m__users_id = m_Users::where('users_id',Auth::id())->first()->id;
                 $unseen_collection = t_Collection::where('m__users_id', $m__users_id)->where('new_display_flag', 0)->count();
                 $constant_data = Config::get('constants.myData');
+
+                $count_t_collections = t_Collection::where('m__users_id', $m__users_id)->orderBy('created_at', 'DESC')->get()->groupBy('m__collection_id');
+                $count_m_collection = m_Collection::all()->count();
+                $counter = [];
+                $current_tour_collection_count = [];
+                for($i=0; $i<=$count_m_collection;$i++){
+                    $counter[$i] = 0;
+                }
+                $i=0;
+                foreach($count_t_collections as $count){
+
+                    $counter[$count_t_collections->keys()[$i]] = $count->count();
+                    $i++;
+                }
+                $get_current_tour_clicked = m_Tour::where('id', $m__tours_id)->first();
+                foreach($get_current_tour_clicked->checkpoints as $checkpoint){
+                    $current_tour_collection_count[]  = $counter[$checkpoint->m__collection_id];
+                }
+
                 $current_tour = t_Tour::where('m__users_id', $m__users_id)->orderBy('start_datetime','DESC')->get()->first();
                 if($current_tour == null){
                     $value = 0;
@@ -307,7 +326,7 @@ class t_TourWebController extends Controller
                     return view('emptycheckpoints', compact('tours'));
                     }
                 else{
-                    return view('tourdetails', compact('tours','current_tour','value','checkpoints','checkpointsr','total','steps','user_stride','constant_data','unseen_collection'));
+                    return view('tourdetails', compact('tours','current_tour','value','checkpoints','checkpointsr','total','steps','user_stride','constant_data','unseen_collection','current_tour_collection_count'));
                 }
             }
             else{
