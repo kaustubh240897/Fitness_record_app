@@ -572,7 +572,6 @@
   });
 
   var maxSteps = Math.max(...stepsData);
-  //console.log(maxY);
   //var weekGoals = {!! json_encode($steps_week) !!};
   var dailyGoal_new = {{$get_m_user_daily_goal}};
   var weekGoals = [dailyGoal_new,dailyGoal_new,dailyGoal_new,dailyGoal_new,dailyGoal_new,dailyGoal_new,dailyGoal_new];
