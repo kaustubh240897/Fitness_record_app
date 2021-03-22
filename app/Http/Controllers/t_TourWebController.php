@@ -326,6 +326,7 @@ class t_TourWebController extends Controller
     {
         if(m_Users::where('users_id',Auth::id())->count() >0){
             $m__user = m_Users::where('users_id',Auth::id())->first();
+            $user_stride =0;
             $unseen_collection = t_Collection::where('m__users_id', $m__user->id)->where('new_display_flag', 0)->count();
             
             $my_checkpoint = m_Checkpoint::where('id',$id)->get()->first();
