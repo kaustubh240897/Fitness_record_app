@@ -219,6 +219,7 @@ class t_CollectionWebController extends Controller
                     $get_tour_id =  $my_collections->m_collections->m__tours->id;
                 }
                 $query_checkpoints = m_Checkpoint::where('m__tour_id',$get_tour_id);
+                
                 $total = 0;
                     if($query_checkpoints != null){
                         $checkpoints = $query_checkpoints->orderBy('distance')->get();
