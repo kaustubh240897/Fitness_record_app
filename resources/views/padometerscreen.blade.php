@@ -570,7 +570,6 @@
     distData[i] = "  (" + ((stepsData[i] * {{$get_m_user_stride}})/100000).toFixed(2) + "km" + ")";
     console.log("ddi",distData[i]);
   });
-
   var maxSteps = Math.max(...stepsData);
   //var weekGoals = {!! json_encode($steps_week) !!};
   var dailyGoal_new = {{$get_m_user_daily_goal}};
