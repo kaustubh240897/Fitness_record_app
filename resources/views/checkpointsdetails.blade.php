@@ -103,13 +103,12 @@ function goToCheckpointPage(id) {
 }
 	var click_title = {!! json_encode($my_checkpoint->tours->tour_title) !!};
 	var cur_title = {!! json_encode($current_tour_title) !!};
+	var collection_count = {!! json_encode($current_tour_collection_count) !!};
+	console.log("ctcc",collection_count);
 	console.log("ct",click_title);
 	console.log("cut",cur_title);
   var prog_id = "progress_bar";
   var dist_walked = {{$user_tour_steps}}*{{$user_stride}}/100000;
-	if (click_title.localeCompare(cur_title) != 0) {
-		dist_walked = 0;
-	}
 
   var steplist = document.getElementById(prog_id);
   var flag1 = 0;
@@ -159,9 +158,6 @@ function goToCheckpointPage(id) {
             div_sp_li_p.innerHTML = item["checkpoint_title"];
 						div_sp_li_p.id = item["id"];
 						if (item["checkpoint_title"] == title) {
-							if (click_title.localeCompare(cur_title) != 0) {
-								div_sp_li.className = "StepProgress-itemStart is-current";
-							}
 							div_sp_li_p.className = "py-0 speech-bubbleSelected pl-2 w-100 pb-1 text-break";
 						}
 						div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
@@ -173,15 +169,15 @@ function goToCheckpointPage(id) {
               // tag.className = "StepProgress-item current";
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-itemStart";
+							if (collection_count[i]>0) {
+								div_sp_li.className = "StepProgress-itemStart is-current";
+							}
               var div_sp_li_p = document.createElement("p");
               div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
               div_sp_li_p.style.fontSize = "80%";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
 							div_sp_li_p.id = item["id"];
 							if (item["checkpoint_title"] == title) {
-								if (click_title.localeCompare(cur_title) != 0) {
-									div_sp_li.className = "StepProgress-itemStart is-current";
-								}
 								div_sp_li_p.className = "py-0 speech-bubbleSelected pl-2 pr-1 w-100 pb-1 text-break";
 							}
 							div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
@@ -191,15 +187,15 @@ function goToCheckpointPage(id) {
               // tag.className = "StepProgress-item";
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-itemStart";
+							if (collection_count[i]>0) {
+								div_sp_li.className = "StepProgress-itemStart is-current";
+							}
               var div_sp_li_p = document.createElement("p");
               div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
               div_sp_li_p.style.fontSize = "80%";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
 							div_sp_li_p.id = item["id"];
 							if (item["checkpoint_title"] == title) {
-								if (click_title.localeCompare(cur_title) != 0) {
-									div_sp_li.className = "StepProgress-itemStart is-current";
-								}
 								div_sp_li_p.className = "py-0 speech-bubbleSelected pl-2 pr-1 w-100 pb-1 text-break";
 							}
 							div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
@@ -218,9 +214,6 @@ function goToCheckpointPage(id) {
             div_sp_li_p.innerHTML = item["checkpoint_title"];
 						div_sp_li_p.id = item["id"];
 						if (item["checkpoint_title"] == title) {
-							if (click_title.localeCompare(cur_title) != 0) {
-								div_sp_li.className = "StepProgress-item2 is-current";
-							}
 							div_sp_li_p.className = "py-0 speech-bubbleSelected pl-2 pr-1 w-100 pb-1 text-break";
 						}
 						div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
@@ -232,15 +225,15 @@ function goToCheckpointPage(id) {
               // tag.className = "StepProgress-item current";
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-item2";
+							if (collection_count[i]>0) {
+								div_sp_li.className = "StepProgress-item2 is-current";
+							}
               var div_sp_li_p = document.createElement("p");
               div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
               div_sp_li_p.style.fontSize = "80%";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
 							div_sp_li_p.id = item["id"];
 							if (item["checkpoint_title"] == title) {
-								if (click_title.localeCompare(cur_title) != 0) {
-									div_sp_li.className = "StepProgress-item2 is-current";
-								}
 								div_sp_li_p.className = "py-0 speech-bubbleSelected pl-2 pr-1 w-100 pb-1 text-break";
 							}
 							div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
@@ -250,15 +243,15 @@ function goToCheckpointPage(id) {
               // tag.className = "StepProgress-item";
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-item2";
+							if (collection_count[i]>0) {
+								div_sp_li.className = "StepProgress-item2 is-current";
+							}
               var div_sp_li_p = document.createElement("p");
               div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
               div_sp_li_p.style.fontSize = "80%";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
 							div_sp_li_p.id = item["id"];
 							if (item["checkpoint_title"] == title) {
-								if (click_title.localeCompare(cur_title) != 0) {
-									div_sp_li.className = "StepProgress-item2 is-current";
-								}
 								div_sp_li_p.className = "py-0 speech-bubbleSelected pl-2 pr-1 w-100 pb-1 text-break";
 							}
 							div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
@@ -277,9 +270,6 @@ function goToCheckpointPage(id) {
             div_sp_li_p.innerHTML = item["checkpoint_title"];
 						div_sp_li_p.id = item["id"];
 						if (item["checkpoint_title"] == title) {
-							if (click_title.localeCompare(cur_title) != 0) {
-								div_sp_li.className = "StepProgress-item current";
-							}
 							div_sp_li_p.className = "py-0 speech-bubbleSelected pl-2 pr-1 w-100 pb-1 text-break";
 						}
 						div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
@@ -290,16 +280,16 @@ function goToCheckpointPage(id) {
             if (flag1 == 1) {
               // tag.className = "StepProgress-item current";
               var div_sp_li = document.createElement("li");
-              div_sp_li.className = "StepProgress-item current";
+              div_sp_li.className = "StepProgress-item";
+							if (collection_count[i]>0) {
+								div_sp_li.className = "StepProgress-item current";
+							}
               var div_sp_li_p = document.createElement("p");
               div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
               div_sp_li_p.style.fontSize = "80%";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
 							div_sp_li_p.id = item["id"];
 							if (item["checkpoint_title"] == title) {
-								if (click_title.localeCompare(cur_title) != 0) {
-									div_sp_li.className = "StepProgress-item current";
-								}
 								div_sp_li_p.className = "py-0 speech-bubbleSelected pl-2 pr-1 w-100 pb-1 text-break";
 							}
 							div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
@@ -309,15 +299,15 @@ function goToCheckpointPage(id) {
               // tag.className = "StepProgress-item";
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-item";
+							if (collection_count[i]>0) {
+								div_sp_li.className = "StepProgress-item current";
+							}
               var div_sp_li_p = document.createElement("p");
               div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
               div_sp_li_p.style.fontSize = "80%";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
 							div_sp_li_p.id = item["id"];
 							if (item["checkpoint_title"] == title) {
-								if (click_title.localeCompare(cur_title) != 0) {
-									div_sp_li.className = "StepProgress-item current";
-								}
 								div_sp_li_p.className = "py-0 speech-bubbleSelected pl-2 pr-1 w-100 pb-1 text-break";
 							}
 							div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
@@ -376,6 +366,7 @@ function goToCheckpointPage(id) {
     // var dist_walked = {{$total}} - dist_walked;
     var flag1 = 0;
     var checkpoints = {!! json_encode($checkpointsr) !!};
+		var collection_count_r = collection_count.reverse();
     if ( {!! json_encode($my_checkpoint->m_collections->collection_category) !!} == 'checkpoint') {
       prog_id = "progress_bar_col";
       var title = {!! json_encode( $my_checkpoint->checkpoint_title) !!};
@@ -414,9 +405,6 @@ function goToCheckpointPage(id) {
             div_sp_li_p.innerHTML = item["checkpoint_title"];
 						div_sp_li_p.id = item["id"];
 						if (item["checkpoint_title"] == title) {
-							if (click_title.localeCompare(cur_title) != 0) {
-								div_sp_li.className = "StepProgress-itemStart is-current";
-							}
 							div_sp_li_p.className = "py-0 speech-bubbleSelected pl-2 w-100 pb-1 text-break";
 						}
 						div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
@@ -428,14 +416,14 @@ function goToCheckpointPage(id) {
               // tag.className = "StepProgress-item current";
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-itemStart";
+							if (collection_count_r[i]>0) {
+                div_sp_li.className = "StepProgress-itemStart is-current";
+              }
               var div_sp_li_p = document.createElement("p");
               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
 							div_sp_li_p.id = item["id"];
 							if (item["checkpoint_title"] == title) {
-								if (click_title.localeCompare(cur_title) != 0) {
-									div_sp_li.className = "StepProgress-itemStart is-current";
-								}
 								div_sp_li_p.className = "py-0 speech-bubbleSelected pl-2 w-100 pb-1 text-break";
 							}
 							div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
@@ -445,14 +433,14 @@ function goToCheckpointPage(id) {
               // tag.className = "StepProgress-item";
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-itemStart";
+							if (collection_count_r[i]>0) {
+                div_sp_li.className = "StepProgress-itemStart is-current";
+              }
               var div_sp_li_p = document.createElement("p");
               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
 							div_sp_li_p.id = item["id"];
 							if (item["checkpoint_title"] == title) {
-								if (click_title.localeCompare(cur_title) != 0) {
-									div_sp_li.className = "StepProgress-itemStart is-current";
-								}
 								div_sp_li_p.className = "py-0 speech-bubbleSelected pl-2 w-100 pb-1 text-break";
 							}
 							div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
@@ -470,9 +458,6 @@ function goToCheckpointPage(id) {
             div_sp_li_p.innerHTML = item["checkpoint_title"];
 						div_sp_li_p.id = item["id"];
 						if (item["checkpoint_title"] == title) {
-							if (click_title.localeCompare(cur_title) != 0) {
-								div_sp_li.className = "StepProgress-item2 is-current";
-							}
 							div_sp_li_p.className = "py-0 speech-bubbleSelected pl-2 w-100 pb-1 text-break";
 						}
 						div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
@@ -484,14 +469,14 @@ function goToCheckpointPage(id) {
               // tag.className = "StepProgress-item current";
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-item2";
+							if (collection_count_r[i]>0) {
+                div_sp_li.className = "StepProgress-item2 is-current";
+              }
               var div_sp_li_p = document.createElement("p");
               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
 							div_sp_li_p.id = item["id"];
 							if (item["checkpoint_title"] == title) {
-								if (click_title.localeCompare(cur_title) != 0) {
-									div_sp_li.className = "StepProgress-item2 is-current";
-								}
 								div_sp_li_p.className = "py-0 speech-bubbleSelected pl-2 w-100 pb-1 text-break";
 							}
 							div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
@@ -501,14 +486,14 @@ function goToCheckpointPage(id) {
               // tag.className = "StepProgress-item";
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-item2";
+							if (collection_count_r[i]>0) {
+                div_sp_li.className = "StepProgress-item2 is-current";
+              }
               var div_sp_li_p = document.createElement("p");
               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
 							div_sp_li_p.id = item["id"];
 							if (item["checkpoint_title"] == title) {
-								if (click_title.localeCompare(cur_title) != 0) {
-									div_sp_li.className = "StepProgress-item2 is-current";
-								}
 								div_sp_li_p.className = "py-0 speech-bubbleSelected pl-2 w-100 pb-1 text-break";
 							}
 							div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
@@ -526,9 +511,6 @@ function goToCheckpointPage(id) {
             div_sp_li_p.innerHTML = item["checkpoint_title"];
 						div_sp_li_p.id = item["id"];
 						if (item["checkpoint_title"] == title) {
-							if (click_title.localeCompare(cur_title) != 0) {
-								div_sp_li.className = "StepProgress-item current";
-							}
 							div_sp_li_p.className = "py-0 speech-bubbleSelected pl-2 w-100 pb-1 text-break";
 						}
 						div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
@@ -539,15 +521,15 @@ function goToCheckpointPage(id) {
             if (flag1 == 1) {
               // tag.className = "StepProgress-item current";
               var div_sp_li = document.createElement("li");
-              div_sp_li.className = "StepProgress-item current";
+              div_sp_li.className = "StepProgress-item";
+							if (collection_count_r[i]>0) {
+                div_sp_li.className = "StepProgress-item current";
+              }
               var div_sp_li_p = document.createElement("p");
               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
 							div_sp_li_p.id = item["id"];
 							if (item["checkpoint_title"] == title) {
-								if (click_title.localeCompare(cur_title) != 0) {
-									div_sp_li.className = "StepProgress-item current";
-								}
 								div_sp_li_p.className = "py-0 speech-bubbleSelected pl-2 w-100 pb-1 text-break";
 							}
 							div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
@@ -557,14 +539,14 @@ function goToCheckpointPage(id) {
               // tag.className = "StepProgress-item";
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-item";
+							if (collection_count_r[i]>0) {
+                div_sp_li.className = "StepProgress-item current";
+              }
               var div_sp_li_p = document.createElement("p");
               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
 							div_sp_li_p.id = item["id"];
 							if (item["checkpoint_title"] == title) {
-								if (click_title.localeCompare(cur_title) != 0) {
-									div_sp_li.className = "StepProgress-item current";
-								}
 								div_sp_li_p.className = "py-0 speech-bubbleSelected pl-2 w-100 pb-1 text-break";
 							}
 							div_sp_li_p.setAttribute('onclick', "goToCheckpointPage(this.id)");
