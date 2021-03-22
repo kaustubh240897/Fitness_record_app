@@ -67,7 +67,7 @@
             </div>
           @else
             <div class='col-4'>
-              <img src="{{ asset($get_t_collection->m_collections->path .'icon/'. $get_t_collection->m_collections->filename) }}"  class=" rounded-circle" alt="Img" width="80" height="80">
+            <a href="{{ route('collectiondetails', $get_t_collection->m_collections->id) }}">  <img src="{{ asset($get_t_collection->m_collections->path .'icon/'. $get_t_collection->m_collections->filename) }}"  class=" rounded-circle" alt="Img" width="80" height="80"> </a>
             </div>
           @endif
               <div class='col-8'> <img src='/storage/img/label-1.png'><br><a href="{{ route('collectiondetails', $get_t_collection->m_collections->id) }}">{{ $get_t_collection->m_collections->collection_title }} </a></div>
@@ -93,7 +93,7 @@
               </div>
             @else
               <div class='col-4'>
-                <img src="{{ asset($get_t_collection->m_collections->path .'icon/'. $get_t_collection->m_collections->filename) }}"  class=" rounded-circle" alt="Img" width="80" height="80">
+              <a href="{{ route('collectiondetails', $get_t_collection->m_collections->id) }}">  <img src="{{ asset($get_t_collection->m_collections->path .'icon/'. $get_t_collection->m_collections->filename) }}"  class=" rounded-circle" alt="Img" width="80" height="80"> </a>
               </div>
             @endif
                 <div class='col-8'> <img src='/storage/img/label-1.png'><br><a href="{{ route('collectiondetails', $get_t_collection->m_collections->id) }}">{{ $get_t_collection->m_collections->collection_title }} </a></div>

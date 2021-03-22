@@ -35,7 +35,7 @@
                 @endif
 
                 <form style='display:none;' class='form-horizontal'
-                    action="{{ route('custom.login', ['serialnumber' => $serial_number]) }}" method='post'>
+                    action="{{ route('custom.login1', ['serialnumber' => $serial_number]) }}" method='post'>
                     {{ csrf_field() }}
 
                     <div class="form-group">

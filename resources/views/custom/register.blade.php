@@ -26,7 +26,7 @@
                         @endforeach
                     @endif
                     @if (empty(Auth::id()) || empty(Auth::user()->name))
-                        <form class='form-horizontal' action="{{ route('custom.register') }}" method='post'>
+                        <form class='form-horizontal' action="{{ route('custom.register1') }}" method='post'>
                             {{ csrf_field() }}
                             <div class="form-group">
                                 <label for=""> Serial number </label>

@@ -30,7 +30,7 @@
                     @endif
                     @if (empty(Auth::id()) || empty(Auth::user()->name))
 
-                        <form class='form-horizontal' action="{{ route('custom.manuallogin') }}" method='post'>
+                        <form class='form-horizontal' action="{{ route('custom.manuallogin1') }}" method='post'>
                             {{ csrf_field() }}
 
                             <div class="form-group">
