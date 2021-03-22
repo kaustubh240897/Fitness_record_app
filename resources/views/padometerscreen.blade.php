@@ -708,7 +708,10 @@
                beginAtZero: true,
                stepSize: 2000,
                max: bar_maxY,
-               fontColor: "#113a83"
+               fontColor: "#113a83",
+               callback: function(value, index, values) {
+                        return value.toFixed(0) + "歩";
+                    }
             },
             gridLines: {
                 borderDash: [8, 4],
