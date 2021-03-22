@@ -38,7 +38,7 @@ class CheckSerialNumberController extends Controller
             foreach($todayRecipe as $t){
                 $code = $t->recipe_code;
             }
-            return response()->json(["url" => "https://mjdev01.com:450/images/recipe/thumbnail/$code.jpg"]);
+            return response()->json(["url" => env('APP_URL', '')."/$code.jpg"]);
         }
     }
 
