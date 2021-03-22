@@ -572,7 +572,6 @@
   });
 
   var maxSteps = Math.max(...stepsData);
-  //console.log(maxY);
   //var weekGoals = {!! json_encode($steps_week) !!};
   var dailyGoal_new = {{$get_m_user_daily_goal}};
   var weekGoals = [dailyGoal_new,dailyGoal_new,dailyGoal_new,dailyGoal_new,dailyGoal_new,dailyGoal_new,dailyGoal_new];
@@ -708,7 +707,10 @@
                beginAtZero: true,
                stepSize: 2000,
                max: bar_maxY,
-               fontColor: "#113a83"
+               fontColor: "#113a83",
+               callback: function(value, index, values) {
+                        return value.toFixed(0) + "歩";
+                    }
             },
             gridLines: {
                 borderDash: [8, 4],

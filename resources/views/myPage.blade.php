@@ -410,6 +410,8 @@
     var steplist = document.getElementById("progress_bar");
     var tr_count_id = 1;
     var prefecture_type = "p";
+    var collection_count = {!! json_encode($current_tour_collection_count) !!};
+    console.log("cc",collection_count);
 
   if({{ $session_value }} === 0){
     var get_m_user_stride = {{ $get_m_user_stride }};
@@ -454,6 +456,9 @@
               // tag.className = "StepProgress-item current";
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-itemStart";
+              if (collection_count[i]>0) {
+                div_sp_li.className = "StepProgress-itemStart is-current";
+              }
               var div_sp_li_p = document.createElement("p");
               div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
               div_sp_li_p.style.fontSize = "80%";
@@ -466,6 +471,9 @@
               // tag.className = "StepProgress-item";
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-itemStart";
+              if (collection_count[i]>0) {
+                div_sp_li.className = "StepProgress-itemStart is-current";
+              }
               var div_sp_li_p = document.createElement("p");
               div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
               div_sp_li_p.style.fontSize = "80%";
@@ -495,6 +503,9 @@
               // tag.className = "StepProgress-item current";
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-item2";
+              if (collection_count[i]>0) {
+                div_sp_li.className = "StepProgress-item2 is-current";
+              }
               var div_sp_li_p = document.createElement("p");
               div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
               div_sp_li_p.style.fontSize = "80%";
@@ -507,6 +518,9 @@
               // tag.className = "StepProgress-item";
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-item2";
+              if (collection_count[i]>0) {
+                div_sp_li.className = "StepProgress-item2 is-current";
+              }
               var div_sp_li_p = document.createElement("p");
               div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
               div_sp_li_p.style.fontSize = "80%";
@@ -536,6 +550,9 @@
               // tag.className = "StepProgress-item current";
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-item";
+              if (collection_count[i]>0) {
+                div_sp_li.className = "StepProgress-item current";
+              }
               var div_sp_li_p = document.createElement("p");
               div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
               div_sp_li_p.style.fontSize = "80%";
@@ -548,6 +565,9 @@
               // tag.className = "StepProgress-item";
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-item";
+              if (collection_count[i]>0) {
+                div_sp_li.className = "StepProgress-item current";
+              }
               var div_sp_li_p = document.createElement("p");
               div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
               div_sp_li_p.style.fontSize = "80%";
@@ -612,6 +632,8 @@
   }
   else{
     var col_id_r = {!! json_encode($checkpoint_collection_id) !!};
+    var collection_count_r = collection_count.reverse();
+    console.log("ccr",collection_count_r);
     var col_id = col_id_r.reverse()
     console.log("name_check_2", col_id);
     console.log("inelse");
@@ -654,6 +676,9 @@
               // tag.className = "StepProgress-item current";
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-itemStart";
+              if (collection_count_r[i]>0) {
+                div_sp_li.className = "StepProgress-itemStart is-current";
+              }
               var div_sp_li_p = document.createElement("p");
               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
@@ -665,6 +690,9 @@
               // tag.className = "StepProgress-item";
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-itemStart";
+              if (collection_count_r[i]>0) {
+                div_sp_li.className = "StepProgress-itemStart is-current";
+              }
               var div_sp_li_p = document.createElement("p");
               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
@@ -692,6 +720,9 @@
               // tag.className = "StepProgress-item current";
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-item2";
+              if (collection_count_r[i]>0) {
+                div_sp_li.className = "StepProgress-item2 is-current";
+              }
               var div_sp_li_p = document.createElement("p");
               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
@@ -703,6 +734,9 @@
               // tag.className = "StepProgress-item";
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-item2";
+              if (collection_count_r[i]>0) {
+                div_sp_li.className = "StepProgress-item2 is-current";
+              }
               var div_sp_li_p = document.createElement("p");
               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
@@ -730,6 +764,9 @@
               // tag.className = "StepProgress-item current";
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-item";
+              if (collection_count_r[i]>0) {
+                div_sp_li.className = "StepProgress-item current";
+              }
               var div_sp_li_p = document.createElement("p");
               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
@@ -741,6 +778,9 @@
               // tag.className = "StepProgress-item";
               var div_sp_li = document.createElement("li");
               div_sp_li.className = "StepProgress-item";
+              if (collection_count_r[i]>0) {
+                div_sp_li.className = "StepProgress-item current";
+              }
               var div_sp_li_p = document.createElement("p");
               div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
               div_sp_li_p.innerHTML = item["checkpoint_title"];
