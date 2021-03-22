@@ -219,6 +219,28 @@ class t_CollectionWebController extends Controller
                     $get_tour_id =  $my_collections->m_collections->m__tours->id;
                 }
                 $query_checkpoints = m_Checkpoint::where('m__tour_id',$get_tour_id);
+
+                $count_t_collections = t_Collection::where('m__users_id', $m__user_id)->orderBy('created_at', 'DESC')->get()->groupBy('m__collection_id');
+                $count_m_collection = m_Collection::all()->count();
+                $counter = [];
+                $current_tour_collection_count = [];
+                for($i=0; $i<=$count_m_collection;$i++){
+                    $counter[$i] = 0;
+                }
+                $i=0;
+                foreach($count_t_collections as $count){
+
+                    $counter[$count_t_collections->keys()[$i]] = $count->count();
+                    $i++;
+                }
+                if($query_checkpoints != null){
+                    foreach($query_checkpoints->get() as $checkpoint){
+                        $current_tour_collection_count[]  = $counter[$checkpoint->m__collection_id];
+                    }
+                }
+                else{
+                    $current_tour_collection_count = null;
+                }
                 
                 $total = 0;
                     if($query_checkpoints != null){
@@ -239,6 +261,7 @@ class t_CollectionWebController extends Controller
                 $checkpoints = null;
                 $checkpointsr = null;
                 $total = 0;
+                $current_tour_collection_count = null;
 
             }
             $get_t_tour = t_Tour::where('m__users_id', $m__user_id)->orderBy('start_datetime', 'DESC')->first();
@@ -305,7 +328,7 @@ class t_CollectionWebController extends Controller
                     }
                 }
         }
-            return view('mycollectionsdetails', compact('my_collections','m__users','total','checkpoints','checkpointsr','session_value','unseen_collection','user_tour_steps','user_stride','current_tour_title'));
+            return view('mycollectionsdetails', compact('my_collections','m__users','total','checkpoints','checkpointsr','session_value','unseen_collection','user_tour_steps','user_stride','current_tour_title','current_tour_collection_count'));
         }
         else{
             $my_collections = null;
@@ -318,8 +341,9 @@ class t_CollectionWebController extends Controller
             $user_tour_steps = 0;
             $user_stride = 0;
             $current_tour_title = null;
+            $current_tour_collection_count = null;
 
-            return view('mycollectionsdetails', compact('my_collections','m__users','total','checkpoints','checkpointsr','session_value','unseen_collection','user_tour_steps','user_stride','current_tour_title'));
+            return view('mycollectionsdetails', compact('my_collections','m__users','total','checkpoints','checkpointsr','session_value','unseen_collection','user_tour_steps','user_stride','current_tour_title','current_tour_collection_count'));
         }
     }
 

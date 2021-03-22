@@ -44,13 +44,13 @@ Route::get('/logged-out', 'CustomAuthController@thankpage')->name('logout-page')
 
 
 Route::get('/custom-register', 'CustomAuthController@showRegisterForm')->name('custom.register');
-Route::post('/custom-register', 'CustomAuthController@Register')->name('custom.register');
+Route::post('/custom-register', 'CustomAuthController@Register')->name('custom.register1');
 
 Route::get('/custom-login/{serialnumber}', 'CustomAuthController@showLoginForm')->name('custom.login');
-Route::post('/custom-login/{serialnumber}', 'CustomAuthController@Login')->name('custom.login');
+Route::post('/custom-login/{serialnumber}', 'CustomAuthController@Login')->name('custom.login1');
 
 Route::get('/custom-login', 'CustomAuthController@showManualLoginForm')->name('custom.manuallogin');
-Route::post('/custom-login', 'CustomAuthController@manualLogin')->name('custom.manuallogin');
+Route::post('/custom-login', 'CustomAuthController@manualLogin')->name('custom.manuallogin1');
 
 Route::get('/logout', 'CustomAuthController@showlogout')->name('custom.logout');
 Route::post('/logout', 'CustomAuthController@logout')->name('logout');
