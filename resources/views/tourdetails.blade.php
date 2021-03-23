@@ -192,6 +192,8 @@ function navItemClick(id) {
 var steplist = document.getElementById("progress_bar");
 var tr_count_id = 1;
 var prefecture_type = "p";
+var collection_count = {!! json_encode($current_tour_collection_count) !!};
+console.log("cc",collection_count);
 
 if({{ $value }} == 0){
   // var get_m_user_stride = {{ $user_stride }};
@@ -302,6 +304,9 @@ if({{ $value }} == 0){
             // tag.className = "StepProgress-item current";
             var div_sp_li = document.createElement("li");
             div_sp_li.className = "StepProgress-itemStart";
+            if (collection_count[i]>0) {
+              div_sp_li.className = "StepProgress-itemStart is-current";
+            }
             var div_sp_li_p = document.createElement("p");
             div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
             div_sp_li_p.style.fontSize = "80%";
@@ -312,6 +317,9 @@ if({{ $value }} == 0){
             // tag.className = "StepProgress-item";
             var div_sp_li = document.createElement("li");
             div_sp_li.className = "StepProgress-itemStart";
+            if (collection_count[i]>0) {
+              div_sp_li.className = "StepProgress-itemStart is-current";
+            }
             var div_sp_li_p = document.createElement("p");
             div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
             div_sp_li_p.style.fontSize = "80%";
@@ -337,6 +345,9 @@ if({{ $value }} == 0){
             // tag.className = "StepProgress-item current";
             var div_sp_li = document.createElement("li");
             div_sp_li.className = "StepProgress-item2";
+            if (collection_count[i]>0) {
+              div_sp_li.className = "StepProgress-item2 is-current";
+            }
             var div_sp_li_p = document.createElement("p");
             div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
             div_sp_li_p.style.fontSize = "80%";
@@ -347,6 +358,9 @@ if({{ $value }} == 0){
             // tag.className = "StepProgress-item";
             var div_sp_li = document.createElement("li");
             div_sp_li.className = "StepProgress-item2";
+            if (collection_count[i]>0) {
+              div_sp_li.className = "StepProgress-item2 is-current";
+            }
             var div_sp_li_p = document.createElement("p");
             div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
             div_sp_li_p.style.fontSize = "80%";
@@ -371,7 +385,10 @@ if({{ $value }} == 0){
           if (flag1 == 1) {
             // tag.className = "StepProgress-item current";
             var div_sp_li = document.createElement("li");
-            div_sp_li.className = "StepProgress-item current";
+            div_sp_li.className = "StepProgress-item";
+            if (collection_count[i]>0) {
+              div_sp_li.className = "StepProgress-item current";
+            }
             var div_sp_li_p = document.createElement("p");
             div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
             div_sp_li_p.style.fontSize = "80%";
@@ -382,6 +399,9 @@ if({{ $value }} == 0){
             // tag.className = "StepProgress-item";
             var div_sp_li = document.createElement("li");
             div_sp_li.className = "StepProgress-item";
+            if (collection_count[i]>0) {
+              div_sp_li.className = "StepProgress-item current";
+            }
             var div_sp_li_p = document.createElement("p");
             div_sp_li_p.className = "py-0 speech-bubble pl-2 pr-1 w-100 pb-1 text-break";
             div_sp_li_p.style.fontSize = "80%";
@@ -439,6 +459,7 @@ if({{ $value }} == 0){
 }
 
 else{
+  collection_count = collection_count.reverse();
   var get_m_user_stride = {{ $user_stride }};
   var steps = {{ $steps }};
   var dist_walked = (get_m_user_stride * steps)/100000;
@@ -476,6 +497,9 @@ else{
             // tag.className = "StepProgress-item current";
             var div_sp_li = document.createElement("li");
             div_sp_li.className = "StepProgress-itemStart";
+            if (collection_count[i]>0) {
+              div_sp_li.className = "StepProgress-itemStart is-current";
+            }
             var div_sp_li_p = document.createElement("p");
             div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
             div_sp_li_p.innerHTML = item["checkpoint_title"];
@@ -485,6 +509,9 @@ else{
             // tag.className = "StepProgress-item";
             var div_sp_li = document.createElement("li");
             div_sp_li.className = "StepProgress-itemStart";
+            if (collection_count[i]>0) {
+              div_sp_li.className = "StepProgress-itemStart is-current";
+            }
             var div_sp_li_p = document.createElement("p");
             div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
             div_sp_li_p.innerHTML = item["checkpoint_title"];
@@ -508,6 +535,9 @@ else{
             // tag.className = "StepProgress-item current";
             var div_sp_li = document.createElement("li");
             div_sp_li.className = "StepProgress-item2";
+            if (collection_count[i]>0) {
+              div_sp_li.className = "StepProgress-item2 is-current";
+            }
             var div_sp_li_p = document.createElement("p");
             div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
             div_sp_li_p.innerHTML = item["checkpoint_title"];
@@ -517,6 +547,9 @@ else{
             // tag.className = "StepProgress-item";
             var div_sp_li = document.createElement("li");
             div_sp_li.className = "StepProgress-item2";
+            if (collection_count[i]>0) {
+              div_sp_li.className = "StepProgress-item2 is-current";
+            }
             var div_sp_li_p = document.createElement("p");
             div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
             div_sp_li_p.innerHTML = item["checkpoint_title"];
@@ -539,7 +572,10 @@ else{
           if (flag1 == 1) {
             // tag.className = "StepProgress-item current";
             var div_sp_li = document.createElement("li");
-            div_sp_li.className = "StepProgress-item current";
+            div_sp_li.className = "StepProgress-item";
+            if (collection_count[i]>0) {
+              div_sp_li.className = "StepProgress-item current";
+            }
             var div_sp_li_p = document.createElement("p");
             div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
             div_sp_li_p.innerHTML = item["checkpoint_title"];
@@ -549,6 +585,9 @@ else{
             // tag.className = "StepProgress-item";
             var div_sp_li = document.createElement("li");
             div_sp_li.className = "StepProgress-item";
+            if (collection_count[i]>0) {
+              div_sp_li.className = "StepProgress-item current";
+            }
             var div_sp_li_p = document.createElement("p");
             div_sp_li_p.className = "py-0 speech-bubble pl-2 w-100 pb-1 text-break";
             div_sp_li_p.innerHTML = item["checkpoint_title"];
