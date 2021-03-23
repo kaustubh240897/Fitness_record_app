@@ -550,7 +550,6 @@
                    var url = "/checkpointdetails/" + id.toString();
                    document.location=url;
                  }
-
                  var collection_count = {!! json_encode($current_tour_collection_count) !!};
                  console.log("ctcc",collection_count);
                  console.log("steps",{{$user_tour_steps}});
@@ -1178,6 +1177,16 @@
       </div>
     </div>
   </div>
+  <script type="text/javascript">
+  var nav_box2 = document.getElementById("box2");
+  var unseen_collection = {{$unseen_collection}};
+  console.log("$unseen_collection",unseen_collection);
+  if (unseen_collection > 0) {
+    nav_box2.style = "border-right: 2px solid #113a83; background: url({{asset('storage/mypage/notify.png')}});  background-position: 70% 20%; background-repeat: no-repeat";
+  } else {
+    nav_box2.style = "border-right: 2px solid #113a83";
+  }
+  </script>
 </body>
 
 @endsection
