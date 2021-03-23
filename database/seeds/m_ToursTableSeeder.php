@@ -89,27 +89,27 @@ class m_ToursTableSeeder extends Seeder
        ),
 
 
+       // 6 => 
+       // array (
+       //        'id' => 7,
+       //        'tour_title' => '古き良き四国堪能コース',
+       //        'title_abbreviation' => '四国絶景コース',
+       //        'tour_comment' => '四国4県の絶景と歴史あふれる街並みを楽しめるコースです。',
+       //        'm__collection_id' => '140',
+       //        'tour_level' => '1',
+       //        'created_at'=>date('Y-m-d H:i:s'),
+       //        'updated_at'=>date('Y-m-d H:i:s'),
+       // ),
+
+
+
        6 => 
        array (
               'id' => 7,
-              'tour_title' => '古き良き四国堪能コース',
-              'title_abbreviation' => '四国絶景コース',
-              'tour_comment' => '四国4県の絶景と歴史あふれる街並みを楽しめるコースです。',
-              'm__collection_id' => '140',
-              'tour_level' => '1',
-              'created_at'=>date('Y-m-d H:i:s'),
-              'updated_at'=>date('Y-m-d H:i:s'),
-       ),
-
-
-
-       7 => 
-       array (
-              'id' => 8,
               'tour_title' => '関東から日本海へ美しい日本を体験するコース',
               'title_abbreviation' => '関東西攻コース',
               'tour_comment' => '東京から日本海の道程の中で、四季と風景の建築物の美しさとを感じることができるコースです。',
-              'm__collection_id' => '162',
+              'm__collection_id' => '144',
               'tour_level' => '1',
               'created_at'=>date('Y-m-d H:i:s'),
               'updated_at'=>date('Y-m-d H:i:s'),
@@ -129,13 +129,13 @@ class m_ToursTableSeeder extends Seeder
 
 
 
-       8 => 
+       7 => 
        array (
-              'id' => 9,
+              'id' => 8,
               'tour_title' => '瀬戸内海おすすめ観光コース',
               'title_abbreviation' => '瀬戸内観光コース',
               'tour_comment' => '瀬戸内海に面した本州や四国のさまざまな観光地をめぐるコースです。',
-              'm__collection_id' => '182',
+              'm__collection_id' => '164',
               'tour_level' => '1',
               'created_at'=>date('Y-m-d H:i:s'),
               'updated_at'=>date('Y-m-d H:i:s'),
