@@ -1360,211 +1360,13 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-       //    122 => 
-       //    array (
-       //           'id' => 123,
-       //           'collection_category' => 'checkpoint',
-       //           'collection_title' => '渦潮',
-       //           'path' => 'storage/tour7 collection1/',
-       //           'filename' => 'P07-01.png',
-       //           'created_at'=>date('Y-m-d H:i:s'),
-       //           'updated_at'=>date('Y-m-d H:i:s'),
-       //    ),
-
-       //    123 => 
-       //    array (
-       //           'id' => 124,
-       //           'collection_category' => 'checkpoint',
-       //           'collection_title' => '阿波踊り',
-       //           'path' => 'storage/tour7 collection2/',
-       //           'filename' => 'P07-02.png',
-       //           'created_at'=>date('Y-m-d H:i:s'),
-       //           'updated_at'=>date('Y-m-d H:i:s'),
-       //    ),
-
-       //    124 => 
-       //    array (
-       //           'id' => 125,
-       //           'collection_category' => 'checkpoint',
-       //           'collection_title' => '表通りの建物が並ぶところ',
-       //           'path' => 'storage/tour7 collection3/',
-       //           'filename' => 'P07-03.png',
-       //           'created_at'=>date('Y-m-d H:i:s'),
-       //           'updated_at'=>date('Y-m-d H:i:s'),
-       //    ),
-
-       //    125 => 
-       //    array (
-       //           'id' => 126,
-       //           'collection_category' => 'checkpoint',
-       //           'collection_title' => '飛来峰からの眺望(橋)',
-       //           'path' => 'storage/tour7 collection4/',
-       //           'filename' => 'P07-04.png',
-       //           'created_at'=>date('Y-m-d H:i:s'),
-       //           'updated_at'=>date('Y-m-d H:i:s'),
-       //    ),
-
-       //    126 => 
-       //    array (
-       //           'id' => 127,
-       //           'collection_category' => 'checkpoint',
-       //           'collection_title' => '瀬戸大橋',
-       //           'path' => 'storage/tour7 collection5/',
-       //           'filename' => 'P07-05.png',
-       //           'created_at'=>date('Y-m-d H:i:s'),
-       //           'updated_at'=>date('Y-m-d H:i:s'),
-       //    ),
-
-       //    127 => 
-       //    array (
-       //           'id' => 128,
-       //           'collection_category' => 'checkpoint',
-       //           'collection_title' => 'たくさん天ぷらが乗ったうどん(讃岐うどん)',
-       //           'path' => 'storage/tour7 collection6/',
-       //           'filename' => 'P07-06.png',
-       //           'created_at'=>date('Y-m-d H:i:s'),
-       //           'updated_at'=>date('Y-m-d H:i:s'),
-       //    ),
-
-       //    128 => 
-       //    array (
-       //           'id' => 129,
-       //           'collection_category' => 'checkpoint',
-       //           'collection_title' => '大歩危の渓谷(新緑が良いです)',
-       //           'path' => 'storage/tour7 collection7/',
-       //           'filename' => 'P07-07.png',
-       //           'created_at'=>date('Y-m-d H:i:s'),
-       //           'updated_at'=>date('Y-m-d H:i:s'),
-       //    ),
-
-       //    129 => 
-       //    array (
-       //           'id' => 130,
-       //           'collection_category' => 'checkpoint',
-       //           'collection_title' => '大杉の前でお祈りしている人',
-       //           'path' => 'storage/tour7 collection8/',
-       //           'filename' => 'P07-08.png',
-       //           'created_at'=>date('Y-m-d H:i:s'),
-       //           'updated_at'=>date('Y-m-d H:i:s'),
-       //    ),
-
-       //    130 => 
-       //    array (
-       //           'id' => 131,
-       //           'collection_category' => 'checkpoint',
-       //           'collection_title' => '桂浜(奥に龍王岬が見える一番有名な角度から)',
-       //           'path' => 'storage/tour7 collection9/',
-       //           'filename' => 'P07-09.png',
-       //           'created_at'=>date('Y-m-d H:i:s'),
-       //           'updated_at'=>date('Y-m-d H:i:s'),
-       //    ),
-
-       //    131 => 
-       //    array (
-       //           'id' => 132,
-       //           'collection_category' => 'checkpoint',
-       //           'collection_title' => 'ブルーの滝壺',
-       //           'path' => 'storage/tour7 collection10/',
-       //           'filename' => 'P07-10.png',
-       //           'created_at'=>date('Y-m-d H:i:s'),
-       //           'updated_at'=>date('Y-m-d H:i:s'),
-       //    ),
-
-       //    132 => 
-       //    array (
-       //           'id' => 133,
-       //           'collection_category' => 'checkpoint',
-       //           'collection_title' => '石槌山の天狗岳',
-       //           'path' => 'storage/tour7 collection11/',
-       //           'filename' => 'P07-11.png',
-       //           'created_at'=>date('Y-m-d H:i:s'),
-       //           'updated_at'=>date('Y-m-d H:i:s'),
-       //    ),
-
-       //    133 => 
-       //    array (
-       //           'id' => 134,
-       //           'collection_category' => 'checkpoint',
-       //           'collection_title' => '橋の上をサイクリングをする人',
-       //           'path' => 'storage/tour7 collection12/',
-       //           'filename' => 'P07-12.png',
-       //           'created_at'=>date('Y-m-d H:i:s'),
-       //           'updated_at'=>date('Y-m-d H:i:s'),
-       //    ),
-
-       //    134 => 
-       //    array (
-       //           'id' => 135,
-       //           'collection_category' => 'checkpoint',
-       //           'collection_title' => '道後温泉本館',
-       //           'path' => 'storage/tour7 collection13/',
-       //           'filename' => 'P07-13.png',
-       //           'created_at'=>date('Y-m-d H:i:s'),
-       //           'updated_at'=>date('Y-m-d H:i:s'),
-       //    ),
-
-       //    135 => 
-       //    array (
-       //           'id' => 136,
-       //           'collection_category' => 'checkpoint',
-       //           'collection_title' => 'みかん畑',
-       //           'path' => 'storage/tour7 collection14/',
-       //           'filename' => 'P07-14.png',
-       //           'created_at'=>date('Y-m-d H:i:s'),
-       //           'updated_at'=>date('Y-m-d H:i:s'),
-       //    ),
-
-       //    136 => 
-       //    array (
-       //           'id' => 137,
-       //           'collection_category' => 'checkpoint',
-       //           'collection_title' => '遠くから見た大洲城(電車の陸橋の奥に大洲城',
-       //           'path' => 'storage/tour7 collection15/',
-       //           'filename' => 'P07-15.png',
-       //           'created_at'=>date('Y-m-d H:i:s'),
-       //           'updated_at'=>date('Y-m-d H:i:s'),
-       //    ),
-
-       //    137 => 
-       //    array (
-       //           'id' => 138,
-       //           'collection_category' => 'checkpoint',
-       //           'collection_title' => '宇和島鯛めし',
-       //           'path' => 'storage/tour7 collection16/',
-       //           'filename' => 'P07-16.png',
-       //           'created_at'=>date('Y-m-d H:i:s'),
-       //           'updated_at'=>date('Y-m-d H:i:s'),
-       //    ),
-
-       //    138 => 
-       //    array (
-       //           'id' => 139,
-       //           'collection_category' => 'checkpoint',
-       //           'collection_title' => '沈下橋とこどもたち(飛び込みしてるところではなく、座っていたり、虫取りみたいなことをしているところ)',
-       //           'path' => 'storage/tour7 collection17/',
-       //           'filename' => 'P07-17.png',
-       //           'created_at'=>date('Y-m-d H:i:s'),
-       //           'updated_at'=>date('Y-m-d H:i:s'),
-       //    ),
-
-       //    139 => 
-       //    array (
-       //           'id' => 140,
-       //           'collection_category' => 'tour',
-       //           'collection_title' => '龍馬と漱石がパラグライダーで絶景見てるところ(高知はパラグライダーなどのアクティビティが有名なので)二人が難しい場合は瀬戸内海の海辺の絵(みかん、島々が見える、橋など)',
-       //           'path' => 'storage/tour7/',
-       //           'filename' => 'C07-00.png',
-       //           'created_at'=>date('Y-m-d H:i:s'),
-       //           'updated_at'=>date('Y-m-d H:i:s'),
-       //    ),
-
           122 => 
           array (
                  'id' => 123,
                  'collection_category' => 'checkpoint',
-                 'collection_title' => '浅草寺',
-                 'path' => 'storage/tour8 collection1/',
-                 'filename' => 'P08-01.png',
+                 'collection_title' => '鳴門の渦潮',
+                 'path' => 'storage/tour7 collection1/',
+                 'filename' => 'P07-01.png',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
@@ -1573,9 +1375,9 @@ class m_CollectionsTableSeeder extends Seeder
           array (
                  'id' => 124,
                  'collection_category' => 'checkpoint',
-                 'collection_title' => '明治神宮',
-                 'path' => 'storage/tour8 collection2/',
-                 'filename' => 'P08-02.png',
+                 'collection_title' => '阿波踊り',
+                 'path' => 'storage/tour7 collection2/',
+                 'filename' => 'P07-02.png',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
@@ -1584,9 +1386,9 @@ class m_CollectionsTableSeeder extends Seeder
           array (
                  'id' => 125,
                  'collection_category' => 'checkpoint',
-                 'collection_title' => '井の頭恩賜公園',
-                 'path' => 'storage/tour8 collection3/',
-                 'filename' => 'P08-03.png',
+                 'collection_title' => 'うだつの町並み',
+                 'path' => 'storage/tour7 collection3/',
+                 'filename' => 'P07-03.png',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
@@ -1595,9 +1397,9 @@ class m_CollectionsTableSeeder extends Seeder
           array (
                  'id' => 126,
                  'collection_category' => 'checkpoint',
-                 'collection_title' => '高尾山',
-                 'path' => 'storage/tour8 collection4/',
-                 'filename' => 'P08-04.png',
+                 'collection_title' => '栗林公園',
+                 'path' => 'storage/tour7 collection4/',
+                 'filename' => 'P07-04.png',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
@@ -1606,9 +1408,9 @@ class m_CollectionsTableSeeder extends Seeder
           array (
                  'id' => 127,
                  'collection_category' => 'checkpoint',
-                 'collection_title' => '甲斐の猿橋',
-                 'path' => 'storage/tour8 collection5/',
-                 'filename' => 'P08-05.png',
+                 'collection_title' => '瀬戸大橋',
+                 'path' => 'storage/tour7 collection5/',
+                 'filename' => 'P07-05.png',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
@@ -1617,9 +1419,9 @@ class m_CollectionsTableSeeder extends Seeder
           array (
                  'id' => 128,
                  'collection_category' => 'checkpoint',
-                 'collection_title' => '富士五湖',
-                 'path' => 'storage/tour8 collection6/',
-                 'filename' => 'P08-06.png',
+                 'collection_title' => 'さぬきうどん',
+                 'path' => 'storage/tour7 collection6/',
+                 'filename' => 'P07-06.png',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
@@ -1628,9 +1430,9 @@ class m_CollectionsTableSeeder extends Seeder
           array (
                  'id' => 129,
                  'collection_category' => 'checkpoint',
-                 'collection_title' => '武田神社',
-                 'path' => 'storage/tour8 collection7/',
-                 'filename' => 'P08-07.png',
+                 'collection_title' => '大歩危・小歩危',
+                 'path' => 'storage/tour7 collection7/',
+                 'filename' => 'P07-07.png',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
@@ -1639,9 +1441,9 @@ class m_CollectionsTableSeeder extends Seeder
           array (
                  'id' => 130,
                  'collection_category' => 'checkpoint',
-                 'collection_title' => '小淵沢高原',
-                 'path' => 'storage/tour8 collection8/',
-                 'filename' => 'P08-08.png',
+                 'collection_title' => '杉の大杉',
+                 'path' => 'storage/tour7 collection8/',
+                 'filename' => 'P07-08.png',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
@@ -1650,9 +1452,9 @@ class m_CollectionsTableSeeder extends Seeder
           array (
                  'id' => 131,
                  'collection_category' => 'checkpoint',
-                 'collection_title' => '諏訪湖',
-                 'path' => 'storage/tour8 collection9/',
-                 'filename' => 'P08-09.png',
+                 'collection_title' => '桂浜',
+                 'path' => 'storage/tour7 collection9/',
+                 'filename' => 'P07-09.png',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
@@ -1661,9 +1463,9 @@ class m_CollectionsTableSeeder extends Seeder
           array (
                  'id' => 132,
                  'collection_category' => 'checkpoint',
-                 'collection_title' => '松本城',
-                 'path' => 'storage/tour8 collection10/',
-                 'filename' => 'P08-10.png',
+                 'collection_title' => 'にこ淵',
+                 'path' => 'storage/tour7 collection10/',
+                 'filename' => 'P07-10.png',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
@@ -1672,9 +1474,9 @@ class m_CollectionsTableSeeder extends Seeder
           array (
                  'id' => 133,
                  'collection_category' => 'checkpoint',
-                 'collection_title' => '別所温泉',
-                 'path' => 'storage/tour8 collection11/',
-                 'filename' => 'P08-11.png',
+                 'collection_title' => '石槌山',
+                 'path' => 'storage/tour7 collection11/',
+                 'filename' => 'P07-11.png',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
@@ -1683,9 +1485,9 @@ class m_CollectionsTableSeeder extends Seeder
           array (
                  'id' => 134,
                  'collection_category' => 'checkpoint',
-                 'collection_title' => '上田城',
-                 'path' => 'storage/tour8 collection12/',
-                 'filename' => 'P08-12.png',
+                 'collection_title' => 'しまなみ海道',
+                 'path' => 'storage/tour7 collection12/',
+                 'filename' => 'P07-12.png',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
@@ -1694,9 +1496,9 @@ class m_CollectionsTableSeeder extends Seeder
           array (
                  'id' => 135,
                  'collection_category' => 'checkpoint',
-                 'collection_title' => '信州そば',
-                 'path' => 'storage/tour8 collection13/',
-                 'filename' => 'P08-13.png',
+                 'collection_title' => '道後温泉',
+                 'path' => 'storage/tour7 collection13/',
+                 'filename' => 'P07-13.png',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
@@ -1705,9 +1507,9 @@ class m_CollectionsTableSeeder extends Seeder
           array (
                  'id' => 136,
                  'collection_category' => 'checkpoint',
-                 'collection_title' => '地獄谷野猿公苑',
-                 'path' => 'storage/tour8 collection14/',
-                 'filename' => 'P08-14.png',
+                 'collection_title' => 'みかん',
+                 'path' => 'storage/tour7 collection14/',
+                 'filename' => 'P07-14.png',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
@@ -1716,9 +1518,9 @@ class m_CollectionsTableSeeder extends Seeder
           array (
                  'id' => 137,
                  'collection_category' => 'checkpoint',
-                 'collection_title' => '野沢温泉',
-                 'path' => 'storage/tour8 collection15/',
-                 'filename' => 'P08-15.png',
+                 'collection_title' => '大洲',
+                 'path' => 'storage/tour7 collection15/',
+                 'filename' => 'P07-15.png',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
@@ -1727,9 +1529,9 @@ class m_CollectionsTableSeeder extends Seeder
           array (
                  'id' => 138,
                  'collection_category' => 'checkpoint',
-                 'collection_title' => '清津峡',
-                 'path' => 'storage/tour8 collection16/',
-                 'filename' => 'P08-16.png',
+                 'collection_title' => '宇和島鯛めし',
+                 'path' => 'storage/tour7 collection16/',
+                 'filename' => 'P07-16.png',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
@@ -1738,9 +1540,9 @@ class m_CollectionsTableSeeder extends Seeder
           array (
                  'id' => 139,
                  'collection_category' => 'checkpoint',
-                 'collection_title' => '長岡まつり大花火大会',
-                 'path' => 'storage/tour8 collection17/',
-                 'filename' => 'P08-17.png',
+                 'collection_title' => '四万十沈下橋',
+                 'path' => 'storage/tour7 collection17/',
+                 'filename' => 'P07-17.png',
                  'created_at'=>date('Y-m-d H:i:s'),
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
@@ -1748,6 +1550,204 @@ class m_CollectionsTableSeeder extends Seeder
           139 => 
           array (
                  'id' => 140,
+                 'collection_category' => 'tour',
+                 'collection_title' => '四国絶景コース',
+                 'path' => 'storage/tour7/',
+                 'filename' => 'C07-00.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          140 => 
+          array (
+                 'id' => 141,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => '浅草寺',
+                 'path' => 'storage/tour8 collection1/',
+                 'filename' => 'P08-01.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          141 => 
+          array (
+                 'id' => 142,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => '明治神宮',
+                 'path' => 'storage/tour8 collection2/',
+                 'filename' => 'P08-02.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          142 => 
+          array (
+                 'id' => 143,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => '井の頭恩賜公園',
+                 'path' => 'storage/tour8 collection3/',
+                 'filename' => 'P08-03.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          143 => 
+          array (
+                 'id' => 144,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => '高尾山',
+                 'path' => 'storage/tour8 collection4/',
+                 'filename' => 'P08-04.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          144 => 
+          array (
+                 'id' => 145,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => '甲斐の猿橋',
+                 'path' => 'storage/tour8 collection5/',
+                 'filename' => 'P08-05.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          145 => 
+          array (
+                 'id' => 146,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => '富士五湖',
+                 'path' => 'storage/tour8 collection6/',
+                 'filename' => 'P08-06.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          146 => 
+          array (
+                 'id' => 147,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => '武田神社',
+                 'path' => 'storage/tour8 collection7/',
+                 'filename' => 'P08-07.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          147 => 
+          array (
+                 'id' => 148,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => '小淵沢高原',
+                 'path' => 'storage/tour8 collection8/',
+                 'filename' => 'P08-08.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          148 => 
+          array (
+                 'id' => 149,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => '諏訪湖',
+                 'path' => 'storage/tour8 collection9/',
+                 'filename' => 'P08-09.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          149 => 
+          array (
+                 'id' => 150,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => '松本城',
+                 'path' => 'storage/tour8 collection10/',
+                 'filename' => 'P08-10.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          150 => 
+          array (
+                 'id' => 151,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => '別所温泉',
+                 'path' => 'storage/tour8 collection11/',
+                 'filename' => 'P08-11.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          151 => 
+          array (
+                 'id' => 152,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => '上田城',
+                 'path' => 'storage/tour8 collection12/',
+                 'filename' => 'P08-12.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          152 => 
+          array (
+                 'id' => 153,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => '信州そば',
+                 'path' => 'storage/tour8 collection13/',
+                 'filename' => 'P08-13.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          153 => 
+          array (
+                 'id' => 154,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => '地獄谷野猿公苑',
+                 'path' => 'storage/tour8 collection14/',
+                 'filename' => 'P08-14.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          154 => 
+          array (
+                 'id' => 155,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => '野沢温泉',
+                 'path' => 'storage/tour8 collection15/',
+                 'filename' => 'P08-15.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          155 => 
+          array (
+                 'id' => 156,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => '清津峡',
+                 'path' => 'storage/tour8 collection16/',
+                 'filename' => 'P08-16.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          156 => 
+          array (
+                 'id' => 157,
+                 'collection_category' => 'checkpoint',
+                 'collection_title' => '長岡まつり大花火大会',
+                 'path' => 'storage/tour8 collection17/',
+                 'filename' => 'P08-17.png',
+                 'created_at'=>date('Y-m-d H:i:s'),
+                 'updated_at'=>date('Y-m-d H:i:s'),
+          ),
+
+          157 => 
+          array (
+                 'id' => 158,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '弥彦神社',
                  'path' => 'storage/tour8 collection18/',
@@ -1756,9 +1756,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          140 => 
+          158 => 
           array (
-                 'id' => 141,
+                 'id' => 159,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '瓢湖',
                  'path' => 'storage/tour8 collection19/',
@@ -1768,9 +1768,9 @@ class m_CollectionsTableSeeder extends Seeder
           ),
 
 
-          141 => 
+          159 => 
           array (
-                 'id' => 142,
+                 'id' => 160,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '新発田　足軽長屋',
                  'path' => 'storage/tour8 collection20/',
@@ -1780,9 +1780,9 @@ class m_CollectionsTableSeeder extends Seeder
           ),
 
 
-          142 => 
+          160 => 
           array (
-                 'id' => 143,
+                 'id' => 161,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '瀬波温泉',
                  'path' => 'storage/tour8 collection21/',
@@ -1792,9 +1792,9 @@ class m_CollectionsTableSeeder extends Seeder
           ),
           
 
-          143 => 
+          161 => 
           array (
-                 'id' => 144,
+                 'id' => 162,
                  'collection_category' => 'tour',
                  'collection_title' => '関東西攻コース',
                  'path' => 'storage/tour8/',
@@ -2068,9 +2068,9 @@ class m_CollectionsTableSeeder extends Seeder
        //    ),
 
 
-          144 => 
+          162 => 
           array (
-                 'id' => 145,
+                 'id' => 163,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '六甲山',
                  'path' => 'storage/tour10 collection1/',
@@ -2079,9 +2079,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          145 => 
+          163 => 
           array (
-                 'id' => 146,
+                 'id' => 164,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '神戸北野異人館街',
                  'path' => 'storage/tour10 collection2/',
@@ -2090,9 +2090,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          146 => 
+          164 => 
           array (
-                 'id' => 147,
+                 'id' => 165,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '明石焼き',
                  'path' => 'storage/tour10 collection3/',
@@ -2101,9 +2101,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          147 => 
+          165 => 
           array (
-                 'id' => 148,
+                 'id' => 166,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '姫路城',
                  'path' => 'storage/tour10 collection4/',
@@ -2112,9 +2112,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          148 => 
+          166 => 
           array (
-                 'id' => 149,
+                 'id' => 167,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '赤穂',
                  'path' => 'storage/tour10 collection5/',
@@ -2123,9 +2123,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          149 => 
+          167 => 
           array (
-                 'id' => 150,
+                 'id' => 168,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '備前焼',
                  'path' => 'storage/tour10 collection6/',
@@ -2134,9 +2134,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          150 => 
+          168 => 
           array (
-                 'id' => 151,
+                 'id' => 169,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '桃太郎',
                  'path' => 'storage/tour10 collection7/',
@@ -2145,9 +2145,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          151 => 
+          169 => 
           array (
-                 'id' => 152,
+                 'id' => 170,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '国産ジーンズ',
                  'path' => 'storage/tour10 collection8/',
@@ -2156,9 +2156,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          152 => 
+          170 => 
           array (
-                 'id' => 153,
+                 'id' => 171,
                  'collection_category' => 'checkpoint',
                  'collection_title' => 'カブトガニ',
                  'path' => 'storage/tour10 collection9/',
@@ -2167,9 +2167,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          153 => 
+          171 => 
           array (
-                 'id' => 154,
+                 'id' => 172,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '鞆の浦',
                  'path' => 'storage/tour10 collection10/',
@@ -2178,9 +2178,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          154 => 
+          172 => 
           array (
-                 'id' => 155,
+                 'id' => 173,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '尾道と猫の細道',
                  'path' => 'storage/tour10 collection11/',
@@ -2189,9 +2189,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          155 => 
+          173 => 
           array (
-                 'id' => 156,
+                 'id' => 174,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '大久野島',
                  'path' => 'storage/tour10 collection12/',
@@ -2200,9 +2200,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          156 => 
+          174 => 
           array (
-                 'id' => 157,
+                 'id' => 175,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '西条酒蔵通り',
                  'path' => 'storage/tour10 collection13/',
@@ -2211,9 +2211,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          157 => 
+          175 => 
           array (
-                 'id' => 158,
+                 'id' => 176,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '原爆ドーム',
                  'path' => 'storage/tour10 collection14/',
@@ -2222,9 +2222,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          158 => 
+          176 => 
           array (
-                 'id' => 159,
+                 'id' => 177,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '厳島神社',
                  'path' => 'storage/tour10 collection15/',
@@ -2233,9 +2233,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          159 => 
+          177 => 
           array (
-                 'id' => 160,
+                 'id' => 178,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '錦帯橋',
                  'path' => 'storage/tour10 collection16/',
@@ -2244,9 +2244,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          160 => 
+          178 => 
           array (
-                 'id' => 161,
+                 'id' => 179,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '周南コンビナート',
                  'path' => 'storage/tour10 collection17/',
@@ -2255,9 +2255,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          161 => 
+          179 => 
           array (
-                 'id' => 162,
+                 'id' => 180,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '山口ちょうちん祭り',
                  'path' => 'storage/tour10 collection18/',
@@ -2266,9 +2266,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          162 => 
+          180 => 
           array (
-                 'id' => 163,
+                 'id' => 181,
                  'collection_category' => 'checkpoint',
                  'collection_title' => '秋吉台',
                  'path' => 'storage/tour10 collection19/',
@@ -2277,9 +2277,9 @@ class m_CollectionsTableSeeder extends Seeder
                  'updated_at'=>date('Y-m-d H:i:s'),
           ),
 
-          163 => 
+          181 => 
           array (
-                 'id' => 164,
+                 'id' => 182,
                  'collection_category' => 'tour',
                  'collection_title' => '瀬戸内観光コース',
                  'path' => 'storage/tour10/',
