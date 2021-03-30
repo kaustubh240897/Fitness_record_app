@@ -44,19 +44,19 @@ border-bottom: none;
 }
 .table-striped>tbody>tr:nth-child(even)>td,
 .table-striped>tbody>tr:nth-child(even)>th {
-background-color: #f7fafb; // Choose your own color here
+background-color: #f7fafb; 
 }
 .table-striped>tbody>tr:nth-child(odd)>td,
 .table-striped>tbody>tr:nth-child(odd)>th {
-background-color: #f0f6f8; // Choose your own color here
+background-color: #f0f6f8;
 }
 .table-striped>tbody>tr:nth-child(even).comp>td,
 .table-striped>tbody>tr:nth-child(even).comp>th {
- background-color: #fafaee; // Choose your own color here
+ background-color: #fafaee;
 }
 .table-striped>tbody>tr:nth-child(odd).comp>td,
 .table-striped>tbody>tr:nth-child(odd).comp>th {
-  background-color: #f5f5de; // Choose your own color here
+  background-color: #f5f5de;
 }
 .invisible {
 display: none !important;
@@ -188,3 +188,9 @@ font-weight: bold;
 color: #000;
 font-weight: normal;
 }
+/* .pagenotfound_footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height:100%;
+} */
