@@ -72,7 +72,7 @@
 {{ csrf_field() }}
 
 <div class="container-fluid pt-0 mt-0" style="margin-top: 70px !important">
-  <p class=" text-center" style="font-weight: bold; color: #2b63c6;">最近の歩数</p>
+  <p class=" text-center" style="font-weight: bold; color: #2b63c6;">個人設定</p>
   <p class=" text-center overlay-line1"><img src="{{ asset('storage/settings/lineUp.png') }}" alt="" style="max-width: 100%"></p>
 </div>
 <div class="container-fluid">
@@ -121,7 +121,7 @@
     <!-- <input id="strideinput" type="number"  name='stridelength' value="" class="d-none"> -->
     <div class="col-4 pl-2">
       <div class="d-flex flex-row">
-        <input id="strideinput" class="w-100" type="number" step="any" name='stridelength' value="{{ $m_users->stride }}" min="45" max="85" onchange="strideChange()" required><span class=" pl-1  " style="background-color: #f2f4f6; margin-left:-20px;">cm</span>
+        <input id="strideinput" class="w-100" type="number" step="any" name='stridelength' value="{{ $m_users->stride }}" min="45" max="85" onchange="strideChange()" required><span class=" pl-1  " style="background-color: #f2f4f6; margin-left:-28px;">cm</span>
       </div>
     </div>
     <!-- <p class="text-center" style="width: 22px; height: 22px;border-radius: 20px; border: 1px solid #2b63c6;"> <span class="pb-3">+</span> </p> -->
@@ -150,7 +150,7 @@
         <!-- <input id="daily_stepsInput" type="number"  name='dailygoal' value="" class="d-none"> -->
         <div class="col-6 pl-2">
           <div class="d-flex flex-row">
-            <input id="daily_stepsInput" class="w-100" type="number"  name='dailygoal' value="{{ $m_users->step_goal_per_day }}" min="0" max="100000" onchange="dailyStepsChange()" required><span class="pt-1" class=" pl-1  " style="background-color: #f2f4f6; margin-left:-20px;">歩</span>
+            <input id="daily_stepsInput" class="w-100" type="number"  name='dailygoal' value="{{ $m_users->step_goal_per_day }}" min="0" max="100000" onchange="dailyStepsChange()" required><span class="pt-1 pl-1 " style="background-color: #f2f4f6; margin-left:-23px;">歩</span>
           </div>
         </div>
         <!-- <p class="text-center" style="width: 22px; height: 22px;border-radius: 20px; border: 1px solid #2b63c6;"> <span class="pb-3">+</span> </p> -->
@@ -395,7 +395,7 @@
       } else if (s_input.value > 85) {
         s_input.value = 85;
       }
-      strideChange();
+      //strideChange();
   }
 
   function strideChange() {
@@ -403,7 +403,7 @@
       console.log("invalidStride");
       s_input.setCustomValidity(" ");
       document.getElementById("stride_error").className = "box2 sb10 pl-2  flex-row justify-content-center d-flex";
-      fixStride();
+      //fixStride();
     } else {
       s_input.setCustomValidity("");
       document.getElementById("stride_error").className = "box2 sb10 pl-2  flex-row justify-content-center d-none";
@@ -420,7 +420,10 @@
       document.getElementById("dailySteps_error").className = "box2 sb11 pl-2  flex-row justify-content-center d-none";
     }
     console.log("sc");
-    setDailySteps("s");
+    if (ds_input.value >= 0 && ds_input.value <= 100000) {
+        setDailySteps("s");
+        console.log("callsds");
+    }
   }
   function removeDefError() {
     if (ds_7.value < 0 || ds_7.value > 85) {
@@ -626,13 +629,11 @@
       console.log(document.getElementById("daily_stepsInput").value);
       var daily_steps = steps;
 
-
-
       var p_dailyEstDist = document.getElementById("est_daily_dist");
 
       var stride_value = document.getElementById("strideinput").value;
 
-      if (daily_steps>=1) {
+      if (daily_steps>=0) {
         p_dailyEstDist.innerHTML = ((daily_steps * stride_value)/100000).toFixed(2) + " km";
       }
       if (id != "s") {
