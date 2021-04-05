@@ -599,7 +599,10 @@
                    var tr_count_id = 1;
                    var prefecture_type = "p";
                    console.log("dw",dist_walked);
-
+                   if (click_title.localeCompare(cur_title) != 0) {
+                     dist_walked = 0;
+                   }
+                   console.log("dw_0",dist_walked);
                    if (value == 0) {
                      var checkpoints = {!! json_encode($checkpoints) !!};
 
@@ -874,6 +877,7 @@
                      var flag1 = 0;
                      var checkpoints = {!! json_encode($checkpointsr) !!};
                      var collection_count_r = collection_count.reverse();
+                     console.log("dw_rev",dist_walked);
                      // if (click_title.localeCompare(cur_title) != 0) {
                      //   checkpoints.forEach((item, i) => {
                      //     if (item["checkpoint_title"] == title) {
