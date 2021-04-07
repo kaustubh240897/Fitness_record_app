@@ -365,16 +365,34 @@
 
 </script>
             <script id="tri" type="text/javascript">
-            var cnv;
+              var cnv;
+              let x,y;
+              var count = 10;
+              var motion_app = {{ $m__users->motion_app }};
+              if (motion_app == 1) {
+                count = 10;
+              } else {
+                count = 1;
+              }
               function setup() {
                 cnv = createCanvas(300, 150);
+                x = 0;
+                y = 0;
                 // var x = windowWidth / 2;
                 // var y = windowHeight / 4;
                 // cnv.position(x, y);
                 cnv.parent('triangle_graph');
+                console.log("setup");
+                //window.requestAnimationFrame(draw);
               }
 
               function draw() {
+                if (count>1) {
+                  count -= 0.1;
+                } else {
+                  count = 0;
+                }
+                console.log("draw");
                 if ({{ $current_month_steps }} >= {{ $get_m_user_monthly_goal }}) {
                   fill('#FFD00D');
                   triangle(0, 150, 300, 150, 300, 0);
@@ -396,9 +414,19 @@
                     var rem = {{ $get_m_user_monthly_goal }};
                   }
                   var k = (comp/(comp+rem));
-                  var x = 300*k;
-                  var y = 150 - 150*k;
+                  x = 300*k;
+                  y = 150 - 150*k;
+                  if (count > 1) {
+                    x = x/count;
+                    y = 150 - 150*k/count;
+                  }
+                  // var xT = x;
+                  // var yT = y;
                   triangle(0, 150, x, y, x, 150);
+                  // for (var i = 100; i > 0; i--) {
+                  //   x = xT/i;
+                  //   y = yT/i;
+                  // }
                 }
               }
             </script>
