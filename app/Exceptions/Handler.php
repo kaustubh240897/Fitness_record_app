@@ -74,7 +74,7 @@ class Handler extends ExceptionHandler
         # render a custom error
         return response()->view('errors.' . '500', [], 500);
         }
-      elseif ($e instanceof \Illuminate\Database\QueryException) {
+      elseif ($exception instanceof \Illuminate\Database\QueryException) {
             return response()->view('errors.' . '500', [], 500); 
         }
       elseif ($exception instanceof \Illuminate\Http\Exception\HttpResponseException) {
