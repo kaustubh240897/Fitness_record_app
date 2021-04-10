@@ -70,6 +70,24 @@ class Handler extends ExceptionHandler
           }
       }
 
+      elseif ($exception instanceof \PDOException) {
+        # render a custom error
+        return response()->view('errors.' . '500', [], 500);
+        }
+      elseif ($e instanceof \Illuminate\Database\QueryException) {
+            return response()->view('errors.' . '500', [], 500); 
+        }
+      elseif ($exception instanceof \Illuminate\Http\Exception\HttpResponseException) {
+            return response()->view('errors.' . '500', [], 500);
+      }
+      elseif ($exception instanceof \Illuminate\Validation\ValidationException) {
+            return response()->view('errors.' . '500', [], 500);
+      }
+
+      else{
+            return response()->view('errors.' . '500', [], 500);
+        }
+
 
 
 
