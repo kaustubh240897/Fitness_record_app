@@ -28,8 +28,9 @@ class CustomAuthController extends Controller
 
     }
 
-    public function showManualLoginForm(){
-        return view('custom.manuallogin');
+    public function showManualLoginForm(Request $request){
+        $serial_number = $request->cookie('serialnumber');
+        return view('custom.manuallogin', compact('serial_number'));
     }
     
     public function manualLogin(Request $request){
@@ -38,7 +39,7 @@ class CustomAuthController extends Controller
             'password' => 'required|confirmed|max:255'
 
         ]);
-        if(Auth::attempt(['name'=>$request->name, 'password'=>$request->password,'password_confirmation'=>$request->password])){
+        if(Auth::attempt(['name'=>$request->cookie('serialnumber'), 'password'=>$request->password,'password_confirmation'=>$request->password])){
             $m_user = m_Users::where('users_id', Auth::id())->first();
             if ( $m_user !=null ) {// do your magic here
                 return redirect()->route('padometerscreen')->with('Status', 'You are Successfully logged in')->withCookie(
@@ -52,7 +53,7 @@ class CustomAuthController extends Controller
         // login if serial number exists otherwise register it .
         else{
             $this->validation($request);
-            $request['email'] = $request->name;
+            $request['email'] = $request->cookie('serialnumber');
             $request['password'] = bcrypt($request->password);
             event(new Registered($user = User::create($request->all())));
             $this->registered($request, $user);
@@ -126,9 +127,10 @@ class CustomAuthController extends Controller
     }
 
     public function logout(Request $request) {
-        $cookie = \Cookie::forget('serialnumber');
+        //$cookie = \Cookie::forget('serialnumber');
         Auth::logout();
-        return redirect('/logged-out')->withCookie($cookie);
+        return redirect('/logged-out');
+        //->withCookie($cookie);
     }
 
     public function thankpage(Request $request){

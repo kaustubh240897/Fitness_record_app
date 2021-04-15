@@ -30,13 +30,13 @@
                     @endif
                     @if (empty(Auth::id()) || empty(Auth::user()->name))
 
-                        <form class='form-horizontal' action="{{ route('custom.manuallogin1') }}" method='post'>
+                        <form style='display:none;' class='form-horizontal' action="{{ route('custom.manuallogin1') }}" method='post'>
                             {{ csrf_field() }}
 
                             <div class="form-group">
                                 <label for=""> Serial number </label>
                                 <input type='text' class='form-control' placeholder='serial number' name='name'
-                                    value="{{ old('name') }}">
+                                    value="{{ $serial_number }}">
                             </div>
                             <div class="form-group">
                                 <label style='display:none' for="exampleInputPassword1">Password</label>
@@ -51,7 +51,7 @@
 
                             <div class="form-group row">
                                 <div class="col-sm-10">
-                                    <button type="submit" class="btn btn-primary">Login</button>
+                                    <button type="submit" id="myBtn" class="btn btn-primary">Login</button>
                                 </div>
                             </div>
                         </form>
@@ -72,6 +72,10 @@
             </div>
         </div>
     </body>
+    <script>
+    document.getElementById("myBtn").click();
+
+    </script>
 
     </html>
 
